@@ -1,0 +1,23 @@
+name: Dhafer Malouche
+output_dir: '.'
+navbar:
+  title: Dhafer Malouche
+  type: inverse
+  left:
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: Teaching
+  - text: R/Python Developers 
+  - text: Talks
+  - text: Data Visualization
+  - text: Data
+  - text: My CV
+
+output:
+  html_document:
+    theme: yeti
+    highlight: textmate
+    css: styles.css
+    lib_dir: site_libs
+    self_contained: no
