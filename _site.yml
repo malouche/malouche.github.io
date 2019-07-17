@@ -8,11 +8,27 @@ navbar:
     icon: fa-home
     href: index.html
   - text: Teaching
+    menu: 
+      - text: Time Series
+      - text: Graphical Models
+      - text: Archives
   - text: R/Python Developers 
   - text: Talks
-  - text: Data Visualization
+    href: https://malouche.github.io/slidesOftalks/index.html
   - text: Data
+  - text: Stat-Apps
+    href: https://malouche.github.io/statApps/.
   - text: My CV
+  right:
+  - icon: fa-envelope fa-lg
+    href: contact.html
+  - icon: fa-github fa-lg
+    href: http://github.com/malouche
+  - icon: fa-linkedin fa-lg
+    href: https://www.linkedin.com/in/dhafer-malouche-b54629b/
+  - icon: fa-facebook fa-lg
+    href: https://www.facebook.com/dhafer.malouche
+
 
 output:
   html_document:
