@@ -15,8 +15,9 @@ title: Dhafer Malouche
 
 ## About me
 
-I’m Dhafer Malouche an Associate Research Scholar at the Department of Statistics and Data Science at Yale University, and am also affiliated with the Whitney and Betty MacMillan Center for International and Area Studies. I’m currently working on the G-Econ research project in the Department of Economics. It’s a project lead by Professor William Nordhaus that is devoted to developing a geophysically-based data set on economic activity for the world. This upcoming fall I will be teaching a course at the University on Time Series Applications with R/Python, and in the Spring I will be teaching Applied Graphical Models with R. I’m especially interested in Machine Learning, Statistical Modeling, and Data Visualization. 
  
-For my work, I use every day R, Python, H2O, and Spark. In this website I will be sharing many R and Python codes where I show how one can use these softwares to solve Machine Learning, Statistical Modeling, and Data Visualization problems. Your feedback, comments, and questions are more than welcome.
+I’m Dhafer Malouche, an Associate Research Scholar at the Department of Statistics and Data Science at Yale University. I also am affiliated with the Whitney and Betty MacMillan Center for International and Area Studies. Currently,I have been working on the G-Econ research project in the Department of Economics. Lead by Professor William Nordhaus, this project is devoted to developing a geophysically-based data set on economic activity for the world. This upcoming school year, I will be teaching two courses at the University: Time Series Applications with R/Python in the fall and Applied Graphical Models with R in the spring. However, my primary interests lie in Machine Learning, Statistical Modeling, and Data Visualization. I'm also a Professor (on leave) of Statistics from the University of Carthage.  
+ 
+For my everyday work, I use R, Python, H2O, and Spark. In this website I will be sharing many R and Python codes where I show how one can use these softwares to solve Machine Learning, Statistical Modeling, and Data Visualization problems. I would greatly appreciate all feedback, comments, and questions. 
 
 So feel free to [contact me](mailto:dhafer.malouche@yale.edu) 
