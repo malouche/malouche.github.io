@@ -7,7 +7,7 @@ title: Dhafer Malouche
 
 
 
-<img src="under.jpeg" style="float: right; width:20%; border:1px solid; margin-right: 20px" align="left">
+<img src="IMG-1525.png" style="float: right; width:20%; border:1px solid; margin-right: 20px" align="left">
 
 
   
@@ -15,4 +15,9 @@ title: Dhafer Malouche
 
 ## About me
 
-This website is under construction 
+I’m Dhafer Malouche, an Associate Research Scholar at the Department of Statistics and Data Science at Yale University. I also am affiliated with the Whitney and Betty MacMillan Center for International and Area Studies. Currently, I have been working on the G-Econ research project in the Department of Economics. Lead by Professor William Nordhaus, this project is devoted to developing a geophysically-based data set on economic activity for the world.  I'm also Professor of Statistics on leave from the University of Carthage in Tunisia. 
+
+
+For my everyday work, I use R, Python, H2O, and Spark. In this website I will be sharing many R and Python codes where I show how one can use these softwares to solve Machine Learning, Statistical Modeling, and Data Visualization problems. I would greatly appreciate all feedback, comments, and questions. 
+
+So feel free to [contact me](mailto:dhafer.malouche@yale.edu) 
