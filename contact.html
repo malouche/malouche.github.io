@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -86,7 +87,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -247,18 +247,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -293,11 +281,26 @@ $(document).ready(function () {
     Home
   </a>
 </li>
-<li class="dropdown-header">Teaching</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Teaching
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Time Series</li>
+    <li class="dropdown-header">Graphical Models</li>
+    <li class="dropdown-header">Archives</li>
+  </ul>
+</li>
 <li class="dropdown-header">R/Python Developers</li>
-<li class="dropdown-header">Talks</li>
-<li class="dropdown-header">Data Visualization</li>
+<li>
+  <a href="https://malouche.github.io/slidesOftalks/index.html">Talks</a>
+</li>
 <li class="dropdown-header">Data</li>
+<li>
+  <a href="https://malouche.github.io/statApps/.">Stat-Apps</a>
+</li>
 <li class="dropdown-header">My CV</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -364,6 +367,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
