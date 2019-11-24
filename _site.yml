@@ -13,12 +13,15 @@ navbar:
       - text: Graphical Models
       - text: Archives
   - text: R/Python Developers 
+    href: https://malouche.github.io/RPythonDev/
   - text: Talks
     href: https://malouche.github.io/slidesOftalks/index.html
   - text: Data
+    href: https://malouche.github.io/Data/
   - text: Stat-Apps
     href: https://malouche.github.io/statApps/.
   - text: My CV
+    href: https://malouche.github.io/myCV/
   right:
   - icon: fa-envelope fa-lg
     href: contact.html
