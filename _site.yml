@@ -10,6 +10,7 @@ navbar:
   - text: Teaching
     menu: 
       - text: Time Series
+        href:  https://malouche.github.io/timeseries
       - text: Graphical Models
       - text: Archives
   - text: R/Python Developers 
