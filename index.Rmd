@@ -5,7 +5,7 @@ title: Dhafer Malouche
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-
+<script data-ad-client="ca-pub-2786012669830171" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <img src="IMG-1525.png" style="float: right; width:20%; border:1px solid; margin-right: 20px" align="left">
 
