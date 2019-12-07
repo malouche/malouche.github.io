@@ -15,13 +15,13 @@ title: Dhafer Malouche
 
 ## About me
 
-I’m Dhafer Malouche, an Associate Research Scholar at the Department of [Statistics and Data Science](https://statistics.yale.edu) at [Yale University](https://www.yale.edu) and  affiliated with the [Whitney and Betty MacMillan Center for International and Area Studies](https://macmillan.yale.edu). 
+I’m Dhafer Malouche, a Professor at the <a href='http://www.essai.rnu.tn/accueil.htm'> Higher School of Statistics and Information Analysis,</a>  [University of Carthage](http://www.ucar.rnu.tn/Fr/) in Tunisia.
 
-I'm also a Professor of Statistics on leave from the [University of Carthage](http://www.ucar.rnu.tn/Fr/) in Tunisia. 
+
 
 For my everyday work, I use R, Python, H2O, and Spark. In this website I will be sharing many R and Python codes where I show how one can use these softwares to solve Machine Learning, Statistical Modeling, and Data Visualization problems. I would greatly appreciate all feedback, comments, and questions. 
 
-So feel free to [contact me](mailto:dhafer.malouche@yale.edu)
+So feel free to [contact me](mailto:dfmalouche@gmail.com)
 
 ---
 

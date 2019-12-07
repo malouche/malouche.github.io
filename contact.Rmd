@@ -4,20 +4,9 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-I'd love to hear from you, so feel free to reach out:
-
-Yale University<br>
-Department of Statistics and Data Science<br>
-Dunham Laboratory<br>
-[10 Hilhouse Avenue](https://www.google.com/maps/place/Dunham+Laboratory,+10+Hillhouase+Ave,+New+Haven,+CT+06511/@41.3125245,-72.9261899,17z/data=!4m5!3m4!1s0x89e7d9b642fc7fc3:0xac0f89b6ff8adee2!8m2!3d41.312315!4d-72.924484)<br>
-New Haven, CT 06511<br>
-
-You can also email at: dhafer.malouche@yale.edu<br>
+I'd love to hear from you, so feel free to reach out. You can also email at:  <a href="mailto:dfmalouche@gmail.com?subject=Hello!">email me</a> or follow me on GitHub, facebook, or Linkedin (links in top right).
 
 
-Or follow me on GitHub, facebook, or Linkedin (links in top right).
 
-
-<p>You can also <a href="mailto:dhafer.malouche@yale.edu?subject=Hello!">email me</a>. </p>
 
 
