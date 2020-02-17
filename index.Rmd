@@ -1,5 +1,5 @@
 ---
-title: Dhafer Malouche
+title: Dhafer Malouche 
 ---
 
 
@@ -7,15 +7,17 @@ title: Dhafer Malouche
 
 <script data-ad-client="ca-pub-2786012669830171" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<img src="IMG-1525.png" style="float: right; width:20%; border:1px solid; margin-right: 20px" align="left">
+<img src="IMG-1525.png" style="float: right; width:15%; border:1px solid; margin-right: 20px" align="left">
 
 
   
-# {.tabset .tabset-fade .tabset-pills}
 
-## About me
+---
 
-I’m Dhafer Malouche, a Professor at the <a href='http://www.essai.rnu.tn/accueil.htm'> Higher School of Statistics and Information Analysis,</a>  [University of Carthage](http://www.ucar.rnu.tn/Fr/) in Tunisia.
+
+I'm Dhafer Malouche, a Statistical Analyst, and I'm currently a Professor on leave from the <a href='http://www.essai.rnu.tn/accueil.htm'> Higher School of Statistics and Information Analysis,</a>  [University of Carthage](http://www.ucar.rnu.tn/Fr/) in Tunisia.
+
+I'm also a data lover as I consider working on issues related to numbers, and spreadsheets is a real passion for me. I like comparing the statistical analyst to the sculptor. In a statistical project, the analyst starts from raw data as a sculptor does with clay. They proceed by cleaning, managing, transforming, and modeling the data to unveil useful information that can deliver actionable solutions and strategies for businesses and decision-makers.
 
 
 
