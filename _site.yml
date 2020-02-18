@@ -7,22 +7,13 @@ navbar:
   - text: Home
     icon: fa-home
     href: index.html
-  - text: Teaching/Research
-    menu: 
-      - text: Time Series
-      - text: Graphical Models
-      - text: Bayesian Statistics
-      - text: PCA, Data Analysis
-  - text: R/Python Dev
-    menu: 
-      - text: R Dev
-      - text: Python Dev
-  - text: Talks
+  - text: Slides-Docs-Reports
     href: https://malouche.github.io/slidesOftalks/index.html
   - text: Stat-Apps
     href: https://malouche.github.io/statApps/.
   - text: CV
     href: https://malouche.github.io/myCV/
+    
   right:
   - icon: fa-envelope fa-lg
     href: contact.html
