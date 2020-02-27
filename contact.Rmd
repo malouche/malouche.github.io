@@ -4,7 +4,13 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-I'd love to hear from you, so feel free to reach out. You can also email at:  <a href="mailto:dfmalouche@gmail.com?subject=Hello!">email me</a> or follow me on GitHub, facebook, or Linkedin (links in top right).
+
+
+---
+
+
+
+I'd love to hear from you, so feel free to reach out. You can also email at:  <a href="mailto:dhafer.malouche@essai.u-carthage.tn?subject=Hello!">dhafer.malouche@essai.u-carthage.tn</a> or follow me on GitHub, facebook, or Linkedin (links in top right).
 
 
 
