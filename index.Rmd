@@ -10,7 +10,12 @@ title: Dhafer Malouche
 <img src="IMG-1525.png" style="float: right; width:15%; border:1px solid; margin-right: 20px" align="left">
 
 
-  
+---
+
+<p align="center">
+**New: visit my webpage about the Covid-19, downlaod data, Dashboards and vizualisations:  https://malouche.github.io/covid19datanalysis/**
+</p>
+
 
 ---
 

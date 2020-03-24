@@ -9,8 +9,10 @@ navbar:
     href: index.html
   - text: Slides-Docs-Reports
     href: https://malouche.github.io/slidesOftalks/index.html
-  - text: Viz
+  - text: Data Viz
     href: vizu.html
+  - text: Covid-19
+    href:  https://malouche.github.io/covid19datanalysis/
   - text: Stat-Apps
     href: https://malouche.github.io/statApps/.
   - text: CV
