@@ -13,7 +13,7 @@ title: Dhafer Malouche
 ---
 
 <p align="center">
-**New: visit my webpage about the Covid-19, downlaod data, Dashboards and vizualisations:  https://malouche.github.io/covid19datanalysis/**
+**New: visit my website about the Covid19, Dashboards and vizualisations:  https://malouche.github.io/covid19data/**
 </p>
 
 
