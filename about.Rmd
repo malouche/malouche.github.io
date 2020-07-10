@@ -1,5 +1,10 @@
 ---
 title: "About This Website"
+output: 
+  html_document:
+    includes:
+       in_header: ga_script.html
+
 ---
 
 More about this website.

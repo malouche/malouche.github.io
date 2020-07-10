@@ -1,6 +1,10 @@
 ---
 title: "Vizualizations"
-output: html_document
+output: 
+  html_document:
+    includes:
+       in_header: ga_script.html
+
 ---
 
 <p align="center">

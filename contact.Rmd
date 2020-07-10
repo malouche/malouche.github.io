@@ -1,4 +1,9 @@
 ---
+output: 
+  html_document:
+    includes:
+       in_header: ga_script.html
+
 ---
 
 
