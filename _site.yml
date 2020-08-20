@@ -11,8 +11,6 @@ navbar:
     href: https://malouche.github.io/slidesOftalks/index.html
   - text: Data Viz
     href: vizu.html
-  - text: Covid-19
-    href: https://malouche.github.io/covid19data/
   - text: Stat-Apps
     href: https://malouche.github.io/statApps/.
   - text: CV
