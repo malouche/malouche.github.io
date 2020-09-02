@@ -28,9 +28,7 @@ output:
 ---
 
 
-I'm Dhafer Malouche, a Statistical Analyst, and I'm also a Professor from the <a href='http://www.essai.rnu.tn/accueil.htm'> Higher School of Statistics and Information Analysis,</a>  [University of Carthage](http://www.ucar.rnu.tn/Fr/) in Tunisia.
-
-I'm also a data lover as I consider working on issues related to numbers, and spreadsheets is a real passion for me. I like comparing the statistical analyst to the sculptor. In a statistical project, the analyst starts from raw data as a sculptor does with clay. They proceed by cleaning, managing, transforming, and modeling the data to unveil useful information that can deliver actionable solutions and strategies for businesses and decision-makers.
+I'm Dhafer Malouche, a Professor from the <a href='http://www.essai.rnu.tn/accueil.htm'> Higher School of Statistics and Information Analysis,</a>  [University of Carthage](http://www.ucar.rnu.tn/Fr/) in Tunisia.
 
 
 
