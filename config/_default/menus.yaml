@@ -1,0 +1,22 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+
+main:
+  - name: Biography
+    url: '#about'
+    weight: 10
+  - name: Covid-19 Tracking 
+    url: 'https://www.covidradar24.org/web/dhafer.malouche/home'
+    weight: 30
+  - name: Courses
+    url: courses/
+    weight: 40
+  - name: CV
+    url: uploads/resume.pdf
+    weight: 50 
+  - name: Contact
+    url: '#contact'
+    weight: 60
