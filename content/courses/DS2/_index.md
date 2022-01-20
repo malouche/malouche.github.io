@@ -28,7 +28,7 @@ Fundamentals of Python programming in the context of Data Science with a focus o
 
 
 
-{{< cta cta_text="Syllabus" cta_link="python" >}}
+{{< cta cta_text="Syllabus" cta_link="courses/" >}}
 
 
 

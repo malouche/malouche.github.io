@@ -58,8 +58,8 @@ edit_page:
     book: false
 show_related:
   book: true
-  page: false
-  post: false
+  page: true
+  post: true
   project: true
   publication: true
   event: true
@@ -69,7 +69,7 @@ docs_section_pager: true
 sharing: true
 copyright_license:
   enable: false
-  allow_derivatives: false
+  allow_derivatives: true
   share_alike: true
   allow_commercial: false
   notice: 'This work is licensed under {license}'
