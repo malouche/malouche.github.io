@@ -12,7 +12,7 @@ main:
     url: 'https://www.covidradar24.org/web/dhafer.malouche/home'
     weight: 30
   - name: Courses
-    url: 'courses/'
+    url: courses/
     weight: 40
   - name: CV
     url: uploads/resume.pdf

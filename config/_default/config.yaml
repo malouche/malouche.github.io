@@ -5,7 +5,7 @@ theme: "starter-hugo-academic"
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Dhafer Malouche # Website name
-baseurl: 'dhafermalouche.netlify.com/' # Website URL
+baseurl: 'https://61e87aec910d0b26b56d2def--dhafermalouche.netlify.app/' # Website URL
 copyright: "Dhafer Malouche &copy; {year}"
 
 ############################
