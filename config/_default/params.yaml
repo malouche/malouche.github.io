@@ -53,9 +53,9 @@ edit_page:
   content_dir: ''
   repo_branch: main
   editable:
-    page: false
+    page: true
     post: false
-    book: false
+    book: true
 show_related:
   book: true
   page: true
@@ -64,7 +64,7 @@ show_related:
   publication: true
   event: true
 reading_time: true
-section_pager: false
+section_pager: true
 docs_section_pager: true
 sharing: true
 copyright_license:
