@@ -1,5 +1,4 @@
 ---
-date: 2022-01-20T13:36:11+02:00
 linkTitle: Time Series with R
 summary:  Online Course at l’Université Paris-Dauphine, Campus Tunis.
 title: "\U0001F4CA Time series with R"

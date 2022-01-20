@@ -1,5 +1,4 @@
 ---
-date: 2022-01-30T13:36:11+02:00
 linkTitle: Fundamentals of Data Science II 
 summary: The American University in Cairo, Course DSCI 1412
 title: "\U0001F4CA Fundamentals of Data Science II"

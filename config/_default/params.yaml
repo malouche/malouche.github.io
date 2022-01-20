@@ -45,20 +45,20 @@ highlight_languages:
   - r
   - python
   - latex
-math: false
-diagram: false
-privacy_pack: false
+math: true
+diagram: true
+privacy_pack: true
 edit_page:
   repo_url: ''
   content_dir: ''
   repo_branch: main
   editable:
-    page: true
-    post: false
+    page: false
+    post: true
     book: true
 show_related:
   book: true
-  page: true
+  page: false
   post: true
   project: true
   publication: true

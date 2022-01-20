@@ -1,5 +1,4 @@
 ---
-date: 2022-01-30T13:36:11+02:00
 linkTitle: Statistical  Inference 
 summary: The American University in Cairo, Course MACT 3223
 title: "\U0001F4CA Statistical  Inference"
