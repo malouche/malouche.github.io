@@ -3,9 +3,11 @@ theme: "starter-hugo-academic"
 # Guide: https://wowchemy.com/docs/getting-started/
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+# https://61e87aec910d0b26b56d2def--dhafermalouche.netlify.app
+
 
 title: Dhafer Malouche # Website name
-baseurl: 'https://61e87aec910d0b26b56d2def--dhafermalouche.netlify.app/' # Website URL
+baseurl: 'https://dhafermalouche.net/' # Website URL
 copyright: "Dhafer Malouche &copy; {year}"
 
 ############################
