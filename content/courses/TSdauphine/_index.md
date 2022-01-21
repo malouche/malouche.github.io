@@ -26,7 +26,7 @@ Throughout the class, I will make use of several types of real world data. All o
 -  Exponential Smoothing Based Methods: Time series smoothing, first and second order smoothing, Modeling higher-order exponential
 smoothing
 
-{{< cta cta_text="Syllabus" cta_link="python" >}}
+{{< cta cta_text="Syllabus" cta_link="uploads/Syllabus_Time_Series_Dauphine_Tunis_2022.pdf" >}}
 
 
 
