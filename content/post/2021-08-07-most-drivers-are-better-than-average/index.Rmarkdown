@@ -1,0 +1,110 @@
+---
+title: Most Drivers are Better than Average
+author: Adam J Campbell
+date: '2020-07-20'
+slug: most-drivers-are-better-than-average
+categories: []
+tags: [analysis, driving, statistics] 
+subtitle: ''
+summary: 'Can most drivers be better than average?'
+authors: []
+#lastmod: '2021-08-07T19:55:05+12:00'
+featured: no
+aliases:
+   - /post/mostdriversbetterthanaverage/
+image:
+  caption: 'Number of citations drivers receive each year'
+  focal_point: 'Center'
+  preview_only: true
+  alt_text: ''
+projects: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+knitr::knit_hooks$set(plot = function(x,options) {
+      base = knitr::opts_knit$get('base.url')
+      if (is.null(base)) base = ''
+      alt = ifelse (is.null(options$alt),"",options$alt)
+      cap = ifelse (is.null(options$caption),"",options$caption)
+      if (alt != ""){
+        sprintf('![%s](%s%s "%s")', cap, base, x, alt)
+      } else {
+        sprintf('![%s](%s%s)', cap, base, x)  
+        }
+  })
+
+```
+
+*Update (14 Dec 2021):  Thank you to [William Medwid](https://www.williammedwid.com/) for reaching out and correcting  attribution errors that appeared this post.*
+
+Around 88% of American drivers considered themselves to be above average at driving, [according to a Swedish study published in 1981](https://doi.org/10.1016/0001-6918(81)90005-6https://doi.org/10.1016/0001-6918(81)90005-6). At face value this seems like a contradiction.  How could 88% of people be better than average? This has [often](https://www.psychologicalscience.org/news/motr/when-it-comes-to-driving-most-people-think-their-skills-are-above-average.html) [been used](
+https://www.smithlawco.com/blog/2017/december/do-most-drivers-really-think-they-are-above-aver/
+) as example of [Illusory superiority](https://en.wikipedia.org/wiki/Illusory_superiority#Driving_ability) where people over-rate their own ability and under-rate the abilities of others.  Illusory superiority is certainly a real effect and probably explains part of why American drivers rate themselves higher than Swedish drivers.  But what I want to demonstrate is that 88% percent of people rating themselves better than average is not an inherent contradiction.
+
+
+If you were to ask someone to rate their driving ability and why they felt that way, you might expect them to supply you with two compelling pieces of information to justify their decision: the number of accidents they have been involved in, and their number of traffic citations.  If someone were to tell you they are a good driver because they haven't had ticket or been involved in an accident, you might take that as evidence toward their driving ability.  After all, those two considerations can make a huge impact on a persons insurance rate.  
+
+Looking at data from New Zealand, there were around 3.4 million register drivers [as of 2015](https://www.nzta.govt.nz/resources/new-zealand-driver-licence-register-dlr-statistics/). As far as traffic incidents, there were 23,437 [citations issued during June 2019 - May 2020](https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/), issued to 16,772 distinct individuals.  
+
+The vast majority of drivers don't get a traffic citation in a given year.  Using this data, the average drive gets 0.007 citations in a given year[^1].
+
+[^1]: data for repeat citations is incomplete and does indicate how often individuals received multiple citations, only that they received more than one.  Here I have assumed if an individual received more than one citation they received 2 citations.  The effect is that the average represents a lower bound.
+
+
+```{r myplot, echo=FALSE, message=FALSE, warning=FALSE, caption='bar graph of number is driving ciations drivers recieve each year in New Zealand. 3.368 million recieve zero, 0.01 million recieve 1, and 0.007 million recieved 2+', noalt=''}
+
+purp_538 <- "#a848e3"
+blue_538 <- "#3fc1c9"
+pink_538 <- "#fc5185"
+total_drivers = 3384395
+total_citations = 23437
+unique_offenders = 16772
+
+library(extrafont)
+single_ticket = 2* unique_offenders - total_citations
+double_ticket = unique_offenders - single_ticket
+non_offenders = total_drivers - single_ticket - double_ticket
+
+average_ticket = (single_ticket + 2 * double_ticket)/total_drivers
+
+x <- data.frame("number_citations" = 0:2, "totals" = c(non_offenders,single_ticket,double_ticket ))
+
+library(ggplot2)
+ggplot(data = x, aes(x=as.character(number_citations), y=totals/ 10^6))+
+  geom_col(fill = blue_538, alpha = 0.8) +
+  geom_text(aes(x=as.character(number_citations), y=totals/ 10^6, label = round(totals/10^6,3), family = "Fira Mono"  ), nudge_y = 0.1) + 
+  theme_minimal() +
+  scale_x_discrete(labels = c("0" = "0", "1"= "1", "2"= "2+"))+ 
+  xlab("number of citations in a year") +
+  ylab("number of drivers (millions)") + 
+  ggtitle("How many driving citations drivers recieve each year in New Zealand") + 
+  theme(text=element_text(size=12,   family='Karla'))+
+  labs(caption = "Average number of citations: 0.007 per year\nData: nzta.govt.nz, police.govt.nz | Plot: @campbead")
+```
+
+We could also consider as similar case of the average number of kidneys.  [Around 1 out of 750 people](https://kidney.org.au/uploads/resources/life-with-a-single-kidney-fact-sheet.pdf) are born with only one kidney while the rest are born with two kidneys.  This means the "average" person only has 1.999 kidneys and thus, nearly everyone has an above average amount of kidneys.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, capation = 'Bar chart of percent of poeple with 1 and 2 kidneys.  0.1% of people have 1 kidney, while 99.9% of people have 2.', noalt=''}
+
+x <- data.frame("number_kidney" = 1:2, "totals" = c(1/750, 749/750 ))
+
+library(ggplot2)
+ggplot(data = x, aes(x=as.character(number_kidney), y=totals))+
+  geom_col(fill = blue_538, alpha = 0.8) +
+  geom_text(aes(x=as.character(number_kidney), y=totals, label = paste(round(totals*100,1), "%", sep =""), family = "Fira Mono"  ), nudge_y = 0.03) + 
+  theme_minimal() +
+  scale_y_continuous(labels = function(x) paste0(x*100, "%")) +
+  #scale_x_discrete(labels = c("0" = "0", "1"= "1", "2"= "2+"))+ 
+  xlab("number of kidneys") +
+  ylab("percent of people") + 
+  ggtitle("How many kindeys people have") + 
+  theme(text=element_text(size=12,   family='Karla'))+
+  labs(caption = "Average number of kidneys: 1.999 \nData: kidney.org.au | Plot: @campbead")
+```
+
+It is a common problem to confuse "average" with "most".  While the average person has 1.999 kidneys.  Most people have two kidneys and no one has 1.999 kidneys.  Likewise with drivers, the average person gets 0.007 citations in a year, but most get 0 citations.  
+
+There are many other factors that determine driving ability, than just the number of citations people receive, and these numbers don't consider things like time spent driving or distance driven.   But I would argue that number citations is a good baseline for considering driving ability and in broad-terms, not many people receive citations.  Therefore it seems that most drivers are better than average.  
+
