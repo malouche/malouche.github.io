@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: dhafermalouche.netlify.com/sitemap.xml
