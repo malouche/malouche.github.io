@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📊 Statistical  Inference | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/courses/statinfer/</link>
+      <atom:link href="https://dhafermalouche.net/courses/statinfer/index.xml" rel="self" type="application/rss+xml" />
+    <description>📊 Statistical  Inference</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright>
+    <image>
+      <url>https://dhafermalouche.net/courses/statinfer/featured.JPG</url>
+      <title>📊 Statistical  Inference</title>
+      <link>https://dhafermalouche.net/courses/statinfer/</link>
+    </image>
+    
+  </channel>
+</rss>
