@@ -25,8 +25,6 @@ This course provides a theoretical foundation for statistical inference. The thr
 - Methods   of estimation (the method of moments, the method of maximum likelihood)                                   - Hypothesis   testing (Elements of a statistical test, calculating, Types I and II error   probabilities, testing of hypotheses concerning mean(s), variance(s) and   proportion(s) 
 - Uniformly   most powerful and generalized likelihood ratio tests
 
-{{< cta cta_text="Syllabus" cta_link="python" >}}
-
 
 
 
