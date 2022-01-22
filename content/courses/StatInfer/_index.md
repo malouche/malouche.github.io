@@ -1,5 +1,5 @@
 ---
-date: "2022-01-30"
+date: "2022-01-20"
 linkTitle: Statistical  Inference 
 summary: The American University in Cairo, Course MACT 3223
 title: "\U0001F4CA Statistical  Inference"
