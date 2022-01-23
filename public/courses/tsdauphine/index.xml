@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>📊 Time series with R | Dhafer Malouche</title>
-    <link>https://dhafermalouche.net/courses/tsdauphine/</link>
-      <atom:link href="https://dhafermalouche.net/courses/tsdauphine/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/tsdauphine/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/tsdauphine/index.xml" rel="self" type="application/rss+xml" />
     <description>📊 Time series with R</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://dhafermalouche.net/courses/tsdauphine/featured.jpg</url>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/tsdauphine/featured.jpg</url>
       <title>📊 Time series with R</title>
-      <link>https://dhafermalouche.net/courses/tsdauphine/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/tsdauphine/</link>
     </image>
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开源 | Dhafer Malouche</title>
-    <link>https://dhafermalouche.net/tag/%E5%BC%80%E6%BA%90/</link>
-      <atom:link href="https://dhafermalouche.net/tag/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/%E5%BC%80%E6%BA%90/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     <description>开源</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>开源</title>
-      <link>https://dhafermalouche.net/tag/%E5%BC%80%E6%BA%90/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/%E5%BC%80%E6%BA%90/</link>
     </image>
     
     <item>
       <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>https://dhafermalouche.net/post/getting-started/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/getting-started/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/post/getting-started/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/getting-started/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;

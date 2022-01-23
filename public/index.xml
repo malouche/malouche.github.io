@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dhafer Malouche</title>
-    <link>https://dhafermalouche.net/</link>
-      <atom:link href="https://dhafermalouche.net/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <description>Dhafer Malouche</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>Dhafer Malouche</title>
-      <link>https://dhafermalouche.net/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/</link>
     </image>
     
     <item>
       <title>Example Talk</title>
-      <link>https://dhafermalouche.net/talk/example-talk/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/talk/example-talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/talk/example-talk/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/talk/example-talk/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -34,33 +34,33 @@
     
     <item>
       <title>Estimating Excess Mortality Associated with COVID-19 Pandemic. A 151 Cross-countries Study.</title>
-      <link>https://dhafermalouche.net/publication/excessmortality/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/excessmortality/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/excessmortality/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/excessmortality/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Impact of contact tracing, respect of isolation, and lockdown in reducing the number of cases infected with COVID-19. Case study, Tunisia&#39;s response from March 22 to May 4, 2020</title>
-      <link>https://dhafermalouche.net/publication/impactcovid/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/impactcovid/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/impactcovid/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/impactcovid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Implications of Faithfulness in Graphical Models</title>
-      <link>https://dhafermalouche.net/publication/faithful2021/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/faithful2021/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/faithful2021/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/faithful2021/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>https://dhafermalouche.net/post/getting-started/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/getting-started/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/post/getting-started/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/getting-started/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
@@ -115,11 +115,11 @@
     
     <item>
       <title>Hello R Markdown</title>
-      <link>https://dhafermalouche.net/post/2020-12-01-r-rmarkdown/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      <guid>https://dhafermalouche.net/post/2020-12-01-r-rmarkdown/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/2020-12-01-r-rmarkdown/</guid>
       <description>
-&lt;script src=&#34;https://dhafermalouche.net/post/2020-12-01-r-rmarkdown/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/2020-12-01-r-rmarkdown/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
@@ -155,7 +155,7 @@ pie(
   init.angle = -50, border = NA
 )&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://dhafermalouche.net/post/2020-12-01-r-rmarkdown/index.en_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/2020-12-01-r-rmarkdown/index.en_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 1: A fancy pie chart.
 &lt;/p&gt;
@@ -166,9 +166,9 @@ Figure 1: A fancy pie chart.
     
     <item>
       <title>Writing technical content in Academic</title>
-      <link>https://dhafermalouche.net/post/writing-technical-content/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/post/writing-technical-content/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/writing-technical-content/</guid>
       <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
@@ -192,7 +192,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-126453879&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-469238571&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -202,7 +202,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-126453879&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-469238571&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -430,9 +430,9 @@ You found me!
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>https://dhafermalouche.net/post/jupyter/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/post/jupyter/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/jupyter/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
 Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -494,9 +494,9 @@ date: 2019-09-01
     
     <item>
       <title>Slides</title>
-      <link>https://dhafermalouche.net/slides/example/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/slides/example/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -623,17 +623,17 @@ $$&lt;/p&gt;
     
     <item>
       <title>External Project</title>
-      <link>https://dhafermalouche.net/project/external-project/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/project/external-project/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internal Project</title>
-      <link>https://dhafermalouche.net/project/internal-project/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/internal-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/project/internal-project/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/internal-project/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
@@ -644,9 +644,9 @@ $$&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>https://dhafermalouche.net/admin/config.yml</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/admin/config.yml</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/admin/config.yml</guid>
       <description></description>
     </item>
     

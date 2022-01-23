@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent &amp; Upcoming Talks | Dhafer Malouche</title>
-    <link>https://dhafermalouche.net/event/</link>
-      <atom:link href="https://dhafermalouche.net/event/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/event/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/event/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>https://dhafermalouche.net/event/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/event/</link>
     </image>
     
     <item>
       <title>Example Talk</title>
-      <link>https://dhafermalouche.net/talk/example-talk/</link>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/talk/example-talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/talk/example-talk/</guid>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/talk/example-talk/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
