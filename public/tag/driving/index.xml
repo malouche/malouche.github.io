@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>driving | Dhafer Malouche</title>
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/driving/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/driving/index.xml" rel="self" type="application/rss+xml" />
+    <description>driving</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Mon, 20 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>driving</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/driving/</link>
+    </image>
+    
+    <item>
+      <title>Most Drivers are Better than Average</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/mostdriversbetterthanaverage/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/mostdriversbetterthanaverage/</guid>
+      <description>
+
+
+&lt;p&gt;Around 88% of American drivers consider themselves to be above average at driving, &lt;a href=&#34;https://www.psychologicalscience.org/news/motr/when-it-comes-to-driving-most-people-think-their-skills-are-above-average.html&#34;&gt;according to Psychological scientists at New York University&lt;/a&gt;. At face value this seems like a contradiction. How could 88% of people be better than average? This is &lt;a href=&#34;https://www.treehugger.com/survey-finds-percent-americans-think-they-are-terrific-drivers-theyre-not-4856599&#34;&gt;often&lt;/a&gt; &lt;a href=&#34;https://www.smithlawco.com/blog/2017/december/do-most-drivers-really-think-they-are-above-aver/&#34;&gt;been used&lt;/a&gt; as example of &lt;a href=&#34;https://en.wikipedia.org/wiki/Illusory_superiority#Driving_ability&#34;&gt;Illusory superiority&lt;/a&gt; where people over-rate their own ability and under-rate the abilities of others. Illusory superiority is certainly a real effect and probably explains part of why American drivers rate themselves higher than Swedish drivers. But what I want to demonstrate is that 88% percent of people rating themselves better than average is not an inherent contradiction.&lt;/p&gt;
+&lt;p&gt;If you were to ask someone to rate their driving ability and why they felt that way, you might expect them to supply you with two compelling pieces of information to justify their decision: the number of accidents they have been involved in, and their number of traffic citations. If someone were to tell you they are a good driver because they haven’t had ticket or been involved in an accident, you might take that as evidence toward their driving ability. After all, those two considerations can make a huge impact on a persons insurance rate.&lt;/p&gt;
+&lt;p&gt;Looking at data from New Zealand, there were around 3.4 million register drivers &lt;a href=&#34;https://www.nzta.govt.nz/resources/new-zealand-driver-licence-register-dlr-statistics/&#34;&gt;as of 2015&lt;/a&gt;. As far as traffic incidents, there were 23,437 &lt;a href=&#34;https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/&#34;&gt;citations issued during June 2019 - May 2020&lt;/a&gt;, issued to 16,772 distinct individuals.&lt;/p&gt;
+&lt;p&gt;The vast majority of drivers don’t get a traffic citation in a given year. Using this data, the average drive gets 0.007 citations in a given year&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/MostDriversBetterThanAverage/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We could also consider as similar case of the average number of kidneys. &lt;a href=&#34;https://kidney.org.au/uploads/resources/life-with-a-single-kidney-fact-sheet.pdf&#34;&gt;Around 1 out of 750 people&lt;/a&gt; are born with only one kidney while the rest are born with two kidneys. This means the “average” person only has 1.999 kidneys and thus, nearly everyone has an above average amount of kidneys.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/MostDriversBetterThanAverage/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;It is a common problem to confuse “average” with “most”. While the average person has 1.999 kidneys. Most people have two kidneys and no one has 1.999 kidneys. Likewise with drivers, the average person gets 0.007 citations in a year, but most get 0 citations.&lt;/p&gt;
+&lt;p&gt;There are many other factors that determine driving ability, than just the number of citations people receive, and these numbers don’t consider things like time spent driving or distance driven. But I would argue that number citations is a good baseline for considering driving ability and in broad-terms, not many people receive citations. Therefore it seems that most drivers are better than average.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;data for repeat citations is incomplete and does indicate how often individuals received multiple citations, only that they received more than one. Here I have assumed if an individual received more than one citation they received 2 citations. The effect is that the average represents a lower bound.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

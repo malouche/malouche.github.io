@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geography | Dhafer Malouche</title>
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/geography/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/geography/index.xml" rel="self" type="application/rss+xml" />
+    <description>geography</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>geography</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/geography/</link>
+    </image>
+    
+    <item>
+      <title>Different ways to slice the Earth.</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/hemispheres/</link>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/hemispheres/</guid>
+      <description>
+
+
+&lt;p&gt;One interesting feature of the Earth is the asymmetry in land distribution. The northern hemisphere contains about 67% of the Earth’s land, while the southern hemisphere contains 33%.&lt;/p&gt;
+&lt;p&gt;I was wondering if the distribution of land across the northern and southern hemispheres was unique. To explore this, I randomly generated 100 great circles that each cut the Earth into 2 equal hemispheres.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/one_hundred_slices.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I then calculated the land area percent fraction for each hemisphere for each of my 100 randomly generated Earth slices. We can look at how common the Earth’s land distribution is compared to other’s that could be achieved.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/hemisphere_dist.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;It’s clear by looking at the graph that the current distribution is actually quite common. Some configurations result in 50-50 northern-southern hemisphere land distribution, but they are less common than the ~70-30 we have on Earth.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

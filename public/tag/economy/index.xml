@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Economy | Dhafer Malouche</title>
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/economy/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/economy/index.xml" rel="self" type="application/rss+xml" />
+    <description>Economy</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>Economy</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/economy/</link>
+    </image>
+    
+    <item>
+      <title>Les crédits votés  par  les députés tunisiens   de Novembre 2012 à Mars 2019</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/creditstunisie/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/creditstunisie/</guid>
+      <description>
+&lt;script src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/creditstunisie/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Les graphiques sont basés sur des données collectées à partir du site de &lt;a href=&#34;https://majles.marsad.tn&#34;&gt;&lt;/a&gt; de l’organisation Al Bawsala &lt;a href=&#34;http://www.albawsala.com/ar/&#34;&gt;&lt;/a&gt;.
+Les données concernent la période de 2012 à 2019 qui correspondant aux périodes parlementaires ANC et ANP.
+Les crédits comptabilisées ici sont ceux votés à l’ANC (2012-2014) et à l’ARP (2014-2019).
+Les montant sont tous exprimés en USD&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1642946475371&#39; style=&#39;position: relative&#39;&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;CrditsVotsTunisie&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en-US&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1642946475371&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    if ( divElement.offsetWidth &gt; 800 ) { vizElement.style.width=&#39;100%&#39;;vizElement.style.maxWidth=&#39;1450px&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;vizElement.style.maxHeight=&#39;1587px&#39;;} else if ( divElement.offsetWidth &gt; 500 ) { vizElement.style.width=&#39;100%&#39;;vizElement.style.maxWidth=&#39;1450px&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;vizElement.style.maxHeight=&#39;1587px&#39;;} else { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=&#39;1577px&#39;;}                     var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

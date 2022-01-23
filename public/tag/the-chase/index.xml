@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Chase | Dhafer Malouche</title>
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/the-chase/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/the-chase/index.xml" rel="self" type="application/rss+xml" />
+    <description>The Chase</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>The Chase</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/the-chase/</link>
+    </image>
+    
+    <item>
+      <title>The Chase</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/the_chase_1/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/the_chase_1/</guid>
+      <description>
+
+
+&lt;div id=&#34;the-project&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The project&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Chase_(British_game_show)&#34;&gt;The Chase&lt;/a&gt; is a British quiz show running since 2009. Players answer quiz questions to compete as a team against a quiz master, called the Chaser. The game consists of three main sections: the Cash Builder, the Head-to-Head and the Final Chase. This post is the first in a series of exploring statistics of the Chase. In this post, I’ll be exploring the Cash Builder scores and how those scores influence performance during the Head-to-Head round. If you aren’t familiar with the Chase, the &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Chase_(British_game_show)#Gameplay&#34;&gt;Gameplay&lt;/a&gt; section of the Wikipedia page has a good overview.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data&lt;/h2&gt;
+&lt;p&gt;Data for The Chase has been meticulously compiled on &lt;a href=&#34;http://onequestionshootout.xyz/&#34;&gt;One Question Shootout!&lt;/a&gt;, (&lt;a href=&#34;https://twitter.com/OneQnShootout&#34;&gt;Twitter&lt;/a&gt;). This website has catalogued a massive amount of data for The Chase’s 14 (current) seasons. There is data on each game: if the player or the chaser won, who the chaser was, total prize fund and much more. For each player, there is data on their performance in the Cash Builder, the Head-to-Head, the Final Chase.&lt;/p&gt;
+&lt;p&gt;The data has been scraped and processed using a script available my &lt;a href=&#34;https://github.com/campbead&#34;&gt;GitHub&lt;/a&gt; &lt;a href=&#34;https://github.com/campbead/thechase/blob/master/ETL.R&#34;&gt;The Chase repo&lt;/a&gt;.&lt;/p&gt;
+&lt;div id=&#34;the-data-we-dont-have&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The data we don’t have&lt;/h3&gt;
+&lt;p&gt;Unfortunately, there isn’t data on individual data on individual questions. We don’t know what questions were asked, or even how many questions are asked during Cash Builder, Head to Head, and the Final Chase.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;cash-builder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Cash Builder&lt;/h2&gt;
+&lt;p&gt;Each player in the show competes in the Cash Builder to increase the overall pot size for the Final Chase, with the correct answer in this phase being worth £1,000. At present this analysis has 6840 data points for Cash Builder performance.&lt;/p&gt;
+&lt;p&gt;The figure below shows a median score for the Cash Builder to be 5. The distribution of correct answers is more-or-less bell-shaped, with over half of all players scoring between 4-6. The highest score ever is 14, and 0.6% have scored 0.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/correct_answer_distribution.png&#34; alt=&#34;Winning Percent&#34; /&gt;
+And an alternative way to look at this data is as a cumulative probability graph seen below. What this figure shows is that just under 80% of players scoring 6 or less during this phase, and therefore any player 7 or greater is in the top ~20% of all players. I will go on to show how correct answers in the cash builder can predict performance in other parts of the game.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/correct_answer_distribution_cummulative.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;low-medium-high&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Low, Medium, High&lt;/h2&gt;
+&lt;p&gt;After the Cash Builder players are given the choice of a Higher, Lower, or Middle offer. The middle offer is always £1,000 for each correct answer in the Cash Builder. The Lower and Higher offers are always in fact, lower or higher than the middle offer. The exact amount of the higher and lower offers isn’t prescribed (but perhaps we can analyze what factors influence those in a future post).&lt;/p&gt;
+&lt;p&gt;Nearly 80 percent of players opt to take the middle offer.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/Offer_choice_frequency.png&#34; /&gt;
+The number of correct answers doesn’t appear to strongly influence the choice of offer with the distribution of offers not changing much based on the number of correct answers in the Cash Builder. The exceptions to this are at the extreme lower end, where Higher and Lower offers become increasingly more common, and at the extreme higher end, where middle offers are more likely.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/Offer_choice_frequency_by_correct_answer.png&#34; /&gt;
+The value of the higher offer does bear some influence over the choice of the offer, with higher offers above £70,000 becoming increasing more likely to be chosen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/How_enticing_is_the_higher_offer.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;doing-better-in-the-cash-builder-means-youll-do-better-in-the-head-to-head&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Doing better in the Cash Builder means you’ll do better in the Head-to-Head&lt;/h2&gt;
+&lt;p&gt;We can look at how likely players are to win their Head-to-Head based on the number of correct answers in the Cash Builder and the offer taken.
+Players are offered a higher offer and lower offer, in addition to the middle offer based on the correct answers during the Cash Builder.
+&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/WinningPCT_by_correct_and_offer.png&#34; alt=&#34;Winning&#34; /&gt;
+What is very clear here is the better a player does during the Cash Builder round, the better their chances of winning the Head-to-Head and that is true for a player taking any of the offers. A player taking a middle offer after answering 7 correct answers in the Cash Builder will have about a 70% chance of advancing into the Final Chase, whereas a player answering only 2 correct answers will only have about a 50% chance of advancing after taking a middle offer. It is also true picking the lower offer improves the player’s chances of winning the Head-to-Head by about 9% while picking the higher offer decreases the player’s chances of winning the Head-to-Head by about 20%.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Value of Low and High doesn’t affect win %
+We can also look at how the chance of winning the Head-to-Head is affected by the amount of the chosen offer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/WinningPCT_Lower.png&#34; alt=&#34;Winning Percent Lower&#34; /&gt;
+&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/WinningPCT_Middle.png&#34; alt=&#34;Winning Percent MIddle&#34; /&gt;
+&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/WinningPCT_Higher.png&#34; alt=&#34;Winning Percent Higher&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;What is clear in the above figures is the chance to win isn’t well correlated to the amount of the chosen offer, except for middle offer which is because is middle offer amount is directly proportional to the number of correct answers during Cash Builder round.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;future-topics&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Future topics&lt;/h2&gt;
+&lt;p&gt;This is an ongoing series, in future posts I’ll cover:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;factors influencing the choice of the higher, middle, and lower offers,&lt;/li&gt;
+&lt;li&gt;factors influencing the score in the Head-to-Head,&lt;/li&gt;
+&lt;li&gt;statistics of the Final Chase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

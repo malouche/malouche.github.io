@@ -9,13 +9,16 @@ main:
     weight: 10
   - name: Biography
     url: '#about'
-    weight: 20
+    weight: 40
   - name: Recent Publications
     url: '#publications'
     weight: 30
   - name: Courses
     url: 'courses/'
-    weight: 40
+    weight: 20
+  - name: Posts
+    url: '#posts'
+    weight: 30
   - name: CV
     url: "uploads/resume.pdf"
     weight: 50

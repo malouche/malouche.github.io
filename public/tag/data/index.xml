@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data | Dhafer Malouche</title>
+    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/data/</link>
+      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/data/index.xml" rel="self" type="application/rss+xml" />
+    <description>data</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Tue, 23 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>data</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/tag/data/</link>
+    </image>
+    
+    <item>
+      <title>Scraping Wikpedia Tables</title>
+      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/wikipedia_table_scrape/wikitablescrape/</link>
+      <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/wikipedia_table_scrape/wikitablescrape/</guid>
+      <description>
+
+
+&lt;p&gt;Want to know how get data from a &lt;a href=&#34;https://en.wikipedia.org/wiki/Main_Page&#34;&gt;Wikipedia&lt;/a&gt; table into your R script? Look no further.&lt;/p&gt;
+&lt;p&gt;I was recently attempting to scrape a table from Wikipedia. I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot). In my search, I came across this very helpful tweet from &lt;a href=&#34;https://twitter.com/juliasilge&#34;&gt;Julia Silge&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;library(rvest)&lt;br&gt;library(tidyverse)&lt;br&gt;&lt;br&gt;h &amp;lt;- read_html(&amp;quot;&lt;a href=&#34;https://t.co/gloY1eErBn&#34;&gt;https://t.co/gloY1eErBn&lt;/a&gt;&amp;quot;)&lt;br&gt;&lt;br&gt;reps &amp;lt;- h %&amp;gt;%&lt;br&gt;    html_node(&amp;quot;&lt;a href=&#34;https://twitter.com/hashtag/mw?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#mw&lt;/a&gt;-content-text &amp;gt; div &amp;gt; table:nth-child(18)&amp;quot;) %&amp;gt;%&lt;br&gt;    html_table()&lt;br&gt;&lt;br&gt;reps &amp;lt;- reps[,c(1:2,4:9)] %&amp;gt;%&lt;br&gt;    as_tibble() &lt;a href=&#34;https://t.co/25ANm7BHkj&#34;&gt;pic.twitter.com/25ANm7BHkj&lt;/a&gt;&lt;/p&gt;&amp;mdash; Julia Silge (@juliasilge) &lt;a href=&#34;https://twitter.com/juliasilge/status/951639629182074880?ref_src=twsrc%5Etfw&#34;&gt;January 12, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;This is great piece of quick code to scrape the data from the table. However this tweet is specific only to the example, and I want to generalize the code for any Wikipedia table.&lt;/p&gt;
+&lt;p&gt;I’m going to show you to scrape data from any Wikipedia table using Firefox browser and R (of course), although I’m sure this could be adapted to other browsers.&lt;/p&gt;
+&lt;p&gt;I’ll show how to change the above code into a code to scrape the table I was interested in, which was the &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign&#34;&gt;attendance size of Trump’s rallies&lt;/a&gt;. Here, I’d like to scrape the &lt;code&gt;Primary rallies (June 2015–June 2016)&lt;/code&gt; table.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/Wiki_trump_rallies.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The first thing to change is the &lt;code&gt;read_html()&lt;/code&gt; line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;read_html(&amp;quot;https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;all we need to here is update the hyperlink by copying the web address of the wikipedia page:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;read_html(&amp;quot;https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next thing to change is the &lt;code&gt;html_node()&lt;/code&gt; line. For this this you’ll have to know the tag of the table in the html code. To find this you’ll have to &lt;a href=&#34;https://www.lifewire.com/get-inspect-element-tool-for-browser-756549&#34;&gt;inspect the html code&lt;/a&gt; of the wikipedia page you’re looking at.&lt;/p&gt;
+&lt;p&gt;Inspect the table you’re interested in and you’ll see a line starting &lt;code&gt;&amp;lt;table class= ...&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/wikitable_example.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Right click on that line and select &lt;code&gt;Copy&lt;/code&gt; -&amp;gt; &lt;code&gt;XPath&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/img/copy_xcode.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;then update the with &lt;code&gt;html_node&lt;/code&gt; line, using the &lt;code&gt;xpath&lt;/code&gt; flag:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;html_node(xpath = &amp;#39;/html/body/div[3]/div[3]/div[4]/div/table[2]&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The end result should look like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(rvest)
+h &amp;lt;- read_html(&amp;quot;https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign&amp;quot;)
+
+rallies &amp;lt;- h %&amp;gt;%
+    html_node(xpath = &amp;#39;/html/body/div[3]/div[3]/div[5]/div[1]/table[2]&amp;#39;) %&amp;gt;%
+    html_table() %&amp;gt;%
+    as_tibble()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I hope this helps you quickly scrape any Wikipedia tables. Any improvements or suggestions? Comment down below.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

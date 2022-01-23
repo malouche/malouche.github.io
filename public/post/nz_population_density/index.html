@@ -1,0 +1,1472 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Dhafer Malouche" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Population density is easy to calculate, but sometimes misleading.  Is there a better way?" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L35F2QX4CF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-L35F2QX4CF', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Dhafer Malouche" />
+  <meta property="og:url" content="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/" />
+  <meta property="og:title" content="What is the population density of New Zealand? | Dhafer Malouche" />
+  <meta property="og:description" content="Population density is easy to calculate, but sometimes misleading.  Is there a better way?" /><meta property="og:image" content="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/featured.png" />
+    <meta property="twitter:image" content="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-06-16T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-06-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/"
+  },
+  "headline": "What is the population density of New Zealand?",
+  
+  "image": [
+    "https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/featured.png"
+  ],
+  
+  "datePublished": "2020-06-16T00:00:00Z",
+  "dateModified": "2020-06-16T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Dhafer Malouche"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dhafer Malouche",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Population density is easy to calculate, but sometimes misleading.  Is there a better way?"
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/osano/cookieconsent@3.1.1/build/cookieconsent.min.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/osano/cookieconsent@3.1.1/build/cookieconsent.min.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg==" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#1565c0",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#1565c0"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "https://www.cookiesandyou.com"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>What is the population density of New Zealand? | Dhafer Malouche</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="0323cb0640291679723422486d0c90e5" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.8f76bdc9e086322ed5147724ebba3d06.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Dhafer Malouche</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Dhafer Malouche</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+              
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="https://www.covidradar24.org/web/dhafer.malouche/home" target="_blank" rel="noopener"><span>Covid-19 Tracking</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Biography</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Recent Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/courses/"><span>Courses</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="/"  aria-label="">
+                <i class="fas fa-" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>What is the population density of New Zealand?</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jun 16, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="/rmarkdown-libs/core-js/shim.min.js"></script>
+<script src="/rmarkdown-libs/react/react.min.js"></script>
+<script src="/rmarkdown-libs/react/react-dom.min.js"></script>
+<script src="/rmarkdown-libs/reactwidget/react-tools.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/reactable-binding/reactable.js"></script>
+
+
+<p>Recently, it has been argued that New Zealand’s success with dealing with Covid-19 has been due, in part, to its low population density. New Zealand’s population density is around 17.7 people per square kilometer, but just how dense is that number? If New Zealand’s population density were compared to US states, New Zealand would down rank toward the bottom in terms of population density. However population density, as it is normally calculated is not necessarily the best representation of densely people live in a region, state, or nation. In fact, the average person in New Zealand lives in a place with a population density of 425.4 people per square kilometer. This measure of density, called a <a href="https://www.citylab.com/life/2018/02/theres-a-better-way-to-measure-population-density/552815/">lived density</a> is a better metric to evaluate population density.</p>
+<div id="lived-density-over-population-density" class="section level2">
+<h2>Lived density over population density</h2>
+<p>Lived density is the population density experienced by the average person in the region. For example the population density of New York State is 161 people per square-kilometer, but the average New York State resident lives in an area with 2,479 people per square-kilometer (the lived density). There are a number of different <a href="https://www.citylab.com/equity/2018/11/citylab-congressional-density-index/575749/">ways to</a> <a href="https://arxiv.org/pdf/2005.01167.pdf">compute</a> <a href="https://www.nytimes.com/2019/10/29/upshot/suburbs-demographics-red-blue.html">this</a> <a href="https://fivethirtyeight.com/features/how-urban-or-rural-is-your-state-and-what-does-that-mean-for-the-2020-election/">number</a>. Inspired by the following tweet from <a href="https://twitter.com/moultano">Ryan Moulton</a>, I computed the KL-divergence between the population distribution and the area distribution.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">This has a formal name. It&#39;s the KL-divergence between the distribution of people and the distribution of land across census tracts.</p>&mdash; Ryan Moulton (@moultano) <a href="https://twitter.com/moultano/status/1200500226177433600?ref_src=twsrc%5Etfw">November 29, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>I plan on going into detail on this a future post, in the meantime I’ve made the <a href="https://github.com/campbead/Urbanization_NZ">source code available for this calculation</a>.</p>
+</div>
+<div id="pinksvile-and-bluetopia" class="section level2">
+<h2>Pinksvile and Bluetopia</h2>
+<p>Let’s start by considering two hypothetical cities: Pinksville and Bluetopia. Both cities are exactly 25 square-kilometers in area, and both cites have 25 residents. Using a traditional measure of population density, where the total population is divided by the total area, these cities are indistinguishable. However, if you take a closer look at figure below you’ll notice these cities are quite different in their population structure.</p>
+<div id="population-distributions-for-pinksville-and-bluetopia" class="section level3">
+<h3>Population distributions for Pinksville and Bluetopia</h3>
+<p><img src="/img/popdensity.png" /></p>
+<p>In Pinksville, people are very spread apart - indeed in every single square-kilometer of Pinksville, resides exactly one person. This stands in contrast to Bluetopia, where the entire population lives in a 4 square-kilometer corner of the city, while the remainder of the city is uninhabited. It turns out that cities, states and countries have population distributions that resemble Bluetopia where people live in clusters more then they represent Pinksville where everyone is smoothly distributed. Lived density is a better measure because it represents the density for which most people experience.</p>
+</div>
+</div>
+<div id="how-new-zealand-ranks" class="section level2">
+<h2>How New Zealand ranks</h2>
+<p>I’ve computed the population density, lived density, and density ratio for all 50 US states and New Zealand. This is an <a href="https://glin.github.io/reactable/">interactive table</a> so you’ll be able to sort by the different columns as you desire.</p>
+<div id="population-density-lived-density-and-their-ratio" class="section level3">
+<h3>Population density, lived density, and their ratio</h3>
+<p><div id="htmlwidget-1" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"STATE":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","New Zealand","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"state_pop":[4864680,738516,6946685,2990671,39148760,5531141,3581504,949495,20598139,10297484,1422029,1687809,12821497,6637426,3132499,2908776,4440204,4663616,1332813,6003435,6830126,9957488,5527358,2988762,6090062,1041732,1904760,2922849,1343622,8881845,2092434,19618453,4699494,10155624,752201,11641879,3918137,4081943,12791181,1056611,4955925,864289,6651089,27885195,3045350,624977,8413774,7294336,1829054,5778394,581836],"state_land_area":[131174.048583,1478839.695958,294198.551143,134768.872727,403503.931312,268422.891711,12542.497068,5045.925646,138949.13625,149482.048342,16633.990195,214049.787659,143780.567633,92789.302676,144661.267977,211755.34406,102279.490672,111897.594374,79887.426037,25151.10028,20205.125364,146600.95299,206228.939448,121533.519481,178050.802184,376962.738765,198956.658395,284329.50647,23189.413166,19047.82598,314196.306401,122049.149763,264924.19380113,125923.656064,178707.534813,105828.882568,177662.925723,248606.99327,115884.442321,2677.779902,77864.918488,196346.981786,106802.728188,676653.171537,212886.22168,23874.175944,102257.71711,172112.58822,62266.474513,140290.039723,251458.544898],"population_density_land":[37.085689223977,0.499388812741861,23.6122338910617,22.1911108958978,97.0220039063985,20.6060703867059,285.549518615203,188.170628465896,148.242296108552,68.8877635422843,85.489349418244,7.88512344935762,89.1740602438494,71.5322327960201,21.6540269818321,13.7364939379089,43.4124570901442,41.6775358406062,16.6836392924051,238.694726400256,338.039278497594,67.9223961162055,26.802048319672,24.5920797222305,34.2040694301756,2.76348798667186,9.57374342415005,10.2797948629661,57.9411816237765,466.291796729235,6.65963907713633,160.742234076156,17.7390140650112,80.6490560823493,4.20911743193763,110.006632570457,22.0537683034045,16.4192605618572,110.378759597155,394.584707731517,63.647726039343,4.40184510165781,62.2745234400042,41.2104696659583,14.305059181226,26.1779506637618,82.2800883668192,42.3811882410143,29.3746195574013,41.1889112827206,2.31384461496829],"lived_density":[138.768489850384,69.0603791595432,618.417523816657,84.3711148574602,1718.3901618053,500.93140982248,739.66832927212,587.455133944451,885.999642657008,271.092010330548,1087.69148031111,144.889839052908,901.981058733295,310.178967751854,110.006224511306,160.165423567838,149.66646688173,327.644097894803,79.2538194783831,970.50756047917,1200.74811651632,429.545559406309,265.971911258191,99.6343434626691,238.815801019492,28.4525831075187,211.005746415347,960.259700606358,180.993979572994,1550.54475447699,164.223215739095,2478.88427162381,425.390975226308,242.339435550002,86.6288439621428,514.807873020688,169.550107966696,345.054223607448,653.141253224336,1160.50868929561,199.709075001467,54.9489876134793,206.223648326485,536.738348047376,542.010986105795,59.1336701829914,473.401765754834,539.744828741786,81.9849142740373,289.497189921189,46.1886707313263],"density_ratio":[3.74183391907049,138.289800246769,26.1905555683469,3.80202303765949,17.7113447735331,24.3098951144833,2.59033295821756,3.12192789455939,5.9766994030383,3.93527088688469,12.7231226780044,18.375088225754,10.1148367167178,4.33621258036715,5.08017398350904,11.6598474320893,3.44754655491981,7.86140762131098,4.75039157160763,4.06589443811914,3.55209643640529,6.3240636957421,9.92356659035553,4.05148098851529,6.98208736556953,10.2958953484668,22.0400460997397,93.4123407526135,3.12375368435225,3.32526706528649,24.6594768630782,15.4214869904656,23.9805309171809,3.00486387965351,20.5812371270107,4.67978939988882,7.68803342966664,21.0152109047485,5.91727299353682,2.9410888626866,3.1377252170489,12.4831715665743,3.31152511388003,13.0243200914244,37.8894612905294,2.25891136179924,5.75353983146354,12.7354812628743,2.79101195213199,7.02852250534326,19.9618723022848]},"columns":[{"accessor":"STATE","name":"REGION","type":"character","defaultSortDesc":false,"align":"left","style":{"fontFamily":"Karla, Helvetica Neue, Helvetica, Arial, sans-serif","fontSize":"13.5px","whiteSpace":"pre","color":"black"},"width":120,"headerStyle":{"color":"black"}},{"accessor":"state_pop","name":"POPULATION","type":"numeric","defaultSortDesc":true,"align":"right","style":{"fontFamily":"Fira Mono, Consolas,                                                         Monaco, monospace","fontSize":"13.5px","whiteSpace":"pre","color":"black"},"format":{"cell":{"digits":0,"separators":true},"aggregated":{"digits":0,"separators":true}},"headerStyle":{"color":"black"}},{"accessor":"state_land_area","name":"AREA","type":"numeric","defaultSortDesc":true,"align":"right","style":{"width":"50px","fontFamily":"Fira Mono, Consolas, Monaco, monospace","fontSize":"13.5px","whiteSpace":"pre","paddingRight":"30px","color":"black"},"format":{"cell":{"digits":0,"separators":true},"aggregated":{"digits":0,"separators":true}},"headerStyle":{"paddingRight":"30px","color":"black"}},{"accessor":"population_density_land","name":"POPULATION DENSITY","type":"numeric","defaultSortDesc":true,"align":"right","style":{"width":"50px","fontFamily":"Fira Mono, Consolas, Monaco, monospace","fontSize":"13.5px","whiteSpace":"pre","color":"black"},"format":{"cell":{"digits":1,"separators":true},"aggregated":{"digits":1,"separators":true}},"cell":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["37.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"7.9533222510264%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["0.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"0.107097919424014%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["23.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"5.06383214474022%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["22.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"4.75906096816533%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["97.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"20.8071436355843%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["20.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"4.41913637152647%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["285.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"61.2383749013315%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["188.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"40.354694160567%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["148.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"31.7917443858942%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["68.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"14.7735310862194%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["85.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"18.3338737712956%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["7.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"1.69102770082321%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["89.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"19.1240894369906%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["71.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"15.3406586385986%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["21.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"4.64387903319819%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["13.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"2.9459008359706%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["43.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"9.31014815071962%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["41.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"8.93808043224217%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["16.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"3.57793969557927%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["238.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"51.1899904897663%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["338.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"72.4952231346858%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["67.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"14.5665003314752%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["26.8"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"5.74791332544829%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["24.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"5.27396790909245%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["34.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"7.33533587124998%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["2.8"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"0.592652070239304%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["9.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"2.05316574113126%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["10.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"2.20458411129531%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["57.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"12.425949165351%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["466.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"100%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["6.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"1.42821278946999%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["160.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"34.4724559178757%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["17.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"3.80427324465926%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["80.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"17.2958342068326%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["4.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"0.902678850767296%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["110.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"23.5918009585605%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["22.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"4.72960675227375%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["16.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"3.52124156526636%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["110.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"23.6716065715497%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["394.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"84.6218420524012%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["63.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"13.6497631924462%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["4.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"0.94401083882114%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["62.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"13.3552689274878%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["41.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"8.83791436071269%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["14.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"3.06783419343159%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["26.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"5.61407059857901%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["82.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"17.6456221070081%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["42.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"9.08898430945893%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["29.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"6.29962177405803%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["41.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"8.83329099324432%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["2.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#fc5185","width":"0.496222457954132%","height":"16px"}},"children":[]}]}]}],"headerStyle":{"textAlign":"left","color":"black"}},{"accessor":"lived_density","name":"LIVED DENSITY","type":"numeric","defaultSortDesc":true,"align":"right","style":{"fontFamily":"Fira Mono, Consolas,                                                         Monaco, monospace","fontSize":"13.5px","whiteSpace":"pre","color":"black"},"format":{"cell":{"digits":0,"separators":true},"aggregated":{"digits":0,"separators":true}},"cell":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["138.8"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"5.59802211982581%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["69.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"2.78594607864871%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["618.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"24.9474140804305%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["84.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"3.40359232672819%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["1718.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"69.3211127875546%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["500.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"20.2079385293102%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["739.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"29.838760031649%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["587.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"23.6983686842159%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["886.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"35.7418719703533%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["271.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"10.9360494732966%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["1087.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"43.8782678466311%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["144.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"5.84496181251725%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["902.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"36.3865739541945%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["310.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"12.5128458517617%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["110.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"4.43773135238966%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["160.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"6.46119003623028%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["149.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"6.03765446394519%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["327.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"13.2174019435033%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["79.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"3.19715689778721%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["970.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"39.1509830284829%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["1200.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"48.4390550321963%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["429.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"17.3281812436097%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["266.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"10.7295009413233%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["99.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"4.01932210402879%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["238.8"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"9.63400364241505%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["28.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"1.14779796028479%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["211.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"8.51212575071631%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["960.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"38.737576884835%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["181.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"7.30142918105785%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["1550.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"62.5501066034555%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["164.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"6.62488433280182%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["2478.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"100%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["425.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"17.1605822867903%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["242.3"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"9.77614963006141%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["86.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"3.4946707659489%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["514.8"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"20.7677251783706%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["169.6"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"6.83977505152472%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["345.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"13.9197391163976%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["653.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"26.3481946576106%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["1160.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"46.8157671812331%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["199.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"8.05640978433598%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["54.9"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"2.21668224864263%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["206.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"8.31921242500748%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["536.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"21.6524165404374%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["542.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"21.8651186063941%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["59.1"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"2.38549539645332%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["473.4"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"19.0973726032288%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["539.7"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"21.7737001650432%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["82.0"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"3.30733125432807%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["289.5"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"11.6785278455759%","height":"16px"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[{"name":"div","attribs":{"style":{"width":"40px"}},"children":["46.2"]},{"name":"div","attribs":{"style":{"flexGrow":1,"marginLeft":"16px","background":null}},"children":[{"name":"div","attribs":{"style":{"background":"#3fc1c9","width":"1.86328467448261%","height":"16px"}},"children":[]}]}]}],"headerStyle":{"textAlign":"left","color":"black"}},{"accessor":"density_ratio","name":"RATIO","type":"numeric","defaultSortDesc":true,"align":"right","style":{"fontFamily":"Fira Mono, Consolas, Monaco, monospace","fontSize":"13.5px","whiteSpace":"pre","color":"black"},"format":{"cell":{"digits":1,"separators":true},"aggregated":{"digits":1,"separators":true}},"width":60,"headerStyle":{"color":"black"}}],"defaultSorted":[{"id":"lived_density","desc":true}],"defaultPageSize":51,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"compact":true,"showSortIcon":false,"theme":{"borderColor":"#dfe2e5","stripedColor":"#f6f8fa","highlightColor":"#f0f5f9","cellPadding":"8px 12px","style":{"fontFamily":"Karla, Helvetica Neue, Helvetica, Arial, sans-serif","margin":"0px auto auto auto","fontSize":"13px","width":"720px"},"searchInputStyle":{"width":"100%"}},"dataKey":"05cd33ebdeb395c071b5d7b8ed5c9917"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+*areas are in km<sup>2</sup> and densities are in people/km<sup>2</sup>, Ratio is lived density divided by population density.</p>
+<p>By inspecting the ratio between the lived density and population density, some states stand out. Alaska has a lived density that is over one hundred times its population density. At the other end, Vermont only has a lived density just over twice its population density. It’s worth noting that the this ratio can never be less than one. A ratio of one would mean the population is perfectly spread out of over the state, like the Pinksville example.</p>
+</div>
+<div id="ranking-states-by-density-vs-lived-density" class="section level3">
+<h3>Ranking states by density vs lived density</h3>
+<p>We can compare the relative way ranking changes in population density vs lived density in the slopegraph below.
+<img src="/img/beautiful_plot.png" />
+By pure population density, New Jersey is the most densely populated state. However in terms of lived density, New York ranks at the top.</p>
+<p>Many states rankings don’t change much going from population density measure to a lived density, but there are some major changes here. Most notable is Nevada that goes from nearly the bottom in terms of population density to near the top for the lived density rankings. New Zealand is included in this ranking and rises a considerable number of places.</p>
+</div>
+<div id="spatial-patterns-in-lived-density-ratio" class="section level3">
+<h3>Spatial patterns in lived density ratio</h3>
+<p>If we map the spatial pattern in the lived density ratio, we can see that Western states are have a larger ratio than Eastern states. Here I use a logarithmic scale of density ratio to color the map, which I call the density factor.</p>
+<p><img src="/img/density_ratio_map.png" />
+This density factor gives a measure of how clustered the population is versus how spread out the population is. Lower density factors mean the population of the region is more evenly distributed (like Pinksville), while higher numbers mean the population is more clustered like (like Bluetopia). Largely, states in the Western USA are more clustered than the Eastern USA states.</p>
+</div>
+<div id="takeaways" class="section level3">
+<h3>Takeaways</h3>
+<ul>
+<li><p>Lived density is a better way of computing population density when what you care about is how many people the average person lives near. Which is probably the case for modeling disease spread.</p></li>
+<li><p>If New Zealand were a US State it would rank near the middle in terms of lived density and near the bottom in terms of population density.</p></li>
+<li><p>The ratio of lived density to population density gives a measure of how clustered people live in a region.</p></li>
+</ul>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/rstats/">rstats</a>
+  
+  <a class="badge badge-light" href="/tag/sf/">sf</a>
+  
+  <a class="badge badge-light" href="/tag/geospatial/">geospatial</a>
+  
+  <a class="badge badge-light" href="/tag/ggplot2/">ggplot2</a>
+  
+  <a class="badge badge-light" href="/tag/reactable/">reactable</a>
+  
+  <a class="badge badge-light" href="/tag/population-density/">population density</a>
+  
+  <a class="badge badge-light" href="/tag/new-zealand/">New Zealand</a>
+  
+  <a class="badge badge-light" href="/tag/usa/">USA</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/&amp;text=What%20is%20the%20population%20density%20of%20New%20Zealand?" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/&amp;t=What%20is%20the%20population%20density%20of%20New%20Zealand?" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=What%20is%20the%20population%20density%20of%20New%20Zealand?&amp;body=https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/&amp;title=What%20is%20the%20population%20density%20of%20New%20Zealand?" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=What%20is%20the%20population%20density%20of%20New%20Zealand?%20https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/nz_population_density/&amp;title=What%20is%20the%20population%20density%20of%20New%20Zealand?" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/dhafer-malouche/avatar_hu1aa815faf11ca17e6838200767487ccc_48959_270x270_fill_q75_lanczos_center.jpg" alt="Dhafer Malouche"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/">Dhafer Malouche</a></h5>
+      <h6 class="card-subtitle">Professor of Statistics</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="fas fa-"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=rLJsvjUAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/malouche" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/dhafer-malouche-b54629b/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/hemispheres/">Different ways to slice the Earth.</a></li>
+      
+      <li><a href="/post/howdunedingetstowork/">How Dunedin Gets to Work</a></li>
+      
+      <li><a href="/post/mostdriversbetterthanaverage/">Most Drivers are Better than Average</a></li>
+      
+      <li><a href="/post/wikipedia_table_scrape/wikitablescrape/">Scraping Wikpedia Tables</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Dhafer Malouche © 2022
+  </p>
+  
+
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0" rel="noopener noreferrer" target="_blank">CC BY NC SA 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-sa fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.1cb9e2fc8399acee94eab837265b73bf.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.247fd8f54253895301106e3006f53f38.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
