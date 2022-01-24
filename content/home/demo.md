@@ -33,7 +33,7 @@ Welcome to my website. I will be sharing my recent courses materials, papers, pr
 
 I use R, Python, H2O, and Spark for my everyday work. On this website, I will be sharing many R and Python codes where I show how one can use this software to solve Machine Learning, Statistical Modeling, and Data Visualization problems. I would greatly appreciate all feedback, comments, and questions.
 
-I also like building Shiny apps and Statistical Dashboard. I have recently created a [Covid-19](https://www.covidradar24.org/web/dhafer.malouche/home) tracking website where you can learn about the [Covid-19](https://www.covidradar24.org/web/dhafer.malouche/home) outbreak in the world and more than 230 locations (countries, regions, territories..).
+I have recently built a [Covid-19](https://www.covidradar24.org/web/dhafer.malouche/home) tracking website where you can learn about the [Covid-19](https://www.covidradar24.org/web/dhafer.malouche/home) outbreak in the world and more than 230 locations (countries, regions, territories..).
 
 
 
