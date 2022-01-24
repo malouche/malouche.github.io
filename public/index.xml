@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dhafer Malouche</title>
-    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/</link>
-      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://dhafermalouche.net/</link>
+      <atom:link href="https://dhafermalouche.net/index.xml" rel="self" type="application/rss+xml" />
     <description>Dhafer Malouche</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>Dhafer Malouche</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/</link>
+      <link>https://dhafermalouche.net/</link>
     </image>
     
     <item>
       <title>Example Talk</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/talk/example-talk/</link>
+      <link>https://dhafermalouche.net/talk/example-talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/talk/example-talk/</guid>
+      <guid>https://dhafermalouche.net/talk/example-talk/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -34,35 +34,61 @@
     
     <item>
       <title>Estimating Excess Mortality Associated with COVID-19 Pandemic. A 151 Cross-countries Study.</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/excessmortality/</link>
+      <link>https://dhafermalouche.net/publication/excessmortality/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/excessmortality/</guid>
+      <guid>https://dhafermalouche.net/publication/excessmortality/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Impact of contact tracing, respect of isolation, and lockdown in reducing the number of cases infected with COVID-19. Case study, Tunisia&#39;s response from March 22 to May 4, 2020</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/impactcovid/</link>
+      <link>https://dhafermalouche.net/publication/impactcovid/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/impactcovid/</guid>
+      <guid>https://dhafermalouche.net/publication/impactcovid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Implications of Faithfulness in Graphical Models</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/faithful2021/</link>
+      <link>https://dhafermalouche.net/publication/faithful2021/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/publication/faithful2021/</guid>
+      <guid>https://dhafermalouche.net/publication/faithful2021/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Les crédits votés  par  les députés tunisiens   de Novembre 2012 à Mars 2019</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/creditstunisie/</link>
-      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/creditstunisie/</guid>
+      <title>Number of days the reach more than 100 COVID-19 confirmed cases</title>
+      <link>https://dhafermalouche.net/post/municipalelect/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/post/municipalelect/</guid>
       <description>
-&lt;script src=&#34;https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/post/creditstunisie/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://dhafermalouche.net/post/municipalelect/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1642992376892&#39; style=&#39;position: relative&#39;&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;path&#39; value=&#39;views&amp;#47;numberofdaysthereachmorethan100cases&amp;#47;ndays?:language=en-US&amp;amp;:embed=true&#39; /&gt; &lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en-US&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1642992376892&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;100%&#39;;vizElement.style.maxWidth=&#39;1650px&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;vizElement.style.maxHeight=&#39;1074px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Number of days the reach more than 100 COVID-19 confirmed cases</title>
+      <link>https://dhafermalouche.net/post/thousandcases/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/post/thousandcases/</guid>
+      <description>
+&lt;script src=&#34;https://dhafermalouche.net/post/thousandcases/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1642992376892&#39; style=&#39;position: relative&#39;&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;path&#39; value=&#39;views&amp;#47;numberofdaysthereachmorethan100cases&amp;#47;ndays?:language=en-US&amp;amp;:embed=true&#39; /&gt; &lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en-US&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1642992376892&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;100%&#39;;vizElement.style.maxWidth=&#39;1650px&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;vizElement.style.maxHeight=&#39;1074px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Les crédits votés  par  les députés tunisiens   de Novembre 2012 à Mars 2019</title>
+      <link>https://dhafermalouche.net/post/creditstunisie/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/post/creditstunisie/</guid>
+      <description>
+&lt;script src=&#34;https://dhafermalouche.net/post/creditstunisie/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;Les graphiques sont basés sur des données collectées à partir du site de &lt;a href=&#34;https://majles.marsad.tn&#34;&gt;&lt;/a&gt; de l’organisation Al Bawsala &lt;a href=&#34;http://www.albawsala.com/ar/&#34;&gt;&lt;/a&gt;.
@@ -75,9 +101,9 @@ Les montant sont tous exprimés en USD&lt;/p&gt;
     
     <item>
       <title>Slides</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/slides/example/</link>
+      <link>https://dhafermalouche.net/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/slides/example/</guid>
+      <guid>https://dhafermalouche.net/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -204,17 +230,17 @@ $$&lt;/p&gt;
     
     <item>
       <title>External Project</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/external-project/</link>
+      <link>https://dhafermalouche.net/project/external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/external-project/</guid>
+      <guid>https://dhafermalouche.net/project/external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internal Project</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/internal-project/</link>
+      <link>https://dhafermalouche.net/project/internal-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/project/internal-project/</guid>
+      <guid>https://dhafermalouche.net/project/internal-project/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
@@ -225,9 +251,9 @@ $$&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/admin/config.yml</link>
+      <link>https://dhafermalouche.net/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/admin/config.yml</guid>
+      <guid>https://dhafermalouche.net/admin/config.yml</guid>
       <description></description>
     </item>
     

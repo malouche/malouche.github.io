@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>📊 Fundamentals of Data Science II | Dhafer Malouche</title>
-    <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/ds2/</link>
-      <atom:link href="https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/ds2/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://dhafermalouche.net/courses/ds2/</link>
+      <atom:link href="https://dhafermalouche.net/courses/ds2/index.xml" rel="self" type="application/rss+xml" />
     <description>📊 Fundamentals of Data Science II</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/ds2/featured.jpg</url>
+      <url>https://dhafermalouche.net/courses/ds2/featured.jpg</url>
       <title>📊 Fundamentals of Data Science II</title>
-      <link>https://61ecbdb94abe5a047fb9db74--dhafermalouche.netlify.app/courses/ds2/</link>
+      <link>https://dhafermalouche.net/courses/ds2/</link>
     </image>
     
   </channel>
