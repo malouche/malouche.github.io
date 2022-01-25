@@ -5,11 +5,11 @@ widget: portfolio
 
 # This file represents a page section.
 headless: true
-active: false
+active: true
 # Order that this section appears on the page.
 weight: 65
 
-title: Projects
+title: Dashboards
 subtitle: ''
 
 content:
@@ -27,11 +27,12 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
-  - name: Other
-    tag: Demo
-
+  - name: Municipal Elections 2018
+    tag: elections
+  - name: Crédits Votés
+    tag: credits
+  - name: COVID-19 deaths
+    tag: covid
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'

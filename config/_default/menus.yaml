@@ -16,8 +16,8 @@ main:
   - name: Courses
     url: 'courses/'
     weight: 20
-  - name: Posts
-    url: '#posts'
+  - name: Dashboards
+    url: '#projects'
     weight: 30
   - name: CV
     url: "uploads/resume.pdf"
