@@ -33,6 +33,8 @@ content:
     tag: credits
   - name: COVID-19 deaths
     tag: covid
+  - name: COVID-19 US vs EU
+    tag: covuseu
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'
