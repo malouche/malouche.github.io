@@ -19,6 +19,9 @@ main:
   - name: Dashboards
     url: '#projects'
     weight: 30
+  - name: Tutorials
+    url: '#tutorials'
+    weight: 25
   - name: CV
     url: "uploads/resume.pdf"
     weight: 50
