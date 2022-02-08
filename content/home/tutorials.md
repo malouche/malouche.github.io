@@ -28,6 +28,8 @@ content:
     tag: '*'
   - name: Pandas
     tag: pandas
+  - name: NumPy
+    tag: numpy
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
