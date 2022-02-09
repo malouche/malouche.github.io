@@ -33,6 +33,22 @@
     </item>
     
     <item>
+      <title>Pandas Library</title>
+      <link>https://dhafermalouche.net/tutorials/pandas/</link>
+      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NumPy Library</title>
+      <link>https://dhafermalouche.net/tutorials/numpy/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/numpy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Estimating Excess Mortality Associated with COVID-19 Pandemic. A 151 Cross-countries Study.</title>
       <link>https://dhafermalouche.net/publication/excessmortality/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
@@ -69,22 +85,6 @@
       <link>https://dhafermalouche.net/project/durationcoviddeaths/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/project/durationcoviddeaths/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NumPy Library</title>
-      <link>https://dhafermalouche.net/tutorials/numpy/</link>
-      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/tutorials/numpy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pandas Library</title>
-      <link>https://dhafermalouche.net/tutorials/pandas/</link>
-      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/tutorials/pandas/</guid>
       <description></description>
     </item>
     
