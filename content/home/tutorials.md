@@ -30,8 +30,10 @@ content:
     tag: pandas
   - name: NumPy
     tag: numpy
-  - name: Descriptive with Python
+  - name: Desc. Statistics with Python
     tag: descriptive
+  - name: Data viz. with R
+    tag: datavizwithr
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

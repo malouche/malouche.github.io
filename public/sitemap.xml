@@ -10,13 +10,17 @@
   <url>
     <loc>https://dhafermalouche.net/event/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
   <url>
+    <loc>https://dhafermalouche.net/tag/descriptive/</loc><lastmod>2022-02-09T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tutorials/descriptive/</loc><lastmod>2022-02-09T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tags/</loc><lastmod>2022-02-09T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tutorials/</loc><lastmod>2022-02-09T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://dhafermalouche.net/tag/pandas/</loc><lastmod>2022-02-07T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tutorials/pandas/</loc><lastmod>2022-02-07T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tags/</loc><lastmod>2022-02-07T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tutorials/</loc><lastmod>2022-02-07T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/numpy/</loc><lastmod>2022-02-01T00:00:00+00:00</lastmod></url>
   <url>
@@ -100,10 +104,12 @@
   <url>
     <loc>https://dhafermalouche.net/post/municipalelect/</loc><lastmod>2018-06-01T00:00:00+00:00</lastmod></url>
   <url>
+    <loc>https://dhafermalouche.net/tutorials/datavizwithr/</loc><lastmod>2017-03-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/datavizwithr/</loc><lastmod>2017-03-29T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://dhafermalouche.net/admin/</loc></url>
   <url>
     <loc>https://dhafermalouche.net/categories/</loc></url>
-  <url>
-    <loc>https://dhafermalouche.net/tutorials/descriptive/</loc></url>
   <url>
     <loc>https://dhafermalouche.net/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc></url></urlset>
