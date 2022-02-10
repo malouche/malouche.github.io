@@ -31,6 +31,6 @@ Fundamentals of Python programming in the context of Data Science with a focus o
 
 
 
-
+<embed src='c1.pdf' type='application/pdf'>
 
 
