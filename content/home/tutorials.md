@@ -34,6 +34,10 @@ content:
     tag: descriptive
   - name: Data viz. with R
     tag: datavizwithr
+  - name: Big data with R
+    tag: bigdatawithr
+  - name: Sensory Analysis with R
+    tag: sensorywithr
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

@@ -37,10 +37,26 @@
     </item>
     
     <item>
+      <title>Big data with R</title>
+      <link>https://dhafermalouche.net/tutorials/bigdatawithr/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/bigdatawithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data visualization with R</title>
       <link>https://dhafermalouche.net/tutorials/datavizwithr/</link>
       <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/tutorials/datavizwithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensory Analysis with R</title>
+      <link>https://dhafermalouche.net/tutorials/sensorywithr/</link>
+      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/sensorywithr/</guid>
       <description></description>
     </item>
     
