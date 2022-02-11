@@ -35,6 +35,11 @@ content:
     tag: covid
   - name: COVID-19 US vs EU
     tag: covuseu
+  - name: COVID-19 in Tunisia (4/4/2020)
+    tag: tuniscovid
+  - name: Number of beds vs COVID-19 cases (May 2020)
+    tag: bedscovid
+    
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'
