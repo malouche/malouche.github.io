@@ -38,6 +38,8 @@ content:
     tag: bigdatawithr
   - name: Sensory Analysis with R
     tag: sensorywithr
+  - name: Probability distribution with Python
+    tag:  probdistpython
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

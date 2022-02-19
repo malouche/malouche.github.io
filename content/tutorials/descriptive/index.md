@@ -1,5 +1,5 @@
 ---
-date: "2022-02-09T00:00:00Z"
+date: "2022-02-12T00:00:00Z"
 internal_link: ""
 image:
   focal_point: Smart
