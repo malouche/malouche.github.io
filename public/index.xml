@@ -33,18 +33,18 @@
     </item>
     
     <item>
-      <title>Descriptive statistics with Python</title>
-      <link>https://dhafermalouche.net/tutorials/descriptive/</link>
-      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/tutorials/descriptive/</guid>
+      <title>Probability distributions  with Python</title>
+      <link>https://dhafermalouche.net/tutorials/probdistpython/</link>
+      <pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/probdistpython/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Descriptive statistics with Python</title>
-      <link>https://dhafermalouche.net/tutorials/probdistpython/</link>
-      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/tutorials/probdistpython/</guid>
+      <link>https://dhafermalouche.net/tutorials/descriptive/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/descriptive/</guid>
       <description></description>
     </item>
     
@@ -53,6 +53,14 @@
       <link>https://dhafermalouche.net/tutorials/pandas/</link>
       <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/tutorials/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimation with Python</title>
+      <link>https://dhafermalouche.net/tutorials/estimation/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/estimation/</guid>
       <description></description>
     </item>
     

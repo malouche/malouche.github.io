@@ -40,6 +40,8 @@ content:
     tag: sensorywithr
   - name: Probability distribution with Python
     tag:  probdistpython
+  - name: Estimation with Python
+    tag:  estimation
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
