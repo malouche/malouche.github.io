@@ -1,7 +1,7 @@
 ---
 date: "2022-01-20"
 linkTitle: Time Series with R
-summary:  Online Course at l’Université Paris-Dauphine, Campus Tunis.
+summary:  
 title: "\U0001F4CA Time series with R"
 type: book
 ---
