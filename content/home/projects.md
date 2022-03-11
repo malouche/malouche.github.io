@@ -39,6 +39,10 @@ content:
     tag: tuniscovid
   - name: Number of beds vs COVID-19 cases (May 2020)
     tag: bedscovid
+  - name: COVID-19 Africa 2020 vs 2021
+    tag: afric2021
+  - name: COVID-19 Europe 2020 vs 2021
+    tag: europe2021
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
