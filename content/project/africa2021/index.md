@@ -7,5 +7,5 @@ summary: COVID-19 Africa 2020/2021.
 tags:
 - africa2021
 title:  COVID-19 Africa 2020/2021
-url_pdf: "/project/afric2021/afric2021.pdf"
+url_pdf: "/project/africa2021/afric2021.pdf"
 ---
