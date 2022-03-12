@@ -45,6 +45,8 @@ content:
     tag: europe2021
   - name: COVID-19 Asia 2020 vs 2021
     tag: asia2021
+  - name: COVID-19 North America 2020 vs 2021
+    tag: northam2021
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
