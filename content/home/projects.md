@@ -40,7 +40,7 @@ content:
   - name: Number of beds vs COVID-19 cases (May 2020)
     tag: bedscovid
   - name: COVID-19 Africa 2020 vs 2021
-    tag: afric2021
+    tag: africa2021
   - name: COVID-19 Europe 2020 vs 2021
     tag: europe2021
     
