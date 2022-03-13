@@ -1,8 +1,8 @@
 ---
 date: "2022-01-20"
 linkTitle: Time Series with R
-summary:  
-title: "\U0001F4CA Time series with R"
+summary:  Online Course, Dauphine University, Tunis Campus
+title: "\U0001F4CA Time series with R (Actuarial and Data Science)"
 type: book
 ---
 
