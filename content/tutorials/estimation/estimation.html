@@ -13971,7 +13971,7 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Estimation-and--Confidence-Intervals-with-Python">Estimation and  Confidence Intervals with Python<a class="anchor-link" href="#Estimation-and--Confidence-Intervals-with-Python">¶</a></h1>
+<h1 id="Estimation--with-Python">Estimation  with Python<a class="anchor-link" href="#Estimation--with-Python">¶</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -13982,7 +13982,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This chapter aims to show how to compute point estimates and confidence intervals for the mean, variance, and the difference if means. The second part of this chapter will show how to perform the most used and classical hypothesis testing.</p>
+<p>This chapter aims to show how to compute point estimates and confidence intervals. We explore the following cases:</p>
+<ul>
+<li>Estimation and confidence interval of the mean,</li>
+<li>Comparing the confidence of the means by group</li>
+<li>Estimation and Confidence interval of the proportion</li>
+<li>Confidence interval of the difference of proportions. </li>
+</ul>
 
 </div>
 </div>
@@ -14251,7 +14257,7 @@ $$F_Z(z_{1-\alpha/2})=1-\alpha/2$$</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>If $\sigma^2$ is <strong>unknown</strong>, $\mbox{CI}_{1-\alpha}(\mu)$ is expressed as follows: 
-$$ \left(\overline{X} - t_{1-\alpha/2,n-1} \displaystyle\frac{S}{\sqrt{n-1}},\;\overline{X} + t_{1-\alpha/2,n-1} \displaystyle\frac{S}{\sqrt{n-1}}\right)$$</p>
+$$ \left(\overline{X} - t_{1-\alpha/2,n-1} \displaystyle\frac{S}{\sqrt{n}},\;\overline{X} + t_{1-\alpha/2,n-1} \displaystyle\frac{S}{\sqrt{n}}\right)$$</p>
 
 </div>
 </div>
@@ -14325,7 +14331,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_ci_unknown_variance</span><span class="p">(</span><span class="n">sample_s</span><span class="p">,</span> <span class="n">sample_mean</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
-    <span class="n">margin_of_error</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">sample_size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sample_s</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample_size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">margin_of_error</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">sample_size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sample_s</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sample_mean</span> <span class="o">-</span> <span class="n">margin_of_error</span><span class="p">,</span> <span class="n">sample_mean</span> <span class="o">+</span> <span class="n">margin_of_error</span>
 </pre></div>
 
@@ -14389,7 +14395,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([36.26312646, 40.93868526, 38.17728249, 47.47319864, 38.35240819])</pre>
+<pre>array([38.03299039, 41.66455159, 41.73117252, 37.66321625, 37.82044562])</pre>
 </div>
 
 </div>
@@ -14446,7 +14452,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>39.64952413958712</pre>
+<pre>40.090871779180944</pre>
 </div>
 
 </div>
@@ -14527,7 +14533,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(39.15953314345211, 40.139515135722135)</pre>
+<pre>(39.60088078304593, 40.58086277531596)</pre>
 </div>
 
 </div>
@@ -14571,7 +14577,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>2.5822881766605192</pre>
+<pre>2.7015723352282577</pre>
 </div>
 
 </div>
@@ -14614,7 +14620,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(39.13456085636115, 40.164487422813096)</pre>
+<pre>(39.55482121685226, 40.626922341509626)</pre>
 </div>
 
 </div>
@@ -14700,7 +14706,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.2595297267440583</pre>
+<pre>0.2715182357562536</pre>
 </div>
 
 </div>
@@ -14737,7 +14743,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.2595297267440583</pre>
+<pre>0.27151823575625356</pre>
 </div>
 
 </div>
@@ -14774,7 +14780,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(39.13456085636115, 40.164487422813096)</pre>
+<pre>(39.552120693149654, 40.629622865212234)</pre>
 </div>
 
 </div>
@@ -14817,7 +14823,7 @@ where $T_{n-1}$ is a random variable with $t-$distribution $n-1$ degrees of free
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(39.15953314345211, 40.139515135722135)</pre>
+<pre>(39.60088078304593, 40.58086277531596)</pre>
 </div>
 
 </div>
@@ -15458,8 +15464,8 @@ Name: Gender, dtype: int64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>([&lt;matplotlib.axis.YTick at 0x14386816d30&gt;,
-  &lt;matplotlib.axis.YTick at 0x143868165b0&gt;],
+<pre>([&lt;matplotlib.axis.YTick at 0x1523a227130&gt;,
+  &lt;matplotlib.axis.YTick at 0x1523a216970&gt;],
  [Text(0, 0, 'Male'), Text(0, 1, 'Female')])</pre>
 </div>
 
@@ -16026,7 +16032,7 @@ Where $F_Z$ is the CDF of $Z$.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">CI_SL</span><span class="o">=</span><span class="n">proportion_confint</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">nobs</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">.95</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">CI_SL</span><span class="o">=</span><span class="n">proportion_confint</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">nobs</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">.95</span><span class="p">))</span>
 <span class="n">CI_SL</span>
 </pre></div>
 
@@ -16049,7 +16055,7 @@ Where $F_Z$ is the CDF of $Z$.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(0.16844448112059657, 0.20842626717872315)</pre>
+<pre>(0.1520547541182747, 0.22462686023150105)</pre>
 </div>
 
 </div>
@@ -16129,8 +16135,8 @@ Where $F_Z$ is the CDF of $Z$.</p>
     <tr>
       <th>2</th>
       <td>Sales</td>
-      <td>0.168444</td>
-      <td>0.208426</td>
+      <td>0.152055</td>
+      <td>0.224627</td>
     </tr>
   </tbody>
 </table>
@@ -16187,9 +16193,9 @@ Where $F_Z$ is the CDF of $Z$.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>([&lt;matplotlib.axis.YTick at 0x14387d4d1f0&gt;,
-  &lt;matplotlib.axis.YTick at 0x14387d47b50&gt;,
-  &lt;matplotlib.axis.YTick at 0x14387d43a00&gt;],
+<pre>([&lt;matplotlib.axis.YTick at 0x1523b764e80&gt;,
+  &lt;matplotlib.axis.YTick at 0x1523b764820&gt;,
+  &lt;matplotlib.axis.YTick at 0x1523b75f670&gt;],
  [Text(0, 0, 'HR'), Text(0, 1, 'RD'), Text(0, 2, 'Sales')])</pre>
 </div>
 
@@ -16204,7 +16210,7 @@ Where $F_Z$ is the CDF of $Z$.</p>
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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%0A">
+<img src="data:image/png;base64,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%0A">
 </div>
 
 </div>
