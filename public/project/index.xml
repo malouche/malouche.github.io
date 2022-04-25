@@ -14,9 +14,17 @@
     
     <item>
       <title>COVID-19 Africa 2020/2021</title>
-      <link>https://dhafermalouche.net/project/afric2021/</link>
+      <link>https://dhafermalouche.net/project/africa2021/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/project/afric2021/</guid>
+      <guid>https://dhafermalouche.net/project/africa2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Asia 2020/2021</title>
+      <link>https://dhafermalouche.net/project/asia2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/asia2021/</guid>
       <description></description>
     </item>
     
@@ -25,6 +33,14 @@
       <link>https://dhafermalouche.net/project/europe2021/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/project/europe2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 North America 2020/2021</title>
+      <link>https://dhafermalouche.net/project/northam2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/northam2021/</guid>
       <description></description>
     </item>
     
