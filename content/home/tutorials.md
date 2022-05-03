@@ -40,7 +40,11 @@ content:
     tag: sensorywithr
   - name: Probability distribution with Python
     tag:  probdistpython
-
+  - name: Estimation and Confidence intervals with Python
+    tag:  estimation
+  - name: Hypothesis testing with Python
+    tag:  hypothesis
+    
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'
