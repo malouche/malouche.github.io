@@ -53,5 +53,4 @@ ORCID ID
 
 
 
-<iframe frameborder="0" src="https://dn4endu7vds8m.cloudfront.net/worldcovid.html" width="100%" height="1250" scrolling="no" frameborder="0" allowtransparency="true">
-</iframe>
+
