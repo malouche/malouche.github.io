@@ -27,7 +27,7 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Tunisia Election Data 
+  - name: Tunisian Election Data 
     tag: tunelect
   
     
