@@ -22,6 +22,9 @@ main:
   - name: Tutorials
     url: '#tutorials'
     weight: 25
+  - name: Data
+    url: '#data'
+    weight: 40
   - name: CV
     url: "uploads/resume.pdf"
     weight: 50
