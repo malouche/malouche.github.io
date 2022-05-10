@@ -6,7 +6,7 @@ image:
 summary: Hypothesis testing 
 tags:
 - hypothesis
-title: Estimation with Python
+title: Hypothesis testing
 url_code: "/tutorials/hypothesis/hypothesis.html"
 url_pdf: "/tutorials/hypothesis/hypothesis.pdf"
 ---
