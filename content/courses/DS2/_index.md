@@ -12,19 +12,18 @@ type: book
 
 ## Description
 
-Fundamentals of Python programming in the context of Data Science with a focus on relevant packages. Coverage of techniques for database handling, data manipulation, visualization and summarizing. Study of probability basics and further statistics required for assessing sampling techniques, designing estimators, hypothesis testing and fitness tests. Focus on simulation basics, analytic, data interpretation and basic machine learning models such as regression and kNN classifiers.
+You will learn in the course the fundamentals of Python programming in the context of Data Science with a focus on relevant packages. It includes techniques for database handling, data manipulation, visualization, and summarizing. We will study the probability basics and other statistics required for assessing sampling techniques, designing estimators, confidential intervals, and hypothesis testing. 
 
 
 ## Program overview
 
 - Programming in Python/Notebooks/Workflows 
 - Probability/Simulation 
-- Statistical Inference/Hypothesis Testing 
 - Working with Data/Cleaning and Munging/Data Visualization
-- kNN/Naive Bayes
-- Logistics Regression
-- Decision Trees
-- Clustering 
+- Statistical Inference
+- Hypothesis Testing 
+
+
 
 
 
