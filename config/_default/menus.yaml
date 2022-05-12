@@ -13,12 +13,9 @@ main:
   - name: Recent Publications
     url: '#publications'
     weight: 30
-  - name: Courses
-    url: 'courses/'
-    weight: 20
   - name: Dashboards
     url: '#projects'
-    weight: 30
+    weight: 35
   - name: Tutorials
     url: '#tutorials'
     weight: 25
