@@ -47,10 +47,6 @@ superuser: true
 title: Dhafer Malouche 
 ---
 
-Dhafer Malouche is currently a professor of statistics at The American University in Cairo. He earned his Ph.D. in statistics and applied mathematics from Paul Sabatier University in Toulouse, France, in October 1997, and a master's degree in applied mathematics from the same university in June 1994. He started his academic professional as an assistant professor in Sousse in Tunisia. Dhafer then moved to the Higher Engineering School of Statistics and Information Analysis (Ecole Supérieure de la Statistique et de l'Analyse de l'Information) of the University of Carthage, where he was successively promoted to associate professor, then to the professor at the same university.
-He had taught several statistical courses: regression analysis, time series, data mining, big data, advanced r, bayesian statistics. He had supervised five doctorates in applied statistics.
-Dhafer has several publications in peer-reviewed journals related to theoretical and applied statistics. He collaborated with biologists, geneticists, epidemiologists, and social scientists by developing many multidisciplinary research programs.
-Dhafer was a Fulbright scholar at Stanford University and the University of Michigan. He was a visiting scholar at Yale University and in colleges in Canada and France several times. He has served as a consultant to several international organizations such as the World Health Organization.
-
+Biography to be updated 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
