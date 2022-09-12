@@ -25,8 +25,8 @@ interests:
 - Consumer preferences
 
 organizations:
-- name: American University in Cairo
-  url: https://www.aucegypt.edu/
+- name: Qatar University 
+  url: http://www.qu.edu.qa
 role: Professor of Statistics
 social:
 - icon: envelope
