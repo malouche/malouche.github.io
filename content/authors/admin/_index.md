@@ -47,6 +47,8 @@ superuser: true
 title: Dhafer Malouche 
 ---
 
-Biography to be updated 
+Dr. Dhafer obtained a Ph.D. in Statistics and Applied Mathematics from Paul Sabatier University in Toulouse, France, in October 1997. He's currently a Professor of Statistics at the College of Arts and Sciences at Qatar University. He successively occupied the positions of Assistant Professor (1998), Associate Professor (2011), and Professor (2018) at the Higher School of Statistics and Information Analysis at the University of Carthage in Tunisia. In 2021-2022, Dr. Dhafer was a Professor of Statistics at the American University in Cairo. He was visiting scholar at  York University, Canada (2002), Stanford University (Fulbright Scholar 2011),  Yale University (2014 and 2019), and the University of Michigan (Fulbright Scholar 2016).
+
+Dr. Dhafer has authored and co-authored more than 45 scholarly papers on many topics related to applied statistics. He has always worked with multidisciplinary teams:  political scientists, epidemiologists, social scientists, food agriculture researchers, and many others. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
