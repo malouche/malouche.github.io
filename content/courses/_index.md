@@ -7,4 +7,3 @@ title: Courses
 view: 2
 ---
 
-I teach currently the following courses:

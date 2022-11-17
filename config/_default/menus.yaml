@@ -16,9 +16,6 @@ main:
   - name: Dashboards
     url: '#projects'
     weight: 35
-  - name: Courses
-    url: 'courses/'
-    weight: 20
   - name: Tutorials
     url: '#tutorials'
     weight: 25
