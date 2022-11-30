@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>africagdppercapita | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/africagdppercapita/</link>
+      <atom:link href="https://dhafermalouche.net/tag/africagdppercapita/index.xml" rel="self" type="application/rss+xml" />
+    <description>africagdppercapita</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>africagdppercapita</title>
+      <link>https://dhafermalouche.net/tag/africagdppercapita/</link>
+    </image>
+    
+    <item>
+      <title>GDP per capita in Africa from 2001 to 2021</title>
+      <link>https://dhafermalouche.net/project/africagdppercapita/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africagdppercapita/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

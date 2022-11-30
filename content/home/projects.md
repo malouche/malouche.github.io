@@ -47,6 +47,8 @@ content:
     tag: asia2021
   - name: COVID-19 North America 2020 vs 2021
     tag: northam2021
+  - name: GDP per capita in Africa from 2001 to 2021
+    tag: africagdppercapita
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
