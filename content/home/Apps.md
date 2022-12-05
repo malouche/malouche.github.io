@@ -29,6 +29,8 @@ content:
     tag: '*'
   - name: Principal Component Analysis 
     tag: PCAapp
+  - name: Table of One-way and Two-way ANOVA with post-hoc Tukey HSD
+    tag: AnovaTukey
   
     
 design:
