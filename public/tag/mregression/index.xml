@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mregression | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/mregression/</link>
+      <atom:link href="https://dhafermalouche.net/tag/mregression/index.xml" rel="self" type="application/rss+xml" />
+    <description>mregression</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>mregression</title>
+      <link>https://dhafermalouche.net/tag/mregression/</link>
+    </image>
+    
+    <item>
+      <title>Multiple Regression Analysis</title>
+      <link>https://dhafermalouche.net/tutorials/multipleregression/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/multipleregression/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

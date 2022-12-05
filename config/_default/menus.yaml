@@ -4,9 +4,6 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Covid-19 Tracking 
-    url: 'https://www.covidradar24.org/web/dhafer.malouche/home'
-    weight: 10
   - name: Biography
     url: '#about'
     weight: 40

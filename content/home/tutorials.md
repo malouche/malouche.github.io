@@ -44,6 +44,8 @@ content:
     tag:  estimation
   - name: Hypothesis testing with Python
     tag:  hypothesis
+  - name: Multiple Regression
+    tag:  mregression
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
