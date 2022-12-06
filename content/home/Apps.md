@@ -33,6 +33,8 @@ content:
     tag: AnovaTukey
   - name: COVID-19 App
     tag: covidapp
+  - name: COVID-19 Tracking
+    tag: Covid19tracking
   
     
 design:

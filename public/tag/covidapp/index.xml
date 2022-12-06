@@ -5,7 +5,7 @@
     <link>https://dhafermalouche.net/tag/covidapp/</link>
       <atom:link href="https://dhafermalouche.net/tag/covidapp/index.xml" rel="self" type="application/rss+xml" />
     <description>covidapp</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Mon, 05 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2022</copyright><lastBuildDate>Wed, 05 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>covidapp</title>
@@ -15,8 +15,16 @@
     <item>
       <title>COVID-19 App</title>
       <link>https://dhafermalouche.net/apps/covidapp/</link>
-      <pubDate>Mon, 05 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/apps/covidapp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Tracking</title>
+      <link>https://dhafermalouche.net/apps/covid19tracking/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/covid19tracking/</guid>
       <description></description>
     </item>
     

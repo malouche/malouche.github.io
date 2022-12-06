@@ -33,14 +33,6 @@
     </item>
     
     <item>
-      <title>COVID-19 App</title>
-      <link>https://dhafermalouche.net/apps/covidapp/</link>
-      <pubDate>Mon, 05 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/apps/covidapp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Principal Component Analysis Application</title>
       <link>https://dhafermalouche.net/apps/pcaapp/</link>
       <pubDate>Mon, 05 Dec 2022 00:00:00 +0000</pubDate>
@@ -157,6 +149,22 @@
       <link>https://dhafermalouche.net/tutorials/numpy/</link>
       <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/tutorials/numpy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 App</title>
+      <link>https://dhafermalouche.net/apps/covidapp/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/covidapp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Tracking</title>
+      <link>https://dhafermalouche.net/apps/covid19tracking/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/covid19tracking/</guid>
       <description></description>
     </item>
     
