@@ -31,6 +31,8 @@ content:
     tag: PCAapp
   - name: Table of One-way and Two-way ANOVA with post-hoc Tukey HSD
     tag: AnovaTukey
+  - name: COVID-19 App
+    tag: covidapp
   
     
 design:
