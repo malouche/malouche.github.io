@@ -1,10 +1,10 @@
 ---
 date: "2022-12-05T00:00:00Z"
-external_link: "https://beta.rstudioconnect.com/content/f73a9d0e-6b72-4d33-9d88-d68519dddc4c/"
+external_link: "https://beta.rstudioconnect.com/content/cf05e245-efd8-4bab-8b1b-f2356d9f6900"
 image:
   focal_point: Smart
-summary: Table of One-way and Two-way ANOVA with post-hoc Tukey HSD
+summary: Table of One-way  ANOVA with post-hoc Tukey HSD
 tags:
 - AnovaTukey
-title:  Table of One-way and Two-way ANOVA with post-hoc Tukey HSD
+title:  Table of One-way  ANOVA with post-hoc Tukey HSD
 ---
