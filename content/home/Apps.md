@@ -35,6 +35,8 @@ content:
     tag: Covid19tracking
   - name: Tunisian Election Data
     tage: tunelect
+  - name: COVID-19 Global Map in 2022 
+    tage: COVIDGlobalMap2022
   
     
 design:
