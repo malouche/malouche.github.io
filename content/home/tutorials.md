@@ -46,6 +46,8 @@ content:
     tag:  hypothesis
   - name: Multiple Regression
     tag:  mregression
+  - name: Getting started with R
+    tag:  getR
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
