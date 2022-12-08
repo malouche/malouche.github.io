@@ -48,6 +48,8 @@ content:
     tag:  mregression
   - name: Getting started with R
     tag:  getR
+  - name: Reports, Dashboards and Slides with R
+    tag:  rapwithR
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
