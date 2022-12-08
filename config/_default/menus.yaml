@@ -19,9 +19,6 @@ main:
   - name: Apps
     url: '#Apps'
     weight: 25
-  - name: Data
-    url: '#data'
-    weight: 40
   - name: CV
     url: "uploads/resume.pdf"
-    weight: 50
+    weight: 40
