@@ -50,6 +50,8 @@ content:
     tag:  getR
   - name: Reports, Dashboards and Slides with R
     tag:  rapwithR
+  - name: Mosaics plots using `ggmosaic?`
+    tag:  mosaicplots
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
