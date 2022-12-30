@@ -101,18 +101,18 @@
     </item>
     
     <item>
-      <title>Mosaics plots using `ggmosaic?`</title>
-      <link>https://dhafermalouche.net/tutorials/mosaicplots/</link>
-      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/tutorials/mosaicplots/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Sensory Analysis with R</title>
       <link>https://dhafermalouche.net/tutorials/sensorywithr/</link>
       <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/tutorials/sensorywithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mosaics plots using `ggmosaic?`</title>
+      <link>https://dhafermalouche.net/tutorials/mosaicplots/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/mosaicplots/</guid>
       <description></description>
     </item>
     
