@@ -49,6 +49,8 @@ content:
     tag: northam2021
   - name: GDP per capita in Africa from 2001 to 2021
     tag: africagdppercapita
+  - name: COVID-19 Total Deaths between 2021 and 2022 in Africa.
+    tag: africa2021vs2022
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
