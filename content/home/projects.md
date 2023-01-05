@@ -51,6 +51,8 @@ content:
     tag: africagdppercapita
   - name: COVID-19 Total Deaths between 2021 and 2022 in Africa.
     tag: africa2021vs2022
+  - name: COVID-19 Total Deaths between 2021 and 2022 in Europe.
+    tag: europe2021vs2022
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
