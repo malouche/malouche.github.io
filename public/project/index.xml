@@ -5,7 +5,7 @@
     <link>https://dhafermalouche.net/project/</link>
       <atom:link href="https://dhafermalouche.net/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2023</copyright><lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2023</copyright><lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
@@ -13,10 +13,18 @@
     </image>
     
     <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Asia</title>
+      <link>https://dhafermalouche.net/project/asia2021vs2022/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/asia2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>COVID-19 Total Deaths between 2021 and 2022 in Europe</title>
-      <link>https://dhafermalouche.net/project/europe21vs2022/</link>
+      <link>https://dhafermalouche.net/project/europe2021vs2022/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/project/europe21vs2022/</guid>
+      <guid>https://dhafermalouche.net/project/europe2021vs2022/</guid>
       <description></description>
     </item>
     
