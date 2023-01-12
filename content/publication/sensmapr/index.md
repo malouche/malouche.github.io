@@ -1,0 +1,17 @@
+---
+abstract:  This work addresses the theory of External Preference Mapping technique (EPM) that reliably gives a mapping of human perceptions' ratings considered as subjective data onto objective descriptions generally obtained from measurable analytic data. An R package named SensMap is made available to facilitate the adoption of the EPM technique in different research fields and to propose, in addition to classical features, advanced strategies for map visualization and its stability enhancement. The novelty of SensMap is to provide options in sensory space dimension reduction methods as well as options in consumers' likings prediction models based on sensory descriptors. The fitting quality of these models can be evaluated using several information criteria. Moreover, SensMap provides a methodology to quantify and assess the stability of preference maps from different employed strategies using a computational algorithm that consists in calculations of distances between maps based on resampling approach. A small part in this paper was devoted to evaluate the efficiency of the implemented stability approach by a simulation study and by application to real data from food science field. To make easier the conduction of the multiple types of analysis without requiring high programming knowledge, a very intuitive Graphical User Interface named SensMapGUI is implemented on the SensMap package. It is an R-developed shiny web-tool that produces results and graphics quickly and efficiently. The tool is made available at the following address [](https://cran.r-project.org/web/packages/SensMap/index.html) and is dedicated for all sensory practitioners and can be widely used by researchers who need subjective to objective data mapping.
+
+authors:
+- Ibtihel Rebhi
+- admin
+- and others
+date: "2023-01-10T00:00:00Z"
+doi: "https://doi.org/10.1016/j.ijid.2021.02.010"
+publication: '*Journal of Sensory Studies*'
+publication_short: ""
+publication_types:
+- "2"
+publishDate: "2023-01-10T00:00:00Z"
+title: SensMap R package and SensMapGUI shiny web application for sensory and consumer data mapping, Variations on external preference mapping and stability assessment
+---
+

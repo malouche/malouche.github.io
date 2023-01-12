@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>and others | Dhafer Malouche</title>
-    <link>https://dhafermalouche.net/author/and-others/</link>
-      <atom:link href="https://dhafermalouche.net/author/and-others/index.xml" rel="self" type="application/rss+xml" />
-    <description>and others</description>
+    <title>Ibtihel Rebhi | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/ibtihel-rebhi/</link>
+      <atom:link href="https://dhafermalouche.net/author/ibtihel-rebhi/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ibtihel Rebhi</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2023</copyright><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
-      <title>and others</title>
-      <link>https://dhafermalouche.net/author/and-others/</link>
+      <title>Ibtihel Rebhi</title>
+      <link>https://dhafermalouche.net/author/ibtihel-rebhi/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>https://dhafermalouche.net/publication/sensmapr/</link>
       <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/publication/sensmapr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Impact of contact tracing, respect of isolation, and lockdown in reducing the number of cases infected with COVID-19. Case study, Tunisia&#39;s response from March 22 to May 4, 2020</title>
-      <link>https://dhafermalouche.net/publication/impactcovid/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/impactcovid/</guid>
       <description></description>
     </item>
     

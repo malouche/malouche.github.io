@@ -5,12 +5,20 @@
     <link>https://dhafermalouche.net/publication-type/2/</link>
       <atom:link href="https://dhafermalouche.net/publication-type/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2023</copyright><lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2023</copyright><lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>2</title>
       <link>https://dhafermalouche.net/publication-type/2/</link>
     </image>
+    
+    <item>
+      <title>SensMap R package and SensMapGUI shiny web application for sensory and consumer data mapping, Variations on external preference mapping and stability assessment</title>
+      <link>https://dhafermalouche.net/publication/sensmapr/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/sensmapr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Impact of contact tracing, respect of isolation, and lockdown in reducing the number of cases infected with COVID-19. Case study, Tunisia&#39;s response from March 22 to May 4, 2020</title>
