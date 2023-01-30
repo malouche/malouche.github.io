@@ -37,6 +37,8 @@ content:
     tage: tunelect
   - name: COVID-19 Global Map in 2022 
     tage: COVIDGlobalMap2022
+  - name: Generate Random Numbers
+    tags: genrandomnumbs
   
     
 design:
