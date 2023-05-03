@@ -1,0 +1,516 @@
+---
+title: "Dugong Growth Curve: Bayesian and Frequentist Models"
+author: Dhafer Malouche
+knitr:
+  opts_chunk: 
+    collapse: true
+    warning: false
+    message: false
+    code-fold: false
+    code-block-bg-alpha: -.8
+affiliation: Qatar University
+editor: visual
+format:
+   html:
+     toc: true
+     number-sections: false
+     cache: true
+html-math-method:
+  method: mathjax
+  number-equations: true
+theme: cosmo
+---
+
+## Introduction
+
+In this tutorial, we study the growth curve of dugongs animals using statistical modeling techniques. We begin by estimating a frequentist simple linear model, where the response variable is the length of the animals and the predictor is the log-transformed age. We find that this model is highly significant and provides a good fit to the data. To assess the prediction performance of the model, we use a leave-one-out method.
+
+Next, we estimate the same model using a Bayesian approach and consider flat priors on the parameters. We also use leave-one-out cross-validation to evaluate its prediction performance. We find that the Bayesian approach provides similar results to the frequentist approach but with the added benefit of being able to incorporate prior knowledge and uncertainty into the analysis.
+
+Finally, we use a non-linear model to estimate the growth curve of dugongs animals using a Bayesian approach. This model allows for more flexibility in modeling the growth trajectory over time. We show that the Bayesian approach provides a good fit to the data and allows us to make predictions about the growth of dugongs animals in the future.
+
+Overall, this tutorial provides a practical introduction to statistical modeling techniques for studying the growth curve of animals. We demonstrate the use of frequentist and Bayesian approaches, as well as the importance of model selection and evaluation techniques.
+
+![](featured.png){fig-align="center"}
+
+## Data and Model
+
+[Carlin and Gelfand (1991)](https://link.springer.com/article/10.1007/BF01889986) present a nonconjugate Bayesian analysis of the following data set from [Ratkowsky (1983)](https://pubmed.ncbi.nlm.nih.gov/6853443/):
+
+|                            |      |      |      |      |     |      |
+|----------------------------|------|------|------|------|-----|------|
+| Dugongs (*i*)              | 1    | 2    | 3    | 4    | ... | 27   |
+| Age (*x*<sub>*i*</sub>)    | 1.0  | 1.5  | 1.5  | 1.5  | ... | 31.5 |
+| Length (*y*<sub>*i*</sub>) | 1.80 | 1.85 | 1.87 | 1.77 | ... | 2.57 |
+
+The data are length (in meters) and age (in years) measurements of 27 captured dugongs (sea cows) of the sirenian species. Carlin and Gelfand (1991) model this data using a nonlinear growth curve with no inflection point and an asymptote as *x*<sub>*i*</sub> tends to infinity. The model is given by:
+
+*Y*<sub>*i*</sub> = *α* − *β* ⋅ *γ*<sup>*x*<sub>*i*</sub></sup> + *ϵ*<sub>*i*</sub>,  *i* = 1, ..., *n*
+
+where *ϵ* ∼ *N*(0,*σ*<sup>2</sup>). In this model, *α* corresponds to the average length of a fully grown dugong (*x*→∞), *α* − *β* is the length of a dugong at birth (*x*=0) and *γ* determines the growth rate: lower values produce an initially steep growth curve. In comparison, higher values lead to gradual, almost linear growth. Here's the data displayed in the above table:
+
+```{r,warning=FALSE,message=F,prompt=F}
+options(cache=T)
+dataList=list(x = c( 1.0, 1.5, 1.5, 1.5, 2.5, 4.0, 5.0, 5.0, 7.0,
+            8.0, 8.5, 9.0, 9.5, 9.5, 10.0, 12.0, 12.0, 13.0,
+            13.0, 14.5, 15.5, 15.5, 16.5, 17.0, 22.5, 29.0, 31.5),
+     Y = c(1.80, 1.85, 1.87, 1.77, 2.02, 2.27, 2.15, 2.26, 2.47,
+           2.19, 2.26, 2.40, 2.39, 2.41, 2.50, 2.32, 2.32, 2.43,
+           2.47, 2.56, 2.65, 2.47, 2.64, 2.56, 2.70, 2.72, 2.57), N = 27) 
+
+dt<-data.frame(x=dataList$x,y=dataList$Y)
+
+library(dplyr)
+dt%>%head()
+```
+
+The objective of this notebook is to present a statistical model for estimating the growth curve of Dugongs. We begin by estimating a simple linear model where the weight of Dugongs is calculated using the log transformation of the Age variable. We will first estimate a frequentist linear model and evaluate its performance using cross-validation. Various metrics, such as root mean square error, will be computed. Next, we will estimate the same model using a Bayesian approach and assess its performance using cross-validation.
+
+## A first Simple linear model
+
+Let's begin by creating the logarithmic transformation of the age variable and plotting the scatter plot of log-age versus weights.
+
+```{r, message=F,warning=F,prompt=F}
+dt<-dt%>%mutate(lx=log(x))
+library(ggpubr)
+ggscatter(data=dt,x = 'lx',y='y',add = 'reg.line',xlab = 'log-age',ylab = 'weight')
+```
+
+We can observe a strong linear relationship between the log-age and weight variables. Let's proceed by estimating the simple linear model using the Ordinary Least Squares (OLS) method. The estimated model is the following:
+
+*Y*<sub>*i*</sub> = *β*<sub>0</sub> + *β*<sub>1</sub> ⋅ log (*x*<sub>*i*</sub>) + *ϵ*<sub>*i*</sub>,  *i* = 1, ..., *n*
+
+Here's the `R` code of the model estimation
+
+```{r, message=F,warning=F,prompt=F}
+m1<-lm(y~lx,data=dt)
+summary(m1)
+```
+
+The summary output of the model provides information on the coefficients, standard errors, t-values, p-values, and other statistics. We can learn the following
+
+-   The intercept coefficient is estimated to be 1.76166, which represents the expected value of `y` when `lx` is 0. The slope coefficient for `lx` is estimated to be 0.27733, indicating that the expected change in `y` for a one-unit increase in `lx` is 0.27733 units.
+
+-   The p-value associated with the slope coefficient is less than 0.001, indicating strong evidence against the null hypothesis that the true slope is 0. This suggests that `lx` is a significant predictor of `y`.
+
+-   The multiple R-squared value of 0.8969 indicates that the linear model explains a large proportion of the variability in the data. The adjusted R-squared value of 0.8928 takes into account the number of predictor variables and adjusts the R-squared value accordingly.
+
+-   The residual standard error of 0.08994 indicates the average distance between the observed values of `y` and the predicted values based on the model. The F-statistic of 217.5 and associated p-value of 7.707e-14 suggest that the model as a whole is statistically significant.
+
+To evaluate the predictive performance of the model estimated above, we will use the Leave-One-Out (LOO) method instead of cross-validation. The LOO method involves fitting the model to all the data except for one observation, and then using the fitted model to predict the left-out observation. This process is repeated for each observation, and the predictions are compared to the observed values to estimate the model's performance. The LOO method is a commonly used approach for estimating the out-of-sample predictive accuracy of a model.
+
+In R, the caret package provides a convenient way to perform LOO cross-validation for different types of models, including linear regression models. The package includes a function called `trainControl`, which allows you to specify the type of cross-validation you want to use, such as `LOOCV`, and the evaluation metric you want to use to assess the model's performance. By using the caret package and the LOO method, we can estimate the model's prediction power and assess its ability to generalize to new data.
+
+```{r,warning=F,message=F,prompt=F}
+library(caret)
+z=train(y ~ lx, method = "lm", data = dt, trControl = trainControl(method = "LOOCV"))
+z
+z$pred
+sqrt(mean((z$pred$pred-z$pred$obs)^2)) 
+mean(abs(z$pred$pred-z$pred$obs)) 
+RMSE(z$pred$pred,z$pred$obs)
+z$results
+```
+
+We have then computed the following metrics:
+
+-   `RMSE`: (Root Mean Square Error)
+
+    $$
+    \mbox{RMSE}=\sqrt{\displaystyle\frac{1}{n}\sum\_{i=1}^n(y_i-\widehat{y}\_i)^2}
+    $$
+
+-   `MAE`: (Mean Absolute Error)
+
+    $$
+    \mbox{MAE}=\displaystyle\frac{1}{n}\sum\_{i=1}^n\left\|y_i-\widehat{y}\_i\right\|
+    $$
+
+-   `Rsquared`: is the mean of the *R*<sup>2</sup> of all the estimated linear models
+
+We can also use `Metrics` package to calculate the following metrics:
+
+-   `bias` computes the average amount by which actual is greater than predicted. If a model is unbiased should be close to zero.
+
+```{r,warning=F,message=F,prompt=F}
+library(Metrics)
+bias(z$pred$obs,z$pred$pred)
+```
+
+-   `rae` provides the absolute error of the predictions relative to a naive model that predicted the mean for every data point.
+
+```{r,warning=F,message=F,prompt=F}
+rae(z$pred$obs,z$pred$pred)
+```
+
+## Simple linear Bayesian Model
+
+We will now estimate the linear model
+*Y*<sub>*i*</sub> = *β*<sub>0</sub> + *β*<sub>1</sub> ⋅ log (*x*<sub>*i*</sub>) + *ϵ*<sub>*i*</sub>,  *i* = 1, ..., *n*
+
+using a Bayesian approach. For the priors on the parameters, we will consider flat (non-informative) distributions. Specifically, we will assume a flat normal distribution for both the intercept *β*<sub>0</sub> and the coefficient *β*<sub>1</sub>, and a flat gamma distribution for the precision parameter *τ*.
+
+The JAGS model:
+
+```{r, warning=F,message=F,prompt=F}
+dug_log_lin = "
+   model {
+   #Likelihood
+   for (i in 1:N) {
+   Y[i]~dnorm(mu[i],tau)
+   mu[i] <- beta0+beta1*lx[i]
+   }
+   
+   #Priors
+   beta0 ~ dnorm(0,1E-06)
+   beta1 ~ dnorm(0,1E-06)
+   tau ~ dgamma(1E-03,1E-03)
+   
+   sigma2 <- 1/tau
+  
+   }
+ "
+```
+
+The data:
+
+```{r, warning=F,message=F,prompt=F}
+dataList2=list(lx = dt$lx,
+              Y = c(1.80, 1.85, 1.87, 1.77, 2.02, 2.27, 2.15, 2.26, 2.47,
+                    2.19, 2.26, 2.40, 2.39, 2.41, 2.50, 2.32, 2.32, 2.43,
+                    2.47, 2.56, 2.65, 2.47, 2.64, 2.56, 2.70, 2.72, 2.57), 
+              N = 27) 
+
+```
+
+Next, we will define the parameters for the Markov Chain Monte Carlo (MCMC) algorithm. We will run three Markov Chains in parallel, each with a thin step equal to 5. The burn-in period will consist of the first 3000 iterations, and we will save the last 10000 iterations for each chain to estimate the posterior distribution of the model parameters.
+
+```{r, warning=F,message=F,prompt=F}
+nChains=3
+burnInSteps=3000
+thinSteps= 5
+numSavedSteps= 10000
+```
+
+The following `nIter` variable computes the total number of iteration for each Markov Chain
+
+```{r,warning=F,message=F,prompt=F}
+nIter = ceiling(burnInSteps + (numSavedSteps * thinSteps)/nChains)
+nIter
+```
+
+Here's how to initiate randomly the Markov Chains
+
+```{r,warning=F,message=F,prompt=F}
+inits<-vector('list',nChains)
+for(j in 1:nChains){
+  inits[[j]]=list(beta0 = rnorm(1,m1$coefficients[1],1),
+                  beta1 = rnorm(1,m1$coefficients[2],1),
+                  tau=runif(1,0,100))
+}
+inits
+```
+
+The parameters of interest:
+
+```{r, warning=F, message=F, prompt=F}
+parameters.to.save<-c("beta0","beta1","tau")
+```
+
+Running the Bayesian model and obtaining a sample from the posterior distribution:
+
+```{r, warning=F, message=F, prompt=F}
+library(R2jags)
+library(runjags)
+ll_dug_bm <- jags(data = dataList2, inits = inits,
+             parameters.to.save = parameters.to.save, 
+             n.chains = nChains, n.iter = nIter,
+             n.burnin = burnInSteps,n.thin = thinSteps,
+             model.file =textConnection(dug_log_lin))
+print(ll_dug_bm)
+```
+
+Let's proceed to the convergence diagnostics of the MCMC algorithm. We have first to transform the `JAGS` output to an `mcmc` object:
+
+```{r, warning=F, message=F, prompt=F}
+library(coda)
+library(mcmcplots)
+library(ggmcmc)
+ll_dug_bm.mcmc=as.mcmc(ll_dug_bm)
+ll_dug_bm.gg<-ggs(ll_dug_bm.mcmc)
+ll_dug_bm.gg%>%head()
+```
+
+We compute first the Potential Scale Reduction Factor (Rhat), proposed by [Gelman and Rubin (1992)](https://www.jstor.org/stable/2246093) using `ggs_Rhat`.
+
+The Potential Scale Reduction Factor (Rhat) is a commonly used convergence diagnostic in MCMC algorithms. It measures the ratio of the between-chain variance to the within-chain variance of the posterior distribution.
+
+The Rhat value provides an estimate of how much the variance of the posterior distribution could be reduced if the Markov chains were run for an infinite number of iterations.
+
+In other words, an Rhat value close to 1 suggests that the chains have converged to the same stationary distribution, while a value greater than 1 indicates that further iterations are needed to achieve convergence.
+
+The recommended threshold for Rhat is typically 1.1 or lower, although some researchers prefer a stricter threshold of 1.05 or lower. The Rhat value can be computed for each model parameter, and values greater than the threshold suggest that the corresponding parameter has not converged and may require further investigation or modification of the model.
+
+```{r, warning=F,message=F,prompt=F}
+rhat1<-ggs_Rhat(ll_dug_bm.gg,family='beta')
+rhat1$data
+rhat1<-ggs_Rhat(ll_dug_bm.gg,family='tau')
+rhat1$data
+```
+
+We can also use the following
+
+```{r, warning=F,message=F,prompt=F}
+gelman.diag(ll_dug_bm.mcmc)
+gelman.plot(ll_dug_bm.mcmc)
+```
+
+-   Density plots
+
+```{r, warning=F,message=F,prompt=F}
+ggs_density(ll_dug_bm.gg,family='beta',hpd = T)+theme_bw()+theme(legend.position = 'top')
+ggs_density(ll_dug_bm.gg,family='tau',hpd = T)+theme_bw()+theme(legend.position = 'top')
+
+```
+
+-   Caterpillar plots
+
+```{r, warning=F,message=F,prompt=F}
+ggs_caterpillar(ll_dug_bm.gg,family='beta0')+theme_bw()
+ggs_caterpillar(ll_dug_bm.gg,family='beta1')+theme_bw()
+ggs_caterpillar(ll_dug_bm.gg,family='tau')+theme_bw()
+```
+
+-   Running means of the chains.
+
+```{r, warning=F,message=F,prompt=F}
+ggs_running(ll_dug_bm.gg,family='beta')+theme_bw()
+ggs_running(ll_dug_bm.gg,family='tau')+theme_bw()
+```
+
+-   Density plots comparing the distribution of the whole chain with only its last part.
+
+```{r, warning=F,message=F,prompt=F}
+ggs_compare_partial(ll_dug_bm.gg,family='beta')+theme_bw()+theme(legend.position = 'top')
+ggs_compare_partial(ll_dug_bm.gg,family='tau')+theme_bw()+theme(legend.position = 'top')
+```
+
+-   Plot an autocorrelation matrix.
+
+```{r, warning=F,message=F,prompt=F}
+ggs_autocorrelation(ll_dug_bm.gg,family='beta')+theme_bw()+theme(legend.position = 'top')
+ggs_autocorrelation(ll_dug_bm.gg,family='tau')+theme_bw()+theme(legend.position = 'top')
+```
+
+-   Plot the Cross-correlation between-chains.
+
+```{r, warning=F,message=F,prompt=F}
+ggs_crosscorrelation(ll_dug_bm.gg%>%filter(Parameter!='deviance'))+theme_bw()
+```
+
+Let's now use the Leave-One-Out (LOO) method to evaluate the predictive performance of the Bayesian linear model and compare it with the frequentist approach. To perform LOO cross-validation, we will create an R function that fits the Bayesian linear model to all the data except for one observation, and then uses the fitted model to predict the left-out observation. This process is repeated for each observation, and the predictions are compared to the observed values to estimate the model's performance.
+
+By using the LOO method, we can estimate the model's out-of-sample predictive accuracy, which allows us to assess its ability to generalize to new data. We will compare the LOO performance of the Bayesian linear model with the performance of the frequentist linear model estimated earlier, to determine which approach provides better predictive accuracy. The comparison will be based on evaluation metrics such as root mean square error (RMSE) or mean absolute error (MAE), which are commonly used to assess the performance of regression models.
+
+```{r, warning=F,message=F,prompt=F}
+dug_log_lin = "
+   model {
+   #Likelihood
+   for (i in 1:N) {
+   Y[i]~dnorm(mu[i],tau)
+   mu[i] <- beta0+beta1*lx[i]
+   }
+   
+   #Priors
+   beta0 ~ dnorm(0,1E-06)
+   beta1 ~ dnorm(0,1E-06)
+   tau ~ dgamma(1E-03,1E-03)
+   
+   sigma2 <- 1/tau
+  
+   }
+ "
+
+
+pred_Y<-function(j){
+  dataList3=dataList2
+  dataList3$Y[j]=NA
+  parameters.to.save<-'Y'
+  
+  ll_dug_bm_LOOCV <- jags(data = dataList3, inits = inits,quiet = T,
+                    parameters.to.save = parameters.to.save, 
+                    n.chains = nChains, n.iter = nIter,
+                    n.burnin = burnInSteps,n.thin = thinSteps,
+                    model.file =textConnection(dug_log_lin))
+  Ypred=ll_dug_bm_LOOCV$BUGSoutput$sims.matrix[,j]
+  Ypred
+}
+```
+
+Let's now run the Bayesian and frequentist linear models using the LOO method and compute prediction metrics such as root mean square error (RMSE). We will compare these metrics to those computed with the frequentist approach to assess the predictive accuracy of each model. The RMSE is commonly used evaluation metrics in regression models that measure the distance between the predicted values and the observed values. By comparing these metrics, we can determine which model provides better predictive accuracy for the Dugong growth data.
+
+```{r, warning=F,message=F,prompt=F}
+N=dataList$N
+zz=vector('list',N)
+
+for(j in 1:N){
+  zz[[j]]=pred_Y(j)
+}
+```
+
+Computing Bayesian RMSE
+
+```{r, warning=F,message=F,prompt=F}
+rmse_bys<-c()
+
+for(j in 1:N){
+  x=mean(zz[[j]])
+  rmse_bys=c(rmse_bys,(x-dataList$Y[j])^2)
+}
+
+sqrt(mean(rmse_bys))
+```
+
+Let's compare it with
+
+```{r, warning=F,message=F,prompt=F}
+z$results[2]
+```
+
+## Non linear model
+
+We will now estimate the nonlinear model
+
+*Y*<sub>*i*</sub> = *α* − *β* ⋅ *γ*<sup>*x*<sub>*i*</sub></sup> + *ϵ*<sub>*i*</sub>,  *i* = 1, ..., *n*
+
+using a Bayesian approach, where *α*, *β* are real numbers, and *γ* ∈ (.5,1). First, we will write the JAGS code for the model and define the initial values for the Markov chain and iterations settings.
+
+```{r, warning=F,message=F,prompt=F}
+dug_non_line<-"model{
+for( i in 1 : N ) {
+Y[i] ~ dnorm(mu[i], tau)
+mu[i] <- alpha - beta * pow(gamma,x[i])
+}
+alpha ~ dnorm(0.0, 1.0E-6) 
+beta ~ dnorm(0.0, 1.0E-6) 
+gamma ~ dunif(0.5, 1)
+tau ~ dgamma(1.0E-3, 1.0E-3)
+sigma <- 1.0/sqrt(tau)
+
+}"
+```
+
+Initial values of the Markov Chain:
+
+```{r, warning=F,message=F,prompt=F}
+inits1=list(alpha=1,beta=1,tau=1,gamma=0.9)
+
+inits2=list(alpha=-0.5,beta=0.3,tau=3,gamma=0.6)
+
+inits3=list(alpha=0.1,beta=0.4,tau=0.3,gamma=0.6)
+
+inits=list(inits1,inits2,inits3)
+```
+
+Parameters:
+
+```{r, warning=F,message=F,prompt=F}
+parameters.to.save<-c("alpha","beta","gamma","tau","sigma")
+```
+
+Chain iterations:
+
+```{r, warning=F,message=F,prompt=F}
+nChains=3
+burnInSteps=3000
+thinSteps= 5
+numSavedSteps= 10000
+nIter = ceiling(burnInSteps + (numSavedSteps * thinSteps)/nChains)
+```
+
+Run the MCMC:
+
+```{r, warning=F,message=F,prompt=F}
+non_lin_dug_bm <- jags(data = dataList, inits = inits,
+                  parameters.to.save = parameters.to.save, 
+                  n.chains = nChains, n.iter = nIter,
+                  n.burnin = burnInSteps,n.thin = thinSteps,
+                  model.file =textConnection(dug_non_line))
+print(non_lin_dug_bm)
+```
+
+Let's proceed to the convergence diagnostics of the MCMC algorithm.
+
+```{r, warning=F,message=F,prompt=F}
+non_lin_dug_bm.mcmc=as.mcmc(non_lin_dug_bm)
+non_lin_dug_bm.gg<-ggs(non_lin_dug_bm.mcmc)
+rhat1<-ggs_Rhat(non_lin_dug_bm.gg,family='beta')
+rhat1$data
+rhat1<-ggs_Rhat(non_lin_dug_bm.gg,family='alpha')
+rhat1$data
+rhat1<-ggs_Rhat(non_lin_dug_bm.gg,family='gamma')
+rhat1$data
+rhat1<-ggs_Rhat(non_lin_dug_bm.gg,family='tau')
+rhat1$data
+gelman.diag(non_lin_dug_bm.mcmc)
+gelman.plot(non_lin_dug_bm.mcmc)
+ggs_density(non_lin_dug_bm.gg,family='alpha',hpd = T)+theme_bw()+theme(legend.position = 'top')
+ggs_density(non_lin_dug_bm.gg,family='beta',hpd = T)+theme_bw()+theme(legend.position = 'top')
+ggs_density(non_lin_dug_bm.gg,family='gamma',hpd = T)+theme_bw()+theme(legend.position = 'top')
+ggs_density(non_lin_dug_bm.gg,family='tau',hpd = T)+theme_bw()+theme(legend.position = 'top')
+ggs_autocorrelation(non_lin_dug_bm.gg,family='alpha')+theme_bw()+theme(legend.position = 'top')
+ggs_autocorrelation(non_lin_dug_bm.gg,family='beta')+theme_bw()+theme(legend.position = 'top')
+ggs_autocorrelation(non_lin_dug_bm.gg,family='gamma')+theme_bw()+theme(legend.position = 'top')
+ggs_autocorrelation(non_lin_dug_bm.gg,family='tau')+theme_bw()+theme(legend.position = 'top')
+```
+
+We will now use the previous model to predict the Dugong weight in terms of age. We will consider a sequence of values for the Age variable, denoted by *x*, ranging from 0 to 32 with a step size of 0.5. We will then use the nonlinear Bayesian model to estimate the corresponding fitted values for each value of *x*. These fitted values will provide a curve representing the predicted weight of the Dugongs as they age."
+
+```{r, warning=F,message=F,prompt=F}
+xx=seq(0.5,32,by=.5)
+yy=rep(NA,length(xx))
+dataList=list(x = c( 1.0, 1.5, 1.5, 1.5, 2.5, 4.0, 5.0, 5.0, 7.0,
+            8.0, 8.5, 9.0, 9.5, 9.5, 10.0, 12.0, 12.0, 13.0,
+            13.0, 14.5, 15.5, 15.5, 16.5, 17.0, 22.5, 29.0, 31.5),
+     Y = c(1.80, 1.85, 1.87, 1.77, 2.02, 2.27, 2.15, 2.26, 2.47,
+           2.19, 2.26, 2.40, 2.39, 2.41, 2.50, 2.32, 2.32, 2.43,
+           2.47, 2.56, 2.65, 2.47, 2.64, 2.56, 2.70, 2.72, 2.57), N = 27) 
+x=c(dataList$x,xx)
+Y=c(dataList$Y,yy)
+N=length(Y)
+dataList=list(x=x,Y=Y,N=N)
+dataList
+parameters.to.save="Y"
+
+```
+
+```{r, warning=F,message=F,prompt=F}
+non_lin_dug_bm2 <- jags(data = dataList, inits = inits,
+                  parameters.to.save = parameters.to.save, 
+                  n.chains = nChains, n.iter = nIter,
+                  n.burnin = burnInSteps,n.thin = thinSteps,
+                  model.file =textConnection(dug_non_line))
+print(non_lin_dug_bm2)
+
+```
+
+```{r, warning=F,message=F,prompt=F}
+non_lin_dug_bm2=as.mcmc(non_lin_dug_bm2)
+non_lin_dug_bm2=ggs(non_lin_dug_bm2)
+Ys=sapply(28:91,function(i)glue::glue("Y[",i,"]"))
+non_lin_dug_bm2=non_lin_dug_bm2%>%filter(Parameter%in%Ys)
+
+dt_curv<-non_lin_dug_bm2%>%group_by(Parameter)%>%summarise(lwr=quantile(value,probs = .025),upr=quantile(value,probs = .975),ave=mean(value))
+
+dt_curv$x=xx
+dt_curv%>%head()
+
+```
+
+The growth curve:
+
+```{r, warning=F,message=F,prompt=F}
+library(ggplot2)
+ggplot(dt_curv,aes(x,ave))+geom_line()+geom_ribbon(aes(ymin=lwr,ymax=upr),fill='pink',alpha=.3)+
+  geom_point(data=dt,aes(x,y))+xlab('Age')+ylab('Weight')+theme_bw()
+```

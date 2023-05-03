@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dhafer Malouche">
+
+<title>Dugong Growth Curve: Bayesian and Frequentist Models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="dugong_files/libs/clipboard/clipboard.min.js"></script>
+<script src="dugong_files/libs/quarto-html/quarto.js"></script>
+<script src="dugong_files/libs/quarto-html/popper.min.js"></script>
+<script src="dugong_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="dugong_files/libs/quarto-html/anchor.min.js"></script>
+<link href="dugong_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="dugong_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="dugong_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="dugong_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="dugong_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-and-model" id="toc-data-and-model" class="nav-link" data-scroll-target="#data-and-model">Data and Model</a></li>
+  <li><a href="#a-first-simple-linear-model" id="toc-a-first-simple-linear-model" class="nav-link" data-scroll-target="#a-first-simple-linear-model">A first Simple linear model</a></li>
+  <li><a href="#simple-linear-bayesian-model" id="toc-simple-linear-bayesian-model" class="nav-link" data-scroll-target="#simple-linear-bayesian-model">Simple linear Bayesian Model</a></li>
+  <li><a href="#non-linear-model" id="toc-non-linear-model" class="nav-link" data-scroll-target="#non-linear-model">Non linear model</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dugong Growth Curve: Bayesian and Frequentist Models</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dhafer Malouche </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this tutorial, we study the growth curve of dugongs animals using statistical modeling techniques. We begin by estimating a frequentist simple linear model, where the response variable is the length of the animals and the predictor is the log-transformed age. We find that this model is highly significant and provides a good fit to the data. To assess the prediction performance of the model, we use a leave-one-out method.</p>
+<p>Next, we estimate the same model using a Bayesian approach and consider flat priors on the parameters. We also use leave-one-out cross-validation to evaluate its prediction performance. We find that the Bayesian approach provides similar results to the frequentist approach but with the added benefit of being able to incorporate prior knowledge and uncertainty into the analysis.</p>
+<p>Finally, we use a non-linear model to estimate the growth curve of dugongs animals using a Bayesian approach. This model allows for more flexibility in modeling the growth trajectory over time. We show that the Bayesian approach provides a good fit to the data and allows us to make predictions about the growth of dugongs animals in the future.</p>
+<p>Overall, this tutorial provides a practical introduction to statistical modeling techniques for studying the growth curve of animals. We demonstrate the use of frequentist and Bayesian approaches, as well as the importance of model selection and evaluation techniques.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="featured.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="data-and-model" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-model">Data and Model</h2>
+<p><a href="https://link.springer.com/article/10.1007/BF01889986">Carlin and Gelfand (1991)</a> present a nonconjugate Bayesian analysis of the following data set from <a href="https://pubmed.ncbi.nlm.nih.gov/6853443/">Ratkowsky (1983)</a>:</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>Dugongs (<em>i</em>)</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>…</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>Age (<em>x</em><sub><em>i</em></sub>)</td>
+<td>1.0</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>…</td>
+<td>31.5</td>
+</tr>
+<tr class="odd">
+<td>Length (<em>y</em><sub><em>i</em></sub>)</td>
+<td>1.80</td>
+<td>1.85</td>
+<td>1.87</td>
+<td>1.77</td>
+<td>…</td>
+<td>2.57</td>
+</tr>
+</tbody>
+</table>
+<p>The data are length (in meters) and age (in years) measurements of 27 captured dugongs (sea cows) of the sirenian species. Carlin and Gelfand (1991) model this data using a nonlinear growth curve with no inflection point and an asymptote as <em>x</em><sub><em>i</em></sub> tends to infinity. The model is given by:</p>
+<p><em>Y</em><sub><em>i</em></sub> = <em>α</em> − <em>β</em> ⋅ <em>γ</em><sup><em>x</em><sub><em>i</em></sub></sup> + <em>ϵ</em><sub><em>i</em></sub>,  <em>i</em> = 1, …, <em>n</em></p>
+<p>where <em>ϵ</em> ∼ <em>N</em>(0,<em>σ</em><sup>2</sup>). In this model, <em>α</em> corresponds to the average length of a fully grown dugong (<em>x</em>→∞), <em>α</em> − <em>β</em> is the length of a dugong at birth (<em>x</em>=0) and <em>γ</em> determines the growth rate: lower values produce an initially steep growth curve. In comparison, higher values lead to gradual, almost linear growth. Here’s the data displayed in the above table:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-1_f78f167c01cfb99a8bff7c139d98b1ae">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">cache=</span>T)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dataList<span class="ot">=</span><span class="fu">list</span>(<span class="at">x =</span> <span class="fu">c</span>( <span class="fl">1.0</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">5.0</span>, <span class="fl">7.0</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>            <span class="fl">8.0</span>, <span class="fl">8.5</span>, <span class="fl">9.0</span>, <span class="fl">9.5</span>, <span class="fl">9.5</span>, <span class="fl">10.0</span>, <span class="fl">12.0</span>, <span class="fl">12.0</span>, <span class="fl">13.0</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="fl">13.0</span>, <span class="fl">14.5</span>, <span class="fl">15.5</span>, <span class="fl">15.5</span>, <span class="fl">16.5</span>, <span class="fl">17.0</span>, <span class="fl">22.5</span>, <span class="fl">29.0</span>, <span class="fl">31.5</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">Y =</span> <span class="fu">c</span>(<span class="fl">1.80</span>, <span class="fl">1.85</span>, <span class="fl">1.87</span>, <span class="fl">1.77</span>, <span class="fl">2.02</span>, <span class="fl">2.27</span>, <span class="fl">2.15</span>, <span class="fl">2.26</span>, <span class="fl">2.47</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="fl">2.19</span>, <span class="fl">2.26</span>, <span class="fl">2.40</span>, <span class="fl">2.39</span>, <span class="fl">2.41</span>, <span class="fl">2.50</span>, <span class="fl">2.32</span>, <span class="fl">2.32</span>, <span class="fl">2.43</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>           <span class="fl">2.47</span>, <span class="fl">2.56</span>, <span class="fl">2.65</span>, <span class="fl">2.47</span>, <span class="fl">2.64</span>, <span class="fl">2.56</span>, <span class="fl">2.70</span>, <span class="fl">2.72</span>, <span class="fl">2.57</span>), <span class="at">N =</span> <span class="dv">27</span>) </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span>dataList<span class="sc">$</span>x,<span class="at">y=</span>dataList<span class="sc">$</span>Y)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">%&gt;%</span><span class="fu">head</span>()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">##     x    y</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 1.0 1.80</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 1.5 1.85</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 1.5 1.87</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 1.5 1.77</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 2.5 2.02</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 4.0 2.27</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The objective of this notebook is to present a statistical model for estimating the growth curve of Dugongs. We begin by estimating a simple linear model where the weight of Dugongs is calculated using the log transformation of the Age variable. We will first estimate a frequentist linear model and evaluate its performance using cross-validation. Various metrics, such as root mean square error, will be computed. Next, we will estimate the same model using a Bayesian approach and assess its performance using cross-validation.</p>
+</section>
+<section id="a-first-simple-linear-model" class="level2">
+<h2 class="anchored" data-anchor-id="a-first-simple-linear-model">A first Simple linear model</h2>
+<p>Let’s begin by creating the logarithmic transformation of the age variable and plotting the scatter plot of log-age versus weights.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-2_6236d1995ae3d7f56241dbc932f72913">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dt<span class="ot">&lt;-</span>dt<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">lx=</span><span class="fu">log</span>(x))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(<span class="at">data=</span>dt,<span class="at">x =</span> <span class="st">'lx'</span>,<span class="at">y=</span><span class="st">'y'</span>,<span class="at">add =</span> <span class="st">'reg.line'</span>,<span class="at">xlab =</span> <span class="st">'log-age'</span>,<span class="at">ylab =</span> <span class="st">'weight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can observe a strong linear relationship between the log-age and weight variables. Let’s proceed by estimating the simple linear model using the Ordinary Least Squares (OLS) method. The estimated model is the following:</p>
+<p><em>Y</em><sub><em>i</em></sub> = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub> ⋅ log (<em>x</em><sub><em>i</em></sub>) + <em>ϵ</em><sub><em>i</em></sub>,  <em>i</em> = 1, …, <em>n</em></p>
+<p>Here’s the <code>R</code> code of the model estimation</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-3_20071ce7f04b14b519c32955ccc36c56">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>m1<span class="ot">&lt;-</span><span class="fu">lm</span>(y<span class="sc">~</span>lx,<span class="at">data=</span>dt)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Call:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## lm(formula = y ~ lx, data = dt)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">##       Min        1Q    Median        3Q       Max </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## -0.148441 -0.054890  0.004223  0.054358  0.168681 </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Coefficients:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">##             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)  1.76166    0.04250   41.45  &lt; 2e-16 ***</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">## lx           0.27733    0.01881   14.75 7.71e-14 ***</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Residual standard error: 0.08994 on 25 degrees of freedom</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Multiple R-squared:  0.8969, Adjusted R-squared:  0.8928 </span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="do">## F-statistic: 217.5 on 1 and 25 DF,  p-value: 7.707e-14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The summary output of the model provides information on the coefficients, standard errors, t-values, p-values, and other statistics. We can learn the following</p>
+<ul>
+<li><p>The intercept coefficient is estimated to be 1.76166, which represents the expected value of <code>y</code> when <code>lx</code> is 0. The slope coefficient for <code>lx</code> is estimated to be 0.27733, indicating that the expected change in <code>y</code> for a one-unit increase in <code>lx</code> is 0.27733 units.</p></li>
+<li><p>The p-value associated with the slope coefficient is less than 0.001, indicating strong evidence against the null hypothesis that the true slope is 0. This suggests that <code>lx</code> is a significant predictor of <code>y</code>.</p></li>
+<li><p>The multiple R-squared value of 0.8969 indicates that the linear model explains a large proportion of the variability in the data. The adjusted R-squared value of 0.8928 takes into account the number of predictor variables and adjusts the R-squared value accordingly.</p></li>
+<li><p>The residual standard error of 0.08994 indicates the average distance between the observed values of <code>y</code> and the predicted values based on the model. The F-statistic of 217.5 and associated p-value of 7.707e-14 suggest that the model as a whole is statistically significant.</p></li>
+</ul>
+<p>To evaluate the predictive performance of the model estimated above, we will use the Leave-One-Out (LOO) method instead of cross-validation. The LOO method involves fitting the model to all the data except for one observation, and then using the fitted model to predict the left-out observation. This process is repeated for each observation, and the predictions are compared to the observed values to estimate the model’s performance. The LOO method is a commonly used approach for estimating the out-of-sample predictive accuracy of a model.</p>
+<p>In R, the caret package provides a convenient way to perform LOO cross-validation for different types of models, including linear regression models. The package includes a function called <code>trainControl</code>, which allows you to specify the type of cross-validation you want to use, such as <code>LOOCV</code>, and the evaluation metric you want to use to assess the model’s performance. By using the caret package and the LOO method, we can estimate the model’s prediction power and assess its ability to generalize to new data.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-4_e3ea99f5fa20639060b4d662ba85daed">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>z<span class="ot">=</span><span class="fu">train</span>(y <span class="sc">~</span> lx, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">data =</span> dt, <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"LOOCV"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>z</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Regression </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 27 samples</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 predictor</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## No pre-processing</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Resampling: Leave-One-Out Cross-Validation </span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Summary of sample sizes: 26, 26, 26, 26, 26, 26, ... </span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Resampling results:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">##   RMSE        Rsquared   MAE       </span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">##   0.09257742  0.8820812  0.07485886</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Tuning parameter 'intercept' was held constant at a value of TRUE</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>z<span class="sc">$</span>pred</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="do">##        pred  obs rowIndex intercept</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  1.750642 1.80        1      TRUE</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  1.878612 1.85        2      TRUE</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  1.874878 1.87        3      TRUE</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  1.893546 1.77        4      TRUE</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  2.015335 2.02        5      TRUE</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  2.138617 2.27        6      TRUE</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  2.210807 2.15        7      TRUE</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="do">## 8  2.205494 2.26        8      TRUE</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="do">## 9  2.294720 2.47        9      TRUE</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2.344058 2.19       10      TRUE</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="do">## 11 2.358849 2.26       11      TRUE</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 2.369876 2.40       12      TRUE</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 2.385849 2.39       13      TRUE</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="do">## 14 2.385047 2.41       14      TRUE</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="do">## 15 2.396129 2.50       15      TRUE</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="do">## 16 2.456929 2.32       16      TRUE</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="do">## 17 2.456929 2.32       17      TRUE</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 18 2.475163 2.43       18      TRUE</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="do">## 19 2.473146 2.47       19      TRUE</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 20 2.500085 2.56       20      TRUE</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="do">## 21 2.514014 2.65       21      TRUE</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="do">## 22 2.524908 2.47       22      TRUE</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="do">## 23 2.532566 2.64       23      TRUE</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="do">## 24 2.546546 2.56       24      TRUE</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="do">## 25 2.618155 2.70       25      TRUE</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 26 2.692441 2.72       26      TRUE</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="do">## 27 2.738879 2.57       27      TRUE</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>((z<span class="sc">$</span>pred<span class="sc">$</span>pred<span class="sc">-</span>z<span class="sc">$</span>pred<span class="sc">$</span>obs)<span class="sc">^</span><span class="dv">2</span>)) </span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.09257742</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">abs</span>(z<span class="sc">$</span>pred<span class="sc">$</span>pred<span class="sc">-</span>z<span class="sc">$</span>pred<span class="sc">$</span>obs)) </span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.07485886</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="fu">RMSE</span>(z<span class="sc">$</span>pred<span class="sc">$</span>pred,z<span class="sc">$</span>pred<span class="sc">$</span>obs)</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.09257742</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>z<span class="sc">$</span>results</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="do">##   intercept       RMSE  Rsquared        MAE</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="do">## 1      TRUE 0.09257742 0.8820812 0.07485886</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We have then computed the following metrics:</p>
+<ul>
+<li><p><code>RMSE</code>: (Root Mean Square Error)</p>
+<p><span class="math display">\[
+\mbox{RMSE}=\sqrt{\displaystyle\frac{1}{n}\sum\_{i=1}^n(y_i-\widehat{y}\_i)^2}
+\]</span></p></li>
+<li><p><code>MAE</code>: (Mean Absolute Error)</p>
+<p><span class="math display">\[
+\mbox{MAE}=\displaystyle\frac{1}{n}\sum\_{i=1}^n\left\|y_i-\widehat{y}\_i\right\|
+\]</span></p></li>
+<li><p><code>Rsquared</code>: is the mean of the <em>R</em><sup>2</sup> of all the estimated linear models</p></li>
+</ul>
+<p>We can also use <code>Metrics</code> package to calculate the following metrics:</p>
+<ul>
+<li><code>bias</code> computes the average amount by which actual is greater than predicted. If a model is unbiased should be close to zero.</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-5_fa3d56ce2a0cbc1252129141c29c4061">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bias</span>(z<span class="sc">$</span>pred<span class="sc">$</span>obs,z<span class="sc">$</span>pred<span class="sc">$</span>pred)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -0.0004526326</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>rae</code> provides the absolute error of the predictions relative to a naive model that predicted the mean for every data point.</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-6_d1bd76ad6c95f00cf8e533c2a9e2429d">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rae</span>(z<span class="sc">$</span>pred<span class="sc">$</span>obs,z<span class="sc">$</span>pred<span class="sc">$</span>pred)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.3450437</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="simple-linear-bayesian-model" class="level2">
+<h2 class="anchored" data-anchor-id="simple-linear-bayesian-model">Simple linear Bayesian Model</h2>
+<p>We will now estimate the linear model <em>Y</em><sub><em>i</em></sub> = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub> ⋅ log (<em>x</em><sub><em>i</em></sub>) + <em>ϵ</em><sub><em>i</em></sub>,  <em>i</em> = 1, …, <em>n</em></p>
+<p>using a Bayesian approach. For the priors on the parameters, we will consider flat (non-informative) distributions. Specifically, we will assume a flat normal distribution for both the intercept <em>β</em><sub>0</sub> and the coefficient <em>β</em><sub>1</sub>, and a flat gamma distribution for the precision parameter <em>τ</em>.</p>
+<p>The JAGS model:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-7_9ca8c0611474fbac845a8918282242f1">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dug_log_lin <span class="ot">=</span> <span class="st">"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">   model {</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">   #Likelihood</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">   for (i in 1:N) {</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">   Y[i]~dnorm(mu[i],tau)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">   mu[i] &lt;- beta0+beta1*lx[i]</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">   }</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">   </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">   #Priors</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">   beta0 ~ dnorm(0,1E-06)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="st">   beta1 ~ dnorm(0,1E-06)</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="st">   tau ~ dgamma(1E-03,1E-03)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="st">   </span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="st">   sigma2 &lt;- 1/tau</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="st">   }</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="st"> "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The data:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-8_08470fe17166e9fdab9fbe88ba23509f">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dataList2<span class="ot">=</span><span class="fu">list</span>(<span class="at">lx =</span> dt<span class="sc">$</span>lx,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">Y =</span> <span class="fu">c</span>(<span class="fl">1.80</span>, <span class="fl">1.85</span>, <span class="fl">1.87</span>, <span class="fl">1.77</span>, <span class="fl">2.02</span>, <span class="fl">2.27</span>, <span class="fl">2.15</span>, <span class="fl">2.26</span>, <span class="fl">2.47</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">2.19</span>, <span class="fl">2.26</span>, <span class="fl">2.40</span>, <span class="fl">2.39</span>, <span class="fl">2.41</span>, <span class="fl">2.50</span>, <span class="fl">2.32</span>, <span class="fl">2.32</span>, <span class="fl">2.43</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">2.47</span>, <span class="fl">2.56</span>, <span class="fl">2.65</span>, <span class="fl">2.47</span>, <span class="fl">2.64</span>, <span class="fl">2.56</span>, <span class="fl">2.70</span>, <span class="fl">2.72</span>, <span class="fl">2.57</span>), </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">N =</span> <span class="dv">27</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, we will define the parameters for the Markov Chain Monte Carlo (MCMC) algorithm. We will run three Markov Chains in parallel, each with a thin step equal to 5. The burn-in period will consist of the first 3000 iterations, and we will save the last 10000 iterations for each chain to estimate the posterior distribution of the model parameters.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-9_be0f6bab65cb6162d749d3d030b5acf5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nChains<span class="ot">=</span><span class="dv">3</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>burnInSteps<span class="ot">=</span><span class="dv">3000</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>thinSteps<span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>numSavedSteps<span class="ot">=</span> <span class="dv">10000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following <code>nIter</code> variable computes the total number of iteration for each Markov Chain</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-10_fccb9e77f7fbb8893616c7a734a8094b">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nIter <span class="ot">=</span> <span class="fu">ceiling</span>(burnInSteps <span class="sc">+</span> (numSavedSteps <span class="sc">*</span> thinSteps)<span class="sc">/</span>nChains)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>nIter</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 19667</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here’s how to initiate randomly the Markov Chains</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-11_92cf5c22a9cb18598bda73b99b6b6db5">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>inits<span class="ot">&lt;-</span><span class="fu">vector</span>(<span class="st">'list'</span>,nChains)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nChains){</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  inits[[j]]<span class="ot">=</span><span class="fu">list</span>(<span class="at">beta0 =</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,m1<span class="sc">$</span>coefficients[<span class="dv">1</span>],<span class="dv">1</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">beta1 =</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,m1<span class="sc">$</span>coefficients[<span class="dv">2</span>],<span class="dv">1</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">tau=</span><span class="fu">runif</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">100</span>))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>inits</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]$beta0</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -0.7792636</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]$beta1</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -0.5578119</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]$tau</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 61.83508</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]$beta0</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.13604</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]$beta1</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -0.288488</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]$tau</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 90.53964</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]$beta0</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.651952</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]$beta1</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.82435</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]$tau</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 9.182417</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The parameters of interest:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-12_f6d9bbdd86e66c264f92c729ae050ee1">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>parameters.to.save<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"beta0"</span>,<span class="st">"beta1"</span>,<span class="st">"tau"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Running the Bayesian model and obtaining a sample from the posterior distribution:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-13_7dfe5d9a5ef577f670881c53342a9928">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(R2jags)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(runjags)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>ll_dug_bm <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> dataList2, <span class="at">inits =</span> inits,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">parameters.to.save =</span> parameters.to.save, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">n.chains =</span> nChains, <span class="at">n.iter =</span> nIter,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">n.burnin =</span> burnInSteps,<span class="at">n.thin =</span> thinSteps,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">model.file =</span><span class="fu">textConnection</span>(dug_log_lin))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiling model graph</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">##    Resolving undeclared variables</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">##    Allocating nodes</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Graph information:</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="do">##    Observed stochastic nodes: 27</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="do">##    Unobserved stochastic nodes: 3</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="do">##    Total graph size: 103</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Initializing model</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ll_dug_bm)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Inference for Bugs model at "4", fit using jags,</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 chains, each with 19667 iterations (first 3000 discarded), n.thin = 5</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  n.sims = 9999 iterations saved</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="do">##          mu.vect sd.vect    2.5%     25%     50%     75%   97.5%  Rhat n.eff</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="do">## beta0      1.762   0.045   1.673   1.732   1.762   1.791   1.852 1.001  9100</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="do">## beta1      0.277   0.020   0.237   0.265   0.278   0.290   0.316 1.001 10000</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="do">## tau      123.066  34.857  64.590  98.089 119.376 144.608 199.984 1.001  3400</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="do">## deviance -52.318   2.606 -55.285 -54.215 -52.987 -51.150 -45.438 1.001 10000</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="do">## For each parameter, n.eff is a crude measure of effective sample size,</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="do">## and Rhat is the potential scale reduction factor (at convergence, Rhat=1).</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="do">## DIC info (using the rule, pD = var(deviance)/2)</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="do">## pD = 3.4 and DIC = -48.9</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="do">## DIC is an estimate of expected predictive error (lower deviance is better).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s proceed to the convergence diagnostics of the MCMC algorithm. We have first to transform the <code>JAGS</code> output to an <code>mcmc</code> object:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-14_3dd90e6fa07a322d13bcfc2dcaca39b7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mcmcplots)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmcmc)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>ll_dug_bm.mcmc<span class="ot">=</span><span class="fu">as.mcmc</span>(ll_dug_bm)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ll_dug_bm.gg<span class="ot">&lt;-</span><span class="fu">ggs</span>(ll_dug_bm.mcmc)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>ll_dug_bm.gg<span class="sc">%&gt;%</span><span class="fu">head</span>()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 6 × 4</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="do">##   Iteration Chain Parameter value</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="do">##       &lt;int&gt; &lt;int&gt; &lt;fct&gt;     &lt;dbl&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 1         1     1 beta0      1.91</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 2         2     1 beta0      1.84</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 3         3     1 beta0      1.84</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 4         4     1 beta0      1.74</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 5         5     1 beta0      1.76</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 6         6     1 beta0      1.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We compute first the Potential Scale Reduction Factor (Rhat), proposed by <a href="https://www.jstor.org/stable/2246093">Gelman and Rubin (1992)</a> using <code>ggs_Rhat</code>.</p>
+<p>The Potential Scale Reduction Factor (Rhat) is a commonly used convergence diagnostic in MCMC algorithms. It measures the ratio of the between-chain variance to the within-chain variance of the posterior distribution.</p>
+<p>The Rhat value provides an estimate of how much the variance of the posterior distribution could be reduced if the Markov chains were run for an infinite number of iterations.</p>
+<p>In other words, an Rhat value close to 1 suggests that the chains have converged to the same stationary distribution, while a value greater than 1 indicates that further iterations are needed to achieve convergence.</p>
+<p>The recommended threshold for Rhat is typically 1.1 or lower, although some researchers prefer a stricter threshold of 1.05 or lower. The Rhat value can be computed for each model parameter, and values greater than the threshold suggest that the corresponding parameter has not converged and may require further investigation or modification of the model.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-15_e84084316e08c0a07c2fdd78a939d73f">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rhat1<span class="ot">&lt;-</span><span class="fu">ggs_Rhat</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>rhat1<span class="sc">$</span>data</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 2 × 5</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter        B        W       wa  Rhat</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 beta0     0.00216  0.00200  0.00200   1.00</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 beta1     0.000331 0.000392 0.000392  1.00</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>rhat1<span class="ot">&lt;-</span><span class="fu">ggs_Rhat</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>rhat1<span class="sc">$</span>data</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 × 5</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter     B     W    wa  Rhat</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 tau       3986. 1214. 1215.  1.00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can also use the following</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-16_e1ae422d2b76503da77f8ce31f357907">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.diag</span>(ll_dug_bm.mcmc)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Potential scale reduction factors:</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">##          Point est. Upper C.I.</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="do">## beta0             1          1</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="do">## beta1             1          1</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="do">## deviance          1          1</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="do">## tau               1          1</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Multivariate psrf</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 1</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(ll_dug_bm.mcmc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Density plots</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-17_c7f0a28e148170eaecb2597ae1b52263">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_density</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>,<span class="at">hpd =</span> T)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_density</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>,<span class="at">hpd =</span> T)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Caterpillar plots</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-18_a4b292dbced6ba23c0e04c3237d54370">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_caterpillar</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta0'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_caterpillar</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta1'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_caterpillar</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-18-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Running means of the chains.</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-19_62064639adfacbc3c9a5add48a2bbc00">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_running</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_running</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-19-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Density plots comparing the distribution of the whole chain with only its last part.</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-20_f5e56fe6ae953382c0f7fa4976ae0013">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_compare_partial</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_compare_partial</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-20-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Plot an autocorrelation matrix.</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-21_402e330fc37a42b9cec3470e2b5f2f8e">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_autocorrelation</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_autocorrelation</span>(ll_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-21-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Plot the Cross-correlation between-chains.</li>
+</ul>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-22_06a6987d3ad67ea22cf94e17d7131ba8">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_crosscorrelation</span>(ll_dug_bm.gg<span class="sc">%&gt;%</span><span class="fu">filter</span>(Parameter<span class="sc">!=</span><span class="st">'deviance'</span>))<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Let’s now use the Leave-One-Out (LOO) method to evaluate the predictive performance of the Bayesian linear model and compare it with the frequentist approach. To perform LOO cross-validation, we will create an R function that fits the Bayesian linear model to all the data except for one observation, and then uses the fitted model to predict the left-out observation. This process is repeated for each observation, and the predictions are compared to the observed values to estimate the model’s performance.</p>
+<p>By using the LOO method, we can estimate the model’s out-of-sample predictive accuracy, which allows us to assess its ability to generalize to new data. We will compare the LOO performance of the Bayesian linear model with the performance of the frequentist linear model estimated earlier, to determine which approach provides better predictive accuracy. The comparison will be based on evaluation metrics such as root mean square error (RMSE) or mean absolute error (MAE), which are commonly used to assess the performance of regression models.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-23_70750307b4fcb9ccad15b3e46427f676">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dug_log_lin <span class="ot">=</span> <span class="st">"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="st">   model {</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="st">   #Likelihood</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="st">   for (i in 1:N) {</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="st">   Y[i]~dnorm(mu[i],tau)</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="st">   mu[i] &lt;- beta0+beta1*lx[i]</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="st">   }</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="st">   </span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="st">   #Priors</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="st">   beta0 ~ dnorm(0,1E-06)</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="st">   beta1 ~ dnorm(0,1E-06)</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="st">   tau ~ dgamma(1E-03,1E-03)</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="st">   </span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="st">   sigma2 &lt;- 1/tau</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="st">   }</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="st"> "</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>pred_Y<span class="ot">&lt;-</span><span class="cf">function</span>(j){</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  dataList3<span class="ot">=</span>dataList2</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>  dataList3<span class="sc">$</span>Y[j]<span class="ot">=</span><span class="cn">NA</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>  parameters.to.save<span class="ot">&lt;-</span><span class="st">'Y'</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>  ll_dug_bm_LOOCV <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> dataList3, <span class="at">inits =</span> inits,<span class="at">quiet =</span> T,</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>                    <span class="at">parameters.to.save =</span> parameters.to.save, </span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>                    <span class="at">n.chains =</span> nChains, <span class="at">n.iter =</span> nIter,</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>                    <span class="at">n.burnin =</span> burnInSteps,<span class="at">n.thin =</span> thinSteps,</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">model.file =</span><span class="fu">textConnection</span>(dug_log_lin))</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>  Ypred<span class="ot">=</span>ll_dug_bm_LOOCV<span class="sc">$</span>BUGSoutput<span class="sc">$</span>sims.matrix[,j]</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>  Ypred</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s now run the Bayesian and frequentist linear models using the LOO method and compute prediction metrics such as root mean square error (RMSE). We will compare these metrics to those computed with the frequentist approach to assess the predictive accuracy of each model. The RMSE is commonly used evaluation metrics in regression models that measure the distance between the predicted values and the observed values. By comparing these metrics, we can determine which model provides better predictive accuracy for the Dugong growth data.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-24_9fa046c5c41d5aa3febf5d1cfa1429e2">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>dataList<span class="sc">$</span>N</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>zz<span class="ot">=</span><span class="fu">vector</span>(<span class="st">'list'</span>,N)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  zz[[j]]<span class="ot">=</span><span class="fu">pred_Y</span>(j)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Computing Bayesian RMSE</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-25_c1e75013a92ef8deafc3b7a7b46b92e0">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>rmse_bys<span class="ot">&lt;-</span><span class="fu">c</span>()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  x<span class="ot">=</span><span class="fu">mean</span>(zz[[j]])</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  rmse_bys<span class="ot">=</span><span class="fu">c</span>(rmse_bys,(x<span class="sc">-</span>dataList<span class="sc">$</span>Y[j])<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>(rmse_bys))</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.0924652</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s compare it with</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-26_c3f74d7d0a3e368b11fac042a3065fa4">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>z<span class="sc">$</span>results[<span class="dv">2</span>]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="do">##         RMSE</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 0.09257742</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="non-linear-model" class="level2">
+<h2 class="anchored" data-anchor-id="non-linear-model">Non linear model</h2>
+<p>We will now estimate the nonlinear model</p>
+<p><em>Y</em><sub><em>i</em></sub> = <em>α</em> − <em>β</em> ⋅ <em>γ</em><sup><em>x</em><sub><em>i</em></sub></sup> + <em>ϵ</em><sub><em>i</em></sub>,  <em>i</em> = 1, …, <em>n</em></p>
+<p>using a Bayesian approach, where <em>α</em>, <em>β</em> are real numbers, and <em>γ</em> ∈ (.5,1). First, we will write the JAGS code for the model and define the initial values for the Markov chain and iterations settings.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-27_1f8eb31e21dc0059bb34ccf0a0bbc32b">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dug_non_line<span class="ot">&lt;-</span><span class="st">"model{</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="st">for( i in 1 : N ) {</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="st">Y[i] ~ dnorm(mu[i], tau)</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="st">mu[i] &lt;- alpha - beta * pow(gamma,x[i])</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="st">alpha ~ dnorm(0.0, 1.0E-6) </span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="st">beta ~ dnorm(0.0, 1.0E-6) </span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="st">gamma ~ dunif(0.5, 1)</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="st">tau ~ dgamma(1.0E-3, 1.0E-3)</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="st">sigma &lt;- 1.0/sqrt(tau)</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="st">}"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Initial values of the Markov Chain:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-28_08232831aadda1508ef2342f98e2263c">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>inits1<span class="ot">=</span><span class="fu">list</span>(<span class="at">alpha=</span><span class="dv">1</span>,<span class="at">beta=</span><span class="dv">1</span>,<span class="at">tau=</span><span class="dv">1</span>,<span class="at">gamma=</span><span class="fl">0.9</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>inits2<span class="ot">=</span><span class="fu">list</span>(<span class="at">alpha=</span><span class="sc">-</span><span class="fl">0.5</span>,<span class="at">beta=</span><span class="fl">0.3</span>,<span class="at">tau=</span><span class="dv">3</span>,<span class="at">gamma=</span><span class="fl">0.6</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>inits3<span class="ot">=</span><span class="fu">list</span>(<span class="at">alpha=</span><span class="fl">0.1</span>,<span class="at">beta=</span><span class="fl">0.4</span>,<span class="at">tau=</span><span class="fl">0.3</span>,<span class="at">gamma=</span><span class="fl">0.6</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>inits<span class="ot">=</span><span class="fu">list</span>(inits1,inits2,inits3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Parameters:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-29_cc671c41ab807f3ceabe206f74b158a2">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>parameters.to.save<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"alpha"</span>,<span class="st">"beta"</span>,<span class="st">"gamma"</span>,<span class="st">"tau"</span>,<span class="st">"sigma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Chain iterations:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-30_34d7bcac474eef0c070fce41d7c24ceb">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>nChains<span class="ot">=</span><span class="dv">3</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>burnInSteps<span class="ot">=</span><span class="dv">3000</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>thinSteps<span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>numSavedSteps<span class="ot">=</span> <span class="dv">10000</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>nIter <span class="ot">=</span> <span class="fu">ceiling</span>(burnInSteps <span class="sc">+</span> (numSavedSteps <span class="sc">*</span> thinSteps)<span class="sc">/</span>nChains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Run the MCMC:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-31_1fdfa1f2b46b2f07f48985407ee53995">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> dataList, <span class="at">inits =</span> inits,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">parameters.to.save =</span> parameters.to.save, </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">n.chains =</span> nChains, <span class="at">n.iter =</span> nIter,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">n.burnin =</span> burnInSteps,<span class="at">n.thin =</span> thinSteps,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">model.file =</span><span class="fu">textConnection</span>(dug_non_line))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiling model graph</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="do">##    Resolving undeclared variables</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="do">##    Allocating nodes</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Graph information:</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="do">##    Observed stochastic nodes: 27</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="do">##    Unobserved stochastic nodes: 4</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="do">##    Total graph size: 126</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Initializing model</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(non_lin_dug_bm)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Inference for Bugs model at "6", fit using jags,</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 chains, each with 19667 iterations (first 3000 discarded), n.thin = 5</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  n.sims = 9999 iterations saved</span></span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a><span class="do">##          mu.vect sd.vect    2.5%     25%     50%     75%   97.5%  Rhat n.eff</span></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="do">## alpha      2.651   0.071   2.528   2.603   2.645   2.693   2.807 1.002  2200</span></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a><span class="do">## beta       0.972   0.077   0.826   0.922   0.969   1.020   1.130 1.001 10000</span></span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a><span class="do">## gamma      0.862   0.033   0.785   0.844   0.866   0.884   0.915 1.006  1000</span></span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a><span class="do">## sigma      0.099   0.015   0.075   0.088   0.097   0.107   0.134 1.001  3400</span></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="do">## tau      108.670  31.310  55.901  86.657 105.302 127.687 179.413 1.001  3400</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a><span class="do">## deviance -49.066   3.206 -52.970 -51.384 -49.833 -47.522 -40.728 1.005   760</span></span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a><span class="do">## For each parameter, n.eff is a crude measure of effective sample size,</span></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a><span class="do">## and Rhat is the potential scale reduction factor (at convergence, Rhat=1).</span></span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a><span class="do">## DIC info (using the rule, pD = var(deviance)/2)</span></span>
+<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a><span class="do">## pD = 5.1 and DIC = -43.9</span></span>
+<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a><span class="do">## DIC is an estimate of expected predictive error (lower deviance is better).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s proceed to the convergence diagnostics of the MCMC algorithm.</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-32_0539b802eaca027d02ea86dea66880bf">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm.mcmc<span class="ot">=</span><span class="fu">as.mcmc</span>(non_lin_dug_bm)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm.gg<span class="ot">&lt;-</span><span class="fu">ggs</span>(non_lin_dug_bm.mcmc)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>rhat1<span class="ot">&lt;-</span><span class="fu">ggs_Rhat</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>rhat1<span class="sc">$</span>data</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 × 5</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter       B       W      wa  Rhat</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 beta      0.00591 0.00600 0.00600  1.00</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>rhat1<span class="ot">&lt;-</span><span class="fu">ggs_Rhat</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'alpha'</span>)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>rhat1<span class="sc">$</span>data</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 × 5</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter      B       W      wa  Rhat</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 alpha     0.0213 0.00507 0.00508  1.00</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>rhat1<span class="ot">&lt;-</span><span class="fu">ggs_Rhat</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'gamma'</span>)</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>rhat1<span class="sc">$</span>data</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 × 5</span></span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter      B       W      wa  Rhat</span></span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 gamma     0.0108 0.00112 0.00112  1.00</span></span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>rhat1<span class="ot">&lt;-</span><span class="fu">ggs_Rhat</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>rhat1<span class="sc">$</span>data</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 × 5</span></span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter     B     W    wa  Rhat</span></span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 tau       2429.  980.  980.  1.00</span></span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.diag</span>(non_lin_dug_bm.mcmc)</span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Potential scale reduction factors:</span></span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a><span class="do">##          Point est. Upper C.I.</span></span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a><span class="do">## alpha          1.00       1.01</span></span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a><span class="do">## beta           1.00       1.01</span></span>
+<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a><span class="do">## deviance       1.01       1.03</span></span>
+<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a><span class="do">## gamma          1.02       1.03</span></span>
+<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a><span class="do">## sigma          1.00       1.00</span></span>
+<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a><span class="do">## tau            1.00       1.00</span></span>
+<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb38-38"><a href="#cb38-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Multivariate psrf</span></span>
+<span id="cb38-39"><a href="#cb38-39" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb38-40"><a href="#cb38-40" aria-hidden="true" tabindex="-1"></a><span class="do">## 1.01</span></span>
+<span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(non_lin_dug_bm.mcmc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_density</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'alpha'</span>,<span class="at">hpd =</span> T)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_density</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>,<span class="at">hpd =</span> T)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_density</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'gamma'</span>,<span class="at">hpd =</span> T)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_density</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>,<span class="at">hpd =</span> T)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_autocorrelation</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'alpha'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-6.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_autocorrelation</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'beta'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-7.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_autocorrelation</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'gamma'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-8.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggs_autocorrelation</span>(non_lin_dug_bm.gg,<span class="at">family=</span><span class="st">'tau'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-32-9.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We will now use the previous model to predict the Dugong weight in terms of age. We will consider a sequence of values for the Age variable, denoted by <em>x</em>, ranging from 0 to 32 with a step size of 0.5. We will then use the nonlinear Bayesian model to estimate the corresponding fitted values for each value of <em>x</em>. These fitted values will provide a curve representing the predicted weight of the Dugongs as they age.”</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-33_38d7ab1baa5168570e98f9cdbac98886">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>xx<span class="ot">=</span><span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="dv">32</span>,<span class="at">by=</span>.<span class="dv">5</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>yy<span class="ot">=</span><span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(xx))</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>dataList<span class="ot">=</span><span class="fu">list</span>(<span class="at">x =</span> <span class="fu">c</span>( <span class="fl">1.0</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">5.0</span>, <span class="fl">7.0</span>,</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>            <span class="fl">8.0</span>, <span class="fl">8.5</span>, <span class="fl">9.0</span>, <span class="fl">9.5</span>, <span class="fl">9.5</span>, <span class="fl">10.0</span>, <span class="fl">12.0</span>, <span class="fl">12.0</span>, <span class="fl">13.0</span>,</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>            <span class="fl">13.0</span>, <span class="fl">14.5</span>, <span class="fl">15.5</span>, <span class="fl">15.5</span>, <span class="fl">16.5</span>, <span class="fl">17.0</span>, <span class="fl">22.5</span>, <span class="fl">29.0</span>, <span class="fl">31.5</span>),</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">Y =</span> <span class="fu">c</span>(<span class="fl">1.80</span>, <span class="fl">1.85</span>, <span class="fl">1.87</span>, <span class="fl">1.77</span>, <span class="fl">2.02</span>, <span class="fl">2.27</span>, <span class="fl">2.15</span>, <span class="fl">2.26</span>, <span class="fl">2.47</span>,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>           <span class="fl">2.19</span>, <span class="fl">2.26</span>, <span class="fl">2.40</span>, <span class="fl">2.39</span>, <span class="fl">2.41</span>, <span class="fl">2.50</span>, <span class="fl">2.32</span>, <span class="fl">2.32</span>, <span class="fl">2.43</span>,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>           <span class="fl">2.47</span>, <span class="fl">2.56</span>, <span class="fl">2.65</span>, <span class="fl">2.47</span>, <span class="fl">2.64</span>, <span class="fl">2.56</span>, <span class="fl">2.70</span>, <span class="fl">2.72</span>, <span class="fl">2.57</span>), <span class="at">N =</span> <span class="dv">27</span>) </span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(dataList<span class="sc">$</span>x,xx)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>Y<span class="ot">=</span><span class="fu">c</span>(dataList<span class="sc">$</span>Y,yy)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span><span class="fu">length</span>(Y)</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>dataList<span class="ot">=</span><span class="fu">list</span>(<span class="at">x=</span>x,<span class="at">Y=</span>Y,<span class="at">N=</span>N)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>dataList</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="do">## $x</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  1.0  1.5  1.5  1.5  2.5  4.0  5.0  5.0  7.0  8.0  8.5  9.0  9.5  9.5 10.0</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] 12.0 12.0 13.0 13.0 14.5 15.5 15.5 16.5 17.0 22.5 29.0 31.5  0.5  1.0  1.5</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [31]  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5  8.0  8.5  9.0</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [46]  9.5 10.0 10.5 11.0 11.5 12.0 12.5 13.0 13.5 14.0 14.5 15.0 15.5 16.0 16.5</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] 17.0 17.5 18.0 18.5 19.0 19.5 20.0 20.5 21.0 21.5 22.0 22.5 23.0 23.5 24.0</span></span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [76] 24.5 25.0 25.5 26.0 26.5 27.0 27.5 28.0 28.5 29.0 29.5 30.0 30.5 31.0 31.5</span></span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [91] 32.0</span></span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a><span class="do">## $Y</span></span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 1.80 1.85 1.87 1.77 2.02 2.27 2.15 2.26 2.47 2.19 2.26 2.40 2.39 2.41 2.50</span></span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] 2.32 2.32 2.43 2.47 2.56 2.65 2.47 2.64 2.56 2.70 2.72 2.57   NA   NA   NA</span></span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [31]   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA</span></span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [46]   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA</span></span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [61]   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA</span></span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [76]   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA</span></span>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [91]   NA</span></span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a><span class="do">## $N</span></span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 91</span></span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>parameters.to.save<span class="ot">=</span><span class="st">"Y"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-34_b3ab615b4396f514e61769dad2624a6e">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm2 <span class="ot">&lt;-</span> <span class="fu">jags</span>(<span class="at">data =</span> dataList, <span class="at">inits =</span> inits,</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">parameters.to.save =</span> parameters.to.save, </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">n.chains =</span> nChains, <span class="at">n.iter =</span> nIter,</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">n.burnin =</span> burnInSteps,<span class="at">n.thin =</span> thinSteps,</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">model.file =</span><span class="fu">textConnection</span>(dug_non_line))</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiling model graph</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="do">##    Resolving undeclared variables</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="do">##    Allocating nodes</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Graph information:</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="do">##    Observed stochastic nodes: 27</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="do">##    Unobserved stochastic nodes: 68</span></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="do">##    Total graph size: 386</span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Initializing model</span></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(non_lin_dug_bm2)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Inference for Bugs model at "5", fit using jags,</span></span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 chains, each with 19667 iterations (first 3000 discarded), n.thin = 5</span></span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  n.sims = 9999 iterations saved</span></span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a><span class="do">##          mu.vect sd.vect    2.5%     25%     50%     75%   97.5%  Rhat n.eff</span></span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[1]       1.800   0.000   1.800   1.800   1.800   1.800   1.800 1.000     1</span></span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[2]       1.850   0.000   1.850   1.850   1.850   1.850   1.850 1.000     1</span></span>
+<span id="cb48-22"><a href="#cb48-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[3]       1.870   0.000   1.870   1.870   1.870   1.870   1.870 1.000     1</span></span>
+<span id="cb48-23"><a href="#cb48-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[4]       1.770   0.000   1.770   1.770   1.770   1.770   1.770 1.000     1</span></span>
+<span id="cb48-24"><a href="#cb48-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[5]       2.020   0.000   2.020   2.020   2.020   2.020   2.020 1.000     1</span></span>
+<span id="cb48-25"><a href="#cb48-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[6]       2.270   0.000   2.270   2.270   2.270   2.270   2.270 1.000     1</span></span>
+<span id="cb48-26"><a href="#cb48-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[7]       2.150   0.000   2.150   2.150   2.150   2.150   2.150 1.000     1</span></span>
+<span id="cb48-27"><a href="#cb48-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[8]       2.260   0.000   2.260   2.260   2.260   2.260   2.260 1.000     1</span></span>
+<span id="cb48-28"><a href="#cb48-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[9]       2.470   0.000   2.470   2.470   2.470   2.470   2.470 1.000     1</span></span>
+<span id="cb48-29"><a href="#cb48-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[10]      2.190   0.000   2.190   2.190   2.190   2.190   2.190 1.000     1</span></span>
+<span id="cb48-30"><a href="#cb48-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[11]      2.260   0.000   2.260   2.260   2.260   2.260   2.260 1.000     1</span></span>
+<span id="cb48-31"><a href="#cb48-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[12]      2.400   0.000   2.400   2.400   2.400   2.400   2.400 1.000     1</span></span>
+<span id="cb48-32"><a href="#cb48-32" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[13]      2.390   0.000   2.390   2.390   2.390   2.390   2.390 1.000     1</span></span>
+<span id="cb48-33"><a href="#cb48-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[14]      2.410   0.000   2.410   2.410   2.410   2.410   2.410 1.000     1</span></span>
+<span id="cb48-34"><a href="#cb48-34" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[15]      2.500   0.000   2.500   2.500   2.500   2.500   2.500 1.000     1</span></span>
+<span id="cb48-35"><a href="#cb48-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[16]      2.320   0.000   2.320   2.320   2.320   2.320   2.320 1.000     1</span></span>
+<span id="cb48-36"><a href="#cb48-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[17]      2.320   0.000   2.320   2.320   2.320   2.320   2.320 1.000     1</span></span>
+<span id="cb48-37"><a href="#cb48-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[18]      2.430   0.000   2.430   2.430   2.430   2.430   2.430 1.000     1</span></span>
+<span id="cb48-38"><a href="#cb48-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[19]      2.470   0.000   2.470   2.470   2.470   2.470   2.470 1.000     1</span></span>
+<span id="cb48-39"><a href="#cb48-39" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[20]      2.560   0.000   2.560   2.560   2.560   2.560   2.560 1.000     1</span></span>
+<span id="cb48-40"><a href="#cb48-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[21]      2.650   0.000   2.650   2.650   2.650   2.650   2.650 1.000     1</span></span>
+<span id="cb48-41"><a href="#cb48-41" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[22]      2.470   0.000   2.470   2.470   2.470   2.470   2.470 1.000     1</span></span>
+<span id="cb48-42"><a href="#cb48-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[23]      2.640   0.000   2.640   2.640   2.640   2.640   2.640 1.000     1</span></span>
+<span id="cb48-43"><a href="#cb48-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[24]      2.560   0.000   2.560   2.560   2.560   2.560   2.560 1.000     1</span></span>
+<span id="cb48-44"><a href="#cb48-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[25]      2.700   0.000   2.700   2.700   2.700   2.700   2.700 1.000     1</span></span>
+<span id="cb48-45"><a href="#cb48-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[26]      2.720   0.000   2.720   2.720   2.720   2.720   2.720 1.000     1</span></span>
+<span id="cb48-46"><a href="#cb48-46" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[27]      2.570   0.000   2.570   2.570   2.570   2.570   2.570 1.000     1</span></span>
+<span id="cb48-47"><a href="#cb48-47" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[28]      1.746   0.122   1.504   1.667   1.747   1.827   1.984 1.001  4600</span></span>
+<span id="cb48-48"><a href="#cb48-48" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[29]      1.811   0.114   1.582   1.737   1.811   1.887   2.036 1.001  7100</span></span>
+<span id="cb48-49"><a href="#cb48-49" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[30]      1.872   0.110   1.654   1.799   1.871   1.945   2.089 1.001  6100</span></span>
+<span id="cb48-50"><a href="#cb48-50" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[31]      1.926   0.107   1.715   1.855   1.927   1.996   2.136 1.001 10000</span></span>
+<span id="cb48-51"><a href="#cb48-51" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[32]      1.978   0.106   1.766   1.909   1.979   2.047   2.188 1.001  6500</span></span>
+<span id="cb48-52"><a href="#cb48-52" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[33]      2.027   0.105   1.821   1.959   2.026   2.095   2.235 1.002  2000</span></span>
+<span id="cb48-53"><a href="#cb48-53" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[34]      2.071   0.105   1.866   2.003   2.070   2.140   2.280 1.001  4500</span></span>
+<span id="cb48-54"><a href="#cb48-54" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[35]      2.110   0.105   1.902   2.042   2.110   2.177   2.321 1.001 10000</span></span>
+<span id="cb48-55"><a href="#cb48-55" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[36]      2.147   0.105   1.941   2.079   2.145   2.215   2.357 1.001 10000</span></span>
+<span id="cb48-56"><a href="#cb48-56" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[37]      2.183   0.104   1.979   2.115   2.183   2.251   2.392 1.001  7900</span></span>
+<span id="cb48-57"><a href="#cb48-57" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[38]      2.216   0.107   2.009   2.146   2.214   2.285   2.431 1.001  5700</span></span>
+<span id="cb48-58"><a href="#cb48-58" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[39]      2.243   0.105   2.040   2.173   2.242   2.312   2.457 1.002  1900</span></span>
+<span id="cb48-59"><a href="#cb48-59" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[40]      2.272   0.107   2.067   2.202   2.272   2.341   2.487 1.001  6300</span></span>
+<span id="cb48-60"><a href="#cb48-60" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[41]      2.297   0.105   2.091   2.229   2.296   2.367   2.509 1.001  4400</span></span>
+<span id="cb48-61"><a href="#cb48-61" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[42]      2.321   0.106   2.120   2.251   2.321   2.388   2.534 1.001 10000</span></span>
+<span id="cb48-62"><a href="#cb48-62" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[43]      2.344   0.104   2.141   2.276   2.344   2.412   2.551 1.001  5800</span></span>
+<span id="cb48-63"><a href="#cb48-63" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[44]      2.363   0.105   2.158   2.293   2.362   2.433   2.568 1.002  2500</span></span>
+<span id="cb48-64"><a href="#cb48-64" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[45]      2.383   0.105   2.181   2.315   2.382   2.451   2.590 1.001  5500</span></span>
+<span id="cb48-65"><a href="#cb48-65" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[46]      2.401   0.104   2.197   2.333   2.402   2.468   2.607 1.001 10000</span></span>
+<span id="cb48-66"><a href="#cb48-66" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[47]      2.419   0.102   2.217   2.353   2.418   2.484   2.620 1.001 10000</span></span>
+<span id="cb48-67"><a href="#cb48-67" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[48]      2.433   0.105   2.228   2.364   2.433   2.502   2.643 1.001  7600</span></span>
+<span id="cb48-68"><a href="#cb48-68" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[49]      2.446   0.103   2.241   2.378   2.447   2.513   2.646 1.001 10000</span></span>
+<span id="cb48-69"><a href="#cb48-69" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[50]      2.460   0.102   2.257   2.392   2.460   2.528   2.662 1.001  8800</span></span>
+<span id="cb48-70"><a href="#cb48-70" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[51]      2.473   0.102   2.274   2.406   2.473   2.540   2.676 1.001  9600</span></span>
+<span id="cb48-71"><a href="#cb48-71" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[52]      2.485   0.103   2.282   2.417   2.485   2.552   2.687 1.001 10000</span></span>
+<span id="cb48-72"><a href="#cb48-72" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[53]      2.496   0.103   2.294   2.429   2.496   2.564   2.698 1.001 10000</span></span>
+<span id="cb48-73"><a href="#cb48-73" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[54]      2.506   0.103   2.303   2.436   2.506   2.573   2.710 1.001 10000</span></span>
+<span id="cb48-74"><a href="#cb48-74" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[55]      2.515   0.104   2.310   2.448   2.514   2.583   2.719 1.001 10000</span></span>
+<span id="cb48-75"><a href="#cb48-75" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[56]      2.523   0.103   2.320   2.456   2.523   2.589   2.729 1.001 10000</span></span>
+<span id="cb48-76"><a href="#cb48-76" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[57]      2.532   0.104   2.329   2.465   2.531   2.601   2.735 1.001 10000</span></span>
+<span id="cb48-77"><a href="#cb48-77" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[58]      2.539   0.103   2.334   2.473   2.540   2.606   2.741 1.001  3500</span></span>
+<span id="cb48-78"><a href="#cb48-78" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[59]      2.546   0.103   2.344   2.477   2.547   2.613   2.745 1.001 10000</span></span>
+<span id="cb48-79"><a href="#cb48-79" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[60]      2.553   0.103   2.346   2.485   2.554   2.621   2.753 1.001 10000</span></span>
+<span id="cb48-80"><a href="#cb48-80" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[61]      2.558   0.104   2.355   2.490   2.558   2.627   2.765 1.001  6900</span></span>
+<span id="cb48-81"><a href="#cb48-81" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[62]      2.565   0.106   2.358   2.496   2.565   2.635   2.775 1.002  2900</span></span>
+<span id="cb48-82"><a href="#cb48-82" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[63]      2.572   0.104   2.360   2.506   2.573   2.639   2.777 1.002  2900</span></span>
+<span id="cb48-83"><a href="#cb48-83" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[64]      2.574   0.106   2.364   2.505   2.575   2.645   2.783 1.001  5500</span></span>
+<span id="cb48-84"><a href="#cb48-84" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[65]      2.579   0.106   2.370   2.509   2.580   2.649   2.787 1.001  7500</span></span>
+<span id="cb48-85"><a href="#cb48-85" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[66]      2.584   0.105   2.375   2.516   2.584   2.654   2.791 1.001  3800</span></span>
+<span id="cb48-86"><a href="#cb48-86" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[67]      2.589   0.106   2.382   2.520   2.589   2.660   2.796 1.001 10000</span></span>
+<span id="cb48-87"><a href="#cb48-87" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[68]      2.593   0.108   2.383   2.521   2.592   2.663   2.808 1.002  2700</span></span>
+<span id="cb48-88"><a href="#cb48-88" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[69]      2.595   0.107   2.378   2.524   2.597   2.665   2.801 1.002  2600</span></span>
+<span id="cb48-89"><a href="#cb48-89" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[70]      2.598   0.109   2.380   2.527   2.600   2.670   2.809 1.001 10000</span></span>
+<span id="cb48-90"><a href="#cb48-90" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[71]      2.601   0.107   2.388   2.531   2.602   2.672   2.815 1.001 10000</span></span>
+<span id="cb48-91"><a href="#cb48-91" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[72]      2.605   0.109   2.391   2.534   2.605   2.675   2.824 1.001 10000</span></span>
+<span id="cb48-92"><a href="#cb48-92" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[73]      2.607   0.110   2.395   2.535   2.607   2.679   2.825 1.001  9200</span></span>
+<span id="cb48-93"><a href="#cb48-93" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[74]      2.609   0.110   2.393   2.538   2.609   2.681   2.823 1.002  2500</span></span>
+<span id="cb48-94"><a href="#cb48-94" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[75]      2.613   0.110   2.397   2.541   2.613   2.685   2.828 1.002  1400</span></span>
+<span id="cb48-95"><a href="#cb48-95" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[76]      2.616   0.111   2.396   2.543   2.614   2.688   2.834 1.002  2100</span></span>
+<span id="cb48-96"><a href="#cb48-96" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[77]      2.619   0.112   2.395   2.548   2.620   2.691   2.842 1.001  6500</span></span>
+<span id="cb48-97"><a href="#cb48-97" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[78]      2.619   0.112   2.394   2.546   2.618   2.693   2.841 1.001  7800</span></span>
+<span id="cb48-98"><a href="#cb48-98" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[79]      2.620   0.113   2.400   2.547   2.620   2.693   2.842 1.001  6300</span></span>
+<span id="cb48-99"><a href="#cb48-99" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[80]      2.621   0.113   2.399   2.547   2.622   2.695   2.842 1.001  5200</span></span>
+<span id="cb48-100"><a href="#cb48-100" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[81]      2.626   0.112   2.405   2.554   2.626   2.700   2.849 1.001  4200</span></span>
+<span id="cb48-101"><a href="#cb48-101" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[82]      2.627   0.113   2.404   2.553   2.627   2.702   2.851 1.002  3100</span></span>
+<span id="cb48-102"><a href="#cb48-102" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[83]      2.627   0.114   2.402   2.552   2.629   2.700   2.851 1.001  5600</span></span>
+<span id="cb48-103"><a href="#cb48-103" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[84]      2.627   0.115   2.396   2.553   2.628   2.702   2.852 1.002  1500</span></span>
+<span id="cb48-104"><a href="#cb48-104" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[85]      2.630   0.112   2.411   2.558   2.628   2.704   2.858 1.001 10000</span></span>
+<span id="cb48-105"><a href="#cb48-105" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[86]      2.631   0.114   2.410   2.557   2.630   2.705   2.862 1.001  3500</span></span>
+<span id="cb48-106"><a href="#cb48-106" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[87]      2.633   0.114   2.407   2.559   2.633   2.709   2.854 1.002  1900</span></span>
+<span id="cb48-107"><a href="#cb48-107" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[88]      2.632   0.114   2.411   2.556   2.633   2.708   2.858 1.001  3600</span></span>
+<span id="cb48-108"><a href="#cb48-108" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[89]      2.633   0.116   2.406   2.558   2.632   2.709   2.862 1.001  5400</span></span>
+<span id="cb48-109"><a href="#cb48-109" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[90]      2.635   0.116   2.412   2.557   2.634   2.710   2.863 1.002  1800</span></span>
+<span id="cb48-110"><a href="#cb48-110" aria-hidden="true" tabindex="-1"></a><span class="do">## Y[91]      2.637   0.117   2.408   2.559   2.637   2.714   2.868 1.001  6200</span></span>
+<span id="cb48-111"><a href="#cb48-111" aria-hidden="true" tabindex="-1"></a><span class="do">## deviance -48.985   3.275 -52.990 -51.347 -49.752 -47.417 -40.457 1.001 10000</span></span>
+<span id="cb48-112"><a href="#cb48-112" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb48-113"><a href="#cb48-113" aria-hidden="true" tabindex="-1"></a><span class="do">## For each parameter, n.eff is a crude measure of effective sample size,</span></span>
+<span id="cb48-114"><a href="#cb48-114" aria-hidden="true" tabindex="-1"></a><span class="do">## and Rhat is the potential scale reduction factor (at convergence, Rhat=1).</span></span>
+<span id="cb48-115"><a href="#cb48-115" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb48-116"><a href="#cb48-116" aria-hidden="true" tabindex="-1"></a><span class="do">## DIC info (using the rule, pD = var(deviance)/2)</span></span>
+<span id="cb48-117"><a href="#cb48-117" aria-hidden="true" tabindex="-1"></a><span class="do">## pD = 5.4 and DIC = -43.6</span></span>
+<span id="cb48-118"><a href="#cb48-118" aria-hidden="true" tabindex="-1"></a><span class="do">## DIC is an estimate of expected predictive error (lower deviance is better).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-35_ba61550b122f9f1a67184ca161170fd3">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm2<span class="ot">=</span><span class="fu">as.mcmc</span>(non_lin_dug_bm2)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm2<span class="ot">=</span><span class="fu">ggs</span>(non_lin_dug_bm2)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>Ys<span class="ot">=</span><span class="fu">sapply</span>(<span class="dv">28</span><span class="sc">:</span><span class="dv">91</span>,<span class="cf">function</span>(i)glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Y["</span>,i,<span class="st">"]"</span>))</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>non_lin_dug_bm2<span class="ot">=</span>non_lin_dug_bm2<span class="sc">%&gt;%</span><span class="fu">filter</span>(Parameter<span class="sc">%in%</span>Ys)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>dt_curv<span class="ot">&lt;-</span>non_lin_dug_bm2<span class="sc">%&gt;%</span><span class="fu">group_by</span>(Parameter)<span class="sc">%&gt;%</span><span class="fu">summarise</span>(<span class="at">lwr=</span><span class="fu">quantile</span>(value,<span class="at">probs =</span> .<span class="dv">025</span>),<span class="at">upr=</span><span class="fu">quantile</span>(value,<span class="at">probs =</span> .<span class="dv">975</span>),<span class="at">ave=</span><span class="fu">mean</span>(value))</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>dt_curv<span class="sc">$</span>x<span class="ot">=</span>xx</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>dt_curv<span class="sc">%&gt;%</span><span class="fu">head</span>()</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 6 × 5</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   Parameter   lwr   upr   ave     x</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 Y[28]      1.50  1.98  1.75   0.5</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 Y[29]      1.58  2.04  1.81   1  </span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 Y[30]      1.65  2.09  1.87   1.5</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 Y[31]      1.71  2.14  1.93   2  </span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 Y[32]      1.77  2.19  1.98   2.5</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 Y[33]      1.82  2.24  2.03   3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The growth curve:</p>
+<div class="cell" data-hash="dugong_cache/html/unnamed-chunk-36_f1b754bc166397994bfb789988e2569b">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dt_curv,<span class="fu">aes</span>(x,ave))<span class="sc">+</span><span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lwr,<span class="at">ymax=</span>upr),<span class="at">fill=</span><span class="st">'pink'</span>,<span class="at">alpha=</span>.<span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>dt,<span class="fu">aes</span>(x,y))<span class="sc">+</span><span class="fu">xlab</span>(<span class="st">'Age'</span>)<span class="sc">+</span><span class="fu">ylab</span>(<span class="st">'Weight'</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="dugong_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

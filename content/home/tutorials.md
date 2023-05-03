@@ -52,7 +52,8 @@ content:
     tag:  rapwithR
   - name: Mosaics plots using `ggmosaic?`
     tag:  mosaicplots
-    
+  - name: Dugong Growth Curve, Bayesian and Frequentist Models
+    tag:  dugongBExamp
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'
