@@ -117,13 +117,13 @@ We have then computed the following metrics:
 -   `RMSE`: (Root Mean Square Error)
 
     $$
-    \mbox{RMSE}=\sqrt{\displaystyle\frac{1}{n}\sum\_{i=1}^n(y_i-\widehat{y}\_i)^2}
+    \mbox{RMSE}=\sqrt{\displaystyle\frac{1}{n}\sum\\\\\\\_{i=1}^n(y_i-\widehat{y}\\\\\\\_i)^2}
     $$
 
 -   `MAE`: (Mean Absolute Error)
 
     $$
-    \mbox{MAE}=\displaystyle\frac{1}{n}\sum\_{i=1}^n\left\|y_i-\widehat{y}\_i\right\|
+    \mbox{MAE}=\displaystyle\frac{1}{n}\sum\\\\\\\_{i=1}^n\left\\\\\\\|y_i-\widehat{y}\\\\\\\_i\right\\\\\\\|
     $$
 
 -   `Rsquared`: is the mean of the *R*<sup>2</sup> of all the estimated linear models
@@ -145,8 +145,7 @@ rae(z$pred$obs,z$pred$pred)
 
 ## Simple linear Bayesian Model
 
-We will now estimate the linear model
-*Y*<sub>*i*</sub> = *β*<sub>0</sub> + *β*<sub>1</sub> ⋅ log (*x*<sub>*i*</sub>) + *ϵ*<sub>*i*</sub>,  *i* = 1, ..., *n*
+We will now estimate the linear model *Y*<sub>*i*</sub> = *β*<sub>0</sub> + *β*<sub>1</sub> ⋅ log (*x*<sub>*i*</sub>) + *ϵ*<sub>*i*</sub>,  *i* = 1, ..., *n*
 
 using a Bayesian approach. For the priors on the parameters, we will consider flat (non-informative) distributions. Specifically, we will assume a flat normal distribution for both the intercept *β*<sub>0</sub> and the coefficient *β*<sub>1</sub>, and a flat gamma distribution for the precision parameter *τ*.
 
