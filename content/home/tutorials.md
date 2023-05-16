@@ -54,6 +54,8 @@ content:
     tag:  mosaicplots
   - name: Dugong Growth Curve, Bayesian and Frequentist Models
     tag:  dugongBExamp
+  - name: Creating Chloropleth Maps of Ile-de-France Departments using R, A Step by Step Guide
+    tag:  DepartParisMap
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'
