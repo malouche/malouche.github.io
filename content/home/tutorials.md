@@ -56,6 +56,8 @@ content:
     tag:  dugongBExamp
   - name: Creating Chloropleth Maps of Ile-de-France Departments using R, A Step by Step Guide
     tag:  DepartParisMap
+  - name: Interactive Africa map with ggigraph
+    tag:  interactiveafrica
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'
