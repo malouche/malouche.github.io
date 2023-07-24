@@ -31,10 +31,8 @@ design:
 
 
 {{% callout note %}}
-Welcome to my website. I will be sharing my recent courses materials, papers, projects, and talks with you. 
 
-I use R, Python, H2O, and Spark for my everyday work. On this website, I will be sharing many R and Python codes where I show how one can use this software to solve Machine Learning, Statistical Modeling, and Data Visualization problems. I would greatly appreciate all feedback, comments, and questions.
-
+Welcome to my website! Here, I'll be sharing my recent course materials, research papers, projects, and talks with you. As a Professor of Statistics with a Ph.D. in Statistics and Applied Mathematics, my expertise spans over two decades. I'm enthusiastic about utilizing R, Python, H2O, and Spark to solve Machine Learning, Statistical Modeling, and Data Visualization problems. Your feedback and questions are always appreciated, so don't hesitate to reach out. Let's explore the world of data analysis together!
 
 
 
