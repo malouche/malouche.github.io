@@ -4,7 +4,6 @@ abstract:  This work addresses the theory of External Preference Mapping techniq
 authors:
 - Ibtihel Rebhi
 - admin
-- and others
 date: "2023-01-10T00:00:00Z"
 doi: "http://doi.org/10.1111/joss.12809"
 publication: '*Journal of Sensory Studies*'
