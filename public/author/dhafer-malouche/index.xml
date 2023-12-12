@@ -7,7 +7,7 @@
     <description>Dhafer Malouche</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2023</copyright><lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <url>https://dhafermalouche.net/author/dhafer-malouche/avatar_hu1aa815faf11ca17e6838200767487ccc_48959_270x270_fill_q75_lanczos_center.jpg</url>
       <title>Dhafer Malouche</title>
       <link>https://dhafermalouche.net/author/dhafer-malouche/</link>
     </image>
@@ -17,6 +17,38 @@
       <link>https://dhafermalouche.net/publication/describind/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/publication/describind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SensMap R package and SensMapGUI shiny web application for sensory and consumer data mapping, Variations on external preference mapping and stability assessment</title>
+      <link>https://dhafermalouche.net/publication/sensmapr/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/sensmapr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimating Excess Mortality Associated with COVID-19 Pandemic. A 151 Cross-countries Study.</title>
+      <link>https://dhafermalouche.net/publication/excessmortality/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/excessmortality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Impact of contact tracing, respect of isolation, and lockdown in reducing the number of cases infected with COVID-19. Case study, Tunisia&#39;s response from March 22 to May 4, 2020</title>
+      <link>https://dhafermalouche.net/publication/impactcovid/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/impactcovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Implications of Faithfulness in Graphical Models</title>
+      <link>https://dhafermalouche.net/publication/faithful2021/</link>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/faithful2021/</guid>
       <description></description>
     </item>
     
