@@ -5,12 +5,20 @@
     <link>https://dhafermalouche.net/tutorials/</link>
       <atom:link href="https://dhafermalouche.net/tutorials/index.xml" rel="self" type="application/rss+xml" />
     <description>Tutorials</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Thu, 18 May 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
       <title>Tutorials</title>
       <link>https://dhafermalouche.net/tutorials/</link>
     </image>
+    
+    <item>
+      <title>Bayesian Single Parameter Models</title>
+      <link>https://dhafermalouche.net/tutorials/bayesiansingleparametermodels/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/bayesiansingleparametermodels/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Interactive Africa Map with ggigraph</title>
