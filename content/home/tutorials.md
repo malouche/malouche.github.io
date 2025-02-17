@@ -9,7 +9,7 @@ active: true
 # Order that this section appears on the page.
 weight: 95
 
-title: Tutorials
+title: Tutorials/Talks
 
 content:
   # Page type to display. E.g. project.
@@ -26,6 +26,10 @@ content:
   filter_button:
   - name: All
     tag: '*'
+  - name: Statistical Design for Animal Research
+    tag: animalmodels
+  - name: Bayesian Single Parameter Models
+    tag: bayesianstatistics
   - name: Pandas
     tag: pandas
   - name: NumPy
