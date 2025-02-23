@@ -62,6 +62,8 @@ content:
     tag:  DepartParisMap
   - name: Interactive Africa map with ggigraph
     tag:  interactiveafrica
+  - name: More  investment in  RD  for better Education  in the (distant) future? 
+    tag:  rdtalk
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'

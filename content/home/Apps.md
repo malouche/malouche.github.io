@@ -39,6 +39,10 @@ content:
     tage: COVIDGlobalMap2022
   - name: Generate Random Numbers
     tags: genrandomnumbs
+  - name: ECDF and Ogive Analysis
+    tags: ECDFOgive
+  - name: Survival Function Estimator
+    tags: survestim
   
     
 design:
