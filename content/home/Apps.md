@@ -43,6 +43,8 @@ content:
     tags: ECDFOgive
   - name: Survival Function Estimator
     tags: survestim
+  - name: Statistical Measures Learning App
+    tags: statisticalmeasures
   
     
 design:
