@@ -58,6 +58,8 @@ content:
     tag:  mosaicplots
   - name: Dugong Growth Curve, Bayesian and Frequentist Models
     tag:  dugongBExamp
+  - name: Collecting Data with R and Python
+    tag:  collectingdata
   - name: Creating Chloropleth Maps of Ile-de-France Departments using R, A Step by Step Guide
     tag:  DepartParisMap
   - name: Interactive Africa map with ggigraph
