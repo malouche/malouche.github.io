@@ -239,9 +239,6 @@ title: Collecting Data with R and Python
         }
     </style>
 
-# Collecting Data with R/Python
-
-By Dhafer Malouche
 
 ## Outline
 
