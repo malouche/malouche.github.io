@@ -2,12 +2,12 @@
 education:
   courses:
   - course: Habilitation (Tenure), Problèmes autour de la probabilité et de la statistique, Méthodes et Applications.
-    institution: Université de Tunis ElManar Ecole National d’Ingénieurs de Tunis, Tunisia.
+    institution: Université de Tunis ElManar Ecole National d'Ingénieurs de Tunis, Tunisia.
     year: September 2009
   - course: Ph.D. in Statistics and Probability
     institution: Paul Sabatier University, Toulouse, France 
     year: October 1997
-  - course: Master in  Applied Mathematics  
+  - course: Master in Applied Mathematics  
     institution: Paul Sabatier University, Toulouse, France  
     year: 1993 - 1994
   - course: Bachelor (Maîtrise) in Mathematics
@@ -16,13 +16,14 @@ education:
 email: ""
 highlight_name: true
 interests:
-- Graphical models and statistical models 
-- Public health, COVID-19
-- Research and development
-- Well-being
-- Survey methodology
-- Data Quality
-- Consumer preferences
+- Graphical & Statistical Models
+- Public Health & COVID-19
+- Research & Development
+- Well-being & Quality of Life
+- Survey Methodology
+- Data Quality & Analysis
+- Consumer Preferences & Sensory Analysis
+- Medical & Clinical Applications
 
 organizations:
 - name: Qatar University 
@@ -47,7 +48,14 @@ superuser: true
 title: Dhafer Malouche 
 ---
 
-Dr. Dhafer Malouche is currently a Professor of Statistics at Qatar University. He obtained his Ph.D. in Statistics and Applied Mathematics from Paul Sabatier University in France and has held positions at universities in Tunisia. In 2021-2022, he was also a Professor of Statistics at the American University in Cairo. In addition to his teaching and research duties, Dr. Malouche has also been a visiting scholar at several prestigious institutions in North America as a Fulbright Scholar, including Stanford University, Yale University, and the University of Michigan. His research interests include graphical models, public health, COVID-19, research and development, well-being, survey methodology, data quality, and consumer preferences. He has authored numerous papers on these and other topics in collaboration with multidisciplinary teams, including social scientists, epidemiologists, and genetics researchers. 
+Dr. Dhafer Malouche is a Professor of Statistics at Qatar University with over 25 years of academic experience across international institutions. After earning his Ph.D. in Statistics and Applied Mathematics from Paul Sabatier University in France, he established himself as a distinguished researcher and educator, holding positions at universities in Tunisia, Egypt, and Qatar.
 
+His academic journey includes prestigious appointments as a Fulbright Scholar at Stanford University (2011) and the University of Michigan (2016-2017), as well as research collaborations at Yale University's MacMillan Center for International and Area Studies (2014-2019). During these appointments, he contributed to research on democratic transitions, governance, data quality, and survey methodology.
+
+Dr. Malouche's research spans multiple disciplines, with significant contributions to statistical theory (graphical models, conditional independence), public health (COVID-19 tracking systems, epidemiological modeling), and applied statistics (consumer preferences, sensory analysis). His methodological expertise in Bayesian statistics, data mining, and time series analysis has supported interdisciplinary collaborations with social scientists, epidemiologists, medical researchers, and geneticists.
+
+He has published extensively in peer-reviewed journals, with recent work focusing on health outcomes, disease modeling, and statistical applications in medical research. Beyond academia, Dr. Malouche has served as a data analyst consultant for organizations including the World Health Organization, where he measured the impact of the COVID-19 pandemic on psychiatric needs in Tunisia.
+
+His teaching portfolio encompasses advanced statistical methods, data science applications, and specialized courses for both undergraduate and doctoral students. Dr. Malouche brings this wealth of international experience and cross-disciplinary expertise to his current position at Qatar University, where he continues to advance statistical research and education.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
