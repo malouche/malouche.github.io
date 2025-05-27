@@ -60,7 +60,7 @@
   
     
   
-  <meta name="description" content="Interactive timeline of Dr. Dhafer Malouche&#39;s research publications from 1997 to 2025" />
+  <meta name="description" content="Professor of Statistics" />
 
   
   <link rel="alternate" hreflang="en-us" href="https://dhafermalouche.net/publications-timeline/" />
@@ -345,11 +345,9 @@
   <meta property="og:site_name" content="Dhafer Malouche" />
   <meta property="og:url" content="https://dhafermalouche.net/publications-timeline/" />
   <meta property="og:title" content="Research Publications Timeline | Dhafer Malouche" />
-  <meta property="og:description" content="Interactive timeline of Dr. Dhafer Malouche&#39;s research publications from 1997 to 2025" /><meta property="og:image" content="https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:description" content="Professor of Statistics" /><meta property="og:image" content="https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
-    
-      <meta property="og:updated_time" content="2023-04-02T00:00:00&#43;00:00" />
     
   
 
@@ -399,7 +397,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="7e0efe9874a52f542081cb7cf98c32c3" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="2adbe58e7a5be14f5685fa5b5db2c949" >
 
   
   
@@ -557,17 +555,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#publications"><span>Recent Publications</span></a>
+            <a class="nav-link " href="/timeline.html"><span>Publications Timeline</span></a>
           </li>
 
           
@@ -604,7 +595,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#publications-timeline"><span>Timeline</span></a>
+            <a class="nav-link " href="/#publications"><span>Recent Publications</span></a>
           </li>
 
           
@@ -822,666 +813,242 @@
 
 <div class="universal-wrapper">
   
-    <div class="article-style">
-<!DOCTYPE html>
+    <div class="article-style"><!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Dhafer Malouche - Research Publications Timeline</title>
-    
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel for JSX -->
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/lucide-react@latest"></script>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <style>
-        /* Additional custom styles */
-        .timeline-container {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        
-        /* Animation for popup */
-        .popup-enter {
-            opacity: 0;
-            transform: scale(0.9);
-        }
-        .popup-enter-active {
-            opacity: 1;
-            transform: scale(1);
-            transition: opacity 300ms, transform 300ms;
-        }
-        .popup-exit {
-            opacity: 1;
-        }
-        .popup-exit-active {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 300ms, transform 300ms;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Research Publications Timeline (1997–2025)</title>
+  <!-- Bootstrap CSS for responsiveness -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Vis.js timeline CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" />
+  <style>
+    body {
+      padding: 20px;
+    }
+    #timeline {
+      border: 1px solid #ddd;
+      margin-top: 20px;
+    }
+    .filter-section {
+      margin-bottom: 20px;
+    }
+    .publication-item {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div id="publications-timeline" class="timeline-container"></div>
+  <div class="container">
+    <h1>Research Publications Timeline (1997–2025)</h1>
+<pre><code>&lt;!-- Search Bar --&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+  &lt;input type=&quot;text&quot; id=&quot;searchBar&quot; class=&quot;form-control&quot; placeholder=&quot;Search publications by title or keyword&quot;&gt;
+&lt;/div&gt;
 
-    <script type="text/babel">
-        // Import the icons from Lucide
-        const { ChevronLeft, ChevronRight, Filter, Info, BookOpen, FileText, FileQuestion, FileEdit } = lucide.icons;
-        
-        // Define publication categories and their colors
-        const CATEGORIES = {
-          JOURNAL: { name: "Peer-Reviewed Journal Articles", color: "#4299e1", icon: BookOpen },
-          CONFERENCE: { name: "Conference Papers / Proceedings", color: "#68d391", icon: FileText },
-          PREPRINT: { name: "Preprints / Under Review", color: "#f6ad55", icon: FileQuestion },
-          OTHER: { name: "Editorials, Commentaries, or Other", color: "#a0aec0", icon: FileEdit }
-        };
-        
-        // Publication data - copied from your research timeline component
-        const publicationsData = [
-          // 2025 - Preprints/Under review
-          {
-            year: 2025,
-            title: "Metabolic comorbidities and reproductive risk",
-            shortTitle: "Metabolic comorbidities",
-            authors: "Al-Khinji, A. A. M. A., & Malouche, D.",
-            venue: "Under review",
-            category: "PREPRINT",
-            doi: null,
-            abstract: "A cross-sectional analysis of pregnancy termination determinants in married women using qatar biobank data."
-          },
-          {
-            year: 2025,
-            title: "Modeling chronic pain interconnections using bayesian networks",
-            shortTitle: "Chronic pain networks",
-            authors: "Al-Khinji, A. A. M. A., & Malouche, D.",
-            venue: "Under review",
-            category: "PREPRINT",
-            doi: null,
-            abstract: "Insights from the qatar biobank study."
-          },
-          {
-            year: 2025,
-            title: "Www.covidradar24.org, a real-time covid-19 tracker",
-            shortTitle: "COVID tracker",
-            authors: "Kuwari, H. A., Khinji, A. A., Hor, A. A., Malouche, D., & Iqbal, J.",
-            venue: "Under review",
-            category: "PREPRINT",
-            doi: null,
-            abstract: "Real-time COVID-19 tracking dashboard and data analysis platform."
-          },
-          {
-            year: 2025,
-            title: "Immune checkpoint inhibitors in pancreatic adenocarcinoma",
-            shortTitle: "Immune checkpoint inhibitors",
-            authors: "Al-Khinji, A., Al-Korbi, N., Al-Kuwari, S., Al-Hor, A., & Malouche, D.",
-            venue: "Under review",
-            category: "PREPRINT",
-            doi: null,
-            abstract: "A systematic review and meta-analysis of clinical outcomes."
-          },
-          // 2024 Papers
-          {
-            year: 2024,
-            title: "Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns",
-            shortTitle: "Birth weight impact on LV dimensions",
-            authors: "Gad, A., Malouche, D., Chhabra, M., et al.",
-            venue: "Journal of Perinatal Medicine",
-            category: "JOURNAL",
-            doi: "10.1515/jpm-2023-0384",
-            abstract: "A prospective cohort analysis examining relationships between birth metrics and cardiac development."
-          },
-          {
-            year: 2024,
-            title: "The comparative ability of five mobility and balance outcome measures in predicting the risk of falls in people with multiple sclerosis",
-            shortTitle: "MS fall risk prediction",
-            authors: "Khalil, H., Malouche, D., Al Marri, D., et al.",
-            venue: "Multiple Sclerosis and Related Disorders",
-            category: "JOURNAL",
-            doi: "10.1016/j.msard.2024.105971",
-            abstract: "Evaluation of different assessment tools for predicting fall risk in MS patients."
-          },
-          {
-            year: 2024,
-            title: "Factors affecting the quality of sleep and physical activity participation of multiple sclerosis (MS) patients",
-            shortTitle: "MS sleep and physical activity",
-            authors: "Khalil, H., Malouche, D., Kanaan, S., et al.",
-            venue: "Multiple Sclerosis and Related Disorders",
-            category: "JOURNAL",
-            doi: "10.1016/j.msard.2024.106099",
-            abstract: "A path analysis examining determinants of sleep quality and physical activity in MS patients."
-          },
-          // 2023 Papers
-          {
-            year: 2023,
-            title: "Influence of drying temperature and harvesting season on phenolic content and antioxidant and antiproliferative activities of olive leaf extracts",
-            shortTitle: "Olive leaf extract properties",
-            authors: "Losada-Echeberría, M., Naranjo, G., Malouche, D., et al.",
-            venue: "International Journal of Molecular Sciences",
-            category: "JOURNAL",
-            doi: "10.3390/ijms24010054",
-            abstract: "Investigation of how processing conditions affect bioactive properties of olive leaf extracts."
-          },
-          {
-            year: 2023,
-            title: "Describing conditional independence statements using undirected graphs",
-            shortTitle: "Conditional independence graphs",
-            authors: "Malouche, D.",
-            venue: "Axioms",
-            category: "JOURNAL",
-            doi: null,
-            url: "https://www.mdpi.com/2075-1680/12/12/1109",
-            abstract: "Mathematical exploration of representing conditional independence relationships in graphical models."
-          },
-          {
-            year: 2023,
-            title: "Sensmap r package and sensmapgui shiny web application for sensory and consumer data mapping",
-            shortTitle: "Sensmap R package",
-            authors: "Rebhi, I., & Malouche, D.",
-            venue: "Journal of Sensory Studies",
-            category: "JOURNAL",
-            doi: "10.1111/joss.12809",
-            abstract: "Variations on external preference mapping and stability assessment for sensory analysis."
-          },
-          // 2022 Papers
-          {
-            year: 2022,
-            title: "Effect of processing technology on chemical, sensory, and consumers' hedonic rating of seven olive oil varieties",
-            shortTitle: "Olive oil processing effects",
-            authors: "Ben-Hassine, K., Taamalli, A., Rezig, L., et al.",
-            venue: "Food Science & Nutrition",
-            category: "JOURNAL",
-            doi: "10.1002/fsn3.2717",
-            abstract: "Analysis of how different processing methods affect olive oil qualities and consumer preferences."
-          },
-          {
-            year: 2022,
-            title: "Chemometric analysis and physicochemical composition of foreign and tunisian olive oil: Consumer preferences",
-            shortTitle: "Olive oil consumer preferences",
-            authors: "Ben-Hassine, K., Yangui, I., Mnif, W., et al.",
-            venue: "Journal of Food Quality",
-            category: "JOURNAL",
-            doi: null,
-            url: "https://doi.org/10.1155/2022/3981028",
-            abstract: "Comparative analysis of olive oil composition and its relationship to consumer preferences."
-          },
-          {
-            year: 2022,
-            title: "Implication of faithfulness assumption",
-            shortTitle: "Faithfulness assumption",
-            authors: "Malouche, D.",
-            venue: "Sankhya B: The Indian Journal of Statistics",
-            category: "JOURNAL",
-            doi: "10.1007/s13571-021-00271-0",
-            abstract: "Theoretical exploration of the faithfulness assumption in statistical graphical models."
-          },
-          // 2021
-          {
-            year: 2021,
-            title: "Www.covidradar24.org, a real-time covid-19 tracker",
-            shortTitle: "COVID-19 tracker",
-            authors: "Malouche, D.",
-            venue: "SSRN",
-            category: "PREPRINT",
-            url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900615",
-            abstract: "Description of a real-time COVID-19 tracking platform and methodology."
-          },
-          {
-            year: 2021,
-            title: "Un travail d'analyse statistique exige la disponibilité des données du ministère de la santé",
-            shortTitle: "Statistical analysis requirements",
-            authors: "Malouche, D.",
-            venue: "Espace Manager",
-            category: "OTHER",
-            url: "https://www.espacemanager.com/pr-dhafer-malouche-un-travail-danalyse-statistique-exige-la-disponibilite-des-donnees-du-ministere",
-            abstract: "Commentary on the need for transparent health data for proper statistical analysis."
-          },
-          // 2020 Papers
-          {
-            year: 2020,
-            title: "Impact of contact tracing, respect of isolation and lockdown in reducing the number of cases infected with covid-19",
-            shortTitle: "COVID-19 intervention impacts",
-            authors: "Saidi, O., Malouche, D., Saksena, P., et al.",
-            venue: "International Journal of Infectious Diseases",
-            category: "JOURNAL",
-            doi: "10.1016/j.ijid.2021.02.010",
-            abstract: "Case study: Tunisia's response from march 22 to 04 may 2020."
-          },
-          {
-            year: 2020,
-            title: "More investment in research and development for better education in the future?",
-            shortTitle: "R&D investment for education",
-            authors: "Lahmandi-Ayed, R., & Malouche, D.",
-            venue: "SSRN",
-            category: "PREPRINT",
-            doi: "10.2139/ssrn.3739632",
-            abstract: "Analysis of the relationship between research investment and educational outcomes."
-          },
-          {
-            year: 2020,
-            title: "Estimating excess mortality associated with covid-19 pandemic",
-            shortTitle: "COVID-19 excess mortality",
-            authors: "Malouche, D., & Ben Romdhane, H.",
-            venue: "SSRN",
-            category: "PREPRINT",
-            doi: "10.2139/ssrn.3731481",
-            abstract: "A 151 cross-countries study examining mortality patterns during the pandemic."
-          },
-          {
-            year: 2020,
-            title: "Quel impact de la covid-19 sur l'espérance de vie en tunisie?",
-            shortTitle: "COVID-19 life expectancy impact",
-            authors: "Malouche, D.",
-            venue: "Leaders",
-            category: "OTHER",
-            url: "https://www.leaders.com.tn/article/30775-dhafer-malouche-quel-impact-de-la-covid-19-sur-l-esperance-de-vie-en-tunisie",
-            abstract: "Analysis of how the COVID-19 pandemic affected life expectancy in Tunisia."
-          },
-          // 2019 Papers
-          {
-            year: 2019,
-            title: "Front-face fluorescence using uv-led coupled to usb spectrometer to discriminate between virgin olive oil from two cultivars",
-            shortTitle: "Olive oil fluorescence analysis",
-            authors: "Kongbonga, G. Y. M., Hassine, K. B., Ghalila, H., Malouche, D., et al.",
-            venue: "Food and Nutrition Sciences",
-            category: "JOURNAL",
-            url: "http://www.scirp.org/journal/PaperInformation.aspx?PaperID=90405",
-            abstract: "Novel spectroscopic method to distinguish between olive oil varieties."
-          },
-          {
-            year: 2019,
-            title: "Arab spring success story: Tunisians vote",
-            shortTitle: "Arab spring success story",
-            authors: "Malouche, D.",
-            venue: "Yale Global",
-            category: "OTHER",
-            url: "https://archive-yaleglobal.yale.edu/content/arab-spring-success-story-tunisians-vote",
-            abstract: "Analysis of Tunisia's democratic transition and electoral process."
-          },
-          // 2015
-          {
-            year: 2015,
-            title: "Wage gap between men and women in tunisia",
-            shortTitle: "Gender wage gap in Tunisia",
-            authors: "Jeddi, H., & Malouche, D.",
-            venue: "arXiv",
-            category: "PREPRINT",
-            url: "https://arxiv.org/abs/1511.02229",
-            abstract: "Analysis of gender-based wage disparities in the Tunisian labor market."
-          },
-          // 2013
-          {
-            year: 2013,
-            title: "Duality in graphical models",
-            shortTitle: "Graphical models duality",
-            authors: "Malouche, D., Rajaratnam, B., & Rolfs, B. T.",
-            venue: "arXiv",
-            category: "PREPRINT",
-            url: "https://arxiv.org/abs/1310.2641",
-            abstract: "Theoretical exploration of duality principles in statistical graphical models."
-          },
-          // 2011
-          {
-            year: 2011,
-            title: "Gaussian covariance faithful markov trees",
-            shortTitle: "Markov trees",
-            authors: "Malouche, D., & Rajaratnam, B.",
-            venue: "Journal of Probability and Statistics",
-            category: "JOURNAL",
-            doi: "10.1155/2011/152942",
-            abstract: "Statistical analysis of tree-structured graphical models with Gaussian distributions."
-          },
-          // 2009
-          {
-            year: 2009,
-            title: "Determining full conditional independence by low-order conditioning",
-            shortTitle: "Conditional independence",
-            authors: "Malouche, D.",
-            venue: "Bernoulli",
-            category: "JOURNAL",
-            url: "https://projecteuclid.org/journals/bernoulli/volume-15/issue-4/Determining-full-conditional-independence-by-low-order-conditioning",
-            abstract: "Mathematical approach to efficiently identify conditional independence relationships."
-          },
-          // 2008
-          {
-            year: 2008,
-            title: "A property of count distributions in the hinde–demétrio family",
-            shortTitle: "Count distributions properties",
-            authors: "Kokonendji, C. C., & Malouche, D.",
-            venue: "Communications in Statistics—Theory and Methods",
-            category: "JOURNAL",
-            doi: "10.1080/03610920701809266",
-            abstract: "Mathematical analysis of properties of specific families of count distributions."
-          },
-          // 2000
-          {
-            year: 2000,
-            title: "The markov chain associated to a pick function",
-            shortTitle: "Markov chains and Pick functions",
-            authors: "Letac, G., & Malouche, D.",
-            venue: "Probability theory and related fields",
-            category: "JOURNAL",
-            url: "https://link.springer.com/article/10.1007/PL00008750",
-            abstract: "Mathematical exploration of the connection between Pick functions and Markov processes."
-          },
-          // 1998
-          {
-            year: 1998,
-            title: "Natural exponential families associated to pick functions",
-            shortTitle: "Exponential families & Pick functions",
-            authors: "Malouche, D.",
-            venue: "Test",
-            category: "JOURNAL",
-            doi: "10.1007/PL00008750",
-            abstract: "Mathematical characterization of natural exponential families with specific properties."
-          },
-          // 1997
-          {
-            year: 1997,
-            title: "L'action quadratique du groupe des homographies sur les familles exponentielles réelles",
-            shortTitle: "Homographic group action",
-            authors: "Malouche, D.",
-            venue: "Comptes Rendus de l'Académie des Sciences",
-            category: "JOURNAL",
-            abstract: "Mathematical study of homographic transformations on exponential families."
-          }
-        ];
-        
-        // Add topic tags to each publication
-        const addTopics = (publications) => {
-          const topics = {
-            "COVID-19": ["covid", "pandemic"],
-            "Graphical Models": ["graph", "markov", "conditional independence", "faithful"],
-            "Public Health": ["health", "mortality", "disease", "epidemio", "covid"],
-            "Olive Oil": ["olive", "oil"],
-            "Bayesian": ["bayes", "bayesian"],
-            "Sensory Analysis": ["sensory", "consumer", "sensmap"],
-            "Data Science": ["data", "tracker", "analysis"],
-            "Mathematics": ["exponential", "pick", "markov", "probability", "theorem"],
-            "Tunisia": ["tunisia", "tunisian"],
-            "Multiple Sclerosis": ["sclerosis", "MS"]
-          };
-        
-          return publications.map(pub => {
-            const pubTopics = [];
-            const searchText = (pub.title + " " + pub.abstract).toLowerCase();
-            
-            for (const [topic, keywords] of Object.entries(topics)) {
-              if (keywords.some(keyword => searchText.includes(keyword.toLowerCase()))) {
-                pubTopics.push(topic);
-              }
-            }
-            
-            return { ...pub, topics: pubTopics };
-          });
-        };
-        
-        // Create the ResearchTimeline component
-        const ResearchTimeline = () => {
-          const [publications, setPublications] = React.useState([]);
-          const [selectedYear, setSelectedYear] = React.useState(null);
-          const [activeFilters, setActiveFilters] = React.useState([]);
-          const [popupInfo, setPopupInfo] = React.useState(null);
-          const [visibleYears, setVisibleYears] = React.useState([]);
-          const [hoveredPublication, setHoveredPublication] = React.useState(null);
-          
-          React.useEffect(() => {
-            // Initialize with publications data with topics added
-            const pubsWithTopics = addTopics(publicationsData);
-            setPublications(pubsWithTopics);
-            
-            // Get unique years and set them as visible years
-            const years = [...new Set(pubsWithTopics.map(pub => pub.year))].sort((a, b) => a - b);
-            setVisibleYears(years);
-            
-            // Set initial year to the most recent
-            setSelectedYear(years[years.length - 1]);
-          }, []);
-          
-          // Get all unique topics across all publications
-          const allTopics = React.useMemo(() => {
-            const topics = new Set();
-            publications.forEach(pub => {
-              pub.topics?.forEach(topic => topics.add(topic));
-            });
-            return [...topics].sort();
-          }, [publications]);
-          
-          // Handle topic filter toggle
-          const toggleFilter = (topic) => {
-            if (activeFilters.includes(topic)) {
-              setActiveFilters(activeFilters.filter(t => t !== topic));
-            } else {
-              setActiveFilters([...activeFilters, topic]);
-            }
-          };
-          
-          // Filter publications by active topics
-          const filteredPublications = React.useMemo(() => {
-            if (activeFilters.length === 0) return publications;
-            
-            return publications.filter(pub => 
-              activeFilters.some(filter => pub.topics?.includes(filter))
-            );
-          }, [publications, activeFilters]);
-          
-          // Navigate to previous year
-          const goToPreviousYear = () => {
-            const index = visibleYears.indexOf(selectedYear);
-            if (index > 0) {
-              setSelectedYear(visibleYears[index - 1]);
-            }
-          };
-          
-          // Navigate to next year
-          const goToNextYear = () => {
-            const index = visibleYears.indexOf(selectedYear);
-            if (index < visibleYears.length - 1) {
-              setSelectedYear(visibleYears[index + 1]);
-            }
-          };
-        
-          // Create Lucide-React Icon components
-          const createIcon = (icon) => {
-            const Icon = React.createElement('span', {
-              className: 'lucide-icon',
-              dangerouslySetInnerHTML: { __html: icon.toSVG({ width: 20, height: 20 }) }
-            });
-            return Icon;
-          };
-        
-          return (
-            <div className="w-full max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-              <h1 className="text-3xl font-bold mb-6 text-center">Dr. Dhafer Malouche's Research Publications Timeline (1997-2025)</h1>
-              
-              {/* Topic filters */}
-              <div className="mb-6">
-                <div className="flex items-center mb-2">
-                  {createIcon(Filter)}
-                  <h3 className="font-semibold ml-2">Filter by Topic:</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {allTopics.map(topic => (
-                    <button
-                      key={topic}
-                      className={`px-3 py-1 text-sm rounded-full ${
-                        activeFilters.includes(topic) 
-                          ? 'bg-blue-600 text-white' 
-                          : 'bg-gray-200 text-gray-800'
-                      }`}
-                      onClick={() => toggleFilter(topic)}
-                    >
-                      {topic}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Category legend */}
-              <div className="mb-6">
-                <h3 className="font-semibold mb-2">Publication Categories:</h3>
-                <div className="flex flex-wrap gap-4">
-                  {Object.values(CATEGORIES).map(category => {
-                    return (
-                      <div key={category.name} className="flex items-center">
-                        <div className="w-4 h-4 rounded-full mr-2" style={{ backgroundColor: category.color }}></div>
-                        {createIcon(category.icon)}
-                        <span className="text-sm ml-1">{category.name}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-              
-              {/* Timeline navigation */}
-              <div className="flex justify-between items-center mb-4">
-                <button 
-                  onClick={goToPreviousYear}
-                  disabled={selectedYear === visibleYears[0]}
-                  className={`p-2 rounded ${selectedYear === visibleYears[0] ? 'text-gray-400' : 'text-blue-600 hover:bg-blue-100'}`}
-                >
-                  {createIcon(ChevronLeft)}
-                </button>
-                
-                <div className="flex space-x-1 overflow-x-auto py-2 px-4">
-                  {visibleYears.map(year => (
-                    <button
-                      key={year}
-                      className={`px-3 py-1 text-sm rounded ${
-                        year === selectedYear
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-gray-100 hover:bg-gray-200'
-                      }`}
-                      onClick={() => setSelectedYear(year)}
-                    >
-                      {year}
-                    </button>
-                  ))}
-                </div>
-                
-                <button 
-                  onClick={goToNextYear}
-                  disabled={selectedYear === visibleYears[visibleYears.length - 1]}
-                  className={`p-2 rounded ${selectedYear === visibleYears[visibleYears.length - 1] ? 'text-gray-400' : 'text-blue-600 hover:bg-blue-100'}`}
-                >
-                  {createIcon(ChevronRight)}
-                </button>
-              </div>
-        
-              {/* Timeline visualization */}
-              <div className="relative border-l-4 border-gray-200 ml-4 pl-8">
-                {/* Year marker */}
-                <div className="absolute left-0 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-                  {selectedYear}
-                </div>
-                
-                {/* Publications for selected year */}
-                <div className="py-8 space-y-6">
-                  {filteredPublications
-                    .filter(pub => pub.year === selectedYear)
-                    .map((pub, index) => {
-                      const category = CATEGORIES[pub.category];
-                      
-                      return (
-                        <div 
-                          key={`${pub.year}-${index}`}
-                          className="relative hover:shadow-md transition-shadow duration-200 rounded-lg border border-gray-200 p-4"
-                          style={{ 
-                            marginLeft: `${(index % 3) * 5}%`,
-                            borderLeftWidth: '4px',
-                            borderLeftColor: category.color
-                          }}
-                          onMouseEnter={() => setHoveredPublication(pub)}
-                          onMouseLeave={() => setHoveredPublication(null)}
-                          onClick={() => setPopupInfo(pub)}
-                        >
-                          {/* Publication node content */}
-                          <div className="flex items-start">
-                            {createIcon(category.icon)}
-                            
-                            <div className="ml-3">
-                              <h3 className="font-semibold">{pub.shortTitle}</h3>
-                              <p className="text-gray-600 text-sm">{pub.venue}</p>
-                              
-                              {/* Topic tags */}
-                              {pub.topics && pub.topics.length > 0 && (
-                                <div className="flex flex-wrap gap-1 mt-2">
-                                  {pub.topics.map(topic => (
-                                    <span 
-                                      key={topic} 
-                                      className="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs rounded-full"
-                                    >
-                                      {topic}
-                                    </span>
-                                  ))}
-                                </div>
-                              )}
-                            </div>
-                            
-                            <button 
-                              className="ml-auto p-1 text-gray-400 hover:text-blue-600"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setPopupInfo(pub);
-                              }}
-                            >
-                              {createIcon(Info)}
-                            </button>
-                          </div>
-                          
-                          {/* Hover tooltip */}
-                          {hoveredPublication === pub && (
-                            <div className="absolute z-10 left-full top-0 ml-4 w-64 bg-white shadow-xl rounded-lg p-4 border border-gray-200">
-                              <h4 className="font-bold text-sm">{pub.title}</h4>
-                              <p className="text-xs text-gray-600 mt-1">{pub.authors}</p>
-                              <p className="text-xs mt-2">{pub.abstract}</p>
-                              {(pub.doi || pub.url) && (
-                                <a 
-                                  href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="text-xs text-blue-600 hover:underline mt-2 block"
-                                >
-                                  View publication
-                                </a>
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                </div>
-                
-                {/* Show message if no publications for the year */}
-                {filteredPublications.filter(pub => pub.year === selectedYear).length === 0 && (
-                  <div className="py-10 text-center text-gray-500">
-                    No publications found for {selectedYear} with the current filters.
-                  </div>
-                )}
-              </div>
-              
-              {/* Detail popup for clicked publication */}
-              {popupInfo && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                  <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <span 
-                          className="inline-block w-3 h-3 rounded-full mr-2"
-                          style={{ backgroundColor: CATEGORIES[popupInfo.category].color }}
-                        ></span>
-                        <span className="text-sm text-gray-600">{CATEGORIES[popupInfo.category].name}</span>
-                      </div>
-                      <button 
-                        className="text</div>
+&lt;!-- Filter Section --&gt;
+&lt;div class=&quot;filter-section&quot;&gt;
+  &lt;label&gt;Filter by Research Topics:&lt;/label&gt;
+  &lt;div id=&quot;topicFilters&quot; class=&quot;d-flex flex-wrap&quot;&gt;
+    &lt;!-- Checkboxes will be generated here --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Timeline Container --&gt;
+&lt;div id=&quot;timeline&quot;&gt;&lt;/div&gt;
+
+&lt;!-- Detailed View Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;detailModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;detailModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog modal-lg&quot; role=&quot;document&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h5 class=&quot;modal-title&quot; id=&quot;detailModalLabel&quot;&gt;Publication Details&lt;/h5&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+          &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot; id=&quot;modalBody&quot;&gt;
+        &lt;!-- Publication details will be injected here --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  <!-- Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <script>
+    // Sample publication data. Replace with your publication list.
+    // Each publication object should include:
+    // id, title, authors, abstract, venue, year, type (journal, conference, preprint),
+    // quality (for journals), topics (array of strings), and links (object with keys like DOI, PDF)
+    var publications = [
+      {
+        id: 1,
+        title: "Sample Publication One",
+        authors: "Author A, Author B",
+        abstract: "This is a sample abstract for publication one.",
+        venue: "Journal of Sample Studies",
+        year: 2020,
+        type: "journal",
+        quality: "Q1",
+        topics: ["COVID-19", "Data Science"],
+        links: { DOI: "https://doi.org/10.1234/sample1", PDF: "https://example.com/sample1.pdf" }
+      },
+      {
+        id: 2,
+        title: "Sample Conference Paper",
+        authors: "Author C, Author D",
+        abstract: "This is a sample abstract for a conference paper.",
+        venue: "International Conference on Sample Research",
+        year: 2018,
+        type: "conference",
+        topics: ["Graphical Models"],
+        links: { DOI: "https://doi.org/10.1234/sample2", PDF: "https://example.com/sample2.pdf" }
+      }
+      // Add more publications here...
+    ];
+
+    // Define colors for publication types.
+    var typeColors = {
+      journal: "#1f77b4",
+      conference: "#2ca02c",
+      preprint: "#ff7f0e"
+    };
+
+    // Generate a unique list of research topics.
+    var allTopics = [];
+    publications.forEach(function(pub) {
+      pub.topics.forEach(function(topic) {
+        if (allTopics.indexOf(topic) === -1) {
+          allTopics.push(topic);
+        }
+      });
+    });
+
+    // Populate topic filters.
+    var topicFiltersDiv = document.getElementById("topicFilters");
+    allTopics.forEach(function(topic) {
+      var container = document.createElement("div");
+      container.className = "form-check mr-3";
+
+      var checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "form-check-input topic-checkbox";
+      checkbox.value = topic;
+      checkbox.id = "topic_" + topic;
+      checkbox.checked = true;
+
+      var label = document.createElement("label");
+      label.className = "form-check-label";
+      label.htmlFor = "topic_" + topic;
+      label.innerText = topic;
+
+      container.appendChild(checkbox);
+      container.appendChild(label);
+      topicFiltersDiv.appendChild(container);
+    });
+
+    // Create timeline items from publications.
+    function createTimelineItems() {
+      var items = [];
+      publications.forEach(function(pub) {
+        items.push({
+          id: pub.id,
+          content: pub.title,
+          start: pub.year + "-01-01",
+          title: pub.title,
+          style: "background-color: " + typeColors[pub.type] + "; color: white; cursor: pointer;"
+        });
+      });
+      return items;
+    }
+
+    var container = document.getElementById("timeline");
+    var timelineItems = new vis.DataSet(createTimelineItems());
+    var timelineOptions = {
+      selectable: true,
+      zoomable: true,
+      horizontalScroll: true
+    };
+    var timeline = new vis.Timeline(container, timelineItems, timelineOptions);
+
+    // When a timeline item is selected, show detailed view.
+    timeline.on('select', function (properties) {
+      if (properties.items.length > 0) {
+        var selectedId = properties.items[0];
+        var pub = publications.find(function(p) { return p.id === selectedId; });
+        if (pub) {
+          showPublicationDetails(pub);
+        }
+      }
+    });
+
+    // Display publication details in a modal.
+    function showPublicationDetails(pub) {
+      var modalBody = document.getElementById("modalBody");
+      var html = "<h4>" + pub.title + "</h4>";
+      html += "<p><strong>Authors:</strong> " + pub.authors + "</p>";
+      html += "<p><strong>Venue:</strong> " + pub.venue + " (" + pub.year + ")</p>";
+      if (pub.type === "journal" && pub.quality) {
+        html += "<p><strong>Quality:</strong> " + pub.quality + "</p>";
+      }
+      html += "<p><strong>Abstract:</strong> " + pub.abstract + "</p>";
+      html += "<p><strong>Links:</strong> ";
+      for (var key in pub.links) {
+        if (pub.links.hasOwnProperty(key)) {
+          html += "<a href='" + pub.links[key] + "' target='_blank'>" + key + "</a> ";
+        }
+      }
+      html += "</p>";
+      modalBody.innerHTML = html;
+      $('#detailModal').modal('show');
+    }
+
+    // Update timeline based on active topic filters and search query.
+    function updateTimeline() {
+      var activeTopics = Array.from(document.querySelectorAll(".topic-checkbox:checked")).map(function(checkbox) {
+        return checkbox.value;
+      });
+
+      var query = document.getElementById("searchBar").value.toLowerCase();
+
+      var filteredPubs = publications.filter(function(pub) {
+        var topicMatch = pub.topics.some(function(topic) {
+          return activeTopics.indexOf(topic) !== -1;
+        });
+        var searchMatch = (pub.title.toLowerCase().indexOf(query) !== -1) ||
+                          (pub.abstract.toLowerCase().indexOf(query) !== -1);
+        return topicMatch && searchMatch;
+      });
+
+      var newItems = [];
+      filteredPubs.forEach(function(pub) {
+        newItems.push({
+          id: pub.id,
+          content: pub.title,
+          start: pub.year + "-01-01",
+          title: pub.title,
+          style: "background-color: " + typeColors[pub.type] + "; color: white; cursor: pointer;"
+        });
+      });
+
+      timelineItems.clear();
+      timelineItems.add(newItems);
+    }
+
+    // Add event listeners for search and topic filters.
+    document.getElementById("searchBar").addEventListener("input", updateTimeline);
+    document.querySelectorAll(".topic-checkbox").forEach(function(checkbox) {
+      checkbox.addEventListener("change", updateTimeline);
+    });
+  </script>
+</body>
+</html>
+</div>
   
 
   
