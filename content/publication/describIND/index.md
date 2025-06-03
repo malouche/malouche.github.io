@@ -4,7 +4,7 @@ abstract:  This paper investigates the capability of undirected graphs (UGs) to 
 authors:
 - admin
 date: "2023-12-08T00:00:00Z"
-doi: "http://doi.org/10.1111/joss.12809"
+doi: "https://www.mdpi.com/2075-1680/12/12/1109"
 publication: '*Axioms*'
 publication_short: ""
 publication_types:
