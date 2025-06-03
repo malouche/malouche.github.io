@@ -65,6 +65,6 @@ for (entry in bib_entries) {
 json_output <- toJSON(publications, auto_unbox = TRUE, pretty = TRUE)
 
 # Output the JSON to the console (or write to a file using write() or writeLines())
-sink("/Users/dhafermalouche/Documents/GitHub/malouche.github.io/static/uploads/own-bib.json")
+sink("/Users/dhafermalouche/Documents/GitHub/malouche.github.io/static/own-bib.json")
 cat(json_output)
 sink()
