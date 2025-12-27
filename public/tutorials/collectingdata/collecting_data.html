@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collecting Data: Modern Approaches</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header Styles */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2980b9;
+            font-size: 1.8em;
+            margin-top: 40px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            background-color: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        h3 {
+            color: #16a085;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        /* Author and Date */
+        .author-info {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+        
+        /* Content Sections */
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Code Blocks */
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #e74c3c;
+        }
+        
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e9f7fe;
+        }
+        
+        /* Links */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Emphasis */
+        strong {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        /* Outline Section */
+        .outline {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .outline h2 {
+            color: white;
+            border-left: 5px solid #f1c40f;
+            background-color: transparent;
+        }
+        
+        .outline ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .outline li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .outline li::before {
+            content: "→ ";
+            color: #f1c40f;
+            font-weight: bold;
+        }
+        
+        /* Summary Section */
+        .summary {
+            background-color: #e9f7fe;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        /* Thank You Section */
+        .thank-you {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .thank-you h2 {
+            color: white;
+            border: none;
+            background-color: transparent;
+            font-size: 2em;
+            margin-top: 0;
+        }
+        
+        .contact {
+            font-style: italic;
+            margin-top: 20px;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            pre {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Collecting Data: Modern Approaches</h1>
+    <div class="author-info">
+        <p>By Dhafer Malouche<br></p>
+    </div>
+
+    <div class="outline section">
+        <h2>Outline</h2>
+        <ul>
+            <li>Modern Data Repositories</li>
+            <li>World Bank Indicators</li>
+            <li>R/Python Data Collection Tools</li>
+            <li>Web Scraping Techniques</li>
+            <li>API Integration</li>
+            <li>COVID-19 Data Sources</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Modern Data Repositories</h2>
+
+        <h3>Major Public Data Repositories</h3>
+        <ul>
+            <li><strong>Data.gov</strong> - The U.S. Government's open data site
+                <ul>
+                    <li>Over 308,000 datasets available</li>
+                    <li>Tools and resources for research, visualization, and application development</li>
+                    <li><a href="https://data.gov" target="_blank">https://data.gov</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>GitHub Public APIs</strong> - Collective list of free APIs
+                <ul>
+                    <li>Categorized by domain (finance, health, science, etc.)</li>
+                    <li>Documentation on authentication and usage</li>
+                    <li><a href="https://github.com/public-apis/public-apis" target="_blank">https://github.com/public-apis/public-apis</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Kaggle</strong> - Platform for data science competitions and datasets
+                <ul>
+                    <li>Thousands of datasets across various domains</li>
+                    <li>Community-contributed notebooks and code examples</li>
+                    <li><a href="https://www.kaggle.com/datasets" target="_blank">https://www.kaggle.com/datasets</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Government and Institutional Data Sources</h3>
+        <ul>
+            <li><strong>U.S. Census Bureau</strong> - Comprehensive demographic data
+                <ul>
+                    <li>Economic indicators, population statistics, geographic data</li>
+                    <li>Multiple APIs for different data categories</li>
+                    <li><a href="https://www.census.gov/data/developers/data-sets.html" target="_blank">https://www.census.gov/data/developers/data-sets.html</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Eurostat</strong> - Statistical office of the European Union
+                <ul>
+                    <li>Economic, social, and environmental data for EU countries</li>
+                    <li>Structured by themes (economy, population, environment)</li>
+                    <li><a href="https://ec.europa.eu/eurostat/data/database" target="_blank">https://ec.europa.eu/eurostat/data/database</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>UN Data</strong> - United Nations data portal
+                <ul>
+                    <li>Global statistics on population, economics, environment</li>
+                    <li>Data from UN specialized agencies</li>
+                    <li><a href="https://data.un.org" target="_blank">https://data.un.org</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>World Bank Indicators</h2>
+
+        <h3>World Bank Development Indicators</h3>
+        <ul>
+            <li>A comprehensive collection of development data through web API</li>
+            <li>Covers over 200 economies with 1,400+ time series indicators</li>
+            <li>Categories include:
+                <ul>
+                    <li>Economic Policy & Debt</li>
+                    <li>Education</li>
+                    <li>Environment</li>
+                    <li>Financial Sector</li>
+                    <li>Health</li>
+                    <li>Infrastructure</li>
+                    <li>Social Development</li>
+                </ul>
+            </li>
+            <li>Original Website: <a href="https://databank.worldbank.org" target="_blank">https://databank.worldbank.org</a></li>
+        </ul>
+
+        <h3>Data from the World Bank Website</h3>
+        <ul>
+            <li>Sign up at <a href="https://databank.worldbank.org" target="_blank">https://databank.worldbank.org</a></li>
+            <li>Search by keywords or Indicator name</li>
+            <li>Filter by country, year, and indicator</li>
+            <li>Download data in various formats (CSV, Excel, XML, JSON)</li>
+            <li>API access available for programmatic data retrieval</li>
+        </ul>
+
+        <h3>WDI Data with R</h3>
+        <pre><code># Install the WDI package if needed
+# install.packages("WDI")
+library(WDI)
+
+# Search for GDP-related indicators
+indicators <- WDI::WDIsearch('gdp')
+head(indicators)
+#       indicator            name
+# [1,] "5.51.01.10.gdp"     "Per capita GDP growth"                       
+# [2,] "6.0.GDP_current"    "GDP (current $)"                               
+# [3,] "6.0.GDP_growth"     "GDP growth (annual %)" 
+
+# Retrieve GDP per capita data for selected countries
+gdp_data <- WDI(indicator='NY.GDP.PCAP.KD', 
+                country=c('MX','CA','US','DE','JP'), 
+                start=2010, end=2023)
+
+# View the first few rows
+head(gdp_data)</code></pre>
+
+        <h3>WDI Data with Python</h3>
+        <pre><code># Install the wbdata module if needed
+# pip install wbdata pandas matplotlib
+
+import wbdata
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+# Check available data sources
+sources = wbdata.get_source()
+print(f"Number of data sources: {len(sources)}")
+
+# Get indicators from source 1 (World Development Indicators)
+# wbdata.get_indicator(source=1)
+
+# Get GDP per capita for selected countries
+countries = ['USA', 'CHN', 'DEU', 'JPN', 'GBR']
+indicator = {'NY.GDP.PCAP.CD': 'GDP per capita (current US$)'}
+
+# Set date range
+data_date = (datetime(2010, 1, 1), datetime(2023, 1, 1))
+
+# Retrieve the data
+df = wbdata.get_dataframe(indicator, country=countries, 
+                         data_date=data_date)
+
+# Reshape data for plotting
+df = df.reset_index()
+data_pivoted = df.pivot(index='date', 
+                       columns='country', 
+                       values='GDP per capita (current US$)')
+
+# Plot the data
+data_pivoted.plot(figsize=(10, 6))
+plt.title('GDP per Capita Comparison')
+plt.ylabel('Current US$')
+plt.grid(True)</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>R/Python Data Collection Tools</h2>
+
+        <h3>The Tidyverse Ecosystem in R</h3>
+        <ul>
+            <li><strong>Tidyverse</strong> - Collection of R packages designed for data science
+                <ul>
+                    <li>Consistent design philosophy and API</li>
+                    <li>Install with: <code>install.packages("tidyverse")</code></li>
+                    <li>Load with: <code>library(tidyverse)</code></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Core Tidyverse Packages for Data Collection:</strong>
+                <ul>
+                    <li><code>readr</code> - Fast and friendly way to read rectangular data</li>
+                    <li><code>httr</code> - Tools for working with HTTP</li>
+                    <li><code>rvest</code> - Web scraping simplified</li>
+                    <li><code>jsonlite</code> - JSON parsing and generation</li>
+                    <li><code>xml2</code> - XML parsing and generation</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Specialized Data Import Packages:</strong>
+                <ul>
+                    <li><code>readxl</code> - Excel files (.xls and .xlsx)</li>
+                    <li><code>haven</code> - SPSS, Stata, and SAS data</li>
+                    <li><code>googlesheets4</code> - Google Sheets via API</li>
+                    <li><code>DBI</code> - Database connections</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Python Data Collection Libraries</h3>
+        <ul>
+            <li><strong>Data Reading and Manipulation:</strong>
+                <ul>
+                    <li><code>pandas</code> - Data analysis and manipulation</li>
+                    <li><code>numpy</code> - Numerical computing</li>
+                    <li><code>polars</code> - Fast DataFrame library (alternative to pandas)</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>API Interaction:</strong>
+                <ul>
+                    <li><code>requests</code> - HTTP library for API calls</li>
+                    <li><code>httpx</code> - Next generation HTTP client</li>
+                    <li><code>aiohttp</code> - Asynchronous HTTP client/server</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Data Formats:</strong>
+                <ul>
+                    <li><code>json</code> - JSON encoding and decoding</li>
+                    <li><code>csv</code> - CSV file reading and writing</li>
+                    <li><code>openpyxl</code> - Excel file manipulation</li>
+                    <li><code>PyYAML</code> - YAML parsing and emission</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Example: Data Collection with Python Pandas</h3>
+        <pre><code>import pandas as pd
+import requests
+from io import StringIO
+
+# Example 1: Reading from CSV URL
+url = "https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv"
+df = pd.read_csv(url)
+print(f"Data shape: {df.shape}")
+print(df.head())
+
+# Example 2: Reading from API with JSON response
+api_url = "https://api.exchangerate-api.com/v4/latest/USD"
+response = requests.get(api_url)
+data = response.json()
+rates = data['rates']
+
+# Convert to DataFrame
+currencies_df = pd.DataFrame(list(rates.items()), 
+                            columns=['Currency', 'Rate'])
+print(currencies_df.head())
+
+# Example 3: Reading Excel files
+# df_excel = pd.read_excel("data.xlsx", sheet_name="Sheet1")
+
+# Example 4: Reading from databases
+# from sqlalchemy import create_engine
+# engine = create_engine('sqlite:///database.db')
+# df_sql = pd.read_sql("SELECT * FROM table_name", engine)</code></pre>
+
+        <h3>FiveThirtyEight and Other Data Packages</h3>
+        <ul>
+            <li><strong>FiveThirtyEight</strong> - Data journalism and statistical analysis
+                <ul>
+                    <li>Data available at: <a href="https://data.fivethirtyeight.com/" target="_blank">https://data.fivethirtyeight.com/</a></li>
+                    <li>GitHub repository: <a href="https://github.com/fivethirtyeight" target="_blank">https://github.com/fivethirtyeight</a></li>
+                    <li>R package: <code>fivethirtyeight</code></li>
+                    <li>Python access via GitHub API</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Other Specialized Data Packages:</strong>
+                <ul>
+                    <li><code>gapminder</code> - Data about world development</li>
+                    <li><code>nycflights13</code> - Airline on-time data for NYC</li>
+                    <li><code>palmerpenguins</code> - Size measurements for penguins</li>
+                    <li><code>Lahman</code> - Baseball database</li>
+                    <li><code>babynames</code> - US baby names from the SSA</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Finding Available Datasets in R:</strong>
+                <pre><code>> data(package = .packages(all.available = TRUE))</code></pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Web Scraping Techniques</h2>
+
+        <h3>Modern Web Scraping Libraries in Python</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="flex: 0 0 48%;">
+                <h4 style="color: #3498db;"><strong>BeautifulSoup</strong></h4>
+                <ul>
+                    <li>HTML/XML parsing library</li>
+                    <li>Easy to use for beginners</li>
+                    <li>Works with various parsers</li>
+                    <li>10M+ weekly downloads</li>
+                    <li><code>pip install beautifulsoup4</code></li>
+                </ul>
+                <br>
+                <h4 style="color: #3498db;"><strong>Scrapy</strong></h4>
+                <ul>
+                    <li>Full-featured web crawling framework</li>
+                    <li>High performance</li>
+                    <li>Built-in support for extraction</li>
+                    <li>Handles JavaScript with Splash</li>
+                    <li><code>pip install scrapy</code></li>
+                </ul>
+            </div>
+            <div style="flex: 0 0 48%;">
+                <h4 style="color: #3498db;"><strong>Selenium</strong></h4>
+                <ul>
+                    <li>Browser automation tool</li>
+                    <li>Handles JavaScript-rendered content</li>
+                    <li>Simulates user interactions</li>
+                    <li>Works with multiple browsers</li>
+                    <li><code>pip install selenium</code></li>
+                </ul>
+                <br>
+                <h4 style="color: #3498db;"><strong>Playwright</strong></h4>
+                <ul>
+                    <li>Modern browser automation</li>
+                    <li>Supports Chrome, Firefox, Safari</li>
+                    <li>Faster than Selenium</li>
+                    <li>Handles modern web features</li>
+                    <li><code>pip install playwright</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Web Scraping Libraries Comparison</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Library</th>
+                    <th>Ease of Use</th>
+                    <th>Performance</th>
+                    <th>JS Support</th>
+                    <th>Anti-Detection</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BeautifulSoup</td>
+                    <td>✓✓✓</td>
+                    <td>✓✓</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                </tr>
+                <tr>
+                    <td>Scrapy</td>
+                    <td>✓</td>
+                    <td>✓✓✓</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Selenium</td>
+                    <td>✓✓</td>
+                    <td>✓</td>
+                    <td>✓✓✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Playwright</td>
+                    <td>✓✓</td>
+                    <td>✓✓</td>
+                    <td>✓✓✓</td>
+                    <td>✓✓</td>
+                </tr>
+                <tr>
+                    <td>Requests-HTML</td>
+                    <td>✓✓✓</td>
+                    <td>✓✓</td>
+                    <td>✓</td>
+                    <td>✗</td>
+                </tr>
+                <tr>
+                    <td>LXML</td>
+                    <td>✓</td>
+                    <td>✓✓✓</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Key Considerations:</strong></p>
+        <ul>
+            <li>JavaScript rendering requirements</li>
+            <li>Anti-bot detection measures on target sites</li>
+            <li>Performance needs (speed vs. resource usage)</li>
+            <li>Complexity of the target website</li>
+        </ul>
+
+        <h3>BeautifulSoup Example</h3>
+        <pre><code>import requests
+from bs4 import BeautifulSoup
+
+# URL to scrape
+url = "https://quotes.toscrape.com/"
+response = requests.get(url)
+
+# Create BeautifulSoup object
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Extract all quotes and authors
+quotes = []
+for quote in soup.select('.quote'):
+    text = quote.select_one('.text').get_text()
+    author = quote.select_one('.author').get_text()
+    tags = [tag.get_text() for tag in quote.select('.tag')]
+    
+    quotes.append({
+        'text': text,
+        'author': author,
+        'tags': tags
+    })
+
+# Print the first 3 quotes
+for i, quote in enumerate(quotes[:3]):
+    print(f"Quote {i+1}: {quote['text']}")
+    print(f"Author: {quote['author']}")
+    print(f"Tags: {', '.join(quote['tags'])}")
+    print('-' * 50)</code></pre>
+
+        <h3>Selenium Example for Dynamic Content</h3>
+        <pre><code>from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+# Set up Chrome options
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Run in headless mode
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
+
+# Initialize the Chrome driver
+driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()),
+    options=chrome_options
+)
+
+# Navigate to a dynamic website
+driver.get("https://www.nasdaq.com/market-activity/stocks/aapl")
+
+# Wait for JavaScript to load content
+time.sleep(5)
+
+# Extract stock price
+try:
+    price_element = driver.find_element(By.XPATH, 
+        "//span[contains(@class, 'last-price')]")
+    price = price_element.text
+    print(f"Current AAPL stock price: {price}")
+except Exception as e:
+    print(f"Error extracting price: {e}")
+
+# Clean up
+driver.quit()</code></pre>
+
+        <h3>Web Scraping in R with rvest</h3>
+        <ul>
+            <li><strong>rvest</strong> - Web scraping package inspired by Python's BeautifulSoup
+                <ul>
+                    <li>Part of the tidyverse ecosystem</li>
+                    <li>Simple and consistent syntax</li>
+                    <li>Works well with the pipe operator (%>%)</li>
+                    <li>Install with: <code>install.packages("rvest")</code></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Key Functions:</strong>
+                <ul>
+                    <li><code>read_html()</code> - Read HTML from a URL or file</li>
+                    <li><code>html_nodes()</code> - Select nodes using CSS selectors</li>
+                    <li><code>html_text()</code> - Extract text from nodes</li>
+                    <li><code>html_attr()</code> - Extract attributes from nodes</li>
+                    <li><code>html_table()</code> - Extract tables from HTML</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>For Dynamic Content:</strong>
+                <ul>
+                    <li><code>RSelenium</code> package for browser automation</li>
+                    <li><code>chromote</code> package for Chrome DevTools Protocol</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>API Integration</h2>
+
+        <h3>API Integration Fundamentals</h3>
+        <ul>
+            <li><strong>What is an API?</strong>
+                <ul>
+                    <li>Application Programming Interface</li>
+                    <li>Allows systems to communicate with each other</li>
+                    <li>Provides structured data access</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Common API Types:</strong>
+                <ul>
+                    <li>REST (Representational State Transfer)</li>
+                    <li>GraphQL</li>
+                    <li>SOAP (Simple Object Access Protocol)</li>
+                    <li>WebSockets</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>API Authentication Methods:</strong>
+                <ul>
+                    <li>API Keys</li>
+                    <li>OAuth 2.0</li>
+                    <li>JWT (JSON Web Tokens)</li>
+                    <li>Basic Authentication</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Common Response Formats:</strong>
+                <ul>
+                    <li>JSON (JavaScript Object Notation)</li>
+                    <li>XML (eXtensible Markup Language)</li>
+                    <li>CSV (Comma-Separated Values)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>API Integration with Python</h3>
+        <pre><code>import requests
+import json
+import pandas as pd
+
+# Example 1: Simple GET request
+api_url = "https://api.openweathermap.org/data/2.5/weather"
+params = {
+    "q": "Paris",
+    "appid": "YOUR_API_KEY",  # Replace with actual API key
+    "units": "metric"
+}
+
+response = requests.get(api_url, params=params)
+
+if response.status_code == 200:
+    data = response.json()
+    print(f"Temperature in Paris: {data['main']['temp']}°C")
+    print(f"Weather: {data['weather'][0]['description']}")
+else:
+    print(f"Error: {response.status_code}")
+    print(response.text)
+
+# Example 2: Handling pagination
+def get_all_pages(base_url, params, max_pages=5):
+    all_results = []
+    current_page = 1
+    
+    while current_page <= max_pages:
+        params['page'] = current_page
+        response = requests.get(base_url, params=params)
+        
+        if response.status_code != 200:
+            break
+            
+        page_data = response.json()
+        if not page_data.get('results', []):
+            break
+            
+        all_results.extend(page_data['results'])
+        current_page += 1
+        
+    return all_results</code></pre>
+
+        <h3>API Integration with R</h3>
+        <pre><code># Install required packages if needed
+# install.packages(c("httr", "jsonlite", "dplyr"))
+
+library(httr)
+library(jsonlite)
+library(dplyr)
+
+# Example 1: Basic API request
+api_url <- "https://api.openweathermap.org/data/2.5/weather"
+params <- list(
+  q = "London",
+  appid = "YOUR_API_KEY",  # Replace with actual API key
+  units = "metric"
+)
+
+response <- GET(api_url, query = params)
+
+if (http_status(response)$category == "Success") {
+  data <- content(response, "text") %>% fromJSON()
+  cat("Temperature in London:", data$main$temp, "°C\n")
+  cat("Weather:", data$weather[[1]]$description, "\n")
+} else {
+  cat("Error:", http_status(response)$message, "\n")
+}
+
+# Example 2: Working with paginated API
+get_all_pages <- function(base_url, params, max_pages = 5) {
+  all_results <- list()
+  current_page <- 1
+  
+  while (current_page <= max_pages) {
+    params$page <- current_page
+    response <- GET(base_url, query = params)
+    
+    if (http_status(response)$category != "Success") {
+      break
+    }
+    
+    page_data <- content(response, "text") %>% fromJSON()
+    
+    if (length(page_data$results) == 0) {
+      break
+    }
+    
+    all_results[[current_page]] <- page_data$results
+    current_page <- current_page + 1
+  }
+  
+  return(bind_rows(all_results))
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>COVID-19 Data Sources</h2>
+
+        <h3>Modern COVID-19 Data Sources</h3>
+        <ul>
+            <li><strong>WHO COVID-19 Dashboard</strong>
+                <ul>
+                    <li>Comprehensive global data on cases, deaths, and vaccinations</li>
+                    <li>Downloadable statistical releases</li>
+                    <li>API access available</li>
+                    <li><a href="https://data.who.int/dashboards/covid19/data" target="_blank">https://data.who.int/dashboards/covid19/data</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Johns Hopkins University CSSE</strong>
+                <ul>
+                    <li>One of the most widely used COVID-19 data sources</li>
+                    <li>Daily updates on GitHub repository</li>
+                    <li>Global and US-specific datasets</li>
+                    <li><a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">https://github.com/CSSEGISandData/COVID-19</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Our World in Data</strong>
+                <ul>
+                    <li>Comprehensive COVID-19 statistics and visualizations</li>
+                    <li>Testing data, vaccination rates, and policy responses</li>
+                    <li>Complete open-access dataset</li>
+                    <li><a href="https://ourworldindata.org/coronavirus" target="_blank">https://ourworldindata.org/coronavirus</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>COVID-19 Data Analysis Tools</h3>
+        <ul>
+            <li><strong>R Packages:</strong>
+                <ul>
+                    <li><code>coronavirus</code> - R interface to Johns Hopkins data</li>
+                    <li><code>covid19</code> - R interface to the COVID-19 Data Hub</li>
+                    <li><code>covdata</code> - COVID-19 case and mortality data</li>
+                    <li><code>covidcast</code> - Access to COVIDcast Epidata API</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Python Packages:</strong>
+                <ul>
+                    <li><code>covid19dh</code> - COVID-19 Data Hub</li>
+                    <li><code>covid</code> - Coronavirus disease 2019 (COVID-19) data</li>
+                    <li><code>covid19py</code> - Python wrapper for tracking COVID-19</li>
+                    <li><code>coronavirus</code> - Coronavirus (COVID-19) data analysis</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Dashboards and Visualization Tools:</strong>
+                <ul>
+                    <li>WHO COVID-19 Dashboard</li>
+                    <li>Johns Hopkins COVID-19 Dashboard</li>
+                    <li>Our World in Data COVID-19 Explorer</li>
+                    <li>COVID-19 Data Explorer by Google</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>COVID-19 Data Analysis Example</h3>
+        <pre><code># Install required packages if needed
+# install.packages(c("coronavirus", "dplyr", "ggplot2"))
+
+library(coronavirus)
+library(dplyr)
+library(ggplot2)
+
+# Load the latest data
+data(coronavirus)
+
+# Get the most recent date in the dataset
+max_date <- max(coronavirus$date)
+cat("Data updated to:", format(max_date, "%B %d, %Y"), "\n")
+
+# Summarize global cases and deaths
+global_summary <- coronavirus %>%
+  filter(date == max_date) %>%
+  group_by(type) %>%
+  summarise(total = sum(cases, na.rm = TRUE))
+
+print(global_summary)
+
+# Get top 10 countries by confirmed cases
+top_countries <- coronavirus %>%
+  filter(type == "confirmed") %>%
+  group_by(country) %>%
+  summarise(total_cases = sum(cases, na.rm = TRUE)) %>%
+  arrange(desc(total_cases)) %>%
+  head(10)
+
+# Plot top 10 countries
+ggplot(top_countries, aes(x = reorder(country, total_cases), 
+                          y = total_cases)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(title = "Top 10 Countries by Total COVID-19 Cases",
+       x = "Country",
+       y = "Total Confirmed Cases") +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::comma)</code></pre>
+
+        <h3>Additional COVID-19 Data Resources</h3>
+        <ul>
+            <li><strong>Government Health Agencies:</strong>
+                <ul>
+                    <li>CDC COVID Data Tracker (US)</li>
+                    <li>ECDC (European Centre for Disease Prevention and Control)</li>
+                    <li>UK Coronavirus Dashboard</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Specialized COVID-19 Datasets:</strong>
+                <ul>
+                    <li>COVID-19 Open Research Dataset (CORD-19)</li>
+                    <li>COVID-19 Symptom Data Challenge</li>
+                    <li>Global COVID-19 Treatment Trial Registry</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Wastewater Surveillance:</strong>
+                <ul>
+                    <li>CDC National Wastewater Surveillance System</li>
+                    <li>Biobot COVID-19 Wastewater Dashboard</li>
+                    <li>Global Water Pathogen Project</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Long COVID and Post-Pandemic Research:</strong>
+                <ul>
+                    <li>NIH RECOVER Initiative</li>
+                    <li>Long COVID Registry</li>
+                    <li>COVID-19 Longitudinal Health and Wellbeing National Core Study</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="summary section">
+        <h2>Summary: Modern Data Collection Approaches</h2>
+        <ul>
+            <li><strong>Diverse Data Sources</strong>
+                <ul>
+                    <li>Public repositories (Data.gov, Kaggle)</li>
+                    <li>Government and institutional databases</li>
+                    <li>Specialized data packages and APIs</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Powerful Collection Tools</strong>
+                <ul>
+                    <li>R: Tidyverse ecosystem (readr, httr, rvest)</li>
+                    <li>Python: Web scraping libraries, API clients</li>
+                    <li>Specialized packages for specific data sources</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Collection Methods</strong>
+                <ul>
+                    <li>Direct downloads and imports</li>
+                    <li>API integration for real-time data</li>
+                    <li>Web scraping for unstructured data</li>
+                    <li>Database connections for large datasets</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Best Practices</strong>
+                <ul>
+                    <li>Check data licenses and terms of use</li>
+                    <li>Respect rate limits and robots.txt</li>
+                    <li>Document data sources and collection methods</li>
+                    <li>Validate and clean collected data</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Resources and Further Learning</h2>
+        <ul>
+            <li><strong>Books:</strong>
+                <ul>
+                    <li>"R for Data Science" by Hadley Wickham & Garrett Grolemund</li>
+                    <li>"Python for Data Analysis" by Wes McKinney</li>
+                    <li>"Web Scraping with Python" by Ryan Mitchell</li>
+                    <li>"APIs: A Strategy Guide" by Daniel Jacobson et al.</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Online Courses:</strong>
+                <ul>
+                    <li>DataCamp: Web Scraping in Python</li>
+                    <li>Coursera: Data Collection and Processing with Python</li>
+                    <li>edX: Data Science: R Basics</li>
+                    <li>Udemy: Complete Python Web Scraping</li>
+                </ul>
+            </li>
+            <br>
+            <li><strong>Websites and Documentation:</strong>
+                <ul>
+                    <li>Tidyverse documentation: <a href="https://www.tidyverse.org/" target="_blank">https://www.tidyverse.org/</a></li>
+                    <li>Beautiful Soup documentation: <a href="https://www.crummy.com/software/BeautifulSoup/" target="_blank">https://www.crummy.com/software/BeautifulSoup/</a></li>
+                    <li>Requests documentation: <a href="https://requests.readthedocs.io/" target="_blank">https://requests.readthedocs.io/</a></li>
+                    <li>World Bank API documentation: <a href="https://datahelpdesk.worldbank.org/" target="_blank">https://datahelpdesk.worldbank.org/</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="thank-you">
+        <h2>Thank You!</h2>
+        <p>Questions?</p>
+        <div class="contact">
+            <p>Contact: dhafer.malouche@qu.edu.qa</p>
+        </div>
+    </div>
+</body>
+</html>
