@@ -47,6 +47,8 @@ content:
     tags: statisticalmeasures
   - name: Research Data Browser
     tages: researchdata
+  - name: Chronic Pain Networks
+    tag: painnetwork
   
     
 design:
