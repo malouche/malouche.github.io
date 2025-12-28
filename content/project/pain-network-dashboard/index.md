@@ -21,7 +21,7 @@ title: Modeling Chronic Pain Interconnections Dashboard
 
 ---
 
-<iframe src="pain-network-dashboard.html" title="Modeling chronic pain interconnections dashboard" width="100%" height="900" frameborder="0" style="border-radius: 8px; border: 1px solid #dee2e6;"></iframe>
+<iframe src="/dashboards/pain-network-dashboard.html" title="Modeling chronic pain interconnections dashboard" width="100%" height="900" frameborder="0" style="border-radius: 8px; border: 1px solid #dee2e6;"></iframe>
 
 ---
 
