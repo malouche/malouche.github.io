@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>painnetwork | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/painnetwork/</link>
+      <atom:link href="https://dhafermalouche.net/tag/painnetwork/index.xml" rel="self" type="application/rss+xml" />
+    <description>painnetwork</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>painnetwork</title>
+      <link>https://dhafermalouche.net/tag/painnetwork/</link>
+    </image>
+    
+    <item>
+      <title>Modeling Chronic Pain Interconnections Dashboard</title>
+      <link>https://dhafermalouche.net/project/pain-network-dashboard/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/pain-network-dashboard/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ORIGINAL RESEARCH article&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Front. Pain Res., 26 May 2025&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Sec. Pain Research Methods&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Volume 6 - 2025 | &lt;a href=&#34;https://doi.org/10.3389/fpain.2025.1573465&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.3389/fpain.2025.1573465&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Aisha Al-Khinji, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://claude.site/public/artifacts/0bef81ad-8140-4b8e-bf0b-8b74bea2e08f/embed&#34; title=&#34;Modeling chronic pain interconnections dashboard&#34; width=&#34;100%&#34; height=&#34;600&#34; frameborder=&#34;0&#34; allow=&#34;clipboard-write&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

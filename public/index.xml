@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/</link>
+      <atom:link href="https://dhafermalouche.net/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dhafer Malouche</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>Dhafer Malouche</title>
+      <link>https://dhafermalouche.net/</link>
+    </image>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://dhafermalouche.net/talk/example-talk/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/talk/example-talk/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Wowchemy&amp;rsquo;s &lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further event details, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page elements&lt;/a&gt; such as image galleries, can be added to the body of this page.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modeling Chronic Pain Interconnections Dashboard</title>
+      <link>https://dhafermalouche.net/project/pain-network-dashboard/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/pain-network-dashboard/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ORIGINAL RESEARCH article&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Front. Pain Res., 26 May 2025&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Sec. Pain Research Methods&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Volume 6 - 2025 | &lt;a href=&#34;https://doi.org/10.3389/fpain.2025.1573465&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.3389/fpain.2025.1573465&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Aisha Al-Khinji, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://claude.site/public/artifacts/0bef81ad-8140-4b8e-bf0b-8b74bea2e08f/embed&#34; title=&#34;Modeling chronic pain interconnections dashboard&#34; width=&#34;100%&#34; height=&#34;600&#34; frameborder=&#34;0&#34; allow=&#34;clipboard-write&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Flipped classroom evaluation and blended learning potential a case study of engagement and inclusion in quantitative education</title>
+      <link>https://dhafermalouche.net/publication/mizza1/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/mizza1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Immune checkpoint inhibitors in pancreatic adenocarcinoma: a systematic review and meta analysis of clinical outcomes</title>
+      <link>https://dhafermalouche.net/publication/imunepaper/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/imunepaper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling Chronic Pain Interconnections Using Bayesian Networks, Insights from the Qatar Biobank Study</title>
+      <link>https://dhafermalouche.net/publication/alkhinji1/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/alkhinji1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistical Measures Learning App</title>
+      <link>https://dhafermalouche.net/apps/statisticalmeasures/</link>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statisticalmeasures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Survival Function Estimator</title>
+      <link>https://dhafermalouche.net/apps/survestim/</link>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/survestim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian Single Parameter Models</title>
+      <link>https://dhafermalouche.net/tutorials/bayesiansingleparametermodels/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/bayesiansingleparametermodels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ECDF and Ogive Analysis</title>
+      <link>https://dhafermalouche.net/apps/ecdfogive/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/ecdfogive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Research Data Browser</title>
+      <link>https://dhafermalouche.net/apps/researchdata/</link>
+      <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/researchdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistical Design for Animal Research</title>
+      <link>https://dhafermalouche.net/tutorials/animalmodels/</link>
+      <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/animalmodels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>More  investment in  RD  for better Education  in the (distant) future?</title>
+      <link>https://dhafermalouche.net/tutorials/rdtalk/</link>
+      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/rdtalk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Factors Affecting the Quality of Sleep and Physical Activity Participation of Multiple Sclerosis (MS) Patients A Path Analysis</title>
+      <link>https://dhafermalouche.net/publication/khalil2/</link>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/khalil2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns a prospective cohort analysis</title>
+      <link>https://dhafermalouche.net/publication/ibrahimpaper/</link>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/ibrahimpaper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Comparative Ability of Five Mobility and Balance Outcome Measures in Predicting the Risk of Falls in People with Multiple Sclerosis</title>
+      <link>https://dhafermalouche.net/publication/khalil1/</link>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/khalil1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Describing Conditional Independence Statements Using Undirected Graphs</title>
+      <link>https://dhafermalouche.net/publication/describind/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/describind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive Africa Map with ggigraph</title>
+      <link>https://dhafermalouche.net/tutorials/interactiveafrica/</link>
+      <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/interactiveafrica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating Chloropleth Maps of Ile-de-France Departments using R A Step by Step Guide</title>
+      <link>https://dhafermalouche.net/tutorials/departparismap/</link>
+      <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/departparismap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dugong Growth Curve, Bayesian and Frequentist Models</title>
+      <link>https://dhafermalouche.net/tutorials/dugongbexamp/</link>
+      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/dugongbexamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Collecting Data with R and Python</title>
+      <link>https://dhafermalouche.net/tutorials/collectingdata/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/collectingdata/</guid>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;stylesheet.css&#34;&gt;
+&lt;h1 id=&#34;your-markdown-content&#34;&gt;Your Markdown content&lt;/h1&gt;
+&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Modern Data Repositories&lt;/li&gt;
+&lt;li&gt;World Bank Indicators&lt;/li&gt;
+&lt;li&gt;R/Python Data Collection Tools&lt;/li&gt;
+&lt;li&gt;Web Scraping Techniques&lt;/li&gt;
+&lt;li&gt;API Integration&lt;/li&gt;
+&lt;li&gt;COVID-19 Data Sources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;modern-data-repositories&#34;&gt;Modern Data Repositories&lt;/h2&gt;
+&lt;h3 id=&#34;major-public-data-repositories&#34;&gt;Major Public Data Repositories&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Data.gov&lt;/strong&gt; - The U.S. Government&amp;rsquo;s open data site
+&lt;ul&gt;
+&lt;li&gt;Over 308,000 datasets available&lt;/li&gt;
+&lt;li&gt;Tools and resources for research, visualization, and application
+development&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://data.gov&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://data.gov&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Public APIs&lt;/strong&gt; - Collective list of free APIs
+&lt;ul&gt;
+&lt;li&gt;Categorized by domain (finance, health, science, etc.)&lt;/li&gt;
+&lt;li&gt;Documentation on authentication and usage&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/public-apis/public-apis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/public-apis/public-apis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kaggle&lt;/strong&gt; - Platform for data science competitions and datasets
+&lt;ul&gt;
+&lt;li&gt;Thousands of datasets across various domains&lt;/li&gt;
+&lt;li&gt;Community-contributed notebooks and code examples&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/datasets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.kaggle.com/datasets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;government-and-institutional-data-sources&#34;&gt;Government and Institutional Data Sources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;U.S. Census Bureau&lt;/strong&gt; - Comprehensive demographic data
+&lt;ul&gt;
+&lt;li&gt;Economic indicators, population statistics, geographic data&lt;/li&gt;
+&lt;li&gt;Multiple APIs for different data categories&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.census.gov/data/developers/data-sets.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.census.gov/data/developers/data-sets.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eurostat&lt;/strong&gt; - Statistical office of the European Union
+&lt;ul&gt;
+&lt;li&gt;Economic, social, and environmental data for EU countries&lt;/li&gt;
+&lt;li&gt;Structured by themes (economy, population, environment)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ec.europa.eu/eurostat/data/database&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://ec.europa.eu/eurostat/data/database&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UN Data&lt;/strong&gt; - United Nations data portal
+&lt;ul&gt;
+&lt;li&gt;Global statistics on population, economics, environment&lt;/li&gt;
+&lt;li&gt;Data from UN specialized agencies&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://data.un.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://data.un.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;world-bank-indicators&#34;&gt;World Bank Indicators&lt;/h2&gt;
+&lt;h3 id=&#34;world-bank-development-indicators&#34;&gt;World Bank Development Indicators&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A comprehensive collection of development data through web API&lt;/li&gt;
+&lt;li&gt;Covers over 200 economies with 1,400+ time series indicators&lt;/li&gt;
+&lt;li&gt;Categories include:
+&lt;ul&gt;
+&lt;li&gt;Economic Policy &amp;amp; Debt&lt;/li&gt;
+&lt;li&gt;Education&lt;/li&gt;
+&lt;li&gt;Environment&lt;/li&gt;
+&lt;li&gt;Financial Sector&lt;/li&gt;
+&lt;li&gt;Health&lt;/li&gt;
+&lt;li&gt;Infrastructure&lt;/li&gt;
+&lt;li&gt;Social Development&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Original Website: &lt;a href=&#34;https://databank.worldbank.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://databank.worldbank.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;data-from-the-world-bank-website&#34;&gt;Data from the World Bank Website&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sign up at &lt;a href=&#34;https://databank.worldbank.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://databank.worldbank.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Search by keywords or Indicator name&lt;/li&gt;
+&lt;li&gt;Filter by country, year, and indicator&lt;/li&gt;
+&lt;li&gt;Download data in various formats (CSV, Excel, XML, JSON)&lt;/li&gt;
+&lt;li&gt;API access available for programmatic data retrieval&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;wdi-data-with-r&#34;&gt;WDI Data with R&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Install the WDI package if needed
+# install.packages(&amp;quot;WDI&amp;quot;)
+library(WDI)
+
+# Search for GDP-related indicators
+indicators &amp;lt;- WDI::WDIsearch(&#39;gdp&#39;)
+head(indicators)
+#       indicator            name
+# [1,] &amp;quot;5.51.01.10.gdp&amp;quot;     &amp;quot;Per capita GDP growth&amp;quot;                       
+# [2,] &amp;quot;6.0.GDP_current&amp;quot;    &amp;quot;GDP (current $)&amp;quot;                               
+# [3,] &amp;quot;6.0.GDP_growth&amp;quot;     &amp;quot;GDP growth (annual %)&amp;quot; 
+
+# Retrieve GDP per capita data for selected countries
+gdp_data &amp;lt;- WDI(indicator=&#39;NY.GDP.PCAP.KD&#39;, 
+                country=c(&#39;MX&#39;,&#39;CA&#39;,&#39;US&#39;,&#39;DE&#39;,&#39;JP&#39;), 
+                start=2010, end=2023)
+
+# View the first few rows
+head(gdp_data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;wdi-data-with-python&#34;&gt;WDI Data with Python&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Install the wbdata module if needed
+# pip install wbdata pandas matplotlib
+
+import wbdata
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+# Check available data sources
+sources = wbdata.get_source()
+print(f&amp;quot;Number of data sources: {len(sources)}&amp;quot;)
+
+# Get indicators from source 1 (World Development Indicators)
+# wbdata.get_indicator(source=1)
+
+# Get GDP per capita for selected countries
+countries = [&#39;USA&#39;, &#39;CHN&#39;, &#39;DEU&#39;, &#39;JPN&#39;, &#39;GBR&#39;]
+indicator = {&#39;NY.GDP.PCAP.CD&#39;: &#39;GDP per capita (current US$)&#39;}
+
+# Set date range
+data_date = (datetime(2010, 1, 1), datetime(2023, 1, 1))
+
+# Retrieve the data
+df = wbdata.get_dataframe(indicator, country=countries, 
+                         data_date=data_date)
+
+# Reshape data for plotting
+df = df.reset_index()
+data_pivoted = df.pivot(index=&#39;date&#39;, 
+                       columns=&#39;country&#39;, 
+                       values=&#39;GDP per capita (current US$)&#39;)
+
+# Plot the data
+data_pivoted.plot(figsize=(10, 6))
+plt.title(&#39;GDP per Capita Comparison&#39;)
+plt.ylabel(&#39;Current US$&#39;)
+plt.grid(True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;rpython-data-collection-tools&#34;&gt;R/Python Data Collection Tools&lt;/h2&gt;
+&lt;h3 id=&#34;the-tidyverse-ecosystem-in-r&#34;&gt;The Tidyverse Ecosystem in R&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tidyverse&lt;/strong&gt; - Collection of R packages designed for data science
+&lt;ul&gt;
+&lt;li&gt;Consistent design philosophy and API&lt;/li&gt;
+&lt;li&gt;Install with: &lt;code&gt;install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Load with: &lt;code&gt;library(tidyverse)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Core Tidyverse Packages for Data Collection:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;readr&lt;/code&gt; - Fast and friendly way to read rectangular data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;httr&lt;/code&gt; - Tools for working with HTTP&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rvest&lt;/code&gt; - Web scraping simplified&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jsonlite&lt;/code&gt; - JSON parsing and generation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xml2&lt;/code&gt; - XML parsing and generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Specialized Data Import Packages:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;readxl&lt;/code&gt; - Excel files (.xls and .xlsx)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;haven&lt;/code&gt; - SPSS, Stata, and SAS data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;googlesheets4&lt;/code&gt; - Google Sheets via API&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DBI&lt;/code&gt; - Database connections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;python-data-collection-libraries&#34;&gt;Python Data Collection Libraries&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Data Reading and Manipulation:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pandas&lt;/code&gt; - Data analysis and manipulation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;numpy&lt;/code&gt; - Numerical computing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;polars&lt;/code&gt; - Fast DataFrame library (alternative to pandas)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Interaction:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;requests&lt;/code&gt; - HTTP library for API calls&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;httpx&lt;/code&gt; - Next generation HTTP client&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;aiohttp&lt;/code&gt; - Asynchronous HTTP client/server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Formats:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;json&lt;/code&gt; - JSON encoding and decoding&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;csv&lt;/code&gt; - CSV file reading and writing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;openpyxl&lt;/code&gt; - Excel file manipulation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PyYAML&lt;/code&gt; - YAML parsing and emission&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-data-collection-with-python-pandas&#34;&gt;Example: Data Collection with Python Pandas&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import requests
+from io import StringIO
+
+# Example 1: Reading from CSV URL
+url = &amp;quot;https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv&amp;quot;
+df = pd.read_csv(url)
+print(f&amp;quot;Data shape: {df.shape}&amp;quot;)
+print(df.head())
+
+# Example 2: Reading from API with JSON response
+api_url = &amp;quot;https://api.exchangerate-api.com/v4/latest/USD&amp;quot;
+response = requests.get(api_url)
+data = response.json()
+rates = data[&#39;rates&#39;]
+
+# Convert to DataFrame
+currencies_df = pd.DataFrame(list(rates.items()), 
+                            columns=[&#39;Currency&#39;, &#39;Rate&#39;])
+print(currencies_df.head())
+
+# Example 3: Reading Excel files
+# df_excel = pd.read_excel(&amp;quot;data.xlsx&amp;quot;, sheet_name=&amp;quot;Sheet1&amp;quot;)
+
+# Example 4: Reading from databases
+# from sqlalchemy import create_engine
+# engine = create_engine(&#39;sqlite:///database.db&#39;)
+# df_sql = pd.read_sql(&amp;quot;SELECT * FROM table_name&amp;quot;, engine)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;fivethirtyeight-and-other-data-packages&#34;&gt;FiveThirtyEight and Other Data Packages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;FiveThirtyEight&lt;/strong&gt; - Data journalism and statistical analysis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data available at: &lt;a href=&#34;https://data.fivethirtyeight.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://data.fivethirtyeight.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub repository: &lt;a href=&#34;https://github.com/fivethirtyeight&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/fivethirtyeight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;R package: &lt;code&gt;fivethirtyeight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Python access via GitHub API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Other Specialized Data Packages:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gapminder&lt;/code&gt; - Data about world development&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nycflights13&lt;/code&gt; - Airline on-time data for NYC&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;palmerpenguins&lt;/code&gt; - Size measurements for penguins&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Lahman&lt;/code&gt; - Baseball database&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;babynames&lt;/code&gt; - US baby names from the SSA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Finding Available Datasets in R:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; data(package = .packages(all.available = TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;web-scraping-techniques&#34;&gt;Web Scraping Techniques&lt;/h2&gt;
+&lt;h3 id=&#34;modern-web-scraping-libraries-in-python&#34;&gt;Modern Web Scraping Libraries in Python&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;BeautifulSoup&lt;/strong&gt; - HTML/XML parsing library - Easy to use for
+beginners - Works with various parsers - 10M+ weekly downloads -
+&lt;code&gt;pip install beautifulsoup4&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scrapy&lt;/strong&gt; - Full-featured web crawling framework - High performance -
+Built-in support for extraction - Handles JavaScript with Splash -
+&lt;code&gt;pip install scrapy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Selenium&lt;/strong&gt; - Browser automation tool - Handles JavaScript-rendered
+content - Simulates user interactions - Works with multiple browsers -
+&lt;code&gt;pip install selenium&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Playwright&lt;/strong&gt; - Modern browser automation - Supports Chrome, Firefox,
+Safari - Faster than Selenium - Handles modern web features -
+&lt;code&gt;pip install playwright&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;web-scraping-libraries-comparison&#34;&gt;Web Scraping Libraries Comparison&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Library&lt;/th&gt;
+&lt;th&gt;Ease of Use&lt;/th&gt;
+&lt;th&gt;Performance&lt;/th&gt;
+&lt;th&gt;JS Support&lt;/th&gt;
+&lt;th&gt;Anti-Detection&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;BeautifulSoup&lt;/td&gt;
+&lt;td&gt;✓✓✓&lt;/td&gt;
+&lt;td&gt;✓✓&lt;/td&gt;
+&lt;td&gt;✗&lt;/td&gt;
+&lt;td&gt;✗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Scrapy&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;✓✓✓&lt;/td&gt;
+&lt;td&gt;✗&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Selenium&lt;/td&gt;
+&lt;td&gt;✓✓&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;✓✓✓&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Playwright&lt;/td&gt;
+&lt;td&gt;✓✓&lt;/td&gt;
+&lt;td&gt;✓✓&lt;/td&gt;
+&lt;td&gt;✓✓✓&lt;/td&gt;
+&lt;td&gt;✓✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Requests-HTML&lt;/td&gt;
+&lt;td&gt;✓✓✓&lt;/td&gt;
+&lt;td&gt;✓✓&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;✗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LXML&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;✓✓✓&lt;/td&gt;
+&lt;td&gt;✗&lt;/td&gt;
+&lt;td&gt;✗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Key Considerations:&lt;/strong&gt; - JavaScript rendering requirements - Anti-bot
+detection measures on target sites - Performance needs (speed vs.
+resource usage) - Complexity of the target website&lt;/p&gt;
+&lt;h3 id=&#34;beautifulsoup-example&#34;&gt;BeautifulSoup Example&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import requests
+from bs4 import BeautifulSoup
+
+# URL to scrape
+url = &amp;quot;https://quotes.toscrape.com/&amp;quot;
+response = requests.get(url)
+
+# Create BeautifulSoup object
+soup = BeautifulSoup(response.text, &#39;html.parser&#39;)
+
+# Extract all quotes and authors
+quotes = []
+for quote in soup.select(&#39;.quote&#39;):
+    text = quote.select_one(&#39;.text&#39;).get_text()
+    author = quote.select_one(&#39;.author&#39;).get_text()
+    tags = [tag.get_text() for tag in quote.select(&#39;.tag&#39;)]
+    
+    quotes.append({
+        &#39;text&#39;: text,
+        &#39;author&#39;: author,
+        &#39;tags&#39;: tags
+    })
+
+# Print the first 3 quotes
+for i, quote in enumerate(quotes[:3]):
+    print(f&amp;quot;Quote {i+1}: {quote[&#39;text&#39;]}&amp;quot;)
+    print(f&amp;quot;Author: {quote[&#39;author&#39;]}&amp;quot;)
+    print(f&amp;quot;Tags: {&#39;, &#39;.join(quote[&#39;tags&#39;])}&amp;quot;)
+    print(&#39;-&#39; * 50)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;selenium-example-for-dynamic-content&#34;&gt;Selenium Example for Dynamic Content&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+# Set up Chrome options
+chrome_options = Options()
+chrome_options.add_argument(&amp;quot;--headless&amp;quot;)  # Run in headless mode
+chrome_options.add_argument(&amp;quot;--no-sandbox&amp;quot;)
+chrome_options.add_argument(&amp;quot;--disable-dev-shm-usage&amp;quot;)
+
+# Initialize the Chrome driver
+driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()),
+    options=chrome_options
+)
+
+# Navigate to a dynamic website
+driver.get(&amp;quot;https://www.nasdaq.com/market-activity/stocks/aapl&amp;quot;)
+
+# Wait for JavaScript to load content
+time.sleep(5)
+
+# Extract stock price
+try:
+    price_element = driver.find_element(By.XPATH, 
+        &amp;quot;//span[contains(@class, &#39;last-price&#39;)]&amp;quot;)
+    price = price_element.text
+    print(f&amp;quot;Current AAPL stock price: {price}&amp;quot;)
+except Exception as e:
+    print(f&amp;quot;Error extracting price: {e}&amp;quot;)
+
+# Clean up
+driver.quit()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;web-scraping-in-r-with-rvest&#34;&gt;Web Scraping in R with rvest&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;rvest&lt;/strong&gt; - Web scraping package inspired by Python&amp;rsquo;s BeautifulSoup
+&lt;ul&gt;
+&lt;li&gt;Part of the tidyverse ecosystem&lt;/li&gt;
+&lt;li&gt;Simple and consistent syntax&lt;/li&gt;
+&lt;li&gt;Works well with the pipe operator (%&amp;gt;%)&lt;/li&gt;
+&lt;li&gt;Install with: &lt;code&gt;install.packages(&amp;quot;rvest&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key Functions:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;read_html()&lt;/code&gt; - Read HTML from a URL or file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;html_nodes()&lt;/code&gt; - Select nodes using CSS selectors&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;html_text()&lt;/code&gt; - Extract text from nodes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;html_attr()&lt;/code&gt; - Extract attributes from nodes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;html_table()&lt;/code&gt; - Extract tables from HTML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;For Dynamic Content:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;RSelenium&lt;/code&gt; package for browser automation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chromote&lt;/code&gt; package for Chrome DevTools Protocol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;api-integration&#34;&gt;API Integration&lt;/h2&gt;
+&lt;h3 id=&#34;api-integration-fundamentals&#34;&gt;API Integration Fundamentals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What is an API?&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Application Programming Interface&lt;/li&gt;
+&lt;li&gt;Allows systems to communicate with each other&lt;/li&gt;
+&lt;li&gt;Provides structured data access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Common API Types:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;REST (Representational State Transfer)&lt;/li&gt;
+&lt;li&gt;GraphQL&lt;/li&gt;
+&lt;li&gt;SOAP (Simple Object Access Protocol)&lt;/li&gt;
+&lt;li&gt;WebSockets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Authentication Methods:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;API Keys&lt;/li&gt;
+&lt;li&gt;OAuth 2.0&lt;/li&gt;
+&lt;li&gt;JWT (JSON Web Tokens)&lt;/li&gt;
+&lt;li&gt;Basic Authentication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Common Response Formats:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;JSON (JavaScript Object Notation)&lt;/li&gt;
+&lt;li&gt;XML (eXtensible Markup Language)&lt;/li&gt;
+&lt;li&gt;CSV (Comma-Separated Values)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;api-integration-with-python&#34;&gt;API Integration with Python&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import requests
+import json
+import pandas as pd
+
+# Example 1: Simple GET request
+api_url = &amp;quot;https://api.openweathermap.org/data/2.5/weather&amp;quot;
+params = {
+    &amp;quot;q&amp;quot;: &amp;quot;Paris&amp;quot;,
+    &amp;quot;appid&amp;quot;: &amp;quot;YOUR_API_KEY&amp;quot;,  # Replace with actual API key
+    &amp;quot;units&amp;quot;: &amp;quot;metric&amp;quot;
+}
+
+response = requests.get(api_url, params=params)
+
+if response.status_code == 200:
+    data = response.json()
+    print(f&amp;quot;Temperature in Paris: {data[&#39;main&#39;][&#39;temp&#39;]}°C&amp;quot;)
+    print(f&amp;quot;Weather: {data[&#39;weather&#39;][0][&#39;description&#39;]}&amp;quot;)
+else:
+    print(f&amp;quot;Error: {response.status_code}&amp;quot;)
+    print(response.text)
+
+# Example 2: Handling pagination
+def get_all_pages(base_url, params, max_pages=5):
+    all_results = []
+    current_page = 1
+    
+    while current_page &amp;lt;= max_pages:
+        params[&#39;page&#39;] = current_page
+        response = requests.get(base_url, params=params)
+        
+        if response.status_code != 200:
+            break
+            
+        page_data = response.json()
+        if not page_data.get(&#39;results&#39;, []):
+            break
+            
+        all_results.extend(page_data[&#39;results&#39;])
+        current_page += 1
+        
+    return all_results
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;api-integration-with-r&#34;&gt;API Integration with R&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Install required packages if needed
+# install.packages(c(&amp;quot;httr&amp;quot;, &amp;quot;jsonlite&amp;quot;, &amp;quot;dplyr&amp;quot;))
+
+library(httr)
+library(jsonlite)
+library(dplyr)
+
+# Example 1: Basic API request
+api_url &amp;lt;- &amp;quot;https://api.openweathermap.org/data/2.5/weather&amp;quot;
+params &amp;lt;- list(
+  q = &amp;quot;London&amp;quot;,
+  appid = &amp;quot;YOUR_API_KEY&amp;quot;,  # Replace with actual API key
+  units = &amp;quot;metric&amp;quot;
+)
+
+response &amp;lt;- GET(api_url, query = params)
+
+if (http_status(response)$category == &amp;quot;Success&amp;quot;) {
+  data &amp;lt;- content(response, &amp;quot;text&amp;quot;) %&amp;gt;% fromJSON()
+  cat(&amp;quot;Temperature in London:&amp;quot;, data$main$temp, &amp;quot;°C\n&amp;quot;)
+  cat(&amp;quot;Weather:&amp;quot;, data$weather[[1]]$description, &amp;quot;\n&amp;quot;)
+} else {
+  cat(&amp;quot;Error:&amp;quot;, http_status(response)$message, &amp;quot;\n&amp;quot;)
+}
+
+# Example 2: Working with paginated API
+get_all_pages &amp;lt;- function(base_url, params, max_pages = 5) {
+  all_results &amp;lt;- list()
+  current_page &amp;lt;- 1
+  
+  while (current_page &amp;lt;= max_pages) {
+    params$page &amp;lt;- current_page
+    response &amp;lt;- GET(base_url, query = params)
+    
+    if (http_status(response)$category != &amp;quot;Success&amp;quot;) {
+      break
+    }
+    
+    page_data &amp;lt;- content(response, &amp;quot;text&amp;quot;) %&amp;gt;% fromJSON()
+    
+    if (length(page_data$results) == 0) {
+      break
+    }
+    
+    all_results[[current_page]] &amp;lt;- page_data$results
+    current_page &amp;lt;- current_page + 1
+  }
+  
+  return(bind_rows(all_results))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;covid-19-data-sources&#34;&gt;COVID-19 Data Sources&lt;/h2&gt;
+&lt;h3 id=&#34;modern-covid-19-data-sources&#34;&gt;Modern COVID-19 Data Sources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;WHO COVID-19 Dashboard&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Comprehensive global data on cases, deaths, and vaccinations&lt;/li&gt;
+&lt;li&gt;Downloadable statistical releases&lt;/li&gt;
+&lt;li&gt;API access available&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://data.who.int/dashboards/covid19/data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://data.who.int/dashboards/covid19/data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Johns Hopkins University CSSE&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;One of the most widely used COVID-19 data sources&lt;/li&gt;
+&lt;li&gt;Daily updates on GitHub repository&lt;/li&gt;
+&lt;li&gt;Global and US-specific datasets&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/CSSEGISandData/COVID-19&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Our World in Data&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Comprehensive COVID-19 statistics and visualizations&lt;/li&gt;
+&lt;li&gt;Testing data, vaccination rates, and policy responses&lt;/li&gt;
+&lt;li&gt;Complete open-access dataset&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ourworldindata.org/coronavirus&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://ourworldindata.org/coronavirus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;covid-19-data-analysis-tools&#34;&gt;COVID-19 Data Analysis Tools&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;R Packages:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;coronavirus&lt;/code&gt; - R interface to Johns Hopkins data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;covid19&lt;/code&gt; - R interface to the COVID-19 Data Hub&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;covdata&lt;/code&gt; - COVID-19 case and mortality data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;covidcast&lt;/code&gt; - Access to COVIDcast Epidata API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python Packages:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;covid19dh&lt;/code&gt; - COVID-19 Data Hub&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;covid&lt;/code&gt; - Coronavirus disease 2019 (COVID-19) data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;covid19py&lt;/code&gt; - Python wrapper for tracking COVID-19&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;coronavirus&lt;/code&gt; - Coronavirus (COVID-19) data analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dashboards and Visualization Tools:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;WHO COVID-19 Dashboard&lt;/li&gt;
+&lt;li&gt;Johns Hopkins COVID-19 Dashboard&lt;/li&gt;
+&lt;li&gt;Our World in Data COVID-19 Explorer&lt;/li&gt;
+&lt;li&gt;COVID-19 Data Explorer by Google&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;covid-19-data-analysis-example&#34;&gt;COVID-19 Data Analysis Example&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Install required packages if needed
+# install.packages(c(&amp;quot;coronavirus&amp;quot;, &amp;quot;dplyr&amp;quot;, &amp;quot;ggplot2&amp;quot;))
+
+library(coronavirus)
+library(dplyr)
+library(ggplot2)
+
+# Load the latest data
+data(coronavirus)
+
+# Get the most recent date in the dataset
+max_date &amp;lt;- max(coronavirus$date)
+cat(&amp;quot;Data updated to:&amp;quot;, format(max_date, &amp;quot;%B %d, %Y&amp;quot;), &amp;quot;\n&amp;quot;)
+
+# Summarize global cases and deaths
+global_summary &amp;lt;- coronavirus %&amp;gt;%
+  filter(date == max_date) %&amp;gt;%
+  group_by(type) %&amp;gt;%
+  summarise(total = sum(cases, na.rm = TRUE))
+
+print(global_summary)
+
+# Get top 10 countries by confirmed cases
+top_countries &amp;lt;- coronavirus %&amp;gt;%
+  filter(type == &amp;quot;confirmed&amp;quot;) %&amp;gt;%
+  group_by(country) %&amp;gt;%
+  summarise(total_cases = sum(cases, na.rm = TRUE)) %&amp;gt;%
+  arrange(desc(total_cases)) %&amp;gt;%
+  head(10)
+
+# Plot top 10 countries
+ggplot(top_countries, aes(x = reorder(country, total_cases), 
+                          y = total_cases)) +
+  geom_col(fill = &amp;quot;steelblue&amp;quot;) +
+  coord_flip() +
+  labs(title = &amp;quot;Top 10 Countries by Total COVID-19 Cases&amp;quot;,
+       x = &amp;quot;Country&amp;quot;,
+       y = &amp;quot;Total Confirmed Cases&amp;quot;) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::comma)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;additional-covid-19-data-resources&#34;&gt;Additional COVID-19 Data Resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Government Health Agencies:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;CDC COVID Data Tracker (US)&lt;/li&gt;
+&lt;li&gt;ECDC (European Centre for Disease Prevention and Control)&lt;/li&gt;
+&lt;li&gt;UK Coronavirus Dashboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Specialized COVID-19 Datasets:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;COVID-19 Open Research Dataset (CORD-19)&lt;/li&gt;
+&lt;li&gt;COVID-19 Symptom Data Challenge&lt;/li&gt;
+&lt;li&gt;Global COVID-19 Treatment Trial Registry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wastewater Surveillance:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;CDC National Wastewater Surveillance System&lt;/li&gt;
+&lt;li&gt;Biobot COVID-19 Wastewater Dashboard&lt;/li&gt;
+&lt;li&gt;Global Water Pathogen Project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long COVID and Post-Pandemic Research:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;NIH RECOVER Initiative&lt;/li&gt;
+&lt;li&gt;Long COVID Registry&lt;/li&gt;
+&lt;li&gt;COVID-19 Longitudinal Health and Wellbeing National Core Study&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;summary-modern-data-collection-approaches&#34;&gt;Summary: Modern Data Collection Approaches&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Diverse Data Sources&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Public repositories (Data.gov, Kaggle)&lt;/li&gt;
+&lt;li&gt;Government and institutional databases&lt;/li&gt;
+&lt;li&gt;Specialized data packages and APIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Powerful Collection Tools&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;R: Tidyverse ecosystem (readr, httr, rvest)&lt;/li&gt;
+&lt;li&gt;Python: Web scraping libraries, API clients&lt;/li&gt;
+&lt;li&gt;Specialized packages for specific data sources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collection Methods&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Direct downloads and imports&lt;/li&gt;
+&lt;li&gt;API integration for real-time data&lt;/li&gt;
+&lt;li&gt;Web scraping for unstructured data&lt;/li&gt;
+&lt;li&gt;Database connections for large datasets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Best Practices&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Check data licenses and terms of use&lt;/li&gt;
+&lt;li&gt;Respect rate limits and robots.txt&lt;/li&gt;
+&lt;li&gt;Document data sources and collection methods&lt;/li&gt;
+&lt;li&gt;Validate and clean collected data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;resources-and-further-learning&#34;&gt;Resources and Further Learning&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Books:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;R for Data Science&amp;rdquo; by Hadley Wickham &amp;amp; Garrett Grolemund&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Python for Data Analysis&amp;rdquo; by Wes McKinney&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Web Scraping with Python&amp;rdquo; by Ryan Mitchell&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;APIs: A Strategy Guide&amp;rdquo; by Daniel Jacobson et al.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Online Courses:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;DataCamp: Web Scraping in Python&lt;/li&gt;
+&lt;li&gt;Coursera: Data Collection and Processing with Python&lt;/li&gt;
+&lt;li&gt;edX: Data Science: R Basics&lt;/li&gt;
+&lt;li&gt;Udemy: Complete Python Web Scraping&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Websites and Documentation:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Tidyverse documentation: &lt;a href=&#34;https://www.tidyverse.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.tidyverse.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Beautiful Soup documentation:
+&lt;a href=&#34;https://www.crummy.com/software/BeautifulSoup/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.crummy.com/software/BeautifulSoup/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Requests documentation: &lt;a href=&#34;https://requests.readthedocs.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://requests.readthedocs.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;World Bank API documentation:
+&lt;a href=&#34;https://datahelpdesk.worldbank.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://datahelpdesk.worldbank.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;thank-you&#34;&gt;Thank You!&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generate Random Numbers</title>
+      <link>https://dhafermalouche.net/apps/genrandomnumbs/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/genrandomnumbs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SensMap R package and SensMapGUI shiny web application for sensory and consumer data mapping, Variations on external preference mapping and stability assessment</title>
+      <link>https://dhafermalouche.net/publication/sensmapr/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/sensmapr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Asia</title>
+      <link>https://dhafermalouche.net/project/asia2021vs2022/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/asia2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Europe</title>
+      <link>https://dhafermalouche.net/project/europe2021vs2022/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/europe2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Africa</title>
+      <link>https://dhafermalouche.net/project/africa2021vs2022/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africa2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Global Map in 2022</title>
+      <link>https://dhafermalouche.net/apps/covidglobalmap2022/</link>
+      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/covidglobalmap2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Principal Component Analysis Application</title>
+      <link>https://dhafermalouche.net/apps/pcaapp/</link>
+      <pubDate>Mon, 05 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/pcaapp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GDP per capita in Africa from 2001 to 2021</title>
+      <link>https://dhafermalouche.net/project/africagdppercapita/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africagdppercapita/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiple Regression Analysis</title>
+      <link>https://dhafermalouche.net/tutorials/multipleregression/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/multipleregression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting started with R</title>
+      <link>https://dhafermalouche.net/tutorials/getr/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/getr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hypothesis testing</title>
+      <link>https://dhafermalouche.net/tutorials/hypothesis/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/hypothesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Africa 2020/2021</title>
+      <link>https://dhafermalouche.net/project/africa2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africa2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Asia 2020/2021</title>
+      <link>https://dhafermalouche.net/project/asia2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/asia2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Europe 2020/2021</title>
+      <link>https://dhafermalouche.net/project/europe2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/europe2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 North America 2020/2021</title>
+      <link>https://dhafermalouche.net/project/northam2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/northam2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tunisian Election Data</title>
+      <link>https://dhafermalouche.net/apps/tunelect/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/tunelect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimation with Python</title>
+      <link>https://dhafermalouche.net/tutorials/estimation/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/estimation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probability distributions  with Python</title>
+      <link>https://dhafermalouche.net/tutorials/probdistpython/</link>
+      <pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/probdistpython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Descriptive statistics with Python</title>
+      <link>https://dhafermalouche.net/tutorials/descriptive/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/descriptive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas Library</title>
+      <link>https://dhafermalouche.net/tutorials/pandas/</link>
+      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NumPy Library</title>
+      <link>https://dhafermalouche.net/tutorials/numpy/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/numpy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 App</title>
+      <link>https://dhafermalouche.net/apps/covidapp/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/covidapp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Tracking</title>
+      <link>https://dhafermalouche.net/apps/covid19tracking/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/covid19tracking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Impact of contact tracing, respect of isolation, and lockdown in reducing the number of cases infected with COVID-19. Case study, Tunisia&#39;s response from March 22 to May 4, 2020</title>
+      <link>https://dhafermalouche.net/publication/impactcovid/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/impactcovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Implications of Faithfulness in Graphical Models</title>
+      <link>https://dhafermalouche.net/publication/faithful2021/</link>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/faithful2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crédits Votés</title>
+      <link>https://dhafermalouche.net/project/credisdash/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/credisdash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Every 43 seconds someone dies by the COVID-19 in the World</title>
+      <link>https://dhafermalouche.net/project/durationcoviddeaths/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/durationcoviddeaths/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 US vs EU (5/20/2020)</title>
+      <link>https://dhafermalouche.net/project/euvsuscovid/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/euvsuscovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Number of beds vs COVID-19 cases</title>
+      <link>https://dhafermalouche.net/project/bedscovid/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/bedscovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 in Tunisia, 4/4/2020</title>
+      <link>https://dhafermalouche.net/project/tuniscovid/</link>
+      <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/tuniscovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Number of days to reach more than 1000 COVID-19 confirmed cases</title>
+      <link>https://dhafermalouche.net/post/thousandcases/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/post/thousandcases/</guid>
+      <description>
+&lt;script src=&#34;https://dhafermalouche.net/post/thousandcases/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Les crédits votés  par  les députés tunisiens   de Novembre 2012 à Mars 2019</title>
+      <link>https://dhafermalouche.net/post/creditstunisie/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/post/creditstunisie/</guid>
+      <description>
+&lt;script src=&#34;https://dhafermalouche.net/post/creditstunisie/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Les graphiques sont basés sur des données collectées à partir du site de &lt;a href=&#34;https://majles.marsad.tn&#34;&gt;&lt;/a&gt; de l’organisation Al Bawsala &lt;a href=&#34;http://www.albawsala.com/ar/&#34;&gt;&lt;/a&gt;.
+Les données concernent la période de 2012 à 2019 qui correspondant aux périodes parlementaires ANC et ANP.
+Les crédits comptabilisées ici sont ceux votés à l’ANC (2012-2014) et à l’ARP (2014-2019).
+Les montant sont tous exprimés en USD&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1642946475371&#39; style=&#39;position: relative&#39;&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;CrditsVotsTunisie&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en-US&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1642946475371&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    if ( divElement.offsetWidth &gt; 800 ) { vizElement.style.width=&#39;100%&#39;;vizElement.style.maxWidth=&#39;1450px&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;vizElement.style.maxHeight=&#39;1587px&#39;;} else if ( divElement.offsetWidth &gt; 500 ) { vizElement.style.width=&#39;100%&#39;;vizElement.style.maxWidth=&#39;1450px&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;vizElement.style.maxHeight=&#39;1587px&#39;;} else { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=&#39;1577px&#39;;}                     var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reports, Dashboards and Slides with R</title>
+      <link>https://dhafermalouche.net/tutorials/rapwithr/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/rapwithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science for Sport Studies</title>
+      <link>https://dhafermalouche.net/tutorials/tsukubatalk/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/tsukubatalk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://dhafermalouche.net/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   One 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   **Two** 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   Three 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Big data with R</title>
+      <link>https://dhafermalouche.net/tutorials/bigdatawithr/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/bigdatawithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Municipal Elections</title>
+      <link>https://dhafermalouche.net/project/municdash/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/municdash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Municipal elections, Tunisia 2018</title>
+      <link>https://dhafermalouche.net/post/municipalelect/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/post/municipalelect/</guid>
+      <description>
+&lt;script src=&#34;https://dhafermalouche.net/post/municipalelect/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;iframe width=&#34;100%&#34; height=&#34;150&#34; name=&#34;iframe&#34; src=&#34;municdash.html&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34;&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data visualization with R</title>
+      <link>https://dhafermalouche.net/tutorials/datavizwithr/</link>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/datavizwithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensory Analysis with R</title>
+      <link>https://dhafermalouche.net/tutorials/sensorywithr/</link>
+      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/sensorywithr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mosaics plots using `ggmosaic?`</title>
+      <link>https://dhafermalouche.net/tutorials/mosaicplots/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/tutorials/mosaicplots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dhafermalouche.net/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

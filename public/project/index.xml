@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/project/</link>
+      <atom:link href="https://dhafermalouche.net/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png</url>
+      <title>Projects</title>
+      <link>https://dhafermalouche.net/project/</link>
+    </image>
+    
+    <item>
+      <title>Modeling Chronic Pain Interconnections Dashboard</title>
+      <link>https://dhafermalouche.net/project/pain-network-dashboard/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/pain-network-dashboard/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ORIGINAL RESEARCH article&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Front. Pain Res., 26 May 2025&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Sec. Pain Research Methods&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Volume 6 - 2025 | &lt;a href=&#34;https://doi.org/10.3389/fpain.2025.1573465&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.3389/fpain.2025.1573465&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Aisha Al-Khinji, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://claude.site/public/artifacts/0bef81ad-8140-4b8e-bf0b-8b74bea2e08f/embed&#34; title=&#34;Modeling chronic pain interconnections dashboard&#34; width=&#34;100%&#34; height=&#34;600&#34; frameborder=&#34;0&#34; allow=&#34;clipboard-write&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Asia</title>
+      <link>https://dhafermalouche.net/project/asia2021vs2022/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/asia2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Europe</title>
+      <link>https://dhafermalouche.net/project/europe2021vs2022/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/europe2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Total Deaths between 2021 and 2022 in Africa</title>
+      <link>https://dhafermalouche.net/project/africa2021vs2022/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africa2021vs2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GDP per capita in Africa from 2001 to 2021</title>
+      <link>https://dhafermalouche.net/project/africagdppercapita/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africagdppercapita/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Africa 2020/2021</title>
+      <link>https://dhafermalouche.net/project/africa2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/africa2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Asia 2020/2021</title>
+      <link>https://dhafermalouche.net/project/asia2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/asia2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Europe 2020/2021</title>
+      <link>https://dhafermalouche.net/project/europe2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/europe2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 North America 2020/2021</title>
+      <link>https://dhafermalouche.net/project/northam2021/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/northam2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crédits Votés</title>
+      <link>https://dhafermalouche.net/project/credisdash/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/credisdash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Every 43 seconds someone dies by the COVID-19 in the World</title>
+      <link>https://dhafermalouche.net/project/durationcoviddeaths/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/durationcoviddeaths/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 US vs EU (5/20/2020)</title>
+      <link>https://dhafermalouche.net/project/euvsuscovid/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/euvsuscovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Number of beds vs COVID-19 cases</title>
+      <link>https://dhafermalouche.net/project/bedscovid/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/bedscovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19 in Tunisia, 4/4/2020</title>
+      <link>https://dhafermalouche.net/project/tuniscovid/</link>
+      <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/tuniscovid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Municipal Elections</title>
+      <link>https://dhafermalouche.net/project/municdash/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/municdash/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

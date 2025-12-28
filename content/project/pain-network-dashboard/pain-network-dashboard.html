@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronic Pain Interconnections - Bayesian Network Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --border: #dee2e6;
+            --border-light: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-muted: #6c757d;
+            --accent-blue: #0d6efd;
+            --accent-teal: #20c997;
+            --accent-purple: #6f42c1;
+            --accent-pink: #d63384;
+            --accent-orange: #fd7e14;
+            --accent-green: #198754;
+            --accent-red: #dc3545;
+            --accent-cyan: #0dcaf0;
+            --shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            --shadow-md: 0 0.5rem 1rem rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .authors {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .header .meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header .meta-item {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--bg-secondary);
+            padding: 0.4rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-light);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-secondary);
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-title .icon {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-blue);
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .network-container {
+            height: 520px;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 4px;
+        }
+
+        #network-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .node {
+            cursor: pointer;
+        }
+
+        .node-circle {
+            transition: all 0.2s ease;
+        }
+
+        .node:hover .node-circle {
+            filter: brightness(1.1);
+            stroke-width: 3px;
+        }
+
+        .node-label {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            fill: var(--text-primary);
+            text-anchor: middle;
+            pointer-events: none;
+        }
+
+        .link {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .link-label {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 9px;
+            fill: var(--text-muted);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .stat-item {
+            background: var(--bg-secondary);
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-value {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legend-section {
+            margin-bottom: 0.5rem;
+        }
+
+        .legend-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .legend-item:hover {
+            background: var(--bg-secondary);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .legend-text {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .legend-count {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            background: var(--bg-secondary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        .node-info {
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            padding: 0.875rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .node-info-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .node-info-title .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+        }
+
+        .node-info-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+        }
+
+        .node-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+
+        .node-info-row .label {
+            color: var(--text-muted);
+        }
+
+        .node-info-row .value {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .controls {
+            display: flex;
+            gap: 0.375rem;
+        }
+
+        .control-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .control-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .control-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+            max-width: 240px;
+        }
+
+        .tooltip.active {
+            opacity: 1;
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+            color: var(--text-primary);
+        }
+
+        .tooltip-content {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .bottom-section {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0;
+        }
+
+        .bar-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            width: 110px;
+            flex-shrink: 0;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .bar-value {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            width: 50px;
+            text-align: right;
+        }
+
+        .or-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .or-item:last-child {
+            border-bottom: none;
+        }
+
+        .or-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            width: 120px;
+            flex-shrink: 0;
+        }
+
+        .or-bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .or-bar {
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
+            border-radius: 3px;
+        }
+
+        .or-value {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            min-width: 40px;
+        }
+
+        .attribution {
+            text-align: center;
+            padding: 1.25rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .attribution a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .attribution a:hover {
+            text-decoration: underline;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .tab-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .gender-bar {
+            display: flex;
+            height: 24px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .gender-female {
+            background: var(--accent-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .gender-male {
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .gender-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .gender-legend span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .gender-legend .dot-f {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-pink);
+            border-radius: 2px;
+        }
+
+        .gender-legend .dot-m {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-blue);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>Modeling Chronic Pain Interconnections Using Bayesian Networks</h1>
+            <p class="subtitle">Insights from the Qatar Biobank Study</p>
+            <p class="authors">Aisha Al-Khinji & Dhafer Malouche</p>
+            <div class="meta">
+                <span class="meta-item">n = 2,400 participants</span>
+                <span class="meta-item">10 pain locations</span>
+                <span class="meta-item">Front. Pain Res. Vol 6, 2025</span>
+            </div>
+        </header>
+
+        <div class="main-grid">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <circle cx="19" cy="5" r="2"/>
+                            <circle cx="5" cy="19" r="2"/>
+                            <circle cx="5" cy="5" r="2"/>
+                            <circle cx="19" cy="19" r="2"/>
+                        </svg>
+                        Bayesian Network Structure (Figure 8 & 9)
+                    </span>
+                    <div class="controls">
+                        <button class="control-btn active" data-view="force">Force</button>
+                        <button class="control-btn" data-view="hierarchical">Hierarchy</button>
+                        <button class="control-btn" data-view="reset">Reset</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="network-container">
+                        <svg id="network-svg"></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Study Statistics</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <div class="stat-value">2,400</div>
+                                <div class="stat-label">Participants</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Variables</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">50/50</div>
+                                <div class="stat-label">M/F Split</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">21</div>
+                                <div class="stat-label">Edges</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Node Categories</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="legend-section">
+                            <div class="legend-title">Demographics</div>
+                            <div class="legend-item" data-category="demographic">
+                                <div class="legend-color" style="background: #6c757d"></div>
+                                <span class="legend-text">Age & Gender</span>
+                                <span class="legend-count">2</span>
+                            </div>
+                        </div>
+                        <div class="legend-section">
+                            <div class="legend-title">Pain Locations</div>
+                            <div class="legend-item" data-category="head">
+                                <div class="legend-color" style="background: #d63384"></div>
+                                <span class="legend-text">Head/Face</span>
+                                <span class="legend-count">2</span>
+                            </div>
+                            <div class="legend-item" data-category="upper">
+                                <div class="legend-color" style="background: #0d6efd"></div>
+                                <span class="legend-text">Upper Body</span>
+                                <span class="legend-count">3</span>
+                            </div>
+                            <div class="legend-item" data-category="lower">
+                                <div class="legend-color" style="background: #198754"></div>
+                                <span class="legend-text">Lower Body</span>
+                                <span class="legend-count">3</span>
+                            </div>
+                            <div class="legend-item" data-category="systemic">
+                                <div class="legend-color" style="background: #fd7e14"></div>
+                                <span class="legend-text">Systemic</span>
+                                <span class="legend-count">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Selected Node</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="node-info" id="node-info">
+                            <div class="node-info-title">
+                                <span class="dot" style="background: var(--accent-blue)"></span>
+                                <span id="selected-node-name">Click a node to explore</span>
+                            </div>
+                            <div class="node-info-stats">
+                                <div class="node-info-row">
+                                    <span class="label">Prevalence</span>
+                                    <span class="value" id="selected-prevalence">—</span>
+                                </div>
+                                <div class="node-info-row">
+                                    <span class="label">In-degree</span>
+                                    <span class="value" id="selected-indegree">—</span>
+                                </div>
+                                <div class="node-info-row">
+                                    <span class="label">Out-degree</span>
+                                    <span class="value" id="selected-outdegree">—</span>
+                                </div>
+                                <div class="node-info-row">
+                                    <span class="label">Category</span>
+                                    <span class="value" id="selected-category">—</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
+                        </svg>
+                        Pain Prevalence (Table 1)
+                    </span>
+                </div>
+                <div class="card-body" id="prevalence-bars"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                        Top Odds Ratios (Table 2)
+                    </span>
+                </div>
+                <div class="card-body" id="or-bars"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        Demographics
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="gender">By Gender</button>
+                        <button class="tab-btn" data-tab="age">By Age</button>
+                    </div>
+                    <div class="tab-content active" id="gender-tab"></div>
+                    <div class="tab-content" id="age-tab"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attribution">
+            <strong>Front. Pain Res.</strong> | Volume 6 - 2025 | 
+            <a href="https://doi.org/10.3389/fpain.2025.1573465" target="_blank">DOI: 10.3389/fpain.2025.1573465</a> | 
+            Qatar Biobank Study (n=2,400)
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-title"></div>
+        <div class="tooltip-content"></div>
+    </div>
+
+    <script>
+        // Accurate data from the paper
+        const nodes = [
+            // Demographics (from Figure 8)
+            { id: "age", name: "Age", category: "demographic", prevalence: null, color: "#6c757d", isDemo: true },
+            { id: "gender", name: "Gender", category: "demographic", prevalence: null, color: "#6c757d", isDemo: true },
+            // Pain locations (from Table 1)
+            { id: "headache", name: "Headache", category: "head", prevalence: 31.1, color: "#d63384" },
+            { id: "face", name: "Face", category: "head", prevalence: 2.9, color: "#d63384" },
+            { id: "neck", name: "Neck", category: "upper", prevalence: 34.3, color: "#0d6efd" },
+            { id: "back", name: "Back", category: "upper", prevalence: 34.8, color: "#0d6efd" },
+            { id: "hand", name: "Hand", category: "upper", prevalence: 8.9, color: "#0d6efd" },
+            { id: "hip", name: "Hip", category: "lower", prevalence: 6.7, color: "#198754" },
+            { id: "knee", name: "Knee", category: "lower", prevalence: 24.9, color: "#198754" },
+            { id: "foot", name: "Foot", category: "lower", prevalence: 12.5, color: "#198754" },
+            { id: "stomach", name: "Stomach", category: "systemic", prevalence: 21.8, color: "#fd7e14" },
+            { id: "allbody", name: "All Body", category: "systemic", prevalence: 6.1, color: "#fd7e14" }
+        ];
+
+        // Edges from Figure 8 & 9 (Bayesian Network structure with ORs from Table 2)
+        const links = [
+            // From Age
+            { source: "age", target: "headache", or: 1.92, label: "Young→" },
+            { source: "age", target: "knee", or: 2.24, label: "Senior→" },
+            // From Gender
+            { source: "gender", target: "headache", or: 1.88, label: "F→" },
+            { source: "gender", target: "hand", or: 2.54, label: "F→" },
+            { source: "gender", target: "neck", or: 1.93, label: "F→" },
+            // From Headache
+            { source: "headache", target: "hip", or: 2.23 },
+            { source: "headache", target: "face", or: 11.30 },
+            { source: "headache", target: "neck", or: 2.87 },
+            { source: "headache", target: "back", or: 2.58 },
+            { source: "headache", target: "stomach", or: 2.97 },
+            // From Hip
+            { source: "hip", target: "hand", or: 8.69 },
+            // From Hand
+            { source: "hand", target: "face", or: 8.41 },
+            { source: "hand", target: "neck", or: 4.45 },
+            { source: "hand", target: "back", or: 4.05 },
+            { source: "hand", target: "foot", or: 8.25 },
+            { source: "hand", target: "allbody", or: 7.68 },
+            // From Neck
+            { source: "neck", target: "back", or: 4.28 },
+            { source: "neck", target: "foot", or: 4.09 },
+            { source: "neck", target: "stomach", or: 3.03 },
+            // From Back
+            { source: "back", target: "knee", or: 3.39 },
+            { source: "back", target: "stomach", or: 2.74 },
+            { source: "back", target: "allbody", or: 4.34 },
+            // From Face
+            { source: "face", target: "back", or: 2.97 },
+            // From Foot
+            { source: "foot", target: "knee", or: 4.76 }
+        ];
+
+        // Top ORs from Table 2
+        const topORs = [
+            { from: "Headache", to: "Face", or: 11.30, ci: "6.02–21.19" },
+            { from: "Hip", to: "Hand", or: 8.69, ci: "6.07–12.43" },
+            { from: "Hand", to: "Face", or: 8.41, ci: "5.10–13.88" },
+            { from: "Hand", to: "Foot", or: 8.25, ci: "6.08–11.20" },
+            { from: "Hand", to: "All Body", or: 7.68, ci: "5.29–11.15" },
+            { from: "Foot", to: "Knee", or: 4.76, ci: "3.70–6.11" },
+            { from: "Hand", to: "Neck", or: 4.45, ci: "3.30–6.00" },
+            { from: "Back", to: "All Body", or: 4.34, ci: "3.03–6.20" },
+            { from: "Neck", to: "Back", or: 4.28, ci: "3.57–5.13" }
+        ];
+
+        // Gender data from Figure 4
+        const genderData = [
+            { pain: "Hand pain", female: 70.1, male: 29.9 },
+            { pain: "All Body", female: 71.9, male: 28.1 },
+            { pain: "Knee Pain", female: 62.8, male: 37.2 },
+            { pain: "Foot pain", female: 63.1, male: 36.9 },
+            { pain: "Headache", female: 60.8, male: 39.2 },
+            { pain: "Back pain", female: 59.1, male: 40.9 },
+            { pain: "Neck pain", female: 60.7, male: 39.3 }
+        ];
+
+        // Age data from Figure 6
+        const ageData = [
+            { pain: "Headache", young: 51.8, middle: 45.1, senior: 3.1 },
+            { pain: "Stomach", young: 50.5, middle: 44.4, senior: 5.2 },
+            { pain: "Back", young: 41.5, middle: 50.2, senior: 8.2 },
+            { pain: "Neck", young: 36.2, middle: 55.8, senior: 8.0 },
+            { pain: "Knee", young: 29.3, middle: 56.8, senior: 13.9 },
+            { pain: "Foot", young: 31.2, middle: 57.8, senior: 11.0 }
+        ];
+
+        // SVG setup
+        const svg = d3.select("#network-svg");
+        const container = document.querySelector(".network-container");
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        svg.attr("viewBox", `0 0 ${width} ${height}`);
+
+        // Arrow marker
+        svg.append("defs").append("marker")
+            .attr("id", "arrowhead")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 22)
+            .attr("refY", 0)
+            .attr("markerWidth", 5)
+            .attr("markerHeight", 5)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5")
+            .attr("fill", "#adb5bd");
+
+        // Groups
+        const linkGroup = svg.append("g").attr("class", "links");
+        const nodeGroup = svg.append("g").attr("class", "nodes");
+
+        // Force simulation
+        const simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(100).strength(0.5))
+            .force("charge", d3.forceManyBody().strength(-350))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collision", d3.forceCollide().radius(40));
+
+        // Draw links
+        const link = linkGroup.selectAll("line")
+            .data(links)
+            .enter()
+            .append("line")
+            .attr("class", "link")
+            .attr("stroke", "#adb5bd")
+            .attr("stroke-width", d => d.or ? Math.min(1 + d.or / 4, 4) : 1.5)
+            .attr("stroke-opacity", 0.6)
+            .attr("marker-end", "url(#arrowhead)");
+
+        // Draw nodes
+        const node = nodeGroup.selectAll("g")
+            .data(nodes)
+            .enter()
+            .append("g")
+            .attr("class", "node")
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        // Node circles
+        node.append("circle")
+            .attr("class", "node-circle")
+            .attr("r", d => d.isDemo ? 18 : (15 + (d.prevalence || 10) * 0.3))
+            .attr("fill", d => d.color)
+            .attr("stroke", d => d.color)
+            .attr("stroke-width", 2)
+            .attr("stroke-opacity", 0.3);
+
+        // Node labels
+        node.append("text")
+            .attr("class", "node-label")
+            .attr("dy", 4)
+            .text(d => d.name);
+
+        // Tooltip
+        const tooltip = document.getElementById("tooltip");
+
+        node.on("mouseover", function(event, d) {
+            const inDegree = links.filter(l => l.target.id === d.id || l.target === d.id).length;
+            const outDegree = links.filter(l => l.source.id === d.id || l.source === d.id).length;
+            
+            tooltip.querySelector(".tooltip-title").textContent = d.name;
+            tooltip.querySelector(".tooltip-content").innerHTML = `
+                ${d.prevalence ? `<strong>Prevalence:</strong> ${d.prevalence}%<br>` : ''}
+                <strong>Category:</strong> ${d.category}<br>
+                <strong>In-degree:</strong> ${inDegree}<br>
+                <strong>Out-degree:</strong> ${outDegree}
+            `;
+            tooltip.classList.add("active");
+            
+            // Highlight connected
+            link.attr("stroke-opacity", l => 
+                (l.source.id === d.id || l.source === d.id || l.target.id === d.id || l.target === d.id) ? 1 : 0.1
+            ).attr("stroke", l => 
+                (l.source.id === d.id || l.source === d.id || l.target.id === d.id || l.target === d.id) ? "#0d6efd" : "#adb5bd"
+            );
+        })
+        .on("mousemove", function(event) {
+            tooltip.style.left = (event.pageX + 12) + "px";
+            tooltip.style.top = (event.pageY - 10) + "px";
+        })
+        .on("mouseout", function() {
+            tooltip.classList.remove("active");
+            link.attr("stroke-opacity", 0.6).attr("stroke", "#adb5bd");
+        })
+        .on("click", function(event, d) {
+            updateNodeInfo(d);
+        });
+
+        // Update positions
+        simulation.on("tick", () => {
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node.attr("transform", d => `translate(${d.x},${d.y})`);
+        });
+
+        // Drag functions
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+        // Update node info panel
+        function updateNodeInfo(d) {
+            const inDegree = links.filter(l => l.target.id === d.id || l.target === d.id).length;
+            const outDegree = links.filter(l => l.source.id === d.id || l.source === d.id).length;
+            
+            document.getElementById("selected-node-name").textContent = d.name;
+            document.getElementById("selected-prevalence").textContent = d.prevalence ? d.prevalence + "%" : "N/A";
+            document.getElementById("selected-indegree").textContent = inDegree;
+            document.getElementById("selected-outdegree").textContent = outDegree;
+            document.getElementById("selected-category").textContent = d.category.charAt(0).toUpperCase() + d.category.slice(1);
+            document.querySelector("#node-info .dot").style.background = d.color;
+        }
+
+        // Control buttons
+        document.querySelectorAll(".control-btn").forEach(btn => {
+            btn.addEventListener("click", function() {
+                const view = this.dataset.view;
+                document.querySelectorAll(".control-btn").forEach(b => b.classList.remove("active"));
+                
+                if (view === "hierarchical") {
+                    this.classList.add("active");
+                    // Position demographics at top
+                    const demoNodes = nodes.filter(n => n.isDemo);
+                    const painNodes = nodes.filter(n => !n.isDemo);
+                    
+                    demoNodes.forEach((node, i) => {
+                        node.fx = width * (i + 1) / 3;
+                        node.fy = 50;
+                    });
+                    
+                    painNodes.forEach((node, i) => {
+                        const row = Math.floor(i / 5);
+                        const col = i % 5;
+                        node.fx = 80 + col * (width - 160) / 4;
+                        node.fy = 150 + row * 120;
+                    });
+                    simulation.alpha(0.5).restart();
+                } else if (view === "force") {
+                    this.classList.add("active");
+                    nodes.forEach(node => {
+                        node.fx = null;
+                        node.fy = null;
+                    });
+                    simulation.alpha(1).restart();
+                } else if (view === "reset") {
+                    document.querySelector('[data-view="force"]').classList.add("active");
+                    nodes.forEach(node => {
+                        node.fx = null;
+                        node.fy = null;
+                    });
+                    simulation.alpha(1).restart();
+                }
+            });
+        });
+
+        // Prevalence bars (from Table 1)
+        const prevalenceContainer = document.getElementById("prevalence-bars");
+        const painNodes = nodes.filter(n => n.prevalence !== null).sort((a, b) => b.prevalence - a.prevalence);
+
+        painNodes.forEach(node => {
+            const bar = document.createElement("div");
+            bar.className = "bar-item";
+            bar.innerHTML = `
+                <span class="bar-label">${node.name}</span>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width: ${node.prevalence * 2.5}%; background: ${node.color}"></div>
+                </div>
+                <span class="bar-value">${node.prevalence}%</span>
+            `;
+            prevalenceContainer.appendChild(bar);
+        });
+
+        // OR bars
+        const orContainer = document.getElementById("or-bars");
+        const maxOR = Math.max(...topORs.map(o => o.or));
+
+        topORs.forEach(item => {
+            const bar = document.createElement("div");
+            bar.className = "or-item";
+            bar.innerHTML = `
+                <span class="or-label">${item.from} → ${item.to}</span>
+                <div class="or-bar-container">
+                    <div class="or-bar" style="width: ${(item.or / maxOR) * 100}%"></div>
+                    <span class="or-value">${item.or.toFixed(2)}</span>
+                </div>
+            `;
+            orContainer.appendChild(bar);
+        });
+
+        // Gender tab
+        const genderTab = document.getElementById("gender-tab");
+        genderData.forEach(item => {
+            const row = document.createElement("div");
+            row.style.marginBottom = "0.75rem";
+            row.innerHTML = `
+                <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.25rem;">${item.pain}</div>
+                <div class="gender-bar">
+                    <div class="gender-female" style="width: ${item.female}%">${item.female}%</div>
+                    <div class="gender-male" style="width: ${item.male}%">${item.male}%</div>
+                </div>
+            `;
+            genderTab.appendChild(row);
+        });
+        
+        const genderLegend = document.createElement("div");
+        genderLegend.className = "gender-legend";
+        genderLegend.innerHTML = `<span><div class="dot-f"></div> Female</span><span><div class="dot-m"></div> Male</span>`;
+        genderTab.appendChild(genderLegend);
+
+        // Age tab
+        const ageTab = document.getElementById("age-tab");
+        ageData.forEach(item => {
+            const row = document.createElement("div");
+            row.style.marginBottom = "0.75rem";
+            row.innerHTML = `
+                <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.25rem;">${item.pain}</div>
+                <div class="gender-bar">
+                    <div style="background: #0dcaf0; width: ${item.young}%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 0.65rem; font-weight: 600;">${item.young}%</div>
+                    <div style="background: #0d6efd; width: ${item.middle}%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.65rem; font-weight: 600;">${item.middle}%</div>
+                    <div style="background: #198754; width: ${item.senior}%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.65rem; font-weight: 600;">${item.senior}%</div>
+                </div>
+            `;
+            ageTab.appendChild(row);
+        });
+        
+        const ageLegend = document.createElement("div");
+        ageLegend.className = "gender-legend";
+        ageLegend.innerHTML = `
+            <span><div style="width:8px;height:8px;background:#0dcaf0;border-radius:2px;"></div> Young (18-35)</span>
+            <span><div style="width:8px;height:8px;background:#0d6efd;border-radius:2px;"></div> Middle (36-60)</span>
+            <span><div style="width:8px;height:8px;background:#198754;border-radius:2px;"></div> Senior (61+)</span>
+        `;
+        ageTab.appendChild(ageLegend);
+
+        // Tab switching
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+            btn.addEventListener("click", function() {
+                document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+                document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+                this.classList.add("active");
+                document.getElementById(this.dataset.tab + "-tab").classList.add("active");
+            });
+        });
+
+        // Legend hover effects
+        document.querySelectorAll(".legend-item").forEach(item => {
+            item.addEventListener("mouseenter", function() {
+                const category = this.dataset.category;
+                node.attr("opacity", d => d.category === category ? 1 : 0.2);
+                link.attr("opacity", 0.1);
+            });
+            
+            item.addEventListener("mouseleave", function() {
+                node.attr("opacity", 1);
+                link.attr("opacity", 1);
+            });
+        });
+
+        // Resize handler
+        window.addEventListener("resize", () => {
+            const newWidth = container.clientWidth;
+            const newHeight = container.clientHeight;
+            svg.attr("viewBox", `0 0 ${newWidth} ${newHeight}`);
+            simulation.force("center", d3.forceCenter(newWidth / 2, newHeight / 2));
+            simulation.alpha(0.3).restart();
+        });
+    </script>
+</body>
+</html>

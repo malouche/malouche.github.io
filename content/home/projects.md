@@ -55,6 +55,8 @@ content:
     tag: europe2021vs2022
   - name: COVID-19 Total Deaths between 2021 and 2022 in Asia.
     tag: asia2021vs2022
+  - name: Modeling chronic pain interconnections using Bayesian networks. 
+    tag: painnetwork
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
