@@ -33,21 +33,6 @@
     </item>
     
     <item>
-      <title>Modeling Chronic Pain Interconnections Dashboard</title>
-      <link>https://dhafermalouche.net/project/pain-network-dashboard/</link>
-      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/project/pain-network-dashboard/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;ORIGINAL RESEARCH article&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Front. Pain Res., 26 May 2025&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Sec. Pain Research Methods&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Volume 6 - 2025 | &lt;a href=&#34;https://doi.org/10.3389/fpain.2025.1573465&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.3389/fpain.2025.1573465&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Aisha Al-Khinji, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
-&lt;iframe src=&#34;https://claude.site/public/artifacts/0bef81ad-8140-4b8e-bf0b-8b74bea2e08f/embed&#34; title=&#34;Modeling chronic pain interconnections dashboard&#34; width=&#34;100%&#34; height=&#34;600&#34; frameborder=&#34;0&#34; allow=&#34;clipboard-write&#34; allowfullscreen&gt;&lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Flipped classroom evaluation and blended learning potential a case study of engagement and inclusion in quantitative education</title>
       <link>https://dhafermalouche.net/publication/mizza1/</link>
       <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
@@ -69,6 +54,34 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/publication/alkhinji1/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling Chronic Pain Interconnections Dashboard</title>
+      <link>https://dhafermalouche.net/project/pain-network-dashboard/</link>
+      <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/pain-network-dashboard/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ORIGINAL RESEARCH article&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Front. Pain Res., 27 May 2025&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Sec. Pain Research Methods&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Volume 6 - 2025 | &lt;a href=&#34;https://doi.org/10.3389/fpain.2025.1573465&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.3389/fpain.2025.1573465&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;modeling-chronic-pain-interconnections-using-bayesian-networks-insights-from-the-qatar-biobank-study&#34;&gt;Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Aisha Al-Khinji, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;https://dhafermalouche.net/dashboards/pain-network-dashboard.html&#34; title=&#34;Modeling chronic pain interconnections dashboard&#34; width=&#34;100%&#34; height=&#34;900&#34; frameborder=&#34;0&#34; style=&#34;border-radius: 8px; border: 1px solid #dee2e6;&#34;&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;This study examines the interdependencies among different chronic pain locations and their relationships with age and gender using data from 2,400 adult participants from the Qatar Biobank (QBB). A Bayesian network approach identified direct and indirect associations among pain locations and demographic factors, quantified by odds ratios (ORs). Key findings include strong correlations between hand pain and hip pain (OR 8.69), headache and facial pain (OR 11.30), and the significant role of back pain as a predictor of systemic pain.&lt;/p&gt;
+&lt;h3 id=&#34;key-findings&#34;&gt;Key Findings&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Headache → Face&lt;/strong&gt;: OR 11.30 (95% CI: 6.02–21.19)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hip → Hand&lt;/strong&gt;: OR 8.69 (95% CI: 6.07–12.43)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hand → Foot&lt;/strong&gt;: OR 8.25 (95% CI: 6.08–11.20)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Foot → Knee&lt;/strong&gt;: OR 4.76 (95% CI: 3.70–6.11)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;citation&#34;&gt;Citation&lt;/h3&gt;
+&lt;p&gt;Al-Khinji AAMA and Malouche D (2025) Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study. &lt;em&gt;Front. Pain Res.&lt;/em&gt; 6:1573465. doi: 10.3389/fpain.2025.1573465&lt;/p&gt;
+</description>
     </item>
     
     <item>
