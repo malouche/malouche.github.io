@@ -31,6 +31,8 @@ content:
     tag: painnetwork
   - name: Flipped Classroom Evaluation and Blended Learning Potential
     tag: flipped-classroom
+  - name: Immune Checkpoint Inhibitors in PDAC Dashboard
+    tag: immunotherapy
   - name: COVID-19 deaths
     tag: covid
   - name: COVID-19 US vs EU

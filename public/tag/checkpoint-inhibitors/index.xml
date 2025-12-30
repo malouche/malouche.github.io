@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>checkpoint-inhibitors | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/checkpoint-inhibitors/</link>
+      <atom:link href="https://dhafermalouche.net/tag/checkpoint-inhibitors/index.xml" rel="self" type="application/rss+xml" />
+    <description>checkpoint-inhibitors</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>checkpoint-inhibitors</title>
+      <link>https://dhafermalouche.net/tag/checkpoint-inhibitors/</link>
+    </image>
+    
+    <item>
+      <title>Immune Checkpoint Inhibitors in PDAC Dashboard</title>
+      <link>https://dhafermalouche.net/project/imune-check-point/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/imune-check-point/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;SYSTEMATIC REVIEW AND META-ANALYSIS&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Front. Oncol., 15 January 2025&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Sec. Gastrointestinal Cancers&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Volume 15 - 2025 | &lt;a href=&#34;https://doi.org/10.3389/fonc.2025.1569884&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.3389/fonc.2025.1569884&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;immune-checkpoint-inhibitors-in-pancreatic-adenocarcinoma-a-systematic-review-and-meta-analysis-of-clinical-outcomes&#34;&gt;Immune checkpoint inhibitors in pancreatic adenocarcinoma: a systematic review and meta-analysis of clinical outcomes&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Aisha Al-Khinji, Noora Al-Korbi, Sara Al-Kuwari, Abdulla Al-Hor, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div style=&#34;margin: 2rem 0; text-align: center;&#34;&gt;
+  &lt;a href=&#34;pdac-ici-dashboard.html&#34; 
+     target=&#34;_blank&#34; 
+     rel=&#34;noopener noreferrer&#34;
+     style=&#34;display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0e7490 0%, #7c3aed 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s;&#34;&gt;
+    📊 Explore Interactive Dashboard
+    &lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; style=&#34;margin-left: 4px;&#34;&gt;
+      &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;/&gt;
+      &lt;polyline points=&#34;15 3 21 3 21 9&#34;/&gt;
+      &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;This systematic review and meta-analysis evaluates the efficacy of immune checkpoint inhibitors (ICIs) in pancreatic ductal adenocarcinoma (PDAC), analyzing 54 studies with 2,364 participants. We assessed objective response rate (ORR), progression-free survival (PFS), and overall survival (OS) across ICI monotherapy, ICI combined with chemotherapy, and ICI combined with radiotherapy. Key findings reveal that ICI + chemotherapy significantly improves OS (HR 0.82, 95% CI: 0.78–0.87), while ICI + radiotherapy is associated with increased mortality risk (HR 1.18, 95% CI: 1.04–1.34). Biomarker-selected populations (high TMB, dMMR/MSI-H) show enhanced responses.&lt;/p&gt;
+&lt;h3 id=&#34;key-findings&#34;&gt;Key Findings&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Outcome&lt;/th&gt;
+&lt;th&gt;Treatment&lt;/th&gt;
+&lt;th&gt;Effect Size&lt;/th&gt;
+&lt;th&gt;95% CI&lt;/th&gt;
+&lt;th&gt;Interpretation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;ICI + Chemotherapy&lt;/td&gt;
+&lt;td&gt;HR 0.82&lt;/td&gt;
+&lt;td&gt;0.78–0.87&lt;/td&gt;
+&lt;td&gt;18% mortality reduction&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;ICI Monotherapy&lt;/td&gt;
+&lt;td&gt;HR 0.82&lt;/td&gt;
+&lt;td&gt;0.76–0.88&lt;/td&gt;
+&lt;td&gt;Benefit in select patients&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;ICI + Radiotherapy&lt;/td&gt;
+&lt;td&gt;HR 1.18&lt;/td&gt;
+&lt;td&gt;1.04–1.34&lt;/td&gt;
+&lt;td&gt;⚠️ Increased mortality&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ORR&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;ICI + Chemotherapy&lt;/td&gt;
+&lt;td&gt;OR 1.78&lt;/td&gt;
+&lt;td&gt;1.46–2.16&lt;/td&gt;
+&lt;td&gt;Improved response&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;PFS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;All ICIs&lt;/td&gt;
+&lt;td&gt;HR 2.25&lt;/td&gt;
+&lt;td&gt;2.15–2.36&lt;/td&gt;
+&lt;td&gt;Delayed progression&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;dashboard-features&#34;&gt;Dashboard Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PRISMA Flow Diagram&lt;/strong&gt;: Interactive visualization of study selection (545 → 54 studies)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Risk of Bias Assessment&lt;/strong&gt;: Traffic-light plots for RCTs and non-randomized studies&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Forest Plots&lt;/strong&gt;: Interactive plots for ORR, OS, and PFS with filtering by treatment type&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Causal Bayesian Network&lt;/strong&gt;: Model of treatment-biomarker-outcome relationships&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subgroup Analysis&lt;/strong&gt;: Exploration of high-TMB and dMMR patient outcomes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clinical Guidance&lt;/strong&gt;: Evidence-based treatment recommendations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;subgroup-highlights&#34;&gt;Subgroup Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;High TMB Patients&lt;/strong&gt;: Improved PFS with ICI therapy, better checkpoint blockade response&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MSI-H / dMMR Patients&lt;/strong&gt;: ORR of 48.4%, median PFS of 26.7 months with durable responses&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;APX005M + Chemotherapy&lt;/strong&gt;: Highest ORR (67%) in triple combination regimens&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;citation&#34;&gt;Citation&lt;/h3&gt;
+&lt;p&gt;Al-Khinji A, Al-Korbi N, Al-Kuwari S, Al-Hor A and Malouche D (2025) Immune checkpoint inhibitors in pancreatic adenocarcinoma: a systematic review and meta-analysis of clinical outcomes. &lt;em&gt;Front. Oncol.&lt;/em&gt; 15:1569884. doi: 10.3389/fonc.2025.1569884&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

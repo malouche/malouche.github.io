@@ -1,0 +1,436 @@
+{
+  "dashboard": {
+    "title": "PDAC Immunotherapy Meta-Analysis Dashboard",
+    "version": "1.0.0",
+    "paper": {
+      "title": "Immune checkpoint inhibitors in pancreatic adenocarcinoma: a systematic review and meta-analysis of clinical outcomes",
+      "authors": ["Al-Khinji A", "Al-Korbi N", "Al-Kuwari S", "Al-Hor A", "Malouche D"],
+      "journal": "Frontiers in Oncology",
+      "year": 2025,
+      "doi": "10.3389/fonc.2025.1569884"
+    }
+  },
+
+  "layout": {
+    "type": "single-page-application",
+    "navigation": "sticky-header-with-tabs",
+    "theme": "dark-mode-medical",
+    "colorScheme": {
+      "primary": "#22d3ee",
+      "secondary": "#8b5cf6",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "danger": "#f43f5e",
+      "background": "#0f172a",
+      "surface": "#1e293b",
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#94a3b8",
+        "muted": "#64748b"
+      }
+    }
+  },
+
+  "sections": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "◈",
+      "components": [
+        {
+          "type": "hero-card",
+          "data": "paperMetadata",
+          "features": ["gradient-background", "statistics-badges"]
+        },
+        {
+          "type": "statistics-grid",
+          "layout": "4-column",
+          "items": [
+            { "label": "OS Improvement", "value": "18%", "detail": "HR 0.82 (ICI+Chemo)", "color": "emerald" },
+            { "label": "ORR Pooled", "value": "10%", "detail": "OR 1.10 (ICB therapy)", "color": "cyan" },
+            { "label": "PFS Hazard Ratio", "value": "2.25", "detail": "95% CI: 2.15-2.36", "color": "amber" },
+            { "label": "Radiotherapy + ICI", "value": "+18%", "detail": "Mortality increase", "color": "rose" }
+          ]
+        },
+        {
+          "type": "info-cards",
+          "layout": "2-column",
+          "cards": ["background", "research-objectives"]
+        },
+        {
+          "type": "chart",
+          "chartType": "composed-bar",
+          "data": "treatmentOutcomes",
+          "axes": {
+            "x": "treatment",
+            "y": ["medianOS", "medianPFS"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "methodology",
+      "label": "Methodology",
+      "icon": "⬡",
+      "components": [
+        {
+          "type": "prisma-flowchart",
+          "interactive": true,
+          "stages": ["identification", "screening", "eligibility", "included"],
+          "dataSource": "prismaData",
+          "style": "vertical-gradient-flow"
+        },
+        {
+          "type": "risk-of-bias-table",
+          "tool": "RoB-2.0",
+          "domains": ["D1", "D2", "D3", "D4", "D5", "overall"],
+          "dataSource": "robRCTData",
+          "visualization": "traffic-light"
+        },
+        {
+          "type": "tools-grid",
+          "layout": "3-column",
+          "categories": ["statistical-analysis", "bias-assessment", "heterogeneity"]
+        }
+      ]
+    },
+    {
+      "id": "findings",
+      "label": "Key Findings",
+      "icon": "◆",
+      "components": [
+        {
+          "type": "tabbed-content",
+          "tabs": [
+            {
+              "id": "orr",
+              "label": "Objective Response Rate",
+              "content": {
+                "metrics": [
+                  { "treatment": "ICI+Chemotherapy", "value": "OR 1.78", "ci": "1.46-2.16", "heterogeneity": "85%" },
+                  { "treatment": "ICB Monotherapy", "value": "OR 1.10", "ci": "1.02-1.18", "heterogeneity": "0%" },
+                  { "treatment": "ICI+Radiotherapy", "value": "OR 1.35", "ci": "0.99-1.83", "heterogeneity": "96%" }
+                ],
+                "table": "orrByTreatment"
+              }
+            },
+            {
+              "id": "os",
+              "label": "Overall Survival",
+              "content": {
+                "metrics": [
+                  { "treatment": "ICI+Chemotherapy", "value": "HR 0.82", "ci": "0.78-0.87", "interpretation": "18% death risk reduction" },
+                  { "treatment": "ICI Monotherapy", "value": "HR 0.82", "ci": "0.76-0.88", "interpretation": "Variable outcomes" },
+                  { "treatment": "ICI+Radiotherapy", "value": "HR 1.18", "ci": "1.04-1.34", "interpretation": "⚠️ Increased mortality" }
+                ],
+                "chart": "horizontalBarChart"
+              }
+            },
+            {
+              "id": "pfs",
+              "label": "Progression-Free Survival",
+              "content": {
+                "pooledResult": { "hr": 2.25, "ci": "2.15-2.36", "heterogeneity": "7%" },
+                "chart": "horizontalBarChart"
+              }
+            }
+          ]
+        },
+        {
+          "type": "subgroup-analysis",
+          "subgroups": [
+            { "name": "High TMB Patients", "findings": "Improved PFS, better ICI response" },
+            { "name": "MSI-H / dMMR Patients", "findings": "ORR 48.4%, median PFS 26.7 months" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bayesian",
+      "label": "Causal Network",
+      "icon": "⬢",
+      "components": [
+        {
+          "type": "bayesian-network",
+          "interactive": true,
+          "features": ["node-hover", "node-click-details", "edge-highlighting"],
+          "nodes": {
+            "schema": {
+              "id": "string",
+              "label": "string",
+              "x": "number",
+              "y": "number",
+              "type": "enum:intervention|biomarker|mediator|outcome"
+            },
+            "data": "bayesianNodes"
+          },
+          "edges": {
+            "schema": {
+              "from": "nodeId",
+              "to": "nodeId",
+              "strength": "enum:strong|moderate|weak"
+            },
+            "data": "bayesianEdges",
+            "directionality": "causal (from → to)"
+          }
+        },
+        {
+          "type": "node-details-panel",
+          "triggerEvent": "nodeClick",
+          "content": ["title", "description", "causalEffects"]
+        },
+        {
+          "type": "pathway-summary",
+          "categories": ["positive-pathways", "negative-pathways"]
+        }
+      ]
+    },
+    {
+      "id": "forest",
+      "label": "Forest Plots",
+      "icon": "▣",
+      "components": [
+        {
+          "type": "plot-selector",
+          "options": [
+            { "id": "os_chemo", "label": "OS: ICI + Chemotherapy", "color": "#22d3ee" },
+            { "id": "os_mono", "label": "OS: ICI Monotherapy", "color": "#10b981" },
+            { "id": "os_rt", "label": "OS: ICI + Radiotherapy", "color": "#f43f5e" },
+            { "id": "pfs", "label": "PFS: All Combinations", "color": "#8b5cf6" },
+            { "id": "orr", "label": "ORR: ICI + Chemotherapy", "color": "#f59e0b" }
+          ]
+        },
+        {
+          "type": "forest-plot",
+          "library": "recharts",
+          "chartType": "scatter-with-ci",
+          "features": [
+            "confidence-interval-lines",
+            "reference-line-at-1",
+            "pooled-diamond",
+            "hover-tooltip",
+            "heterogeneity-display"
+          ],
+          "dataMapping": {
+            "x": "hr|or",
+            "y": "study",
+            "ci_low": "ci_low",
+            "ci_high": "ci_high",
+            "weight": "weight"
+          }
+        },
+        {
+          "type": "interpretation-box",
+          "dynamicContent": true,
+          "warningStates": ["os_rt"]
+        }
+      ]
+    },
+    {
+      "id": "implications",
+      "label": "Implications",
+      "icon": "◇",
+      "components": [
+        {
+          "type": "conclusions-grid",
+          "categories": ["positive", "negative", "caution"]
+        },
+        {
+          "type": "limitations-cards",
+          "layout": "3-column"
+        },
+        {
+          "type": "future-directions",
+          "items": ["biomarkers", "combinations", "tme-modulation", "personalization"]
+        },
+        {
+          "type": "clinical-guidance-table",
+          "columns": ["patientProfile", "recommendedApproach", "evidenceLevel"]
+        }
+      ]
+    }
+  ],
+
+  "dataModels": {
+    "paperMetadata": {
+      "title": "string",
+      "subtitle": "string",
+      "authors": "string",
+      "journal": "string",
+      "year": "number",
+      "doi": "string",
+      "totalStudies": "number",
+      "totalParticipants": "number"
+    },
+    "prismaData": {
+      "identification": {
+        "pubmed": "number",
+        "cochrane": "number",
+        "cinahl": "number",
+        "googleScholar": "number",
+        "total": "number"
+      },
+      "removed": {
+        "duplicates": "number",
+        "automation": "number",
+        "other": "number"
+      },
+      "screened": "number",
+      "excluded": "number",
+      "soughtRetrieval": "number",
+      "notRetrieved": "number",
+      "assessed": "number",
+      "excludedReasons": {
+        "deviatingOutcomes": "number",
+        "investigatingExpression": "number",
+        "combinedCancers": "number",
+        "murineModels": "number"
+      },
+      "included": "number"
+    },
+    "forestPlotEntry": {
+      "study": "string",
+      "hr": "number (optional)",
+      "or": "number (optional)",
+      "ci_low": "number",
+      "ci_high": "number",
+      "weight": "number",
+      "type": "string (optional)"
+    },
+    "treatmentOutcome": {
+      "treatment": "string",
+      "orr": "number|null",
+      "medianOS": "number|null",
+      "medianPFS": "number|null",
+      "type": "string"
+    },
+    "robEntry": {
+      "study": "string",
+      "D1": "enum:low|concerns|high",
+      "D2": "enum:low|concerns|high",
+      "D3": "enum:low|concerns|high",
+      "D4": "enum:low|concerns|high",
+      "D5": "enum:low|concerns|high",
+      "overall": "enum:low|concerns|high"
+    },
+    "bayesianNode": {
+      "id": "string",
+      "label": "string",
+      "x": "number",
+      "y": "number",
+      "type": "enum:intervention|biomarker|mediator|outcome"
+    },
+    "bayesianEdge": {
+      "from": "string (nodeId)",
+      "to": "string (nodeId)",
+      "strength": "enum:strong|moderate|weak",
+      "notes": [
+        "Edges represent CAUSAL relationships",
+        "Arrow direction: from → to (cause → effect)",
+        "Do NOT reverse arrow directions",
+        "Strength indicates confidence in causal relationship"
+      ]
+    }
+  },
+
+  "bayesianNetwork": {
+    "description": "Causal model of ICI treatment effects in PDAC",
+    "nodes": [
+      { "id": "treatment", "label": "Treatment Type", "type": "intervention", "position": "left" },
+      { "id": "biomarker", "label": "Biomarker Status", "type": "biomarker", "position": "left" },
+      { "id": "tme", "label": "Tumor Microenvironment", "type": "mediator", "position": "center" },
+      { "id": "immune", "label": "Immune Response", "type": "mediator", "position": "center" },
+      { "id": "orr", "label": "ORR", "type": "outcome", "position": "right" },
+      { "id": "pfs", "label": "PFS", "type": "outcome", "position": "right" },
+      { "id": "os", "label": "OS", "type": "outcome", "position": "right" }
+    ],
+    "edges": [
+      { "from": "treatment", "to": "tme", "strength": "strong", "evidence": "Chemotherapy modulates TME composition" },
+      { "from": "treatment", "to": "immune", "strength": "strong", "evidence": "ICIs directly activate immune checkpoints" },
+      { "from": "biomarker", "to": "tme", "strength": "moderate", "evidence": "TMB/MSI status correlates with TME characteristics" },
+      { "from": "biomarker", "to": "immune", "strength": "strong", "evidence": "High TMB → more neoantigens → better immune recognition" },
+      { "from": "tme", "to": "immune", "strength": "moderate", "evidence": "TME immunosuppression limits immune activation" },
+      { "from": "tme", "to": "orr", "strength": "weak", "evidence": "Stromal density affects drug delivery" },
+      { "from": "immune", "to": "orr", "strength": "strong", "evidence": "Immune activation correlates with tumor shrinkage" },
+      { "from": "immune", "to": "pfs", "strength": "strong", "evidence": "Sustained immune response delays progression" },
+      { "from": "orr", "to": "pfs", "strength": "moderate", "evidence": "Tumor response associates with PFS" },
+      { "from": "pfs", "to": "os", "strength": "strong", "evidence": "PFS is surrogate for OS in many trials" },
+      { "from": "treatment", "to": "os", "strength": "moderate", "evidence": "Direct treatment effects on survival" }
+    ],
+    "causalInterpretation": {
+      "note": "Arrows indicate direction of causation, NOT statistical correlation",
+      "interventionNodes": "Represent manipulable variables (treatment choices)",
+      "biomarkerNodes": "Represent patient characteristics that modify treatment effects",
+      "mediatorNodes": "Represent intermediate mechanisms",
+      "outcomeNodes": "Represent clinical endpoints"
+    }
+  },
+
+  "interactiveFeatures": {
+    "filtering": {
+      "byTreatmentType": ["monotherapy", "ICI+Chemo", "ICI+RT", "triple-combo"],
+      "byStudyDesign": ["RCT", "phase-II", "retrospective"],
+      "byOutcome": ["ORR", "PFS", "OS"]
+    },
+    "toggles": {
+      "detailLevel": ["summary", "detailed"],
+      "comparisonMode": true
+    },
+    "tooltips": {
+      "forestPlot": ["study", "HR/OR", "95% CI", "weight"],
+      "bayesianNode": ["title", "description", "causalEffects"]
+    },
+    "highlighting": {
+      "subgroups": ["high-TMB", "dMMR", "MSI-H"],
+      "significantResults": true
+    }
+  },
+
+  "technicalRequirements": {
+    "framework": "React 18+",
+    "chartLibrary": "Recharts",
+    "styling": "TailwindCSS",
+    "stateManagement": "React useState/useMemo",
+    "responsiveness": {
+      "breakpoints": ["sm:640px", "md:768px", "lg:1024px", "xl:1280px"],
+      "mobileFirst": true
+    },
+    "accessibility": {
+      "colorContrastAAA": true,
+      "keyboardNavigation": true,
+      "screenReaderLabels": true
+    },
+    "performance": {
+      "lazyLoading": "sections",
+      "memoization": "computationally-expensive-calculations"
+    }
+  },
+
+  "figureMapping": {
+    "figure1": { "section": "methodology", "component": "prisma-flowchart" },
+    "figure2": { "section": "methodology", "component": "rob-summary-bar" },
+    "figure3": { "section": "methodology", "component": "rob-traffic-light" },
+    "figure4": { "section": "methodology", "component": "robins-i-summary" },
+    "figure5": { "section": "methodology", "component": "robins-i-traffic-light" },
+    "figure6": { "section": "forest", "component": "forest-plot", "filter": "orr" },
+    "figure7": { "section": "forest", "component": "forest-plot", "filter": "orr-mono" },
+    "figure8": { "section": "forest", "component": "forest-plot", "filter": "orr-rt" },
+    "figure9": { "section": "forest", "component": "forest-plot", "filter": "os-chemo" },
+    "figure10": { "section": "forest", "component": "forest-plot", "filter": "os-mono" },
+    "figure11": { "section": "forest", "component": "forest-plot", "filter": "os-rt" },
+    "figure12": { "section": "forest", "component": "forest-plot", "filter": "pfs" }
+  },
+
+  "tableMapping": {
+    "table1": { "content": "search-strategy", "source": "supplementary" },
+    "table2": { "content": "study-characteristics", "section": "methodology" },
+    "table3": { "content": "orr-single-arm", "section": "findings" },
+    "table4": { "content": "os-direct-comparison", "section": "findings" },
+    "table5": { "content": "os-single-arm", "section": "findings" },
+    "table6": { "content": "os-multi-cohort", "section": "findings" },
+    "table7": { "content": "pfs-direct-comparison", "section": "findings" },
+    "table8": { "content": "pfs-single-arm", "section": "findings" },
+    "table9": { "content": "pfs-multi-cohort", "section": "findings" },
+    "table10": { "content": "pfs-stratified", "section": "findings" }
+  }
+}
