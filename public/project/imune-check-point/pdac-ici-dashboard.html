@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDAC Immunotherapy Dashboard | Al-Khinji et al. 2025</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+        :root {
+            --slate-950: #0a0f1a; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155;
+            --slate-600: #475569; --slate-500: #64748b; --slate-400: #94a3b8; --slate-300: #cbd5e1;
+            --cyan-500: #06b6d4; --cyan-400: #22d3ee; --emerald-500: #10b981; --emerald-400: #34d399;
+            --amber-500: #f59e0b; --amber-400: #fbbf24; --rose-500: #f43f5e; --rose-400: #fb7185;
+            --violet-500: #8b5cf6; --violet-400: #a78bfa;
+        }
+        body { background: var(--slate-950); color: white; min-height: 100vh; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--slate-900); }
+        ::-webkit-scrollbar-thumb { background: var(--slate-700); border-radius: 4px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+        .bg-blur { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+        .bg-blur::before { content: ''; position: absolute; top: 0; left: 25%; width: 24rem; height: 24rem; background: rgba(6, 182, 212, 0.05); border-radius: 50%; filter: blur(60px); }
+        .bg-blur::after { content: ''; position: absolute; bottom: 0; right: 25%; width: 24rem; height: 24rem; background: rgba(139, 92, 246, 0.05); border-radius: 50%; filter: blur(60px); }
+        .container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
+        .header { position: sticky; top: 0; z-index: 50; background: rgba(10, 15, 26, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(51, 65, 85, 0.5); }
+        .header-content { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; }
+        .logo { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, var(--cyan-500), var(--violet-500)); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.125rem; }
+        .header-text h1 { font-size: 1.125rem; font-weight: 600; }
+        .header-text p { font-size: 0.75rem; color: var(--slate-500); }
+        .nav { position: sticky; top: 4rem; z-index: 40; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(51, 65, 85, 0.3); }
+        .nav-content { display: flex; gap: 0.25rem; padding: 0.5rem 0; overflow-x: auto; }
+        .nav-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; white-space: nowrap; border: 1px solid transparent; background: transparent; color: var(--slate-400); cursor: pointer; transition: all 0.3s; }
+        .nav-btn:hover { color: white; background: rgba(51, 65, 85, 0.5); }
+        .nav-btn.active { background: rgba(6, 182, 212, 0.2); color: var(--cyan-400); border-color: rgba(6, 182, 212, 0.3); }
+        main { padding: 2rem 0; position: relative; z-index: 1; }
+        .card { border-radius: 0.75rem; background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(51, 65, 85, 0.5); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .card-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .hero-card { position: relative; overflow: hidden; border-radius: 1rem; background: linear-gradient(135deg, var(--slate-900), var(--slate-800), rgba(6, 182, 212, 0.1)); border: 1px solid rgba(6, 182, 212, 0.2); padding: 2rem; margin-bottom: 2rem; }
+        .hero-card::before { content: ''; position: absolute; top: 0; right: 0; width: 24rem; height: 24rem; background: rgba(6, 182, 212, 0.1); border-radius: 50%; filter: blur(60px); transform: translate(50%, -50%); }
+        .hero-content { position: relative; }
+        .hero-label { color: var(--cyan-400); font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .hero-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subtitle { color: var(--slate-400); font-size: 1.125rem; margin-bottom: 1.5rem; }
+        .badge-container { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; border: 1px solid; }
+        .badge-cyan { background: rgba(6, 182, 212, 0.2); color: var(--cyan-400); border-color: rgba(6, 182, 212, 0.3); }
+        .badge-emerald { background: rgba(16, 185, 129, 0.2); color: var(--emerald-400); border-color: rgba(16, 185, 129, 0.3); }
+        .badge-amber { background: rgba(245, 158, 11, 0.2); color: var(--amber-400); border-color: rgba(245, 158, 11, 0.3); }
+        .hero-footer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(51, 65, 85, 0.5); }
+        .hero-footer p { color: var(--slate-500); font-size: 0.875rem; }
+        .hero-footer .doi { color: var(--slate-600); font-size: 0.75rem; margin-top: 0.25rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+        .stat-card { border-radius: 0.75rem; padding: 1.25rem; background: rgba(30, 41, 59, 0.5); border: 1px solid; transition: all 0.3s; }
+        .stat-card:hover { transform: translateY(-2px); }
+        .stat-card.cyan { border-color: rgba(6, 182, 212, 0.2); }
+        .stat-card.emerald { border-color: rgba(16, 185, 129, 0.2); }
+        .stat-card.amber { border-color: rgba(245, 158, 11, 0.2); }
+        .stat-card.rose { border-color: rgba(244, 63, 94, 0.2); }
+        .stat-label { font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; }
+        .stat-value { font-size: 1.875rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .stat-detail { font-size: 0.75rem; color: var(--slate-500); }
+        .two-col { display: grid; gap: 1.5rem; }
+        @media (min-width: 768px) { .two-col { grid-template-columns: repeat(2, 1fr); } }
+        .info-list { margin-left: 1rem; margin-top: 0.5rem; }
+        .info-list li { display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.875rem; margin-bottom: 0.5rem; }
+        .info-list .dot { width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--emerald-400); }
+        .info-text { color: var(--slate-300); font-size: 0.875rem; line-height: 1.6; margin-bottom: 0.75rem; }
+        .highlight { color: var(--amber-400); font-weight: 500; }
+        .prisma-flow { text-align: center; padding: 1rem 0; }
+        .prisma-box { display: inline-block; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid; text-align: left; }
+        .prisma-box.identification { background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15)); border-color: rgba(6, 182, 212, 0.3); }
+        .prisma-box.screening { background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(20, 184, 166, 0.15)); border-color: rgba(16, 185, 129, 0.3); }
+        .prisma-box.eligibility { background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(249, 115, 22, 0.15)); border-color: rgba(245, 158, 11, 0.3); }
+        .prisma-box.included { background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(168, 85, 247, 0.15)); border-color: rgba(139, 92, 246, 0.3); }
+        .prisma-box.excluded { background: rgba(30, 41, 59, 0.5); border-color: rgba(71, 85, 105, 0.3); }
+        .prisma-label { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .prisma-title { font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+        .prisma-value { font-size: 1.5rem; font-weight: 700; }
+        .prisma-value.large { font-size: 2.25rem; }
+        .prisma-list { color: var(--slate-400); font-size: 0.8rem; margin-top: 0.5rem; list-style: none; }
+        .prisma-list li { margin-bottom: 0.25rem; }
+        .prisma-connector { width: 2px; height: 1.5rem; margin: 0.5rem auto; }
+        .prisma-connector.cyan-emerald { background: linear-gradient(to bottom, var(--cyan-500), var(--emerald-500)); }
+        .prisma-connector.emerald-amber { background: linear-gradient(to bottom, var(--emerald-500), var(--amber-500)); }
+        .prisma-connector.amber-violet { background: linear-gradient(to bottom, var(--amber-500), var(--violet-500)); }
+        .prisma-row { display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .prisma-arrow { color: var(--slate-500); font-size: 1.25rem; }
+        .rob-table { width: 100%; font-size: 0.875rem; border-collapse: collapse; }
+        .rob-table th, .rob-table td { padding: 0.75rem 0.5rem; text-align: center; }
+        .rob-table th { color: var(--slate-400); font-weight: 500; border-bottom: 1px solid var(--slate-700); }
+        .rob-table th:first-child, .rob-table td:first-child { text-align: left; }
+        .rob-table td { border-bottom: 1px solid var(--slate-800); }
+        .rob-table tr:hover { background: rgba(30, 41, 59, 0.5); }
+        .rob-table td:first-child { color: var(--slate-300); }
+        .rob-dot { width: 1.5rem; height: 1.5rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; color: white; }
+        .rob-dot.low { background: var(--emerald-500); }
+        .rob-dot.concerns { background: var(--amber-500); }
+        .rob-legend { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem; }
+        .rob-legend-item { display: flex; align-items: center; gap: 0.5rem; color: var(--slate-400); }
+        .rob-note { margin-top: 1rem; font-size: 0.75rem; color: var(--slate-500); }
+        .tabs { display: flex; gap: 0.5rem; padding: 0.25rem; background: rgba(30, 41, 59, 0.5); border-radius: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .tab-btn { flex: 1; min-width: 120px; padding: 0.75rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; border: 1px solid transparent; background: transparent; color: var(--slate-400); cursor: pointer; transition: all 0.3s; }
+        .tab-btn:hover { color: white; background: rgba(51, 65, 85, 0.5); }
+        .tab-btn.active { background: rgba(6, 182, 212, 0.2); color: var(--cyan-400); border-color: rgba(6, 182, 212, 0.3); }
+        .metrics-grid { display: grid; gap: 1rem; }
+        @media (min-width: 768px) { .metrics-grid { grid-template-columns: repeat(3, 1fr); } }
+        .metric-card { border-radius: 0.75rem; padding: 1.25rem; border: 1px solid; }
+        .metric-card.cyan { background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.05)); border-color: rgba(6, 182, 212, 0.2); }
+        .metric-card.emerald { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); border-color: rgba(16, 185, 129, 0.2); }
+        .metric-card.amber { background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05)); border-color: rgba(245, 158, 11, 0.2); }
+        .metric-card.rose { background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(244, 63, 94, 0.05)); border-color: rgba(244, 63, 94, 0.2); }
+        .metric-card.violet { background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05)); border-color: rgba(139, 92, 246, 0.2); }
+        .metric-label { font-size: 0.875rem; margin-bottom: 0.5rem; }
+        .metric-value { font-size: 1.875rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .metric-ci { font-size: 0.875rem; color: var(--slate-400); }
+        .metric-note { font-size: 0.75rem; margin-top: 0.5rem; }
+        .subgroup-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+        @media (min-width: 768px) { .subgroup-grid { grid-template-columns: repeat(2, 1fr); } }
+        .subgroup-card { padding: 1rem; border-radius: 0.5rem; border: 1px solid; }
+        .subgroup-card.emerald { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
+        .subgroup-card.cyan { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.2); }
+        .subgroup-title { font-weight: 500; margin-bottom: 0.75rem; }
+        .subgroup-list { font-size: 0.875rem; color: var(--slate-400); list-style: none; }
+        .subgroup-list li { margin-bottom: 0.25rem; }
+        .network-container { position: relative; background: rgba(15, 23, 42, 0.5); border-radius: 0.75rem; border: 1px solid rgba(51, 65, 85, 0.3); padding: 1rem; height: 24rem; overflow: hidden; }
+        .network-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem; }
+        .network-legend-item { display: flex; align-items: center; gap: 0.5rem; color: var(--slate-400); }
+        .network-legend-dot { width: 1rem; height: 1rem; border-radius: 0.25rem; }
+        .network-legend-dot.intervention { background: #0891b2; }
+        .network-legend-dot.biomarker { background: #059669; }
+        .network-legend-dot.mediator { background: #7c3aed; }
+        .network-legend-dot.outcome { background: #dc2626; }
+        .node-panel { border-radius: 0.75rem; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(6, 182, 212, 0.3); padding: 1.5rem; margin-top: 1rem; }
+        .node-panel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .node-panel-title { font-size: 1.125rem; font-weight: 600; }
+        .node-panel-close { background: none; border: none; color: var(--slate-400); cursor: pointer; font-size: 1.25rem; }
+        .node-panel-close:hover { color: white; }
+        .node-panel-desc { color: var(--slate-300); font-size: 0.875rem; margin-bottom: 1rem; }
+        .node-panel-effects-title { color: var(--cyan-400); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .node-panel-effects { list-style: none; }
+        .node-panel-effects li { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 0.5rem; padding-left: 1.25rem; position: relative; }
+        .node-panel-effects li::before { content: '→'; color: var(--cyan-400); position: absolute; left: 0; }
+        .pathways-grid { display: grid; gap: 1rem; margin-top: 1rem; }
+        @media (min-width: 768px) { .pathways-grid { grid-template-columns: repeat(2, 1fr); } }
+        .pathway-card { border-radius: 0.75rem; padding: 1.25rem; border: 1px solid; }
+        .pathway-card.positive { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
+        .pathway-card.negative { background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.2); }
+        .pathway-title { font-weight: 500; margin-bottom: 0.75rem; }
+        .pathway-list { font-size: 0.875rem; color: var(--slate-300); list-style: none; }
+        .pathway-list li { margin-bottom: 0.5rem; }
+        .plot-selector { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .plot-btn { padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; border: 1px solid transparent; background: rgba(30, 41, 59, 0.5); color: var(--slate-400); cursor: pointer; transition: all 0.3s; }
+        .plot-btn:hover { color: white; background: rgba(51, 65, 85, 0.5); }
+        .plot-btn.active { border-width: 1px; }
+        .forest-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .forest-title { font-size: 1.125rem; font-weight: 600; }
+        .forest-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; color: var(--slate-400); }
+        .forest-container { background: rgba(15, 23, 42, 0.5); border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
+        .forest-study { display: grid; grid-template-columns: 160px 1fr 70px; align-items: center; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(51, 65, 85, 0.3); font-size: 0.875rem; }
+        .forest-study:last-child { border-bottom: none; }
+        .forest-study-name { color: var(--slate-300); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.8rem; }
+        .forest-bar-container { position: relative; height: 1.5rem; min-width: 200px; }
+        .forest-reference { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate-600); }
+        .forest-ci { position: absolute; height: 2px; top: 50%; transform: translateY(-50%); }
+        .forest-point { position: absolute; width: 10px; height: 10px; border-radius: 50%; top: 50%; transform: translate(-50%, -50%); }
+        .forest-hr { text-align: right; color: var(--slate-400); font-family: monospace; font-size: 0.8rem; }
+        .forest-footer { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--slate-700); font-size: 0.875rem; color: var(--slate-400); }
+        .forest-diamond { width: 1rem; height: 1rem; transform: rotate(45deg); }
+        .interpretation-box { border-radius: 0.75rem; padding: 1rem; margin-top: 1rem; border: 1px solid; }
+        .interpretation-box.positive { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); }
+        .interpretation-box.negative { background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.3); }
+        .interpretation-title { font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .interpretation-text { font-size: 0.875rem; color: var(--slate-300); }
+        .conclusions-grid { display: grid; gap: 1.5rem; }
+        @media (min-width: 768px) { .conclusions-grid { grid-template-columns: repeat(2, 1fr); } }
+        .conclusion-item { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+        .conclusion-icon { width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.875rem; }
+        .conclusion-icon.positive { background: rgba(16, 185, 129, 0.2); color: var(--emerald-400); }
+        .conclusion-icon.negative { background: rgba(244, 63, 94, 0.2); color: var(--rose-400); }
+        .conclusion-icon.warning { background: rgba(245, 158, 11, 0.2); color: var(--amber-400); }
+        .conclusion-title { font-weight: 500; margin-bottom: 0.25rem; }
+        .conclusion-desc { font-size: 0.875rem; color: var(--slate-400); }
+        .future-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
+        .future-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--cyan-400); margin-top: 0.5rem; flex-shrink: 0; }
+        .future-title { font-weight: 500; margin-bottom: 0.25rem; }
+        .future-desc { font-size: 0.875rem; color: var(--slate-400); }
+        .guidance-table { width: 100%; font-size: 0.875rem; border-collapse: collapse; }
+        .guidance-table th, .guidance-table td { padding: 0.75rem; text-align: left; }
+        .guidance-table th { color: var(--slate-400); font-weight: 500; border-bottom: 1px solid var(--slate-700); }
+        .guidance-table td { border-bottom: 1px solid var(--slate-800); }
+        .guidance-table tr:hover { background: rgba(30, 41, 59, 0.3); }
+        .guidance-table td:first-child { color: var(--cyan-300); font-weight: 500; }
+        .guidance-table td:nth-child(2) { color: var(--slate-300); }
+        .evidence-badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; }
+        .evidence-badge.high { background: rgba(16, 185, 129, 0.2); color: var(--emerald-400); }
+        .evidence-badge.moderate { background: rgba(245, 158, 11, 0.2); color: var(--amber-400); }
+        .evidence-badge.low { background: rgba(100, 116, 139, 0.2); color: var(--slate-400); }
+        footer { border-top: 1px solid rgba(51, 65, 85, 0.5); padding: 1.5rem 0; margin-top: 2rem; text-align: center; }
+        footer p { color: var(--slate-500); font-size: 0.875rem; }
+        footer .doi { color: var(--slate-400); }
+        footer .note { font-size: 0.75rem; color: var(--slate-600); margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState } = React;
+
+        // DATA
+        const paperMetadata = { title: "Immune Checkpoint Inhibitors in Pancreatic Adenocarcinoma", subtitle: "A Systematic Review and Meta-Analysis of Clinical Outcomes", authors: "Al-Khinji A, Al-Korbi N, Al-Kuwari S, Al-Hor A, Malouche D", journal: "Frontiers in Oncology", year: 2025, doi: "10.3389/fonc.2025.1569884", totalStudies: 54, totalParticipants: 2364 };
+        const prismaData = { identification: { pubmed: 331, cochrane: 42, cinahl: 35, googleScholar: 137, total: 545 }, removed: { duplicates: 95, automation: 1 }, screened: 449, excluded: 318, assessed: 127, excludedReasons: { deviatingOutcomes: 15, investigatingExpression: 27, combinedCancers: 14, murineModels: 17 }, included: 54 };
+        const osChemoData = [ { study: "Kamath 2019", hr: 0.80, ci_low: 0.65, ci_high: 0.98 }, { study: "Bockorny 2021", hr: 0.90, ci_low: 0.75, ci_high: 1.08 }, { study: "Zhu 2022", hr: 0.75, ci_low: 0.60, ci_high: 0.90 }, { study: "Wang-Gillam 2022", hr: 0.70, ci_low: 0.55, ci_high: 0.88 }, { study: "Renouf 2022", hr: 0.92, ci_low: 0.75, ci_high: 1.12 }, { study: "O'Hara 2021", hr: 0.85, ci_low: 0.70, ci_high: 1.03 }, { study: "Tsujikawa 2020", hr: 0.71, ci_low: 0.58, ci_high: 0.88 }, { study: "Liu 2021", hr: 0.90, ci_low: 0.75, ci_high: 1.08 } ];
+        const osMonoData = [ { study: "Reiss 2022", hr: 0.82, ci_low: 0.70, ci_high: 0.95 }, { study: "Ott 2019", hr: 0.75, ci_low: 0.60, ci_high: 0.90 }, { study: "Chen 2023", hr: 0.90, ci_low: 0.75, ci_high: 1.10 }, { study: "Zibelman 2023", hr: 0.78, ci_low: 0.62, ci_high: 0.89 }, { study: "Overman 2020", hr: 0.76, ci_low: 0.60, ci_high: 0.92 } ];
+        const osRTData = [ { study: "Mortensen 2023", hr: 1.30, ci_low: 1.05, ci_high: 1.60 }, { study: "Xie 2020", hr: 0.80, ci_low: 0.60, ci_high: 1.10 }, { study: "Chen 2022", hr: 1.25, ci_low: 1.05, ci_high: 1.50 }, { study: "Du 2023", hr: 1.15, ci_low: 0.90, ci_high: 1.35 }, { study: "Christensen 2024", hr: 1.40, ci_low: 1.15, ci_high: 1.65 } ];
+        const pfsData = [ { study: "Kamath 2019", hr: 2.12, ci_low: 1.82, ci_high: 2.56 }, { study: "Bockorny 2021", hr: 2.34, ci_low: 2.01, ci_high: 2.80 }, { study: "Wang-Gillam 2022", hr: 2.05, ci_low: 1.79, ci_high: 2.48 }, { study: "Renouf 2022", hr: 2.56, ci_low: 2.18, ci_high: 3.10 }, { study: "O'Hara 2021", hr: 2.48, ci_low: 2.20, ci_high: 2.86 }, { study: "Tsujikawa 2020", hr: 1.99, ci_low: 1.72, ci_high: 2.41 } ];
+        const orrData = [ { study: "Renouf 2022", hr: 2.56, ci_low: 2.03, ci_high: 3.49 }, { study: "O'Hara 2021", hr: 1.79, ci_low: 1.48, ci_high: 2.07 }, { study: "Tsujikawa 2020", hr: 2.36, ci_low: 1.73, ci_high: 3.82 }, { study: "Enzler 2024", hr: 1.25, ci_low: 1.12, ci_high: 1.46 }, { study: "Liu 2021", hr: 1.73, ci_low: 1.57, ci_high: 1.90 } ];
+        const robRCTData = [ { study: "Callahan 2024", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Chen 2023", D1: "low", D2: "low", D3: "low", D4: "concerns", D5: "low", overall: "low" }, { study: "Ko 2023", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Le 2013", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Overman 2020", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Reiss 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" } ];
+        const bayesianNodes = [ { id: "treatment", label: "Treatment", x: 80, y: 160, type: "intervention" }, { id: "biomarker", label: "Biomarker", x: 80, y: 320, type: "biomarker" }, { id: "tme", label: "TME", x: 280, y: 240, type: "mediator" }, { id: "immune", label: "Immune", x: 480, y: 160, type: "mediator" }, { id: "orr", label: "ORR", x: 660, y: 100, type: "outcome" }, { id: "pfs", label: "PFS", x: 660, y: 240, type: "outcome" }, { id: "os", label: "OS", x: 660, y: 380, type: "outcome" } ];
+        const bayesianEdges = [ { from: "treatment", to: "tme" }, { from: "treatment", to: "immune" }, { from: "biomarker", to: "tme" }, { from: "biomarker", to: "immune" }, { from: "tme", to: "immune" }, { from: "tme", to: "orr" }, { from: "immune", to: "orr" }, { from: "immune", to: "pfs" }, { from: "orr", to: "pfs" }, { from: "pfs", to: "os" }, { from: "treatment", to: "os" } ];
+        const nodeDescriptions = { treatment: { title: "Treatment Type", description: "ICI monotherapy, ICI + chemotherapy, ICI + radiotherapy", effects: ["Modulates tumor microenvironment", "Activates immune checkpoints", "Synergistic effects"] }, biomarker: { title: "Biomarker Status", description: "TMB, MSI status, PD-L1, dMMR", effects: ["Predicts ICI response", "Influences TME", "Treatment eligibility"] }, tme: { title: "Tumor Microenvironment", description: "Dense stroma, immunosuppressive cells", effects: ["Mediates efficacy", "T-cell barriers", "Drug delivery"] }, immune: { title: "Immune Response", description: "T-cell activation, cytokines", effects: ["Anti-tumor activity", "Response durability", "Clinical outcomes"] }, orr: { title: "Objective Response Rate", description: "Tumor shrinkage (CR + PR)", effects: ["Early indicator", "0-67% range", "Immune-dependent"] }, pfs: { title: "Progression-Free Survival", description: "Time to progression", effects: ["1.4-12.5 months", "ICI+chemo benefit", "Biomarker-dependent"] }, os: { title: "Overall Survival", description: "Time to death", effects: ["Primary endpoint", "HR 0.82 ICI+chemo", "HR 1.18 ICI+RT ⚠️"] } };
+
+        // FOREST PLOT COMPONENT
+        function ForestPlot({ data, color, pooled, metric, heterogeneity }) {
+            const minVal = 0.4, maxVal = metric === 'or' ? 4 : 2.5, range = maxVal - minVal;
+            const getPosition = (val) => ((val - minVal) / range) * 100;
+            return (
+                <div className="forest-container">
+                    {data.map((item, i) => (
+                        <div key={i} className="forest-study">
+                            <div className="forest-study-name">{item.study}</div>
+                            <div className="forest-bar-container">
+                                <div className="forest-reference"></div>
+                                <div className="forest-ci" style={{ left: `${getPosition(item.ci_low)}%`, width: `${getPosition(item.ci_high) - getPosition(item.ci_low)}%`, backgroundColor: color }}></div>
+                                <div className="forest-point" style={{ left: `${getPosition(item.hr)}%`, backgroundColor: color }}></div>
+                            </div>
+                            <div className="forest-hr">{item.hr.toFixed(2)}</div>
+                        </div>
+                    ))}
+                    <div className="forest-footer">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div className="forest-diamond" style={{ backgroundColor: color }}></div><span>Pooled {metric.toUpperCase()}: {pooled.toFixed(2)}</span></div>
+                        <span>|</span><span>I² = {heterogeneity}</span>
+                    </div>
+                </div>
+            );
+        }
+
+        // BAYESIAN NETWORK COMPONENT
+        function BayesianNetwork({ onNodeClick, selectedNode, hoveredNode, setHoveredNode }) {
+            const nodeColors = { intervention: '#0891b2', biomarker: '#059669', mediator: '#7c3aed', outcome: '#dc2626' };
+            return (
+                <svg width="100%" height="100%" viewBox="0 0 780 480">
+                    {bayesianEdges.map((edge, i) => {
+                        const from = bayesianNodes.find(n => n.id === edge.from), to = bayesianNodes.find(n => n.id === edge.to);
+                        const opacity = hoveredNode ? (hoveredNode === edge.from || hoveredNode === edge.to ? 1 : 0.2) : 0.6;
+                        return (<g key={i}><defs><marker id={`arrow-${i}`} markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#64748b" opacity={opacity} /></marker></defs><line x1={from.x + 45} y1={from.y} x2={to.x - 45} y2={to.y} stroke="#64748b" strokeWidth="2" opacity={opacity} markerEnd={`url(#arrow-${i})`} /></g>);
+                    })}
+                    {bayesianNodes.map((node) => {
+                        const isHovered = hoveredNode === node.id, isSelected = selectedNode === node.id, opacity = hoveredNode ? (isHovered ? 1 : 0.3) : 1;
+                        return (<g key={node.id} transform={`translate(${node.x - 40}, ${node.y - 20})`} style={{ cursor: 'pointer', opacity }} onMouseEnter={() => setHoveredNode(node.id)} onMouseLeave={() => setHoveredNode(null)} onClick={() => onNodeClick(node.id)}><rect width="80" height="40" rx="8" fill={nodeColors[node.type]} stroke={isSelected ? '#fff' : nodeColors[node.type]} strokeWidth={isSelected ? 3 : 2} /><text x="40" y="25" textAnchor="middle" fill="white" fontSize="11" fontWeight="500">{node.label}</text></g>);
+                    })}
+                </svg>
+            );
+        }
+
+        // MAIN APP
+        function App() {
+            const [activeSection, setActiveSection] = useState('overview');
+            const [findingTab, setFindingTab] = useState('orr');
+            const [plotType, setPlotType] = useState('os_chemo');
+            const [selectedNode, setSelectedNode] = useState(null);
+            const [hoveredNode, setHoveredNode] = useState(null);
+
+            const sections = [ { id: 'overview', label: 'Overview', icon: '◈' }, { id: 'methodology', label: 'Methodology', icon: '⬡' }, { id: 'findings', label: 'Key Findings', icon: '◆' }, { id: 'bayesian', label: 'Causal Network', icon: '⬢' }, { id: 'forest', label: 'Forest Plots', icon: '▣' }, { id: 'implications', label: 'Implications', icon: '◇' } ];
+            const plotConfigs = { os_chemo: { data: osChemoData, title: "OS: ICI + Chemotherapy", color: "#22d3ee", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, os_mono: { data: osMonoData, title: "OS: ICI Monotherapy", color: "#10b981", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, os_rt: { data: osRTData, title: "OS: ICI + Radiotherapy", color: "#f43f5e", pooled: 1.18, metric: "hr", heterogeneity: "56%", warning: true }, pfs: { data: pfsData, title: "PFS: All Combinations", color: "#8b5cf6", pooled: 2.25, metric: "hr", heterogeneity: "7%", warning: false }, orr: { data: orrData, title: "ORR: ICI + Chemotherapy", color: "#f59e0b", pooled: 1.78, metric: "or", heterogeneity: "85%", warning: false } };
+            const interpretations = { os_chemo: "ICI combined with chemotherapy demonstrates a significant 18% reduction in mortality risk (HR 0.82), with consistent results across studies.", os_mono: "ICI monotherapy shows variable outcomes. While the pooled HR suggests benefit, confidence intervals are wider.", os_rt: "ICI combined with radiotherapy is associated with an 18% INCREASE in mortality risk. This adverse outcome requires careful patient selection.", pfs: "Progression-free survival shows consistent improvement with ICI combinations, with a pooled HR of 2.25 and low heterogeneity.", orr: "Objective response rates vary significantly across treatment combinations. High heterogeneity (I² = 85%) indicates considerable variability." };
+
+            return (
+                <div>
+                    <header className="header"><div className="container"><div className="header-content"><div className="logo">Ω</div><div className="header-text"><h1>PDAC Immunotherapy Dashboard</h1><p>Al-Khinji et al. 2025 • Frontiers in Oncology</p></div></div></div></header>
+                    <nav className="nav"><div className="container"><div className="nav-content">{sections.map(s => (<button key={s.id} onClick={() => setActiveSection(s.id)} className={`nav-btn ${activeSection === s.id ? 'active' : ''}`}><span>{s.icon}</span>{s.label}</button>))}</div></div></nav>
+                    <main><div className="container">
+                        {activeSection === 'overview' && (<div>
+                            <div className="hero-card"><div className="hero-content"><p className="hero-label">Systematic Review & Meta-Analysis</p><h2 className="hero-title">{paperMetadata.title}</h2><p className="hero-subtitle">{paperMetadata.subtitle}</p><div className="badge-container"><span className="badge badge-cyan">{paperMetadata.totalStudies} Studies</span><span className="badge badge-emerald">{paperMetadata.totalParticipants.toLocaleString()} Participants</span><span className="badge badge-amber">{paperMetadata.journal} {paperMetadata.year}</span></div><div className="hero-footer"><p>{paperMetadata.authors}</p><p className="doi">DOI: {paperMetadata.doi}</p></div></div></div>
+                            <div className="stats-grid"><div className="stat-card emerald"><p className="stat-label" style={{color:'var(--emerald-400)'}}>OS Improvement</p><p className="stat-value">18%</p><p className="stat-detail">HR 0.82 (ICI+Chemo)</p></div><div className="stat-card cyan"><p className="stat-label" style={{color:'var(--cyan-400)'}}>ORR Pooled</p><p className="stat-value">10%</p><p className="stat-detail">OR 1.10 (ICB therapy)</p></div><div className="stat-card amber"><p className="stat-label" style={{color:'var(--amber-400)'}}>PFS Hazard Ratio</p><p className="stat-value">2.25</p><p className="stat-detail">95% CI: 2.15-2.36</p></div><div className="stat-card rose"><p className="stat-label" style={{color:'var(--rose-400)'}}>Radiotherapy + ICI</p><p className="stat-value">+18%</p><p className="stat-detail">Mortality increase</p></div></div>
+                            <div className="two-col"><div className="card"><h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>◈</span> Background</h3><p className="info-text">Pancreatic ductal adenocarcinoma (PDAC) remains one of the most lethal malignancies with 5-year survival rates below 2%.</p><p className="info-text">Key molecular drivers include mutations in <span className="highlight">KRAS</span>, <span className="highlight">TP53</span>, and <span className="highlight">CDKN2A</span>.</p><p className="info-text">The tumor microenvironment is characterized by dense stroma and limited T-cell infiltration.</p></div><div className="card"><h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Research Objectives</h3><p className="info-text">Systematically investigate the impact of ICIs on key clinical outcomes in PDAC patients.</p><ul className="info-list"><li><span className="dot"></span>Progression-free survival (PFS)</li><li><span className="dot"></span>Overall survival (OS)</li><li><span className="dot"></span>Objective response rate (ORR)</li></ul></div></div>
+                        </div>)}
+
+                        {activeSection === 'methodology' && (<div>
+                            <div className="card"><h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>⬡</span> PRISMA Flow Diagram</h3>
+                                <div className="prisma-flow">
+                                    <div className="prisma-box identification"><p className="prisma-label" style={{color:'var(--cyan-400)'}}>Identification</p><p className="prisma-title">Records from databases</p><ul className="prisma-list"><li>PubMed: {prismaData.identification.pubmed}</li><li>Cochrane: {prismaData.identification.cochrane}</li><li>CINAHL: {prismaData.identification.cinahl}</li><li>Google Scholar: {prismaData.identification.googleScholar}</li></ul><p className="prisma-value" style={{color:'var(--cyan-400)',marginTop:'0.5rem'}}>Total: {prismaData.identification.total}</p></div>
+                                    <div className="prisma-connector cyan-emerald"></div>
+                                    <div className="prisma-row"><div className="prisma-box screening"><p className="prisma-label" style={{color:'var(--emerald-400)'}}>Screening</p><p className="prisma-title">Records screened</p><p className="prisma-value" style={{color:'var(--emerald-400)'}}>{prismaData.screened}</p></div><span className="prisma-arrow">→</span><div className="prisma-box excluded"><p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p><p className="prisma-value" style={{color:'var(--rose-400)'}}>{prismaData.excluded}</p></div></div>
+                                    <div className="prisma-connector emerald-amber"></div>
+                                    <div className="prisma-row"><div className="prisma-box eligibility"><p className="prisma-label" style={{color:'var(--amber-400)'}}>Eligibility</p><p className="prisma-title">Reports assessed</p><p className="prisma-value" style={{color:'var(--amber-400)'}}>{prismaData.assessed}</p></div><span className="prisma-arrow">→</span><div className="prisma-box excluded"><p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p><ul className="prisma-list"><li>Outcomes: {prismaData.excludedReasons.deviatingOutcomes}</li><li>Expression: {prismaData.excludedReasons.investigatingExpression}</li><li>Combined: {prismaData.excludedReasons.combinedCancers}</li><li>Murine: {prismaData.excludedReasons.murineModels}</li></ul></div></div>
+                                    <div className="prisma-connector amber-violet"></div>
+                                    <div className="prisma-box included"><p className="prisma-label" style={{color:'var(--violet-400)'}}>Included</p><p className="prisma-title">Studies in review</p><p className="prisma-value large" style={{color:'var(--violet-400)'}}>{prismaData.included}</p></div>
+                                </div>
+                            </div>
+                            <div className="card"><h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◆</span> Risk of Bias (RCTs)</h3><div className="rob-legend"><div className="rob-legend-item"><div className="rob-dot low">+</div> Low risk</div><div className="rob-legend-item"><div className="rob-dot concerns">-</div> Concerns</div></div><table className="rob-table"><thead><tr><th>Study</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>D5</th><th>Overall</th></tr></thead><tbody>{robRCTData.map((r,i) => (<tr key={i}><td>{r.study}</td>{['D1','D2','D3','D4','D5','overall'].map(k => (<td key={k}><div className={`rob-dot ${r[k]}`}>{r[k]==='low'?'+':'-'}</div></td>))}</tr>))}</tbody></table><p className="rob-note">D1: Randomization | D2: Deviations | D3: Missing data | D4: Measurement | D5: Selection</p></div>
+                        </div>)}
+
+                        {activeSection === 'findings' && (<div>
+                            <div className="tabs">{[{id:'orr',label:'Objective Response Rate'},{id:'os',label:'Overall Survival'},{id:'pfs',label:'Progression-Free Survival'}].map(t => (<button key={t.id} onClick={() => setFindingTab(t.id)} className={`tab-btn ${findingTab === t.id ? 'active' : ''}`}>{t.label}</button>))}</div>
+                            {findingTab === 'orr' && (<div className="metrics-grid"><div className="metric-card cyan"><p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI + Chemotherapy</p><p className="metric-value">OR 1.78</p><p className="metric-ci">95% CI: 1.46–2.16</p><p className="metric-note" style={{color:'var(--amber-400)'}}>I² = 85%</p></div><div className="metric-card emerald"><p className="metric-label" style={{color:'var(--emerald-400)'}}>ICB Monotherapy</p><p className="metric-value">OR 1.10</p><p className="metric-ci">95% CI: 1.02–1.18</p><p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 0%</p></div><div className="metric-card amber"><p className="metric-label" style={{color:'var(--amber-400)'}}>ICI + Radiotherapy</p><p className="metric-value">OR 1.35</p><p className="metric-ci">95% CI: 0.99–1.83</p><p className="metric-note" style={{color:'var(--rose-400)'}}>I² = 96%</p></div></div>)}
+                            {findingTab === 'os' && (<div className="metrics-grid"><div className="metric-card emerald"><p className="metric-label" style={{color:'var(--emerald-400)'}}>ICI + Chemotherapy</p><p className="metric-value">HR 0.82</p><p className="metric-ci">95% CI: 0.78–0.87</p><p className="metric-note" style={{color:'var(--emerald-400)'}}>18% death risk ↓</p></div><div className="metric-card cyan"><p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI Monotherapy</p><p className="metric-value">HR 0.82</p><p className="metric-ci">95% CI: 0.76–0.88</p><p className="metric-note" style={{color:'var(--cyan-400)'}}>I² = 0%</p></div><div className="metric-card rose"><p className="metric-label" style={{color:'var(--rose-400)'}}>ICI + Radiotherapy</p><p className="metric-value">HR 1.18</p><p className="metric-ci">95% CI: 1.04–1.34</p><p className="metric-note" style={{color:'var(--rose-400)'}}>⚠️ ↑ Mortality</p></div></div>)}
+                            {findingTab === 'pfs' && (<div className="metrics-grid" style={{maxWidth:'400px'}}><div className="metric-card violet"><p className="metric-label" style={{color:'var(--violet-400)'}}>Pooled PFS HR</p><p className="metric-value">HR 2.25</p><p className="metric-ci">95% CI: 2.15–2.36</p><p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 7%</p></div></div>)}
+                            <div className="card" style={{marginTop:'1.5rem'}}><h3 className="card-title"><span style={{color:'var(--amber-400)'}}>◆</span> Subgroup Findings</h3><div className="subgroup-grid"><div className="subgroup-card emerald"><h4 className="subgroup-title" style={{color:'var(--emerald-400)'}}>High TMB Patients</h4><ul className="subgroup-list"><li>• Improved PFS with ICI</li><li>• Better checkpoint response</li><li>• Longer survival vs low-TMB</li></ul></div><div className="subgroup-card cyan"><h4 className="subgroup-title" style={{color:'var(--cyan-400)'}}>MSI-H / dMMR Patients</h4><ul className="subgroup-list"><li>• ORR of 48.4% with combos</li><li>• Median PFS 26.7 months</li><li>• Durable responses</li></ul></div></div></div>
+                        </div>)}
+
+                        {activeSection === 'bayesian' && (<div>
+                            <div className="card"><h3 className="card-title"><span style={{color:'var(--violet-400)'}}>⬢</span> Causal Bayesian Network</h3><p style={{color:'var(--slate-400)',fontSize:'0.875rem',marginBottom:'1rem'}}>Click nodes for details. Arrows show causal direction.</p><div className="network-legend"><div className="network-legend-item"><div className="network-legend-dot intervention"></div> Intervention</div><div className="network-legend-item"><div className="network-legend-dot biomarker"></div> Biomarker</div><div className="network-legend-item"><div className="network-legend-dot mediator"></div> Mediator</div><div className="network-legend-item"><div className="network-legend-dot outcome"></div> Outcome</div></div><div className="network-container"><BayesianNetwork onNodeClick={(id) => setSelectedNode(selectedNode === id ? null : id)} selectedNode={selectedNode} hoveredNode={hoveredNode} setHoveredNode={setHoveredNode} /></div></div>
+                            {selectedNode && nodeDescriptions[selectedNode] && (<div className="node-panel animate-fadeIn"><div className="node-panel-header"><h4 className="node-panel-title">{nodeDescriptions[selectedNode].title}</h4><button className="node-panel-close" onClick={() => setSelectedNode(null)}>✕</button></div><p className="node-panel-desc">{nodeDescriptions[selectedNode].description}</p><p className="node-panel-effects-title">Causal Effects:</p><ul className="node-panel-effects">{nodeDescriptions[selectedNode].effects.map((e,i) => (<li key={i}>{e}</li>))}</ul></div>)}
+                            <div className="pathways-grid"><div className="pathway-card positive"><h4 className="pathway-title" style={{color:'var(--emerald-400)'}}>✓ Positive Pathways</h4><ul className="pathway-list"><li>• ICI + Chemo → Immune ↑ → OS (HR 0.82)</li><li>• High TMB → Immune ↑ → PFS ↑</li><li>• dMMR → ICI Response → Durable</li></ul></div><div className="pathway-card negative"><h4 className="pathway-title" style={{color:'var(--rose-400)'}}>⚠️ Negative Pathways</h4><ul className="pathway-list"><li>• ICI + RT → Inflammation → Mortality ↑</li><li>• Dense Stroma → T-cell Block → Limited ICI</li><li>• Low TMB → Poor Antigen → No Response</li></ul></div></div>
+                        </div>)}
+
+                        {activeSection === 'forest' && (<div>
+                            <div className="plot-selector">{Object.entries(plotConfigs).map(([k,c]) => (<button key={k} onClick={() => setPlotType(k)} className={`plot-btn ${plotType === k ? 'active' : ''}`} style={plotType === k ? {backgroundColor:`${c.color}20`,borderColor:`${c.color}50`,color:c.color} : {}}>{c.title.split(':')[0]}</button>))}</div>
+                            <div className="card"><div className="forest-header"><h3 className="forest-title">{plotConfigs[plotType].title}</h3><div className="forest-meta"><span>Pooled {plotConfigs[plotType].metric.toUpperCase()}: <strong style={{color:plotConfigs[plotType].color}}>{plotConfigs[plotType].pooled.toFixed(2)}</strong></span><span>|</span><span>I² = {plotConfigs[plotType].heterogeneity}</span></div></div><ForestPlot data={plotConfigs[plotType].data} color={plotConfigs[plotType].color} pooled={plotConfigs[plotType].pooled} metric={plotConfigs[plotType].metric} heterogeneity={plotConfigs[plotType].heterogeneity} /></div>
+                            <div className={`interpretation-box ${plotConfigs[plotType].warning ? 'negative' : 'positive'}`}><p className="interpretation-title" style={{color:plotConfigs[plotType].warning ? 'var(--rose-400)' : 'var(--emerald-400)'}}>{plotConfigs[plotType].warning ? '⚠️ Warning' : '✓ Interpretation'}</p><p className="interpretation-text">{interpretations[plotType]}</p></div>
+                        </div>)}
+
+                        {activeSection === 'implications' && (<div>
+                            <div className="card"><h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Key Conclusions</h3><div className="conclusions-grid"><div><div className="conclusion-item"><div className="conclusion-icon positive">✓</div><div><p className="conclusion-title">ICI + Chemo Shows Promise</p><p className="conclusion-desc">18% mortality reduction with consistent results</p></div></div><div className="conclusion-item"><div className="conclusion-icon positive">✓</div><div><p className="conclusion-title">Biomarker Selection Critical</p><p className="conclusion-desc">High TMB and dMMR patients respond best</p></div></div></div><div><div className="conclusion-item"><div className="conclusion-icon negative">⚠</div><div><p className="conclusion-title">Caution with Radiotherapy</p><p className="conclusion-desc">ICI + RT increases mortality risk</p></div></div><div className="conclusion-item"><div className="conclusion-icon warning">!</div><div><p className="conclusion-title">Limited Monotherapy Efficacy</p><p className="conclusion-desc">ICI alone shows 0% ORR in most PDAC</p></div></div></div></div></div>
+                            <div className="card" style={{background:'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))',borderColor:'rgba(6, 182, 212, 0.2)'}}><h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>🔬</span> Future Research</h3><div>{[{area:"Predictive Biomarkers",desc:"Develop and validate for optimal patient selection"},{area:"Novel Combinations",desc:"ICIs with targeted therapies and vaccines"},{area:"TME Modulation",desc:"Convert 'cold' tumors to 'hot' phenotypes"},{area:"Personalized Approaches",desc:"Multi-omic data for individualized treatment"}].map((f,i) => (<div key={i} className="future-item"><div className="future-dot"></div><div><p className="future-title">{f.area}</p><p className="future-desc">{f.desc}</p></div></div>))}</div></div>
+                            <div className="card"><h3 className="card-title"><span style={{color:'var(--violet-400)'}}>📋</span> Clinical Guidance</h3><table className="guidance-table"><thead><tr><th>Patient Profile</th><th>Recommended Approach</th><th>Evidence</th></tr></thead><tbody>{[{profile:"High TMB / MSI-H / dMMR",approach:"ICI combination (+ chemo)",evidence:"Moderate-High"},{profile:"Low TMB / MSS",approach:"Standard chemo; consider trials",evidence:"Moderate"},{profile:"Metastatic, first-line",approach:"ICI + chemo (gem/nab-pac)",evidence:"Moderate"},{profile:"Locally advanced",approach:"Neoadjuvant chemoRT ± ICI",evidence:"Low"}].map((r,i) => (<tr key={i}><td>{r.profile}</td><td>{r.approach}</td><td><span className={`evidence-badge ${r.evidence.includes('High')?'high':r.evidence==='Moderate'?'moderate':'low'}`}>{r.evidence}</span></td></tr>))}</tbody></table></div>
+                        </div>)}
+                    </div></main>
+                    <footer><div className="container"><p>Based on: Al-Khinji A, et al. (2025) Immune checkpoint inhibitors in pancreatic adenocarcinoma. <span className="doi">Front. Oncol. 15:1569884</span></p><p className="note">Interactive Dashboard • Data visualization for research purposes only</p></div></footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
