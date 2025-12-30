@@ -1,0 +1,2491 @@
+/Users/dhafermalouche/Documents/QU Job 2026/QU 2026/malouche.github.io
+├── CNAME
+├── LICENSE
+├── R
+│   ├── build.R
+│   └── build2.R
+├── README.md
+├── assets
+│   ├── jsconfig.json
+│   ├── media
+│   │   ├── albums
+│   │   │   └── themes
+│   │   │       ├── theme-1950s.png
+│   │   │       ├── theme-apogee.png
+│   │   │       ├── theme-coffee-playfair.png
+│   │   │       ├── theme-dark.png
+│   │   │       ├── theme-default.png
+│   │   │       ├── theme-forest.png
+│   │   │       ├── theme-ocean.png
+│   │   │       └── theme-strawberry.png
+│   │   ├── icon.png
+│   │   ├── icons
+│   │   │   └── brands
+│   │   │       ├── org-gc.svg
+│   │   │       └── org-x.svg
+│   │   └── open-book.jpg
+│   └── scss
+│       └── template.scss
+├── config
+│   └── _default
+│       ├── config.yaml
+│       ├── languages.yaml
+│       ├── menus.yaml
+│       └── params.yaml
+├── content
+│   ├── Apps
+│   │   ├── COVIDGlobalMap2022
+│   │   │   └── index.md
+│   │   ├── Covid19tracking
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── ECDFOgive
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── PCAapp
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── covidapp
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── genrandomnumbs
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── researchdata
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── statisticalmeasures
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── survestim
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   └── tunelect
+│   │       ├── featured.png
+│   │       └── index.md
+│   ├── _index.md
+│   ├── admin
+│   │   └── index.md
+│   ├── authors
+│   │   ├── admin
+│   │   │   ├── _index.md
+│   │   │   └── avatar.jpg
+│   │   └── σÉ│µü⌐Θüö
+│   │       ├── _index.md
+│   │       └── avatar.jpg
+│   ├── courses
+│   │   ├── DS2
+│   │   │   ├── _index.md
+│   │   │   └── featured.jpg
+│   │   ├── StatInfer
+│   │   │   ├── _index.md
+│   │   │   └── featured.JPG
+│   │   ├── TSdauphine
+│   │   │   ├── _index.md
+│   │   │   └── featured.jpg
+│   │   └── _index.md
+│   ├── event
+│   │   ├── _index.md
+│   │   └── example
+│   │       ├── featured.jpg
+│   │       └── index.md
+│   ├── home
+│   │   ├── Apps.md
+│   │   ├── about.md
+│   │   ├── accomplishments.md
+│   │   ├── contact.md
+│   │   ├── courses.md
+│   │   ├── data.md
+│   │   ├── demo.md
+│   │   ├── experience.md
+│   │   ├── featured.md
+│   │   ├── gallery.md
+│   │   ├── hero-academic.png
+│   │   ├── hero.md
+│   │   ├── index.md
+│   │   ├── posts.md
+│   │   ├── projects.md
+│   │   ├── publications.md
+│   │   ├── skills.md
+│   │   ├── tags.md
+│   │   ├── talks.md
+│   │   └── tutorials.md
+│   ├── post
+│   │   ├── _index.md
+│   │   ├── creditstunisie
+│   │   │   ├── featured.png
+│   │   │   ├── index.Rmd
+│   │   │   ├── index.html
+│   │   │   └── index_files
+│   │   │       └── header-attrs
+│   │   │           └── header-attrs.js
+│   │   ├── municipalelect
+│   │   │   ├── featured.png
+│   │   │   ├── index.Rmd
+│   │   │   ├── index.html
+│   │   │   ├── index_files
+│   │   │   │   └── header-attrs
+│   │   │   │       └── header-attrs.js
+│   │   │   ├── municdash.Rhtml
+│   │   │   ├── municdash.html
+│   │   │   └── my.css
+│   │   └── thousandcases
+│   │       ├── featured.png
+│   │       ├── index.Rmd
+│   │       ├── index.html
+│   │       └── index_files
+│   │           └── header-attrs
+│   │               └── header-attrs.js
+│   ├── privacy.md
+│   ├── project
+│   │   ├── africa2021
+│   │   │   ├── afric2021.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── africa2021vs2022
+│   │   │   ├── f1.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── africagdppercapita
+│   │   │   ├── africagdppercapita.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── asia2021
+│   │   │   ├── asia2021.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── asia2021vs2022
+│   │   │   ├── f1.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── bedscovid
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── credisdash
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── durationcoviddeaths
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── euVSusCOVID
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── europe2021
+│   │   │   ├── europe2021.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── europe2021vs2022
+│   │   │   ├── f1.pdf
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── flipped-classroom
+│   │   │   ├── featured.jpg
+│   │   │   └── index.md
+│   │   ├── municdash
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   ├── northam2021
+│   │   │   ├── featured.png
+│   │   │   ├── index.md
+│   │   │   └── northam2021.pdf
+│   │   ├── pain-network-dashboard
+│   │   │   ├── featured.png
+│   │   │   └── index.md
+│   │   └── tuniscovid
+│   │       ├── featured.png
+│   │       └── index.md
+│   ├── publication
+│   │   ├── Alkhinji1
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── IbrahimPaper
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── Mizza1
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── _index.md
+│   │   ├── describIND
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── faithful2021
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── impactcovid
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── imunepaper
+│   │   │   ├── cite.bib
+│   │   │   ├── index.md
+│   │   │   └── read.md
+│   │   ├── khalil1
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   ├── khalil2
+│   │   │   ├── cite.bib
+│   │   │   └── index.md
+│   │   └── sensmapr
+│   │       ├── cite.bib
+│   │       └── index.md
+│   ├── publications-timeline
+│   │   └── _index.md
+│   ├── slides
+│   │   └── example
+│   │       └── index.md
+│   ├── terms.md
+│   └── tutorials
+│       ├── DepartParisMap
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── animalmodels
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   └── slides.pdf
+│       ├── bayesiansingleparametermodels
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   └── slides.pdf
+│       ├── bigdatawithr
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── collectingdata
+│       │   ├── collecting_data.html
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   ├── rsconnect
+│       │   │   └── documents
+│       │   │       └── dugong.qmd
+│       │   │           ├── posit.cloud
+│       │   │           │   └── 896422-dhafer-malouche
+│       │   │           │       └── dugong.dcf
+│       │   │           └── rpubs.com
+│       │   │               └── rpubs
+│       │   │                   └── Document.dcf
+│       │   └── stylesheet.css
+│       ├── datavizwithr
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── descriptive
+│       │   ├── Descriptive_statistics_with_Python.pdf
+│       │   ├── descstats.html
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── dugongBExamp
+│       │   ├── dugong.html
+│       │   ├── dugong.qmd
+│       │   ├── dugong_cache
+│       │   │   └── html
+│       │   │       ├── __packages
+│       │   │       ├── unnamed-chunk-10_fccb9e77f7fbb8893616c7a734a8094b.RData
+│       │   │       ├── unnamed-chunk-10_fccb9e77f7fbb8893616c7a734a8094b.rdb
+│       │   │       ├── unnamed-chunk-10_fccb9e77f7fbb8893616c7a734a8094b.rdx
+│       │   │       ├── unnamed-chunk-11_92cf5c22a9cb18598bda73b99b6b6db5.RData
+│       │   │       ├── unnamed-chunk-11_92cf5c22a9cb18598bda73b99b6b6db5.rdb
+│       │   │       ├── unnamed-chunk-11_92cf5c22a9cb18598bda73b99b6b6db5.rdx
+│       │   │       ├── unnamed-chunk-12_f6d9bbdd86e66c264f92c729ae050ee1.RData
+│       │   │       ├── unnamed-chunk-12_f6d9bbdd86e66c264f92c729ae050ee1.rdb
+│       │   │       ├── unnamed-chunk-12_f6d9bbdd86e66c264f92c729ae050ee1.rdx
+│       │   │       ├── unnamed-chunk-13_7dfe5d9a5ef577f670881c53342a9928.RData
+│       │   │       ├── unnamed-chunk-13_7dfe5d9a5ef577f670881c53342a9928.rdb
+│       │   │       ├── unnamed-chunk-13_7dfe5d9a5ef577f670881c53342a9928.rdx
+│       │   │       ├── unnamed-chunk-14_3dd90e6fa07a322d13bcfc2dcaca39b7.RData
+│       │   │       ├── unnamed-chunk-14_3dd90e6fa07a322d13bcfc2dcaca39b7.rdb
+│       │   │       ├── unnamed-chunk-14_3dd90e6fa07a322d13bcfc2dcaca39b7.rdx
+│       │   │       ├── unnamed-chunk-15_e84084316e08c0a07c2fdd78a939d73f.RData
+│       │   │       ├── unnamed-chunk-15_e84084316e08c0a07c2fdd78a939d73f.rdb
+│       │   │       ├── unnamed-chunk-15_e84084316e08c0a07c2fdd78a939d73f.rdx
+│       │   │       ├── unnamed-chunk-16_e1ae422d2b76503da77f8ce31f357907.RData
+│       │   │       ├── unnamed-chunk-16_e1ae422d2b76503da77f8ce31f357907.rdb
+│       │   │       ├── unnamed-chunk-16_e1ae422d2b76503da77f8ce31f357907.rdx
+│       │   │       ├── unnamed-chunk-17_c7f0a28e148170eaecb2597ae1b52263.RData
+│       │   │       ├── unnamed-chunk-17_c7f0a28e148170eaecb2597ae1b52263.rdb
+│       │   │       ├── unnamed-chunk-17_c7f0a28e148170eaecb2597ae1b52263.rdx
+│       │   │       ├── unnamed-chunk-18_a4b292dbced6ba23c0e04c3237d54370.RData
+│       │   │       ├── unnamed-chunk-18_a4b292dbced6ba23c0e04c3237d54370.rdb
+│       │   │       ├── unnamed-chunk-18_a4b292dbced6ba23c0e04c3237d54370.rdx
+│       │   │       ├── unnamed-chunk-19_62064639adfacbc3c9a5add48a2bbc00.RData
+│       │   │       ├── unnamed-chunk-19_62064639adfacbc3c9a5add48a2bbc00.rdb
+│       │   │       ├── unnamed-chunk-19_62064639adfacbc3c9a5add48a2bbc00.rdx
+│       │   │       ├── unnamed-chunk-1_f78f167c01cfb99a8bff7c139d98b1ae.RData
+│       │   │       ├── unnamed-chunk-1_f78f167c01cfb99a8bff7c139d98b1ae.rdb
+│       │   │       ├── unnamed-chunk-1_f78f167c01cfb99a8bff7c139d98b1ae.rdx
+│       │   │       ├── unnamed-chunk-20_f5e56fe6ae953382c0f7fa4976ae0013.RData
+│       │   │       ├── unnamed-chunk-20_f5e56fe6ae953382c0f7fa4976ae0013.rdb
+│       │   │       ├── unnamed-chunk-20_f5e56fe6ae953382c0f7fa4976ae0013.rdx
+│       │   │       ├── unnamed-chunk-21_402e330fc37a42b9cec3470e2b5f2f8e.RData
+│       │   │       ├── unnamed-chunk-21_402e330fc37a42b9cec3470e2b5f2f8e.rdb
+│       │   │       ├── unnamed-chunk-21_402e330fc37a42b9cec3470e2b5f2f8e.rdx
+│       │   │       ├── unnamed-chunk-22_06a6987d3ad67ea22cf94e17d7131ba8.RData
+│       │   │       ├── unnamed-chunk-22_06a6987d3ad67ea22cf94e17d7131ba8.rdb
+│       │   │       ├── unnamed-chunk-22_06a6987d3ad67ea22cf94e17d7131ba8.rdx
+│       │   │       ├── unnamed-chunk-23_70750307b4fcb9ccad15b3e46427f676.RData
+│       │   │       ├── unnamed-chunk-23_70750307b4fcb9ccad15b3e46427f676.rdb
+│       │   │       ├── unnamed-chunk-23_70750307b4fcb9ccad15b3e46427f676.rdx
+│       │   │       ├── unnamed-chunk-24_9fa046c5c41d5aa3febf5d1cfa1429e2.RData
+│       │   │       ├── unnamed-chunk-24_9fa046c5c41d5aa3febf5d1cfa1429e2.rdb
+│       │   │       ├── unnamed-chunk-24_9fa046c5c41d5aa3febf5d1cfa1429e2.rdx
+│       │   │       ├── unnamed-chunk-25_c1e75013a92ef8deafc3b7a7b46b92e0.RData
+│       │   │       ├── unnamed-chunk-25_c1e75013a92ef8deafc3b7a7b46b92e0.rdb
+│       │   │       ├── unnamed-chunk-25_c1e75013a92ef8deafc3b7a7b46b92e0.rdx
+│       │   │       ├── unnamed-chunk-26_c3f74d7d0a3e368b11fac042a3065fa4.RData
+│       │   │       ├── unnamed-chunk-26_c3f74d7d0a3e368b11fac042a3065fa4.rdb
+│       │   │       ├── unnamed-chunk-26_c3f74d7d0a3e368b11fac042a3065fa4.rdx
+│       │   │       ├── unnamed-chunk-27_1f8eb31e21dc0059bb34ccf0a0bbc32b.RData
+│       │   │       ├── unnamed-chunk-27_1f8eb31e21dc0059bb34ccf0a0bbc32b.rdb
+│       │   │       ├── unnamed-chunk-27_1f8eb31e21dc0059bb34ccf0a0bbc32b.rdx
+│       │   │       ├── unnamed-chunk-28_08232831aadda1508ef2342f98e2263c.RData
+│       │   │       ├── unnamed-chunk-28_08232831aadda1508ef2342f98e2263c.rdb
+│       │   │       ├── unnamed-chunk-28_08232831aadda1508ef2342f98e2263c.rdx
+│       │   │       ├── unnamed-chunk-29_cc671c41ab807f3ceabe206f74b158a2.RData
+│       │   │       ├── unnamed-chunk-29_cc671c41ab807f3ceabe206f74b158a2.rdb
+│       │   │       ├── unnamed-chunk-29_cc671c41ab807f3ceabe206f74b158a2.rdx
+│       │   │       ├── unnamed-chunk-2_6236d1995ae3d7f56241dbc932f72913.RData
+│       │   │       ├── unnamed-chunk-2_6236d1995ae3d7f56241dbc932f72913.rdb
+│       │   │       ├── unnamed-chunk-2_6236d1995ae3d7f56241dbc932f72913.rdx
+│       │   │       ├── unnamed-chunk-30_34d7bcac474eef0c070fce41d7c24ceb.RData
+│       │   │       ├── unnamed-chunk-30_34d7bcac474eef0c070fce41d7c24ceb.rdb
+│       │   │       ├── unnamed-chunk-30_34d7bcac474eef0c070fce41d7c24ceb.rdx
+│       │   │       ├── unnamed-chunk-31_1fdfa1f2b46b2f07f48985407ee53995.RData
+│       │   │       ├── unnamed-chunk-31_1fdfa1f2b46b2f07f48985407ee53995.rdb
+│       │   │       ├── unnamed-chunk-31_1fdfa1f2b46b2f07f48985407ee53995.rdx
+│       │   │       ├── unnamed-chunk-32_0539b802eaca027d02ea86dea66880bf.RData
+│       │   │       ├── unnamed-chunk-32_0539b802eaca027d02ea86dea66880bf.rdb
+│       │   │       ├── unnamed-chunk-32_0539b802eaca027d02ea86dea66880bf.rdx
+│       │   │       ├── unnamed-chunk-33_38d7ab1baa5168570e98f9cdbac98886.RData
+│       │   │       ├── unnamed-chunk-33_38d7ab1baa5168570e98f9cdbac98886.rdb
+│       │   │       ├── unnamed-chunk-33_38d7ab1baa5168570e98f9cdbac98886.rdx
+│       │   │       ├── unnamed-chunk-34_b3ab615b4396f514e61769dad2624a6e.RData
+│       │   │       ├── unnamed-chunk-34_b3ab615b4396f514e61769dad2624a6e.rdb
+│       │   │       ├── unnamed-chunk-34_b3ab615b4396f514e61769dad2624a6e.rdx
+│       │   │       ├── unnamed-chunk-35_ba61550b122f9f1a67184ca161170fd3.RData
+│       │   │       ├── unnamed-chunk-35_ba61550b122f9f1a67184ca161170fd3.rdb
+│       │   │       ├── unnamed-chunk-35_ba61550b122f9f1a67184ca161170fd3.rdx
+│       │   │       ├── unnamed-chunk-36_f1b754bc166397994bfb789988e2569b.RData
+│       │   │       ├── unnamed-chunk-36_f1b754bc166397994bfb789988e2569b.rdb
+│       │   │       ├── unnamed-chunk-36_f1b754bc166397994bfb789988e2569b.rdx
+│       │   │       ├── unnamed-chunk-3_20071ce7f04b14b519c32955ccc36c56.RData
+│       │   │       ├── unnamed-chunk-3_20071ce7f04b14b519c32955ccc36c56.rdb
+│       │   │       ├── unnamed-chunk-3_20071ce7f04b14b519c32955ccc36c56.rdx
+│       │   │       ├── unnamed-chunk-4_e3ea99f5fa20639060b4d662ba85daed.RData
+│       │   │       ├── unnamed-chunk-4_e3ea99f5fa20639060b4d662ba85daed.rdb
+│       │   │       ├── unnamed-chunk-4_e3ea99f5fa20639060b4d662ba85daed.rdx
+│       │   │       ├── unnamed-chunk-5_fa3d56ce2a0cbc1252129141c29c4061.RData
+│       │   │       ├── unnamed-chunk-5_fa3d56ce2a0cbc1252129141c29c4061.rdb
+│       │   │       ├── unnamed-chunk-5_fa3d56ce2a0cbc1252129141c29c4061.rdx
+│       │   │       ├── unnamed-chunk-6_d1bd76ad6c95f00cf8e533c2a9e2429d.RData
+│       │   │       ├── unnamed-chunk-6_d1bd76ad6c95f00cf8e533c2a9e2429d.rdb
+│       │   │       ├── unnamed-chunk-6_d1bd76ad6c95f00cf8e533c2a9e2429d.rdx
+│       │   │       ├── unnamed-chunk-7_9ca8c0611474fbac845a8918282242f1.RData
+│       │   │       ├── unnamed-chunk-7_9ca8c0611474fbac845a8918282242f1.rdb
+│       │   │       ├── unnamed-chunk-7_9ca8c0611474fbac845a8918282242f1.rdx
+│       │   │       ├── unnamed-chunk-8_08470fe17166e9fdab9fbe88ba23509f.RData
+│       │   │       ├── unnamed-chunk-8_08470fe17166e9fdab9fbe88ba23509f.rdb
+│       │   │       ├── unnamed-chunk-8_08470fe17166e9fdab9fbe88ba23509f.rdx
+│       │   │       ├── unnamed-chunk-9_be0f6bab65cb6162d749d3d030b5acf5.RData
+│       │   │       ├── unnamed-chunk-9_be0f6bab65cb6162d749d3d030b5acf5.rdb
+│       │   │       └── unnamed-chunk-9_be0f6bab65cb6162d749d3d030b5acf5.rdx
+│       │   ├── dugong_files
+│       │   │   ├── figure-html
+│       │   │   │   ├── unnamed-chunk-16-1.png
+│       │   │   │   ├── unnamed-chunk-17-1.png
+│       │   │   │   ├── unnamed-chunk-17-2.png
+│       │   │   │   ├── unnamed-chunk-18-1.png
+│       │   │   │   ├── unnamed-chunk-18-2.png
+│       │   │   │   ├── unnamed-chunk-18-3.png
+│       │   │   │   ├── unnamed-chunk-19-1.png
+│       │   │   │   ├── unnamed-chunk-19-2.png
+│       │   │   │   ├── unnamed-chunk-2-1.png
+│       │   │   │   ├── unnamed-chunk-20-1.png
+│       │   │   │   ├── unnamed-chunk-20-2.png
+│       │   │   │   ├── unnamed-chunk-21-1.png
+│       │   │   │   ├── unnamed-chunk-21-2.png
+│       │   │   │   ├── unnamed-chunk-22-1.png
+│       │   │   │   ├── unnamed-chunk-32-1.png
+│       │   │   │   ├── unnamed-chunk-32-2.png
+│       │   │   │   ├── unnamed-chunk-32-3.png
+│       │   │   │   ├── unnamed-chunk-32-4.png
+│       │   │   │   ├── unnamed-chunk-32-5.png
+│       │   │   │   ├── unnamed-chunk-32-6.png
+│       │   │   │   ├── unnamed-chunk-32-7.png
+│       │   │   │   ├── unnamed-chunk-32-8.png
+│       │   │   │   ├── unnamed-chunk-32-9.png
+│       │   │   │   └── unnamed-chunk-36-1.png
+│       │   │   └── libs
+│       │   │       ├── bootstrap
+│       │   │       │   ├── bootstrap-icons.css
+│       │   │       │   ├── bootstrap-icons.woff
+│       │   │       │   ├── bootstrap.min 2.css
+│       │   │       │   ├── bootstrap.min.css
+│       │   │       │   └── bootstrap.min.js
+│       │   │       ├── clipboard
+│       │   │       │   └── clipboard.min.js
+│       │   │       └── quarto-html
+│       │   │           ├── anchor.min.js
+│       │   │           ├── light-border.css
+│       │   │           ├── popper.min.js
+│       │   │           ├── quarto-html.min.css
+│       │   │           ├── quarto-syntax-highlighting.css
+│       │   │           ├── quarto.js
+│       │   │           ├── tabby.min.js
+│       │   │           ├── tippy.css
+│       │   │           └── tippy.umd.min.js
+│       │   ├── featured.jpg
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   └── rsconnect
+│       │       └── documents
+│       │           └── dugong.qmd
+│       │               ├── posit.cloud
+│       │               │   └── 896422-dhafer-malouche
+│       │               │       └── dugong.dcf
+│       │               └── rpubs.com
+│       │                   └── rpubs
+│       │                       └── Document.dcf
+│       ├── estimation
+│       │   ├── estimation.html
+│       │   ├── estimation.pdf
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── getR
+│       │   ├── Mr Ahmed Yassine Malouche.pdf
+│       │   ├── dplyr_logo.png
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── hypothesis
+│       │   ├── featured.png
+│       │   ├── hypothesis.html
+│       │   ├── hypothesis.pdf
+│       │   └── index.md
+│       ├── interactiveafrica
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── mosaicplots
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── multipleregression
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   └── multipleregression.pdf
+│       ├── numpy
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   ├── numpy-library.html
+│       │   └── numpy_library.pdf
+│       ├── pandas
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   ├── pandas-on-local-computer.html
+│       │   └── pandas_on_local_computer.pdf
+│       ├── probdistpython
+│       │   ├── Probability_distributions_with_Python.pdf
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   └── probdistpython.html
+│       ├── rapwithR
+│       │   ├── featured.png
+│       │   └── index.md
+│       ├── rdtalk
+│       │   ├── featured.png
+│       │   ├── index.md
+│       │   └── slides.pdf
+│       ├── sensorywithr
+│       │   ├── featured.png
+│       │   └── index.md
+│       └── tsukubatalk
+│           ├── featured.png
+│           ├── index.md
+│           └── slides.pdf
+├── forlder_architecter.txt
+├── index.Rmd
+├── layouts
+│   ├── partials
+│   │   └── custom_js.html
+│   └── shortcodes
+│       └── blogdown
+│           └── postref.html
+├── malouche.github.io.Rproj
+├── netlify.toml
+├── public
+│   ├── 404.html
+│   ├── _headers
+│   ├── _redirects
+│   ├── admin
+│   │   ├── config.yml
+│   │   └── index.html
+│   ├── apps
+│   │   ├── covid19tracking
+│   │   │   ├── featured.png
+│   │   │   ├── featured_huecfeb376421749bf2b6f367362333a0f_236656_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huecfeb376421749bf2b6f367362333a0f_236656_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huecfeb376421749bf2b6f367362333a0f_236656_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── covidapp
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hub58aff6207dadc83997000a7cb72f88b_262230_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hub58aff6207dadc83997000a7cb72f88b_262230_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hub58aff6207dadc83997000a7cb72f88b_262230_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── covidglobalmap2022
+│   │   │   └── index.html
+│   │   ├── ecdfogive
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hucbf047530d7044cd0f1ac7607698d0ff_52968_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hucbf047530d7044cd0f1ac7607698d0ff_52968_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hucbf047530d7044cd0f1ac7607698d0ff_52968_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── genrandomnumbs
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hudc5b390d9d42bae05460adb12a076c83_101149_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hudc5b390d9d42bae05460adb12a076c83_101149_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hudc5b390d9d42bae05460adb12a076c83_101149_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── page
+│   │   │   ├── 1
+│   │   │   │   └── index.html
+│   │   │   └── 2
+│   │   │       └── index.html
+│   │   ├── pain-network-dashboard
+│   │   │   ├── featured.svg
+│   │   │   └── index.html
+│   │   ├── pcaapp
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hud606acb6e7f9146273e3dd407f64d2bd_371429_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hud606acb6e7f9146273e3dd407f64d2bd_371429_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hud606acb6e7f9146273e3dd407f64d2bd_371429_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── researchdata
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hud0aae861d27b98291790118c5caddc69_148259_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hud0aae861d27b98291790118c5caddc69_148259_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hud0aae861d27b98291790118c5caddc69_148259_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── statisticalmeasures
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu46de559c4b1359fbbfdfd7fe7900b36f_332814_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu46de559c4b1359fbbfdfd7fe7900b36f_332814_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu46de559c4b1359fbbfdfd7fe7900b36f_332814_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── survestim
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hufa494e0003442ca55ba8fa793220791f_246925_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hufa494e0003442ca55ba8fa793220791f_246925_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hufa494e0003442ca55ba8fa793220791f_246925_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   └── tunelect
+│   │       ├── featured.png
+│   │       ├── featured_hu185489354e7b2dd792ec13d9882a20db_332917_150x0_resize_q75_h2_lanczos_3.webp
+│   │       ├── featured_hu185489354e7b2dd792ec13d9882a20db_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│   │       ├── featured_hu185489354e7b2dd792ec13d9882a20db_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │       └── index.html
+│   ├── author
+│   │   ├── abdullatif-al-hor
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── aisha-ahmad-m.-a.-al-khinji
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── aisha-al-khinji
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── and-others
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── ashraf-gad
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── daria-mizza
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── dhafer-malouche
+│   │   │   ├── avatar.jpg
+│   │   │   ├── avatar_hu02aa61ae1d9de35cbe238d2676170cb9_329978_270x270_fill_q75_lanczos_center.jpg
+│   │   │   ├── avatar_hu1aa815faf11ca17e6838200767487ccc_48959_270x270_fill_q75_lanczos_center.jpg
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── et-al
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── hanan-khalil
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── ibtihel-rebhi
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── mike-reese
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── noora-al-korbi
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── olfa-saidi
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── sheikha-al-kuwari
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   └── 吳恩達
+│   │       ├── avatar.jpg
+│   │       ├── avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg
+│   │       ├── index.html
+│   │       └── index.xml
+│   ├── authors
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   └── page
+│   │       ├── 1
+│   │       │   └── index.html
+│   │       └── 2
+│   │           └── index.html
+│   ├── categories
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   └── page
+│   │       └── 1
+│   │           └── index.html
+│   ├── courses
+│   │   ├── ds2
+│   │   │   ├── featured.jpg
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_06e7132ff3c2b79f916d493d02ffa7e0.webp
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_0def01253e50e0ee00311f7879fb6c76.webp
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_1200x1200_fit_q75_h2_lanczos.webp
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_150x0_resize_q75_h2_lanczos.webp
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_89f76ba166258e2dfb96647bd73a3d4f.webp
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_abeb6eac1d6ac77828cb62f4040cbf0b.webp
+│   │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_eaafc7666f501f7fc3b1d0b02dbac67e.webp
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── page
+│   │   │   └── 1
+│   │   │       └── index.html
+│   │   ├── statinfer
+│   │   │   ├── featured.JPG
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_05baef840938c27cee693d4005d265c4.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_1200x1200_fit_q75_h2_lanczos.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_150x0_resize_q75_h2_lanczos.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_5a2484360b91bcb7468bbbb874f88bb0.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_5a3bda9975e7e92bb9a6b95d15358288.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_d872681f365d6551eb6e0b1ddd43815e.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_dc9b09c345e7caec3d85ca695af8ba05.webp
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   └── tsdauphine
+│   │       ├── featured.jpg
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1200x1200_fit_q75_h2_lanczos.webp
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_150x0_resize_q75_h2_lanczos.webp
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1b6480245aaa47813b439f5355de4d6a.webp
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1b9abb16ac76a6406abab669d373f8be.webp
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_6d986ee3f4d1802f62dca9b23cdfb090.webp
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e01834a6f71cde63e116f2a393c09ac7.webp
+│   │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e081f3cb64ac5f53b66ffaff3e12d201.webp
+│   │       ├── index.html
+│   │       └── index.xml
+│   ├── css
+│   │   ├── reveal_custom.min.css
+│   │   ├── vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css
+│   │   ├── wowchemy.4e0db879b14508b95a9db85ef517b3f2.css
+│   │   └── wowchemy.512574799414e7d36471486881070b0f.css
+│   ├── dashboards
+│   │   ├── pain-network-dashboard.html
+│   │   └── research-dashboard.html
+│   ├── en
+│   │   └── js
+│   │       └── wowchemy.min.eb9fa731a64f4da20162120fc4b9bcbf.js
+│   ├── event
+│   │   ├── index.html
+│   │   └── index.xml
+│   ├── extractBIB.R
+│   ├── home
+│   │   └── hero-academic.png
+│   ├── index.html
+│   ├── index.json
+│   ├── index.xml
+│   ├── js
+│   │   ├── mathjax-config.js
+│   │   ├── vendor-bundle.min.d26cbef546776b4d6032d1ea3dafadab.js
+│   │   ├── wowchemy-headroom.6b73888494485d3b0874ca2ec83f614f.js
+│   │   ├── wowchemy-init.min.7e85d6cfe81caeb57cc49452f9b55e03.js
+│   │   └── wowchemy-slides.js
+│   ├── manifest.webmanifest
+│   ├── media
+│   │   ├── boards.jpg
+│   │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_180x180_fill_lanczos_center_3.png
+│   │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_192x192_fill_lanczos_center_3.png
+│   │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_32x32_fill_lanczos_center_3.png
+│   │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png
+│   │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_180x180_fill_lanczos_center_3.png
+│   │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_192x192_fill_lanczos_center_3.png
+│   │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_32x32_fill_lanczos_center_3.png
+│   │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png
+│   │   ├── icon_hu_4148a196ed066e0d.png
+│   │   ├── icon_hu_cccaa817ccf454f7.png
+│   │   └── open-book_hu0d86f8f808d8a156f6efd32fd52b11ce_54109_1920x1920_fit_q75_h2_lanczos.webp
+│   ├── own-bib.json
+│   ├── post
+│   │   ├── creditstunisie
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu5164848465fcf7ab92596f9dff1d5c64_80197_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu5164848465fcf7ab92596f9dff1d5c64_80197_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── index.html
+│   │   │   └── index_files
+│   │   │       └── header-attrs
+│   │   │           └── header-attrs.js
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── municipalelect
+│   │   │   ├── featured.png
+│   │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── index.html
+│   │   │   ├── index_files
+│   │   │   │   └── header-attrs
+│   │   │   │       └── header-attrs.js
+│   │   │   ├── municdash.Rhtml
+│   │   │   ├── municdash.html
+│   │   │   └── my.css
+│   │   ├── page
+│   │   │   └── 1
+│   │   │       └── index.html
+│   │   └── thousandcases
+│   │       ├── featured.png
+│   │       ├── featured_hu4f5e4e7d13b321e67cc2b68af7421793_71134_150x0_resize_q75_h2_lanczos_3.webp
+│   │       ├── featured_hu4f5e4e7d13b321e67cc2b68af7421793_71134_720x2500_fit_q75_h2_lanczos_3.webp
+│   │       ├── index.html
+│   │       └── index_files
+│   │           └── header-attrs
+│   │               └── header-attrs.js
+│   ├── project
+│   │   ├── africa2021
+│   │   │   ├── afric2021.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu7785eb994fccff8e068e7d8ecaa8d5d8_332917_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu7785eb994fccff8e068e7d8ecaa8d5d8_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu7785eb994fccff8e068e7d8ecaa8d5d8_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── africa2021vs2022
+│   │   │   ├── f1.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu93e5dd1036ca301e87bf44081a57101a_412225_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu93e5dd1036ca301e87bf44081a57101a_412225_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu93e5dd1036ca301e87bf44081a57101a_412225_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── africagdppercapita
+│   │   │   ├── africagdppercapita.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu2d4565e7e84e5c765864d5e5f53b44cd_528191_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu2d4565e7e84e5c765864d5e5f53b44cd_528191_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu2d4565e7e84e5c765864d5e5f53b44cd_528191_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── asia2021
+│   │   │   ├── asia2021.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu8159ee74ac9a32300ec559082240942a_332917_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu8159ee74ac9a32300ec559082240942a_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu8159ee74ac9a32300ec559082240942a_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── asia2021vs2022
+│   │   │   ├── f1.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu22465011ad090c4f10773f9cb285048a_247424_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu22465011ad090c4f10773f9cb285048a_247424_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu22465011ad090c4f10773f9cb285048a_247424_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── bedscovid
+│   │   │   ├── featured.png
+│   │   │   ├── featured_huf5b7e6413d30613ab57acda6864cd771_269380_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huf5b7e6413d30613ab57acda6864cd771_269380_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huf5b7e6413d30613ab57acda6864cd771_269380_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── credisdash
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu639f18232a280ab906739575e5469f8b_173475_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu639f18232a280ab906739575e5469f8b_173475_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu639f18232a280ab906739575e5469f8b_173475_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── durationcoviddeaths
+│   │   │   ├── featured.png
+│   │   │   ├── featured_huad205d108cc1bf35ee358346c959ecc2_157648_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huad205d108cc1bf35ee358346c959ecc2_157648_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huad205d108cc1bf35ee358346c959ecc2_157648_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── europe2021
+│   │   │   ├── europe2021.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu74c6ea8b64b396e0bfc8adf6d7f3ee27_54825_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu74c6ea8b64b396e0bfc8adf6d7f3ee27_54825_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu74c6ea8b64b396e0bfc8adf6d7f3ee27_54825_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── europe2021vs2022
+│   │   │   ├── f1.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu95ae9a1d2b3c182bc90c7de22edba05c_583441_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu95ae9a1d2b3c182bc90c7de22edba05c_583441_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu95ae9a1d2b3c182bc90c7de22edba05c_583441_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── euvsuscovid
+│   │   │   ├── featured.png
+│   │   │   ├── featured_huf903ccfb495e76169a58f3f670cd9498_305898_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huf903ccfb495e76169a58f3f670cd9498_305898_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huf903ccfb495e76169a58f3f670cd9498_305898_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── flipped-classroom
+│   │   │   ├── featured.jpg
+│   │   │   ├── featured_hu32c8281e263fb4c2ab8f7b60beec7ca2_1359355_150x0_resize_q75_h2_lanczos.webp
+│   │   │   ├── featured_hu32c8281e263fb4c2ab8f7b60beec7ca2_1359355_720x2500_fit_q75_h2_lanczos.webp
+│   │   │   ├── featured_hu32c8281e263fb4c2ab8f7b60beec7ca2_1359355_808x455_fill_q75_h2_lanczos_smart1.webp
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── municdash
+│   │   │   ├── featured.png
+│   │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── northam2021
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu4708d49d717c06ea3529a9a38ad7b606_332917_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu4708d49d717c06ea3529a9a38ad7b606_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu4708d49d717c06ea3529a9a38ad7b606_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── northam2021.pdf
+│   │   ├── page
+│   │   │   ├── 1
+│   │   │   │   └── index.html
+│   │   │   └── 2
+│   │   │       └── index.html
+│   │   ├── pain-network-dashboard
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hud7caa66fdddea552392995118713f0c8_6491887_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hud7caa66fdddea552392995118713f0c8_6491887_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hud7caa66fdddea552392995118713f0c8_6491887_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── pain-network-dashboard.html
+│   │   └── tuniscovid
+│   │       ├── featured.png
+│   │       ├── featured_hued2f3f670bc446e18e471b5d4aa1657d_269380_150x0_resize_q75_h2_lanczos_3.webp
+│   │       ├── featured_hued2f3f670bc446e18e471b5d4aa1657d_269380_720x2500_fit_q75_h2_lanczos_3.webp
+│   │       ├── featured_hued2f3f670bc446e18e471b5d4aa1657d_269380_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │       └── index.html
+│   ├── publication
+│   │   ├── alkhinji1
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── describind
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── faithful2021
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── ibrahimpaper
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── impactcovid
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── imunepaper
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── khalil1
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── khalil2
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   ├── mizza1
+│   │   │   ├── cite.bib
+│   │   │   └── index.html
+│   │   └── sensmapr
+│   │       ├── cite.bib
+│   │       └── index.html
+│   ├── publication-type
+│   │   └── 2
+│   │       ├── index.html
+│   │       ├── index.xml
+│   │       └── page
+│   │           └── 1
+│   │               └── index.html
+│   ├── publication_types
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   └── page
+│   │       └── 1
+│   │           └── index.html
+│   ├── publications-timeline
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   └── page
+│   │       └── 1
+│   │           └── index.html
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── slides
+│   │   ├── example
+│   │   │   └── index.html
+│   │   └── index.xml
+│   ├── tag
+│   │   ├── 2018
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── africa2021
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── africa2021vs2022
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── africagdppercapita
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── animalmodels
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── apps
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── asia2021
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── asia2021vs2022
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── bayesian
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── bayesianstatistics
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── bedscovid
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── bigdatawithr
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── blended-learning
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── collectingdata
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── coronavirus
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── covid
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── covid-19
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── covidapp
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── covidglobalmap2022
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── covuseu
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── credits
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── datavizwithr
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── debt
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── departparismap
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── descriptive
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── dugongbexamp
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── ecdfogive
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── economy
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── education
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── elections
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── estimation
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── europe2021
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── europe2021vs2022
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── flipped-classroom
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── genrandomnumbs
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── getr
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── hypothesis
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── intervativeafrica
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── loans
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── mosaicplots
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── mregression
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── northam2021
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── numpy
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── painnetwork
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── pandas
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── pcaapp
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── probdistpython
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── qatar-biobank
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── rapwithr
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── rdtalk
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── researhdata
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── sensorywithr
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── statisticalmeasures
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── statistics
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── survestim
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── tunelect
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── tuniscovid
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   ├── tunisia
+│   │   │   ├── index.html
+│   │   │   ├── index.xml
+│   │   │   └── page
+│   │   │       └── 1
+│   │   │           └── index.html
+│   │   └── world-bank
+│   │       ├── index.html
+│   │       ├── index.xml
+│   │       └── page
+│   │           └── 1
+│   │               └── index.html
+│   ├── tags
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   └── page
+│   │       ├── 1
+│   │       │   └── index.html
+│   │       ├── 2
+│   │       │   └── index.html
+│   │       ├── 3
+│   │       │   └── index.html
+│   │       ├── 4
+│   │       │   └── index.html
+│   │       ├── 5
+│   │       │   └── index.html
+│   │       └── 6
+│   │           └── index.html
+│   ├── talk
+│   │   └── example-talk
+│   │       ├── featured.jpg
+│   │       ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_150x0_resize_q75_h2_lanczos.webp
+│   │       ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_720x2500_fit_q75_h2_lanczos.webp
+│   │       └── index.html
+│   ├── timeline.html
+│   ├── tutorials
+│   │   ├── animalmodels
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu6eba325ab0134618c53c3be72423ea56_1648276_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu6eba325ab0134618c53c3be72423ea56_1648276_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu6eba325ab0134618c53c3be72423ea56_1648276_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── slides.pdf
+│   │   ├── bayesiansingleparametermodels
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu50b3d62015a5928522d2eb855a22bdad_45245_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu50b3d62015a5928522d2eb855a22bdad_45245_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu50b3d62015a5928522d2eb855a22bdad_45245_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── slides.pdf
+│   │   ├── bigdatawithr
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu03aa9057fa1b216d7e5921fa1e695c4d_566542_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu03aa9057fa1b216d7e5921fa1e695c4d_566542_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu03aa9057fa1b216d7e5921fa1e695c4d_566542_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── collectingdata
+│   │   │   ├── collecting_data.html
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hua52532cf2c9c204c43090802c4969fcf_164264_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hua52532cf2c9c204c43090802c4969fcf_164264_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hua52532cf2c9c204c43090802c4969fcf_164264_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   ├── rsconnect
+│   │   │   │   └── documents
+│   │   │   │       └── dugong.qmd
+│   │   │   │           ├── posit.cloud
+│   │   │   │           │   └── 896422-dhafer-malouche
+│   │   │   │           │       └── dugong.dcf
+│   │   │   │           └── rpubs.com
+│   │   │   │               └── rpubs
+│   │   │   │                   └── Document.dcf
+│   │   │   └── stylesheet.css
+│   │   ├── datavizwithr
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu08d6a7cd8a70d8e0f3c9f16a985e62d0_566542_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu08d6a7cd8a70d8e0f3c9f16a985e62d0_566542_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu08d6a7cd8a70d8e0f3c9f16a985e62d0_566542_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── departparismap
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu27024cd0fc0b3bef7d825731daa8bf91_164472_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu27024cd0fc0b3bef7d825731daa8bf91_164472_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu27024cd0fc0b3bef7d825731daa8bf91_164472_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── descriptive
+│   │   │   ├── Descriptive_statistics_with_Python.pdf
+│   │   │   ├── descstats.html
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hudcb971aeba902520f5f13203ae153036_458064_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hudcb971aeba902520f5f13203ae153036_458064_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hudcb971aeba902520f5f13203ae153036_458064_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── dugongbexamp
+│   │   │   ├── dugong.html
+│   │   │   ├── dugong.qmd
+│   │   │   ├── dugong_files
+│   │   │   │   ├── figure-html
+│   │   │   │   │   ├── unnamed-chunk-16-1.png
+│   │   │   │   │   ├── unnamed-chunk-17-1.png
+│   │   │   │   │   ├── unnamed-chunk-17-2.png
+│   │   │   │   │   ├── unnamed-chunk-18-1.png
+│   │   │   │   │   ├── unnamed-chunk-18-2.png
+│   │   │   │   │   ├── unnamed-chunk-18-3.png
+│   │   │   │   │   ├── unnamed-chunk-19-1.png
+│   │   │   │   │   ├── unnamed-chunk-19-2.png
+│   │   │   │   │   ├── unnamed-chunk-2-1.png
+│   │   │   │   │   ├── unnamed-chunk-20-1.png
+│   │   │   │   │   ├── unnamed-chunk-20-2.png
+│   │   │   │   │   ├── unnamed-chunk-21-1.png
+│   │   │   │   │   ├── unnamed-chunk-21-2.png
+│   │   │   │   │   ├── unnamed-chunk-22-1.png
+│   │   │   │   │   ├── unnamed-chunk-32-1.png
+│   │   │   │   │   ├── unnamed-chunk-32-2.png
+│   │   │   │   │   ├── unnamed-chunk-32-3.png
+│   │   │   │   │   ├── unnamed-chunk-32-4.png
+│   │   │   │   │   ├── unnamed-chunk-32-5.png
+│   │   │   │   │   ├── unnamed-chunk-32-6.png
+│   │   │   │   │   ├── unnamed-chunk-32-7.png
+│   │   │   │   │   ├── unnamed-chunk-32-8.png
+│   │   │   │   │   ├── unnamed-chunk-32-9.png
+│   │   │   │   │   └── unnamed-chunk-36-1.png
+│   │   │   │   └── libs
+│   │   │   │       ├── bootstrap
+│   │   │   │       │   ├── bootstrap-icons.css
+│   │   │   │       │   ├── bootstrap-icons.woff
+│   │   │   │       │   ├── bootstrap.min 2.css
+│   │   │   │       │   ├── bootstrap.min.css
+│   │   │   │       │   └── bootstrap.min.js
+│   │   │   │       ├── clipboard
+│   │   │   │       │   └── clipboard.min.js
+│   │   │   │       └── quarto-html
+│   │   │   │           ├── anchor.min.js
+│   │   │   │           ├── light-border.css
+│   │   │   │           ├── popper.min.js
+│   │   │   │           ├── quarto-html.min.css
+│   │   │   │           ├── quarto-syntax-highlighting.css
+│   │   │   │           ├── quarto.js
+│   │   │   │           ├── tabby.min.js
+│   │   │   │           ├── tippy.css
+│   │   │   │           └── tippy.umd.min.js
+│   │   │   ├── featured.jpg
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hub3d483e6c19d3bb7e304b722ca3d4266_304521_150x0_resize_q75_h2_lanczos.webp
+│   │   │   ├── featured_hub3d483e6c19d3bb7e304b722ca3d4266_304521_720x2500_fit_q75_h2_lanczos.webp
+│   │   │   ├── featured_hub3d483e6c19d3bb7e304b722ca3d4266_304521_808x455_fill_q75_h2_lanczos_smart1.webp
+│   │   │   ├── index.html
+│   │   │   └── rsconnect
+│   │   │       └── documents
+│   │   │           └── dugong.qmd
+│   │   │               ├── posit.cloud
+│   │   │               │   └── 896422-dhafer-malouche
+│   │   │               │       └── dugong.dcf
+│   │   │               └── rpubs.com
+│   │   │                   └── rpubs
+│   │   │                       └── Document.dcf
+│   │   ├── estimation
+│   │   │   ├── estimation.html
+│   │   │   ├── estimation.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── getr
+│   │   │   ├── Mr Ahmed Yassine Malouche.pdf
+│   │   │   ├── dplyr_logo.png
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu7fd0008bcb6d6ae8af084559fab967b1_5161_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu7fd0008bcb6d6ae8af084559fab967b1_5161_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu7fd0008bcb6d6ae8af084559fab967b1_5161_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── hypothesis
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu103b5fcaf42c982e4ae4d2b68401d325_17638_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu103b5fcaf42c982e4ae4d2b68401d325_17638_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu103b5fcaf42c982e4ae4d2b68401d325_17638_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── hypothesis.html
+│   │   │   ├── hypothesis.pdf
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── interactiveafrica
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu83b87f1c1a889e6b4f2bc223f556d0db_155645_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu83b87f1c1a889e6b4f2bc223f556d0db_155645_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu83b87f1c1a889e6b4f2bc223f556d0db_155645_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── mosaicplots
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu847f6a49e9226eb217d8f1c3ab96a2fd_107273_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu847f6a49e9226eb217d8f1c3ab96a2fd_107273_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu847f6a49e9226eb217d8f1c3ab96a2fd_107273_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── multipleregression
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu69ba82cbec1a12c9a1a06c9beb949b52_27404_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu69ba82cbec1a12c9a1a06c9beb949b52_27404_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu69ba82cbec1a12c9a1a06c9beb949b52_27404_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── multipleregression.pdf
+│   │   ├── numpy
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu88e72d93c6893a420c2319499fdfe446_5115_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu88e72d93c6893a420c2319499fdfe446_5115_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu88e72d93c6893a420c2319499fdfe446_5115_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   ├── numpy-library.html
+│   │   │   └── numpy_library.pdf
+│   │   ├── page
+│   │   │   ├── 1
+│   │   │   │   └── index.html
+│   │   │   ├── 2
+│   │   │   │   └── index.html
+│   │   │   └── 3
+│   │   │       └── index.html
+│   │   ├── pandas
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu067c5a20b2ca4710e5eee58464340920_17875_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu067c5a20b2ca4710e5eee58464340920_17875_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu067c5a20b2ca4710e5eee58464340920_17875_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   ├── pandas-on-local-computer.html
+│   │   │   └── pandas_on_local_computer.pdf
+│   │   ├── probdistpython
+│   │   │   ├── Probability_distributions_with_Python.pdf
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hufeaeaf896de15cb9891a443770c943b0_16245_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hufeaeaf896de15cb9891a443770c943b0_16245_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hufeaeaf896de15cb9891a443770c943b0_16245_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── probdistpython.html
+│   │   ├── rapwithr
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu374bae7cd9f901eb0b37eae975971ba4_350333_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu374bae7cd9f901eb0b37eae975971ba4_350333_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu374bae7cd9f901eb0b37eae975971ba4_350333_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   ├── rdtalk
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu53eba6338ff86cfaebc509890c36bef6_104065_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu53eba6338ff86cfaebc509890c36bef6_104065_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu53eba6338ff86cfaebc509890c36bef6_104065_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   ├── index.html
+│   │   │   └── slides.pdf
+│   │   ├── sensorywithr
+│   │   │   ├── featured.png
+│   │   │   ├── featured_hu4db0db2b62fffec30695c5366ceaa52a_25460_150x0_resize_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu4db0db2b62fffec30695c5366ceaa52a_25460_720x2500_fit_q75_h2_lanczos_3.webp
+│   │   │   ├── featured_hu4db0db2b62fffec30695c5366ceaa52a_25460_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │   │   └── index.html
+│   │   └── tsukubatalk
+│   │       ├── featured.png
+│   │       ├── featured_hu4a00d106f218cf2add5d39f5f342711f_83467_150x0_resize_q75_h2_lanczos_3.webp
+│   │       ├── featured_hu4a00d106f218cf2add5d39f5f342711f_83467_720x2500_fit_q75_h2_lanczos_3.webp
+│   │       ├── featured_hu4a00d106f218cf2add5d39f5f342711f_83467_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│   │       ├── index.html
+│   │       └── slides.pdf
+│   ├── uploads
+│   │   ├── Syllabus_DSCI_1412__Fundamentals_of_Data_Science_II.pdf
+│   │   ├── Syllabus_Time_Series_Dauphine_Tunis_2022.pdf
+│   │   ├── own-bib.bib
+│   │   ├── own-bib.json
+│   │   └── resume.pdf
+│   └── webfonts
+│       ├── fa-brands-400.eot
+│       ├── fa-brands-400.svg
+│       ├── fa-brands-400.ttf
+│       ├── fa-brands-400.woff
+│       ├── fa-brands-400.woff2
+│       ├── fa-regular-400.eot
+│       ├── fa-regular-400.svg
+│       ├── fa-regular-400.ttf
+│       ├── fa-regular-400.woff
+│       ├── fa-regular-400.woff2
+│       ├── fa-solid-900.eot
+│       ├── fa-solid-900.svg
+│       ├── fa-solid-900.ttf
+│       ├── fa-solid-900.woff
+│       └── fa-solid-900.woff2
+├── resources
+│   └── _gen
+│       ├── assets
+│       │   └── scss
+│       │       ├── main.scss_35d2871d83849b8ae542dee056bea3ce.content
+│       │       ├── main.scss_35d2871d83849b8ae542dee056bea3ce.json
+│       │       ├── main.scss_adc28f460db49f036140dccadcf4d022.content
+│       │       ├── main.scss_adc28f460db49f036140dccadcf4d022.json
+│       │       └── scss
+│       │           ├── main.scss_9f896623db74eba16a49d52c1955683d.content
+│       │           ├── main.scss_9f896623db74eba16a49d52c1955683d.json
+│       │           ├── main.scss_ad7c01202310d8f56313e4e954344ccc.content
+│       │           └── main.scss_ad7c01202310d8f56313e4e954344ccc.json
+│       └── images
+│           ├── Apps
+│           │   ├── Covid19tracking
+│           │   │   ├── featured_huecfeb376421749bf2b6f367362333a0f_236656_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_huecfeb376421749bf2b6f367362333a0f_236656_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_huecfeb376421749bf2b6f367362333a0f_236656_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── ECDFOgive
+│           │   │   ├── featured_hucbf047530d7044cd0f1ac7607698d0ff_52968_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hucbf047530d7044cd0f1ac7607698d0ff_52968_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hucbf047530d7044cd0f1ac7607698d0ff_52968_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── PCAapp
+│           │   │   ├── featured_hud606acb6e7f9146273e3dd407f64d2bd_371429_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hud606acb6e7f9146273e3dd407f64d2bd_371429_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hud606acb6e7f9146273e3dd407f64d2bd_371429_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── covidapp
+│           │   │   ├── featured_hub58aff6207dadc83997000a7cb72f88b_262230_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hub58aff6207dadc83997000a7cb72f88b_262230_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hub58aff6207dadc83997000a7cb72f88b_262230_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── genrandomnumbs
+│           │   │   ├── featured_hudc5b390d9d42bae05460adb12a076c83_101149_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hudc5b390d9d42bae05460adb12a076c83_101149_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hudc5b390d9d42bae05460adb12a076c83_101149_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── researchdata
+│           │   │   ├── featured_hud0aae861d27b98291790118c5caddc69_148259_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hud0aae861d27b98291790118c5caddc69_148259_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hud0aae861d27b98291790118c5caddc69_148259_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── statisticalmeasures
+│           │   │   ├── featured_hu46de559c4b1359fbbfdfd7fe7900b36f_332814_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu46de559c4b1359fbbfdfd7fe7900b36f_332814_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu46de559c4b1359fbbfdfd7fe7900b36f_332814_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── survestim
+│           │   │   ├── featured_hufa494e0003442ca55ba8fa793220791f_246925_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hufa494e0003442ca55ba8fa793220791f_246925_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hufa494e0003442ca55ba8fa793220791f_246925_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   └── tunelect
+│           │       ├── featured_hu185489354e7b2dd792ec13d9882a20db_332917_150x0_resize_q75_h2_lanczos_3.webp
+│           │       ├── featured_hu185489354e7b2dd792ec13d9882a20db_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│           │       └── featured_hu185489354e7b2dd792ec13d9882a20db_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           ├── authors
+│           │   ├── admin
+│           │   │   ├── avatar_hu02aa61ae1d9de35cbe238d2676170cb9_329978_270x270_fill_q75_lanczos_center.jpg
+│           │   │   ├── avatar_hu1aa815faf11ca17e6838200767487ccc_48959_270x270_fill_q75_lanczos_center.jpg
+│           │   │   └── avatar_hu1aa815faf11ca17e6838200767487ccc_48959_270x270_fill_q75_lanczos_center.png
+│           │   └── σÉ│µü⌐Θüö
+│           │       └── avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg
+│           ├── courses
+│           │   ├── DS2
+│           │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_06e7132ff3c2b79f916d493d02ffa7e0.webp
+│           │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_0def01253e50e0ee00311f7879fb6c76.webp
+│           │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_1200x1200_fit_q75_h2_lanczos.webp
+│           │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_150x0_resize_q75_h2_lanczos.webp
+│           │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_89f76ba166258e2dfb96647bd73a3d4f.webp
+│           │   │   ├── featured_huf361d3967c25f30c7cda063bedd58cab_42421_abeb6eac1d6ac77828cb62f4040cbf0b.webp
+│           │   │   └── featured_huf361d3967c25f30c7cda063bedd58cab_42421_eaafc7666f501f7fc3b1d0b02dbac67e.webp
+│           │   ├── StatInfer
+│           │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_05baef840938c27cee693d4005d265c4.webp
+│           │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_1200x1200_fit_q75_h2_lanczos.webp
+│           │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_150x0_resize_q75_h2_lanczos.webp
+│           │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_5a2484360b91bcb7468bbbb874f88bb0.webp
+│           │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_5a3bda9975e7e92bb9a6b95d15358288.webp
+│           │   │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_d872681f365d6551eb6e0b1ddd43815e.webp
+│           │   │   └── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_dc9b09c345e7caec3d85ca695af8ba05.webp
+│           │   └── TSdauphine
+│           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1200x1200_fit_q75_h2_lanczos.webp
+│           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_150x0_resize_q75_h2_lanczos.webp
+│           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1b6480245aaa47813b439f5355de4d6a.webp
+│           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1b9abb16ac76a6406abab669d373f8be.webp
+│           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_6d986ee3f4d1802f62dca9b23cdfb090.webp
+│           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e01834a6f71cde63e116f2a393c09ac7.webp
+│           │       └── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e081f3cb64ac5f53b66ffaff3e12d201.webp
+│           ├── event
+│           │   └── example
+│           │       ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_150x0_resize_q75_h2_lanczos.webp
+│           │       └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_720x2500_fit_q75_h2_lanczos.webp
+│           ├── media
+│           │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_180x180_fill_lanczos_center_3.png
+│           │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_192x192_fill_lanczos_center_3.png
+│           │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_32x32_fill_lanczos_center_3.png
+│           │   ├── icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png
+│           │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_180x180_fill_lanczos_center_3.png
+│           │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_192x192_fill_lanczos_center_3.png
+│           │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_32x32_fill_lanczos_center_3.png
+│           │   ├── icon_hu7fe9fc80274b98c82b3b89cdc957a8c2_650985_512x512_fill_lanczos_center_3.png
+│           │   ├── icon_hu_4148a196ed066e0d.png
+│           │   └── icon_hu_cccaa817ccf454f7.png
+│           ├── open-book_hu0d86f8f808d8a156f6efd32fd52b11ce_54109_1920x1920_fit_q75_h2_lanczos.webp
+│           ├── post
+│           │   ├── creditstunisie
+│           │   │   ├── featured_hu5164848465fcf7ab92596f9dff1d5c64_80197_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu5164848465fcf7ab92596f9dff1d5c64_80197_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   ├── municipalelect
+│           │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   └── featured_huaed93007df63d3b5ebaff885335c6166_157648_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   └── thousandcases
+│           │       ├── featured_hu4f5e4e7d13b321e67cc2b68af7421793_71134_150x0_resize_q75_h2_lanczos_3.webp
+│           │       └── featured_hu4f5e4e7d13b321e67cc2b68af7421793_71134_720x2500_fit_q75_h2_lanczos_3.webp
+│           ├── project
+│           │   ├── africa2021
+│           │   │   ├── featured_hu7785eb994fccff8e068e7d8ecaa8d5d8_332917_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu7785eb994fccff8e068e7d8ecaa8d5d8_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu7785eb994fccff8e068e7d8ecaa8d5d8_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── africa2021vs2022
+│           │   │   ├── featured_hu93e5dd1036ca301e87bf44081a57101a_412225_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu93e5dd1036ca301e87bf44081a57101a_412225_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu93e5dd1036ca301e87bf44081a57101a_412225_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── africagdppercapita
+│           │   │   ├── featured_hu2d4565e7e84e5c765864d5e5f53b44cd_528191_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu2d4565e7e84e5c765864d5e5f53b44cd_528191_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu2d4565e7e84e5c765864d5e5f53b44cd_528191_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── asia2021
+│           │   │   ├── featured_hu8159ee74ac9a32300ec559082240942a_332917_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu8159ee74ac9a32300ec559082240942a_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu8159ee74ac9a32300ec559082240942a_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── asia2021vs2022
+│           │   │   ├── featured_hu22465011ad090c4f10773f9cb285048a_247424_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu22465011ad090c4f10773f9cb285048a_247424_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu22465011ad090c4f10773f9cb285048a_247424_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── bedscovid
+│           │   │   ├── featured_huf5b7e6413d30613ab57acda6864cd771_269380_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_huf5b7e6413d30613ab57acda6864cd771_269380_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_huf5b7e6413d30613ab57acda6864cd771_269380_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── credisdash
+│           │   │   ├── featured_hu639f18232a280ab906739575e5469f8b_173475_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu639f18232a280ab906739575e5469f8b_173475_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu639f18232a280ab906739575e5469f8b_173475_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── durationcoviddeaths
+│           │   │   ├── featured_huad205d108cc1bf35ee358346c959ecc2_157648_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_huad205d108cc1bf35ee358346c959ecc2_157648_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_huad205d108cc1bf35ee358346c959ecc2_157648_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── euVSusCOVID
+│           │   │   ├── featured_huf903ccfb495e76169a58f3f670cd9498_305898_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_huf903ccfb495e76169a58f3f670cd9498_305898_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_huf903ccfb495e76169a58f3f670cd9498_305898_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── europe2021
+│           │   │   ├── featured_hu74c6ea8b64b396e0bfc8adf6d7f3ee27_54825_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu74c6ea8b64b396e0bfc8adf6d7f3ee27_54825_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu74c6ea8b64b396e0bfc8adf6d7f3ee27_54825_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── europe2021vs2022
+│           │   │   ├── featured_hu95ae9a1d2b3c182bc90c7de22edba05c_583441_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu95ae9a1d2b3c182bc90c7de22edba05c_583441_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu95ae9a1d2b3c182bc90c7de22edba05c_583441_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── flipped-classroom
+│           │   │   ├── featured_hu32c8281e263fb4c2ab8f7b60beec7ca2_1359355_150x0_resize_q75_h2_lanczos.webp
+│           │   │   ├── featured_hu32c8281e263fb4c2ab8f7b60beec7ca2_1359355_720x2500_fit_q75_h2_lanczos.webp
+│           │   │   └── featured_hu32c8281e263fb4c2ab8f7b60beec7ca2_1359355_808x455_fill_q75_h2_lanczos_smart1.webp
+│           │   ├── municdash
+│           │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_huaed93007df63d3b5ebaff885335c6166_157648_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_huaed93007df63d3b5ebaff885335c6166_157648_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── northam2021
+│           │   │   ├── featured_hu4708d49d717c06ea3529a9a38ad7b606_332917_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hu4708d49d717c06ea3529a9a38ad7b606_332917_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hu4708d49d717c06ea3529a9a38ad7b606_332917_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   ├── pain-network-dashboard
+│           │   │   ├── featured_hud7caa66fdddea552392995118713f0c8_6491887_150x0_resize_q75_h2_lanczos_3.webp
+│           │   │   ├── featured_hud7caa66fdddea552392995118713f0c8_6491887_720x2500_fit_q75_h2_lanczos_3.webp
+│           │   │   └── featured_hud7caa66fdddea552392995118713f0c8_6491887_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           │   └── tuniscovid
+│           │       ├── featured_hued2f3f670bc446e18e471b5d4aa1657d_269380_150x0_resize_q75_h2_lanczos_3.webp
+│           │       ├── featured_hued2f3f670bc446e18e471b5d4aa1657d_269380_720x2500_fit_q75_h2_lanczos_3.webp
+│           │       └── featured_hued2f3f670bc446e18e471b5d4aa1657d_269380_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│           └── tutorials
+│               ├── DepartParisMap
+│               │   ├── featured_hu27024cd0fc0b3bef7d825731daa8bf91_164472_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu27024cd0fc0b3bef7d825731daa8bf91_164472_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu27024cd0fc0b3bef7d825731daa8bf91_164472_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── animalmodels
+│               │   ├── featured_hu6eba325ab0134618c53c3be72423ea56_1648276_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu6eba325ab0134618c53c3be72423ea56_1648276_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu6eba325ab0134618c53c3be72423ea56_1648276_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── bayesiansingleparametermodels
+│               │   ├── featured_hu50b3d62015a5928522d2eb855a22bdad_45245_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu50b3d62015a5928522d2eb855a22bdad_45245_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu50b3d62015a5928522d2eb855a22bdad_45245_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── bigdatawithr
+│               │   ├── featured_hu03aa9057fa1b216d7e5921fa1e695c4d_566542_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu03aa9057fa1b216d7e5921fa1e695c4d_566542_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu03aa9057fa1b216d7e5921fa1e695c4d_566542_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── collectingdata
+│               │   ├── featured_hua52532cf2c9c204c43090802c4969fcf_164264_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hua52532cf2c9c204c43090802c4969fcf_164264_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hua52532cf2c9c204c43090802c4969fcf_164264_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── datavizwithr
+│               │   ├── featured_hu08d6a7cd8a70d8e0f3c9f16a985e62d0_566542_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu08d6a7cd8a70d8e0f3c9f16a985e62d0_566542_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu08d6a7cd8a70d8e0f3c9f16a985e62d0_566542_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── descriptive
+│               │   ├── featured_hudcb971aeba902520f5f13203ae153036_458064_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hudcb971aeba902520f5f13203ae153036_458064_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hudcb971aeba902520f5f13203ae153036_458064_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── dugongBExamp
+│               │   ├── featured_hub3d483e6c19d3bb7e304b722ca3d4266_304521_150x0_resize_q75_h2_lanczos.webp
+│               │   ├── featured_hub3d483e6c19d3bb7e304b722ca3d4266_304521_720x2500_fit_q75_h2_lanczos.webp
+│               │   └── featured_hub3d483e6c19d3bb7e304b722ca3d4266_304521_808x455_fill_q75_h2_lanczos_smart1.webp
+│               ├── estimation
+│               │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu1e7865f0281825fd3e80932f124b6f64_62531_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── getR
+│               │   ├── featured_hu7fd0008bcb6d6ae8af084559fab967b1_5161_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu7fd0008bcb6d6ae8af084559fab967b1_5161_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu7fd0008bcb6d6ae8af084559fab967b1_5161_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── hypothesis
+│               │   ├── featured_hu103b5fcaf42c982e4ae4d2b68401d325_17638_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu103b5fcaf42c982e4ae4d2b68401d325_17638_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu103b5fcaf42c982e4ae4d2b68401d325_17638_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── interactiveafrica
+│               │   ├── featured_hu83b87f1c1a889e6b4f2bc223f556d0db_155645_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu83b87f1c1a889e6b4f2bc223f556d0db_155645_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu83b87f1c1a889e6b4f2bc223f556d0db_155645_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── mosaicplots
+│               │   ├── featured_hu847f6a49e9226eb217d8f1c3ab96a2fd_107273_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu847f6a49e9226eb217d8f1c3ab96a2fd_107273_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu847f6a49e9226eb217d8f1c3ab96a2fd_107273_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── multipleregression
+│               │   ├── featured_hu69ba82cbec1a12c9a1a06c9beb949b52_27404_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu69ba82cbec1a12c9a1a06c9beb949b52_27404_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu69ba82cbec1a12c9a1a06c9beb949b52_27404_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── numpy
+│               │   ├── featured_hu88e72d93c6893a420c2319499fdfe446_5115_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu88e72d93c6893a420c2319499fdfe446_5115_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu88e72d93c6893a420c2319499fdfe446_5115_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── pandas
+│               │   ├── featured_hu067c5a20b2ca4710e5eee58464340920_17875_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu067c5a20b2ca4710e5eee58464340920_17875_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu067c5a20b2ca4710e5eee58464340920_17875_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── probdistpython
+│               │   ├── featured_hufeaeaf896de15cb9891a443770c943b0_16245_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hufeaeaf896de15cb9891a443770c943b0_16245_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hufeaeaf896de15cb9891a443770c943b0_16245_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── rapwithR
+│               │   ├── featured_hu374bae7cd9f901eb0b37eae975971ba4_350333_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu374bae7cd9f901eb0b37eae975971ba4_350333_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu374bae7cd9f901eb0b37eae975971ba4_350333_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── rdtalk
+│               │   ├── featured_hu53eba6338ff86cfaebc509890c36bef6_104065_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu53eba6338ff86cfaebc509890c36bef6_104065_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu53eba6338ff86cfaebc509890c36bef6_104065_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               ├── sensorywithr
+│               │   ├── featured_hu4db0db2b62fffec30695c5366ceaa52a_25460_150x0_resize_q75_h2_lanczos_3.webp
+│               │   ├── featured_hu4db0db2b62fffec30695c5366ceaa52a_25460_720x2500_fit_q75_h2_lanczos_3.webp
+│               │   └── featured_hu4db0db2b62fffec30695c5366ceaa52a_25460_808x455_fill_q75_h2_lanczos_smart1_3.webp
+│               └── tsukubatalk
+│                   ├── featured_hu4a00d106f218cf2add5d39f5f342711f_83467_150x0_resize_q75_h2_lanczos_3.webp
+│                   ├── featured_hu4a00d106f218cf2add5d39f5f342711f_83467_720x2500_fit_q75_h2_lanczos_3.webp
+│                   └── featured_hu4a00d106f218cf2add5d39f5f342711f_83467_808x455_fill_q75_h2_lanczos_smart1_3.webp
+├── static
+│   ├── _headers
+│   ├── dashboards
+│   │   ├── pain-network-dashboard.html
+│   │   └── research-dashboard.html
+│   ├── extractBIB.R
+│   ├── media
+│   │   └── boards.jpg
+│   ├── own-bib.json
+│   ├── timeline.html
+│   └── uploads
+│       ├── Syllabus_DSCI_1412__Fundamentals_of_Data_Science_II.pdf
+│       ├── Syllabus_Time_Series_Dauphine_Tunis_2022.pdf
+│       ├── own-bib.bib
+│       ├── own-bib.json
+│       └── resume.pdf
+└── themes
+    ├── github.com
+    │   └── wowchemy
+    │       └── wowchemy-hugo-modules
+    │           ├── wowchemy
+    │           │   └── v5
+    │           │       ├── archetypes
+    │           │       │   ├── authors
+    │           │       │   │   ├── _index.md
+    │           │       │   │   └── avatar.jpg
+    │           │       │   ├── book.md
+    │           │       │   ├── default.md
+    │           │       │   ├── event
+    │           │       │   │   └── index.md
+    │           │       │   ├── home.md
+    │           │       │   ├── post
+    │           │       │   │   └── index.md
+    │           │       │   ├── project
+    │           │       │   │   └── index.md
+    │           │       │   ├── publication
+    │           │       │   │   └── index.md
+    │           │       │   └── slides
+    │           │       │       └── index.md
+    │           │       ├── assets
+    │           │       │   ├── css
+    │           │       │   │   ├── libs
+    │           │       │   │   │   └── fontawesome
+    │           │       │   │   │       └── all.min.css
+    │           │       │   │   └── reveal_custom.css
+    │           │       │   ├── js
+    │           │       │   │   ├── _vendor
+    │           │       │   │   │   ├── bootstrap.bundle.min.js
+    │           │       │   │   │   ├── headroom.min.js
+    │           │       │   │   │   ├── instantpage.js
+    │           │       │   │   │   ├── jquery.min.js
+    │           │       │   │   │   └── medium-zoom.esm.js
+    │           │       │   │   ├── algolia-search.js
+    │           │       │   │   ├── mathjax-config.js
+    │           │       │   │   ├── wowchemy-animation.js
+    │           │       │   │   ├── wowchemy-headroom.js
+    │           │       │   │   ├── wowchemy-init.js
+    │           │       │   │   ├── wowchemy-search.js
+    │           │       │   │   ├── wowchemy-slides.js
+    │           │       │   │   ├── wowchemy-theming.js
+    │           │       │   │   ├── wowchemy-utils.js
+    │           │       │   │   └── wowchemy.js
+    │           │       │   ├── media
+    │           │       │   │   ├── icon.png
+    │           │       │   │   └── icons
+    │           │       │   │       └── brands
+    │           │       │   │           ├── coursera.svg
+    │           │       │   │           ├── datacamp.svg
+    │           │       │   │           └── edx.svg
+    │           │       │   └── scss
+    │           │       │       ├── _vendor
+    │           │       │       │   └── bootstrap
+    │           │       │       │       ├── _alert.scss
+    │           │       │       │       ├── _badge.scss
+    │           │       │       │       ├── _breadcrumb.scss
+    │           │       │       │       ├── _button-group.scss
+    │           │       │       │       ├── _buttons.scss
+    │           │       │       │       ├── _card.scss
+    │           │       │       │       ├── _carousel.scss
+    │           │       │       │       ├── _close.scss
+    │           │       │       │       ├── _code.scss
+    │           │       │       │       ├── _custom-forms.scss
+    │           │       │       │       ├── _dropdown.scss
+    │           │       │       │       ├── _forms.scss
+    │           │       │       │       ├── _functions.scss
+    │           │       │       │       ├── _grid.scss
+    │           │       │       │       ├── _images.scss
+    │           │       │       │       ├── _input-group.scss
+    │           │       │       │       ├── _jumbotron.scss
+    │           │       │       │       ├── _list-group.scss
+    │           │       │       │       ├── _media.scss
+    │           │       │       │       ├── _mixins.scss
+    │           │       │       │       ├── _modal.scss
+    │           │       │       │       ├── _nav.scss
+    │           │       │       │       ├── _navbar.scss
+    │           │       │       │       ├── _pagination.scss
+    │           │       │       │       ├── _popover.scss
+    │           │       │       │       ├── _print.scss
+    │           │       │       │       ├── _progress.scss
+    │           │       │       │       ├── _reboot.scss
+    │           │       │       │       ├── _root.scss
+    │           │       │       │       ├── _spinners.scss
+    │           │       │       │       ├── _tables.scss
+    │           │       │       │       ├── _toasts.scss
+    │           │       │       │       ├── _tooltip.scss
+    │           │       │       │       ├── _transitions.scss
+    │           │       │       │       ├── _type.scss
+    │           │       │       │       ├── _utilities.scss
+    │           │       │       │       ├── _variables.scss
+    │           │       │       │       ├── _vendor
+    │           │       │       │       │   └── _rfs.scss
+    │           │       │       │       ├── bootstrap-grid.scss
+    │           │       │       │       ├── bootstrap-reboot.scss
+    │           │       │       │       ├── bootstrap.scss
+    │           │       │       │       ├── mixins
+    │           │       │       │       │   ├── _alert.scss
+    │           │       │       │       │   ├── _background-variant.scss
+    │           │       │       │       │   ├── _badge.scss
+    │           │       │       │       │   ├── _border-radius.scss
+    │           │       │       │       │   ├── _box-shadow.scss
+    │           │       │       │       │   ├── _breakpoints.scss
+    │           │       │       │       │   ├── _buttons.scss
+    │           │       │       │       │   ├── _caret.scss
+    │           │       │       │       │   ├── _clearfix.scss
+    │           │       │       │       │   ├── _deprecate.scss
+    │           │       │       │       │   ├── _float.scss
+    │           │       │       │       │   ├── _forms.scss
+    │           │       │       │       │   ├── _gradients.scss
+    │           │       │       │       │   ├── _grid-framework.scss
+    │           │       │       │       │   ├── _grid.scss
+    │           │       │       │       │   ├── _hover.scss
+    │           │       │       │       │   ├── _image.scss
+    │           │       │       │       │   ├── _list-group.scss
+    │           │       │       │       │   ├── _lists.scss
+    │           │       │       │       │   ├── _nav-divider.scss
+    │           │       │       │       │   ├── _pagination.scss
+    │           │       │       │       │   ├── _reset-text.scss
+    │           │       │       │       │   ├── _resize.scss
+    │           │       │       │       │   ├── _screen-reader.scss
+    │           │       │       │       │   ├── _size.scss
+    │           │       │       │       │   ├── _table-row.scss
+    │           │       │       │       │   ├── _text-emphasis.scss
+    │           │       │       │       │   ├── _text-hide.scss
+    │           │       │       │       │   ├── _text-truncate.scss
+    │           │       │       │       │   ├── _transition.scss
+    │           │       │       │       │   └── _visibility.scss
+    │           │       │       │       └── utilities
+    │           │       │       │           ├── _align.scss
+    │           │       │       │           ├── _background.scss
+    │           │       │       │           ├── _borders.scss
+    │           │       │       │           ├── _clearfix.scss
+    │           │       │       │           ├── _display.scss
+    │           │       │       │           ├── _embed.scss
+    │           │       │       │           ├── _flex.scss
+    │           │       │       │           ├── _float.scss
+    │           │       │       │           ├── _interactions.scss
+    │           │       │       │           ├── _overflow.scss
+    │           │       │       │           ├── _position.scss
+    │           │       │       │           ├── _screenreaders.scss
+    │           │       │       │           ├── _shadows.scss
+    │           │       │       │           ├── _sizing.scss
+    │           │       │       │           ├── _spacing.scss
+    │           │       │       │           ├── _stretched-link.scss
+    │           │       │       │           ├── _text.scss
+    │           │       │       │           └── _visibility.scss
+    │           │       │       ├── bootstrap_variables.scss
+    │           │       │       ├── custom.scss
+    │           │       │       ├── main.scss
+    │           │       │       ├── template.scss
+    │           │       │       └── wowchemy
+    │           │       │           ├── _base.scss
+    │           │       │           ├── _dark.scss
+    │           │       │           ├── _integrations.scss
+    │           │       │           ├── components
+    │           │       │           │   ├── _all.scss
+    │           │       │           │   ├── _author-card.scss
+    │           │       │           │   ├── _breadcrumb.scss
+    │           │       │           │   ├── _card.scss
+    │           │       │           │   ├── _modal.scss
+    │           │       │           │   ├── _nav.scss
+    │           │       │           │   ├── _pagination.scss
+    │           │       │           │   ├── _sharing.scss
+    │           │       │           │   └── _shortcode.scss
+    │           │       │           ├── elements
+    │           │       │           │   ├── _all.scss
+    │           │       │           │   ├── _button.scss
+    │           │       │           │   ├── _callout.scss
+    │           │       │           │   ├── _content.scss
+    │           │       │           │   ├── _icon.scss
+    │           │       │           │   ├── _media.scss
+    │           │       │           │   ├── _table.scss
+    │           │       │           │   └── _tag.scss
+    │           │       │           ├── helpers
+    │           │       │           │   ├── _all.scss
+    │           │       │           │   └── _word-wrap.scss
+    │           │       │           ├── layouts
+    │           │       │           │   ├── _all.scss
+    │           │       │           │   ├── _book.scss
+    │           │       │           │   ├── _footer.scss
+    │           │       │           │   ├── _listing.scss
+    │           │       │           │   ├── _publication.scss
+    │           │       │           │   ├── _rtl.scss
+    │           │       │           │   └── _search.scss
+    │           │       │           ├── widgets
+    │           │       │           │   ├── _about.scss
+    │           │       │           │   ├── _all.scss
+    │           │       │           │   ├── _base.scss
+    │           │       │           │   ├── _contact.scss
+    │           │       │           │   ├── _experience.scss
+    │           │       │           │   ├── _featurette.scss
+    │           │       │           │   ├── _hero.scss
+    │           │       │           │   ├── _people.scss
+    │           │       │           │   └── _portfolio.scss
+    │           │       │           └── wowchemy.scss
+    │           │       ├── config.yaml
+    │           │       ├── data
+    │           │       │   ├── address_formats.toml
+    │           │       │   ├── assets.toml
+    │           │       │   ├── fonts
+    │           │       │   │   ├── classic.toml
+    │           │       │   │   ├── cyberpunk.toml
+    │           │       │   │   ├── minimal.toml
+    │           │       │   │   ├── mr_robot.toml
+    │           │       │   │   ├── native.toml
+    │           │       │   │   └── rose.toml
+    │           │       │   ├── i18n
+    │           │       │   │   ├── languages.yaml
+    │           │       │   │   └── rtl.toml
+    │           │       │   ├── page_sharer.toml
+    │           │       │   ├── publication_types.toml
+    │           │       │   ├── themes
+    │           │       │   │   ├── 1950s.toml
+    │           │       │   │   ├── apogee.toml
+    │           │       │   │   ├── coffee.toml
+    │           │       │   │   ├── cyberpunk.toml
+    │           │       │   │   ├── dark.toml
+    │           │       │   │   ├── earth.toml
+    │           │       │   │   ├── forest.toml
+    │           │       │   │   ├── minimal.toml
+    │           │       │   │   ├── mr_robot.toml
+    │           │       │   │   ├── ocean.toml
+    │           │       │   │   ├── rose.toml
+    │           │       │   │   └── strawberry.toml
+    │           │       │   └── wowchemy.toml
+    │           │       ├── go.mod
+    │           │       ├── i18n
+    │           │       │   ├── ar.yaml
+    │           │       │   ├── ca.yaml
+    │           │       │   ├── cs.yaml
+    │           │       │   ├── da.yaml
+    │           │       │   ├── de.yaml
+    │           │       │   ├── el.yaml
+    │           │       │   ├── en.yaml
+    │           │       │   ├── es.yaml
+    │           │       │   ├── et.yaml
+    │           │       │   ├── eu.yaml
+    │           │       │   ├── fa.yaml
+    │           │       │   ├── fi.yaml
+    │           │       │   ├── fr.yaml
+    │           │       │   ├── he.yaml
+    │           │       │   ├── hu.yaml
+    │           │       │   ├── id.yaml
+    │           │       │   ├── it.yaml
+    │           │       │   ├── ja.yaml
+    │           │       │   ├── km.yaml
+    │           │       │   ├── ko.yaml
+    │           │       │   ├── lt.yaml
+    │           │       │   ├── lv.yaml
+    │           │       │   ├── nb.yaml
+    │           │       │   ├── nl.yaml
+    │           │       │   ├── pl.yaml
+    │           │       │   ├── pt.yaml
+    │           │       │   ├── ro.yaml
+    │           │       │   ├── ru.yaml
+    │           │       │   ├── so.yaml
+    │           │       │   ├── sv.yaml
+    │           │       │   ├── tr.yaml
+    │           │       │   ├── uk.yaml
+    │           │       │   ├── vi.yaml
+    │           │       │   ├── zh-Hant.yaml
+    │           │       │   └── zh.yaml
+    │           │       ├── images
+    │           │       │   ├── screenshot.png
+    │           │       │   └── tn.png
+    │           │       ├── layouts
+    │           │       │   ├── 404.html
+    │           │       │   ├── _default
+    │           │       │   │   ├── _markup
+    │           │       │   │   │   ├── render-image.html
+    │           │       │   │   │   └── render-link.html
+    │           │       │   │   ├── baseof.html
+    │           │       │   │   ├── list.html
+    │           │       │   │   ├── rss.xml
+    │           │       │   │   ├── single.html
+    │           │       │   │   └── sitemap.xml
+    │           │       │   ├── authors
+    │           │       │   │   ├── list.html
+    │           │       │   │   └── terms.html
+    │           │       │   ├── book
+    │           │       │   │   ├── list.html
+    │           │       │   │   └── single.html
+    │           │       │   ├── event
+    │           │       │   │   └── single.html
+    │           │       │   ├── index.headers
+    │           │       │   ├── index.html
+    │           │       │   ├── index.json
+    │           │       │   ├── index.redirects
+    │           │       │   ├── index.webmanifest
+    │           │       │   ├── partials
+    │           │       │   │   ├── book_layout.html
+    │           │       │   │   ├── book_menu.html
+    │           │       │   │   ├── book_sidebar.html
+    │           │       │   │   ├── citation.html
+    │           │       │   │   ├── comments
+    │           │       │   │   │   ├── commento.html
+    │           │       │   │   │   └── disqus.html
+    │           │       │   │   ├── comments.html
+    │           │       │   │   ├── components
+    │           │       │   │   │   ├── breadcrumb.html
+    │           │       │   │   │   └── page_sharer.html
+    │           │       │   │   ├── cookie_consent.html
+    │           │       │   │   ├── custom_head.html
+    │           │       │   │   ├── custom_js.html
+    │           │       │   │   ├── functions
+    │           │       │   │   │   ├── get_address.html
+    │           │       │   │   │   ├── get_author_name.html
+    │           │       │   │   │   ├── get_event_dates.html
+    │           │       │   │   │   ├── get_icon.html
+    │           │       │   │   │   ├── get_logo.html
+    │           │       │   │   │   ├── get_logo_url.html
+    │           │       │   │   │   ├── get_pub_types.html
+    │           │       │   │   │   ├── get_social_link.html
+    │           │       │   │   │   ├── has_attachments.html
+    │           │       │   │   │   ├── parse_theme.html
+    │           │       │   │   │   └── render_view.html
+    │           │       │   │   ├── hooks
+    │           │       │   │   │   ├── footer.html
+    │           │       │   │   │   ├── page_toc_end.html
+    │           │       │   │   │   └── page_toc_start.html
+    │           │       │   │   ├── jsonld
+    │           │       │   │   │   ├── article.html
+    │           │       │   │   │   ├── business.html
+    │           │       │   │   │   ├── event.html
+    │           │       │   │   │   ├── main.html
+    │           │       │   │   │   └── website.html
+    │           │       │   │   ├── marketing
+    │           │       │   │   │   ├── baidu_tongji.html
+    │           │       │   │   │   ├── google_analytics.html
+    │           │       │   │   │   ├── google_tag_manager.html
+    │           │       │   │   │   └── microsoft_clarity.html
+    │           │       │   │   ├── navbar.html
+    │           │       │   │   ├── page_author.html
+    │           │       │   │   ├── page_author_card.html
+    │           │       │   │   ├── page_edit.html
+    │           │       │   │   ├── page_footer.html
+    │           │       │   │   ├── page_header.html
+    │           │       │   │   ├── page_links.html
+    │           │       │   │   ├── page_links_div.html
+    │           │       │   │   ├── page_metadata.html
+    │           │       │   │   ├── page_metadata_authors.html
+    │           │       │   │   ├── page_related.html
+    │           │       │   │   ├── pagination.html
+    │           │       │   │   ├── search.html
+    │           │       │   │   ├── section_pager.html
+    │           │       │   │   ├── site_footer.html
+    │           │       │   │   ├── site_footer_license.html
+    │           │       │   │   ├── site_head.html
+    │           │       │   │   ├── site_js.html
+    │           │       │   │   ├── slides.html
+    │           │       │   │   ├── social_links.html
+    │           │       │   │   ├── tags.html
+    │           │       │   │   ├── views
+    │           │       │   │   │   ├── card.html
+    │           │       │   │   │   ├── citation.html
+    │           │       │   │   │   ├── community
+    │           │       │   │   │   ├── compact.html
+    │           │       │   │   │   ├── list.html
+    │           │       │   │   │   ├── masonry.html
+    │           │       │   │   │   └── showcase.html
+    │           │       │   │   ├── widget_page.html
+    │           │       │   │   └── widgets
+    │           │       │   │       ├── about.avatar.html
+    │           │       │   │       ├── about.html
+    │           │       │   │       ├── accomplishments.html
+    │           │       │   │       ├── blank.html
+    │           │       │   │       ├── contact.html
+    │           │       │   │       ├── experience.html
+    │           │       │   │       ├── featured.html
+    │           │       │   │       ├── featurette.html
+    │           │       │   │       ├── hero.html
+    │           │       │   │       ├── pages.html
+    │           │       │   │       ├── people.html
+    │           │       │   │       ├── portfolio.html
+    │           │       │   │       ├── slider.html
+    │           │       │   │       └── tag_cloud.html
+    │           │       │   ├── project
+    │           │       │   │   └── single.html
+    │           │       │   ├── publication
+    │           │       │   │   └── single.html
+    │           │       │   ├── robots.txt
+    │           │       │   ├── section
+    │           │       │   │   ├── event.html
+    │           │       │   │   ├── post.html
+    │           │       │   │   └── publication.html
+    │           │       │   ├── shortcodes
+    │           │       │   │   ├── audio.html
+    │           │       │   │   ├── callout.html
+    │           │       │   │   ├── chart.html
+    │           │       │   │   ├── cite.html
+    │           │       │   │   ├── cta.html
+    │           │       │   │   ├── diagram.html
+    │           │       │   │   ├── emoji_list.html
+    │           │       │   │   ├── figure.html
+    │           │       │   │   ├── fragment.html
+    │           │       │   │   ├── gallery.html
+    │           │       │   │   ├── gdocs.html
+    │           │       │   │   ├── hl.html
+    │           │       │   │   ├── icon.html
+    │           │       │   │   ├── list_categories.html
+    │           │       │   │   ├── list_children.html
+    │           │       │   │   ├── list_tags.html
+    │           │       │   │   ├── mention.html
+    │           │       │   │   ├── slide.html
+    │           │       │   │   ├── speaker_note.html
+    │           │       │   │   ├── spoiler.html
+    │           │       │   │   ├── staticref.html
+    │           │       │   │   ├── table.html
+    │           │       │   │   ├── toc.html
+    │           │       │   │   └── video.html
+    │           │       │   ├── slides
+    │           │       │   │   ├── baseof.html
+    │           │       │   │   ├── list.html
+    │           │       │   │   └── single.html
+    │           │       │   └── widget_page
+    │           │       │       └── single.html
+    │           │       ├── static
+    │           │       │   └── webfonts
+    │           │       │       ├── fa-brands-400.eot
+    │           │       │       ├── fa-brands-400.svg
+    │           │       │       ├── fa-brands-400.ttf
+    │           │       │       ├── fa-brands-400.woff
+    │           │       │       ├── fa-brands-400.woff2
+    │           │       │       ├── fa-regular-400.eot
+    │           │       │       ├── fa-regular-400.svg
+    │           │       │       ├── fa-regular-400.ttf
+    │           │       │       ├── fa-regular-400.woff
+    │           │       │       ├── fa-regular-400.woff2
+    │           │       │       ├── fa-solid-900.eot
+    │           │       │       ├── fa-solid-900.svg
+    │           │       │       ├── fa-solid-900.ttf
+    │           │       │       ├── fa-solid-900.woff
+    │           │       │       └── fa-solid-900.woff2
+    │           │       └── theme.toml
+    │           └── wowchemy-cms
+    │               └── v5
+    │                   ├── README.md
+    │                   ├── config.yaml
+    │                   ├── data
+    │                   │   └── wowchemy_cms_tpl.yaml
+    │                   ├── functions
+    │                   │   ├── generate.html
+    │                   │   └── parse.html
+    │                   ├── go.mod
+    │                   └── templates
+    │                       ├── single.html
+    │                       └── single.wowchemycms_config.yml
+    └── starter-hugo-academic
+        ├── LICENSE.md
+        ├── README.md
+        ├── assets
+        │   └── media
+        │       ├── albums
+        │       ├── icon.png
+        │       └── icons
+        │           └── brands
+        │               ├── org-gc.svg
+        │               └── org-x.svg
+        ├── data
+        │   ├── fonts
+        │   ├── page_sharer.toml
+        │   └── themes
+        ├── exampleSite
+        │   ├── assets
+        │   │   ├── media
+        │   │   │   ├── albums
+        │   │   │   │   └── themes
+        │   │   │   │       ├── theme-1950s.png
+        │   │   │   │       ├── theme-apogee.png
+        │   │   │   │       ├── theme-coffee-playfair.png
+        │   │   │   │       ├── theme-dark.png
+        │   │   │   │       ├── theme-default.png
+        │   │   │   │       ├── theme-forest.png
+        │   │   │   │       ├── theme-ocean.png
+        │   │   │   │       └── theme-strawberry.png
+        │   │   │   ├── icons
+        │   │   │   │   └── brands
+        │   │   │   │       ├── org-gc.svg
+        │   │   │   │       └── org-x.svg
+        │   │   │   └── open-book.jpg
+        │   │   └── scss
+        │   │       └── template.scss
+        │   ├── config
+        │   │   └── _default
+        │   │       ├── config.yaml
+        │   │       ├── languages.yaml
+        │   │       ├── menus.yaml
+        │   │       └── params.yaml
+        │   ├── content
+        │   │   ├── _index.md
+        │   │   ├── admin
+        │   │   │   └── index.md
+        │   │   ├── authors
+        │   │   │   ├── admin
+        │   │   │   │   ├── _index.md
+        │   │   │   │   └── avatar.jpg
+        │   │   │   └── σÉ│µü⌐Θüö
+        │   │   │       ├── _index.md
+        │   │   │       └── avatar.jpg
+        │   │   ├── courses
+        │   │   │   ├── _index.md
+        │   │   │   └── example
+        │   │   │       ├── _index.md
+        │   │   │       ├── featured.jpg
+        │   │   │       ├── python.md
+        │   │   │       ├── stats.md
+        │   │   │       └── visualization.md
+        │   │   ├── event
+        │   │   │   ├── _index.md
+        │   │   │   └── example
+        │   │   │       ├── featured.jpg
+        │   │   │       └── index.md
+        │   │   ├── home
+        │   │   │   ├── about.md
+        │   │   │   ├── accomplishments.md
+        │   │   │   ├── contact.md
+        │   │   │   ├── demo.md
+        │   │   │   ├── experience.md
+        │   │   │   ├── featured.md
+        │   │   │   ├── gallery.md
+        │   │   │   ├── hero-academic.png
+        │   │   │   ├── hero.md
+        │   │   │   ├── index.md
+        │   │   │   ├── posts.md
+        │   │   │   ├── projects.md
+        │   │   │   ├── publications.md
+        │   │   │   ├── skills.md
+        │   │   │   ├── tags.md
+        │   │   │   └── talks.md
+        │   │   ├── post
+        │   │   │   ├── _index.md
+        │   │   │   ├── getting-started
+        │   │   │   │   ├── featured.jpg
+        │   │   │   │   └── index.md
+        │   │   │   ├── jupyter
+        │   │   │   │   ├── featured.png
+        │   │   │   │   ├── index.ipynb
+        │   │   │   │   ├── index.md
+        │   │   │   │   └── index_1_0.png
+        │   │   │   └── writing-technical-content
+        │   │   │       ├── featured.jpg
+        │   │   │       ├── index.md
+        │   │   │       └── line-chart.json
+        │   │   ├── privacy.md
+        │   │   ├── project
+        │   │   │   ├── external-project
+        │   │   │   │   ├── featured.jpg
+        │   │   │   │   └── index.md
+        │   │   │   └── internal-project
+        │   │   │       ├── featured.jpg
+        │   │   │       └── index.md
+        │   │   ├── publication
+        │   │   │   ├── _index.md
+        │   │   │   ├── conference-paper
+        │   │   │   │   ├── cite.bib
+        │   │   │   │   ├── featured.jpg
+        │   │   │   │   └── index.md
+        │   │   │   ├── journal-article
+        │   │   │   │   ├── cite.bib
+        │   │   │   │   ├── featured.jpg
+        │   │   │   │   └── index.md
+        │   │   │   └── preprint
+        │   │   │       ├── featured.jpg
+        │   │   │       └── index.md
+        │   │   ├── slides
+        │   │   │   └── example
+        │   │   │       └── index.md
+        │   │   └── terms.md
+        │   ├── layouts
+        │   │   └── partials
+        │   │       └── custom_js.html
+        │   ├── netlify.toml
+        │   ├── resources
+        │   │   └── _gen
+        │   │       ├── assets
+        │   │       │   └── scss
+        │   │       │       └── scss
+        │   │       │           ├── main.scss_ad7c01202310d8f56313e4e954344ccc.content
+        │   │       │           └── main.scss_ad7c01202310d8f56313e4e954344ccc.json
+        │   │       └── images
+        │   │           ├── authors
+        │   │           │   ├── admin
+        │   │           │   │   └── avatar_hu3c64bd0f98018e2d901b7c60447ac42e_1387900_270x270_fill_q75_lanczos_center.jpg
+        │   │           │   └── σÉ│µü⌐Θüö
+        │   │           │       └── avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg
+        │   │           ├── courses
+        │   │           │   └── example
+        │   │           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1200x1200_fit_q75_h2_lanczos.webp
+        │   │           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_150x0_resize_q75_h2_lanczos.webp
+        │   │           │       ├── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1b9abb16ac76a6406abab669d373f8be.webp
+        │   │           │       └── featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e01834a6f71cde63e116f2a393c09ac7.webp
+        │   │           ├── event
+        │   │           │   └── example
+        │   │           │       ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_150x0_resize_q75_h2_lanczos.webp
+        │   │           │       └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_720x2500_fit_q75_h2_lanczos.webp
+        │   │           ├── home
+        │   │           │   ├── hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_1200x0_resize_lanczos_3.png
+        │   │           │   ├── hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_400x0_resize_lanczos_3.png
+        │   │           │   └── hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_800x0_resize_lanczos_3.png
+        │   │           ├── media
+        │   │           │   ├── albums
+        │   │           │   │   └── demo
+        │   │           │   │       ├── chris-montgomery-smgTvepind4-unsplash_hu3de7c38bc09fe4bb33ec1fc222105033_3160894_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   │       ├── dan-gold-4_jhDO54BYg-unsplash-f_huadab9e2a6298a93203535960a6157483_3673790_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   │       ├── fotografierende-333oj7zFsdg-unsplash_hu3bb23653d32c408eefe8a3992b21fbd2_986191_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   │       ├── glenn-carstens-peters-npxXWgQ33ZQ-unsplash_hu4fbee8b709aacc4ebfd59bb0713b9f48_588975_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   │       ├── joseph-gonzalez-zcUgjyqEwe8-unsplash_hu94ef7cc5936c0328898d9575aad95082_404249_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   │       ├── matthew-osborn-wMRIcT86SWU-unsplash-l_hu7424330660c8095403b908ab762c7d42_6675422_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   │       └── priscilla-du-preez-K8XYGbw4Ahg-unsplash_hu9681d6bee55a5018cc404b0ddc14c7a7_1398488_0x190_resize_q75_h2_lanczos.webp
+        │   │           │   ├── icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png
+        │   │           │   ├── icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_3.png
+        │   │           │   ├── icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png
+        │   │           │   └── icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png
+        │   │           ├── open-book_hu0d86f8f808d8a156f6efd32fd52b11ce_54109_1920x1920_fit_q75_h2_lanczos.webp
+        │   │           ├── post
+        │   │           │   ├── getting-started
+        │   │           │   │   ├── featured_hub9ee31969f44a6711206a2baf9f065b4_241861_1200x2500_fit_q75_h2_lanczos.webp
+        │   │           │   │   └── featured_hub9ee31969f44a6711206a2baf9f065b4_241861_150x0_resize_q75_h2_lanczos.webp
+        │   │           │   ├── jupyter
+        │   │           │   │   ├── featured_hub1daa031c2af6888ff37bd93eb033a1a_71549_150x0_resize_q75_h2_lanczos_3.webp
+        │   │           │   │   └── featured_hub1daa031c2af6888ff37bd93eb033a1a_71549_720x2500_fit_q75_h2_lanczos_3.webp
+        │   │           │   └── writing-technical-content
+        │   │           │       ├── featured_huc72159e0fc0d14b85f60d34436a630f0_266353_150x0_resize_q75_h2_lanczos.webp
+        │   │           │       └── featured_huc72159e0fc0d14b85f60d34436a630f0_266353_2560x2560_fit_q75_h2_lanczos.webp
+        │   │           ├── project
+        │   │           │   ├── external-project
+        │   │           │   │   ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_329522_150x0_resize_q75_h2_lanczos.webp
+        │   │           │   │   ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_329522_720x2500_fit_q75_h2_lanczos.webp
+        │   │           │   │   └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_329522_808x455_fill_q75_h2_lanczos_smart1.webp
+        │   │           │   └── internal-project
+        │   │           │       ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_150x0_resize_q75_h2_lanczos.webp
+        │   │           │       ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_720x2500_fit_q75_h2_lanczos.webp
+        │   │           │       └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_808x455_fill_q75_h2_lanczos_smart1.webp
+        │   │           ├── publication
+        │   │           │   ├── conference-paper
+        │   │           │   │   ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_312700_150x0_resize_q75_h2_lanczos.webp
+        │   │           │   │   ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_312700_720x2500_fit_q75_h2_lanczos.webp
+        │   │           │   │   └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_312700_808x455_fill_q75_h2_lanczos_smart1.webp
+        │   │           │   ├── journal-article
+        │   │           │   │   ├── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_214168_150x0_resize_q75_h2_lanczos.webp
+        │   │           │   │   └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_214168_720x2500_fit_q75_h2_lanczos.webp
+        │   │           │   └── preprint
+        │   │           │       ├── featured_hu559a5add5185b02575aa8333502ab2cc_220813_150x0_resize_q75_h2_lanczos.webp
+        │   │           │       └── featured_hu559a5add5185b02575aa8333502ab2cc_220813_720x2500_fit_q75_h2_lanczos.webp
+        │   │           └── slides
+        │   │               └── example
+        │   │                   └── featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_150x0_resize_q75_h2_lanczos.webp
+        │   └── static
+        │       ├── media
+        │       │   └── boards.jpg
+        │       └── uploads
+        │           └── resume.pdf
+        ├── go.mod
+        ├── go.sum
+        ├── netlify.toml
+        ├── scripts
+        │   └── init_kickstart.sh
+        ├── static
+        │   └── uploads
+        ├── theme.toml
+        ├── update_wowchemy.sh
+        └── view.sh

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistics | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/statistics/</link>
+      <atom:link href="https://dhafermalouche.net/tag/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>statistics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>statistics</title>
+      <link>https://dhafermalouche.net/tag/statistics/</link>
+    </image>
+    
+    <item>
+      <title>Flipped Classroom Evaluation and Blended Learning Potential</title>
+      <link>https://dhafermalouche.net/project/flipped-classroom/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/flipped-classroom/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;RESEARCH article&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Smart Learning Environments (2025) 12:56&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;&lt;a href=&#34;https://doi.org/10.1186/s40561-025-00412-2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1186/s40561-025-00412-2&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;flipped-classroom-evaluation-and-blended-learning-potential-a-case-study-of-engagement-and-inclusion-in-quantitative-education&#34;&gt;Flipped classroom evaluation and blended learning potential: a case study of engagement and inclusion in quantitative education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Daria Mizza, Mike Reese, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;!-- Interactive Dashboard Button --&gt;
+&lt;div style=&#34;margin: 2rem 0; text-align: center;&#34;&gt;
+  &lt;a href=&#34;flipped-classroom-dashboard.html&#34; 
+     target=&#34;_blank&#34; 
+     rel=&#34;noopener noreferrer&#34;
+     style=&#34;display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s;&#34;&gt;
+    📊 Explore Interactive Dashboard
+    &lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; style=&#34;margin-left: 4px;&#34;&gt;
+      &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;/&gt;
+      &lt;polyline points=&#34;15 3 21 3 21 9&#34;/&gt;
+      &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;While Flipped Classroom and Blended Learning approaches show potential for promoting inclusion and engagement, current limitations in how Flipped Classroom serves diverse student populations highlight the need for empirical evaluation. Through an undergraduate social statistics course at Johns Hopkins University (Fall 2023 and Fall 2024, n=35), we assess Flipped Classroom&amp;rsquo;s impact on student engagement and inclusivity and identify how Blended Learning design elements could enhance learning experiences for diverse student populations. Findings reveal that while Flipped Classroom provides a foundation for learning, it presents significant limitations in fostering student autonomy and accommodating diverse learning preferences—challenges intensified in post-pandemic educational contexts.&lt;/p&gt;
+&lt;h3 id=&#34;key-findings&#34;&gt;Key Findings&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Metric&lt;/th&gt;
+&lt;th&gt;Agreement&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Pre-class materials clarity&lt;/td&gt;
+&lt;td&gt;100%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pre-class materials relevance&lt;/td&gt;
+&lt;td&gt;100%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Understanding of key concepts&lt;/td&gt;
+&lt;td&gt;96%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Student autonomy in independent learning&lt;/td&gt;
+&lt;td&gt;58%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Instructor-peer interaction opportunities&lt;/td&gt;
+&lt;td&gt;46%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Material diversity satisfaction&lt;/td&gt;
+&lt;td&gt;79%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;implications&#34;&gt;Implications&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Engagement gaps&lt;/strong&gt;: Only 46% perceived adequate interaction opportunities in pre-class activities&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Autonomy concerns&lt;/strong&gt;: 42% struggled with self-directed learning requirements&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inclusion challenges&lt;/strong&gt;: 21% found materials insufficiently diverse; 22% wanted more collaborative environments&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BL recommendation&lt;/strong&gt;: Strategic Blended Learning redesign could address FC limitations through enhanced interaction, material diversification, and progressive scaffolding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;keywords&#34;&gt;Keywords&lt;/h3&gt;
+&lt;p&gt;Flipped classroom evaluation, Blended learning potential, Post-pandemic education, Student engagement, Inclusive learning, Quantitative education, Social statistics&lt;/p&gt;
+&lt;h3 id=&#34;citation&#34;&gt;Citation&lt;/h3&gt;
+&lt;p&gt;Mizza D, Reese M and Malouche D (2025) Flipped classroom evaluation and blended learning potential: a case study of engagement and inclusion in quantitative education. &lt;em&gt;Smart Learn. Environ.&lt;/em&gt; 12:56. doi: 10.1186/s40561-025-00412-2&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+## Steps to implement:
+
+1. **Create the folder** (if it doesn&#39;t exist):
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;static/dashboards/&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+2. **Copy the dashboard file** to:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;static/dashboards/flipped-classroom-dashboard.html&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -21,8 +21,19 @@ title: Modeling Chronic Pain Interconnections Dashboard
 
 ---
 
-<iframe src="/dashboards/pain-network-dashboard.html" title="Modeling chronic pain interconnections dashboard" width="100%" height="900" frameborder="0" style="border-radius: 8px; border: 1px solid #dee2e6;"></iframe>
-
+<div style="margin: 2rem 0; text-align: center;">
+  <a href="pain-network-dashboard.html" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s;">
+    📊 Explore Interactive Dashboard
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 4px;">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+  </a>
+</div>
 ---
 
 ### Abstract

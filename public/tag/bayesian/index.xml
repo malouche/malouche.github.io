@@ -24,8 +24,20 @@
 &lt;h2 id=&#34;modeling-chronic-pain-interconnections-using-bayesian-networks-insights-from-the-qatar-biobank-study&#34;&gt;Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Aisha Al-Khinji, Dhafer Malouche&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;iframe src=&#34;https://dhafermalouche.net/dashboards/pain-network-dashboard.html&#34; title=&#34;Modeling chronic pain interconnections dashboard&#34; width=&#34;100%&#34; height=&#34;900&#34; frameborder=&#34;0&#34; style=&#34;border-radius: 8px; border: 1px solid #dee2e6;&#34;&gt;&lt;/iframe&gt;
-&lt;hr&gt;
+&lt;div style=&#34;margin: 2rem 0; text-align: center;&#34;&gt;
+  &lt;a href=&#34;pain-network-dashboard.html&#34; 
+     target=&#34;_blank&#34; 
+     rel=&#34;noopener noreferrer&#34;
+     style=&#34;display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s;&#34;&gt;
+    📊 Explore Interactive Dashboard
+    &lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; style=&#34;margin-left: 4px;&#34;&gt;
+      &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;/&gt;
+      &lt;polyline points=&#34;15 3 21 3 21 9&#34;/&gt;
+      &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+---
 &lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;This study examines the interdependencies among different chronic pain locations and their relationships with age and gender using data from 2,400 adult participants from the Qatar Biobank (QBB). A Bayesian network approach identified direct and indirect associations among pain locations and demographic factors, quantified by odds ratios (ORs). Key findings include strong correlations between hand pain and hip pain (OR 8.69), headache and facial pain (OR 11.30), and the significant role of back pain as a predictor of systemic pain.&lt;/p&gt;
 &lt;h3 id=&#34;key-findings&#34;&gt;Key Findings&lt;/h3&gt;

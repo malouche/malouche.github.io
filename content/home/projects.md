@@ -57,6 +57,8 @@ content:
     tag: asia2021vs2022
   - name: Modeling chronic pain interconnections using Bayesian networks. 
     tag: painnetwork
+  - name: Flipped Classroom Evaluation and Blended Learning Potential
+    tag: flipped-classroom
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

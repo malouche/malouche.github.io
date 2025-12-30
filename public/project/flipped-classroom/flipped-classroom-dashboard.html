@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipped Classroom & Blended Learning Research Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES (Design Tokens)
+           ============================================ */
+        :root {
+            /* Primary Colors - Academic Navy & Teal */
+            --color-primary: #1a365d;
+            --color-primary-light: #2c5282;
+            --color-primary-dark: #0f2942;
+            
+            /* Accent Colors - Warm Gold/Amber */
+            --color-accent: #d69e2e;
+            --color-accent-light: #ecc94b;
+            --color-accent-dark: #b7791f;
+            
+            /* Semantic Colors */
+            --color-success: #38a169;
+            --color-warning: #dd6b20;
+            --color-info: #3182ce;
+            
+            /* Neutrals */
+            --color-bg: #faf8f5;
+            --color-bg-alt: #f7f3ed;
+            --color-surface: #ffffff;
+            --color-text: #2d3748;
+            --color-text-muted: #718096;
+            --color-border: #e2e8f0;
+            
+            /* Chart Colors */
+            --chart-strongly-agree: #2c5282;
+            --chart-slightly-agree: #63b3ed;
+            --chart-slightly-disagree: #fc8181;
+            --chart-strongly-disagree: #c53030;
+            
+            /* Typography */
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --shadow-glow: 0 0 20px rgba(214, 158, 46, 0.3);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 300ms ease;
+            --transition-slow: 500ms ease;
+        }
+
+        /* ============================================
+           BASE STYLES & RESET
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-primary);
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+        h4 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+        }
+
+        a {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        /* ============================================
+           LAYOUT COMPONENTS
+           ============================================ */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section--alt {
+            background-color: var(--color-bg-alt);
+        }
+
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: var(--space-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .header__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(255,255,255,0.15);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-lg);
+            backdrop-filter: blur(10px);
+        }
+
+        .header__title {
+            color: white;
+            margin-bottom: var(--space-md);
+            max-width: 900px;
+        }
+
+        .header__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .header__meta-item svg {
+            width: 18px;
+            height: 18px;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-surface);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav__list {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xs);
+            padding: var(--space-md) 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav__list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav__link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            white-space: nowrap;
+            transition: all var(--transition-fast);
+        }
+
+        .nav__link:hover,
+        .nav__link.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .nav__link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ============================================
+           CARDS
+           ============================================ */
+        .card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-xl);
+            transition: all var(--transition-base);
+            border: 1px solid var(--color-border);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .card--accent {
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .card--primary {
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .card__icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .card__icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .card__title {
+            margin-bottom: var(--space-sm);
+        }
+
+        .card__text {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        /* ============================================
+           COLLAPSIBLE / ACCORDION
+           ============================================ */
+        .collapsible {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            margin-bottom: var(--space-md);
+            border: 1px solid var(--color-border);
+        }
+
+        .collapsible__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-lg) var(--space-xl);
+            cursor: pointer;
+            transition: background var(--transition-fast);
+            user-select: none;
+        }
+
+        .collapsible__header:hover {
+            background: var(--color-bg-alt);
+        }
+
+        .collapsible__title {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .collapsible__icon {
+            width: 36px;
+            height: 36px;
+            background: var(--color-accent);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .collapsible__toggle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-bg-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform var(--transition-base);
+        }
+
+        .collapsible.open .collapsible__toggle {
+            transform: rotate(180deg);
+        }
+
+        .collapsible__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow);
+        }
+
+        .collapsible.open .collapsible__content {
+            max-height: 2000px;
+        }
+
+        .collapsible__body {
+            padding: 0 var(--space-xl) var(--space-xl);
+        }
+
+        /* ============================================
+           TABS
+           ============================================ */
+        .tabs {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .tabs__nav {
+            display: flex;
+            background: var(--color-bg-alt);
+            border-bottom: 1px solid var(--color-border);
+            overflow-x: auto;
+        }
+
+        .tabs__btn {
+            flex: 1;
+            min-width: 150px;
+            padding: var(--space-lg);
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            position: relative;
+            transition: all var(--transition-fast);
+        }
+
+        .tabs__btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .tabs__btn:hover {
+            background: rgba(255,255,255,0.5);
+            color: var(--color-primary);
+        }
+
+        .tabs__btn.active {
+            background: var(--color-surface);
+            color: var(--color-primary);
+        }
+
+        .tabs__btn.active::after {
+            transform: scaleX(1);
+        }
+
+        .tabs__content {
+            padding: var(--space-xl);
+        }
+
+        .tabs__panel {
+            display: none;
+            animation: fadeIn var(--transition-base);
+        }
+
+        .tabs__panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           CHARTS & DATA VIZ
+           ============================================ */
+        .chart-container {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-xl);
+        }
+
+        .chart-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .chart-legend__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.875rem;
+        }
+
+        .chart-legend__color {
+            width: 16px;
+            height: 16px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Likert Bar Styles */
+        .likert-chart {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .likert-row {
+            display: grid;
+            grid-template-columns: 200px 1fr 60px;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .likert-row {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+        }
+
+        .likert-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .likert-bar {
+            display: flex;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--color-bg-alt);
+        }
+
+        .likert-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            transition: transform var(--transition-fast);
+        }
+
+        .likert-segment:hover {
+            transform: scaleY(1.1);
+        }
+
+        .likert-segment--strongly-disagree {
+            background: var(--chart-strongly-disagree);
+        }
+
+        .likert-segment--slightly-disagree {
+            background: var(--chart-slightly-disagree);
+        }
+
+        .likert-segment--slightly-agree {
+            background: var(--chart-slightly-agree);
+        }
+
+        .likert-segment--strongly-agree {
+            background: var(--chart-strongly-agree);
+        }
+
+        .likert-percent {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-align: right;
+        }
+
+        /* ============================================
+           THEME CARDS (Focus Groups)
+           ============================================ */
+        .theme-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+        }
+
+        .theme-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .theme-card__number {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-bg-alt);
+            line-height: 1;
+        }
+
+        .theme-card__title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .theme-card__desc {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .theme-card__expand {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        /* ============================================
+           MODAL
+           ============================================ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            padding: var(--space-lg);
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--color-surface);
+            border-radius: var(--radius-xl);
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: transform var(--transition-base);
+        }
+
+        .modal-overlay.open .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal__header {
+            padding: var(--space-xl);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal__title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .modal__close {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--color-bg-alt);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .modal__close:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .modal__body {
+            padding: var(--space-xl);
+        }
+
+        /* ============================================
+           CAROUSEL / SLIDER
+           ============================================ */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel__track {
+            display: flex;
+            transition: transform var(--transition-slow);
+        }
+
+        .carousel__slide {
+            min-width: 100%;
+            padding: 0 var(--space-lg);
+        }
+
+        .carousel__controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .carousel__btn {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--color-primary);
+            background: var(--color-surface);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .carousel__btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .carousel__dots {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .carousel__dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-border);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .carousel__dot.active {
+            background: var(--color-accent);
+            transform: scale(1.2);
+        }
+
+        /* Insight Cards */
+        .insight-card {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            color: white;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .insight-card__number {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 700;
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: var(--space-md);
+        }
+
+        .insight-card__title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+
+        .insight-card__text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .insight-card__tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            margin-top: var(--space-lg);
+        }
+
+        /* ============================================
+           TIMELINE
+           ============================================ */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .timeline__item {
+            position: relative;
+            padding-bottom: var(--space-xl);
+        }
+
+        .timeline__dot {
+            position: absolute;
+            left: -33px;
+            width: 16px;
+            height: 16px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            border: 3px solid var(--color-surface);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline__date {
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline__content {
+            background: var(--color-surface);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline__title {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        /* ============================================
+           CITATIONS SECTION
+           ============================================ */
+        .citation {
+            background: var(--color-surface);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--color-primary);
+            margin-bottom: var(--space-md);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .citation em {
+            font-style: italic;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn--primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn--primary:hover {
+            background: var(--color-primary-light);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .btn--accent {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn--accent:hover {
+            background: var(--color-accent-dark);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn--outline {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .btn--outline:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* ============================================
+           STATISTICS HIGHLIGHT
+           ============================================ */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-top: var(--space-sm);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--color-primary-dark);
+            color: white;
+            padding: var(--space-2xl) 0;
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--space-xl);
+        }
+
+        .footer__section h4 {
+            color: var(--color-accent);
+            margin-bottom: var(--space-md);
+            font-size: 1rem;
+        }
+
+        .footer__text {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer__bottom {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ============================================
+           TOOLTIPS
+           ============================================ */
+        [data-tooltip] {
+            position: relative;
+            cursor: help;
+        }
+
+        [data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--color-primary-dark);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-fast);
+            z-index: 100;
+            max-width: 300px;
+            white-space: normal;
+        }
+
+        [data-tooltip]:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: var(--space-lg) 0;
+            }
+
+            .header__meta {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+
+            .section {
+                padding: var(--space-xl) 0;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs__nav {
+                flex-wrap: nowrap;
+            }
+
+            .tabs__btn {
+                min-width: 120px;
+                padding: var(--space-md);
+                font-size: 0.85rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer__content {
+                flex-direction: column;
+            }
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger animation delays */
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            transition: top var(--transition-fast);
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                    Smart Learning Environments (2025) 12:56
+                </div>
+                
+                <h1 class="header__title">Flipped Classroom Evaluation &amp; Blended Learning Potential</h1>
+                
+                <p style="font-size: 1.1rem; max-width: 800px; opacity: 0.9; margin-bottom: 0;">
+                    A case study of engagement and inclusion in quantitative education
+                </p>
+                
+                <div class="header__meta">
+                    <div class="header__meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <span>Daria Mizza, Mike Reese, Dhafer Malouche</span>
+                    </div>
+                    <div class="header__meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <span>Johns Hopkins University | American University in Cairo | Qatar University</span>
+                    </div>
+                    <div class="header__meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span>Published: September 2, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <ul class="nav__list">
+                <li>
+                    <a href="#overview" class="nav__link active">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                        Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="#methodology" class="nav__link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                        Methodology
+                    </a>
+                </li>
+                <li>
+                    <a href="#findings" class="nav__link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                        Findings
+                    </a>
+                </li>
+                <li>
+                    <a href="#themes" class="nav__link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Focus Groups
+                    </a>
+                </li>
+                <li>
+                    <a href="#insights" class="nav__link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        BL Insights
+                    </a>
+                </li>
+                <li>
+                    <a href="#citations" class="nav__link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        Citations
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main id="main-content">
+        
+        <!-- ========== OVERVIEW SECTION ========== -->
+        <section id="overview" class="section" aria-labelledby="overview-title">
+            <div class="container">
+                <h2 id="overview-title" class="animate-on-scroll" style="margin-bottom: var(--space-xl);">
+                    📘 Research Overview
+                </h2>
+
+                <!-- Collapsible Summary -->
+                <div class="collapsible open animate-on-scroll animate-delay-1" id="summary-collapsible">
+                    <div class="collapsible__header" onclick="toggleCollapsible('summary-collapsible')" role="button" aria-expanded="true" tabindex="0">
+                        <div class="collapsible__title">
+                            <div class="collapsible__icon">📄</div>
+                            <span>Paper Summary</span>
+                        </div>
+                        <div class="collapsible__toggle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="collapsible__content">
+                        <div class="collapsible__body">
+                            <p>This study critically evaluates the <strong>Flipped Classroom (FC)</strong> model in an undergraduate social statistics course at Johns Hopkins University, examining how it impacts student <strong>engagement</strong> and <strong>inclusion</strong> in post-pandemic educational contexts.</p>
+                            
+                            <p>Using a <strong>mixed-methods approach</strong> with 35 participants across Fall 2023 and Fall 2024, the research combines Likert-scale surveys with focus group discussions to assess both cognitive and affective engagement dimensions.</p>
+                            
+                            <p>Key findings reveal that while FC provides foundational learning benefits, it presents <strong>significant limitations</strong> in fostering student autonomy and accommodating diverse learning preferences—challenges intensified by post-pandemic educational disruptions. The study identifies how <strong>Blended Learning (BL)</strong> design elements could better address these gaps through enhanced interaction, material diversification, and progressive scaffolding.</p>
+                            
+                            <div class="stat-grid" style="margin-top: var(--space-xl);">
+                                <div class="stat-item">
+                                    <div class="stat-value">35</div>
+                                    <div class="stat-label">Participants</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2</div>
+                                    <div class="stat-label">Semesters</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">26</div>
+                                    <div class="stat-label">Survey Questions</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">4</div>
+                                    <div class="stat-label">Focus Groups</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Context Cards -->
+                <div class="cards-grid" style="margin-top: var(--space-xl);">
+                    <div class="card card--accent animate-on-scroll animate-delay-1">
+                        <div class="card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="card__title">Context: Post-Pandemic Challenges</h3>
+                        <p class="card__text">
+                            Following COVID-19, higher education faced unprecedented challenges in creating flexible yet rigorous learning environments. Remote learning had uneven impacts across student groups, creating variability in self-directed learning skills and highlighting structural inequities that require fundamental course redesign.
+                        </p>
+                    </div>
+
+                    <div class="card card--primary animate-on-scroll animate-delay-2">
+                        <div class="card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="card__title">Purpose of the Study</h3>
+                        <p class="card__text">
+                            To empirically evaluate the Flipped Classroom model's effectiveness in quantitative education and identify how Blended Learning design elements could better address diverse student needs through enhanced interactions, material diversification, and progressive scaffolding approaches.
+                        </p>
+                    </div>
+
+                    <div class="card card--accent animate-on-scroll animate-delay-3">
+                        <div class="card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3 class="card__title">Research Questions</h3>
+                        <div class="card__text">
+                            <p style="margin-bottom: var(--space-sm);"><strong>RQ1:</strong> How does the design of online pre-class materials impact students' perceived learning and engagement in the remote portion?</p>
+                            <p><strong>RQ2:</strong> How do availability, diversification, and scaffolding of materials impact perceived relevance and engagement during in-class activities?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== METHODOLOGY SECTION ========== -->
+        <section id="methodology" class="section section--alt" aria-labelledby="methodology-title">
+            <div class="container">
+                <h2 id="methodology-title" class="animate-on-scroll" style="margin-bottom: var(--space-xl);">
+                    🧪 Methodology Explorer
+                </h2>
+
+                <div class="tabs animate-on-scroll animate-delay-1">
+                    <div class="tabs__nav" role="tablist">
+                        <button class="tabs__btn active" data-tab="design" role="tab" aria-selected="true" aria-controls="panel-design">
+                            Research Design
+                        </button>
+                        <button class="tabs__btn" data-tab="participants" role="tab" aria-selected="false" aria-controls="panel-participants">
+                            Participants
+                        </button>
+                        <button class="tabs__btn" data-tab="instruments" role="tab" aria-selected="false" aria-controls="panel-instruments">
+                            Survey Structure
+                        </button>
+                        <button class="tabs__btn" data-tab="focus" role="tab" aria-selected="false" aria-controls="panel-focus">
+                            Focus Groups
+                        </button>
+                    </div>
+                    <div class="tabs__content">
+                        <!-- Research Design Panel -->
+                        <div class="tabs__panel active" id="panel-design" role="tabpanel">
+                            <h3 style="margin-bottom: var(--space-md);">Mixed-Methods Approach</h3>
+                            <p>This study employs a <strong>mixed-methods approach</strong> integrating quantitative and qualitative analyses to develop a comprehensive understanding of the FC model's effectiveness.</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg); margin-top: var(--space-xl);">
+                                <div style="padding: var(--space-lg); background: var(--color-bg-alt); border-radius: var(--radius-md);">
+                                    <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);">📊 Quantitative</h4>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">Likert-scale surveys administered to all course participants, providing quantifiable data for statistical analysis with a 5-point scale (excluding neutral option).</p>
+                                </div>
+                                <div style="padding: var(--space-lg); background: var(--color-bg-alt); border-radius: var(--radius-md);">
+                                    <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);">💬 Qualitative</h4>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">Focus groups conducted with voluntary participant subsets, capturing in-depth insights into nuanced opinions and emotional responses.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Participants Panel -->
+                        <div class="tabs__panel" id="panel-participants" role="tabpanel">
+                            <h3 style="margin-bottom: var(--space-md);">Study Participants</h3>
+                            <p>35 students enrolled in "Introduction to Social Statistics" at Johns Hopkins University.</p>
+                            
+                            <div style="margin-top: var(--space-xl);">
+                                <h4 style="margin-bottom: var(--space-md);">Demographics</h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
+                                    <div>
+                                        <strong style="display: block; margin-bottom: var(--space-xs);">Age Range</strong>
+                                        <span style="color: var(--color-text-muted);">18-22 years (M=19.8, SD=1.2)</span>
+                                    </div>
+                                    <div>
+                                        <strong style="display: block; margin-bottom: var(--space-xs);">Gender Distribution</strong>
+                                        <span style="color: var(--color-text-muted);">Female: 66% | Male: 31% | Other: 3%</span>
+                                    </div>
+                                </div>
+                                
+                                <h4 style="margin: var(--space-xl) 0 var(--space-md);">Academic Majors</h4>
+                                <div id="majors-chart" style="height: 250px;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Instruments Panel -->
+                        <div class="tabs__panel" id="panel-instruments" role="tabpanel">
+                            <h3 style="margin-bottom: var(--space-md);">Survey Structure</h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); margin-top: var(--space-lg);">
+                                <div style="border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg);">
+                                    <h4 style="color: var(--color-accent); margin-bottom: var(--space-md);">Survey 1 — Research Question #1</h4>
+                                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">18 questions measuring engagement in the remote portion</p>
+                                    <ul style="list-style: none; font-size: 0.9rem;">
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Cognitive Engagement:</strong> Q1-Q4, Q16-Q17</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Affective Engagement:</strong> Q6-Q11, Q14-Q15</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Preparedness:</strong> Q5, Q12</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Perceived Learning:</strong> Q13, Q18</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg);">
+                                    <h4 style="color: var(--color-accent); margin-bottom: var(--space-md);">Survey 2 — Research Question #2</h4>
+                                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">8 questions measuring inclusion and in-class engagement</p>
+                                    <ul style="list-style: none; font-size: 0.9rem;">
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Availability & Accessibility:</strong> Q1</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Diversification:</strong> Q2-Q3</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Scaffolding:</strong> Q4</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Perceived Relevance:</strong> Q5</li>
+                                        <li style="padding: var(--space-xs) 0;">• <strong>Engagement:</strong> Q6 (Cognitive), Q8 (Social)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Focus Groups Panel -->
+                        <div class="tabs__panel" id="panel-focus" role="tabpanel">
+                            <h3 style="margin-bottom: var(--space-md);">Focus Groups</h3>
+                            <p>Four focus group sessions with 12 total participants provided qualitative depth to complement survey data.</p>
+                            
+                            <div style="margin-top: var(--space-xl);">
+                                <h4 style="margin-bottom: var(--space-md);">Analysis Methodology</h4>
+                                <p style="color: var(--color-text-muted); margin-bottom: var(--space-lg);">
+                                    Thematic analysis following Braun & Clarke's (2006) six-phase approach with intercoder reliability (Cohen's κ = 0.82).
+                                </p>
+                                
+                                <div class="timeline">
+                                    <div class="timeline__item">
+                                        <div class="timeline__dot"></div>
+                                        <div class="timeline__date">Phase 1</div>
+                                        <div class="timeline__content">
+                                            <div class="timeline__title">Initial Coding</div>
+                                            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Two researchers independently reviewed transcripts with line-by-line analysis.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__dot"></div>
+                                        <div class="timeline__date">Phase 2</div>
+                                        <div class="timeline__content">
+                                            <div class="timeline__title">Focused Coding</div>
+                                            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Codes grouped into broader categories based on recurring patterns.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__dot"></div>
+                                        <div class="timeline__date">Phase 3</div>
+                                        <div class="timeline__content">
+                                            <div class="timeline__title">Theoretical Coding</div>
+                                            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Categories refined into themes connecting to conceptual framework.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Collection Timeline -->
+                <div class="chart-container animate-on-scroll animate-delay-2" style="margin-top: var(--space-xl);">
+                    <h3 class="chart-title">📅 Data Collection Timeline</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-xl); justify-content: center; padding: var(--space-lg) 0;">
+                        <div style="text-align: center;">
+                            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; margin: 0 auto var(--space-md);">
+                                <span style="font-size: 0.75rem; opacity: 0.8;">FALL</span>
+                                <span style="font-size: 1.75rem; font-weight: 700;">2023</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Weeks 10-14</p>
+                            <p style="font-size: 0.85rem;">Surveys + Focus Groups</p>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center;">
+                            <svg width="60" height="24" style="color: var(--color-accent);">
+                                <line x1="0" y1="12" x2="50" y2="12" stroke="currentColor" stroke-width="2" stroke-dasharray="4"/>
+                                <polygon points="50,6 60,12 50,18" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; margin: 0 auto var(--space-md);">
+                                <span style="font-size: 0.75rem; opacity: 0.8;">FALL</span>
+                                <span style="font-size: 1.75rem; font-weight: 700;">2024</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Weeks 10-14</p>
+                            <p style="font-size: 0.85rem;">Surveys + Focus Groups</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FINDINGS SECTION ========== -->
+        <section id="findings" class="section" aria-labelledby="findings-title">
+            <div class="container">
+                <h2 id="findings-title" class="animate-on-scroll" style="margin-bottom: var(--space-xl);">
+                    📊 Research Findings
+                </h2>
+
+                <!-- Legend -->
+                <div class="chart-legend animate-on-scroll" style="margin-bottom: var(--space-xl); padding: var(--space-md); background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__color" style="background: var(--chart-strongly-disagree);"></span>
+                        <span>Strongly Disagree</span>
+                    </div>
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__color" style="background: var(--chart-slightly-disagree);"></span>
+                        <span>Slightly Disagree</span>
+                    </div>
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__color" style="background: var(--chart-slightly-agree);"></span>
+                        <span>Slightly Agree</span>
+                    </div>
+                    <div class="chart-legend__item">
+                        <span class="chart-legend__color" style="background: var(--chart-strongly-agree);"></span>
+                        <span>Strongly Agree</span>
+                    </div>
+                </div>
+
+                <!-- Cognitive Engagement Chart -->
+                <div class="chart-container animate-on-scroll animate-delay-1">
+                    <h3 class="chart-title">Cognitive Engagement in Remote Learning (Survey 1)</h3>
+                    <div class="likert-chart" id="cognitive-chart">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Affective Engagement Chart -->
+                <div class="chart-container animate-on-scroll animate-delay-2">
+                    <h3 class="chart-title">Affective Engagement in Remote Learning (Survey 1)</h3>
+                    <div class="likert-chart" id="affective-chart">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Inclusion Factors Chart -->
+                <div class="chart-container animate-on-scroll animate-delay-3">
+                    <h3 class="chart-title">Availability, Accessibility & Scaffolding (Survey 2)</h3>
+                    <div class="likert-chart" id="inclusion-chart">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- In-Class Engagement Chart -->
+                <div class="chart-container animate-on-scroll animate-delay-4">
+                    <h3 class="chart-title">In-Class Engagement (Survey 2)</h3>
+                    <div class="likert-chart" id="inclass-chart">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Key Findings Summary -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); margin-top: var(--space-2xl);">
+                    <div class="card animate-on-scroll" style="border-top: 4px solid var(--color-success);">
+                        <h4 style="color: var(--color-success); margin-bottom: var(--space-sm);">✓ Strengths Identified</h4>
+                        <ul style="font-size: 0.95rem; color: var(--color-text-muted); margin-left: var(--space-lg);">
+                            <li>100% clarity of instructions</li>
+                            <li>100% material availability</li>
+                            <li>100% scaffolding effectiveness</li>
+                            <li>96% preparedness for class</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card animate-on-scroll" style="border-top: 4px solid var(--color-warning);">
+                        <h4 style="color: var(--color-warning); margin-bottom: var(--space-sm);">⚠ Limitations Found</h4>
+                        <ul style="font-size: 0.95rem; color: var(--color-text-muted); margin-left: var(--space-lg);">
+                            <li>Only 46% adequate interaction</li>
+                            <li>Only 58% feel autonomous</li>
+                            <li>21% want more diverse materials</li>
+                            <li>22% desire more collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FOCUS GROUP THEMES SECTION ========== -->
+        <section id="themes" class="section section--alt" aria-labelledby="themes-title">
+            <div class="container">
+                <h2 id="themes-title" class="animate-on-scroll" style="margin-bottom: var(--space-lg);">
+                    🧠 Focus Group Themes
+                </h2>
+                <p class="animate-on-scroll" style="color: var(--color-text-muted); margin-bottom: var(--space-xl); max-width: 700px;">
+                    Three primary themes emerged from qualitative analysis, providing context for quantitative findings and deeper insights into student experiences.
+                </p>
+
+                <div class="cards-grid">
+                    <div class="theme-card animate-on-scroll animate-delay-1" onclick="openModal('theme1')">
+                        <div class="theme-card__number">01</div>
+                        <h3 class="theme-card__title">Challenges with Self-Directed Learning</h3>
+                        <p class="theme-card__desc">
+                            Students reported difficulties with the self-directed nature of pre-class activities, particularly where concepts build sequentially.
+                        </p>
+                        <div class="theme-card__expand">
+                            <span>Learn more</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="theme-card animate-on-scroll animate-delay-2" onclick="openModal('theme2')">
+                        <div class="theme-card__number">02</div>
+                        <h3 class="theme-card__title">Importance of Immediate Feedback</h3>
+                        <p class="theme-card__desc">
+                            Participants emphasized the need for timely guidance during pre-class activities, especially with complex statistical concepts.
+                        </p>
+                        <div class="theme-card__expand">
+                            <span>Learn more</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="theme-card animate-on-scroll animate-delay-3" onclick="openModal('theme3')">
+                        <div class="theme-card__number">03</div>
+                        <h3 class="theme-card__title">Learning Preference Diversity</h3>
+                        <p class="theme-card__desc">
+                            Students expressed varied preferences for material presentation and learning pathways based on mathematical background.
+                        </p>
+                        <div class="theme-card__expand">
+                            <span>Learn more</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== BLENDED LEARNING INSIGHTS SECTION ========== -->
+        <section id="insights" class="section" aria-labelledby="insights-title">
+            <div class="container">
+                <h2 id="insights-title" class="animate-on-scroll" style="margin-bottom: var(--space-lg);">
+                    🚀 Blended Learning Redesign Insights
+                </h2>
+                <p class="animate-on-scroll" style="color: var(--color-text-muted); margin-bottom: var(--space-xl); max-width: 700px;">
+                    Based on FC evaluation findings, the research identifies strategic BL approaches that could address identified limitations through interdependent learning components.
+                </p>
+
+                <!-- Carousel -->
+                <div class="carousel animate-on-scroll animate-delay-1" id="insights-carousel">
+                    <div class="carousel__track" id="carousel-track">
+                        <div class="carousel__slide">
+                            <div class="insight-card">
+                                <div class="insight-card__number">01</div>
+                                <h3 class="insight-card__title">Enhanced Interaction Design</h3>
+                                <p class="insight-card__text">
+                                    Address the 46% interaction gap by incorporating synchronous online discussion forums, virtual office hours, and peer collaboration tools as integral BL components rather than mere additions to pre-class activities.
+                                </p>
+                                <span class="insight-card__tag">Addresses: Limited Interaction (46%)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel__slide">
+                            <div class="insight-card" style="background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);">
+                                <div class="insight-card__number">02</div>
+                                <h3 class="insight-card__title">Material Diversification</h3>
+                                <p class="insight-card__text">
+                                    Develop multiple content formats—videos, interactive simulations, case studies, and written materials—that accommodate different learning preferences within an integrated learning ecosystem.
+                                </p>
+                                <span class="insight-card__tag">Addresses: Material Diversity (21% gap)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel__slide">
+                            <div class="insight-card">
+                                <div class="insight-card__number">03</div>
+                                <h3 class="insight-card__title">Progressive Scaffolding</h3>
+                                <p class="insight-card__text">
+                                    Implement scaffolded approaches to student autonomy that acknowledge post-pandemic variations in self-regulatory skills, beginning with structured guidance and gradually increasing student choice in learning pathways.
+                                </p>
+                                <span class="insight-card__tag">Addresses: Autonomy Concerns (58%)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel__slide">
+                            <div class="insight-card" style="background: linear-gradient(135deg, #2F855A 0%, #48BB78 100%);">
+                                <div class="insight-card__number">04</div>
+                                <h3 class="insight-card__title">Interdependent Components</h3>
+                                <p class="insight-card__text">
+                                    Create seamless interconnections where online materials prepare conceptual foundations that in-class sessions build upon, while in-class experiences generate insights for subsequent online reflection and application.
+                                </p>
+                                <span class="insight-card__tag">Core BL Design Principle</span>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel__slide">
+                            <div class="insight-card" style="background: linear-gradient(135deg, #6B46C1 0%, #9F7AEA 100%);">
+                                <div class="insight-card__number">05</div>
+                                <h3 class="insight-card__title">Enhanced Collaborative Environments</h3>
+                                <p class="insight-card__text">
+                                    Address the 22% wanting more collaboration by fostering robust communities of inquiry that support both cognitive and affective dimensions of engagement across online and in-person components.
+                                </p>
+                                <span class="insight-card__tag">Addresses: Collaboration Gap (22%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel__controls">
+                        <button class="carousel__btn" onclick="moveCarousel(-1)" aria-label="Previous slide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <div class="carousel__dots" id="carousel-dots">
+                            <button class="carousel__dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                            <button class="carousel__dot" data-slide="1" aria-label="Go to slide 2"></button>
+                            <button class="carousel__dot" data-slide="2" aria-label="Go to slide 3"></button>
+                            <button class="carousel__dot" data-slide="3" aria-label="Go to slide 4"></button>
+                            <button class="carousel__dot" data-slide="4" aria-label="Go to slide 5"></button>
+                        </div>
+                        <button class="carousel__btn" onclick="moveCarousel(1)" aria-label="Next slide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Summary Box -->
+                <div class="card animate-on-scroll" style="margin-top: var(--space-2xl); background: var(--color-bg-alt); border: 2px solid var(--color-accent);">
+                    <h4 style="color: var(--color-primary); margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-sm);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        Key Takeaway
+                    </h4>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">
+                        Effective learning design is not about implementing a single model, but about creating <strong>flexible, responsive educational experiences</strong> that recognize and nurture the unique learning potential of each student. The validated inclusion-engagement interconnection demonstrates that addressing inclusion gaps through material diversification and collaborative opportunities could simultaneously enhance both cognitive and affective engagement dimensions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CITATIONS SECTION ========== -->
+        <section id="citations" class="section section--alt" aria-labelledby="citations-title">
+            <div class="container">
+                <h2 id="citations-title" class="animate-on-scroll" style="margin-bottom: var(--space-xl);">
+                    📚 Citations & Further Reading
+                </h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--space-xl);">
+                    <div class="animate-on-scroll animate-delay-1">
+                        <h3 style="margin-bottom: var(--space-lg);">Key References</h3>
+                        
+                        <div class="citation">
+                            Mizza, D., Reese, M., & Malouche, D. (2025). Flipped classroom evaluation and blended learning potential: A case study of engagement and inclusion in quantitative education. <em>Smart Learning Environments, 12</em>(56). https://doi.org/10.1186/s40561-025-00412-2
+                        </div>
+                        
+                        <div class="citation">
+                            Strelan, P., Osborn, A., & Palmer, E. (2020). The flipped classroom: A meta-analysis of effects on student performance across disciplines and education levels. <em>Educational Research Review</em>. https://doi.org/10.1016/j.edurev.2020.100314
+                        </div>
+                        
+                        <div class="citation">
+                            Means, B., & Neisler, J. (2021). Teaching and learning in the time of COVID: The student perspective. <em>Online Learning Journal, 25</em>(1), 8–27. https://doi.org/10.24059/olj.v25i1.2496
+                        </div>
+                        
+                        <div class="citation">
+                            Halverson, L. R., & Graham, C. R. (2019). Learner engagement in blended learning environments: A conceptual framework. <em>Online Learning, 23</em>(2), 145–178. https://doi.org/10.24059/olj.v23i2.1481
+                        </div>
+                        
+                        <div class="citation">
+                            Mizza, D., & Rubio, F. (2020). The foundation of blended language learning: The blend, the blending process, and the blended path. In <em>Creating effective blended language learning courses</em> (pp. 51–74). Cambridge University Press.
+                        </div>
+                    </div>
+                    
+                    <div class="animate-on-scroll animate-delay-2">
+                        <h3 style="margin-bottom: var(--space-lg);">Download & Resources</h3>
+                        
+                        <div class="card" style="margin-bottom: var(--space-lg);">
+                            <h4 style="margin-bottom: var(--space-md);">Access the Full Paper</h4>
+                            <p style="color: var(--color-text-muted); margin-bottom: var(--space-lg);">
+                                This research is published as Open Access under Creative Commons Attribution 4.0 International License.
+                            </p>
+                            <a href="https://doi.org/10.1186/s40561-025-00412-2" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Download Full Paper (DOI)
+                            </a>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 style="margin-bottom: var(--space-md);">About the Authors</h4>
+                            <div style="font-size: 0.95rem;">
+                                <p style="margin-bottom: var(--space-sm);"><strong>Daria Mizza</strong> — Department of Applied Linguistics and Educational Studies, American University in Cairo</p>
+                                <p style="margin-bottom: var(--space-sm);"><strong>Mike Reese</strong> — Center for Teaching Excellence and Innovation, Johns Hopkins University</p>
+                                <p><strong>Dhafer Malouche</strong> — Department of Mathematics and Statistics, Qatar University</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>About This Dashboard</h4>
+                    <p class="footer__text">
+                        This interactive dashboard visualizes key findings from Mizza, Reese, & Malouche (2025). Created to make educational research more accessible and engaging.
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h4>Publication Details</h4>
+                    <p class="footer__text">
+                        Smart Learning Environments (2025) 12:56<br>
+                        Published: September 2, 2025<br>
+                        DOI: 10.1186/s40561-025-00412-2
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h4>License</h4>
+                    <p class="footer__text">
+                        Original research © 2025 The Authors.<br>
+                        Open Access under CC BY 4.0
+                    </p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>Dashboard created for educational visualization purposes</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         MODALS
+         ============================================ -->
+    <!-- Theme 1 Modal -->
+    <div class="modal-overlay" id="modal-theme1" onclick="closeModal('theme1')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal__header">
+                <h3 class="modal__title">Challenges with Self-Directed Learning</h3>
+                <button class="modal__close" onclick="closeModal('theme1')" aria-label="Close modal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p>Students consistently reported difficulties with the self-directed nature of pre-class activities, particularly in statistics content where concepts build sequentially.</p>
+                
+                <h4 style="margin: var(--space-lg) 0 var(--space-md); color: var(--color-primary);">Key Findings:</h4>
+                <ul style="margin-left: var(--space-lg); color: var(--color-text-muted);">
+                    <li style="margin-bottom: var(--space-sm);">Only 58% felt autonomous in independent learning</li>
+                    <li style="margin-bottom: var(--space-sm);">Sequential skill development in statistics creates unique challenges</li>
+                    <li style="margin-bottom: var(--space-sm);">Post-pandemic students exhibit greater variability in self-directed learning skills</li>
+                </ul>
+                
+                <h4 style="margin: var(--space-lg) 0 var(--space-md); color: var(--color-primary);">Implications for BL Design:</h4>
+                <p style="color: var(--color-text-muted);">
+                    BL redesign should incorporate progressive scaffolding as a core design principle, beginning with more structured guidance and gradually increasing student choice in learning pathways as comfort with statistical concepts develops.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme 2 Modal -->
+    <div class="modal-overlay" id="modal-theme2" onclick="closeModal('theme2')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal__header">
+                <h3 class="modal__title">Importance of Immediate Feedback</h3>
+                <button class="modal__close" onclick="closeModal('theme2')" aria-label="Close modal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p>Focus group participants emphasized the need for timely guidance during pre-class activities, especially when encountering complex statistical concepts.</p>
+                
+                <h4 style="margin: var(--space-lg) 0 var(--space-md); color: var(--color-primary);">Key Findings:</h4>
+                <ul style="margin-left: var(--space-lg); color: var(--color-text-muted);">
+                    <li style="margin-bottom: var(--space-sm);">Only 46% perceived adequate instructor-peer interaction opportunities</li>
+                    <li style="margin-bottom: var(--space-sm);">Students felt isolated during pre-class conceptual learning</li>
+                    <li style="margin-bottom: var(--space-sm);">Delayed feedback hindered understanding of foundational concepts</li>
+                </ul>
+                
+                <h4 style="margin: var(--space-lg) 0 var(--space-md); color: var(--color-primary);">Implications for BL Design:</h4>
+                <p style="color: var(--color-text-muted);">
+                    BL environments should integrate synchronous online discussion forums, virtual office hours, and peer collaboration tools as integral components rather than optional additions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme 3 Modal -->
+    <div class="modal-overlay" id="modal-theme3" onclick="closeModal('theme3')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal__header">
+                <h3 class="modal__title">Learning Preference Diversity</h3>
+                <button class="modal__close" onclick="closeModal('theme3')" aria-label="Close modal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p>Students expressed varied preferences for material presentation and learning pathways, reinforcing the finding that 21% found materials insufficiently diverse.</p>
+                
+                <h4 style="margin: var(--space-lg) 0 var(--space-md); color: var(--color-primary);">Key Findings:</h4>
+                <ul style="margin-left: var(--space-lg); color: var(--color-text-muted);">
+                    <li style="margin-bottom: var(--space-sm);">Participants described different approaches based on prior mathematical background</li>
+                    <li style="margin-bottom: var(--space-sm);">21% disagreed that materials were sufficiently diverse</li>
+                    <li style="margin-bottom: var(--space-sm);">Learning preferences varied significantly across student demographics</li>
+                </ul>
+                
+                <h4 style="margin: var(--space-lg) 0 var(--space-md); color: var(--color-primary);">Implications for BL Design:</h4>
+                <p style="color: var(--color-text-muted);">
+                    Effective BL design should develop multiple content formats—videos, interactive simulations, case studies, and written materials—that accommodate different learning preferences within an integrated learning ecosystem.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // ============================================
+        // DATA FOR CHARTS (Based on paper findings)
+        // ============================================
+        
+        // Survey 1 - Cognitive Engagement Data
+        const cognitiveData = [
+            { label: "Q2: Clarity of instructions", stronglyDisagree: 0, slightlyDisagree: 0, slightlyAgree: 21, stronglyAgree: 79, total: 100 },
+            { label: "Q3: Relevancy for activities", stronglyDisagree: 0, slightlyDisagree: 0, slightlyAgree: 25, stronglyAgree: 75, total: 100 },
+            { label: "Q4: Interconnection", stronglyDisagree: 4, slightlyDisagree: 0, slightlyAgree: 38, stronglyAgree: 58, total: 96 },
+            { label: "Q1: Understanding concepts", stronglyDisagree: 4, slightlyDisagree: 0, slightlyAgree: 38, stronglyAgree: 58, total: 96 },
+            { label: "Q16: Depth of understanding", stronglyDisagree: 0, slightlyDisagree: 4, slightlyAgree: 46, stronglyAgree: 50, total: 96 },
+            { label: "Q17: Provision of clarifications", stronglyDisagree: 0, slightlyDisagree: 8, slightlyAgree: 38, stronglyAgree: 54, total: 92 }
+        ];
+
+        // Survey 1 - Affective Engagement Data
+        const affectiveData = [
+            { label: "Q7: Agency of pace", stronglyDisagree: 0, slightlyDisagree: 0, slightlyAgree: 17, stronglyAgree: 79, total: 96 },
+            { label: "Q14: Classroom arrangement", stronglyDisagree: 0, slightlyDisagree: 4, slightlyAgree: 21, stronglyAgree: 75, total: 96 },
+            { label: "Q6: Agency of time", stronglyDisagree: 0, slightlyDisagree: 0, slightlyAgree: 5, stronglyAgree: 95, total: 100 },
+            { label: "Q15: Classroom interaction", stronglyDisagree: 4, slightlyDisagree: 8, slightlyAgree: 38, stronglyAgree: 50, total: 88 },
+            { label: "Q11: Student reflection", stronglyDisagree: 0, slightlyDisagree: 17, slightlyAgree: 54, stronglyAgree: 29, total: 83 },
+            { label: "Q8: Agency of path", stronglyDisagree: 8, slightlyDisagree: 12, slightlyAgree: 28, stronglyAgree: 50, total: 78 },
+            { label: "Q9: Student autonomy", stronglyDisagree: 9, slightlyDisagree: 33, slightlyAgree: 37, stronglyAgree: 21, total: 58 },
+            { label: "Q10: Instructor interaction", stronglyDisagree: 12, slightlyDisagree: 42, slightlyAgree: 25, stronglyAgree: 21, total: 46 }
+        ];
+
+        // Survey 2 - Inclusion Factors Data
+        const inclusionData = [
+            { label: "Q4: Scaffolding provision", stronglyDisagree: 0, slightlyDisagree: 0, slightlyAgree: 33, stronglyAgree: 67, total: 100 },
+            { label: "Q1: Material availability", stronglyDisagree: 0, slightlyDisagree: 0, slightlyAgree: 5, stronglyAgree: 95, total: 100 },
+            { label: "Q7: Time on task", stronglyDisagree: 4, slightlyDisagree: 0, slightlyAgree: 21, stronglyAgree: 75, total: 96 },
+            { label: "Q3: Material formatting", stronglyDisagree: 4, slightlyDisagree: 0, slightlyAgree: 21, stronglyAgree: 75, total: 96 },
+            { label: "Q5: Material relevancy", stronglyDisagree: 0, slightlyDisagree: 8, slightlyAgree: 46, stronglyAgree: 46, total: 92 },
+            { label: "Q2: Material diversification", stronglyDisagree: 9, slightlyDisagree: 12, slightlyAgree: 33, stronglyAgree: 46, total: 79 }
+        ];
+
+        // Survey 2 - In-Class Engagement Data
+        const inclassData = [
+            { label: "Q6: Cognitive engagement", stronglyDisagree: 0, slightlyDisagree: 8, slightlyAgree: 34, stronglyAgree: 58, total: 92 },
+            { label: "Q8: Social engagement", stronglyDisagree: 9, slightlyDisagree: 13, slightlyAgree: 33, stronglyAgree: 45, total: 78 }
+        ];
+
+        // ============================================
+        // RENDER LIKERT CHARTS
+        // ============================================
+        
+        function renderLikertChart(containerId, data) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            data.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'likert-row';
+                
+                // Label
+                const label = document.createElement('div');
+                label.className = 'likert-label';
+                label.textContent = item.label;
+                label.setAttribute('data-tooltip', `Total Agreement: ${item.total}%`);
+                
+                // Bar
+                const bar = document.createElement('div');
+                bar.className = 'likert-bar';
+                
+                // Add segments (only if > 0)
+                if (item.stronglyDisagree > 0) {
+                    const seg = document.createElement('div');
+                    seg.className = 'likert-segment likert-segment--strongly-disagree';
+                    seg.style.width = `${item.stronglyDisagree}%`;
+                    seg.textContent = item.stronglyDisagree > 5 ? `${item.stronglyDisagree}%` : '';
+                    seg.title = `Strongly Disagree: ${item.stronglyDisagree}%`;
+                    bar.appendChild(seg);
+                }
+                
+                if (item.slightlyDisagree > 0) {
+                    const seg = document.createElement('div');
+                    seg.className = 'likert-segment likert-segment--slightly-disagree';
+                    seg.style.width = `${item.slightlyDisagree}%`;
+                    seg.textContent = item.slightlyDisagree > 5 ? `${item.slightlyDisagree}%` : '';
+                    seg.title = `Slightly Disagree: ${item.slightlyDisagree}%`;
+                    bar.appendChild(seg);
+                }
+                
+                if (item.slightlyAgree > 0) {
+                    const seg = document.createElement('div');
+                    seg.className = 'likert-segment likert-segment--slightly-agree';
+                    seg.style.width = `${item.slightlyAgree}%`;
+                    seg.textContent = item.slightlyAgree > 5 ? `${item.slightlyAgree}%` : '';
+                    seg.title = `Slightly Agree: ${item.slightlyAgree}%`;
+                    bar.appendChild(seg);
+                }
+                
+                if (item.stronglyAgree > 0) {
+                    const seg = document.createElement('div');
+                    seg.className = 'likert-segment likert-segment--strongly-agree';
+                    seg.style.width = `${item.stronglyAgree}%`;
+                    seg.textContent = item.stronglyAgree > 5 ? `${item.stronglyAgree}%` : '';
+                    seg.title = `Strongly Agree: ${item.stronglyAgree}%`;
+                    bar.appendChild(seg);
+                }
+                
+                // Percentage
+                const percent = document.createElement('div');
+                percent.className = 'likert-percent';
+                percent.textContent = `${item.total}%`;
+                
+                row.appendChild(label);
+                row.appendChild(bar);
+                row.appendChild(percent);
+                container.appendChild(row);
+            });
+        }
+
+        // ============================================
+        // MAJORS PIE CHART
+        // ============================================
+        
+        function renderMajorsChart() {
+            const ctx = document.getElementById('majors-chart');
+            if (!ctx) return;
+            
+            // Create canvas if not exists
+            if (ctx.tagName !== 'CANVAS') {
+                const canvas = document.createElement('canvas');
+                canvas.id = 'majors-canvas';
+                ctx.appendChild(canvas);
+                
+                new Chart(canvas, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Sociology (34%)', 'Psychology (23%)', 'Political Science (20%)', 'Economics (14%)', 'Other (9%)'],
+                        datasets: [{
+                            data: [34, 23, 20, 14, 9],
+                            backgroundColor: [
+                                '#1a365d',
+                                '#2c5282',
+                                '#d69e2e',
+                                '#38a169',
+                                '#718096'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    font: {
+                                        family: "'Source Sans 3', sans-serif",
+                                        size: 12
+                                    },
+                                    padding: 15
+                                }
+                            }
+                        },
+                        cutout: '60%'
+                    }
+                });
+            }
+        }
+
+        // ============================================
+        // COLLAPSIBLE FUNCTIONALITY
+        // ============================================
+        
+        function toggleCollapsible(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.toggle('open');
+                const header = element.querySelector('.collapsible__header');
+                if (header) {
+                    header.setAttribute('aria-expanded', element.classList.contains('open'));
+                }
+            }
+        }
+
+        // ============================================
+        // TABS FUNCTIONALITY
+        // ============================================
+        
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.tabs__btn');
+            const tabPanels = document.querySelectorAll('.tabs__panel');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.dataset.tab;
+                    
+                    // Update buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    button.classList.add('active');
+                    button.setAttribute('aria-selected', 'true');
+                    
+                    // Update panels
+                    tabPanels.forEach(panel => {
+                        panel.classList.remove('active');
+                    });
+                    
+                    const targetPanel = document.getElementById(`panel-${tabId}`);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
+                        
+                        // Render majors chart when participants tab is shown
+                        if (tabId === 'participants') {
+                            setTimeout(renderMajorsChart, 100);
+                        }
+                    }
+                });
+            });
+        }
+
+        // ============================================
+        // MODAL FUNCTIONALITY
+        // ============================================
+        
+        function openModal(theme) {
+            const modal = document.getElementById(`modal-${theme}`);
+            if (modal) {
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(theme) {
+            const modal = document.getElementById(`modal-${theme}`);
+            if (modal) {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.open').forEach(modal => {
+                    modal.classList.remove('open');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ============================================
+        // CAROUSEL FUNCTIONALITY
+        // ============================================
+        
+        let currentSlide = 0;
+        const totalSlides = 5;
+
+        function moveCarousel(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carousel-track');
+            const dots = document.querySelectorAll('.carousel__dot');
+            
+            if (track) {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Initialize carousel dots
+        function initCarousel() {
+            const dots = document.querySelectorAll('.carousel__dot');
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Auto-advance carousel every 8 seconds
+            setInterval(() => {
+                moveCarousel(1);
+            }, 8000);
+        }
+
+        // ============================================
+        // NAVIGATION ACTIVE STATE
+        // ============================================
+        
+        function updateNavigation() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav__link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
+        
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render all charts
+            renderLikertChart('cognitive-chart', cognitiveData);
+            renderLikertChart('affective-chart', affectiveData);
+            renderLikertChart('inclusion-chart', inclusionData);
+            renderLikertChart('inclass-chart', inclassData);
+            
+            // Initialize interactive components
+            initTabs();
+            initCarousel();
+            initScrollAnimations();
+            
+            // Navigation scroll handler
+            window.addEventListener('scroll', updateNavigation);
+            updateNavigation();
+            
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offset = 80;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Keyboard navigation for collapsibles
+            document.querySelectorAll('.collapsible__header').forEach(header => {
+                header.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const collapsible = header.closest('.collapsible');
+                        if (collapsible) {
+                            toggleCollapsible(collapsible.id);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
