@@ -27,10 +27,10 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Municipal Elections 2018
-    tag: elections
-  - name: Crédits Votés
-    tag: credits
+  - name: Modeling chronic pain interconnections using Bayesian networks. 
+    tag: painnetwork
+  - name: Flipped Classroom Evaluation and Blended Learning Potential
+    tag: flipped-classroom
   - name: COVID-19 deaths
     tag: covid
   - name: COVID-19 US vs EU
@@ -55,10 +55,11 @@ content:
     tag: europe2021vs2022
   - name: COVID-19 Total Deaths between 2021 and 2022 in Asia.
     tag: asia2021vs2022
-  - name: Modeling chronic pain interconnections using Bayesian networks. 
-    tag: painnetwork
-  - name: Flipped Classroom Evaluation and Blended Learning Potential
-    tag: flipped-classroom
+  - name: Municipal Elections 2018
+    tag: elections
+  - name: Crédits Votés
+    tag: credits
+  
     
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
