@@ -128,32 +128,6 @@
         .subgroup-title { font-weight: 500; margin-bottom: 0.75rem; }
         .subgroup-list { font-size: 0.875rem; color: var(--slate-400); list-style: none; }
         .subgroup-list li { margin-bottom: 0.25rem; }
-        .network-container { position: relative; background: rgba(15, 23, 42, 0.5); border-radius: 0.75rem; border: 1px solid rgba(51, 65, 85, 0.3); padding: 1rem; height: 24rem; overflow: hidden; }
-        .network-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem; }
-        .network-legend-item { display: flex; align-items: center; gap: 0.5rem; color: var(--slate-400); }
-        .network-legend-dot { width: 1rem; height: 1rem; border-radius: 0.25rem; }
-        .network-legend-dot.intervention { background: #0891b2; }
-        .network-legend-dot.biomarker { background: #059669; }
-        .network-legend-dot.mediator { background: #7c3aed; }
-        .network-legend-dot.outcome { background: #dc2626; }
-        .node-panel { border-radius: 0.75rem; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(6, 182, 212, 0.3); padding: 1.5rem; margin-top: 1rem; }
-        .node-panel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
-        .node-panel-title { font-size: 1.125rem; font-weight: 600; }
-        .node-panel-close { background: none; border: none; color: var(--slate-400); cursor: pointer; font-size: 1.25rem; }
-        .node-panel-close:hover { color: white; }
-        .node-panel-desc { color: var(--slate-300); font-size: 0.875rem; margin-bottom: 1rem; }
-        .node-panel-effects-title { color: var(--cyan-400); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; }
-        .node-panel-effects { list-style: none; }
-        .node-panel-effects li { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 0.5rem; padding-left: 1.25rem; position: relative; }
-        .node-panel-effects li::before { content: '→'; color: var(--cyan-400); position: absolute; left: 0; }
-        .pathways-grid { display: grid; gap: 1rem; margin-top: 1rem; }
-        @media (min-width: 768px) { .pathways-grid { grid-template-columns: repeat(2, 1fr); } }
-        .pathway-card { border-radius: 0.75rem; padding: 1.25rem; border: 1px solid; }
-        .pathway-card.positive { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
-        .pathway-card.negative { background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.2); }
-        .pathway-title { font-weight: 500; margin-bottom: 0.75rem; }
-        .pathway-list { font-size: 0.875rem; color: var(--slate-300); list-style: none; }
-        .pathway-list li { margin-bottom: 0.5rem; }
         .plot-selector { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
         .plot-btn { padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; border: 1px solid transparent; background: rgba(30, 41, 59, 0.5); color: var(--slate-400); cursor: pointer; transition: all 0.3s; }
         .plot-btn:hover { color: white; background: rgba(51, 65, 85, 0.5); }
@@ -223,9 +197,6 @@
         const pfsData = [ { study: "Kamath 2019", hr: 2.12, ci_low: 1.82, ci_high: 2.56 }, { study: "Bockorny 2021", hr: 2.34, ci_low: 2.01, ci_high: 2.80 }, { study: "Wang-Gillam 2022", hr: 2.05, ci_low: 1.79, ci_high: 2.48 }, { study: "Renouf 2022", hr: 2.56, ci_low: 2.18, ci_high: 3.10 }, { study: "O'Hara 2021", hr: 2.48, ci_low: 2.20, ci_high: 2.86 }, { study: "Tsujikawa 2020", hr: 1.99, ci_low: 1.72, ci_high: 2.41 } ];
         const orrData = [ { study: "Renouf 2022", hr: 2.56, ci_low: 2.03, ci_high: 3.49 }, { study: "O'Hara 2021", hr: 1.79, ci_low: 1.48, ci_high: 2.07 }, { study: "Tsujikawa 2020", hr: 2.36, ci_low: 1.73, ci_high: 3.82 }, { study: "Enzler 2024", hr: 1.25, ci_low: 1.12, ci_high: 1.46 }, { study: "Liu 2021", hr: 1.73, ci_low: 1.57, ci_high: 1.90 } ];
         const robRCTData = [ { study: "Callahan 2024", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Chen 2023", D1: "low", D2: "low", D3: "low", D4: "concerns", D5: "low", overall: "low" }, { study: "Ko 2023", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Le 2013", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Overman 2020", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Reiss 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" } ];
-        const bayesianNodes = [ { id: "treatment", label: "Treatment", x: 80, y: 160, type: "intervention" }, { id: "biomarker", label: "Biomarker", x: 80, y: 320, type: "biomarker" }, { id: "tme", label: "TME", x: 280, y: 240, type: "mediator" }, { id: "immune", label: "Immune", x: 480, y: 160, type: "mediator" }, { id: "orr", label: "ORR", x: 660, y: 100, type: "outcome" }, { id: "pfs", label: "PFS", x: 660, y: 240, type: "outcome" }, { id: "os", label: "OS", x: 660, y: 380, type: "outcome" } ];
-        const bayesianEdges = [ { from: "treatment", to: "tme" }, { from: "treatment", to: "immune" }, { from: "biomarker", to: "tme" }, { from: "biomarker", to: "immune" }, { from: "tme", to: "immune" }, { from: "tme", to: "orr" }, { from: "immune", to: "orr" }, { from: "immune", to: "pfs" }, { from: "orr", to: "pfs" }, { from: "pfs", to: "os" }, { from: "treatment", to: "os" } ];
-        const nodeDescriptions = { treatment: { title: "Treatment Type", description: "ICI monotherapy, ICI + chemotherapy, ICI + radiotherapy", effects: ["Modulates tumor microenvironment", "Activates immune checkpoints", "Synergistic effects"] }, biomarker: { title: "Biomarker Status", description: "TMB, MSI status, PD-L1, dMMR", effects: ["Predicts ICI response", "Influences TME", "Treatment eligibility"] }, tme: { title: "Tumor Microenvironment", description: "Dense stroma, immunosuppressive cells", effects: ["Mediates efficacy", "T-cell barriers", "Drug delivery"] }, immune: { title: "Immune Response", description: "T-cell activation, cytokines", effects: ["Anti-tumor activity", "Response durability", "Clinical outcomes"] }, orr: { title: "Objective Response Rate", description: "Tumor shrinkage (CR + PR)", effects: ["Early indicator", "0-67% range", "Immune-dependent"] }, pfs: { title: "Progression-Free Survival", description: "Time to progression", effects: ["1.4-12.5 months", "ICI+chemo benefit", "Biomarker-dependent"] }, os: { title: "Overall Survival", description: "Time to death", effects: ["Primary endpoint", "HR 0.82 ICI+chemo", "HR 1.18 ICI+RT ⚠️"] } };
 
         // FOREST PLOT COMPONENT
         function ForestPlot({ data, color, pooled, metric, heterogeneity }) {
@@ -252,89 +223,443 @@
             );
         }
 
-        // BAYESIAN NETWORK COMPONENT
-        function BayesianNetwork({ onNodeClick, selectedNode, hoveredNode, setHoveredNode }) {
-            const nodeColors = { intervention: '#0891b2', biomarker: '#059669', mediator: '#7c3aed', outcome: '#dc2626' };
-            return (
-                <svg width="100%" height="100%" viewBox="0 0 780 480">
-                    {bayesianEdges.map((edge, i) => {
-                        const from = bayesianNodes.find(n => n.id === edge.from), to = bayesianNodes.find(n => n.id === edge.to);
-                        const opacity = hoveredNode ? (hoveredNode === edge.from || hoveredNode === edge.to ? 1 : 0.2) : 0.6;
-                        return (<g key={i}><defs><marker id={`arrow-${i}`} markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#64748b" opacity={opacity} /></marker></defs><line x1={from.x + 45} y1={from.y} x2={to.x - 45} y2={to.y} stroke="#64748b" strokeWidth="2" opacity={opacity} markerEnd={`url(#arrow-${i})`} /></g>);
-                    })}
-                    {bayesianNodes.map((node) => {
-                        const isHovered = hoveredNode === node.id, isSelected = selectedNode === node.id, opacity = hoveredNode ? (isHovered ? 1 : 0.3) : 1;
-                        return (<g key={node.id} transform={`translate(${node.x - 40}, ${node.y - 20})`} style={{ cursor: 'pointer', opacity }} onMouseEnter={() => setHoveredNode(node.id)} onMouseLeave={() => setHoveredNode(null)} onClick={() => onNodeClick(node.id)}><rect width="80" height="40" rx="8" fill={nodeColors[node.type]} stroke={isSelected ? '#fff' : nodeColors[node.type]} strokeWidth={isSelected ? 3 : 2} /><text x="40" y="25" textAnchor="middle" fill="white" fontSize="11" fontWeight="500">{node.label}</text></g>);
-                    })}
-                </svg>
-            );
-        }
-
         // MAIN APP
         function App() {
             const [activeSection, setActiveSection] = useState('overview');
             const [findingTab, setFindingTab] = useState('orr');
             const [plotType, setPlotType] = useState('os_chemo');
-            const [selectedNode, setSelectedNode] = useState(null);
-            const [hoveredNode, setHoveredNode] = useState(null);
 
-            const sections = [ { id: 'overview', label: 'Overview', icon: '◈' }, { id: 'methodology', label: 'Methodology', icon: '⬡' }, { id: 'findings', label: 'Key Findings', icon: '◆' }, { id: 'bayesian', label: 'Causal Network', icon: '⬢' }, { id: 'forest', label: 'Forest Plots', icon: '▣' }, { id: 'implications', label: 'Implications', icon: '◇' } ];
-            const plotConfigs = { os_chemo: { data: osChemoData, title: "OS: ICI + Chemotherapy", color: "#22d3ee", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, os_mono: { data: osMonoData, title: "OS: ICI Monotherapy", color: "#10b981", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, os_rt: { data: osRTData, title: "OS: ICI + Radiotherapy", color: "#f43f5e", pooled: 1.18, metric: "hr", heterogeneity: "56%", warning: true }, pfs: { data: pfsData, title: "PFS: All Combinations", color: "#8b5cf6", pooled: 2.25, metric: "hr", heterogeneity: "7%", warning: false }, orr: { data: orrData, title: "ORR: ICI + Chemotherapy", color: "#f59e0b", pooled: 1.78, metric: "or", heterogeneity: "85%", warning: false } };
-            const interpretations = { os_chemo: "ICI combined with chemotherapy demonstrates a significant 18% reduction in mortality risk (HR 0.82), with consistent results across studies.", os_mono: "ICI monotherapy shows variable outcomes. While the pooled HR suggests benefit, confidence intervals are wider.", os_rt: "ICI combined with radiotherapy is associated with an 18% INCREASE in mortality risk. This adverse outcome requires careful patient selection.", pfs: "Progression-free survival shows consistent improvement with ICI combinations, with a pooled HR of 2.25 and low heterogeneity.", orr: "Objective response rates vary significantly across treatment combinations. High heterogeneity (I² = 85%) indicates considerable variability." };
+            const sections = [ 
+                { id: 'overview', label: 'Overview', icon: '◈' }, 
+                { id: 'methodology', label: 'Methodology', icon: '⬡' }, 
+                { id: 'findings', label: 'Key Findings', icon: '◆' }, 
+                { id: 'forest', label: 'Forest Plots', icon: '▣' }, 
+                { id: 'implications', label: 'Implications', icon: '◇' } 
+            ];
+            
+            const plotConfigs = { 
+                os_chemo: { data: osChemoData, title: "OS: ICI + Chemotherapy", color: "#22d3ee", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, 
+                os_mono: { data: osMonoData, title: "OS: ICI Monotherapy", color: "#10b981", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, 
+                os_rt: { data: osRTData, title: "OS: ICI + Radiotherapy", color: "#f43f5e", pooled: 1.18, metric: "hr", heterogeneity: "56%", warning: true }, 
+                pfs: { data: pfsData, title: "PFS: All Combinations", color: "#8b5cf6", pooled: 2.25, metric: "hr", heterogeneity: "7%", warning: false }, 
+                orr: { data: orrData, title: "ORR: ICI + Chemotherapy", color: "#f59e0b", pooled: 1.78, metric: "or", heterogeneity: "85%", warning: false } 
+            };
+            
+            const interpretations = { 
+                os_chemo: "ICI combined with chemotherapy demonstrates a significant 18% reduction in mortality risk (HR 0.82), with consistent results across studies.", 
+                os_mono: "ICI monotherapy shows variable outcomes. While the pooled HR suggests benefit, confidence intervals are wider.", 
+                os_rt: "ICI combined with radiotherapy is associated with an 18% INCREASE in mortality risk. This adverse outcome requires careful patient selection.", 
+                pfs: "Progression-free survival shows consistent improvement with ICI combinations, with a pooled HR of 2.25 and low heterogeneity.", 
+                orr: "Objective response rates vary significantly across treatment combinations. High heterogeneity (I² = 85%) indicates considerable variability." 
+            };
 
             return (
                 <div>
-                    <header className="header"><div className="container"><div className="header-content"><div className="logo">Ω</div><div className="header-text"><h1>PDAC Immunotherapy Dashboard</h1><p>Al-Khinji et al. 2025 • Frontiers in Oncology</p></div></div></div></header>
-                    <nav className="nav"><div className="container"><div className="nav-content">{sections.map(s => (<button key={s.id} onClick={() => setActiveSection(s.id)} className={`nav-btn ${activeSection === s.id ? 'active' : ''}`}><span>{s.icon}</span>{s.label}</button>))}</div></div></nav>
-                    <main><div className="container">
-                        {activeSection === 'overview' && (<div>
-                            <div className="hero-card"><div className="hero-content"><p className="hero-label">Systematic Review & Meta-Analysis</p><h2 className="hero-title">{paperMetadata.title}</h2><p className="hero-subtitle">{paperMetadata.subtitle}</p><div className="badge-container"><span className="badge badge-cyan">{paperMetadata.totalStudies} Studies</span><span className="badge badge-emerald">{paperMetadata.totalParticipants.toLocaleString()} Participants</span><span className="badge badge-amber">{paperMetadata.journal} {paperMetadata.year}</span></div><div className="hero-footer"><p>{paperMetadata.authors}</p><p className="doi">DOI: {paperMetadata.doi}</p></div></div></div>
-                            <div className="stats-grid"><div className="stat-card emerald"><p className="stat-label" style={{color:'var(--emerald-400)'}}>OS Improvement</p><p className="stat-value">18%</p><p className="stat-detail">HR 0.82 (ICI+Chemo)</p></div><div className="stat-card cyan"><p className="stat-label" style={{color:'var(--cyan-400)'}}>ORR Pooled</p><p className="stat-value">10%</p><p className="stat-detail">OR 1.10 (ICB therapy)</p></div><div className="stat-card amber"><p className="stat-label" style={{color:'var(--amber-400)'}}>PFS Hazard Ratio</p><p className="stat-value">2.25</p><p className="stat-detail">95% CI: 2.15-2.36</p></div><div className="stat-card rose"><p className="stat-label" style={{color:'var(--rose-400)'}}>Radiotherapy + ICI</p><p className="stat-value">+18%</p><p className="stat-detail">Mortality increase</p></div></div>
-                            <div className="two-col"><div className="card"><h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>◈</span> Background</h3><p className="info-text">Pancreatic ductal adenocarcinoma (PDAC) remains one of the most lethal malignancies with 5-year survival rates below 2%.</p><p className="info-text">Key molecular drivers include mutations in <span className="highlight">KRAS</span>, <span className="highlight">TP53</span>, and <span className="highlight">CDKN2A</span>.</p><p className="info-text">The tumor microenvironment is characterized by dense stroma and limited T-cell infiltration.</p></div><div className="card"><h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Research Objectives</h3><p className="info-text">Systematically investigate the impact of ICIs on key clinical outcomes in PDAC patients.</p><ul className="info-list"><li><span className="dot"></span>Progression-free survival (PFS)</li><li><span className="dot"></span>Overall survival (OS)</li><li><span className="dot"></span>Objective response rate (ORR)</li></ul></div></div>
-                        </div>)}
-
-                        {activeSection === 'methodology' && (<div>
-                            <div className="card"><h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>⬡</span> PRISMA Flow Diagram</h3>
-                                <div className="prisma-flow">
-                                    <div className="prisma-box identification"><p className="prisma-label" style={{color:'var(--cyan-400)'}}>Identification</p><p className="prisma-title">Records from databases</p><ul className="prisma-list"><li>PubMed: {prismaData.identification.pubmed}</li><li>Cochrane: {prismaData.identification.cochrane}</li><li>CINAHL: {prismaData.identification.cinahl}</li><li>Google Scholar: {prismaData.identification.googleScholar}</li></ul><p className="prisma-value" style={{color:'var(--cyan-400)',marginTop:'0.5rem'}}>Total: {prismaData.identification.total}</p></div>
-                                    <div className="prisma-connector cyan-emerald"></div>
-                                    <div className="prisma-row"><div className="prisma-box screening"><p className="prisma-label" style={{color:'var(--emerald-400)'}}>Screening</p><p className="prisma-title">Records screened</p><p className="prisma-value" style={{color:'var(--emerald-400)'}}>{prismaData.screened}</p></div><span className="prisma-arrow">→</span><div className="prisma-box excluded"><p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p><p className="prisma-value" style={{color:'var(--rose-400)'}}>{prismaData.excluded}</p></div></div>
-                                    <div className="prisma-connector emerald-amber"></div>
-                                    <div className="prisma-row"><div className="prisma-box eligibility"><p className="prisma-label" style={{color:'var(--amber-400)'}}>Eligibility</p><p className="prisma-title">Reports assessed</p><p className="prisma-value" style={{color:'var(--amber-400)'}}>{prismaData.assessed}</p></div><span className="prisma-arrow">→</span><div className="prisma-box excluded"><p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p><ul className="prisma-list"><li>Outcomes: {prismaData.excludedReasons.deviatingOutcomes}</li><li>Expression: {prismaData.excludedReasons.investigatingExpression}</li><li>Combined: {prismaData.excludedReasons.combinedCancers}</li><li>Murine: {prismaData.excludedReasons.murineModels}</li></ul></div></div>
-                                    <div className="prisma-connector amber-violet"></div>
-                                    <div className="prisma-box included"><p className="prisma-label" style={{color:'var(--violet-400)'}}>Included</p><p className="prisma-title">Studies in review</p><p className="prisma-value large" style={{color:'var(--violet-400)'}}>{prismaData.included}</p></div>
+                    <header className="header">
+                        <div className="container">
+                            <div className="header-content">
+                                <div className="logo">Ω</div>
+                                <div className="header-text">
+                                    <h1>PDAC Immunotherapy Dashboard</h1>
+                                    <p>Al-Khinji et al. 2025 • Frontiers in Oncology</p>
                                 </div>
                             </div>
-                            <div className="card"><h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◆</span> Risk of Bias (RCTs)</h3><div className="rob-legend"><div className="rob-legend-item"><div className="rob-dot low">+</div> Low risk</div><div className="rob-legend-item"><div className="rob-dot concerns">-</div> Concerns</div></div><table className="rob-table"><thead><tr><th>Study</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>D5</th><th>Overall</th></tr></thead><tbody>{robRCTData.map((r,i) => (<tr key={i}><td>{r.study}</td>{['D1','D2','D3','D4','D5','overall'].map(k => (<td key={k}><div className={`rob-dot ${r[k]}`}>{r[k]==='low'?'+':'-'}</div></td>))}</tr>))}</tbody></table><p className="rob-note">D1: Randomization | D2: Deviations | D3: Missing data | D4: Measurement | D5: Selection</p></div>
-                        </div>)}
+                        </div>
+                    </header>
+                    
+                    <nav className="nav">
+                        <div className="container">
+                            <div className="nav-content">
+                                {sections.map(s => (
+                                    <button key={s.id} onClick={() => setActiveSection(s.id)} className={`nav-btn ${activeSection === s.id ? 'active' : ''}`}>
+                                        <span>{s.icon}</span>{s.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </nav>
+                    
+                    <main>
+                        <div className="container">
+                            {/* OVERVIEW */}
+                            {activeSection === 'overview' && (
+                                <div>
+                                    <div className="hero-card">
+                                        <div className="hero-content">
+                                            <p className="hero-label">Systematic Review & Meta-Analysis</p>
+                                            <h2 className="hero-title">{paperMetadata.title}</h2>
+                                            <p className="hero-subtitle">{paperMetadata.subtitle}</p>
+                                            <div className="badge-container">
+                                                <span className="badge badge-cyan">{paperMetadata.totalStudies} Studies</span>
+                                                <span className="badge badge-emerald">{paperMetadata.totalParticipants.toLocaleString()} Participants</span>
+                                                <span className="badge badge-amber">{paperMetadata.journal} {paperMetadata.year}</span>
+                                            </div>
+                                            <div className="hero-footer">
+                                                <p>{paperMetadata.authors}</p>
+                                                <p className="doi">DOI: {paperMetadata.doi}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="stats-grid">
+                                        <div className="stat-card emerald">
+                                            <p className="stat-label" style={{color:'var(--emerald-400)'}}>OS Improvement</p>
+                                            <p className="stat-value">18%</p>
+                                            <p className="stat-detail">HR 0.82 (ICI+Chemo)</p>
+                                        </div>
+                                        <div className="stat-card cyan">
+                                            <p className="stat-label" style={{color:'var(--cyan-400)'}}>ORR Pooled</p>
+                                            <p className="stat-value">10%</p>
+                                            <p className="stat-detail">OR 1.10 (ICB therapy)</p>
+                                        </div>
+                                        <div className="stat-card amber">
+                                            <p className="stat-label" style={{color:'var(--amber-400)'}}>PFS Hazard Ratio</p>
+                                            <p className="stat-value">2.25</p>
+                                            <p className="stat-detail">95% CI: 2.15-2.36</p>
+                                        </div>
+                                        <div className="stat-card rose">
+                                            <p className="stat-label" style={{color:'var(--rose-400)'}}>Radiotherapy + ICI</p>
+                                            <p className="stat-value">+18%</p>
+                                            <p className="stat-detail">Mortality increase</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="two-col">
+                                        <div className="card">
+                                            <h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>◈</span> Background</h3>
+                                            <p className="info-text">Pancreatic ductal adenocarcinoma (PDAC) remains one of the most lethal malignancies with 5-year survival rates below 2%.</p>
+                                            <p className="info-text">Key molecular drivers include mutations in <span className="highlight">KRAS</span>, <span className="highlight">TP53</span>, and <span className="highlight">CDKN2A</span>.</p>
+                                            <p className="info-text">The tumor microenvironment is characterized by dense stroma and limited T-cell infiltration.</p>
+                                        </div>
+                                        <div className="card">
+                                            <h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Research Objectives</h3>
+                                            <p className="info-text">Systematically investigate the impact of ICIs on key clinical outcomes in PDAC patients.</p>
+                                            <ul className="info-list">
+                                                <li><span className="dot"></span>Progression-free survival (PFS)</li>
+                                                <li><span className="dot"></span>Overall survival (OS)</li>
+                                                <li><span className="dot"></span>Objective response rate (ORR)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
 
-                        {activeSection === 'findings' && (<div>
-                            <div className="tabs">{[{id:'orr',label:'Objective Response Rate'},{id:'os',label:'Overall Survival'},{id:'pfs',label:'Progression-Free Survival'}].map(t => (<button key={t.id} onClick={() => setFindingTab(t.id)} className={`tab-btn ${findingTab === t.id ? 'active' : ''}`}>{t.label}</button>))}</div>
-                            {findingTab === 'orr' && (<div className="metrics-grid"><div className="metric-card cyan"><p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI + Chemotherapy</p><p className="metric-value">OR 1.78</p><p className="metric-ci">95% CI: 1.46–2.16</p><p className="metric-note" style={{color:'var(--amber-400)'}}>I² = 85%</p></div><div className="metric-card emerald"><p className="metric-label" style={{color:'var(--emerald-400)'}}>ICB Monotherapy</p><p className="metric-value">OR 1.10</p><p className="metric-ci">95% CI: 1.02–1.18</p><p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 0%</p></div><div className="metric-card amber"><p className="metric-label" style={{color:'var(--amber-400)'}}>ICI + Radiotherapy</p><p className="metric-value">OR 1.35</p><p className="metric-ci">95% CI: 0.99–1.83</p><p className="metric-note" style={{color:'var(--rose-400)'}}>I² = 96%</p></div></div>)}
-                            {findingTab === 'os' && (<div className="metrics-grid"><div className="metric-card emerald"><p className="metric-label" style={{color:'var(--emerald-400)'}}>ICI + Chemotherapy</p><p className="metric-value">HR 0.82</p><p className="metric-ci">95% CI: 0.78–0.87</p><p className="metric-note" style={{color:'var(--emerald-400)'}}>18% death risk ↓</p></div><div className="metric-card cyan"><p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI Monotherapy</p><p className="metric-value">HR 0.82</p><p className="metric-ci">95% CI: 0.76–0.88</p><p className="metric-note" style={{color:'var(--cyan-400)'}}>I² = 0%</p></div><div className="metric-card rose"><p className="metric-label" style={{color:'var(--rose-400)'}}>ICI + Radiotherapy</p><p className="metric-value">HR 1.18</p><p className="metric-ci">95% CI: 1.04–1.34</p><p className="metric-note" style={{color:'var(--rose-400)'}}>⚠️ ↑ Mortality</p></div></div>)}
-                            {findingTab === 'pfs' && (<div className="metrics-grid" style={{maxWidth:'400px'}}><div className="metric-card violet"><p className="metric-label" style={{color:'var(--violet-400)'}}>Pooled PFS HR</p><p className="metric-value">HR 2.25</p><p className="metric-ci">95% CI: 2.15–2.36</p><p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 7%</p></div></div>)}
-                            <div className="card" style={{marginTop:'1.5rem'}}><h3 className="card-title"><span style={{color:'var(--amber-400)'}}>◆</span> Subgroup Findings</h3><div className="subgroup-grid"><div className="subgroup-card emerald"><h4 className="subgroup-title" style={{color:'var(--emerald-400)'}}>High TMB Patients</h4><ul className="subgroup-list"><li>• Improved PFS with ICI</li><li>• Better checkpoint response</li><li>• Longer survival vs low-TMB</li></ul></div><div className="subgroup-card cyan"><h4 className="subgroup-title" style={{color:'var(--cyan-400)'}}>MSI-H / dMMR Patients</h4><ul className="subgroup-list"><li>• ORR of 48.4% with combos</li><li>• Median PFS 26.7 months</li><li>• Durable responses</li></ul></div></div></div>
-                        </div>)}
+                            {/* METHODOLOGY */}
+                            {activeSection === 'methodology' && (
+                                <div>
+                                    <div className="card">
+                                        <h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>⬡</span> PRISMA Flow Diagram</h3>
+                                        <div className="prisma-flow">
+                                            <div className="prisma-box identification">
+                                                <p className="prisma-label" style={{color:'var(--cyan-400)'}}>Identification</p>
+                                                <p className="prisma-title">Records from databases</p>
+                                                <ul className="prisma-list">
+                                                    <li>PubMed: {prismaData.identification.pubmed}</li>
+                                                    <li>Cochrane: {prismaData.identification.cochrane}</li>
+                                                    <li>CINAHL: {prismaData.identification.cinahl}</li>
+                                                    <li>Google Scholar: {prismaData.identification.googleScholar}</li>
+                                                </ul>
+                                                <p className="prisma-value" style={{color:'var(--cyan-400)',marginTop:'0.5rem'}}>Total: {prismaData.identification.total}</p>
+                                            </div>
+                                            
+                                            <div className="prisma-connector cyan-emerald"></div>
+                                            
+                                            <div className="prisma-row">
+                                                <div className="prisma-box screening">
+                                                    <p className="prisma-label" style={{color:'var(--emerald-400)'}}>Screening</p>
+                                                    <p className="prisma-title">Records screened</p>
+                                                    <p className="prisma-value" style={{color:'var(--emerald-400)'}}>{prismaData.screened}</p>
+                                                </div>
+                                                <span className="prisma-arrow">→</span>
+                                                <div className="prisma-box excluded">
+                                                    <p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p>
+                                                    <p className="prisma-value" style={{color:'var(--rose-400)'}}>{prismaData.excluded}</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="prisma-connector emerald-amber"></div>
+                                            
+                                            <div className="prisma-row">
+                                                <div className="prisma-box eligibility">
+                                                    <p className="prisma-label" style={{color:'var(--amber-400)'}}>Eligibility</p>
+                                                    <p className="prisma-title">Reports assessed</p>
+                                                    <p className="prisma-value" style={{color:'var(--amber-400)'}}>{prismaData.assessed}</p>
+                                                </div>
+                                                <span className="prisma-arrow">→</span>
+                                                <div className="prisma-box excluded">
+                                                    <p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p>
+                                                    <ul className="prisma-list">
+                                                        <li>Outcomes: {prismaData.excludedReasons.deviatingOutcomes}</li>
+                                                        <li>Expression: {prismaData.excludedReasons.investigatingExpression}</li>
+                                                        <li>Combined: {prismaData.excludedReasons.combinedCancers}</li>
+                                                        <li>Murine: {prismaData.excludedReasons.murineModels}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="prisma-connector amber-violet"></div>
+                                            
+                                            <div className="prisma-box included">
+                                                <p className="prisma-label" style={{color:'var(--violet-400)'}}>Included</p>
+                                                <p className="prisma-title">Studies in review</p>
+                                                <p className="prisma-value large" style={{color:'var(--violet-400)'}}>{prismaData.included}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="card">
+                                        <h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◆</span> Risk of Bias (RCTs)</h3>
+                                        <div className="rob-legend">
+                                            <div className="rob-legend-item"><div className="rob-dot low">+</div> Low risk</div>
+                                            <div className="rob-legend-item"><div className="rob-dot concerns">-</div> Concerns</div>
+                                        </div>
+                                        <table className="rob-table">
+                                            <thead>
+                                                <tr><th>Study</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>D5</th><th>Overall</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                {robRCTData.map((r,i) => (
+                                                    <tr key={i}>
+                                                        <td>{r.study}</td>
+                                                        {['D1','D2','D3','D4','D5','overall'].map(k => (
+                                                            <td key={k}><div className={`rob-dot ${r[k]}`}>{r[k]==='low'?'+':'-'}</div></td>
+                                                        ))}
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                        <p className="rob-note">D1: Randomization | D2: Deviations | D3: Missing data | D4: Measurement | D5: Selection</p>
+                                    </div>
+                                </div>
+                            )}
 
-                        {activeSection === 'bayesian' && (<div>
-                            <div className="card"><h3 className="card-title"><span style={{color:'var(--violet-400)'}}>⬢</span> Causal Bayesian Network</h3><p style={{color:'var(--slate-400)',fontSize:'0.875rem',marginBottom:'1rem'}}>Click nodes for details. Arrows show causal direction.</p><div className="network-legend"><div className="network-legend-item"><div className="network-legend-dot intervention"></div> Intervention</div><div className="network-legend-item"><div className="network-legend-dot biomarker"></div> Biomarker</div><div className="network-legend-item"><div className="network-legend-dot mediator"></div> Mediator</div><div className="network-legend-item"><div className="network-legend-dot outcome"></div> Outcome</div></div><div className="network-container"><BayesianNetwork onNodeClick={(id) => setSelectedNode(selectedNode === id ? null : id)} selectedNode={selectedNode} hoveredNode={hoveredNode} setHoveredNode={setHoveredNode} /></div></div>
-                            {selectedNode && nodeDescriptions[selectedNode] && (<div className="node-panel animate-fadeIn"><div className="node-panel-header"><h4 className="node-panel-title">{nodeDescriptions[selectedNode].title}</h4><button className="node-panel-close" onClick={() => setSelectedNode(null)}>✕</button></div><p className="node-panel-desc">{nodeDescriptions[selectedNode].description}</p><p className="node-panel-effects-title">Causal Effects:</p><ul className="node-panel-effects">{nodeDescriptions[selectedNode].effects.map((e,i) => (<li key={i}>{e}</li>))}</ul></div>)}
-                            <div className="pathways-grid"><div className="pathway-card positive"><h4 className="pathway-title" style={{color:'var(--emerald-400)'}}>✓ Positive Pathways</h4><ul className="pathway-list"><li>• ICI + Chemo → Immune ↑ → OS (HR 0.82)</li><li>• High TMB → Immune ↑ → PFS ↑</li><li>• dMMR → ICI Response → Durable</li></ul></div><div className="pathway-card negative"><h4 className="pathway-title" style={{color:'var(--rose-400)'}}>⚠️ Negative Pathways</h4><ul className="pathway-list"><li>• ICI + RT → Inflammation → Mortality ↑</li><li>• Dense Stroma → T-cell Block → Limited ICI</li><li>• Low TMB → Poor Antigen → No Response</li></ul></div></div>
-                        </div>)}
+                            {/* FINDINGS */}
+                            {activeSection === 'findings' && (
+                                <div>
+                                    <div className="tabs">
+                                        {[{id:'orr',label:'Objective Response Rate'},{id:'os',label:'Overall Survival'},{id:'pfs',label:'Progression-Free Survival'}].map(t => (
+                                            <button key={t.id} onClick={() => setFindingTab(t.id)} className={`tab-btn ${findingTab === t.id ? 'active' : ''}`}>{t.label}</button>
+                                        ))}
+                                    </div>
+                                    
+                                    {findingTab === 'orr' && (
+                                        <div className="metrics-grid">
+                                            <div className="metric-card cyan">
+                                                <p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI + Chemotherapy</p>
+                                                <p className="metric-value">OR 1.78</p>
+                                                <p className="metric-ci">95% CI: 1.46–2.16</p>
+                                                <p className="metric-note" style={{color:'var(--amber-400)'}}>I² = 85%</p>
+                                            </div>
+                                            <div className="metric-card emerald">
+                                                <p className="metric-label" style={{color:'var(--emerald-400)'}}>ICB Monotherapy</p>
+                                                <p className="metric-value">OR 1.10</p>
+                                                <p className="metric-ci">95% CI: 1.02–1.18</p>
+                                                <p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 0%</p>
+                                            </div>
+                                            <div className="metric-card amber">
+                                                <p className="metric-label" style={{color:'var(--amber-400)'}}>ICI + Radiotherapy</p>
+                                                <p className="metric-value">OR 1.35</p>
+                                                <p className="metric-ci">95% CI: 0.99–1.83</p>
+                                                <p className="metric-note" style={{color:'var(--rose-400)'}}>I² = 96%</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    
+                                    {findingTab === 'os' && (
+                                        <div className="metrics-grid">
+                                            <div className="metric-card emerald">
+                                                <p className="metric-label" style={{color:'var(--emerald-400)'}}>ICI + Chemotherapy</p>
+                                                <p className="metric-value">HR 0.82</p>
+                                                <p className="metric-ci">95% CI: 0.78–0.87</p>
+                                                <p className="metric-note" style={{color:'var(--emerald-400)'}}>18% death risk ↓</p>
+                                            </div>
+                                            <div className="metric-card cyan">
+                                                <p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI Monotherapy</p>
+                                                <p className="metric-value">HR 0.82</p>
+                                                <p className="metric-ci">95% CI: 0.76–0.88</p>
+                                                <p className="metric-note" style={{color:'var(--cyan-400)'}}>I² = 0%</p>
+                                            </div>
+                                            <div className="metric-card rose">
+                                                <p className="metric-label" style={{color:'var(--rose-400)'}}>ICI + Radiotherapy</p>
+                                                <p className="metric-value">HR 1.18</p>
+                                                <p className="metric-ci">95% CI: 1.04–1.34</p>
+                                                <p className="metric-note" style={{color:'var(--rose-400)'}}>⚠️ ↑ Mortality</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    
+                                    {findingTab === 'pfs' && (
+                                        <div className="metrics-grid" style={{maxWidth:'400px'}}>
+                                            <div className="metric-card violet">
+                                                <p className="metric-label" style={{color:'var(--violet-400)'}}>Pooled PFS HR</p>
+                                                <p className="metric-value">HR 2.25</p>
+                                                <p className="metric-ci">95% CI: 2.15–2.36</p>
+                                                <p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 7%</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    
+                                    <div className="card" style={{marginTop:'1.5rem'}}>
+                                        <h3 className="card-title"><span style={{color:'var(--amber-400)'}}>◆</span> Subgroup Findings</h3>
+                                        <div className="subgroup-grid">
+                                            <div className="subgroup-card emerald">
+                                                <h4 className="subgroup-title" style={{color:'var(--emerald-400)'}}>High TMB Patients</h4>
+                                                <ul className="subgroup-list">
+                                                    <li>• Improved PFS with ICI</li>
+                                                    <li>• Better checkpoint response</li>
+                                                    <li>• Longer survival vs low-TMB</li>
+                                                </ul>
+                                            </div>
+                                            <div className="subgroup-card cyan">
+                                                <h4 className="subgroup-title" style={{color:'var(--cyan-400)'}}>MSI-H / dMMR Patients</h4>
+                                                <ul className="subgroup-list">
+                                                    <li>• ORR of 48.4% with combos</li>
+                                                    <li>• Median PFS 26.7 months</li>
+                                                    <li>• Durable responses</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
 
-                        {activeSection === 'forest' && (<div>
-                            <div className="plot-selector">{Object.entries(plotConfigs).map(([k,c]) => (<button key={k} onClick={() => setPlotType(k)} className={`plot-btn ${plotType === k ? 'active' : ''}`} style={plotType === k ? {backgroundColor:`${c.color}20`,borderColor:`${c.color}50`,color:c.color} : {}}>{c.title.split(':')[0]}</button>))}</div>
-                            <div className="card"><div className="forest-header"><h3 className="forest-title">{plotConfigs[plotType].title}</h3><div className="forest-meta"><span>Pooled {plotConfigs[plotType].metric.toUpperCase()}: <strong style={{color:plotConfigs[plotType].color}}>{plotConfigs[plotType].pooled.toFixed(2)}</strong></span><span>|</span><span>I² = {plotConfigs[plotType].heterogeneity}</span></div></div><ForestPlot data={plotConfigs[plotType].data} color={plotConfigs[plotType].color} pooled={plotConfigs[plotType].pooled} metric={plotConfigs[plotType].metric} heterogeneity={plotConfigs[plotType].heterogeneity} /></div>
-                            <div className={`interpretation-box ${plotConfigs[plotType].warning ? 'negative' : 'positive'}`}><p className="interpretation-title" style={{color:plotConfigs[plotType].warning ? 'var(--rose-400)' : 'var(--emerald-400)'}}>{plotConfigs[plotType].warning ? '⚠️ Warning' : '✓ Interpretation'}</p><p className="interpretation-text">{interpretations[plotType]}</p></div>
-                        </div>)}
+                            {/* FOREST PLOTS */}
+                            {activeSection === 'forest' && (
+                                <div>
+                                    <div className="plot-selector">
+                                        {Object.entries(plotConfigs).map(([k,c]) => (
+                                            <button 
+                                                key={k} 
+                                                onClick={() => setPlotType(k)} 
+                                                className={`plot-btn ${plotType === k ? 'active' : ''}`} 
+                                                style={plotType === k ? {backgroundColor:`${c.color}20`,borderColor:`${c.color}50`,color:c.color} : {}}
+                                            >
+                                                {c.title.split(':')[0]}
+                                            </button>
+                                        ))}
+                                    </div>
+                                    
+                                    <div className="card">
+                                        <div className="forest-header">
+                                            <h3 className="forest-title">{plotConfigs[plotType].title}</h3>
+                                            <div className="forest-meta">
+                                                <span>Pooled {plotConfigs[plotType].metric.toUpperCase()}: <strong style={{color:plotConfigs[plotType].color}}>{plotConfigs[plotType].pooled.toFixed(2)}</strong></span>
+                                                <span>|</span>
+                                                <span>I² = {plotConfigs[plotType].heterogeneity}</span>
+                                            </div>
+                                        </div>
+                                        <ForestPlot 
+                                            data={plotConfigs[plotType].data} 
+                                            color={plotConfigs[plotType].color} 
+                                            pooled={plotConfigs[plotType].pooled} 
+                                            metric={plotConfigs[plotType].metric} 
+                                            heterogeneity={plotConfigs[plotType].heterogeneity} 
+                                        />
+                                    </div>
+                                    
+                                    <div className={`interpretation-box ${plotConfigs[plotType].warning ? 'negative' : 'positive'}`}>
+                                        <p className="interpretation-title" style={{color:plotConfigs[plotType].warning ? 'var(--rose-400)' : 'var(--emerald-400)'}}>
+                                            {plotConfigs[plotType].warning ? '⚠️ Warning' : '✓ Interpretation'}
+                                        </p>
+                                        <p className="interpretation-text">{interpretations[plotType]}</p>
+                                    </div>
+                                </div>
+                            )}
 
-                        {activeSection === 'implications' && (<div>
-                            <div className="card"><h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Key Conclusions</h3><div className="conclusions-grid"><div><div className="conclusion-item"><div className="conclusion-icon positive">✓</div><div><p className="conclusion-title">ICI + Chemo Shows Promise</p><p className="conclusion-desc">18% mortality reduction with consistent results</p></div></div><div className="conclusion-item"><div className="conclusion-icon positive">✓</div><div><p className="conclusion-title">Biomarker Selection Critical</p><p className="conclusion-desc">High TMB and dMMR patients respond best</p></div></div></div><div><div className="conclusion-item"><div className="conclusion-icon negative">⚠</div><div><p className="conclusion-title">Caution with Radiotherapy</p><p className="conclusion-desc">ICI + RT increases mortality risk</p></div></div><div className="conclusion-item"><div className="conclusion-icon warning">!</div><div><p className="conclusion-title">Limited Monotherapy Efficacy</p><p className="conclusion-desc">ICI alone shows 0% ORR in most PDAC</p></div></div></div></div></div>
-                            <div className="card" style={{background:'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))',borderColor:'rgba(6, 182, 212, 0.2)'}}><h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>🔬</span> Future Research</h3><div>{[{area:"Predictive Biomarkers",desc:"Develop and validate for optimal patient selection"},{area:"Novel Combinations",desc:"ICIs with targeted therapies and vaccines"},{area:"TME Modulation",desc:"Convert 'cold' tumors to 'hot' phenotypes"},{area:"Personalized Approaches",desc:"Multi-omic data for individualized treatment"}].map((f,i) => (<div key={i} className="future-item"><div className="future-dot"></div><div><p className="future-title">{f.area}</p><p className="future-desc">{f.desc}</p></div></div>))}</div></div>
-                            <div className="card"><h3 className="card-title"><span style={{color:'var(--violet-400)'}}>📋</span> Clinical Guidance</h3><table className="guidance-table"><thead><tr><th>Patient Profile</th><th>Recommended Approach</th><th>Evidence</th></tr></thead><tbody>{[{profile:"High TMB / MSI-H / dMMR",approach:"ICI combination (+ chemo)",evidence:"Moderate-High"},{profile:"Low TMB / MSS",approach:"Standard chemo; consider trials",evidence:"Moderate"},{profile:"Metastatic, first-line",approach:"ICI + chemo (gem/nab-pac)",evidence:"Moderate"},{profile:"Locally advanced",approach:"Neoadjuvant chemoRT ± ICI",evidence:"Low"}].map((r,i) => (<tr key={i}><td>{r.profile}</td><td>{r.approach}</td><td><span className={`evidence-badge ${r.evidence.includes('High')?'high':r.evidence==='Moderate'?'moderate':'low'}`}>{r.evidence}</span></td></tr>))}</tbody></table></div>
-                        </div>)}
-                    </div></main>
-                    <footer><div className="container"><p>Based on: Al-Khinji A, et al. (2025) Immune checkpoint inhibitors in pancreatic adenocarcinoma. <span className="doi">Front. Oncol. 15:1569884</span></p><p className="note">Interactive Dashboard • Data visualization for research purposes only</p></div></footer>
+                            {/* IMPLICATIONS */}
+                            {activeSection === 'implications' && (
+                                <div>
+                                    <div className="card">
+                                        <h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Key Conclusions</h3>
+                                        <div className="conclusions-grid">
+                                            <div>
+                                                <div className="conclusion-item">
+                                                    <div className="conclusion-icon positive">✓</div>
+                                                    <div>
+                                                        <p className="conclusion-title">ICI + Chemo Shows Promise</p>
+                                                        <p className="conclusion-desc">18% mortality reduction with consistent results</p>
+                                                    </div>
+                                                </div>
+                                                <div className="conclusion-item">
+                                                    <div className="conclusion-icon positive">✓</div>
+                                                    <div>
+                                                        <p className="conclusion-title">Biomarker Selection Critical</p>
+                                                        <p className="conclusion-desc">High TMB and dMMR patients respond best</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div className="conclusion-item">
+                                                    <div className="conclusion-icon negative">⚠</div>
+                                                    <div>
+                                                        <p className="conclusion-title">Caution with Radiotherapy</p>
+                                                        <p className="conclusion-desc">ICI + RT increases mortality risk</p>
+                                                    </div>
+                                                </div>
+                                                <div className="conclusion-item">
+                                                    <div className="conclusion-icon warning">!</div>
+                                                    <div>
+                                                        <p className="conclusion-title">Limited Monotherapy Efficacy</p>
+                                                        <p className="conclusion-desc">ICI alone shows 0% ORR in most PDAC</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="card" style={{background:'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))',borderColor:'rgba(6, 182, 212, 0.2)'}}>
+                                        <h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>🔬</span> Future Research</h3>
+                                        <div>
+                                            {[
+                                                {area:"Predictive Biomarkers",desc:"Develop and validate for optimal patient selection"},
+                                                {area:"Novel Combinations",desc:"ICIs with targeted therapies and vaccines"},
+                                                {area:"TME Modulation",desc:"Convert 'cold' tumors to 'hot' phenotypes"},
+                                                {area:"Personalized Approaches",desc:"Multi-omic data for individualized treatment"}
+                                            ].map((f,i) => (
+                                                <div key={i} className="future-item">
+                                                    <div className="future-dot"></div>
+                                                    <div>
+                                                        <p className="future-title">{f.area}</p>
+                                                        <p className="future-desc">{f.desc}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="card">
+                                        <h3 className="card-title"><span style={{color:'var(--violet-400)'}}>📋</span> Clinical Guidance</h3>
+                                        <table className="guidance-table">
+                                            <thead>
+                                                <tr><th>Patient Profile</th><th>Recommended Approach</th><th>Evidence</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                {[
+                                                    {profile:"High TMB / MSI-H / dMMR",approach:"ICI combination (+ chemo)",evidence:"Moderate-High"},
+                                                    {profile:"Low TMB / MSS",approach:"Standard chemo; consider trials",evidence:"Moderate"},
+                                                    {profile:"Metastatic, first-line",approach:"ICI + chemo (gem/nab-pac)",evidence:"Moderate"},
+                                                    {profile:"Locally advanced",approach:"Neoadjuvant chemoRT ± ICI",evidence:"Low"}
+                                                ].map((r,i) => (
+                                                    <tr key={i}>
+                                                        <td>{r.profile}</td>
+                                                        <td>{r.approach}</td>
+                                                        <td><span className={`evidence-badge ${r.evidence.includes('High')?'high':r.evidence==='Moderate'?'moderate':'low'}`}>{r.evidence}</span></td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </main>
+                    
+                    <footer>
+                        <div className="container">
+                            <p>Based on: Al-Khinji A, et al. (2025) Immune checkpoint inhibitors in pancreatic adenocarcinoma. <span className="doi">Front. Oncol. 15:1569884</span></p>
+                            <p className="note">Interactive Dashboard • Data visualization for research purposes only</p>
+                        </div>
+                    </footer>
                 </div>
             );
         }

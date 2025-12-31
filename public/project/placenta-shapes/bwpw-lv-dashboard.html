@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BW/PW Ratio & Left Ventricular Dimensions Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --secondary: #c53030;
+            --accent: #38a169;
+            --accent-light: #68d391;
+            --warning: #d69e2e;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #334155;
+            --gradient-1: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+            --gradient-2: linear-gradient(135deg, #c53030 0%, #e53e3e 100%);
+            --gradient-3: linear-gradient(135deg, #38a169 0%, #48bb78 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(180deg, rgba(26, 54, 93, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c5282' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .header-meta a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: rgba(56, 161, 105, 0.2);
+            color: var(--accent-light);
+            border: 1px solid rgba(56, 161, 105, 0.3);
+        }
+
+        .nav-tabs {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-tab.active {
+            color: #60a5fa;
+            border-bottom-color: #60a5fa;
+        }
+
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 1200px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-4 { grid-template-columns: 1fr; }
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-value.small { font-size: 1.5rem; background: var(--gradient-2); -webkit-background-clip: text; background-clip: text; }
+        .stat-value.normal { font-size: 1.5rem; background: var(--gradient-3); -webkit-background-clip: text; background-clip: text; }
+        .stat-value.large { font-size: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .stat-detail {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .flow-container {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .flow-box {
+            display: inline-block;
+            background: var(--bg-card-hover);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-width: 140px;
+            margin: 0.5rem;
+        }
+
+        .flow-box.highlight {
+            border-color: var(--accent);
+            background: rgba(56, 161, 105, 0.1);
+        }
+
+        .flow-box.excluded {
+            border-color: var(--secondary);
+            background: rgba(197, 48, 48, 0.1);
+        }
+
+        .flow-arrow {
+            display: block;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .flow-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .flow-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .exclusion-list {
+            text-align: left;
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(197, 48, 48, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(197, 48, 48, 0.3);
+        }
+
+        .exclusion-list li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+        }
+
+        .bwpw-groups {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+
+        .chart-container.tall {
+            height: 450px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .data-table th {
+            background: rgba(26, 54, 93, 0.5);
+            padding: 0.75rem 0.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
+        }
+
+        .data-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .data-table .significant {
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .data-table .highlight-row {
+            background: rgba(56, 161, 105, 0.1);
+        }
+
+        .data-table .section-header {
+            background: rgba(44, 82, 130, 0.3);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-select {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            min-width: 180px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #60a5fa;
+        }
+
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .context-grid { grid-template-columns: 1fr; }
+        }
+
+        .context-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .context-card.strength { border-left-color: #38a169; }
+        .context-card.limitation { border-left-color: #e53e3e; }
+
+        .context-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .context-list {
+            list-style: none;
+        }
+
+        .context-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .context-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .key-finding {
+            background: linear-gradient(135deg, rgba(56, 161, 105, 0.15) 0%, rgba(56, 161, 105, 0.05) 100%);
+            border: 1px solid rgba(56, 161, 105, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .key-finding-title {
+            color: var(--accent-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-finding-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .note-box {
+            background: rgba(66, 153, 225, 0.1);
+            border: 1px solid rgba(66, 153, 225, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .note-box strong {
+            color: #93c5fd;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Impact of Birth Weight to Placental Weight Ratio on Left Ventricular Dimensions</h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">A Prospective Cohort Analysis of Perinatal Risk Factors in Newborns</p>
+            <div class="header-meta">
+                <span><strong>Authors:</strong> Gad A*, Malouche D, Chhabra M, Hoang D, Suk D, Ron N, Dygulska B, Gudavalli MB, Nadroo AM, Narula P, Elmakaty I</span>
+                <span><strong>Journal:</strong> J. Perinat. Med. 2024; 52(4): 433–444</span>
+                <a href="https://doi.org/10.1515/jpm-2023-0384" target="_blank">DOI: 10.1515/jpm-2023-0384</a>
+                <span class="badge">n = 827 Neonates</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="nav-tabs-inner">
+            <button class="nav-tab active" data-tab="overview">Overview & Figure 1</button>
+            <button class="nav-tab" data-tab="table1">Table 1: Categorical</button>
+            <button class="nav-tab" data-tab="table2">Table 2: Continuous</button>
+            <button class="nav-tab" data-tab="table3">Table 3: LV Parameters</button>
+            <button class="nav-tab" data-tab="table4">Table 4: Regression</button>
+            <button class="nav-tab" data-tab="summary">Summary</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Overview Panel -->
+        <div id="overview" class="tab-panel active">
+            <div class="grid-4" style="margin-bottom: 2rem;">
+                <div class="stat-card">
+                    <div class="stat-value">827</div>
+                    <div class="stat-label">Neonates Analyzed</div>
+                    <div class="stat-detail">Final cohort</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">LV Parameters</div>
+                    <div class="stat-detail">Outcome variables</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2014–2018</div>
+                    <div class="stat-label">Study Period</div>
+                    <div class="stat-detail">4 years</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">48–72h</div>
+                    <div class="stat-label">Echo Timing</div>
+                    <div class="stat-detail">Post-delivery</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Figure 1: Overview of Selection Process</h2>
+                        <p class="card-subtitle">Selection process of neonates according to BW/PW ratio groups</p>
+                    </div>
+                </div>
+                
+                <div class="flow-container">
+                    <div class="flow-box">
+                        <div class="flow-number">908</div>
+                        <div class="flow-label">Neonates</div>
+                    </div>
+                    
+                    <div class="flow-arrow">↓</div>
+                    
+                    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                        <div class="flow-box excluded">
+                            <div class="flow-number">81</div>
+                            <div class="flow-label">Neonates excluded</div>
+                        </div>
+                        <div class="exclusion-list">
+                            <strong style="color: var(--text-primary);">Exclusion reasons:</strong>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+                                <li>22 Associated anomalies</li>
+                                <li>19 Perinatal depression/low 5 min APGAR</li>
+                                <li>11 Genetic diagnosis</li>
+                                <li>10 Cardiac disease</li>
+                                <li>9 Severe respiratory distress</li>
+                                <li>5 Severe sepsis/shock</li>
+                                <li>5 Others</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-arrow">↓</div>
+                    
+                    <div class="flow-box highlight">
+                        <div class="flow-number">827</div>
+                        <div class="flow-label">Neonates</div>
+                    </div>
+                    
+                    <div class="flow-arrow">↓</div>
+                    <div style="color: var(--text-secondary); margin-bottom: 1rem;">BW/PW Ratio</div>
+                    
+                    <div class="bwpw-groups">
+                        <div class="flow-box">
+                            <div class="flow-label" style="color: #f87171;">Less than 10th percentile</div>
+                            <div class="flow-number" style="color: #f87171;">16</div>
+                            <div class="flow-label">Neonates</div>
+                        </div>
+                        <div class="flow-box">
+                            <div class="flow-label" style="color: #4ade80;">Between 10th and 90th percentile</div>
+                            <div class="flow-number" style="color: #4ade80;">323</div>
+                            <div class="flow-label">Neonates</div>
+                        </div>
+                        <div class="flow-box">
+                            <div class="flow-label" style="color: #60a5fa;">More than 90th percentile</div>
+                            <div class="flow-number" style="color: #60a5fa;">488</div>
+                            <div class="flow-label">Neonates</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Abbreviation:</strong> BW/PW = Birth Weight to Placental Weight
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Study Design</h2>
+                        <p class="card-subtitle">Single-center prospective cohort study</p>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Setting & Population</h4>
+                        <ul class="context-list">
+                            <li>NewYork-Presbyterian Brooklyn Methodist Hospital</li>
+                            <li>Nursery ward and NICU (2014–2018)</li>
+                            <li>Neonates ≥35 weeks gestational age</li>
+                            <li>Routine screening echocardiography</li>
+                            <li>Echo within 48–72 hours post-delivery</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Statistical Methods</h4>
+                        <ul class="context-list">
+                            <li>MIPCA for missing data imputation</li>
+                            <li>Chi-squared test (categorical variables)</li>
+                            <li>One-way ANOVA (continuous variables)</li>
+                            <li>Genetic algorithm for model selection (AIC)</li>
+                            <li>Backward stepwise regression (F-test, α=0.05)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table 1 -->
+        <div id="table1" class="tab-panel">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Table 1: Baseline Characteristics (Categorical Variables)</h2>
+                        <p class="card-subtitle">Differences between BW/PW ratio groups</p>
+                    </div>
+                </div>
+                <div style="overflow-x: auto; max-height: 600px;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Small BW/PW (n=16)</th>
+                                <th>Normal BW/PW (n=323)</th>
+                                <th>Large BW/PW (n=488)</th>
+                                <th>Total (n=827)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="section-header"><td colspan="5">Sex</td></tr>
+                            <tr><td>Male</td><td>10 (62.5%)</td><td>172 (53.3%)</td><td>249 (51.0%)</td><td>431 (52.1%)</td></tr>
+                            <tr><td>Female</td><td>6 (37.5%)</td><td>151 (46.7%)</td><td>239 (49.0%)</td><td>396 (47.9%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">Birth Weight Category</td></tr>
+                            <tr><td>SGA</td><td>5 (31.3%)</td><td>37 (11.5%)</td><td>48 (9.8%)</td><td>90 (10.9%)</td></tr>
+                            <tr><td>AGA</td><td>10 (62.5%)</td><td>249 (77.1%)</td><td>382 (78.3%)</td><td>641 (77.5%)</td></tr>
+                            <tr><td>LGA</td><td>1 (6.3%)</td><td>37 (11.5%)</td><td>58 (11.9%)</td><td>96 (11.6%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">APGAR at 1 min</td></tr>
+                            <tr><td>Normal</td><td>16 (100%)</td><td>312 (96.6%)</td><td>477 (97.7%)</td><td>805 (97.3%)</td></tr>
+                            <tr><td>Moderately depressed</td><td>0 (0%)</td><td>10 (3.1%)</td><td>11 (2.3%)</td><td>21 (2.5%)</td></tr>
+                            <tr><td>Severely depressed</td><td>0 (0%)</td><td>1 (0.3%)</td><td>0 (0%)</td><td>1 (0.1%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">NICU Admission</td></tr>
+                            <tr><td>No</td><td>15 (93.8%)</td><td>287 (88.9%)</td><td>455 (93.2%)</td><td>757 (91.5%)</td></tr>
+                            <tr><td>Yes</td><td>1 (6.3%)</td><td>36 (11.1%)</td><td>33 (6.8%)</td><td>70 (8.5%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">Mode of Delivery</td></tr>
+                            <tr><td>Vaginal delivery</td><td>12 (75.0%)</td><td>218 (67.5%)</td><td>337 (69.1%)</td><td>567 (68.6%)</td></tr>
+                            <tr><td>Cesarean section</td><td>4 (25.0%)</td><td>105 (32.5%)</td><td>151 (30.9%)</td><td>260 (31.4%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">Parity</td></tr>
+                            <tr><td>Nulliparous</td><td>5 (31.3%)</td><td>142 (44.0%)</td><td>187 (38.3%)</td><td>334 (40.4%)</td></tr>
+                            <tr><td>Multiparous</td><td>11 (68.8%)</td><td>181 (56.0%)</td><td>301 (61.7%)</td><td>493 (59.6%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">Preeclampsia</td></tr>
+                            <tr><td>No</td><td>15 (93.8%)</td><td>305 (94.4%)</td><td>466 (95.5%)</td><td>786 (95.0%)</td></tr>
+                            <tr><td>Yes</td><td>1 (6.3%)</td><td>18 (5.6%)</td><td>22 (4.5%)</td><td>41 (5.0%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">GDM</td></tr>
+                            <tr><td>No</td><td>14 (87.5%)</td><td>267 (82.7%)</td><td>412 (84.4%)</td><td>693 (83.8%)</td></tr>
+                            <tr><td>Yes</td><td>2 (12.5%)</td><td>56 (17.3%)</td><td>76 (15.6%)</td><td>134 (16.2%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">GDM Management</td></tr>
+                            <tr><td>Diet or untreated</td><td>1 (50.0%)</td><td>19 (33.9%)</td><td>31 (40.8%)</td><td>51 (38.1%)</td></tr>
+                            <tr><td>Medical</td><td>1 (50.0%)</td><td>23 (41.1%)</td><td>22 (28.9%)</td><td>46 (34.3%)</td></tr>
+                            <tr><td>Insulin</td><td>0 (0%)</td><td>14 (25.0%)</td><td>23 (30.3%)</td><td>37 (27.6%)</td></tr>
+                            
+                            <tr class="section-header"><td colspan="5">Ethnicity</td></tr>
+                            <tr><td>White</td><td>4 (25.0%)</td><td>89 (27.6%)</td><td>123 (25.2%)</td><td>216 (26.1%)</td></tr>
+                            <tr><td>African American</td><td>6 (37.5%)</td><td>78 (24.1%)</td><td>128 (26.2%)</td><td>212 (25.6%)</td></tr>
+                            <tr><td>Asian</td><td>2 (12.5%)</td><td>66 (20.4%)</td><td>106 (21.7%)</td><td>174 (21.0%)</td></tr>
+                            <tr><td>Hispanic</td><td>3 (18.8%)</td><td>67 (20.7%)</td><td>98 (20.1%)</td><td>168 (20.3%)</td></tr>
+                            <tr><td>Others</td><td>1 (6.3%)</td><td>23 (7.1%)</td><td>33 (6.8%)</td><td>57 (6.9%)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note-box">
+                    <strong>Note:</strong> No statistically significant differences were found in categorical variables across BW/PW ratio groups.
+                </div>
+            </div>
+        </div>
+
+        <!-- Table 2 -->
+        <div id="table2" class="tab-panel">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Table 2: Baseline Characteristics (Continuous Variables)</h2>
+                        <p class="card-subtitle">Mean ± Standard Deviation by BW/PW ratio groups</p>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Small BW/PW (n=16)</th>
+                                <th>Normal BW/PW (n=323)</th>
+                                <th>Large BW/PW (n=488)</th>
+                                <th>Total (n=827)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row"><td><strong>Birth weight (g)</strong></td><td>2,836.88 ± 476.15</td><td>3,266.19 ± 519.56</td><td>3,274.91 ± 500.48</td><td>3,258.59 ± 508.51</td></tr>
+                            <tr class="highlight-row"><td><strong>Birth height (cm)</strong></td><td>47.66 ± 2.65</td><td>49.64 ± 2.66</td><td>49.72 ± 2.64</td><td>49.60 ± 2.68</td></tr>
+                            <tr class="highlight-row"><td><strong>Birth HC (cm)</strong></td><td>33.13 ± 1.35</td><td>34.05 ± 1.56</td><td>34.08 ± 1.55</td><td>34.03 ± 1.56</td></tr>
+                            <tr class="highlight-row"><td><strong>Birth CC (cm)</strong></td><td>31.97 ± 2.19</td><td>32.73 ± 2.03</td><td>32.60 ± 1.91</td><td>32.64 ± 1.97</td></tr>
+                            <tr><td>Ponderal index (g/cm³)</td><td>2.61 ± 0.27</td><td>2.66 ± 0.29</td><td>2.66 ± 0.29</td><td>2.66 ± 0.29</td></tr>
+                            <tr class="highlight-row"><td><strong>Gestational age (weeks)</strong></td><td>39.04 ± 1.34</td><td>39.12 ± 1.29</td><td>38.77 ± 1.28</td><td>38.92 ± 1.30</td></tr>
+                            <tr><td>Maternal age (years)</td><td>31.88 ± 4.59</td><td>31.90 ± 5.61</td><td>31.34 ± 5.46</td><td>31.56 ± 5.50</td></tr>
+                            <tr><td>Maternal BMI (kg/m²)</td><td>30.88 ± 5.32</td><td>30.55 ± 5.93</td><td>31.24 ± 6.32</td><td>30.93 ± 6.14</td></tr>
+                            <tr><td>Maternal SBP (mm Hg)</td><td>121.06 ± 13.43</td><td>120.57 ± 14.53</td><td>119.44 ± 13.38</td><td>119.91 ± 13.86</td></tr>
+                            <tr><td>Maternal DBP (mm Hg)</td><td>74.94 ± 10.00</td><td>74.61 ± 10.26</td><td>73.93 ± 9.80</td><td>74.21 ± 10.00</td></tr>
+                            <tr><td>Maternal MBP (mm Hg)</td><td>90.31 ± 10.27</td><td>89.93 ± 11.19</td><td>89.10 ± 10.51</td><td>89.44 ± 10.78</td></tr>
+                            <tr class="highlight-row"><td><strong>Placental weight (g)</strong></td><td>612.50 ± 116.79</td><td>510.98 ± 108.80</td><td>473.27 ± 91.51</td><td>490.29 ± 103.32</td></tr>
+                            <tr><td>Placental diameter 1 (cm)</td><td>19.31 ± 2.47</td><td>18.55 ± 2.45</td><td>18.26 ± 2.42</td><td>18.39 ± 2.44</td></tr>
+                            <tr><td>Placental diameter 2 (cm)</td><td>16.84 ± 2.38</td><td>16.18 ± 2.33</td><td>15.83 ± 2.24</td><td>15.98 ± 2.29</td></tr>
+                            <tr><td>Placental thickness (cm)</td><td>2.36 ± 0.53</td><td>2.34 ± 0.62</td><td>2.35 ± 0.56</td><td>2.35 ± 0.58</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note-box">
+                    <strong>Key Finding:</strong> Significant differences (highlighted) were found in birth weight, height, head circumference, chest circumference, gestational age, and placental weight. Small BW/PW neonates had lower anthropometric measures but higher placental weight.
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <div><h2 class="card-title">Neonatal Measurements by Group</h2></div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="neonatalChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div><h2 class="card-title">Placental Weight by Group</h2></div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="placentalWeightChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table 3 -->
+        <div id="table3" class="tab-panel">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Table 3: Differences in LV Parameters Between BW/PW Ratio Groups</h2>
+                        <p class="card-subtitle">Mean ± Standard Deviation</p>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>LV Parameter</th>
+                                <th>Small BW/PW (n=16)</th>
+                                <th>Normal BW/PW (n=323)</th>
+                                <th>Large BW/PW (n=488)</th>
+                                <th>Total (n=827)</th>
+                                <th>p-value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>IVSd (mm)</td><td>3.24 ± 0.55</td><td>3.47 ± 0.57</td><td>3.51 ± 0.55</td><td>3.48 ± 0.56</td><td>0.161</td></tr>
+                            <tr><td>IVSs (mm)</td><td>4.48 ± 0.69</td><td>4.95 ± 0.78</td><td>5.01 ± 0.75</td><td>4.97 ± 0.77</td><td>0.031</td></tr>
+                            <tr><td>LVIDd (mm)</td><td>16.71 ± 2.00</td><td>17.56 ± 1.78</td><td>17.70 ± 1.84</td><td>17.61 ± 1.82</td><td>0.098</td></tr>
+                            <tr><td>LVIDs (mm)</td><td>10.93 ± 1.35</td><td>11.39 ± 1.40</td><td>11.40 ± 1.41</td><td>11.38 ± 1.40</td><td>0.428</td></tr>
+                            <tr><td>LVPWd (mm)</td><td>2.68 ± 0.42</td><td>2.88 ± 0.46</td><td>2.93 ± 0.46</td><td>2.90 ± 0.46</td><td>0.086</td></tr>
+                            <tr><td>LVPWs (mm)</td><td>4.25 ± 0.58</td><td>4.57 ± 0.63</td><td>4.65 ± 0.62</td><td>4.60 ± 0.63</td><td>0.034</td></tr>
+                            <tr><td>FS (%)</td><td>35.31 ± 4.37</td><td>35.33 ± 4.63</td><td>35.69 ± 4.36</td><td>35.52 ± 4.47</td><td>0.486</td></tr>
+                            <tr><td>LVmass (g)</td><td>5.24 ± 1.49</td><td>6.13 ± 1.68</td><td>6.29 ± 1.64</td><td>6.19 ± 1.67</td><td>0.034</td></tr>
+                            <tr><td>LVmass/vol (g/m³)</td><td>15.95 ± 5.46</td><td>16.69 ± 5.57</td><td>16.81 ± 5.06</td><td>16.73 ± 5.30</td><td>0.716</td></tr>
+                            <tr><td>Presence of ASH (n, %)</td><td>1 (6.3%)</td><td>25 (7.7%)</td><td>33 (6.8%)</td><td>59 (7.1%)</td><td>0.664ᵃ</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note-box">
+                    <strong>ᵃ</strong> Chi-squared p-value. <strong>Note:</strong> No significant differences in most LV parameters among groups by direct comparison (ANOVA). Regression analysis (Table 4) reveals significant associations when controlling for other factors.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div><h2 class="card-title">LV Parameters Comparison by BW/PW Group</h2></div>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label class="filter-label">Select LV Parameter</label>
+                        <select class="filter-select" id="lvParamSelect">
+                            <option value="all">All Parameters</option>
+                            <option value="IVSd">IVSd (mm)</option>
+                            <option value="IVSs">IVSs (mm)</option>
+                            <option value="LVIDd">LVIDd (mm)</option>
+                            <option value="LVIDs">LVIDs (mm)</option>
+                            <option value="LVPWd">LVPWd (mm)</option>
+                            <option value="LVPWs">LVPWs (mm)</option>
+                            <option value="FS">FS (%)</option>
+                            <option value="LVmass">LV mass (g)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container tall">
+                    <canvas id="lvParamsChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table 4 -->
+        <div id="table4" class="tab-panel">
+            <div class="key-finding">
+                <div class="key-finding-title">🔑 Primary Finding: BW/PW Ratio → Shortening Fraction</div>
+                <div class="key-finding-text">
+                    The BW/PW ratio was significantly associated with an increase in shortening fraction (FS): <strong>estimate = 0.29</strong> (95% CI: 0.03–0.55, <strong>p = 0.027</strong>). This suggests placental efficiency independently influences cardiac function.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Table 4: Regression Models for LV Parameters</h2>
+                        <p class="card-subtitle">Significant predictors via genetic algorithm and backward stepwise selection</p>
+                    </div>
+                </div>
+                
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label class="filter-label">Filter by LV Parameter</label>
+                        <select class="filter-select" id="regressionFilter">
+                            <option value="all">All Parameters</option>
+                            <option value="IVSd">IVSd (R²=0.341)</option>
+                            <option value="IVSs">IVSs (R²=0.302)</option>
+                            <option value="LVIDd">LVIDd (R²=0.266)</option>
+                            <option value="LVIDs">LVIDs (R²=0.154)</option>
+                            <option value="LVPWd">LVPWd (R²=0.304)</option>
+                            <option value="LVPWs">LVPWs (R²=0.279)</option>
+                            <option value="LVmass">LVmass (R²=0.406)</option>
+                            <option value="LVmass/vol">LVmass/vol (R²=0.211)</option>
+                            <option value="FS">FS (R²=0.050)</option>
+                            <option value="ASH">ASH</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Filter by Predictor Type</label>
+                        <select class="filter-select" id="predictorTypeFilter">
+                            <option value="all">All Predictors</option>
+                            <option value="placental">Placental Factors</option>
+                            <option value="maternal">Maternal Factors</option>
+                            <option value="neonatal">Neonatal Factors</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="overflow-x: auto; max-height: 500px;">
+                    <table class="data-table" id="regressionTable">
+                        <thead>
+                            <tr>
+                                <th>LV Parameter</th>
+                                <th>Predictor</th>
+                                <th>Estimate</th>
+                                <th>SE</th>
+                                <th>95% CI</th>
+                                <th>p-value</th>
+                                <th>R²/R² adj</th>
+                            </tr>
+                        </thead>
+                        <tbody id="regressionTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div><h2 class="card-title">Model Performance: R² Values</h2></div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="r2Chart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Placental Factor Associations Summary</h2>
+                        <p class="card-subtitle">Significant associations from regression (p < 0.05)</p>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Placental Factor</th><th>LV Parameter</th><th>Estimate</th><th>95% CI</th><th>p-value</th><th>Direction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row"><td><strong>BW/PW Ratio</strong></td><td>FS</td><td class="significant">0.29</td><td>0.03–0.55</td><td class="significant">0.027</td><td>↑ Positive</td></tr>
+                            <tr><td rowspan="6"><strong>Placental Thickness</strong></td><td>IVSd</td><td>0.13</td><td>0.05–0.21</td><td class="significant">0.002</td><td>↑ Positive</td></tr>
+                            <tr><td>IVSs</td><td>0.16</td><td>0.06–0.26</td><td class="significant">0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVPWd</td><td>0.08</td><td>0.02–0.14</td><td class="significant">0.003</td><td>↑ Positive</td></tr>
+                            <tr><td>LVPWs</td><td>0.16</td><td>0.08–0.24</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVmass</td><td>0.22</td><td>0.04–0.40</td><td class="significant">0.017</td><td>↑ Positive</td></tr>
+                            <tr><td>LVmass/vol</td><td>0.71</td><td>0.16–1.26</td><td class="significant">0.011</td><td>↑ Positive</td></tr>
+                            <tr><td rowspan="8"><strong>Placental Diameter 2</strong></td><td>IVSd</td><td>0.09</td><td>0.05–0.13</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>IVSs</td><td>0.11</td><td>0.07–0.15</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVIDd</td><td>0.18</td><td>0.10–0.26</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVIDs</td><td>0.08</td><td>0.01–0.15</td><td class="significant">0.016</td><td>↑ Positive</td></tr>
+                            <tr><td>LVPWd</td><td>0.07</td><td>0.05–0.09</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVPWs</td><td>0.09</td><td>0.05–0.13</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVmass</td><td>0.24</td><td>0.18–0.30</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td>LVmass/vol</td><td>0.66</td><td>0.42–0.90</td><td class="significant">&lt;0.001</td><td>↑ Positive</td></tr>
+                            <tr><td rowspan="3"><strong>Placental Diameter 1</strong></td><td>LVIDd</td><td>-0.07</td><td>-0.13 to -0.01</td><td class="significant">0.039</td><td>↓ Negative</td></tr>
+                            <tr><td>LVmass</td><td>-0.11</td><td>-0.21 to -0.01</td><td class="significant">0.024</td><td>↓ Negative</td></tr>
+                            <tr><td>LVmass/vol</td><td>-0.55</td><td>-0.94 to -0.16</td><td class="significant">0.005</td><td>↓ Negative</td></tr>
+                            <tr><td><strong>Placental Weight</strong></td><td>IVSs</td><td>-0.001</td><td>-0.002 to -0.0002</td><td class="significant">0.019</td><td>↓ Negative</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div id="summary" class="tab-panel">
+            <div class="card">
+                <div class="card-header">
+                    <div><h2 class="card-title">Conclusions</h2></div>
+                </div>
+                
+                <div class="key-finding">
+                    <div class="key-finding-title">Primary Conclusion</div>
+                    <div class="key-finding-text">
+                        This single-center prospective cohort study demonstrates that the BW/PW ratio can <strong>independently affect LV dimensions and morphology</strong>. Several placental factors showed significant correlations with increased LV dimensions, emphasizing the potential influence of placental health and efficiency on fetal cardiac growth.
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Main Findings</h4>
+                    <ul class="context-list">
+                        <li><strong>BW/PW ratio → FS:</strong> Significant positive association (estimate=0.29, p=0.027)</li>
+                        <li><strong>Placental thickness:</strong> Positively correlated with IVSd, IVSs, LVPWd, LVPWs, LVmass, LVmass/vol</li>
+                        <li><strong>Placental diameter 2:</strong> Positively correlated with multiple LV parameters (all p&lt;0.001)</li>
+                        <li><strong>Gestational age:</strong> Strong correlations with multiple LV dimensions</li>
+                        <li><strong>GDM:</strong> Significantly increased IVSs (p=0.010); insulin use correlated with IVSd (p&lt;0.001)</li>
+                        <li><strong>Model fit:</strong> LVmass model achieved highest R² (0.406)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="context-grid">
+                <div class="context-card strength">
+                    <div class="context-title">Study Strengths</div>
+                    <ul class="context-list">
+                        <li>Prospective cohort design</li>
+                        <li>Routine screening adds clinical relevance</li>
+                        <li>Comprehensive factor consideration</li>
+                        <li>Rigorous statistical approach</li>
+                        <li>STROBE guidelines compliance</li>
+                        <li>Large sample size (n=827)</li>
+                    </ul>
+                </div>
+                <div class="context-card limitation">
+                    <div class="context-title">Study Limitations</div>
+                    <ul class="context-list">
+                        <li>Single-center design</li>
+                        <li>Selection bias from screening echo</li>
+                        <li>MIPCA imputation limitations</li>
+                        <li>Cannot establish causality</li>
+                        <li>No long-term follow-up</li>
+                        <li>Missing confounders</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="background: rgba(26, 54, 93, 0.3);">
+                <div class="card-header">
+                    <div><h2 class="card-title">Citation</h2></div>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    Gad A, Malouche D, Chhabra M, Hoang D, Suk D, Ron N, Dygulska B, Gudavalli MB, Nadroo AM, Narula P and Elmakaty I (2024) Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns: a prospective cohort analysis. <em>J. Perinat. Med.</em> 52(4): 433–444. <a href="https://doi.org/10.1515/jpm-2023-0384" target="_blank" style="color: #60a5fa;">doi: 10.1515/jpm-2023-0384</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Regression Data from Table 4
+        const regressionData = [
+            { lvParam: 'IVSd', predictor: 'Gestational age', estimate: 0.08, se: 0.03, ciLow: 0.02, ciHigh: 0.14, pValue: 0.011, r2: '0.341/0.333', category: 'neonatal' },
+            { lvParam: 'IVSd', predictor: 'Placental diameter 2 (cm)', estimate: 0.09, se: 0.02, ciLow: 0.05, ciHigh: 0.13, pValue: 0.0001, r2: '0.341/0.333', category: 'placental' },
+            { lvParam: 'IVSd', predictor: 'Placental thickness (cm)', estimate: 0.13, se: 0.04, ciLow: 0.05, ciHigh: 0.21, pValue: 0.002, r2: '0.341/0.333', category: 'placental' },
+            { lvParam: 'IVSd', predictor: 'NICU admission', estimate: 0.19, se: 0.07, ciLow: 0.05, ciHigh: 0.33, pValue: 0.006, r2: '0.341/0.333', category: 'neonatal' },
+            { lvParam: 'IVSd', predictor: 'LGA', estimate: 0.29, se: 0.05, ciLow: 0.19, ciHigh: 0.39, pValue: 0.0001, r2: '0.341/0.333', category: 'neonatal' },
+            { lvParam: 'IVSd', predictor: 'SGA', estimate: -0.55, se: 0.08, ciLow: -0.71, ciHigh: -0.39, pValue: 0.0001, r2: '0.341/0.333', category: 'neonatal' },
+            { lvParam: 'IVSd', predictor: 'Primiparity', estimate: -0.15, se: 0.06, ciLow: -0.27, ciHigh: -0.03, pValue: 0.016, r2: '0.341/0.333', category: 'maternal' },
+            { lvParam: 'IVSd', predictor: 'Insulin for GDM', estimate: 0.56, se: 0.12, ciLow: 0.32, ciHigh: 0.80, pValue: 0.0001, r2: '0.341/0.333', category: 'maternal' },
+            { lvParam: 'IVSs', predictor: 'Gestational age', estimate: 0.13, se: 0.03, ciLow: 0.07, ciHigh: 0.19, pValue: 0.0001, r2: '0.302/0.295', category: 'neonatal' },
+            { lvParam: 'IVSs', predictor: 'Ponderal index', estimate: 0.07, se: 0.03, ciLow: 0.01, ciHigh: 0.13, pValue: 0.007, r2: '0.302/0.295', category: 'neonatal' },
+            { lvParam: 'IVSs', predictor: 'Placental weight', estimate: -0.001, se: 0.0004, ciLow: -0.002, ciHigh: -0.0002, pValue: 0.019, r2: '0.302/0.295', category: 'placental' },
+            { lvParam: 'IVSs', predictor: 'Placental diameter 2 (cm)', estimate: 0.11, se: 0.02, ciLow: 0.07, ciHigh: 0.15, pValue: 0.0001, r2: '0.302/0.295', category: 'placental' },
+            { lvParam: 'IVSs', predictor: 'Placental thickness (cm)', estimate: 0.16, se: 0.05, ciLow: 0.06, ciHigh: 0.26, pValue: 0.001, r2: '0.302/0.295', category: 'placental' },
+            { lvParam: 'IVSs', predictor: 'LGA', estimate: 0.36, se: 0.06, ciLow: 0.24, ciHigh: 0.48, pValue: 0.0001, r2: '0.302/0.295', category: 'neonatal' },
+            { lvParam: 'IVSs', predictor: 'SGA', estimate: -0.51, se: 0.10, ciLow: -0.71, ciHigh: -0.31, pValue: 0.0001, r2: '0.302/0.295', category: 'neonatal' },
+            { lvParam: 'IVSs', predictor: 'GDM', estimate: 0.20, se: 0.08, ciLow: 0.04, ciHigh: 0.36, pValue: 0.010, r2: '0.302/0.295', category: 'maternal' },
+            { lvParam: 'LVIDd', predictor: 'Gestational age', estimate: 0.52, se: 0.07, ciLow: 0.38, ciHigh: 0.66, pValue: 0.0001, r2: '0.266/0.258', category: 'neonatal' },
+            { lvParam: 'LVIDd', predictor: 'Chest circumference', estimate: 0.10, se: 0.05, ciLow: 0.01, ciHigh: 0.19, pValue: 0.048, r2: '0.266/0.258', category: 'neonatal' },
+            { lvParam: 'LVIDd', predictor: 'Maternal BMI', estimate: -0.05, se: 0.02, ciLow: -0.09, ciHigh: -0.01, pValue: 0.002, r2: '0.266/0.258', category: 'maternal' },
+            { lvParam: 'LVIDd', predictor: 'Placental diameter 1 (cm)', estimate: -0.07, se: 0.03, ciLow: -0.13, ciHigh: -0.01, pValue: 0.039, r2: '0.266/0.258', category: 'placental' },
+            { lvParam: 'LVIDd', predictor: 'Placental diameter 2 (cm)', estimate: 0.18, se: 0.04, ciLow: 0.10, ciHigh: 0.26, pValue: 0.0001, r2: '0.266/0.258', category: 'placental' },
+            { lvParam: 'LVIDd', predictor: 'NICU admission', estimate: -0.52, se: 0.17, ciLow: -0.85, ciHigh: -0.19, pValue: 0.002, r2: '0.266/0.258', category: 'neonatal' },
+            { lvParam: 'LVIDd', predictor: 'Male', estimate: 0.49, se: 0.11, ciLow: 0.27, ciHigh: 0.71, pValue: 0.0001, r2: '0.266/0.258', category: 'neonatal' },
+            { lvParam: 'LVIDd', predictor: 'LGA', estimate: 0.44, se: 0.12, ciLow: 0.20, ciHigh: 0.68, pValue: 0.0001, r2: '0.266/0.258', category: 'neonatal' },
+            { lvParam: 'LVIDd', predictor: 'SGA', estimate: -1.50, se: 0.18, ciLow: -1.86, ciHigh: -1.14, pValue: 0.0001, r2: '0.266/0.258', category: 'neonatal' },
+            { lvParam: 'LVPWd', predictor: 'Gestational age', estimate: 0.08, se: 0.02, ciLow: 0.04, ciHigh: 0.12, pValue: 0.0001, r2: '0.304/0.298', category: 'neonatal' },
+            { lvParam: 'LVPWd', predictor: 'Maternal age', estimate: 0.01, se: 0.005, ciLow: 0.001, ciHigh: 0.02, pValue: 0.036, r2: '0.304/0.298', category: 'maternal' },
+            { lvParam: 'LVPWd', predictor: 'Placental diameter 2 (cm)', estimate: 0.07, se: 0.01, ciLow: 0.05, ciHigh: 0.09, pValue: 0.0001, r2: '0.304/0.298', category: 'placental' },
+            { lvParam: 'LVPWd', predictor: 'Placental thickness (cm)', estimate: 0.08, se: 0.03, ciLow: 0.02, ciHigh: 0.14, pValue: 0.003, r2: '0.304/0.298', category: 'placental' },
+            { lvParam: 'LVPWd', predictor: 'Male', estimate: 0.11, se: 0.04, ciLow: 0.03, ciHigh: 0.19, pValue: 0.004, r2: '0.304/0.298', category: 'neonatal' },
+            { lvParam: 'LVPWd', predictor: 'LGA', estimate: 0.19, se: 0.04, ciLow: 0.11, ciHigh: 0.27, pValue: 0.0001, r2: '0.304/0.298', category: 'neonatal' },
+            { lvParam: 'LVPWd', predictor: 'SGA', estimate: -0.27, se: 0.06, ciLow: -0.39, ciHigh: -0.15, pValue: 0.0001, r2: '0.304/0.298', category: 'neonatal' },
+            { lvParam: 'LVPWs', predictor: 'Gestational age', estimate: 0.12, se: 0.03, ciLow: 0.06, ciHigh: 0.18, pValue: 0.0001, r2: '0.279/0.273', category: 'neonatal' },
+            { lvParam: 'LVPWs', predictor: 'Placental diameter 2 (cm)', estimate: 0.09, se: 0.02, ciLow: 0.05, ciHigh: 0.13, pValue: 0.0001, r2: '0.279/0.273', category: 'placental' },
+            { lvParam: 'LVPWs', predictor: 'Placental thickness (cm)', estimate: 0.16, se: 0.04, ciLow: 0.08, ciHigh: 0.24, pValue: 0.0001, r2: '0.279/0.273', category: 'placental' },
+            { lvParam: 'LVPWs', predictor: 'LGA', estimate: 0.28, se: 0.05, ciLow: 0.18, ciHigh: 0.38, pValue: 0.0001, r2: '0.279/0.273', category: 'neonatal' },
+            { lvParam: 'LVPWs', predictor: 'SGA', estimate: -0.36, se: 0.08, ciLow: -0.52, ciHigh: -0.20, pValue: 0.0001, r2: '0.279/0.273', category: 'neonatal' },
+            { lvParam: 'LVmass', predictor: 'Gestational age', estimate: 0.36, se: 0.05, ciLow: 0.26, ciHigh: 0.46, pValue: 0.0001, r2: '0.406/0.399', category: 'neonatal' },
+            { lvParam: 'LVmass', predictor: 'Placental diameter 1 (cm)', estimate: -0.11, se: 0.05, ciLow: -0.21, ciHigh: -0.01, pValue: 0.024, r2: '0.406/0.399', category: 'placental' },
+            { lvParam: 'LVmass', predictor: 'Placental diameter 2 (cm)', estimate: 0.24, se: 0.03, ciLow: 0.18, ciHigh: 0.30, pValue: 0.0001, r2: '0.406/0.399', category: 'placental' },
+            { lvParam: 'LVmass', predictor: 'Placental thickness (cm)', estimate: 0.22, se: 0.09, ciLow: 0.04, ciHigh: 0.40, pValue: 0.017, r2: '0.406/0.399', category: 'placental' },
+            { lvParam: 'LVmass', predictor: 'Male', estimate: 0.41, se: 0.12, ciLow: 0.17, ciHigh: 0.65, pValue: 0.001, r2: '0.406/0.399', category: 'neonatal' },
+            { lvParam: 'LVmass', predictor: 'LGA', estimate: 0.72, se: 0.13, ciLow: 0.46, ciHigh: 0.98, pValue: 0.0001, r2: '0.406/0.399', category: 'neonatal' },
+            { lvParam: 'LVmass', predictor: 'SGA', estimate: -1.28, se: 0.20, ciLow: -1.68, ciHigh: -0.88, pValue: 0.0001, r2: '0.406/0.399', category: 'neonatal' },
+            { lvParam: 'LVmass', predictor: 'Primiparity', estimate: -0.62, se: 0.22, ciLow: -1.06, ciHigh: -0.18, pValue: 0.005, r2: '0.406/0.399', category: 'maternal' },
+            { lvParam: 'LVmass/vol', predictor: 'Gestational age', estimate: 0.34, se: 0.17, ciLow: 0.01, ciHigh: 0.67, pValue: 0.047, r2: '0.211/0.204', category: 'neonatal' },
+            { lvParam: 'LVmass/vol', predictor: 'Placental diameter 1 (cm)', estimate: -0.55, se: 0.20, ciLow: -0.94, ciHigh: -0.16, pValue: 0.005, r2: '0.211/0.204', category: 'placental' },
+            { lvParam: 'LVmass/vol', predictor: 'Placental diameter 2 (cm)', estimate: 0.66, se: 0.12, ciLow: 0.42, ciHigh: 0.90, pValue: 0.0001, r2: '0.211/0.204', category: 'placental' },
+            { lvParam: 'LVmass/vol', predictor: 'Placental thickness (cm)', estimate: 0.71, se: 0.28, ciLow: 0.16, ciHigh: 1.26, pValue: 0.011, r2: '0.211/0.204', category: 'placental' },
+            { lvParam: 'LVmass/vol', predictor: 'LGA', estimate: 1.58, se: 0.42, ciLow: 0.76, ciHigh: 2.40, pValue: 0.0001, r2: '0.211/0.204', category: 'neonatal' },
+            { lvParam: 'LVmass/vol', predictor: 'SGA', estimate: -1.47, se: 0.66, ciLow: -2.77, ciHigh: -0.17, pValue: 0.026, r2: '0.211/0.204', category: 'neonatal' },
+            { lvParam: 'LVmass/vol', predictor: 'Primiparity', estimate: -1.84, se: 0.86, ciLow: -3.53, ciHigh: -0.15, pValue: 0.032, r2: '0.211/0.204', category: 'maternal' },
+            { lvParam: 'FS', predictor: 'BW/PW ratio', estimate: 0.29, se: 0.13, ciLow: 0.03, ciHigh: 0.55, pValue: 0.027, r2: '0.050/0.046', category: 'placental' },
+            { lvParam: 'FS', predictor: 'LGA', estimate: 1.80, se: 0.46, ciLow: 0.90, ciHigh: 2.70, pValue: 0.0001, r2: '0.050/0.046', category: 'neonatal' },
+            { lvParam: 'FS', predictor: 'SGA', estimate: -1.61, se: 0.71, ciLow: -3.00, ciHigh: -0.22, pValue: 0.024, r2: '0.050/0.046', category: 'neonatal' },
+            { lvParam: 'ASH', predictor: 'NICU admission', estimate: 0.95, se: 0.40, ciLow: 0.17, ciHigh: 1.73, pValue: 0.017, r2: '-', category: 'neonatal' },
+            { lvParam: 'ASH', predictor: 'White ethnicity', estimate: 1.12, se: 0.32, ciLow: 0.49, ciHigh: 1.75, pValue: 0.0001, r2: '-', category: 'maternal' },
+            { lvParam: 'ASH', predictor: 'Hispanic ethnicity', estimate: 0.81, se: 0.39, ciLow: 0.05, ciHigh: 1.57, pValue: 0.038, r2: '-', category: 'maternal' },
+            { lvParam: 'ASH', predictor: 'Other ethnicity', estimate: 1.04, se: 0.47, ciLow: 0.12, ciHigh: 1.96, pValue: 0.027, r2: '-', category: 'maternal' },
+        ];
+
+        const lvParamData = {
+            small: { IVSd: 3.24, IVSs: 4.48, LVIDd: 16.71, LVIDs: 10.93, LVPWd: 2.68, LVPWs: 4.25, FS: 35.31, LVmass: 5.24 },
+            normal: { IVSd: 3.47, IVSs: 4.95, LVIDd: 17.56, LVIDs: 11.39, LVPWd: 2.88, LVPWs: 4.57, FS: 35.33, LVmass: 6.13 },
+            large: { IVSd: 3.51, IVSs: 5.01, LVIDd: 17.70, LVIDs: 11.40, LVPWd: 2.93, LVPWs: 4.65, FS: 35.69, LVmass: 6.29 }
+        };
+
+        // Tab Navigation
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Table 2 Charts
+        new Chart(document.getElementById('neonatalChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Birth Weight (kg)', 'Birth Height (cm/10)', 'Head Circ (cm)', 'Chest Circ (cm)'],
+                datasets: [
+                    { label: 'Small BW/PW (n=16)', data: [2.84, 4.77, 33.13, 31.97], backgroundColor: 'rgba(248, 113, 113, 0.7)', borderColor: 'rgba(248, 113, 113, 1)', borderWidth: 1 },
+                    { label: 'Normal BW/PW (n=323)', data: [3.27, 4.96, 34.05, 32.73], backgroundColor: 'rgba(74, 222, 128, 0.7)', borderColor: 'rgba(74, 222, 128, 1)', borderWidth: 1 },
+                    { label: 'Large BW/PW (n=488)', data: [3.27, 4.97, 34.08, 32.60], backgroundColor: 'rgba(96, 165, 250, 0.7)', borderColor: 'rgba(96, 165, 250, 1)', borderWidth: 1 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom', labels: { color: '#f1f5f9' } } },
+                scales: { x: { grid: { display: false }, ticks: { color: '#f1f5f9' } }, y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } } }
+            }
+        });
+
+        new Chart(document.getElementById('placentalWeightChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Small BW/PW', 'Normal BW/PW', 'Large BW/PW'],
+                datasets: [{ label: 'Placental Weight (g)', data: [612.50, 510.98, 473.27], backgroundColor: ['rgba(248, 113, 113, 0.7)', 'rgba(74, 222, 128, 0.7)', 'rgba(96, 165, 250, 0.7)'], borderColor: ['rgba(248, 113, 113, 1)', 'rgba(74, 222, 128, 1)', 'rgba(96, 165, 250, 1)'], borderWidth: 2 }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { x: { grid: { display: false }, ticks: { color: '#f1f5f9' } }, y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' }, title: { display: true, text: 'Weight (g)', color: '#94a3b8' } } }
+            }
+        });
+
+        // Table 3 Chart
+        let lvChart;
+        function createLVChart(param = 'all') {
+            const ctx = document.getElementById('lvParamsChart');
+            if (lvChart) lvChart.destroy();
+            
+            if (param === 'all') {
+                const params = ['IVSd', 'IVSs', 'LVIDd', 'LVIDs', 'LVPWd', 'LVPWs', 'FS', 'LVmass'];
+                lvChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: params,
+                        datasets: [
+                            { label: 'Small BW/PW (n=16)', data: params.map(p => lvParamData.small[p]), backgroundColor: 'rgba(248, 113, 113, 0.7)', borderColor: 'rgba(248, 113, 113, 1)', borderWidth: 1 },
+                            { label: 'Normal BW/PW (n=323)', data: params.map(p => lvParamData.normal[p]), backgroundColor: 'rgba(74, 222, 128, 0.7)', borderColor: 'rgba(74, 222, 128, 1)', borderWidth: 1 },
+                            { label: 'Large BW/PW (n=488)', data: params.map(p => lvParamData.large[p]), backgroundColor: 'rgba(96, 165, 250, 0.7)', borderColor: 'rgba(96, 165, 250, 1)', borderWidth: 1 }
+                        ]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#f1f5f9' } } }, scales: { x: { grid: { display: false }, ticks: { color: '#f1f5f9' } }, y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } } } }
+                });
+            } else {
+                lvChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Small BW/PW (n=16)', 'Normal BW/PW (n=323)', 'Large BW/PW (n=488)'],
+                        datasets: [{ label: param, data: [lvParamData.small[param], lvParamData.normal[param], lvParamData.large[param]], backgroundColor: ['rgba(248, 113, 113, 0.7)', 'rgba(74, 222, 128, 0.7)', 'rgba(96, 165, 250, 0.7)'], borderColor: ['rgba(248, 113, 113, 1)', 'rgba(74, 222, 128, 1)', 'rgba(96, 165, 250, 1)'], borderWidth: 2 }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#f1f5f9' } }, y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } } } }
+                });
+            }
+        }
+        createLVChart();
+        document.getElementById('lvParamSelect').addEventListener('change', (e) => createLVChart(e.target.value));
+
+        // Table 4 Regression Table
+        function populateRegressionTable(data = regressionData) {
+            const tbody = document.getElementById('regressionTableBody');
+            tbody.innerHTML = data.map(d => `
+                <tr class="${d.pValue < 0.05 ? 'highlight-row' : ''}">
+                    <td><strong>${d.lvParam}</strong></td>
+                    <td>${d.predictor}</td>
+                    <td class="${d.pValue < 0.05 ? 'significant' : ''}">${d.estimate.toFixed(d.estimate < 0.01 && d.estimate > -0.01 ? 4 : 2)}</td>
+                    <td>${d.se.toFixed(d.se < 0.01 ? 4 : 2)}</td>
+                    <td>[${d.ciLow.toFixed(2)}, ${d.ciHigh.toFixed(2)}]</td>
+                    <td class="${d.pValue < 0.001 ? 'significant' : ''}">${d.pValue < 0.001 ? '<0.001' : d.pValue.toFixed(3)}</td>
+                    <td>${d.r2}</td>
+                </tr>
+            `).join('');
+        }
+        populateRegressionTable();
+
+        document.getElementById('regressionFilter').addEventListener('change', filterRegression);
+        document.getElementById('predictorTypeFilter').addEventListener('change', filterRegression);
+
+        function filterRegression() {
+            const lvFilter = document.getElementById('regressionFilter').value;
+            const predFilter = document.getElementById('predictorTypeFilter').value;
+            let filtered = regressionData;
+            if (lvFilter !== 'all') filtered = filtered.filter(d => d.lvParam === lvFilter);
+            if (predFilter !== 'all') filtered = filtered.filter(d => d.category === predFilter);
+            populateRegressionTable(filtered);
+        }
+
+        // R² Chart
+        const r2Data = [
+            { param: 'LVmass', r2: 0.406 }, { param: 'IVSd', r2: 0.341 }, { param: 'LVPWd', r2: 0.304 },
+            { param: 'IVSs', r2: 0.302 }, { param: 'LVPWs', r2: 0.279 }, { param: 'LVIDd', r2: 0.266 },
+            { param: 'LVmass/vol', r2: 0.211 }, { param: 'LVIDs', r2: 0.154 }, { param: 'FS', r2: 0.050 }
+        ];
+
+        new Chart(document.getElementById('r2Chart'), {
+            type: 'bar',
+            data: {
+                labels: r2Data.map(d => d.param),
+                datasets: [{ label: 'R²', data: r2Data.map(d => d.r2), backgroundColor: r2Data.map(d => d.r2 > 0.3 ? 'rgba(56, 161, 105, 0.8)' : d.r2 > 0.2 ? 'rgba(66, 153, 225, 0.8)' : 'rgba(159, 122, 234, 0.8)'), borderColor: r2Data.map(d => d.r2 > 0.3 ? 'rgba(56, 161, 105, 1)' : d.r2 > 0.2 ? 'rgba(66, 153, 225, 1)' : 'rgba(159, 122, 234, 1)'), borderWidth: 1, borderRadius: 6 }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(30, 41, 59, 0.95)', callbacks: { label: (ctx) => `R² = ${ctx.raw.toFixed(3)} (${(ctx.raw*100).toFixed(1)}% variance)` } } },
+                scales: { x: { grid: { display: false }, ticks: { color: '#f1f5f9' } }, y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' }, max: 0.5, title: { display: true, text: 'R² Value', color: '#94a3b8' } } }
+            }
+        });
+    </script>
+</body>
+</html>

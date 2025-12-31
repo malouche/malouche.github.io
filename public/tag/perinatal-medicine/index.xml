@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>perinatal-medicine | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/perinatal-medicine/</link>
+      <atom:link href="https://dhafermalouche.net/tag/perinatal-medicine/index.xml" rel="self" type="application/rss+xml" />
+    <description>perinatal-medicine</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2025</copyright><lastBuildDate>Wed, 27 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>perinatal-medicine</title>
+      <link>https://dhafermalouche.net/tag/perinatal-medicine/</link>
+    </image>
+    
+    <item>
+      <title>Birth Weight to Placental Weight Ratio and Left Ventricular Dimensions in Newborns</title>
+      <link>https://dhafermalouche.net/project/placenta-shapes/</link>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/placenta-shapes/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;PROSPECTIVE COHORT STUDY&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;J. Perinat. Med. 2024; 52(4): 433–444&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Published online: March 27, 2024&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;&lt;a href=&#34;https://doi.org/10.1515/jpm-2023-0384&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1515/jpm-2023-0384&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;impact-of-birth-weight-to-placental-weight-ratio-and-other-perinatal-risk-factors-on-left-ventricular-dimensions-in-newborns-a-prospective-cohort-analysis&#34;&gt;Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns: a prospective cohort analysis&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Ashraf Gad, Dhafer Malouche, Manoj Chhabra, Danthanh Hoang, Debbie Suk, Nitin Ron, Beata Dygulska, Madhu B. Gudavalli, Ali M. Nadroo, Pramod Narula, Ibrahim Elmakaty&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div style=&#34;margin: 2rem 0; text-align: center;&#34;&gt;
+  &lt;a href=&#34;bwpw-lv-dashboard.html&#34; 
+     target=&#34;_blank&#34; 
+     rel=&#34;noopener noreferrer&#34;
+     style=&#34;display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s;&#34;&gt;
+    📊 Explore Interactive Dashboard
+    &lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; style=&#34;margin-left: 4px;&#34;&gt;
+      &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;/&gt;
+      &lt;polyline points=&#34;15 3 21 3 21 9&#34;/&gt;
+      &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;This prospective cohort study investigated the association between birth weight to placental weight (BW/PW) ratio and echocardiographic left ventricle (LV) morphology at birth, while accounting for other relevant perinatal factors. We analyzed 827 neonates at NewYork-Presbyterian Brooklyn Methodist Hospital (2014–2018), categorized by their BW/PW percentile into three groups: small (n=16), normal (n=488), and large (n=323). Key findings reveal that placental thickness and smallest diameter were positively correlated with several LV parameters, while the BW/PW ratio correlated with increased shortening fraction. This study highlights the importance of fetal growth and placental health in the physiological adaptation of the fetal heart.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;key-findings&#34;&gt;Key Findings&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Placental Factor&lt;/th&gt;
+&lt;th&gt;LV Parameter&lt;/th&gt;
+&lt;th&gt;Effect&lt;/th&gt;
+&lt;th&gt;p-value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Placental thickness&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;IVSd&lt;/td&gt;
+&lt;td&gt;Positive correlation&lt;/td&gt;
+&lt;td&gt;p=0.002&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Placental thickness&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;IVSs&lt;/td&gt;
+&lt;td&gt;Positive correlation&lt;/td&gt;
+&lt;td&gt;p=0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Placental thickness&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;LVPWd&lt;/td&gt;
+&lt;td&gt;Positive correlation&lt;/td&gt;
+&lt;td&gt;p=0.003&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Placental thickness&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;LVPWs&lt;/td&gt;
+&lt;td&gt;Positive correlation&lt;/td&gt;
+&lt;td&gt;p&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Placental thickness&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;LV mass&lt;/td&gt;
+&lt;td&gt;Positive correlation&lt;/td&gt;
+&lt;td&gt;p=0.017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Smallest diameter&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Multiple LV parameters&lt;/td&gt;
+&lt;td&gt;Positive correlation&lt;/td&gt;
+&lt;td&gt;p&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;BW/PW ratio&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Shortening fraction&lt;/td&gt;
+&lt;td&gt;Estimate=0.29 (95% CI 0.03–0.55)&lt;/td&gt;
+&lt;td&gt;p=0.027&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Longest diameter&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;LVIDd&lt;/td&gt;
+&lt;td&gt;Decrease&lt;/td&gt;
+&lt;td&gt;p=0.039&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Longest diameter&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;LV mass&lt;/td&gt;
+&lt;td&gt;Decrease&lt;/td&gt;
+&lt;td&gt;p=0.024&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;study-highlights&#34;&gt;Study Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Population&lt;/strong&gt;: 827 neonates categorized into three BW/PW ratio groups&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Design&lt;/strong&gt;: Single-center prospective cohort study with echocardiography within 48–72 hours after delivery&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Statistical Methods&lt;/strong&gt;: Multiple imputations with PCA, genetic algorithm for model selection, backward stepwise regression&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Model Fit&lt;/strong&gt;: LV mass model showed highest R² (0.406), indicating strong relationship with predictor variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;clinical-implications&#34;&gt;Clinical Implications&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Placental dimensions independently affect LV morphology in newborns&lt;/li&gt;
+&lt;li&gt;BW/PW ratio serves as a valuable measure of placental efficiency&lt;/li&gt;
+&lt;li&gt;Gestational age strongly correlates with multiple LV dimensions&lt;/li&gt;
+&lt;li&gt;Maternal factors (GDM, insulin use, primiparity) influence neonatal cardiac development&lt;/li&gt;
+&lt;li&gt;Findings may inform early cardiovascular risk assessment strategies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;regression-model-results&#34;&gt;Regression Model Results&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;LV Parameter&lt;/th&gt;
+&lt;th&gt;R²&lt;/th&gt;
+&lt;th&gt;Key Predictors&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;LV mass&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.406&lt;/td&gt;
+&lt;td&gt;GA, placental dimensions, sex, size category&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;IVSd&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.341&lt;/td&gt;
+&lt;td&gt;GA, placental diameter, thickness, NICU admission&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;IVSs&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.302&lt;/td&gt;
+&lt;td&gt;GA, ponderal index, placental factors, GDM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;LVIDd&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.266&lt;/td&gt;
+&lt;td&gt;GA, chest circumference, maternal BMI, sex&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;dashboard-features&#34;&gt;Dashboard Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Interactive visualizations&lt;/strong&gt; of regression outcomes and correlation matrices&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pathway diagrams&lt;/strong&gt; showing placental → cardiac relationships with directional arrows&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subgroup analysis&lt;/strong&gt; toggle between small, normal, and large BW/PW groups&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hover tooltips&lt;/strong&gt; displaying regression coefficients, p-values, and confidence intervals&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Significance heatmap&lt;/strong&gt; for predictor-outcome associations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;citation&#34;&gt;Citation&lt;/h3&gt;
+&lt;p&gt;Gad A, Malouche D, Chhabra M, Hoang D, Suk D, Ron N, Dygulska B, Gudavalli MB, Nadroo AM, Narula P and Elmakaty I (2024) Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns: a prospective cohort analysis. &lt;em&gt;J. Perinat. Med.&lt;/em&gt; 52(4): 433–444. doi: 10.1515/jpm-2023-0384&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
