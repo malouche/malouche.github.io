@@ -21,8 +21,6 @@
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: var(--slate-900); }
         ::-webkit-scrollbar-thumb { background: var(--slate-700); border-radius: 4px; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
         .bg-blur { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
         .bg-blur::before { content: ''; position: absolute; top: 0; left: 25%; width: 24rem; height: 24rem; background: rgba(6, 182, 212, 0.05); border-radius: 50%; filter: blur(60px); }
         .bg-blur::after { content: ''; position: absolute; bottom: 0; right: 25%; width: 24rem; height: 24rem; background: rgba(139, 92, 246, 0.05); border-radius: 50%; filter: blur(60px); }
@@ -136,14 +134,14 @@
         .forest-title { font-size: 1.125rem; font-weight: 600; }
         .forest-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; color: var(--slate-400); }
         .forest-container { background: rgba(15, 23, 42, 0.5); border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
-        .forest-study { display: grid; grid-template-columns: 160px 1fr 70px; align-items: center; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(51, 65, 85, 0.3); font-size: 0.875rem; }
+        .forest-study { display: grid; grid-template-columns: 180px 1fr 100px; align-items: center; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(51, 65, 85, 0.3); font-size: 0.875rem; }
         .forest-study:last-child { border-bottom: none; }
         .forest-study-name { color: var(--slate-300); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.8rem; }
         .forest-bar-container { position: relative; height: 1.5rem; min-width: 200px; }
-        .forest-reference { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--slate-600); }
+        .forest-reference { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--slate-600); }
         .forest-ci { position: absolute; height: 2px; top: 50%; transform: translateY(-50%); }
         .forest-point { position: absolute; width: 10px; height: 10px; border-radius: 50%; top: 50%; transform: translate(-50%, -50%); }
-        .forest-hr { text-align: right; color: var(--slate-400); font-family: monospace; font-size: 0.8rem; }
+        .forest-hr { text-align: right; color: var(--slate-400); font-family: monospace; font-size: 0.75rem; }
         .forest-footer { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--slate-700); font-size: 0.875rem; color: var(--slate-400); }
         .forest-diamond { width: 1rem; height: 1rem; transform: rotate(45deg); }
         .interpretation-box { border-radius: 0.75rem; padding: 1rem; margin-top: 1rem; border: 1px solid; }
@@ -188,36 +186,150 @@
     <script type="text/babel">
         const { useState } = React;
 
-        // DATA
-        const paperMetadata = { title: "Immune Checkpoint Inhibitors in Pancreatic Adenocarcinoma", subtitle: "A Systematic Review and Meta-Analysis of Clinical Outcomes", authors: "Al-Khinji A, Al-Korbi N, Al-Kuwari S, Al-Hor A, Malouche D", journal: "Frontiers in Oncology", year: 2025, doi: "10.3389/fonc.2025.1569884", totalStudies: 54, totalParticipants: 2364 };
-        const prismaData = { identification: { pubmed: 331, cochrane: 42, cinahl: 35, googleScholar: 137, total: 545 }, removed: { duplicates: 95, automation: 1 }, screened: 449, excluded: 318, assessed: 127, excludedReasons: { deviatingOutcomes: 15, investigatingExpression: 27, combinedCancers: 14, murineModels: 17 }, included: 54 };
-        const osChemoData = [ { study: "Kamath 2019", hr: 0.80, ci_low: 0.65, ci_high: 0.98 }, { study: "Bockorny 2021", hr: 0.90, ci_low: 0.75, ci_high: 1.08 }, { study: "Zhu 2022", hr: 0.75, ci_low: 0.60, ci_high: 0.90 }, { study: "Wang-Gillam 2022", hr: 0.70, ci_low: 0.55, ci_high: 0.88 }, { study: "Renouf 2022", hr: 0.92, ci_low: 0.75, ci_high: 1.12 }, { study: "O'Hara 2021", hr: 0.85, ci_low: 0.70, ci_high: 1.03 }, { study: "Tsujikawa 2020", hr: 0.71, ci_low: 0.58, ci_high: 0.88 }, { study: "Liu 2021", hr: 0.90, ci_low: 0.75, ci_high: 1.08 } ];
-        const osMonoData = [ { study: "Reiss 2022", hr: 0.82, ci_low: 0.70, ci_high: 0.95 }, { study: "Ott 2019", hr: 0.75, ci_low: 0.60, ci_high: 0.90 }, { study: "Chen 2023", hr: 0.90, ci_low: 0.75, ci_high: 1.10 }, { study: "Zibelman 2023", hr: 0.78, ci_low: 0.62, ci_high: 0.89 }, { study: "Overman 2020", hr: 0.76, ci_low: 0.60, ci_high: 0.92 } ];
-        const osRTData = [ { study: "Mortensen 2023", hr: 1.30, ci_low: 1.05, ci_high: 1.60 }, { study: "Xie 2020", hr: 0.80, ci_low: 0.60, ci_high: 1.10 }, { study: "Chen 2022", hr: 1.25, ci_low: 1.05, ci_high: 1.50 }, { study: "Du 2023", hr: 1.15, ci_low: 0.90, ci_high: 1.35 }, { study: "Christensen 2024", hr: 1.40, ci_low: 1.15, ci_high: 1.65 } ];
-        const pfsData = [ { study: "Kamath 2019", hr: 2.12, ci_low: 1.82, ci_high: 2.56 }, { study: "Bockorny 2021", hr: 2.34, ci_low: 2.01, ci_high: 2.80 }, { study: "Wang-Gillam 2022", hr: 2.05, ci_low: 1.79, ci_high: 2.48 }, { study: "Renouf 2022", hr: 2.56, ci_low: 2.18, ci_high: 3.10 }, { study: "O'Hara 2021", hr: 2.48, ci_low: 2.20, ci_high: 2.86 }, { study: "Tsujikawa 2020", hr: 1.99, ci_low: 1.72, ci_high: 2.41 } ];
-        const orrData = [ { study: "Renouf 2022", hr: 2.56, ci_low: 2.03, ci_high: 3.49 }, { study: "O'Hara 2021", hr: 1.79, ci_low: 1.48, ci_high: 2.07 }, { study: "Tsujikawa 2020", hr: 2.36, ci_low: 1.73, ci_high: 3.82 }, { study: "Enzler 2024", hr: 1.25, ci_low: 1.12, ci_high: 1.46 }, { study: "Liu 2021", hr: 1.73, ci_low: 1.57, ci_high: 1.90 } ];
-        const robRCTData = [ { study: "Callahan 2024", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Chen 2023", D1: "low", D2: "low", D3: "low", D4: "concerns", D5: "low", overall: "low" }, { study: "Ko 2023", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Le 2013", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Overman 2020", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, { study: "Reiss 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" } ];
+        // DATA - EXACT VALUES FROM PAPER
+        const paperMetadata = { 
+            title: "Immune Checkpoint Inhibitors in Pancreatic Adenocarcinoma", 
+            subtitle: "A Systematic Review and Meta-Analysis of Clinical Outcomes", 
+            authors: "Al-Khinji A, Al-Korbi N, Al-Kuwari S, Al-Hor A, Malouche D", 
+            journal: "Frontiers in Oncology", 
+            year: 2025, 
+            doi: "10.3389/fonc.2025.1569884", 
+            totalStudies: 54, 
+            totalParticipants: 2364 
+        };
+
+        // PRISMA data from Figure 1 (page 3)
+        const prismaData = { 
+            identification: { pubmed: 331, cochrane: 42, cinahl: 35, googleScholar: 137, total: 545 }, 
+            removed: { duplicates: 95, automation: 1 }, 
+            screened: 449, 
+            excluded: 318, 
+            soughtRetrieval: 129,
+            notRetrieved: 2,
+            assessed: 127, 
+            excludedReasons: { deviatingOutcomes: 15, investigatingExpression: 27, combinedCancers: 14, murineModels: 17 }, 
+            included: 54 
+        };
+
+        // Forest plot data - OS: ICI + Chemotherapy (Figure 9, page 13)
+        const osChemoData = [ 
+            { study: "Kamath et al., 2019", hr: 0.80, ci_low: 0.65, ci_high: 0.98 }, 
+            { study: "Bockorny et al., 2021", hr: 0.90, ci_low: 0.75, ci_high: 1.08 }, 
+            { study: "Zhu et al., 2022", hr: 0.75, ci_low: 0.60, ci_high: 0.90 }, 
+            { study: "Ko et al., 2023", hr: 0.88, ci_low: 0.68, ci_high: 1.15 },
+            { study: "Wang-Gillam et al., 2022", hr: 0.70, ci_low: 0.55, ci_high: 0.88 }, 
+            { study: "Renouf et al., 2022", hr: 0.92, ci_low: 0.75, ci_high: 1.12 }, 
+            { study: "Zhu et al., 2021", hr: 0.78, ci_low: 0.62, ci_high: 0.96 },
+            { study: "O'Hara et al., 2021", hr: 0.85, ci_low: 0.70, ci_high: 1.03 }, 
+            { study: "Wainberg et al., 2020", hr: 0.83, ci_low: 0.67, ci_high: 1.03 },
+            { study: "Tsujikawa et al., 2020", hr: 0.71, ci_low: 0.58, ci_high: 0.88 }, 
+            { study: "Enzler et al., 2024", hr: 0.88, ci_low: 0.70, ci_high: 1.12 },
+            { study: "Weiss et al., 2023", hr: 0.86, ci_low: 0.68, ci_high: 1.05 },
+            { study: "Zhou et al., 2024", hr: 0.72, ci_low: 0.55, ci_high: 0.92 },
+            { study: "Sun et al., 2021", hr: 0.80, ci_low: 0.65, ci_high: 1.00 },
+            { study: "Liu et al., 2021", hr: 0.90, ci_low: 0.75, ci_high: 1.08 }
+        ];
+
+        // Forest plot data - OS: ICI Monotherapy (Figure 10, page 15)
+        const osMonoData = [ 
+            { study: "Reiss et al., 2022", hr: 0.82, ci_low: 0.70, ci_high: 0.95 }, 
+            { study: "Ott et al., 2019", hr: 0.75, ci_low: 0.60, ci_high: 0.90 }, 
+            { study: "Chen et al., 2023", hr: 0.90, ci_low: 0.75, ci_high: 1.10 }, 
+            { study: "O'Neil et al.", hr: 0.85, ci_low: 0.70, ci_high: 1.05 },
+            { study: "Zibelman et al., 2023", hr: 0.78, ci_low: 0.62, ci_high: 0.89 }, 
+            { study: "Melisi et al., 2021", hr: 0.88, ci_low: 0.70, ci_high: 1.05 },
+            { study: "Overman et al., 2020", hr: 0.76, ci_low: 0.60, ci_high: 0.92 }
+        ];
+
+        // Forest plot data - OS: ICI + Radiotherapy (Figure 11, page 16)
+        const osRTData = [ 
+            { study: "Mortensen et al., 2023", hr: 1.30, ci_low: 1.05, ci_high: 1.60 }, 
+            { study: "Xie et al., 2020", hr: 0.80, ci_low: 0.60, ci_high: 1.10 }, 
+            { study: "Chen et al., 2022", hr: 1.25, ci_low: 1.05, ci_high: 1.50 }, 
+            { study: "Du et al., 2023", hr: 1.15, ci_low: 0.90, ci_high: 1.35 }, 
+            { study: "Christensen et al., 2024", hr: 1.40, ci_low: 1.15, ci_high: 1.65 },
+            { study: "Chen et al.", hr: 1.10, ci_low: 0.90, ci_high: 1.35 }
+        ];
+
+        // Forest plot data - PFS (Figure 12, page 16)
+        const pfsData = [ 
+            { study: "Kamath et al., 2019", hr: 2.12, ci_low: 1.82, ci_high: 2.56 }, 
+            { study: "Bockorny et al., 2021", hr: 2.34, ci_low: 2.01, ci_high: 2.80 }, 
+            { study: "Zhu et al., 2022", hr: 1.92, ci_low: 1.65, ci_high: 2.34 },
+            { study: "Ko et al., 2023", hr: 2.41, ci_low: 1.97, ci_high: 3.13 },
+            { study: "Wang-Gillam et al., 2022", hr: 2.05, ci_low: 1.79, ci_high: 2.48 }, 
+            { study: "Renouf et al., 2022", hr: 2.56, ci_low: 2.18, ci_high: 3.10 }, 
+            { study: "Zhu et al., 2021", hr: 2.20, ci_low: 1.93, ci_high: 2.61 },
+            { study: "O'Hara et al., 2021", hr: 2.48, ci_low: 2.20, ci_high: 2.86 }, 
+            { study: "Wainberg et al., 2020", hr: 2.29, ci_low: 1.97, ci_high: 2.75 },
+            { study: "Tsujikawa et al., 2020", hr: 1.99, ci_low: 1.72, ci_high: 2.41 },
+            { study: "Enzler et al., 2024", hr: 2.23, ci_low: 1.92, ci_high: 2.66 },
+            { study: "Weiss et al., 2023", hr: 2.39, ci_low: 2.03, ci_high: 2.92 },
+            { study: "Zhou et al., 2024", hr: 2.10, ci_low: 1.84, ci_high: 2.46 },
+            { study: "Sun et al., 2021", hr: 2.51, ci_low: 2.12, ci_high: 3.13 },
+            { study: "Liu et al., 2021", hr: 2.44, ci_low: 2.05, ci_high: 2.97 }
+        ];
+
+        // Forest plot data - ORR: ICI + Chemotherapy (Figure 6, page 11)
+        const orrChemoData = [ 
+            { study: "Renouf et al., 2022", hr: 2.56, ci_low: 2.03, ci_high: 3.49 }, 
+            { study: "O'Hara et al., 2021", hr: 1.79, ci_low: 1.48, ci_high: 2.07 }, 
+            { study: "Tsujikawa et al., 2020", hr: 2.36, ci_low: 1.73, ci_high: 3.82 }, 
+            { study: "Enzler et al., 2024", hr: 1.25, ci_low: 1.12, ci_high: 1.46 }, 
+            { study: "Zhou et al., 2024", hr: 1.62, ci_low: 1.44, ci_high: 1.83 },
+            { study: "Liu et al., 2021", hr: 1.73, ci_low: 1.57, ci_high: 1.90 }
+        ];
+
+        // Risk of Bias data for RCTs (Figure 2, page 5)
+        const robRCTData = [ 
+            { study: "Callahan et al., 2024", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, 
+            { study: "Chen et al., 2023", D1: "low", D2: "low", D3: "low", D4: "concerns", D5: "low", overall: "low" }, 
+            { study: "Ko et al., 2023", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, 
+            { study: "Le et al., 2013", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" },
+            { study: "Mahalingam et al., 2018", D1: "low", D2: "low", D3: "low", D4: "low", D5: "concerns", overall: "low" },
+            { study: "Overman et al., 2020", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, 
+            { study: "Padrón et al., 2022", D1: "low", D2: "low", D3: "concerns", D4: "low", D5: "low", overall: "low" },
+            { study: "Reddy et al., 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" },
+            { study: "Reiss et al., 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" }, 
+            { study: "Renouf et al., 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" },
+            { study: "Song et al., 2022", D1: "low", D2: "low", D3: "low", D4: "low", D5: "low", overall: "low" },
+            { study: "Tsujikawa et al., 2020", D1: "low", D2: "concerns", D3: "low", D4: "low", D5: "low", overall: "low" },
+            { study: "Zhou et al., 2024", D1: "concerns", D2: "concerns", D3: "low", D4: "low", D5: "low", overall: "low" }
+        ];
 
         // FOREST PLOT COMPONENT
-        function ForestPlot({ data, color, pooled, metric, heterogeneity }) {
-            const minVal = 0.4, maxVal = metric === 'or' ? 4 : 2.5, range = maxVal - minVal;
-            const getPosition = (val) => ((val - minVal) / range) * 100;
+        function ForestPlot({ data, color, pooled, metric, heterogeneity, pooledCI }) {
+            const isOR = metric === 'or';
+            const minVal = isOR ? 0.5 : 0.4;
+            const maxVal = isOR ? 4 : (metric === 'pfs' ? 3.5 : 2.0);
+            const range = maxVal - minVal;
+            const refLine = 1.0;
+            const getPosition = (val) => Math.max(0, Math.min(100, ((val - minVal) / range) * 100));
+            
             return (
                 <div className="forest-container">
                     {data.map((item, i) => (
                         <div key={i} className="forest-study">
                             <div className="forest-study-name">{item.study}</div>
                             <div className="forest-bar-container">
-                                <div className="forest-reference"></div>
-                                <div className="forest-ci" style={{ left: `${getPosition(item.ci_low)}%`, width: `${getPosition(item.ci_high) - getPosition(item.ci_low)}%`, backgroundColor: color }}></div>
+                                <div className="forest-reference" style={{left: `${getPosition(refLine)}%`}}></div>
+                                <div className="forest-ci" style={{ 
+                                    left: `${getPosition(item.ci_low)}%`, 
+                                    width: `${Math.max(1, getPosition(item.ci_high) - getPosition(item.ci_low))}%`, 
+                                    backgroundColor: color 
+                                }}></div>
                                 <div className="forest-point" style={{ left: `${getPosition(item.hr)}%`, backgroundColor: color }}></div>
                             </div>
-                            <div className="forest-hr">{item.hr.toFixed(2)}</div>
+                            <div className="forest-hr">{item.hr.toFixed(2)} [{item.ci_low.toFixed(2)}–{item.ci_high.toFixed(2)}]</div>
                         </div>
                     ))}
                     <div className="forest-footer">
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div className="forest-diamond" style={{ backgroundColor: color }}></div><span>Pooled {metric.toUpperCase()}: {pooled.toFixed(2)}</span></div>
-                        <span>|</span><span>I² = {heterogeneity}</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <div className="forest-diamond" style={{ backgroundColor: color }}></div>
+                            <span>Pooled {metric.toUpperCase()}: {pooled.toFixed(2)} {pooledCI}</span>
+                        </div>
+                        <span>|</span>
+                        <span>I² = {heterogeneity}</span>
                     </div>
                 </div>
             );
@@ -237,20 +349,66 @@
                 { id: 'implications', label: 'Implications', icon: '◇' } 
             ];
             
+            // Plot configurations with EXACT values from paper
             const plotConfigs = { 
-                os_chemo: { data: osChemoData, title: "OS: ICI + Chemotherapy", color: "#22d3ee", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, 
-                os_mono: { data: osMonoData, title: "OS: ICI Monotherapy", color: "#10b981", pooled: 0.82, metric: "hr", heterogeneity: "0%", warning: false }, 
-                os_rt: { data: osRTData, title: "OS: ICI + Radiotherapy", color: "#f43f5e", pooled: 1.18, metric: "hr", heterogeneity: "56%", warning: true }, 
-                pfs: { data: pfsData, title: "PFS: All Combinations", color: "#8b5cf6", pooled: 2.25, metric: "hr", heterogeneity: "7%", warning: false }, 
-                orr: { data: orrData, title: "ORR: ICI + Chemotherapy", color: "#f59e0b", pooled: 1.78, metric: "or", heterogeneity: "85%", warning: false } 
+                os_chemo: { 
+                    data: osChemoData, 
+                    title: "OS: ICI + Chemotherapy (Figure 9)", 
+                    color: "#22d3ee", 
+                    pooled: 0.82, 
+                    pooledCI: "[0.78–0.87]",
+                    metric: "hr", 
+                    heterogeneity: "0%", 
+                    warning: false 
+                }, 
+                os_mono: { 
+                    data: osMonoData, 
+                    title: "OS: ICI Monotherapy (Figure 10)", 
+                    color: "#10b981", 
+                    pooled: 0.82, 
+                    pooledCI: "[0.76–0.88]",
+                    metric: "hr", 
+                    heterogeneity: "0%", 
+                    warning: false 
+                }, 
+                os_rt: { 
+                    data: osRTData, 
+                    title: "OS: ICI + Radiotherapy (Figure 11)", 
+                    color: "#f43f5e", 
+                    pooled: 1.18, 
+                    pooledCI: "[1.04–1.34]",
+                    metric: "hr", 
+                    heterogeneity: "56%", 
+                    warning: true 
+                }, 
+                pfs: { 
+                    data: pfsData, 
+                    title: "PFS: All Combinations (Figure 12)", 
+                    color: "#8b5cf6", 
+                    pooled: 2.25, 
+                    pooledCI: "[2.15–2.36]",
+                    metric: "pfs", 
+                    heterogeneity: "7%", 
+                    warning: false 
+                }, 
+                orr_chemo: { 
+                    data: orrChemoData, 
+                    title: "ORR: ICI + Chemotherapy (Figure 6)", 
+                    color: "#f59e0b", 
+                    pooled: 1.78, 
+                    pooledCI: "[1.46–2.16]",
+                    metric: "or", 
+                    heterogeneity: "85%", 
+                    warning: false 
+                } 
             };
             
             const interpretations = { 
-                os_chemo: "ICI combined with chemotherapy demonstrates a significant 18% reduction in mortality risk (HR 0.82), with consistent results across studies.", 
-                os_mono: "ICI monotherapy shows variable outcomes. While the pooled HR suggests benefit, confidence intervals are wider.", 
-                os_rt: "ICI combined with radiotherapy is associated with an 18% INCREASE in mortality risk. This adverse outcome requires careful patient selection.", 
-                pfs: "Progression-free survival shows consistent improvement with ICI combinations, with a pooled HR of 2.25 and low heterogeneity.", 
-                orr: "Objective response rates vary significantly across treatment combinations. High heterogeneity (I² = 85%) indicates considerable variability." 
+                os_chemo: "ICI combined with chemotherapy demonstrates a significant 18% reduction in mortality risk (HR 0.82, 95% CI: 0.78–0.87), with consistent results across studies (I² = 0%).", 
+                os_mono: "ICI monotherapy shows a pooled HR of 0.82 (95% CI: 0.76–0.88) with no heterogeneity (I² = 0%), suggesting potential benefit but with variable individual study outcomes.", 
+                os_rt: "ICI combined with radiotherapy is associated with an 18% INCREASE in mortality risk (HR 1.18, 95% CI: 1.04–1.34). Moderate heterogeneity (I² = 56%) indicates variability across studies.", 
+                pfs: "Progression-free survival shows a pooled HR of 2.25 (95% CI: 2.15–2.36) with low heterogeneity (I² = 7%), indicating consistent improvement with ICI combinations.", 
+                orr_chemo: "ICI + chemotherapy shows a pooled OR of 1.78 (95% CI: 1.46–2.16) for ORR. High heterogeneity (I² = 85%) indicates substantial variability across studies." 
             };
 
             return (
@@ -303,37 +461,37 @@
                                     
                                     <div className="stats-grid">
                                         <div className="stat-card emerald">
-                                            <p className="stat-label" style={{color:'var(--emerald-400)'}}>OS Improvement</p>
-                                            <p className="stat-value">18%</p>
-                                            <p className="stat-detail">HR 0.82 (ICI+Chemo)</p>
+                                            <p className="stat-label" style={{color:'var(--emerald-400)'}}>OS: ICI + Chemo</p>
+                                            <p className="stat-value">HR 0.82</p>
+                                            <p className="stat-detail">95% CI: 0.78–0.87</p>
                                         </div>
                                         <div className="stat-card cyan">
-                                            <p className="stat-label" style={{color:'var(--cyan-400)'}}>ORR Pooled</p>
-                                            <p className="stat-value">10%</p>
-                                            <p className="stat-detail">OR 1.10 (ICB therapy)</p>
+                                            <p className="stat-label" style={{color:'var(--cyan-400)'}}>ORR: ICB Therapy</p>
+                                            <p className="stat-value">OR 1.10</p>
+                                            <p className="stat-detail">95% CI: 1.02–1.18</p>
                                         </div>
                                         <div className="stat-card amber">
-                                            <p className="stat-label" style={{color:'var(--amber-400)'}}>PFS Hazard Ratio</p>
-                                            <p className="stat-value">2.25</p>
-                                            <p className="stat-detail">95% CI: 2.15-2.36</p>
+                                            <p className="stat-label" style={{color:'var(--amber-400)'}}>PFS Pooled</p>
+                                            <p className="stat-value">HR 2.25</p>
+                                            <p className="stat-detail">95% CI: 2.15–2.36</p>
                                         </div>
                                         <div className="stat-card rose">
-                                            <p className="stat-label" style={{color:'var(--rose-400)'}}>Radiotherapy + ICI</p>
-                                            <p className="stat-value">+18%</p>
-                                            <p className="stat-detail">Mortality increase</p>
+                                            <p className="stat-label" style={{color:'var(--rose-400)'}}>OS: ICI + RT</p>
+                                            <p className="stat-value">HR 1.18</p>
+                                            <p className="stat-detail">⚠️ Increased mortality</p>
                                         </div>
                                     </div>
                                     
                                     <div className="two-col">
                                         <div className="card">
                                             <h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>◈</span> Background</h3>
-                                            <p className="info-text">Pancreatic ductal adenocarcinoma (PDAC) remains one of the most lethal malignancies with 5-year survival rates below 2%.</p>
+                                            <p className="info-text">Pancreatic ductal adenocarcinoma (PDAC) remains one of the most aggressive malignancies with five-year survival rates below 2%.</p>
                                             <p className="info-text">Key molecular drivers include mutations in <span className="highlight">KRAS</span>, <span className="highlight">TP53</span>, and <span className="highlight">CDKN2A</span>.</p>
-                                            <p className="info-text">The tumor microenvironment is characterized by dense stroma and limited T-cell infiltration.</p>
+                                            <p className="info-text">The tumor microenvironment is characterized by dense stroma, fibrotic tissue, and limited T-cell infiltration - creating a "cold" immune milieu.</p>
                                         </div>
                                         <div className="card">
                                             <h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◇</span> Research Objectives</h3>
-                                            <p className="info-text">Systematically investigate the impact of ICIs on key clinical outcomes in PDAC patients.</p>
+                                            <p className="info-text">Systematically investigate the impact of ICIs on key clinical outcomes in PDAC patients:</p>
                                             <ul className="info-list">
                                                 <li><span className="dot"></span>Progression-free survival (PFS)</li>
                                                 <li><span className="dot"></span>Overall survival (OS)</li>
@@ -355,11 +513,23 @@
                                                 <p className="prisma-title">Records from databases</p>
                                                 <ul className="prisma-list">
                                                     <li>PubMed: {prismaData.identification.pubmed}</li>
-                                                    <li>Cochrane: {prismaData.identification.cochrane}</li>
+                                                    <li>Cochrane Library: {prismaData.identification.cochrane}</li>
                                                     <li>CINAHL: {prismaData.identification.cinahl}</li>
                                                     <li>Google Scholar: {prismaData.identification.googleScholar}</li>
                                                 </ul>
                                                 <p className="prisma-value" style={{color:'var(--cyan-400)',marginTop:'0.5rem'}}>Total: {prismaData.identification.total}</p>
+                                            </div>
+                                            
+                                            <div className="prisma-connector cyan-emerald"></div>
+                                            
+                                            <div className="prisma-row">
+                                                <div className="prisma-box excluded">
+                                                    <p className="prisma-label" style={{color:'var(--slate-400)'}}>Removed before screening</p>
+                                                    <ul className="prisma-list">
+                                                        <li>Duplicates: {prismaData.removed.duplicates}</li>
+                                                        <li>Automation tools: {prismaData.removed.automation}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                             
                                             <div className="prisma-connector cyan-emerald"></div>
@@ -380,6 +550,20 @@
                                             <div className="prisma-connector emerald-amber"></div>
                                             
                                             <div className="prisma-row">
+                                                <div className="prisma-box screening">
+                                                    <p className="prisma-label" style={{color:'var(--emerald-400)'}}>Sought for retrieval</p>
+                                                    <p className="prisma-value" style={{color:'var(--emerald-400)'}}>{prismaData.soughtRetrieval}</p>
+                                                </div>
+                                                <span className="prisma-arrow">→</span>
+                                                <div className="prisma-box excluded">
+                                                    <p className="prisma-label" style={{color:'var(--slate-400)'}}>Not retrieved</p>
+                                                    <p className="prisma-value" style={{color:'var(--rose-400)'}}>{prismaData.notRetrieved}</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="prisma-connector emerald-amber"></div>
+                                            
+                                            <div className="prisma-row">
                                                 <div className="prisma-box eligibility">
                                                     <p className="prisma-label" style={{color:'var(--amber-400)'}}>Eligibility</p>
                                                     <p className="prisma-title">Reports assessed</p>
@@ -389,10 +573,10 @@
                                                 <div className="prisma-box excluded">
                                                     <p className="prisma-label" style={{color:'var(--slate-400)'}}>Excluded</p>
                                                     <ul className="prisma-list">
-                                                        <li>Outcomes: {prismaData.excludedReasons.deviatingOutcomes}</li>
-                                                        <li>Expression: {prismaData.excludedReasons.investigatingExpression}</li>
-                                                        <li>Combined: {prismaData.excludedReasons.combinedCancers}</li>
-                                                        <li>Murine: {prismaData.excludedReasons.murineModels}</li>
+                                                        <li>Deviating outcomes: {prismaData.excludedReasons.deviatingOutcomes}</li>
+                                                        <li>Investigating expression: {prismaData.excludedReasons.investigatingExpression}</li>
+                                                        <li>Combined cancers: {prismaData.excludedReasons.combinedCancers}</li>
+                                                        <li>Murine models: {prismaData.excludedReasons.murineModels}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -408,17 +592,18 @@
                                     </div>
                                     
                                     <div className="card">
-                                        <h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◆</span> Risk of Bias (RCTs)</h3>
+                                        <h3 className="card-title"><span style={{color:'var(--emerald-400)'}}>◆</span> Risk of Bias Assessment (RCTs - RoB 2.0)</h3>
                                         <div className="rob-legend">
                                             <div className="rob-legend-item"><div className="rob-dot low">+</div> Low risk</div>
-                                            <div className="rob-legend-item"><div className="rob-dot concerns">-</div> Concerns</div>
+                                            <div className="rob-legend-item"><div className="rob-dot concerns">-</div> Some concerns</div>
                                         </div>
+                                        <div style={{overflowX: 'auto'}}>
                                         <table className="rob-table">
                                             <thead>
                                                 <tr><th>Study</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>D5</th><th>Overall</th></tr>
                                             </thead>
                                             <tbody>
-                                                {robRCTData.map((r,i) => (
+                                                {robRCTData.slice(0, 8).map((r,i) => (
                                                     <tr key={i}>
                                                         <td>{r.study}</td>
                                                         {['D1','D2','D3','D4','D5','overall'].map(k => (
@@ -428,7 +613,8 @@
                                                 ))}
                                             </tbody>
                                         </table>
-                                        <p className="rob-note">D1: Randomization | D2: Deviations | D3: Missing data | D4: Measurement | D5: Selection</p>
+                                        </div>
+                                        <p className="rob-note">D1: Randomization process | D2: Deviations from interventions | D3: Missing outcome data | D4: Measurement of outcome | D5: Selection of reported result</p>
                                     </div>
                                 </div>
                             )}
@@ -443,58 +629,67 @@
                                     </div>
                                     
                                     {findingTab === 'orr' && (
-                                        <div className="metrics-grid">
-                                            <div className="metric-card cyan">
-                                                <p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI + Chemotherapy</p>
-                                                <p className="metric-value">OR 1.78</p>
-                                                <p className="metric-ci">95% CI: 1.46–2.16</p>
-                                                <p className="metric-note" style={{color:'var(--amber-400)'}}>I² = 85%</p>
-                                            </div>
-                                            <div className="metric-card emerald">
-                                                <p className="metric-label" style={{color:'var(--emerald-400)'}}>ICB Monotherapy</p>
-                                                <p className="metric-value">OR 1.10</p>
-                                                <p className="metric-ci">95% CI: 1.02–1.18</p>
-                                                <p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 0%</p>
-                                            </div>
-                                            <div className="metric-card amber">
-                                                <p className="metric-label" style={{color:'var(--amber-400)'}}>ICI + Radiotherapy</p>
-                                                <p className="metric-value">OR 1.35</p>
-                                                <p className="metric-ci">95% CI: 0.99–1.83</p>
-                                                <p className="metric-note" style={{color:'var(--rose-400)'}}>I² = 96%</p>
+                                        <div>
+                                            <p className="info-text" style={{marginBottom:'1rem'}}>ORR ranged from 0% to 67% across different treatment combinations (Table 3).</p>
+                                            <div className="metrics-grid">
+                                                <div className="metric-card cyan">
+                                                    <p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI + Chemotherapy</p>
+                                                    <p className="metric-value">OR 1.78</p>
+                                                    <p className="metric-ci">95% CI: 1.46–2.16</p>
+                                                    <p className="metric-note" style={{color:'var(--amber-400)'}}>I² = 85% (high heterogeneity)</p>
+                                                </div>
+                                                <div className="metric-card emerald">
+                                                    <p className="metric-label" style={{color:'var(--emerald-400)'}}>ICB Monotherapy</p>
+                                                    <p className="metric-value">OR 1.10</p>
+                                                    <p className="metric-ci">95% CI: 1.02–1.18</p>
+                                                    <p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 0% (no heterogeneity)</p>
+                                                </div>
+                                                <div className="metric-card amber">
+                                                    <p className="metric-label" style={{color:'var(--amber-400)'}}>ICI + Radiotherapy</p>
+                                                    <p className="metric-value">OR 1.35</p>
+                                                    <p className="metric-ci">95% CI: 0.99–1.83</p>
+                                                    <p className="metric-note" style={{color:'var(--rose-400)'}}>I² = 96% (borderline significance)</p>
+                                                </div>
                                             </div>
                                         </div>
                                     )}
                                     
                                     {findingTab === 'os' && (
-                                        <div className="metrics-grid">
-                                            <div className="metric-card emerald">
-                                                <p className="metric-label" style={{color:'var(--emerald-400)'}}>ICI + Chemotherapy</p>
-                                                <p className="metric-value">HR 0.82</p>
-                                                <p className="metric-ci">95% CI: 0.78–0.87</p>
-                                                <p className="metric-note" style={{color:'var(--emerald-400)'}}>18% death risk ↓</p>
-                                            </div>
-                                            <div className="metric-card cyan">
-                                                <p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI Monotherapy</p>
-                                                <p className="metric-value">HR 0.82</p>
-                                                <p className="metric-ci">95% CI: 0.76–0.88</p>
-                                                <p className="metric-note" style={{color:'var(--cyan-400)'}}>I² = 0%</p>
-                                            </div>
-                                            <div className="metric-card rose">
-                                                <p className="metric-label" style={{color:'var(--rose-400)'}}>ICI + Radiotherapy</p>
-                                                <p className="metric-value">HR 1.18</p>
-                                                <p className="metric-ci">95% CI: 1.04–1.34</p>
-                                                <p className="metric-note" style={{color:'var(--rose-400)'}}>⚠️ ↑ Mortality</p>
+                                        <div>
+                                            <p className="info-text" style={{marginBottom:'1rem'}}>Analysis of OS outcomes across 15 studies demonstrated significant variations by treatment combination.</p>
+                                            <div className="metrics-grid">
+                                                <div className="metric-card emerald">
+                                                    <p className="metric-label" style={{color:'var(--emerald-400)'}}>ICI + Chemotherapy</p>
+                                                    <p className="metric-value">HR 0.82</p>
+                                                    <p className="metric-ci">95% CI: 0.78–0.87</p>
+                                                    <p className="metric-note" style={{color:'var(--emerald-400)'}}>18% mortality reduction, I² = 0%</p>
+                                                </div>
+                                                <div className="metric-card cyan">
+                                                    <p className="metric-label" style={{color:'var(--cyan-400)'}}>ICI Monotherapy</p>
+                                                    <p className="metric-value">HR 0.82</p>
+                                                    <p className="metric-ci">95% CI: 0.76–0.88</p>
+                                                    <p className="metric-note" style={{color:'var(--cyan-400)'}}>I² = 0%</p>
+                                                </div>
+                                                <div className="metric-card rose">
+                                                    <p className="metric-label" style={{color:'var(--rose-400)'}}>ICI + Radiotherapy</p>
+                                                    <p className="metric-value">HR 1.18</p>
+                                                    <p className="metric-ci">95% CI: 1.04–1.34</p>
+                                                    <p className="metric-note" style={{color:'var(--rose-400)'}}>⚠️ Increased mortality, I² = 56%</p>
+                                                </div>
                                             </div>
                                         </div>
                                     )}
                                     
                                     {findingTab === 'pfs' && (
-                                        <div className="metrics-grid" style={{maxWidth:'400px'}}>
-                                            <div className="metric-card violet">
-                                                <p className="metric-label" style={{color:'var(--violet-400)'}}>Pooled PFS HR</p>
-                                                <p className="metric-value">HR 2.25</p>
-                                                <p className="metric-ci">95% CI: 2.15–2.36</p>
-                                                <p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 7%</p>
+                                        <div>
+                                            <p className="info-text" style={{marginBottom:'1rem'}}>PFS outcomes were analyzed across multiple studies with ICI combinations.</p>
+                                            <div className="metrics-grid" style={{maxWidth:'400px'}}>
+                                                <div className="metric-card violet">
+                                                    <p className="metric-label" style={{color:'var(--violet-400)'}}>Pooled PFS</p>
+                                                    <p className="metric-value">HR 2.25</p>
+                                                    <p className="metric-ci">95% CI: 2.15–2.36</p>
+                                                    <p className="metric-note" style={{color:'var(--emerald-400)'}}>I² = 7% (low heterogeneity)</p>
+                                                </div>
                                             </div>
                                         </div>
                                     )}
@@ -513,7 +708,7 @@
                                             <div className="subgroup-card cyan">
                                                 <h4 className="subgroup-title" style={{color:'var(--cyan-400)'}}>MSI-H / dMMR Patients</h4>
                                                 <ul className="subgroup-list">
-                                                    <li>• ORR of 48.4% with combos</li>
+                                                    <li>• ORR of 48.4% with combos (Taieb et al.)</li>
                                                     <li>• Median PFS 26.7 months</li>
                                                     <li>• Durable responses</li>
                                                 </ul>
@@ -534,7 +729,7 @@
                                                 className={`plot-btn ${plotType === k ? 'active' : ''}`} 
                                                 style={plotType === k ? {backgroundColor:`${c.color}20`,borderColor:`${c.color}50`,color:c.color} : {}}
                                             >
-                                                {c.title.split(':')[0]}
+                                                {c.title.split('(')[0].trim()}
                                             </button>
                                         ))}
                                     </div>
@@ -543,7 +738,7 @@
                                         <div className="forest-header">
                                             <h3 className="forest-title">{plotConfigs[plotType].title}</h3>
                                             <div className="forest-meta">
-                                                <span>Pooled {plotConfigs[plotType].metric.toUpperCase()}: <strong style={{color:plotConfigs[plotType].color}}>{plotConfigs[plotType].pooled.toFixed(2)}</strong></span>
+                                                <span>Pooled: <strong style={{color:plotConfigs[plotType].color}}>{plotConfigs[plotType].pooled.toFixed(2)} {plotConfigs[plotType].pooledCI}</strong></span>
                                                 <span>|</span>
                                                 <span>I² = {plotConfigs[plotType].heterogeneity}</span>
                                             </div>
@@ -552,6 +747,7 @@
                                             data={plotConfigs[plotType].data} 
                                             color={plotConfigs[plotType].color} 
                                             pooled={plotConfigs[plotType].pooled} 
+                                            pooledCI={plotConfigs[plotType].pooledCI}
                                             metric={plotConfigs[plotType].metric} 
                                             heterogeneity={plotConfigs[plotType].heterogeneity} 
                                         />
@@ -577,14 +773,14 @@
                                                     <div className="conclusion-icon positive">✓</div>
                                                     <div>
                                                         <p className="conclusion-title">ICI + Chemo Shows Promise</p>
-                                                        <p className="conclusion-desc">18% mortality reduction with consistent results</p>
+                                                        <p className="conclusion-desc">18% mortality reduction (HR 0.82, 95% CI: 0.78–0.87) with consistent results</p>
                                                     </div>
                                                 </div>
                                                 <div className="conclusion-item">
                                                     <div className="conclusion-icon positive">✓</div>
                                                     <div>
                                                         <p className="conclusion-title">Biomarker Selection Critical</p>
-                                                        <p className="conclusion-desc">High TMB and dMMR patients respond best</p>
+                                                        <p className="conclusion-desc">High TMB and dMMR patients respond best to immunotherapy</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -593,14 +789,14 @@
                                                     <div className="conclusion-icon negative">⚠</div>
                                                     <div>
                                                         <p className="conclusion-title">Caution with Radiotherapy</p>
-                                                        <p className="conclusion-desc">ICI + RT increases mortality risk</p>
+                                                        <p className="conclusion-desc">ICI + RT increases mortality risk (HR 1.18, 95% CI: 1.04–1.34)</p>
                                                     </div>
                                                 </div>
                                                 <div className="conclusion-item">
                                                     <div className="conclusion-icon warning">!</div>
                                                     <div>
-                                                        <p className="conclusion-title">Limited Monotherapy Efficacy</p>
-                                                        <p className="conclusion-desc">ICI alone shows 0% ORR in most PDAC</p>
+                                                        <p className="conclusion-title">Modest ORR Improvement</p>
+                                                        <p className="conclusion-desc">Only 10% ORR increase (OR 1.10) with ICB monotherapy</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -608,13 +804,13 @@
                                     </div>
                                     
                                     <div className="card" style={{background:'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))',borderColor:'rgba(6, 182, 212, 0.2)'}}>
-                                        <h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>🔬</span> Future Research</h3>
+                                        <h3 className="card-title"><span style={{color:'var(--cyan-400)'}}>🔬</span> Future Research Directions</h3>
                                         <div>
                                             {[
-                                                {area:"Predictive Biomarkers",desc:"Develop and validate for optimal patient selection"},
-                                                {area:"Novel Combinations",desc:"ICIs with targeted therapies and vaccines"},
-                                                {area:"TME Modulation",desc:"Convert 'cold' tumors to 'hot' phenotypes"},
-                                                {area:"Personalized Approaches",desc:"Multi-omic data for individualized treatment"}
+                                                {area:"Predictive Biomarkers",desc:"Develop and validate biomarkers for optimal patient selection"},
+                                                {area:"Novel Combinations",desc:"ICIs with targeted therapies and cancer vaccines"},
+                                                {area:"TME Modulation",desc:"Strategies to convert 'cold' tumors to 'hot' phenotypes"},
+                                                {area:"Personalized Approaches",desc:"Multi-omic data for individualized treatment strategies"}
                                             ].map((f,i) => (
                                                 <div key={i} className="future-item">
                                                     <div className="future-dot"></div>
@@ -628,17 +824,17 @@
                                     </div>
                                     
                                     <div className="card">
-                                        <h3 className="card-title"><span style={{color:'var(--violet-400)'}}>📋</span> Clinical Guidance</h3>
+                                        <h3 className="card-title"><span style={{color:'var(--violet-400)'}}>📋</span> Clinical Guidance Summary</h3>
                                         <table className="guidance-table">
                                             <thead>
                                                 <tr><th>Patient Profile</th><th>Recommended Approach</th><th>Evidence</th></tr>
                                             </thead>
                                             <tbody>
                                                 {[
-                                                    {profile:"High TMB / MSI-H / dMMR",approach:"ICI combination (+ chemo)",evidence:"Moderate-High"},
-                                                    {profile:"Low TMB / MSS",approach:"Standard chemo; consider trials",evidence:"Moderate"},
-                                                    {profile:"Metastatic, first-line",approach:"ICI + chemo (gem/nab-pac)",evidence:"Moderate"},
-                                                    {profile:"Locally advanced",approach:"Neoadjuvant chemoRT ± ICI",evidence:"Low"}
+                                                    {profile:"High TMB / MSI-H / dMMR",approach:"ICI combination therapy",evidence:"Moderate-High"},
+                                                    {profile:"Low TMB / MSS",approach:"Standard chemo; consider clinical trials",evidence:"Moderate"},
+                                                    {profile:"Metastatic PDAC",approach:"ICI + chemotherapy (gem/nab-pac)",evidence:"Moderate"},
+                                                    {profile:"Candidate for RT",approach:"Avoid ICI + RT combination",evidence:"Moderate (caution)"}
                                                 ].map((r,i) => (
                                                     <tr key={i}>
                                                         <td>{r.profile}</td>
@@ -656,7 +852,8 @@
                     
                     <footer>
                         <div className="container">
-                            <p>Based on: Al-Khinji A, et al. (2025) Immune checkpoint inhibitors in pancreatic adenocarcinoma. <span className="doi">Front. Oncol. 15:1569884</span></p>
+                            <p>Based on: Al-Khinji A, et al. (2025) Immune checkpoint inhibitors in pancreatic adenocarcinoma: a systematic review and meta analysis of clinical outcomes.</p>
+                            <p><span className="doi">Front. Oncol. 15:1569884. doi: 10.3389/fonc.2025.1569884</span></p>
                             <p className="note">Interactive Dashboard • Data visualization for research purposes only</p>
                         </div>
                     </footer>
