@@ -7,7 +7,7 @@ widget: portfolio
 headless: true
 active: true
 # Order that this section appears on the page.
-weight: 100
+weight: 40
 
 title: Apps
 subtitle: ''
