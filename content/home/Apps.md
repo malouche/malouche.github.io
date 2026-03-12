@@ -49,6 +49,8 @@ content:
     tages: researchdata
   - name: Chronic Pain Networks
     tag: painnetwork
+  - name: Statistical Distribution Tables
+    tag: stattables
   
     
 design:
