@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hugo-site",
+      "runtimeExecutable": "hugo",
+      "runtimeArgs": ["server"],
+      "port": 1313
+    },
+    {
+      "name": "stat-tables-app",
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": ["run", "/Users/dhafermalouche/Documents/GitHub/stat-tables-app/app.py"],
+      "port": 8501
+    }
+  ]
+}
