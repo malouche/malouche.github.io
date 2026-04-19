@@ -9,7 +9,7 @@ authors:
 - Mohamed Ghaith Al-Kuwari
 date: "2025-12-22T00:00:00Z"
 doi: ""
-publication: '*Frontiers in Medicine – Hematology*'
+publication: '*Frontiers in Medicine – Hematology* **(Accepted)**'
 publication_short: "Front. Med."
 publication_types:
 - "2"

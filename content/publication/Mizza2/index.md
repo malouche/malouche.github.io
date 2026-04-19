@@ -7,7 +7,7 @@ authors:
 - Mohammed Al Mousa
 date: "2026-04-17T00:00:00Z"
 doi: ""
-publication: '*International Journal of Engineering Pedagogy (iJEP)*'
+publication: '*International Journal of Engineering Pedagogy (iJEP)* **(Accepted)**'
 publication_short: "iJEP"
 publication_types:
 - "2"
