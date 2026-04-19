@@ -37,13 +37,13 @@ Welcome to my professional website! As a Professor of Statistics at Qatar Univer
 ## What You'll Find Here
 
 - **Interactive Tutorials**: Step-by-step guides on statistical methods, data science techniques, and programming with R, Python, H2O, and Spark
-- **Research Portfolio**: Access to my published papers, ongoing projects, and collaborations spanning Bayesian networks and graphical models, public health and Qatar Biobank research, actuarial statistics, engineering education and educational technology, systematic reviews and clinical outcomes, and AI regulation, anticipatory law, and finance
-- **Teaching Materials**: Course resources, lecture notes, and educational tools for statistics and data science
+- **Research Portfolio**: Access to my published papers, ongoing projects, and collaborations spanning Bayesian networks and graphical models; public health, epidemiology, and Qatar Biobank research; hematology and oncology (NASH, T-cell leukemia, pancreatic cancer); chronic pain and neurological disorders (multiple sclerosis); actuarial statistics and stochastic processes; engineering education and educational technology; systematic reviews and meta-analyses; sensory and consumer data analysis; survey methodology and data quality; and AI regulation, anticipatory law, and finance
+- **Teaching Materials**: Course resources, lecture notes, and educational tools for statistics, stochastic processes, and actuarial science
 - **Interactive Applications**: Explore data through custom Shiny apps, dashboards, and visualization tools I've developed for research and education
 - **Data Analysis Projects**: Case studies demonstrating statistical modeling, machine learning, and data visualization techniques
 - **Professional Background**: Details about my academic journey, including my work at universities in Qatar, Egypt, Tunisia, and my international appointments as a Fulbright Scholar (Stanford University and University of Michigan) and Visiting Scholar (Yale University and York University)
 
-My expertise spans statistical theory and practical applications using modern computational tools. Whether you're interested in graphical models, public health analytics, consumer preference analysis, or machine learning implementations, you'll find relevant content throughout this site.
+My expertise spans statistical theory and practical applications using modern computational tools. Whether you're interested in graphical models, public health analytics, hematology, chronic pain modeling, sensory data analysis, or AI regulation, you'll find relevant content throughout this site.
 
 Feel free to [contact me](mailto:dhafer.malouche@qu.edu.qa) with questions, collaboration ideas, or feedback on any of the resources shared here.
 
