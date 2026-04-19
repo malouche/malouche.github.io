@@ -9,6 +9,6 @@ publication: '*Proceedings of the 12th Annual International Academic Conference,
 publication_short: "KILAW 2026"
 publication_types:
 - "1"
-publishDate: "2026-05-06T00:00:00Z"
+publishDate: "2026-04-19T00:00:00Z"
 title: "Legislating the Future: Statistical Foresight as a Foundation for Anticipatory Law"
 ---
