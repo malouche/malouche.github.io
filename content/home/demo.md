@@ -37,11 +37,11 @@ Welcome to my professional website! As a Professor of Statistics at Qatar Univer
 ## What You'll Find Here
 
 - **Interactive Tutorials**: Step-by-step guides on statistical methods, data science techniques, and programming with R, Python, H2O, and Spark
-- **Research Portfolio**: Access to my published papers, ongoing projects, and collaborations in graphical models, public health, data quality, and more
+- **Research Portfolio**: Access to my published papers, ongoing projects, and collaborations in Bayesian networks and graphical models, public health and Qatar Biobank research, actuarial statistics, statistics education (collaboration with Dr. Daria Mizza), AI regulation and anticipatory law (collaboration with Prof. Chaker Mzoughi), and statistical methods in finance
 - **Teaching Materials**: Course resources, lecture notes, and educational tools for statistics and data science
 - **Interactive Applications**: Explore data through custom Shiny apps, dashboards, and visualization tools I've developed for research and education
 - **Data Analysis Projects**: Case studies demonstrating statistical modeling, machine learning, and data visualization techniques
-- **Professional Background**: Details about my academic journey, including my work at universities in Qatar, Egypt, Tunisia, and my time as a Fulbright Scholar in the United States
+- **Professional Background**: Details about my academic journey, including my work at universities in Qatar, Egypt, Tunisia, and my international appointments as a Fulbright Scholar (Stanford University and University of Michigan) and Visiting Scholar (Yale University and York University)
 
 My expertise spans statistical theory and practical applications using modern computational tools. Whether you're interested in graphical models, public health analytics, consumer preference analysis, or machine learning implementations, you'll find relevant content throughout this site.
 
