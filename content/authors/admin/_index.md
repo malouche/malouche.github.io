@@ -16,14 +16,17 @@ education:
 email: ""
 highlight_name: true
 interests:
-- Graphical & Statistical Models
-- Public Health & COVID-19
-- Research & Development
-- Well-being & Quality of Life
-- Survey Methodology
-- Data Quality & Analysis
-- Consumer Preferences & Sensory Analysis
-- Medical & Clinical Applications
+- Bayesian Networks & Graphical Models
+- Public Health & Qatar Biobank Research
+- Hematology, Oncology & Clinical Research
+- Chronic Pain & Neurological Disorders
+- Actuarial & Stochastic Processes
+- Survey Methodology & Data Quality
+- AI Regulation, Anticipatory Law & Finance
+- Sensory & Consumer Data Analysis
+- Engineering Education & Educational Technology
+- Systematic Reviews & Meta-Analyses
+- Epidemiology & Infectious Diseases
 
 organizations:
 - name: Qatar University 
