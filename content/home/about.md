@@ -1,21 +1,39 @@
 ---
-# An instance of the About widget.
-# Documentation: https://wowchemy.com/docs/page-builder/
+# Wowchemy stock `about` widget — overridden by
+# layouts/partials/widgets/about.html to render the redesigned hero.
+# Upstream `about`-widget params (author, interests, etc.) are ignored
+# by the override.
+
 widget: about
-
-# Activate this widget? true/false
-active: false
-
-# This file represents a page section.
 headless: true
+weight: 5
+active: true
 
-# Order that this section appears on the page.
-weight: 20
+eyebrow: "Professor of Statistics · Qatar University"
+heading: "Dhafer Malouche"
+lede: "Bayesian networks, biomedical statistics, and reproducible data science across **Tunisia, France, the US, and Qatar**. Fulbright Scholar at Stanford & Michigan. Long-time collaborator of Yale's MacMillan Center."
 
-title: Biography
+location: "Doha, Qatar"
+portrait: "authors/admin/avatar.jpg"
 
-# Choose the user profile to display
-# This should be the username (folder name) of a profile in your `content/authors/` folder.
-# See https://wowchemy.com/docs/get-started/#introduce-yourself
-author: admin
+cta_primary:
+  label: "View research"
+  url: "#publications"
+cta_secondary:
+  label: "Google Scholar ↗"
+  url: "https://scholar.google.com/citations?user=YOUR_ID"
+cta_tertiary:
+  label: "ORCID ↗"
+  url: "https://orcid.org/0000-0000-0000-0000"
+
+# TODO: replace with real numbers — these are placeholders.
+stats:
+  - number: "25+"
+    label: "Years in academia"
+  - number: "80+"
+    label: "Peer-reviewed publications"
+  - number: "2"
+    label: "Fulbright appointments"
+  - number: "12"
+    label: "Interactive dashboards & apps"
 ---

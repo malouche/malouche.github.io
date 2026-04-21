@@ -1,0 +1,90 @@
+{{/* Override of Wowchemy's stock `about` widget — Dhafer Malouche redesign hero. */}}
+{{/* Activated by setting widget: about in a content/home/*.md page.            */}}
+{{/* Falls back to hero-specific params; ignores the upstream author lookup.    */}}
+
+{{ $page := .page }}
+{{ $eyebrow := $page.Params.eyebrow | default "Professor of Statistics · Qatar University" }}
+{{ $heading := $page.Params.heading | default "Dhafer Malouche" }}
+{{ $lede := $page.Params.lede | default "" }}
+{{ $cta_primary := $page.Params.cta_primary }}
+{{ $cta_secondary := $page.Params.cta_secondary }}
+{{ $cta_tertiary := $page.Params.cta_tertiary }}
+{{ $portrait := $page.Params.portrait | default "authors/admin/avatar.jpg" }}
+{{ $location := $page.Params.location | default "Doha, Qatar" }}
+{{ $stats := $page.Params.stats }}
+
+<section class="home-section wg-about wg-hero-override">
+  <div class="dm-hero">
+    <div class="dm-hero__inner">
+      <div class="dm-hero__text">
+        <div class="dm-hero__eyebrow">{{ $eyebrow }}</div>
+        <h1 class="dm-hero__name">{{ $heading }}</h1>
+        {{ with $lede }}<div class="dm-hero__lede">{{ . | markdownify }}</div>{{ end }}
+        <div class="dm-hero__ctas">
+          {{ with $cta_primary }}<a class="dm-btn dm-btn--primary" href="{{ .url }}">{{ .label }}</a>{{ end }}
+          {{ with $cta_secondary }}<a class="dm-btn dm-btn--ghost" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
+          {{ with $cta_tertiary }}<a class="dm-btn dm-btn--ghost" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
+        </div>
+      </div>
+      <div class="dm-hero__portrait">
+        {{ with resources.Get $portrait }}
+          <img src="{{ .RelPermalink }}" alt="{{ $heading }}" loading="eager" />
+        {{ else }}
+          <img src="/{{ $portrait }}" alt="{{ $heading }}" loading="eager" />
+        {{ end }}
+        <div class="dm-hero__pin">📍 {{ $location }}</div>
+      </div>
+    </div>
+
+    {{ with $stats }}
+    <div class="dm-hero__stats">
+      {{ range . }}
+      <div class="dm-hero__stat">
+        <div class="dm-hero__stat-num">{{ .number }}</div>
+        <div class="dm-hero__stat-label">{{ .label }}</div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+/* Inline critical styles — Wowchemy's SCSS pipeline is finicky; this keeps
+   the hero looking right even if assets/scss/custom.scss isn't picked up.
+   Safe to remove once the compiled custom.scss is confirmed to load. */
+:root {
+  --dm-navy-900: #1a365d;
+  --dm-navy-700: #2c5282;
+  --dm-fg-1: #2b2b2b;
+  --dm-fg-2: #555;
+  --dm-border: #e9ecef;
+  --dm-bg-muted: #f8fafc;
+  --dm-cta-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+}
+.wg-hero-override { padding: 0 !important; background: transparent; }
+.dm-hero { background: linear-gradient(180deg, var(--dm-bg-muted) 0%, #fff 100%); border-bottom: 1px solid var(--dm-border); margin: -2rem 0 2rem; }
+.dm-hero__inner { max-width: 1200px; margin: 0 auto; padding: 72px 40px 56px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: center; }
+@media (max-width: 900px) { .dm-hero__inner { grid-template-columns: 1fr; padding: 48px 24px 32px; gap: 32px; } }
+.dm-hero__eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--dm-navy-700); margin-bottom: 10px; }
+.dm-hero__name { font-family: 'Roboto Slab', serif; font-size: clamp(38px, 5vw, 60px); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; color: var(--dm-navy-900); margin: 0 0 20px; }
+.dm-hero__lede { font-size: 20px; line-height: 1.55; color: var(--dm-fg-1); max-width: 640px; margin-bottom: 24px; }
+.dm-hero__lede p { margin: 0; }
+.dm-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.dm-hero__portrait { position: relative; justify-self: center; }
+.dm-hero__portrait img { width: 280px; height: 340px; border-radius: 8px; object-fit: cover; box-shadow: 0 20px 60px rgba(26,54,93,.20); display: block; }
+@media (max-width: 900px) { .dm-hero__portrait img { width: 220px; height: 260px; } }
+.dm-hero__pin { position: absolute; bottom: -18px; left: -18px; background: #fff; border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--dm-navy-900); font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.dm-hero__stats { max-width: 1200px; margin: 0 auto; padding: 0 40px 48px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--dm-border); }
+@media (max-width: 700px) { .dm-hero__stats { grid-template-columns: repeat(2, 1fr); } }
+.dm-hero__stat { padding: 28px 24px; border-right: 1px solid var(--dm-border); }
+.dm-hero__stat:last-child { border-right: none; }
+@media (max-width: 700px) { .dm-hero__stat:nth-child(2n) { border-right: none; } }
+.dm-hero__stat-num { font-family: 'Roboto Slab', serif; font-size: 42px; font-weight: 700; color: var(--dm-navy-900); line-height: 1; }
+.dm-hero__stat-label { font-size: 14px; color: var(--dm-fg-2); margin-top: 6px; }
+.dm-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none !important; transition: transform .15s, box-shadow .15s, background .15s; cursor: pointer; line-height: 1; }
+.dm-btn--primary { background: var(--dm-cta-gradient); color: #fff !important; box-shadow: 0 4px 12px rgba(26,54,93,.25); border: none; }
+.dm-btn--primary:hover { color: #fff !important; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(26,54,93,.30); }
+.dm-btn--ghost { background: #fff; color: var(--dm-navy-900) !important; border: 1.5px solid var(--dm-navy-900); }
+.dm-btn--ghost:hover { background: var(--dm-navy-900); color: #fff !important; }
+</style>
