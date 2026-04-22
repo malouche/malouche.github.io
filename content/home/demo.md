@@ -6,5 +6,5 @@
 widget: blank
 headless: true
 weight: 15
-active: false
+active: true
 ---
