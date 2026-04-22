@@ -1,9 +1,20 @@
-{{/* Override of Wowchemy's stock `about` widget — Dhafer Malouche hero. */}}
-{{/* Activated by `widget: about` in content/home/about.md.              */}}
+{{/* Override of Wowchemy's stock `about` widget.
+     - When the page supplies hero-style params (`heading` is set), render the
+       redesigned hero block (name, lede, topic chips, CTAs, portrait, stats).
+     - Otherwise, fall back to the original Wowchemy layout: portrait + bio
+       paragraphs + Interests + Education, pulled from the author profile at
+       content/authors/admin/_index.md. */}}
 
+{{ $ := .root }}
 {{ $page := .page }}
+
+{{/* ------------------------------------------------------------------ */}}
+{{/* Hero branch — used by content/home/about.md (weight 5).            */}}
+{{/* ------------------------------------------------------------------ */}}
+{{ if $page.Params.heading }}
+
 {{ $eyebrow := $page.Params.eyebrow | default "Professor of Statistics · Qatar University" }}
-{{ $heading := $page.Params.heading | default "Dhafer Malouche" }}
+{{ $heading := $page.Params.heading }}
 {{ $lede := $page.Params.lede | default "" }}
 {{ $cta_primary := $page.Params.cta_primary }}
 {{ $cta_secondary := $page.Params.cta_secondary }}
@@ -12,8 +23,8 @@
 {{ $stats := $page.Params.stats }}
 {{ $topics := $page.Params.topics }}
 
-{{/* Resolve author portrait the Wowchemy way — look up the `admin` author
-     page and use its avatar.jpg page resource. Falls back to a static path. */}}
+{{/* Resolve author portrait — look up the `admin` author page and use its
+     avatar.jpg page resource. Falls back to a static path if not found. */}}
 {{ $authorPage := site.GetPage "authors/admin" }}
 {{ $avatar := "" }}
 {{ with $authorPage }}
@@ -103,3 +114,130 @@
 .dm-btn--ghost { background: #fff; color: var(--dm-navy-900) !important; border: 1.5px solid var(--dm-navy-900); }
 .dm-btn--ghost:hover { background: var(--dm-navy-900); color: #fff !important; }
 </style>
+
+{{ else }}
+{{/* ------------------------------------------------------------------ */}}
+{{/* Biography branch — identical to the stock Wowchemy about widget.   */}}
+{{/* Renders portrait, name/role/org, social icons, bio paragraphs,     */}}
+{{/* Interests list, and Education timeline from the author profile.    */}}
+{{/* ------------------------------------------------------------------ */}}
+
+{{ $author := "" }}
+{{ if .author }}
+  {{ $author = .author }}
+{{ else }}
+  {{ $author = $page.Params.author }}
+{{ end }}
+
+{{ $person_page_path := (printf "/authors/%s" $author) }}
+{{ $person_page := site.GetPage $person_page_path }}
+{{ if not $person_page }}
+  {{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your About widget and create an associated author page if one does not already exist. See https://wowchemy.com/docs/page-builder/#about " $person_page_path }}
+{{ end }}
+{{ $person := $person_page.Params }}
+{{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ $avatar_shape := site.Params.avatar.shape | default "circle" }}
+
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <div id="profile">
+
+      {{ if site.Params.avatar.gravatar }}
+      <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}" src="https://s.gravatar.com/avatar/{{ md5 $person.email }}?s=270')" alt="{{ $person_page.Title }}">
+      {{ else if $avatar }}
+      {{ $avatar_image := $avatar.Fill "270x270 Center" }}
+      <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}"
+           width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}"
+           src="{{ $avatar_image.RelPermalink }}" alt="{{ $person_page.Title }}">
+      {{ end }}
+
+      <div class="portrait-title">
+        <h2>
+          {{- if $person.name_pronunciation -}}
+            <ruby>
+              <rb>{{ $person_page.Title }}</rb>
+              <rt>{{ $person.name_pronunciation }}</rt>
+            </ruby>
+          {{- else -}}
+            {{- $person_page.Title -}}
+          {{- end -}}
+        </h2>
+        {{ with $person.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
+        {{ range $person.organizations }}
+        <h3>
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+          <span>{{ .name }}</span>
+          {{ if .url }}</a>{{ end }}
+        </h3>
+        {{ end }}
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        {{ range $person.social }}
+        {{ $pack := or .icon_pack "fas" }}
+        {{ $pack_prefix := $pack }}
+        {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+          {{ $pack_prefix = "fa" }}
+        {{ end }}
+        {{ $link := .link }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <li>
+          <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
+            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+    </div>
+  </div>
+  <div class="col-12 col-lg-8">
+
+    {{/* Only display widget title in explicit instances of about widget, not on author pages. */}}
+    {{ if and $page.Params.widget $page.Title }}<h1>{{ $page.Title | markdownify | emojify }}</h1>{{ end }}
+
+    <div class="article-style">
+      {{ $person_page.Content }}
+    </div>
+
+    <div class="row">
+
+      {{ with $person.interests }}
+      <div class="col-md-5">
+        <div class="section-subheading">{{ i18n "interests" | markdownify }}</div>
+        <ul class="ul-interests mb-0">
+          {{ range . }}
+          <li>{{ . | markdownify | emojify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+      {{ with $person.education }}
+      <div class="col-md-7">
+        <div class="section-subheading">{{ i18n "education" | markdownify }}</div>
+        <ul class="ul-edu fa-ul mb-0">
+          {{ range .courses }}
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">{{ .course }}{{ with .year }}, {{ . }}{{ end }}</p>
+              <p class="institution">{{ .institution }}</p>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+
+{{ end }}
