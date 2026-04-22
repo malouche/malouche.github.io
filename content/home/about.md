@@ -27,8 +27,7 @@ cta_primary:
   url: "#publications"
 cta_secondary:
   label: "Google Scholar ↗"
-  # TODO: replace YOUR_ID with your real Google Scholar user ID.
-  url: "https://scholar.google.com/citations?user=YOUR_ID"
+  url: "https://scholar.google.com/citations?user=rLJsvjUAAAAJ&hl=en"
 cta_tertiary:
   label: "ORCID ↗"
   url: "https://orcid.org/0000-0002-0494-7141"
