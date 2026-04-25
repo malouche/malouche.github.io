@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="index,follow" />
+<title>Statistical Distribution Tables · Dhafer Malouche</title>
+<meta name="description" content="Interactive replacement for the Z, t, chi-square and F tables in the back of a statistics textbook. Query any critical value or tail probability.">
+<link rel="canonical" href="https://dhafermalouche.net/stattables/">
+<style>
+/* -------------------------------------------------------------------- */
+/* Site palette                                                          */
+/* -------------------------------------------------------------------- */
+:root {
+  --navy-900: #1a365d;
+  --navy-700: #2c5282;
+  --navy-500: #4a6fa5;
+  --fg-1:     #1e293b;
+  --fg-2:     #475569;
+  --fg-3:     #64748b;
+  --border:   #e2e8f0;
+  --bg:       #ffffff;
+  --bg-muted: #f8fafc;
+  --bg-panel: #f1f5f9;
+  --accent-a: #1a365d;
+  --accent-b: #0ea5a7;
+  --accent-c: #b45309;
+  --shade:    rgba(26, 54, 93, 0.22);
+  --font-serif: 'Roboto Slab', Georgia, 'Times New Roman', serif;
+  --font-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* -------------------------------------------------------------------- */
+/* Reset + base                                                          */
+/* -------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--fg-1);
+  background: var(--bg);
+}
+a { color: var(--navy-700); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* -------------------------------------------------------------------- */
+/* Page shell                                                            */
+/* -------------------------------------------------------------------- */
+.shell { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+
+header.hdr {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+.hdr .eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--navy-700);
+}
+.hdr h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 38px);
+  line-height: 1.1;
+  margin: 6px 0 10px;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+}
+.hdr p.lede {
+  font-size: 16px; color: var(--fg-2); max-width: 720px; margin: 0;
+}
+.hdr .backlink {
+  font-size: 13px; color: var(--fg-3); margin-bottom: 6px; display: inline-block;
+}
+
+/* -------------------------------------------------------------------- */
+/* Tabs                                                                  */
+/* -------------------------------------------------------------------- */
+nav.tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+nav.tabs button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 12px 20px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-3);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+nav.tabs button:hover { color: var(--navy-700); }
+nav.tabs button[aria-selected="true"] {
+  color: var(--navy-900);
+  border-bottom-color: var(--navy-900);
+}
+nav.tabs .dist-symbol {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* -------------------------------------------------------------------- */
+/* Panels                                                                */
+/* -------------------------------------------------------------------- */
+.panel { display: none; }
+.panel[aria-hidden="false"] { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px; align-items: start; }
+@media (max-width: 780px) {
+  .panel[aria-hidden="false"] { grid-template-columns: 1fr; gap: 24px; }
+}
+
+.card {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.card h2 {
+  font-family: var(--font-serif);
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+.card .sub {
+  font-size: 13px; color: var(--fg-3); margin-bottom: 18px;
+}
+.field { margin: 14px 0; }
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fg-2);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+.field input, .field select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--fg-1);
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--navy-700);
+  box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.15);
+}
+.field .hint {
+  font-size: 12px; color: var(--fg-3); margin-top: 4px;
+}
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.lookup {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+.lookup .lbl {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--navy-700);
+  margin-bottom: 8px;
+}
+.lookup .result {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--fg-1);
+  margin-top: 8px;
+  background: var(--bg-panel);
+  padding: 8px 10px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+.lookup .result .key { color: var(--navy-700); font-weight: 600; }
+
+.plot-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  position: sticky;
+  top: 20px;
+}
+.plot-card canvas {
+  width: 100%;
+  height: 280px;
+  display: block;
+}
+.plot-legend {
+  display: flex; gap: 16px; font-size: 12px; color: var(--fg-3);
+  margin-top: 10px; flex-wrap: wrap;
+}
+.plot-legend .swatch {
+  display: inline-block; width: 12px; height: 3px; vertical-align: middle;
+  margin-right: 6px; border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------- */
+/* Footer                                                                */
+/* -------------------------------------------------------------------- */
+footer.ftr {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--fg-3);
+}
+footer.ftr code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-panel);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="hdr">
+    <a class="backlink" href="/">&larr; Dhafer Malouche</a>
+    <div class="eyebrow">STAT 211 · STAT 341 · Teaching Tool</div>
+    <h1>Statistical Distribution Tables</h1>
+    <p class="lede">
+      An interactive replacement for the <strong>Z</strong>, <strong>t</strong>,
+      <strong>&chi;<sup>2</sup></strong> and <strong>F</strong> tables at the back of a
+      statistics textbook. Enter any cutoff to obtain the tail probability, or
+      any significance level to obtain the corresponding critical value.
+      Each query is paired with a shaded density plot so that the numerical
+      answer is always visualised.
+    </p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Distribution">
+    <button role="tab" aria-selected="true"  data-tab="z"   aria-controls="panel-z"><span class="dist-symbol">Z</span>Standard&nbsp;normal</button>
+    <button role="tab" aria-selected="false" data-tab="t"   aria-controls="panel-t"><span class="dist-symbol">t</span>Student</button>
+    <button role="tab" aria-selected="false" data-tab="chi" aria-controls="panel-chi"><span class="dist-symbol">&chi;&sup2;</span>Chi-square</button>
+    <button role="tab" aria-selected="false" data-tab="f"   aria-controls="panel-f"><span class="dist-symbol">F</span>Fisher</button>
+  </nav>
+
+  <!-- ============================================================== -->
+  <!-- Z panel                                                         -->
+  <!-- ============================================================== -->
+  <div class="panel" id="panel-z" role="tabpanel" aria-hidden="false">
+    <div class="card">
+      <h2>Z &nbsp;— standard normal</h2>
+      <p class="sub">Z &sim; &Nscr;(0, 1). No degrees of freedom.</p>
+
+      <div class="field">
+        <label for="z-tail">Tail direction</label>
+        <select id="z-tail">
+          <option value="upper">Upper: P(Z &gt; z)</option>
+          <option value="lower">Lower: P(Z &lt; z)</option>
+          <option value="two">Two-sided: P(|Z| &gt; |z|)</option>
+        </select>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Cutoff &rarr; Probability</div>
+        <div class="field">
+          <label for="z-x">Critical value z</label>
+          <input id="z-x" type="number" step="any" value="1.96" />
+        </div>
+        <div class="result" id="z-p-out">
+          <span class="key">P</span> = <span id="z-p-val">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Probability &rarr; Cutoff</div>
+        <div class="field">
+          <label for="z-a">Significance level &alpha;</label>
+          <input id="z-a" type="number" step="any" min="0" max="1" value="0.05" />
+        </div>
+        <div class="result" id="z-xout">
+          <span class="key">z</span> = <span id="z-x-val">&mdash;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="plot-card">
+      <canvas id="plot-z" width="600" height="280" aria-label="Z distribution plot"></canvas>
+      <div class="plot-legend">
+        <span><span class="swatch" style="background: var(--accent-a)"></span>density</span>
+        <span><span class="swatch" style="background: var(--shade); height: 10px"></span>shaded tail = reported probability</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- t panel                                                         -->
+  <!-- ============================================================== -->
+  <div class="panel" id="panel-t" role="tabpanel" aria-hidden="true">
+    <div class="card">
+      <h2>t &nbsp;— Student</h2>
+      <p class="sub">T<sub>&nu;</sub> with degrees of freedom &nu;.</p>
+
+      <div class="row2">
+        <div class="field">
+          <label for="t-df">Degrees of freedom &nu;</label>
+          <input id="t-df" type="number" min="1" step="1" value="10" />
+        </div>
+        <div class="field">
+          <label for="t-tail">Tail direction</label>
+          <select id="t-tail">
+            <option value="upper">Upper: P(T &gt; t)</option>
+            <option value="lower">Lower: P(T &lt; t)</option>
+            <option value="two">Two-sided: P(|T| &gt; |t|)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Cutoff &rarr; Probability</div>
+        <div class="field">
+          <label for="t-x">Critical value t</label>
+          <input id="t-x" type="number" step="any" value="2.228" />
+        </div>
+        <div class="result">
+          <span class="key">P</span> = <span id="t-p-val">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Probability &rarr; Cutoff</div>
+        <div class="field">
+          <label for="t-a">Significance level &alpha;</label>
+          <input id="t-a" type="number" step="any" min="0" max="1" value="0.05" />
+        </div>
+        <div class="result">
+          <span class="key">t<sub>&alpha;,&nu;</sub></span> = <span id="t-x-val">&mdash;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="plot-card">
+      <canvas id="plot-t" width="600" height="280" aria-label="t distribution plot"></canvas>
+      <div class="plot-legend">
+        <span><span class="swatch" style="background: var(--accent-a)"></span>density</span>
+        <span><span class="swatch" style="background: var(--shade); height: 10px"></span>shaded tail = reported probability</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- chi-square panel                                                -->
+  <!-- ============================================================== -->
+  <div class="panel" id="panel-chi" role="tabpanel" aria-hidden="true">
+    <div class="card">
+      <h2>&chi;<sup>2</sup> &nbsp;— Chi-square</h2>
+      <p class="sub">&chi;<sup>2</sup><sub>&nu;</sub> with degrees of freedom &nu;. Support is (0, &infin;).</p>
+
+      <div class="row2">
+        <div class="field">
+          <label for="chi-df">Degrees of freedom &nu;</label>
+          <input id="chi-df" type="number" min="1" step="1" value="8" />
+        </div>
+        <div class="field">
+          <label for="chi-tail">Tail direction</label>
+          <select id="chi-tail">
+            <option value="upper">Upper: P(&chi;&sup2; &gt; c)</option>
+            <option value="lower">Lower: P(&chi;&sup2; &lt; c)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Cutoff &rarr; Probability</div>
+        <div class="field">
+          <label for="chi-x">Critical value c</label>
+          <input id="chi-x" type="number" step="any" min="0" value="15.51" />
+        </div>
+        <div class="result">
+          <span class="key">P</span> = <span id="chi-p-val">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Probability &rarr; Cutoff</div>
+        <div class="field">
+          <label for="chi-a">Significance level &alpha;</label>
+          <input id="chi-a" type="number" step="any" min="0" max="1" value="0.05" />
+        </div>
+        <div class="result">
+          <span class="key">&chi;&sup2;<sub>&alpha;,&nu;</sub></span> = <span id="chi-x-val">&mdash;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="plot-card">
+      <canvas id="plot-chi" width="600" height="280" aria-label="Chi-square distribution plot"></canvas>
+      <div class="plot-legend">
+        <span><span class="swatch" style="background: var(--accent-a)"></span>density</span>
+        <span><span class="swatch" style="background: var(--shade); height: 10px"></span>shaded tail = reported probability</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- F panel                                                         -->
+  <!-- ============================================================== -->
+  <div class="panel" id="panel-f" role="tabpanel" aria-hidden="true">
+    <div class="card">
+      <h2>F &nbsp;— Fisher</h2>
+      <p class="sub">F(&nu;<sub>1</sub>, &nu;<sub>2</sub>) with numerator and denominator degrees of freedom. Support is (0, &infin;).</p>
+
+      <div class="row2">
+        <div class="field">
+          <label for="f-df1">Numerator d.f. &nu;<sub>1</sub></label>
+          <input id="f-df1" type="number" min="1" step="1" value="5" />
+        </div>
+        <div class="field">
+          <label for="f-df2">Denominator d.f. &nu;<sub>2</sub></label>
+          <input id="f-df2" type="number" min="1" step="1" value="20" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-tail">Tail direction</label>
+        <select id="f-tail">
+          <option value="upper">Upper: P(F &gt; f)</option>
+          <option value="lower">Lower: P(F &lt; f)</option>
+        </select>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Cutoff &rarr; Probability</div>
+        <div class="field">
+          <label for="f-x">Critical value f</label>
+          <input id="f-x" type="number" step="any" min="0" value="2.71" />
+        </div>
+        <div class="result">
+          <span class="key">P</span> = <span id="f-p-val">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="lookup">
+        <div class="lbl">Probability &rarr; Cutoff</div>
+        <div class="field">
+          <label for="f-a">Significance level &alpha;</label>
+          <input id="f-a" type="number" step="any" min="0" max="1" value="0.05" />
+        </div>
+        <div class="result">
+          <span class="key">F<sub>&alpha;,&nu;<sub>1</sub>,&nu;<sub>2</sub></sub></span> = <span id="f-x-val">&mdash;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="plot-card">
+      <canvas id="plot-f" width="600" height="280" aria-label="F distribution plot"></canvas>
+      <div class="plot-legend">
+        <span><span class="swatch" style="background: var(--accent-a)"></span>density</span>
+        <span><span class="swatch" style="background: var(--shade); height: 10px"></span>shaded tail = reported probability</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="ftr">
+    <p>
+      Built with <a href="https://github.com/jstat/jstat" target="_blank" rel="noopener">jStat</a>
+      (MIT license) for the distribution computations.
+      All quantiles are computed client-side in your browser &mdash; no data leaves your machine.
+      &nbsp;&middot;&nbsp;
+      <a href="/">&larr; back to dhafermalouche.net</a>
+    </p>
+    <p>
+      Cite as: Malouche, D. (2026). <em>Statistical Distribution Tables</em> [Web application].
+      <code>https://dhafermalouche.net/stattables/</code>
+    </p>
+  </footer>
+</div>
+
+<script src="./jstat.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var J = window.jStat;
+  if (!J) { console.error('jStat failed to load'); return; }
+
+  // -----------------------------------------------------------------
+  // Numeric formatter — six significant digits, no trailing junk
+  // -----------------------------------------------------------------
+  function fmt(x, digits) {
+    if (x === null || x === undefined || isNaN(x) || !isFinite(x)) return '—';
+    var d = digits == null ? 6 : digits;
+    var abs = Math.abs(x);
+    if (abs !== 0 && (abs < 1e-4 || abs >= 1e6)) {
+      return x.toExponential(Math.max(2, d - 2));
+    }
+    return Number(x.toPrecision(d)).toString();
+  }
+
+  // -----------------------------------------------------------------
+  // Distribution registry — wraps jStat calls + PDF/CDF/inverse
+  // -----------------------------------------------------------------
+  var D = {
+    z: {
+      pdf: function (x)    { return J.normal.pdf(x, 0, 1); },
+      cdf: function (x)    { return J.normal.cdf(x, 0, 1); },
+      inv: function (p)    { return J.normal.inv(p, 0, 1); },
+      support: function () { return [-4, 4]; },
+      dfOk:   function () { return true; }
+    },
+    t: {
+      pdf: function (x, s) { return J.studentt.pdf(x, s.df); },
+      cdf: function (x, s) { return J.studentt.cdf(x, s.df); },
+      inv: function (p, s) { return J.studentt.inv(p, s.df); },
+      support: function (s) {
+        // widen slightly for low df
+        var w = s.df < 3 ? 6 : 4.5;
+        return [-w, w];
+      },
+      dfOk: function (s) { return s.df >= 1; }
+    },
+    chi: {
+      pdf: function (x, s) { return x <= 0 ? 0 : J.chisquare.pdf(x, s.df); },
+      cdf: function (x, s) { return x <= 0 ? 0 : J.chisquare.cdf(x, s.df); },
+      inv: function (p, s) { return J.chisquare.inv(p, s.df); },
+      support: function (s) {
+        // show up to 99.5th percentile or 3 sigma, whichever larger
+        var hi = Math.max(J.chisquare.inv(0.995, s.df), s.df + 4 * Math.sqrt(2 * s.df));
+        return [0, hi];
+      },
+      dfOk: function (s) { return s.df >= 1; }
+    },
+    f: {
+      pdf: function (x, s) { return x <= 0 ? 0 : J.centralF.pdf(x, s.df1, s.df2); },
+      cdf: function (x, s) { return x <= 0 ? 0 : J.centralF.cdf(x, s.df1, s.df2); },
+      inv: function (p, s) { return J.centralF.inv(p, s.df1, s.df2); },
+      support: function (s) {
+        var hi = Math.max(J.centralF.inv(0.995, s.df1, s.df2), 4);
+        return [0, hi];
+      },
+      dfOk: function (s) { return s.df1 >= 1 && s.df2 >= 1; }
+    }
+  };
+
+  // -----------------------------------------------------------------
+  // Generic computation for a given distribution + input state
+  //   Returns: { p_from_x, x_from_p, shade: {lo, hi} | [{lo,hi},...] }
+  // -----------------------------------------------------------------
+  function compute(kind, state) {
+    var d = D[kind];
+    if (!d.dfOk(state)) return { p: NaN, x: NaN, shade: [] };
+
+    var tail = state.tail;
+    var x = state.x;
+    var alpha = state.alpha;
+
+    var p, xq;
+
+    // --- cutoff -> probability ---
+    if (isFinite(x)) {
+      if (tail === 'upper') p = 1 - d.cdf(x, state);
+      else if (tail === 'lower') p = d.cdf(x, state);
+      else /* two */ p = 2 * (1 - d.cdf(Math.abs(x), state));
+    } else { p = NaN; }
+
+    // --- probability -> cutoff ---
+    if (isFinite(alpha) && alpha > 0 && alpha < 1) {
+      if (tail === 'upper') xq = d.inv(1 - alpha, state);
+      else if (tail === 'lower') xq = d.inv(alpha, state);
+      else /* two */ xq = d.inv(1 - alpha / 2, state);
+    } else { xq = NaN; }
+
+    // --- shaded region in the plot is based on the cutoff x ---
+    //     (shows what P corresponds to graphically)
+    var shade = [];
+    if (isFinite(x)) {
+      var sup = d.support(state);
+      if (tail === 'upper')       shade = [{ lo: x, hi: sup[1] }];
+      else if (tail === 'lower')  shade = [{ lo: sup[0], hi: x }];
+      else                        shade = [
+        { lo: sup[0], hi: -Math.abs(x) },
+        { lo:  Math.abs(x), hi: sup[1] }
+      ];
+    }
+
+    return { p: p, x: xq, shade: shade, support: d.support(state) };
+  }
+
+  // -----------------------------------------------------------------
+  // Plot drawing on a canvas element
+  // -----------------------------------------------------------------
+  function drawPlot(canvas, kind, state, shade) {
+    var d   = D[kind];
+    var sup = state.support || d.support(state);
+    var W   = canvas.clientWidth;
+    var H   = canvas.clientHeight;
+    var DPR = window.devicePixelRatio || 1;
+    canvas.width  = W * DPR;
+    canvas.height = H * DPR;
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    // Plot margins
+    var m = { l: 46, r: 18, t: 10, b: 28 };
+    var pw = W - m.l - m.r;
+    var ph = H - m.t - m.b;
+
+    // Sample PDF across support
+    var N = 300;
+    var xs = new Array(N), ys = new Array(N);
+    var ymax = 0;
+    for (var i = 0; i < N; i++) {
+      var xi = sup[0] + (sup[1] - sup[0]) * (i / (N - 1));
+      var yi = d.pdf(xi, state);
+      if (!isFinite(yi) || yi < 0) yi = 0;
+      if (yi > ymax) ymax = yi;
+      xs[i] = xi; ys[i] = yi;
+    }
+    if (ymax === 0) ymax = 1;
+    ymax *= 1.08;
+
+    // Coordinate mappers
+    function X(v) { return m.l + (v - sup[0]) / (sup[1] - sup[0]) * pw; }
+    function Y(v) { return m.t + ph - (v / ymax) * ph; }
+
+    // Axes
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(m.l, m.t);
+    ctx.lineTo(m.l, m.t + ph);
+    ctx.lineTo(m.l + pw, m.t + ph);
+    ctx.stroke();
+
+    // X ticks — 5 equally spaced
+    ctx.fillStyle = '#64748b';
+    ctx.font = '11px ' + getComputedStyle(document.body).fontFamily;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+    for (var k = 0; k <= 5; k++) {
+      var xv = sup[0] + (sup[1] - sup[0]) * (k / 5);
+      var xp = X(xv);
+      ctx.strokeStyle = '#e2e8f0';
+      ctx.beginPath();
+      ctx.moveTo(xp, m.t); ctx.lineTo(xp, m.t + ph);
+      ctx.stroke();
+      ctx.fillText(fmt(xv, 3), xp, m.t + ph + 4);
+    }
+
+    // Y ticks — 4
+    ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    for (var j = 0; j <= 4; j++) {
+      var yv = ymax * (j / 4);
+      var yp = Y(yv);
+      ctx.strokeStyle = '#f1f5f9';
+      ctx.beginPath();
+      ctx.moveTo(m.l, yp); ctx.lineTo(m.l + pw, yp);
+      ctx.stroke();
+      ctx.fillText(fmt(yv, 2), m.l - 6, yp);
+    }
+
+    // Shaded region(s)
+    ctx.fillStyle = 'rgba(26, 54, 93, 0.22)';
+    if (shade && shade.length) {
+      for (var s = 0; s < shade.length; s++) {
+        var lo = shade[s].lo, hi = shade[s].hi;
+        if (lo >= hi) continue;
+        var left  = Math.max(lo, sup[0]);
+        var right = Math.min(hi, sup[1]);
+        if (left >= right) continue;
+        ctx.beginPath();
+        ctx.moveTo(X(left), m.t + ph);
+        var steps = 80;
+        for (var t = 0; t <= steps; t++) {
+          var xv2 = left + (right - left) * (t / steps);
+          ctx.lineTo(X(xv2), Y(d.pdf(xv2, state)));
+        }
+        ctx.lineTo(X(right), m.t + ph);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+
+    // Density curve on top
+    ctx.strokeStyle = '#1a365d';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (var q = 0; q < N; q++) {
+      var xp2 = X(xs[q]);
+      var yp2 = Y(ys[q]);
+      if (q === 0) ctx.moveTo(xp2, yp2);
+      else         ctx.lineTo(xp2, yp2);
+    }
+    ctx.stroke();
+
+    // Vertical line(s) at cutoff
+    if (shade && shade.length) {
+      ctx.strokeStyle = '#2c5282';
+      ctx.setLineDash([4, 4]);
+      ctx.lineWidth = 1.2;
+      var marks = [];
+      if (shade.length === 1) {
+        marks = (state.tail === 'upper') ? [shade[0].lo] : [shade[0].hi];
+      } else {
+        marks = [shade[0].hi, shade[1].lo];
+      }
+      for (var u = 0; u < marks.length; u++) {
+        var mv = marks[u];
+        if (mv < sup[0] || mv > sup[1]) continue;
+        var mp = X(mv);
+        ctx.beginPath();
+        ctx.moveTo(mp, m.t); ctx.lineTo(mp, m.t + ph);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+    }
+  }
+
+  // -----------------------------------------------------------------
+  // Wire inputs, per distribution
+  // -----------------------------------------------------------------
+  function $(id) { return document.getElementById(id); }
+
+  function numOrNaN(el) { var v = parseFloat(el.value); return isNaN(v) ? NaN : v; }
+
+  function wire(kind, ids) {
+    var canvas = $(ids.canvas);
+    function state() {
+      var s = { tail: $(ids.tail).value };
+      if (ids.df)  s.df  = parseInt($(ids.df).value, 10);
+      if (ids.df1) s.df1 = parseInt($(ids.df1).value, 10);
+      if (ids.df2) s.df2 = parseInt($(ids.df2).value, 10);
+      s.x     = numOrNaN($(ids.x));
+      s.alpha = numOrNaN($(ids.alpha));
+      return s;
+    }
+    function refresh() {
+      var s = state();
+      var r = compute(kind, s);
+      $(ids.pVal).textContent = fmt(r.p, 6);
+      $(ids.xVal).textContent = fmt(r.x, 6);
+      s.support = r.support;
+      drawPlot(canvas, kind, s, r.shade);
+    }
+    var watched = [ids.tail, ids.x, ids.alpha];
+    if (ids.df)  watched.push(ids.df);
+    if (ids.df1) watched.push(ids.df1);
+    if (ids.df2) watched.push(ids.df2);
+    watched.forEach(function (id) {
+      var el = $(id);
+      if (!el) return;
+      el.addEventListener('input',  refresh);
+      el.addEventListener('change', refresh);
+    });
+    window.addEventListener('resize', refresh);
+    refresh();
+  }
+
+  wire('z',   { tail: 'z-tail',   x: 'z-x',   alpha: 'z-a',   pVal: 'z-p-val', xVal: 'z-x-val', canvas: 'plot-z' });
+  wire('t',   { tail: 't-tail',   x: 't-x',   alpha: 't-a',   pVal: 't-p-val', xVal: 't-x-val', canvas: 'plot-t', df: 't-df' });
+  wire('chi', { tail: 'chi-tail', x: 'chi-x', alpha: 'chi-a', pVal: 'chi-p-val', xVal: 'chi-x-val', canvas: 'plot-chi', df: 'chi-df' });
+  wire('f',   { tail: 'f-tail',   x: 'f-x',   alpha: 'f-a',   pVal: 'f-p-val', xVal: 'f-x-val', canvas: 'plot-f', df1: 'f-df1', df2: 'f-df2' });
+
+  // -----------------------------------------------------------------
+  // Tab switching
+  // -----------------------------------------------------------------
+  var tabs = document.querySelectorAll('nav.tabs button');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+      btn.setAttribute('aria-selected', 'true');
+      var key = btn.getAttribute('data-tab');
+      document.querySelectorAll('.panel').forEach(function (p) {
+        p.setAttribute('aria-hidden', p.id === 'panel-' + key ? 'false' : 'true');
+      });
+      // redraw the now-visible canvas so it picks up correct client size
+      window.dispatchEvent(new Event('resize'));
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
