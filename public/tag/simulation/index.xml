@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>simulation | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/simulation/</link>
+      <atom:link href="https://dhafermalouche.net/tag/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <description>simulation</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>simulation</title>
+      <link>https://dhafermalouche.net/tag/simulation/</link>
+    </image>
+    
+    <item>
+      <title>StatCI — Confidence Interval Visualizer</title>
+      <link>https://dhafermalouche.net/apps/statci/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statci/</guid>
+      <description>&lt;p&gt;A browser-only simulation tool for the single most misunderstood object in introductory statistics: the &lt;strong&gt;confidence interval&lt;/strong&gt;. &lt;strong&gt;StatCI&lt;/strong&gt; turns the frequentist definition into a visible, repeatable experiment, so that a student can &lt;em&gt;see&lt;/em&gt; the long-run coverage statement instead of only reading it.&lt;/p&gt;
+&lt;h2 id=&#34;the-misconception-statci-addresses&#34;&gt;The misconception StatCI addresses&lt;/h2&gt;
+&lt;p&gt;Surveys of statistics students consistently report the same wrong reading of &amp;ldquo;95% confidence&amp;rdquo;: the belief that a particular computed interval $[\hat\theta_{L},\hat\theta_{U}]$ contains the true parameter $\theta$ with probability $0.95$. The frequentist statement is in fact about the &lt;em&gt;procedure&lt;/em&gt;, not about any single interval: across many independent samples from the same population, the proportion of CIs that cover $\theta$ converges to the nominal level $1-\alpha$. StatCI turns this abstract sentence into an animation.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;p&gt;The user picks (i) a sampling distribution and the true parameter value $\theta$, (ii) a sample size $n$, (iii) a confidence level $1-\alpha$, and (iv) the type of interval (e.g., $z$- or $t$-interval for a mean, exact / Wilson / Wald interval for a proportion, $\chi^{2}$ interval for a variance). The app then:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;draws $K$ independent samples from the chosen population;&lt;/li&gt;
+&lt;li&gt;computes the corresponding $K$ confidence intervals;&lt;/li&gt;
+&lt;li&gt;stacks them on a single horizontal axis, with the true parameter $\theta$ marked by a vertical reference line;&lt;/li&gt;
+&lt;li&gt;colours each interval according to whether it covers $\theta$ (navy) or misses it (coral);&lt;/li&gt;
+&lt;li&gt;reports the running empirical coverage $\hat{C}_K$ and compares it to the nominal $1-\alpha$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The simulation can be advanced one sample at a time, or in batches of $50$/$500$/$5000$, so students can watch the empirical coverage stabilise at the nominal level as $K$ grows.&lt;/p&gt;
+&lt;h2 id=&#34;pedagogical-use&#34;&gt;Pedagogical use&lt;/h2&gt;
+&lt;p&gt;StatCI is designed for the lecture in which the definition of a confidence interval is introduced, and for the practical that follows. Three exercises map naturally to the app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Coverage at the nominal level.&lt;/strong&gt; Verify that for a $z$-interval on a normal mean, $\hat{C}_K \to 0.95$ as $K \to \infty$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The cost of model misspecification.&lt;/strong&gt; Build a Wald interval for a binomial proportion close to $0$ or $1$ and observe that the empirical coverage falls well below $0.95$ — motivating the Wilson and Clopper–Pearson alternatives.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The effect of $n$ and $\alpha$.&lt;/strong&gt; Show that doubling $n$ halves the interval width while leaving coverage unchanged, and that lowering $\alpha$ raises coverage at the cost of width.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt;: all sampling and inference run in the student&amp;rsquo;s browser, with no server round-trip and no data leaving the device. Random samples are produced from a high-quality PRNG seeded by the user (so that classroom demonstrations are reproducible across machines). Quantiles for the $z$, $t$, $\chi^{2}$, and $F$ distributions are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). The static bundle is deployed on Netlify; like its siblings, it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regression | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/regression/</link>
+      <atom:link href="https://dhafermalouche.net/tag/regression/index.xml" rel="self" type="application/rss+xml" />
+    <description>regression</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>regression</title>
+      <link>https://dhafermalouche.net/tag/regression/</link>
+    </image>
+    
+    <item>
+      <title>StatRegress — Linear Regression Workbench</title>
+      <link>https://dhafermalouche.net/apps/statregress/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statregress/</guid>
+      <description>&lt;p&gt;An interactive web application that fits and diagnoses ordinary least-squares regression models entirely in the student&amp;rsquo;s browser. &lt;strong&gt;StatRegress&lt;/strong&gt; completes a small family of teaching tools designed for undergraduate statistics at Qatar University: where &lt;strong&gt;StatTables&lt;/strong&gt; answers &lt;em&gt;what is the critical value&lt;/em&gt; and &lt;strong&gt;StatTests&lt;/strong&gt; answers &lt;em&gt;which test do I run&lt;/em&gt;, &lt;strong&gt;StatRegress&lt;/strong&gt; asks &lt;em&gt;given these data, what is the model — and is it any good?&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;why-a-regression-workbench&#34;&gt;Why a regression workbench?&lt;/h2&gt;
+&lt;p&gt;Most introductory regression instruction is split between (i) computing $\hat{\beta}$, $\mathrm{SE}(\hat{\beta})$, $t$- and $F$-statistics by hand on toy data and (ii) demonstrating the same calculations in R or Python with &lt;code&gt;lm()&lt;/code&gt;/&lt;code&gt;statsmodels&lt;/code&gt;. Both have pedagogical limits: hand calculations don&amp;rsquo;t scale beyond $n \approx 10$, while a full statistical environment hides the geometry of the fit behind a console output. StatRegress sits between the two — students paste a real dataset, see the regression line drawn directly on the scatter, and read the standard coefficient table and diagnostic plots in the same view, with no installation and no server round-trip.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Input.&lt;/strong&gt; Paste a CSV (or load one of the bundled teaching datasets), choose the response and the predictor(s), and select the assumed model (simple linear regression, multiple regression with up to a small handful of predictors, or polynomial extension).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Estimation output.&lt;/strong&gt; A regression report formatted as in a textbook:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;strong&gt;coefficient table&lt;/strong&gt; with $\hat{\beta}&lt;em&gt;{j}$, $\mathrm{SE}(\hat{\beta}&lt;/em&gt;{j})$, $t_{j} = \hat{\beta}&lt;em&gt;{j}/\mathrm{SE}(\hat{\beta}&lt;/em&gt;{j})$, the two-sided $p$-value, and the $95%$ confidence interval;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;model summary&lt;/strong&gt;: residual standard error $\hat{\sigma}$, multiple $R^{2}$, adjusted $R^{2}$, and the global $F$-test for $H_{0}: \beta_{1} = \cdots = \beta_{p} = 0$;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;ANOVA decomposition&lt;/strong&gt; of the total sum of squares.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Diagnostic output.&lt;/strong&gt; The four classical residual plots — residuals vs.\ fitted values, normal Q–Q plot of standardised residuals, scale–location ($\sqrt{|r_{i}|}$ vs.\ $\hat{y}_{i}$), and residuals vs.\ leverage with &lt;strong&gt;Cook&amp;rsquo;s distance&lt;/strong&gt; contours — together with a flag for influential or high-leverage observations.&lt;/p&gt;
+&lt;h2 id=&#34;drag-a-point-mode&#34;&gt;Drag-a-point mode&lt;/h2&gt;
+&lt;p&gt;For simple linear regression the app exposes a &lt;strong&gt;drag-a-point&lt;/strong&gt; interaction: students grab a single observation in the scatter, move it, and the fitted line, $R^{2}$, the coefficient table, and the residuals all update in real time. This makes intuitive what an algebraic discussion of leverage and influence usually fails to convey — that a single high-leverage point can rotate the line, that an outlier in the middle of the design space barely moves the slope, and that Cook&amp;rsquo;s distance is geometric in nature.&lt;/p&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;In lectures, the instructor mirrors the app on the projector while building the model on the board: each new term in the algebra has its counterpart in the live coefficient table. In practice sessions, students paste their assigned dataset, copy the coefficient table and diagnostic plots into their solution, and report which assumptions look satisfied, which look suspicious, and which observations they would investigate further. Because the app produces a deterministic report from a deterministic input, grading is reproducible.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip and no data leaving the device. The OLS estimator is computed via the QR decomposition for numerical stability; standard errors and inference are obtained from the corresponding $(X^{\top}X)^{-1}$ block. Distributional quantiles for the $t$ and $F$ tables are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). The static bundle is deployed on Netlify; like its siblings, it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -22,6 +22,8 @@
 {{ $location := $page.Params.location | default "Doha, Qatar" }}
 {{ $stats := $page.Params.stats }}
 {{ $topics := $page.Params.topics }}
+{{ $app_buttons := $page.Params.app_buttons }}
+{{ $app_buttons_title := $page.Params.app_buttons_title | default "Try the apps" }}
 
 {{/* Resolve author portrait — look up the `admin` author page and use its
      avatar.jpg page resource. Falls back to a static path if not found. */}}
@@ -70,6 +72,27 @@
       {{ end }}
     </div>
     {{ end }}
+
+    {{ with $app_buttons }}
+    <div class="dm-hero__apps">
+      <div class="dm-hero__apps-title">{{ $app_buttons_title }}</div>
+      <div class="dm-hero__apps-row">
+        {{ range . }}
+          {{ $href := .url }}
+          {{ $scheme := (urls.Parse $href).Scheme }}
+          {{ $external := in (slice "http" "https") $scheme }}
+          {{ if not $external }}{{ $href = $href | relURL }}{{ end }}
+          <a class="dm-app-btn" href="{{ $href }}"
+             {{ if $external }}target="_blank" rel="noopener"{{ end }}>
+            <span class="dm-app-btn__label">
+              {{ .label }}{{ if $external }} <span class="dm-app-btn__ext" aria-hidden="true">↗</span>{{ end }}
+            </span>
+            {{ with .sublabel }}<span class="dm-app-btn__sub">{{ . }}</span>{{ end }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 
@@ -113,6 +136,77 @@
 .dm-btn--primary:hover { color: #fff !important; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(26,54,93,.30); }
 .dm-btn--ghost { background: #fff; color: var(--dm-navy-900) !important; border: 1.5px solid var(--dm-navy-900); }
 .dm-btn--ghost:hover { background: var(--dm-navy-900); color: #fff !important; }
+
+/* ---- App-shortcut row under the stats grid ----------------------------- */
+.dm-hero__apps {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 56px;
+}
+@media (max-width: 700px) {
+  .dm-hero__apps { padding: 0 24px 40px; }
+}
+.dm-hero__apps-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dm-navy-700);
+  margin: 0 0 14px;
+}
+.dm-hero__apps-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+@media (max-width: 900px) {
+  .dm-hero__apps-row { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 540px) {
+  .dm-hero__apps-row { grid-template-columns: repeat(2, 1fr); }
+}
+.dm-app-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid var(--dm-border);
+  background: #fff;
+  color: var(--dm-navy-900) !important;
+  text-decoration: none !important;
+  transition: transform .15s, box-shadow .15s, border-color .15s, background .15s;
+  min-height: 64px;
+}
+.dm-app-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--dm-navy-700);
+  box-shadow: 0 8px 20px rgba(26, 54, 93, .12);
+  background: linear-gradient(180deg, #fff 0%, #f5f8fc 100%);
+}
+.dm-app-btn__label {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.1;
+  color: var(--dm-navy-900);
+}
+.dm-app-btn__ext {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--dm-navy-700);
+  margin-left: 2px;
+  vertical-align: 1px;
+}
+.dm-app-btn__sub {
+  font-size: 12px;
+  color: var(--dm-fg-2);
+  font-weight: 500;
+  line-height: 1.2;
+}
 </style>
 
 {{ else }}

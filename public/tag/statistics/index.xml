@@ -5,12 +5,140 @@
     <link>https://dhafermalouche.net/tag/statistics/</link>
       <atom:link href="https://dhafermalouche.net/tag/statistics/index.xml" rel="self" type="application/rss+xml" />
     <description>statistics</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>statistics</title>
       <link>https://dhafermalouche.net/tag/statistics/</link>
     </image>
+    
+    <item>
+      <title>StatCI — Confidence Interval Visualizer</title>
+      <link>https://dhafermalouche.net/apps/statci/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statci/</guid>
+      <description>&lt;p&gt;A browser-only simulation tool for the single most misunderstood object in introductory statistics: the &lt;strong&gt;confidence interval&lt;/strong&gt;. &lt;strong&gt;StatCI&lt;/strong&gt; turns the frequentist definition into a visible, repeatable experiment, so that a student can &lt;em&gt;see&lt;/em&gt; the long-run coverage statement instead of only reading it.&lt;/p&gt;
+&lt;h2 id=&#34;the-misconception-statci-addresses&#34;&gt;The misconception StatCI addresses&lt;/h2&gt;
+&lt;p&gt;Surveys of statistics students consistently report the same wrong reading of &amp;ldquo;95% confidence&amp;rdquo;: the belief that a particular computed interval $[\hat\theta_{L},\hat\theta_{U}]$ contains the true parameter $\theta$ with probability $0.95$. The frequentist statement is in fact about the &lt;em&gt;procedure&lt;/em&gt;, not about any single interval: across many independent samples from the same population, the proportion of CIs that cover $\theta$ converges to the nominal level $1-\alpha$. StatCI turns this abstract sentence into an animation.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;p&gt;The user picks (i) a sampling distribution and the true parameter value $\theta$, (ii) a sample size $n$, (iii) a confidence level $1-\alpha$, and (iv) the type of interval (e.g., $z$- or $t$-interval for a mean, exact / Wilson / Wald interval for a proportion, $\chi^{2}$ interval for a variance). The app then:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;draws $K$ independent samples from the chosen population;&lt;/li&gt;
+&lt;li&gt;computes the corresponding $K$ confidence intervals;&lt;/li&gt;
+&lt;li&gt;stacks them on a single horizontal axis, with the true parameter $\theta$ marked by a vertical reference line;&lt;/li&gt;
+&lt;li&gt;colours each interval according to whether it covers $\theta$ (navy) or misses it (coral);&lt;/li&gt;
+&lt;li&gt;reports the running empirical coverage $\hat{C}_K$ and compares it to the nominal $1-\alpha$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The simulation can be advanced one sample at a time, or in batches of $50$/$500$/$5000$, so students can watch the empirical coverage stabilise at the nominal level as $K$ grows.&lt;/p&gt;
+&lt;h2 id=&#34;pedagogical-use&#34;&gt;Pedagogical use&lt;/h2&gt;
+&lt;p&gt;StatCI is designed for the lecture in which the definition of a confidence interval is introduced, and for the practical that follows. Three exercises map naturally to the app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Coverage at the nominal level.&lt;/strong&gt; Verify that for a $z$-interval on a normal mean, $\hat{C}_K \to 0.95$ as $K \to \infty$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The cost of model misspecification.&lt;/strong&gt; Build a Wald interval for a binomial proportion close to $0$ or $1$ and observe that the empirical coverage falls well below $0.95$ — motivating the Wilson and Clopper–Pearson alternatives.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The effect of $n$ and $\alpha$.&lt;/strong&gt; Show that doubling $n$ halves the interval width while leaving coverage unchanged, and that lowering $\alpha$ raises coverage at the cost of width.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt;: all sampling and inference run in the student&amp;rsquo;s browser, with no server round-trip and no data leaving the device. Random samples are produced from a high-quality PRNG seeded by the user (so that classroom demonstrations are reproducible across machines). Quantiles for the $z$, $t$, $\chi^{2}$, and $F$ distributions are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). The static bundle is deployed on Netlify; like its siblings, it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>StatPower — Power &amp; Sample-Size Calculator</title>
+      <link>https://dhafermalouche.net/apps/statpower/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statpower/</guid>
+      <description>&lt;p&gt;A browser-only calculator and visualiser for the four-quantity relationship that governs the design of a statistical study: &lt;strong&gt;effect size&lt;/strong&gt;, &lt;strong&gt;sample size $n$&lt;/strong&gt;, &lt;strong&gt;type-I error $\alpha$&lt;/strong&gt;, and &lt;strong&gt;power $1-\beta$&lt;/strong&gt;. &lt;strong&gt;StatPower&lt;/strong&gt; treats these four quantities symmetrically — fix any three and the app solves for the fourth — and accompanies the numerical answer with the corresponding power curve, so that the student sees what a $5%$ change in $n$ or in $d$ does to the chance of a true rejection.&lt;/p&gt;
+&lt;h2 id=&#34;the-four-quantity-rule&#34;&gt;The four-quantity rule&lt;/h2&gt;
+&lt;p&gt;For a fixed test, the relationship $\Pr(\text{reject } H_{0} \mid H_{1}) = 1 - \beta(d, n, \alpha)$ implicitly ties together $d$, $n$, $\alpha$, and the resulting power $1-\beta$. Any three of these determine the fourth. StatPower exposes this as a single interface: enter three of the four quantities and the app returns the fourth and draws the curve along which it sits.&lt;/p&gt;
+&lt;h2 id=&#34;tests-covered&#34;&gt;Tests covered&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Means.&lt;/strong&gt; One-sample $t$-test ($d = (\mu - \mu_{0})/\sigma$), paired $t$-test (on differences), two-sample $t$-test (Cohen&amp;rsquo;s $d$, pooled SD), one-way ANOVA (Cohen&amp;rsquo;s $f$).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proportions.&lt;/strong&gt; One-proportion $z$-test, two-proportion $z$-test (Cohen&amp;rsquo;s $h$ or risk-difference parameterisation).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Correlation and association.&lt;/strong&gt; Test of $\rho = 0$ (Fisher $z$-transform), $\chi^{2}$ test of independence (Cohen&amp;rsquo;s $w$).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Regression.&lt;/strong&gt; Global $F$-test for $H_{0}: \beta_{1} = \cdots = \beta_{p} = 0$ (Cohen&amp;rsquo;s $f^{2}$), single-coefficient $t$-test in multiple regression.&lt;/p&gt;
+&lt;p&gt;For each test the app reports the non-centrality parameter (e.g., $\lambda = d\sqrt{n/2}$ for a two-sample $t$-test) so that students see the algebra behind the answer rather than receiving a black-box number.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-user-sees&#34;&gt;What the user sees&lt;/h2&gt;
+&lt;p&gt;Three coordinated panels respond to every change of inputs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;scalar answer panel&lt;/strong&gt; showing the solved quantity to four significant figures;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;power curve&lt;/strong&gt; $1-\beta$ as a function of the chosen free axis (typically $n$ or $d$), with the operating point marked and the target power drawn as a horizontal reference;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;distribution panel&lt;/strong&gt; with the null and alternative reference distributions overlaid, the rejection region shaded, and the geometric area corresponding to $\beta$ — the type-II error — highlighted, so that the tradeoff between $\alpha$ and $\beta$ is visible rather than merely stated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;In lectures, the instructor steps through the four-quantity rule by varying one input at a time and watching the curve and the geometry update. In assignments, students paste a target effect size and target power and report the required $n$, together with the non-centrality parameter and the curve they read it from — making grading deterministic and removing the ambiguity that surrounds the choice of effect-size convention. The app is a natural complement to the inferential procedures in &lt;strong&gt;StatTests&lt;/strong&gt;: the design of the study and its analysis use the same reference distributions, displayed in the same shaded form.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt; and styled with &lt;strong&gt;Tailwind CSS&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip. The non-central $t$, $F$, and $\chi^{2}$ distributions used to evaluate power, and the central distributions used for critical values, are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed); inverse problems (solving for $n$ or $d$) are obtained by safeguarded bisection on the monotone power function. The static bundle is deployed on Netlify; like its siblings, it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>StatTables — Interactive Statistical Distribution Tables &amp; Calculators</title>
+      <link>https://dhafermalouche.net/apps/stattables/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/stattables/</guid>
+      <description>&lt;p&gt;An interactive web application that replaces the printed statistical tables traditionally found at the back of introductory statistics textbooks. The app is designed for undergraduate courses in statistical inference, probability, and applied statistics at Qatar University, and is freely available to students and instructors elsewhere.&lt;/p&gt;
+&lt;h2 id=&#34;why-not-the-printed-tables&#34;&gt;Why not the printed tables?&lt;/h2&gt;
+&lt;p&gt;Classical textbook tables are fixed to a handful of significance levels (typically $\alpha \in {0.10, 0.05, 0.025, 0.01, 0.005}$) and to a limited grid of degrees of freedom or parameter values. In practice, students need critical values and tail probabilities at arbitrary points — and instructors want them reproducible, shareable, and visually annotated. &lt;strong&gt;StatTables&lt;/strong&gt; returns exact values for any query, simultaneously displays the corresponding shaded region on the density curve, and shows the formula being applied — so the numerical answer is always paired with both geometric intuition and analytical rigor.&lt;/p&gt;
+&lt;h2 id=&#34;distributions-covered&#34;&gt;Distributions covered&lt;/h2&gt;
+&lt;p&gt;Continuous:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Standard normal&lt;/strong&gt; $Z \sim \mathcal{N}(0,1)$ — critical values $z_{\alpha}$, two-sided cutoffs $z_{\alpha/2}$, and tail probabilities $P(Z &amp;gt; z)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Student $t$&lt;/strong&gt; — $t_{\alpha,\nu}$ for any degrees of freedom $\nu$; $t$-tests and confidence intervals for the mean under unknown variance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chi-square $\chi^{2}$&lt;/strong&gt; — lower and upper critical values $\chi^{2}_{\alpha,\nu}$ for variance tests, goodness-of-fit, and tests of independence.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fisher $F$&lt;/strong&gt; — $F_{\alpha, \nu_{1}, \nu_{2}}$ for analysis of variance, regression overall-significance tests, and variance-ratio comparisons.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exponential&lt;/strong&gt; — survival, hazard, and waiting-time problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discrete:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Binomial&lt;/strong&gt; $X \sim \mathcal{B}(n,p)$ — pmf, cdf, and tail probabilities for finite Bernoulli experiments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Poisson&lt;/strong&gt; $X \sim \mathcal{P}(\lambda)$ — counts of rare events over fixed exposure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-students-use-it&#34;&gt;How students use it&lt;/h2&gt;
+&lt;p&gt;For every distribution the app supports both directions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Cutoff $\rightarrow$ probability.&lt;/strong&gt; Given a value of the test statistic, obtain the one- or two-tailed $p$-value.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Probability $\rightarrow$ cutoff.&lt;/strong&gt; Given a significance level $\alpha$, obtain the corresponding critical value.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each query is rendered in three coordinated panels:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;classical book-style lookup table&lt;/strong&gt;, with the cell matching the current query highlighted;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;shaded density plot&lt;/strong&gt; indicating the region the reported probability refers to, removing the ambiguity that often surrounds one- vs. two-tailed procedures;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;step-by-step formula breakdown&lt;/strong&gt;, so the student can see the integral or summation being evaluated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;The app is intended as an in-class replacement for the printed appendix tables. During exercises, students paste the query parameters they used into their solution; during exams the app&amp;rsquo;s screen can be mirrored on the instructor&amp;rsquo;s display so the class works from a shared source of truth. The accompanying solution sheets indicate the exact query, not a table row, making grading deterministic and self-checkable.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt; and styled with &lt;strong&gt;Tailwind CSS&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip. Quantiles, cdf, and pmf values are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). Density curves are rendered on an HTML canvas so that shaded regions and critical-value markers stay crisp on high-DPI displays. The bundle is fully static and is deployed on Netlify, which means it works offline after first load and has no external dependencies at run time.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>StatTests — Hypothesis Testing Hub</title>
+      <link>https://dhafermalouche.net/apps/stattests/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/stattests/</guid>
+      <description>&lt;p&gt;An interactive web application that performs the hypothesis tests covered in a standard one- or two-semester course in statistical inference, with a uniform interface, fully visible formulas, and automatic checking of the assumptions on which each procedure depends. The app is the natural complement to &lt;strong&gt;StatTables&lt;/strong&gt;: where StatTables answers &lt;em&gt;what is the critical value&lt;/em&gt; and &lt;em&gt;what is the tail probability&lt;/em&gt;, StatTests answers &lt;em&gt;which test do I run, and what does the conclusion look like&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-unified-hub&#34;&gt;Why a unified hub?&lt;/h2&gt;
+&lt;p&gt;Most introductory textbooks present each test as a self-contained recipe — formula for the test statistic, sampling distribution under $H_{0}$, decision rule, and example. In practice, students confuse the recipes, mis-identify the appropriate distribution, and forget to verify the assumptions. &lt;strong&gt;StatTests&lt;/strong&gt; unifies all the standard procedures behind a single interface: pick the inference problem (one mean, two means, proportion, variance ratio, ANOVA, association, location shift, …), enter the data or the summary statistics, and the app returns a complete inference report consisting of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the explicit hypotheses $H_{0}$ vs.\ $H_{1}$ in the chosen direction (left, right, two-sided);&lt;/li&gt;
+&lt;li&gt;the test statistic and its formula, with all values substituted;&lt;/li&gt;
+&lt;li&gt;the reference distribution, displayed with the rejection region(s) shaded;&lt;/li&gt;
+&lt;li&gt;the $p$-value, the critical value(s), and the decision at the user-selected $\alpha$;&lt;/li&gt;
+&lt;li&gt;a checklist of the parametric assumptions, marked as satisfied, suspicious, or violated when checkable from the data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tests-covered&#34;&gt;Tests covered&lt;/h2&gt;
+&lt;p&gt;The current release implements 14 procedures grouped by inferential goal:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Means.&lt;/strong&gt; One-sample $t$-test, paired $t$-test, two-sample $t$-test (pooled and Welch), one-way ANOVA.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proportions.&lt;/strong&gt; One-proportion $z$-test, two-proportion $z$-test.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Variances.&lt;/strong&gt; Chi-square test for a single variance, $F$-test for the ratio of two variances, Bartlett / Levene-style homogeneity check feeding into ANOVA.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Categorical.&lt;/strong&gt; $\chi^{2}$ goodness-of-fit, $\chi^{2}$ test of independence in a contingency table.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-parametric.&lt;/strong&gt; Wilcoxon signed-rank (one-sample and paired), Mann–Whitney $U$ (two-sample location), Kruskal–Wallis (one-way location across $k &amp;gt; 2$ groups).&lt;/p&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;In lectures, the instructor mirrors the app on the projector and walks through a worked example: the formula panel shows exactly the algebra the instructor would write on the board, while the shaded density panel makes the geometry of the decision rule explicit. In practice sessions and exams, students paste the inputs they used together with the resulting $p$-value, which makes grading deterministic and removes ambiguity around one- vs. two-tailed conventions. The accompanying solution sheets cite the exact query rather than a row in a table.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip. Distributional computations rely on the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). The static bundle is deployed on Netlify, which means it works offline after first load and has no external dependencies at run time.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Flipped Classroom Evaluation and Blended Learning Potential</title>

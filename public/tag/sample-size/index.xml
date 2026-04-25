@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sample-size | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/sample-size/</link>
+      <atom:link href="https://dhafermalouche.net/tag/sample-size/index.xml" rel="self" type="application/rss+xml" />
+    <description>sample-size</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>sample-size</title>
+      <link>https://dhafermalouche.net/tag/sample-size/</link>
+    </image>
+    
+    <item>
+      <title>StatPower — Power &amp; Sample-Size Calculator</title>
+      <link>https://dhafermalouche.net/apps/statpower/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statpower/</guid>
+      <description>&lt;p&gt;A browser-only calculator and visualiser for the four-quantity relationship that governs the design of a statistical study: &lt;strong&gt;effect size&lt;/strong&gt;, &lt;strong&gt;sample size $n$&lt;/strong&gt;, &lt;strong&gt;type-I error $\alpha$&lt;/strong&gt;, and &lt;strong&gt;power $1-\beta$&lt;/strong&gt;. &lt;strong&gt;StatPower&lt;/strong&gt; treats these four quantities symmetrically — fix any three and the app solves for the fourth — and accompanies the numerical answer with the corresponding power curve, so that the student sees what a $5%$ change in $n$ or in $d$ does to the chance of a true rejection.&lt;/p&gt;
+&lt;h2 id=&#34;the-four-quantity-rule&#34;&gt;The four-quantity rule&lt;/h2&gt;
+&lt;p&gt;For a fixed test, the relationship $\Pr(\text{reject } H_{0} \mid H_{1}) = 1 - \beta(d, n, \alpha)$ implicitly ties together $d$, $n$, $\alpha$, and the resulting power $1-\beta$. Any three of these determine the fourth. StatPower exposes this as a single interface: enter three of the four quantities and the app returns the fourth and draws the curve along which it sits.&lt;/p&gt;
+&lt;h2 id=&#34;tests-covered&#34;&gt;Tests covered&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Means.&lt;/strong&gt; One-sample $t$-test ($d = (\mu - \mu_{0})/\sigma$), paired $t$-test (on differences), two-sample $t$-test (Cohen&amp;rsquo;s $d$, pooled SD), one-way ANOVA (Cohen&amp;rsquo;s $f$).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proportions.&lt;/strong&gt; One-proportion $z$-test, two-proportion $z$-test (Cohen&amp;rsquo;s $h$ or risk-difference parameterisation).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Correlation and association.&lt;/strong&gt; Test of $\rho = 0$ (Fisher $z$-transform), $\chi^{2}$ test of independence (Cohen&amp;rsquo;s $w$).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Regression.&lt;/strong&gt; Global $F$-test for $H_{0}: \beta_{1} = \cdots = \beta_{p} = 0$ (Cohen&amp;rsquo;s $f^{2}$), single-coefficient $t$-test in multiple regression.&lt;/p&gt;
+&lt;p&gt;For each test the app reports the non-centrality parameter (e.g., $\lambda = d\sqrt{n/2}$ for a two-sample $t$-test) so that students see the algebra behind the answer rather than receiving a black-box number.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-user-sees&#34;&gt;What the user sees&lt;/h2&gt;
+&lt;p&gt;Three coordinated panels respond to every change of inputs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;scalar answer panel&lt;/strong&gt; showing the solved quantity to four significant figures;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;power curve&lt;/strong&gt; $1-\beta$ as a function of the chosen free axis (typically $n$ or $d$), with the operating point marked and the target power drawn as a horizontal reference;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;distribution panel&lt;/strong&gt; with the null and alternative reference distributions overlaid, the rejection region shaded, and the geometric area corresponding to $\beta$ — the type-II error — highlighted, so that the tradeoff between $\alpha$ and $\beta$ is visible rather than merely stated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;In lectures, the instructor steps through the four-quantity rule by varying one input at a time and watching the curve and the geometry update. In assignments, students paste a target effect size and target power and report the required $n$, together with the non-centrality parameter and the curve they read it from — making grading deterministic and removing the ambiguity that surrounds the choice of effect-size convention. The app is a natural complement to the inferential procedures in &lt;strong&gt;StatTests&lt;/strong&gt;: the design of the study and its analysis use the same reference distributions, displayed in the same shaded form.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt; and styled with &lt;strong&gt;Tailwind CSS&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip. The non-central $t$, $F$, and $\chi^{2}$ distributions used to evaluate power, and the central distributions used for critical values, are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed); inverse problems (solving for $n$ or $d$) are obtained by safeguarded bisection on the monotone power function. The static bundle is deployed on Netlify; like its siblings, it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

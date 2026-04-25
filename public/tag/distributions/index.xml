@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>distributions | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/distributions/</link>
+      <atom:link href="https://dhafermalouche.net/tag/distributions/index.xml" rel="self" type="application/rss+xml" />
+    <description>distributions</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>distributions</title>
+      <link>https://dhafermalouche.net/tag/distributions/</link>
+    </image>
+    
+    <item>
+      <title>StatTables — Interactive Statistical Distribution Tables &amp; Calculators</title>
+      <link>https://dhafermalouche.net/apps/stattables/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/stattables/</guid>
+      <description>&lt;p&gt;An interactive web application that replaces the printed statistical tables traditionally found at the back of introductory statistics textbooks. The app is designed for undergraduate courses in statistical inference, probability, and applied statistics at Qatar University, and is freely available to students and instructors elsewhere.&lt;/p&gt;
+&lt;h2 id=&#34;why-not-the-printed-tables&#34;&gt;Why not the printed tables?&lt;/h2&gt;
+&lt;p&gt;Classical textbook tables are fixed to a handful of significance levels (typically $\alpha \in {0.10, 0.05, 0.025, 0.01, 0.005}$) and to a limited grid of degrees of freedom or parameter values. In practice, students need critical values and tail probabilities at arbitrary points — and instructors want them reproducible, shareable, and visually annotated. &lt;strong&gt;StatTables&lt;/strong&gt; returns exact values for any query, simultaneously displays the corresponding shaded region on the density curve, and shows the formula being applied — so the numerical answer is always paired with both geometric intuition and analytical rigor.&lt;/p&gt;
+&lt;h2 id=&#34;distributions-covered&#34;&gt;Distributions covered&lt;/h2&gt;
+&lt;p&gt;Continuous:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Standard normal&lt;/strong&gt; $Z \sim \mathcal{N}(0,1)$ — critical values $z_{\alpha}$, two-sided cutoffs $z_{\alpha/2}$, and tail probabilities $P(Z &amp;gt; z)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Student $t$&lt;/strong&gt; — $t_{\alpha,\nu}$ for any degrees of freedom $\nu$; $t$-tests and confidence intervals for the mean under unknown variance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chi-square $\chi^{2}$&lt;/strong&gt; — lower and upper critical values $\chi^{2}_{\alpha,\nu}$ for variance tests, goodness-of-fit, and tests of independence.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fisher $F$&lt;/strong&gt; — $F_{\alpha, \nu_{1}, \nu_{2}}$ for analysis of variance, regression overall-significance tests, and variance-ratio comparisons.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exponential&lt;/strong&gt; — survival, hazard, and waiting-time problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discrete:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Binomial&lt;/strong&gt; $X \sim \mathcal{B}(n,p)$ — pmf, cdf, and tail probabilities for finite Bernoulli experiments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Poisson&lt;/strong&gt; $X \sim \mathcal{P}(\lambda)$ — counts of rare events over fixed exposure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-students-use-it&#34;&gt;How students use it&lt;/h2&gt;
+&lt;p&gt;For every distribution the app supports both directions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Cutoff $\rightarrow$ probability.&lt;/strong&gt; Given a value of the test statistic, obtain the one- or two-tailed $p$-value.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Probability $\rightarrow$ cutoff.&lt;/strong&gt; Given a significance level $\alpha$, obtain the corresponding critical value.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each query is rendered in three coordinated panels:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;classical book-style lookup table&lt;/strong&gt;, with the cell matching the current query highlighted;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;shaded density plot&lt;/strong&gt; indicating the region the reported probability refers to, removing the ambiguity that often surrounds one- vs. two-tailed procedures;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;step-by-step formula breakdown&lt;/strong&gt;, so the student can see the integral or summation being evaluated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;The app is intended as an in-class replacement for the printed appendix tables. During exercises, students paste the query parameters they used into their solution; during exams the app&amp;rsquo;s screen can be mirrored on the instructor&amp;rsquo;s display so the class works from a shared source of truth. The accompanying solution sheets indicate the exact query, not a table row, making grading deterministic and self-checkable.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt; and styled with &lt;strong&gt;Tailwind CSS&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip. Quantiles, cdf, and pmf values are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). Density curves are rendered on an HTML canvas so that shaded regions and critical-value markers stay crisp on high-DPI displays. The bundle is fully static and is deployed on Netlify, which means it works offline after first load and has no external dependencies at run time.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

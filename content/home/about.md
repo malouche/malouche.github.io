@@ -42,4 +42,25 @@ stats:
     label: "Research domains"
   - number: "12"
     label: "Interactive dashboards & apps"
+
+# Direct shortcuts to the Stat* teaching apps — rendered as a button row
+# under the stats grid in the hero. Each `url` is the deployed Netlify app
+# itself, so the button takes the visitor straight to the working tool.
+app_buttons_title: "Try the Stat* teaching apps"
+app_buttons:
+  - label: "StatTables"
+    sublabel: "Distribution tables"
+    url: "https://melodious-seahorse-9e2173.netlify.app/"
+  - label: "StatTests"
+    sublabel: "Hypothesis tests"
+    url: "https://stat-tests-malouche.netlify.app/"
+  - label: "StatRegress"
+    sublabel: "Linear regression"
+    url: "https://statregress.netlify.app/"
+  - label: "StatCI"
+    sublabel: "Confidence intervals"
+    url: "https://stat-ci.netlify.app/"
+  - label: "StatPower"
+    sublabel: "Power & sample size"
+    url: "https://statpower-malouche.netlify.app/"
 ---
