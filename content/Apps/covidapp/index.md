@@ -6,5 +6,6 @@ image:
 summary: COVID-19 App
 tags:
 - covidapp
+- archive
 title:  COVID-19 App
 ---

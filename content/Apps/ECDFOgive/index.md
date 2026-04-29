@@ -6,5 +6,6 @@ image:
 summary: ECDF and Ogive Analysis 
 tags:
 - ECDFOgive
+- archive
 title:  ECDF and Ogive Analysis
 ---

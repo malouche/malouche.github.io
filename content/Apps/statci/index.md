@@ -17,6 +17,7 @@ tags:
 - react
 - vite
 - web-app
+- current
 title: "StatCI — Confidence Interval Visualizer"
 ---
 

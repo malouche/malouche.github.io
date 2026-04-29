@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pearson | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/pearson/</link>
+      <atom:link href="https://dhafermalouche.net/tag/pearson/index.xml" rel="self" type="application/rss+xml" />
+    <description>pearson</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>pearson</title>
+      <link>https://dhafermalouche.net/tag/pearson/</link>
+    </image>
+    
+    <item>
+      <title>StatCorr — Correlation Workbench</title>
+      <link>https://dhafermalouche.net/apps/statcorr/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statcorr/</guid>
+      <description>&lt;p&gt;A browser-only teaching workbench for the most-used dependence summary in applied statistics: the &lt;strong&gt;correlation coefficient&lt;/strong&gt;. &lt;strong&gt;StatCorr&lt;/strong&gt; completes the small family of teaching tools developed for undergraduate statistics at Qatar University, alongside &lt;strong&gt;StatTables&lt;/strong&gt;, &lt;strong&gt;StatTests&lt;/strong&gt;, &lt;strong&gt;StatRegress&lt;/strong&gt;, &lt;strong&gt;StatCI&lt;/strong&gt;, and &lt;strong&gt;StatPower&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-correlation-workbench&#34;&gt;Why a correlation workbench?&lt;/h2&gt;
+&lt;p&gt;In introductory courses the Pearson coefficient $r$ is often introduced as a single number and then immediately overloaded with interpretations — &lt;em&gt;strength&lt;/em&gt;, &lt;em&gt;direction&lt;/em&gt;, &lt;em&gt;linearity&lt;/em&gt;, &lt;em&gt;predictive value&lt;/em&gt;, &lt;em&gt;dependence&lt;/em&gt;. Students leave the lecture confusing the four. &lt;strong&gt;StatCorr&lt;/strong&gt; keeps the four interpretations visually separate: the scatter plot makes the &lt;em&gt;geometry&lt;/em&gt; of the association explicit, the coefficient panel reports its &lt;em&gt;magnitude&lt;/em&gt;, the inference panel reports the &lt;em&gt;evidence&lt;/em&gt; against $H_{0}: \rho = 0$, and the rank-based panel shows when the linear summary is misleading.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Input.&lt;/strong&gt; Paste a CSV with two numeric variables, load one of the bundled teaching datasets, or use the simulator to draw $n$ observations from a chosen joint distribution (bivariate normal with prescribed $\rho$, monotone-but-non-linear, or contaminated with outliers).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Coefficients reported.&lt;/strong&gt; For every dataset the app reports three coefficients side by side:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;strong&gt;Pearson&lt;/strong&gt; correlation $r = \dfrac{\sum (x_{i}-\bar x)(y_{i}-\bar y)}{\sqrt{\sum (x_{i}-\bar x)^{2}\sum (y_{i}-\bar y)^{2}}}$, with the Fisher-$z$ confidence interval $\tanh!\big(\operatorname{atanh}(r) \pm z_{1-\alpha/2}/\sqrt{n-3}\big)$ and the $t$-test for $H_{0}: \rho = 0$;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;Spearman&lt;/strong&gt; rank correlation $\rho_{s}$ — robust to monotone transformations and to outliers — with its asymptotic test;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;Kendall&lt;/strong&gt; $\tau$, reported with the exact small-sample distribution when feasible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Visual output.&lt;/strong&gt; A scatter plot with the regression line, the marginal histograms, and a $95%$ confidence ellipse for the joint distribution is drawn alongside the coefficient table. A drag-a-point interaction lets students pull a single observation and watch the three coefficients, the regression line, and the $p$-values update — making vivid the difference between a Pearson coefficient that collapses under one outlier and a Spearman coefficient that does not.&lt;/p&gt;
+&lt;h2 id=&#34;pedagogical-use&#34;&gt;Pedagogical use&lt;/h2&gt;
+&lt;p&gt;StatCorr is designed for the lecture in which correlation is introduced and for the practical that follows it. Three exercises map naturally to the app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Linear vs. monotone vs. independent.&lt;/strong&gt; Generate samples from a bivariate normal, from $Y = X^{3}+\varepsilon$, and from $Y = X^{2} + \varepsilon$ on $[-1,1]$. Compare Pearson, Spearman, and Kendall, and discuss why $r \approx 0$ does &lt;strong&gt;not&lt;/strong&gt; imply independence.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Outlier sensitivity.&lt;/strong&gt; Pin a Pearson coefficient near $0.9$, then drag a single point far from the cloud and watch $r$ collapse while $\rho_{s}$ and $\tau$ barely move.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inference vs. magnitude.&lt;/strong&gt; With $n = 5$ a sample correlation of $0.6$ is not significantly different from zero; with $n = 500$ a sample correlation of $0.1$ is. The Fisher-$z$ interval makes both statements explicit on a single graph.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip and no data leaving the device. Quantiles for the $t$ and standard normal distributions used for inference and for the Fisher-$z$ interval are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). Random samples for the simulator are produced from a high-quality PRNG seeded by the user, so that classroom demonstrations are reproducible across machines. The static bundle is deployed on Netlify; like its siblings it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

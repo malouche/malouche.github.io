@@ -18,6 +18,7 @@ tags:
 - react
 - vite
 - web-app
+- current
 title: "StatPower — Power & Sample-Size Calculator"
 ---
 

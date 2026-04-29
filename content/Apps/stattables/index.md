@@ -17,6 +17,7 @@ tags:
 - tailwindcss
 - jstat
 - web-app
+- current
 title: "StatTables — Interactive Statistical Distribution Tables & Calculators"
 ---
 

@@ -5,7 +5,8 @@ image:
   focal_point: Smart
 summary: COVID-19 Tracking
 tags:
-- covidapp
+- Covid19tracking
+- archive
 title:  COVID-19 Tracking 
 ---
      

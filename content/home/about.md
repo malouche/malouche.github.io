@@ -70,4 +70,7 @@ app_buttons:
   - label: "StatPower"
     sublabel: "Power & sample size"
     url: "https://statpower-malouche.netlify.app/"
+  - label: "StatCorr"
+    sublabel: "Correlation workbench"
+    url: "https://stat-corr-755.netlify.app/"
 ---

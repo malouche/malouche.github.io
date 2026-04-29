@@ -24,6 +24,7 @@ tags:
 - education
 - react
 - web-app
+- current
 title: "StatRegress — Linear Regression Workbench"
 ---
 

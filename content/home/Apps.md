@@ -19,40 +19,16 @@ content:
   # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
   filter_default: 0
 
-  # Filter toolbar (optional).
-  # Add or remove as many filters (`filter_button` instances) as you like.
-  # To show all items, set `tag` to "*".
-  # To filter by a specific tag, set `tag` to an existing tag name.
-  # To remove the toolbar, delete the entire `filter_button` block.
+  # Filter toolbar.
+  # The "All" filter is bound to the `current` tag so the default landing view
+  # shows only the actively maintained apps. Deprecated apps are tagged
+  # `archive` and reached via the dedicated "Archive Apps" button.
   filter_button:
   - name: All
-    tag: '*'
-  - name: Principal Component Analysis 
-    tag: PCAapp
-  - name: COVID-19 App
-    tag: covidapp
-  - name: COVID-19 Tracking
-    tag: Covid19tracking
-  - name: Tunisian Election Data
-    tage: tunelect
-  - name: COVID-19 Global Map in 2022 
-    tage: COVIDGlobalMap2022
-  - name: Generate Random Numbers
-    tags: genrandomnumbs
-  - name: ECDF and Ogive Analysis
-    tags: ECDFOgive
-  - name: Survival Function Estimator
-    tags: survestim
-  - name: Statistical Measures Learning App
-    tags: statisticalmeasures
-  - name: Research Data Browser
-    tages: researchdata
-  - name: Chronic Pain Networks
-    tag: painnetwork
-  - name: Statistical Distribution Tables
-    tag: stattables
-  
-    
+    tag: current
+  - name: Archive Apps
+    tag: archive
+
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
   columns: '2'

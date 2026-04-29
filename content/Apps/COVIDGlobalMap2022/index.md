@@ -6,5 +6,6 @@ image:
 summary: COVID-19 Global Map in 2022 
 tags:
 - COVIDGlobalMap2022
+- archive
 title:  COVID-19 Global Map in 2022 
 ---

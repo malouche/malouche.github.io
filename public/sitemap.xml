@@ -24,6 +24,38 @@
   <url>
     <loc>https://dhafermalouche.net/publication/</loc><lastmod>2026-05-06T00:00:00+00:00</lastmod></url>
   <url>
+    <loc>https://dhafermalouche.net/apps/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/correlation/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/current/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/education/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/fisher-z/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/kendall/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/pearson/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/react/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/spearman/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/statcorr/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/apps/statcorr/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/statistics/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tags/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/teaching/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/vite/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/web-app/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://dhafermalouche.net/publication-type/2/</loc><lastmod>2026-04-26T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/author/aisha-al-khinji/</loc><lastmod>2026-04-26T00:00:00+00:00</lastmod></url>
@@ -40,8 +72,6 @@
   <url>
     <loc>https://dhafermalouche.net/tag/anova/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/apps/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/tag/chi-square/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/coefficients/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
@@ -57,8 +87,6 @@
     <loc>https://dhafermalouche.net/tag/diagnostics/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/distributions/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/education/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/f-test/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
@@ -84,8 +112,6 @@
   <url>
     <loc>https://dhafermalouche.net/tag/r-squared/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tag/react/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/tag/regression/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/residuals/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
@@ -100,8 +126,6 @@
   <url>
     <loc>https://dhafermalouche.net/apps/statci/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tag/statistics/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/apps/statpower/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/apps/statregress/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
@@ -114,15 +138,7 @@
   <url>
     <loc>https://dhafermalouche.net/tag/t-test/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tags/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/tag/tailwindcss/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/teaching/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/vite/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/web-app/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/author/daria-mizza/</loc><lastmod>2026-04-17T00:00:00+00:00</lastmod></url>
   <url>
@@ -186,6 +202,8 @@
   <url>
     <loc>https://dhafermalouche.net/tag/qatar-biobank/</loc><lastmod>2025-05-27T00:00:00+00:00</lastmod></url>
   <url>
+    <loc>https://dhafermalouche.net/tag/archive/</loc><lastmod>2025-02-23T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://dhafermalouche.net/apps/statisticalmeasures/</loc><lastmod>2025-02-23T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/statisticalmeasures/</loc><lastmod>2025-02-23T00:00:00+00:00</lastmod></url>
@@ -216,7 +234,7 @@
   <url>
     <loc>https://dhafermalouche.net/apps/researchdata/</loc><lastmod>2024-10-23T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tag/researhdata/</loc><lastmod>2024-10-23T00:00:00+00:00</lastmod></url>
+    <loc>https://dhafermalouche.net/tag/researchdata/</loc><lastmod>2024-10-23T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/animalmodels/</loc><lastmod>2024-09-18T00:00:00+00:00</lastmod></url>
   <url>
@@ -365,6 +383,8 @@
     <loc>https://dhafermalouche.net/apps/covidapp/</loc><lastmod>2022-01-05T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/apps/covid19tracking/</loc><lastmod>2022-01-05T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/covid19tracking/</loc><lastmod>2022-01-05T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/covidapp/</loc><lastmod>2022-01-05T00:00:00+00:00</lastmod></url>
   <url>

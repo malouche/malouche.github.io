@@ -6,5 +6,6 @@ image:
 summary: Statistical Measures Learning App
 tags:
 - statisticalmeasures
+- current
 title:  Statistical Measures Learning App
 ---

@@ -5,6 +5,7 @@ image:
   focal_point: Smart
 summary: Research Data Browser
 tags:
-- researhdata
+- researchdata
+- current
 title:  Research Data Browser
 ---

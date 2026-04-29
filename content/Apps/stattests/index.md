@@ -17,6 +17,7 @@ tags:
 - non-parametric
 - react
 - web-app
+- current
 title: "StatTests — Hypothesis Testing Hub"
 ---
 

@@ -6,5 +6,6 @@ image:
 summary: Principal Component Analysis Application 
 tags:
 - PCAapp
+- archive
 title:  Principal Component Analysis Application
 ---

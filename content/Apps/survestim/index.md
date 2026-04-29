@@ -6,5 +6,6 @@ image:
 summary: Survival Function Estimator
 tags:
 - survestim
+- archive
 title:  Survival Function Estimator
 ---

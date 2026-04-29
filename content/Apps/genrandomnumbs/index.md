@@ -6,5 +6,6 @@ image:
 summary: Generate Random Numbers (By ISTATS) 
 tags:
 - genrandomnumbs
+- archive
 title:  Generate Random Numbers 
 ---
