@@ -11,4 +11,6 @@ publication_types:
 - "1"
 publishDate: "2026-04-19T00:00:00Z"
 title: "Legislating the Future: Statistical Foresight as a Foundation for Anticipatory Law"
+# Display status — accepted for the proceedings, awaiting publication.
+status: "Forthcoming"
 ---

@@ -1,0 +1,84 @@
+{{/* Local override of Wowchemy's citation view.
+     Adds two behaviours on top of the stock template:
+       1. If the publication's front matter sets `link_disabled: true`,
+          the title is rendered as plain text instead of a link to the
+          article page (used for accepted-but-not-yet-released papers).
+       2. If `status` is set (e.g. "Forthcoming", "Accepted", "In press"),
+          a small pill is appended after the venue name. */}}
+
+{{ $item := .item }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
+{{ $link_disabled := $item.Params.link_disabled | default false }}
+{{ $status := $item.Params.status | default "" }}
+
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+
+  {{/* APA Style */}}
+  {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
+
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}
+  </span>
+  ({{- $item.Date.Format "2006" -}}).
+  {{ if $link_disabled }}
+    <span class="pub-title pub-title--disabled">{{ $item.Title }}</span>.
+  {{ else }}
+    <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  {{ end }}
+  {{ if $item.Params.publication_short }}
+  {{- $item.Params.publication_short | markdownify -}}.
+  {{ else if $item.Params.publication }}
+  {{- $item.Params.publication | markdownify -}}.
+  {{ end }}
+  {{ with $status }}<span class="pub-status-pill">{{ . }}</span>{{ end }}
+  <p>{{ partial "page_links" (dict "page" $item "is_list" 1) }}</p>
+
+  {{/* MLA Style */}}
+  {{ else }}
+
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}.
+  </span>
+  {{ if $link_disabled }}
+    <span class="pub-title pub-title--disabled">{{ $item.Title }}</span>.
+  {{ else }}
+    <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  {{ end }}
+  {{ if $item.Params.publication_short }}
+  {{- $item.Params.publication_short | markdownify -}},
+  {{ else if $item.Params.publication }}
+  {{- $item.Params.publication | markdownify -}},
+  {{ end }}
+  {{- $item.Date.Format "2006" -}}.
+  {{ with $status }} <span class="pub-status-pill">{{ . }}</span>{{ end }}
+
+  {{ if $has_attachments }}
+  <div class="btn-links">
+    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+  </div>
+  {{ end }}
+
+  {{ end }}
+</div>
+
+<style>
+  .pub-title--disabled {
+    color: #1a365d;
+    font-weight: 600;
+  }
+  .pub-status-pill {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #2c5282;
+    background: #eaf1fb;
+    border: 1px solid #c8dafc;
+    border-radius: 999px;
+    vertical-align: 1px;
+  }
+</style>

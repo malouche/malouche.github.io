@@ -36,12 +36,19 @@ cta_tertiary:
 stats:
   - number: "25+"
     label: "Years in academia"
-  - number: "80+"
+  - number: "60+"
     label: "Peer-reviewed publications"
-  - number: "6"
-    label: "Research domains"
   - number: "12"
     label: "Interactive dashboards & apps"
+
+# Replaces the previous "Research domains" stat with a CTA button that
+# auto-resolves (in the about.html partial) to the most recently published
+# entry under content/publication/.
+latest_paper_button:
+  label: "Latest paper"
+  # Fallback sublabel — the partial overrides it with the publication's
+  # `status` field (e.g. "Forthcoming", "Accepted") when one is set.
+  sublabel: "Forthcoming"
 
 # Direct shortcuts to the Stat* teaching apps — rendered as a button row
 # under the stats grid in the hero. Each `url` is the deployed Netlify app

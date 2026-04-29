@@ -19,12 +19,14 @@ authors:
 - Jazeel Abdulmajeed
 - Mohamed Ghaith Al-Kuwari
 date: "2026-04-26T00:00:00Z"
-doi: "10.3389/fmed.2026.1773499"
 publication: "*Frontiers in Medicine*"
 publication_short: "Front. Med."
 publication_types:
 - "2"
-publishDate: "2026-04-26T00:00:00Z"
 title: "Hematological Abnormalities in Clinically Diagnosed Non-Alcoholic Steatohepatitis: Prevalence, Clinical Correlates, and Fibrosis Risk in a Case-Control Study from Qatar"
-url_source: "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1773499/abstract"
+# Display status — accepted at Frontiers in Medicine, in final production
+# stage. Listing should NOT link to the article page until the paper is
+# officially released.
+status: "Accepted"
+link_disabled: true
 ---

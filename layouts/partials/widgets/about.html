@@ -24,6 +24,25 @@
 {{ $topics := $page.Params.topics }}
 {{ $app_buttons := $page.Params.app_buttons }}
 {{ $app_buttons_title := $page.Params.app_buttons_title | default "Try the apps" }}
+{{ $latest_paper_button := $page.Params.latest_paper_button }}
+
+{{/* Resolve the most recently published item under content/publication/.
+     We sort by `publishDate` descending, restrict to entries whose
+     publishDate is on or before "now", and skip any entry flagged with
+     `link_disabled: true` (papers in the final production phase whose
+     article pages should not yet be linked). */}}
+{{ $latest_paper_url := "" }}
+{{ $latest_paper_title := "" }}
+{{ $latest_paper_status := "" }}
+{{ $pubs := where (where site.RegularPages "Section" "publication") "Params.publishdate" "le" now }}
+{{ $pubs = where $pubs "Params.link_disabled" "!=" true }}
+{{ $pubs = $pubs.ByParam "publishDate" }}
+{{ $pubs = $pubs.Reverse }}
+{{ with index $pubs 0 }}
+  {{ $latest_paper_url = .RelPermalink }}
+  {{ $latest_paper_title = .Title }}
+  {{ $latest_paper_status = .Params.status | default "" }}
+{{ end }}
 
 {{/* Resolve author portrait — look up the `admin` author page and use its
      avatar.jpg page resource. Falls back to a static path if not found. */}}
@@ -62,13 +81,24 @@
       </div>
     </div>
 
-    {{ with $stats }}
+    {{ if or $stats $latest_paper_button }}
     <div class="dm-hero__stats">
-      {{ range . }}
+      {{ range $stats }}
       <div class="dm-hero__stat">
         <div class="dm-hero__stat-num">{{ .number }}</div>
         <div class="dm-hero__stat-label">{{ .label }}</div>
       </div>
+      {{ end }}
+      {{ with $latest_paper_button }}
+        {{ $href := $latest_paper_url | default "/#publications" }}
+        {{ $sublabel := $latest_paper_status | default .sublabel | default "Open most recent paper" }}
+        <a class="dm-hero__stat dm-hero__stat--cta" href="{{ $href }}"
+           {{ with $latest_paper_title }}title="{{ . }}"{{ end }}>
+          <div class="dm-hero__stat-num dm-hero__stat-num--cta">
+            {{ .label }} <span class="dm-hero__stat-arrow" aria-hidden="true">→</span>
+          </div>
+          <div class="dm-hero__stat-label">{{ $sublabel }}</div>
+        </a>
       {{ end }}
     </div>
     {{ end }}
@@ -131,6 +161,35 @@
 @media (max-width: 700px) { .dm-hero__stat:nth-child(2n) { border-right: none; } }
 .dm-hero__stat-num { font-family: 'Roboto Slab', serif; font-size: 42px; font-weight: 700; color: var(--dm-navy-900); line-height: 1; }
 .dm-hero__stat-label { font-size: 14px; color: var(--dm-fg-2); margin-top: 6px; }
+
+/* CTA-styled stat cell that links to the latest publication. */
+a.dm-hero__stat--cta {
+  display: block;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+a.dm-hero__stat--cta:hover {
+  background: linear-gradient(180deg, #fff 0%, #eef3fa 100%);
+}
+.dm-hero__stat-num--cta {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dm-navy-900);
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dm-hero__stat-arrow {
+  font-weight: 600;
+  color: var(--dm-navy-700);
+  transition: transform .15s;
+}
+a.dm-hero__stat--cta:hover .dm-hero__stat-arrow {
+  transform: translateX(3px);
+}
 .dm-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none !important; transition: transform .15s, box-shadow .15s, background .15s; cursor: pointer; line-height: 1; }
 .dm-btn--primary { background: var(--dm-cta-gradient); color: #fff !important; box-shadow: 0 4px 12px rgba(26,54,93,.25); border: none; }
 .dm-btn--primary:hover { color: #fff !important; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(26,54,93,.30); }
@@ -229,21 +288,15 @@
   {{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your About widget and create an associated author page if one does not already exist. See https://wowchemy.com/docs/page-builder/#about " $person_page_path }}
 {{ end }}
 {{ $person := $person_page.Params }}
-{{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
-{{ $avatar_shape := site.Params.avatar.shape | default "circle" }}
+
+{{/* Avatar intentionally omitted in the Biography section — the portrait
+     already appears in the hero/cover at the top of the page, and Dhafer
+     prefers not to repeat it here. Social icons (email, GitHub, LinkedIn,
+     etc.) are still rendered below. */}}
 
 <div class="row">
   <div class="col-12 col-lg-4">
     <div id="profile">
-
-      {{ if site.Params.avatar.gravatar }}
-      <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}" src="https://s.gravatar.com/avatar/{{ md5 $person.email }}?s=270')" alt="{{ $person_page.Title }}">
-      {{ else if $avatar }}
-      {{ $avatar_image := $avatar.Fill "270x270 Center" }}
-      <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}"
-           width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}"
-           src="{{ $avatar_image.RelPermalink }}" alt="{{ $person_page.Title }}">
-      {{ end }}
 
       <div class="portrait-title">
         <h2>
