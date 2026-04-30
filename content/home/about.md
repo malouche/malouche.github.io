@@ -73,4 +73,7 @@ app_buttons:
   - label: "StatCorr"
     sublabel: "Correlation workbench"
     url: "https://stat-corr-755.netlify.app/"
+  - label: "StatPCA"
+    sublabel: "Principal component analysis"
+    url: "https://stat-pca.netlify.app/"
 ---

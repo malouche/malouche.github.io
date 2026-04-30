@@ -5,12 +5,48 @@
     <link>https://dhafermalouche.net/tag/web-app/</link>
       <atom:link href="https://dhafermalouche.net/tag/web-app/index.xml" rel="self" type="application/rss+xml" />
     <description>web-app</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>web-app</title>
       <link>https://dhafermalouche.net/tag/web-app/</link>
     </image>
+    
+    <item>
+      <title>StatPCA — Principal Component Analysis Workbench</title>
+      <link>https://dhafermalouche.net/apps/statpca/</link>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statpca/</guid>
+      <description>&lt;p&gt;A browser-only teaching workbench for the most-used dimension-reduction technique in applied multivariate statistics: &lt;strong&gt;Principal Component Analysis&lt;/strong&gt;. &lt;strong&gt;StatPCA&lt;/strong&gt; completes the family of teaching tools developed for undergraduate and graduate statistics at Qatar University, alongside &lt;strong&gt;StatTables&lt;/strong&gt;, &lt;strong&gt;StatTests&lt;/strong&gt;, &lt;strong&gt;StatRegress&lt;/strong&gt;, &lt;strong&gt;StatCI&lt;/strong&gt;, &lt;strong&gt;StatPower&lt;/strong&gt;, and &lt;strong&gt;StatCorr&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-pca-workbench&#34;&gt;Why a PCA workbench?&lt;/h2&gt;
+&lt;p&gt;Principal Component Analysis is often presented as a one-line recipe — &amp;ldquo;decompose the correlation matrix and keep the first few eigenvectors&amp;rdquo; — and the geometric, algebraic, and inferential layers of the method are collapsed into a single black-box call. &lt;strong&gt;StatPCA&lt;/strong&gt; keeps the layers separate and visible: the &lt;em&gt;data&lt;/em&gt; panel makes the centering and scaling step explicit, the &lt;em&gt;eigen-decomposition&lt;/em&gt; panel reports eigenvalues and eigenvectors of the chosen matrix, the &lt;em&gt;variance&lt;/em&gt; panel reports the scree plot and the cumulative proportion of variance explained, and the &lt;em&gt;projection&lt;/em&gt; panel renders the score plot, the loading plot, and the biplot on coordinated axes.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Input.&lt;/strong&gt; Paste a CSV with $p \geq 2$ numeric variables, load one of the bundled teaching datasets (e.g., the classical decathlon, USArrests, or iris), or generate synthetic correlated data with a user-specified covariance structure. Categorical or grouping variables are kept aside and used only to colour the score plot.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pre-processing options.&lt;/strong&gt; Mean-centering is applied by default; the user toggles between PCA on the &lt;strong&gt;correlation matrix&lt;/strong&gt; (each variable scaled to unit variance) and PCA on the &lt;strong&gt;covariance matrix&lt;/strong&gt; (variables left on their original scale). Missing values are handled by listwise deletion or by mean-imputation, with both options reported next to the result.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quantities reported.&lt;/strong&gt; For every fit the app returns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;strong&gt;eigenvalues&lt;/strong&gt; $\lambda_{1} \geq \lambda_{2} \geq \cdots \geq \lambda_{p} \geq 0$ of the chosen matrix, with their proportion $\lambda_{k}/\sum_{j}\lambda_{j}$ and cumulative proportion;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;loadings matrix&lt;/strong&gt; $\mathbf{V} = (v_{jk})$ with columns equal to the eigenvectors of the chosen matrix; loadings are reported on the unit-norm scale and on the &lt;strong&gt;correlation-with-component&lt;/strong&gt; scale $v_{jk}\sqrt{\lambda_{k}}$, so that the user can read off the linear association between each original variable and each component;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;scores&lt;/strong&gt; $z_{ik} = \sum_{j} v_{jk},(x_{ij}-\bar x_{j})/s_{j}$ of each observation on each component;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;communalities&lt;/strong&gt; and the &lt;strong&gt;squared cosines&lt;/strong&gt; $\cos^{2}_{ik}$, which quantify how well each observation is represented in the chosen low-dimensional subspace.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Visual output.&lt;/strong&gt; The app renders three coordinated plots:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the &lt;strong&gt;scree plot&lt;/strong&gt; with the broken-stick and Kaiser ($\lambda &amp;gt; 1$) reference lines superimposed, so that the choice of the number of retained components is grounded in an explicit rule rather than visual judgement alone;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;score plot&lt;/strong&gt; of observations on $(\text{PC}&lt;em&gt;{k}, \text{PC}&lt;/em&gt;{\ell})$, with optional colouring by a grouping variable and confidence ellipses per group;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;biplot&lt;/strong&gt;, which overlays the loading vectors on the score plot using the standard scaling so that the cosine of the angle between two arrows approximates the correlation between the corresponding variables.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;pedagogical-use&#34;&gt;Pedagogical use&lt;/h2&gt;
+&lt;p&gt;StatPCA is designed for the lecture in which PCA is introduced and for the practical that follows it. Three exercises map naturally to the app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Standardisation matters.&lt;/strong&gt; Run PCA on the covariance matrix of a dataset whose variables are on incompatible scales (e.g., heights in cm and weights in kg), then re-run on the correlation matrix and watch the dominant component swap. Discuss when each choice is appropriate.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How many components?&lt;/strong&gt; Compare the Kaiser rule, the broken-stick rule, and the elbow-on-the-scree-plot rule on the same data. Show that they need not agree, and connect the disagreement to the eigenvalue spectrum.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interpreting the axes.&lt;/strong&gt; Use the loadings (on the correlation-with-component scale) to label the principal axes in substantive terms; use the squared cosines to flag observations that the two-dimensional summary represents poorly.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip and no data leaving the device. The eigen-decomposition is performed by a numerically stable QR-based routine on the symmetric correlation/covariance matrix; for the score plot the app uses the singular value decomposition of the centered (and optionally scaled) data matrix, which avoids forming and squaring the cross-product matrix when the number of variables is large. The static bundle is deployed on Netlify; like its siblings it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>StatCorr — Correlation Workbench</title>
