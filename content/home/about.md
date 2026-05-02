@@ -38,7 +38,7 @@ stats:
     label: "Years in academia"
   - number: "60+"
     label: "Peer-reviewed publications"
-  - number: "12"
+  - number: "13"
     label: "Interactive dashboards & apps"
 
 # Replaces the previous "Research domains" stat with a CTA button that
@@ -76,4 +76,7 @@ app_buttons:
   - label: "StatPCA"
     sublabel: "Principal component analysis"
     url: "https://stat-pca.netlify.app/"
+  - label: "StatANOVA"
+    sublabel: "One-way ANOVA & Tukey HSD"
+    url: "https://stat-anova.netlify.app/"
 ---
