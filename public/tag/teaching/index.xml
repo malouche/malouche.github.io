@@ -5,12 +5,41 @@
     <link>https://dhafermalouche.net/tag/teaching/</link>
       <atom:link href="https://dhafermalouche.net/tag/teaching/index.xml" rel="self" type="application/rss+xml" />
     <description>teaching</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>teaching</title>
       <link>https://dhafermalouche.net/tag/teaching/</link>
     </image>
+    
+    <item>
+      <title>StatANOVA — One-way ANOVA &amp; Tukey HSD Workbench</title>
+      <link>https://dhafermalouche.net/apps/statanova/</link>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/statanova/</guid>
+      <description>&lt;p&gt;An interactive web application that fits a one-way analysis of variance and its standard post-hoc decomposition entirely in the student&amp;rsquo;s browser. &lt;strong&gt;StatANOVA&lt;/strong&gt; extends the small family of teaching tools designed for undergraduate statistics at Qatar University: where &lt;strong&gt;StatTests&lt;/strong&gt; answers &lt;em&gt;which test do I run on these two groups&lt;/em&gt; and &lt;strong&gt;StatRegress&lt;/strong&gt; asks &lt;em&gt;given these data, what is the model&lt;/em&gt;, &lt;strong&gt;StatANOVA&lt;/strong&gt; asks &lt;em&gt;do these $k$ groups differ on average — and if so, which ones?&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;why-an-anova-workbench&#34;&gt;Why an ANOVA workbench?&lt;/h2&gt;
+&lt;p&gt;The pedagogical gap StatANOVA targets is the step from the global $F$-test to a defensible per-pair conclusion. In a typical lecture, students are taught the $F$-statistic for the equality-of-means hypothesis $H_{0}: \mu_{1} = \cdots = \mu_{k}$, but the natural next question — &lt;em&gt;which groups are responsible for the rejection?&lt;/em&gt; — is usually answered with a quick remark about Tukey&amp;rsquo;s honestly significant difference. StatANOVA closes that loop interactively: the student uploads a real dataset, reads the ANOVA decomposition, and immediately sees the Tukey HSD intervals, the family-wise adjusted $p$-values, and the resulting compact-letter-display (CLD) groupings on the same screen.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Input.&lt;/strong&gt; Upload a CSV (UTF-8, header row, comma-separated, dot decimal, $\le 10$ MB and $\le 50{,}000$ rows after dropping NAs). The app inspects the columns and proposes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;factor variable&lt;/strong&gt; — any column with between 2 and 6 distinct values, with at least 3 observations per level after listwise deletion;&lt;/li&gt;
+&lt;li&gt;one or more &lt;strong&gt;continuous response variables&lt;/strong&gt; — numeric columns selectable in a checklist, capped at 50 active responses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The student then chooses the significance level $\alpha$ and the post-hoc method (Tukey HSD by default).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Inferential output.&lt;/strong&gt; For each selected response, the app reports:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;strong&gt;ANOVA summary table&lt;/strong&gt; (sums of squares, degrees of freedom, mean squares, the $F$-statistic, and the corresponding $p$-value);&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;compact-letter-display (CLD) table&lt;/strong&gt;: each group is annotated with letters such that two groups share at least one letter if and only if their means are not significantly different at level $\alpha$ under the chosen multiple-comparison correction;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;forest plot of pairwise mean differences&lt;/strong&gt; with simultaneous confidence intervals, ordered for readability, with intervals that exclude zero highlighted.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Because the workflow runs across many response variables in a single pass, StatANOVA is well suited to the kind of multivariate teaching dataset (Qatar Biobank-style, biomedical, or biodiversity) where a single grouping factor is to be screened against several outcomes.&lt;/p&gt;
+&lt;h2 id=&#34;classroom-workflow&#34;&gt;Classroom workflow&lt;/h2&gt;
+&lt;p&gt;In lectures, the instructor mirrors the app on the projector while writing the model on the board: the algebraic decomposition $\mathrm{SS}&lt;em&gt;{\text{total}} = \mathrm{SS}&lt;/em&gt;{\text{between}} + \mathrm{SS}_{\text{within}}$ is read off the same table the students see. In practice sessions, students upload their assigned CSV, copy the ANOVA table, the CLD summary, and the forest plot into their report, and explain in one paragraph (i) whether the global $F$-test rejects, (ii) which pairs of groups differ once the family-wise error is controlled, and (iii) how the CLD letters and the forest plot tell the same story in two complementary forms.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a single-page client-side application: all computation runs in the browser, with no server round-trip and no data leaving the device. The ANOVA decomposition is computed directly from the group means and pooled variance estimator; Tukey HSD intervals use the studentised-range distribution at the chosen family-wise level; the CLD is constructed by the standard insert-and-absorb algorithm on the matrix of adjusted $p$-values. The static bundle is deployed on Netlify; like its siblings, it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>StatPCA — Principal Component Analysis Workbench</title>

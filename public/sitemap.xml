@@ -24,15 +24,47 @@
   <url>
     <loc>https://dhafermalouche.net/publication/</loc><lastmod>2026-05-06T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/apps/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
+    <loc>https://dhafermalouche.net/tag/anova/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/apps/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/compact-letter-display/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/current/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/education/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/f-test/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/forest-plot/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/multiple-comparisons/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/one-way-anova/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/pairwise-differences/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/post-hoc/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/react/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/apps/statanova/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/statistics/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tags/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/teaching/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/tukey-hsd/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/vite/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://dhafermalouche.net/tag/web-app/</loc><lastmod>2026-05-02T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/biplot/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tag/current/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/tag/dimension-reduction/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/education/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/eigen-decomposition/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
   <url>
@@ -40,21 +72,9 @@
   <url>
     <loc>https://dhafermalouche.net/tag/pca/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tag/react/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/statistics/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/tag/statpca/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/apps/statpca/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tags/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/teaching/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/vite/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/web-app/</loc><lastmod>2026-04-30T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/correlation/</loc><lastmod>2026-04-29T00:00:00+00:00</lastmod></url>
   <url>
@@ -84,8 +104,6 @@
   <url>
     <loc>https://dhafermalouche.net/author/noof-al-thani/</loc><lastmod>2026-04-26T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://dhafermalouche.net/tag/anova/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://dhafermalouche.net/tag/chi-square/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/coefficients/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
@@ -101,8 +119,6 @@
     <loc>https://dhafermalouche.net/tag/diagnostics/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/distributions/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://dhafermalouche.net/tag/f-test/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://dhafermalouche.net/tag/hypothesis-testing/</loc><lastmod>2026-04-25T00:00:00+00:00</lastmod></url>
   <url>
