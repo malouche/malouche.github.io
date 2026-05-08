@@ -33,6 +33,14 @@
     </item>
     
     <item>
+      <title>Hematological abnormalities in clinically diagnosed non-alcoholic steatohepatitis: prevalence, clinical correlates, and fibrosis risk in a case–control study from Qatar</title>
+      <link>https://dhafermalouche.net/publication/alkhinji2/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/alkhinji2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Legislating the Future: Statistical Foresight as a Foundation for Anticipatory Law</title>
       <link>https://dhafermalouche.net/publication/kilaw2026/</link>
       <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
@@ -132,14 +140,6 @@
 &lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
 &lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React + Vite&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip and no data leaving the device. Quantiles for the $t$ and standard normal distributions used for inference and for the Fisher-$z$ interval are computed with the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). Random samples for the simulator are produced from a high-quality PRNG seeded by the user, so that classroom demonstrations are reproducible across machines. The static bundle is deployed on Netlify; like its siblings it works offline after first load and has no external run-time dependencies.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Hematological Abnormalities in Clinically Diagnosed Non-Alcoholic Steatohepatitis: Prevalence, Clinical Correlates, and Fibrosis Risk in a Case-Control Study from Qatar</title>
-      <link>https://dhafermalouche.net/publication/alkhinji2/</link>
-      <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/alkhinji2/</guid>
-      <description></description>
     </item>
     
     <item>

@@ -3,7 +3,7 @@ abstract: >
   Non-alcoholic steatohepatitis (NASH) is increasingly recognized as a systemic
   disease with extra-hepatic manifestations, yet its hematological profile
   remains insufficiently characterized in Middle Eastern populations. This
-  case-control study from Qatar examined the prevalence and clinical correlates
+  case–control study from Qatar examined the prevalence and clinical correlates
   of hematological abnormalities in patients with clinically diagnosed NASH,
   and evaluated their association with liver fibrosis risk. Routine complete
   blood count parameters and derived indices were compared between NASH cases
@@ -15,18 +15,23 @@ authors:
 - Aisha Al-Khinji
 - admin
 - Noof Al-Thani
-- Azza Mohammed
+- Azza Mustafa
 - Jazeel Abdulmajeed
 - Mohamed Ghaith Al-Kuwari
-date: "2026-04-26T00:00:00Z"
+date: "2026-05-08T00:00:00Z"
+doi: "https://doi.org/10.3389/fmed.2026.1773499"
 publication: "*Frontiers in Medicine*"
 publication_short: "Front. Med."
 publication_types:
 - "2"
-title: "Hematological Abnormalities in Clinically Diagnosed Non-Alcoholic Steatohepatitis: Prevalence, Clinical Correlates, and Fibrosis Risk in a Case-Control Study from Qatar"
-# Display status — accepted at Frontiers in Medicine, in final production
-# stage. Listing should NOT link to the article page until the paper is
-# officially released.
-status: "Accepted"
-link_disabled: true
+publishDate: "2026-05-08T00:00:00Z"
+title: "Hematological abnormalities in clinically diagnosed non-alcoholic steatohepatitis: prevalence, clinical correlates, and fibrosis risk in a case–control study from Qatar"
+tags:
+- NASH
+- Non-alcoholic steatohepatitis
+- Hematological abnormalities
+- Liver fibrosis
+- Case-control study
+- Qatar Biobank
+- Biostatistics
 ---
