@@ -26,22 +26,34 @@
 {{ $app_buttons_title := $page.Params.app_buttons_title | default "Try the apps" }}
 {{ $latest_paper_button := $page.Params.latest_paper_button }}
 
-{{/* Resolve the most recently published item under content/publication/.
-     We sort by `publishDate` descending, restrict to entries whose
-     publishDate is on or before "now", and skip any entry flagged with
-     `link_disabled: true` (papers in the final production phase whose
-     article pages should not yet be linked). */}}
+{{/* Resolve the highlighted-publication CTA.
+     If `latest_paper_button.url` is set in the page params, honour it as an
+     explicit pin (used to point at a specific paper regardless of recency).
+     Otherwise, fall back to the most recently published item under
+     content/publication/, sorting by `publishDate` descending and skipping
+     entries with `link_disabled: true`. */}}
 {{ $latest_paper_url := "" }}
 {{ $latest_paper_title := "" }}
 {{ $latest_paper_status := "" }}
-{{ $pubs := where (where site.RegularPages "Section" "publication") "Params.publishdate" "le" now }}
-{{ $pubs = where $pubs "Params.link_disabled" "!=" true }}
-{{ $pubs = $pubs.ByParam "publishDate" }}
-{{ $pubs = $pubs.Reverse }}
-{{ with index $pubs 0 }}
-  {{ $latest_paper_url = .RelPermalink }}
-  {{ $latest_paper_title = .Title }}
-  {{ $latest_paper_status = .Params.status | default "" }}
+{{ $pinned_url := "" }}
+{{ $pinned_title := "" }}
+{{ with $latest_paper_button }}
+  {{ $pinned_url = .url | default "" }}
+  {{ $pinned_title = .title | default "" }}
+{{ end }}
+{{ if $pinned_url }}
+  {{ $latest_paper_url = $pinned_url }}
+  {{ $latest_paper_title = $pinned_title }}
+{{ else }}
+  {{ $pubs := where (where site.RegularPages "Section" "publication") "Params.publishdate" "le" now }}
+  {{ $pubs = where $pubs "Params.link_disabled" "!=" true }}
+  {{ $pubs = $pubs.ByParam "publishDate" }}
+  {{ $pubs = $pubs.Reverse }}
+  {{ with index $pubs 0 }}
+    {{ $latest_paper_url = .RelPermalink }}
+    {{ $latest_paper_title = .Title }}
+    {{ $latest_paper_status = .Params.status | default "" }}
+  {{ end }}
 {{ end }}
 
 {{/* Resolve author portrait — look up the `admin` author page and use its

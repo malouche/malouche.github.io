@@ -37,7 +37,7 @@ pagination:
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$, node_modules, package-lock\.json$, /content/Apps/HematoFrontPaper/]
 permalinks:
   event: '/talk/:slug/'
   authors: '/author/:slug/'

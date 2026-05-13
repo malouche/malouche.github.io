@@ -27,6 +27,8 @@ content:
   filter_button:
   - name: All
     tag: '*'
+  - name: NASH × CBC — Companion Dashboard (Al-Khinji et al., 2026)
+    tag: nashcbc
   - name: Modeling chronic pain interconnections using Bayesian networks. 
     tag: painnetwork
   - name: Flipped Classroom Evaluation and Blended Learning Potential

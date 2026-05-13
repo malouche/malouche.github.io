@@ -41,14 +41,19 @@ stats:
   - number: "13"
     label: "Interactive dashboards & apps"
 
-# Replaces the previous "Research domains" stat with a CTA button that
-# auto-resolves (in the about.html partial) to the most recently published
-# entry under content/publication/.
+# Highlighted publication CTA. When `url` is set the partial uses it
+# directly (and skips the auto-resolution of the most recent publication
+# under content/publication/). Currently pinned to the KILAW 2026 paper
+# co-authored with Chaker Mzoughi, which has just received very positive
+# reviews from the proceedings committee.
 latest_paper_button:
-  label: "Latest paper"
-  # Fallback sublabel — the partial overrides it with the publication's
-  # `status` field (e.g. "Forthcoming", "Accepted") when one is set.
-  sublabel: "Forthcoming"
+  label: "Featured paper"
+  # Direct link to the pinned publication page.
+  url: "/publication/kilaw2026/"
+  # Hover/title text used by the partial when the link is explicit.
+  title: "Legislating the Future: Statistical Foresight as a Foundation for Anticipatory Law (KILAW 2026, with Chaker Mzoughi)"
+  # Shown as the secondary line of the button.
+  sublabel: "Forthcoming · KILAW 2026"
 
 # Direct shortcuts to the Stat* teaching apps — rendered as a button row
 # under the stats grid in the hero. Each `url` is the deployed Netlify app
@@ -79,4 +84,7 @@ app_buttons:
   - label: "StatANOVA"
     sublabel: "One-way ANOVA & Tukey HSD"
     url: "https://stat-anova.netlify.app/"
+  - label: "NASH-CBC"
+    sublabel: "NASH × CBC companion dashboard"
+    url: "https://nash-cbc-dashboard.netlify.app/"
 ---

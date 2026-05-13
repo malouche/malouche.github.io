@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-ink;
+    letter-spacing: -0.01em;
+  }
+  a {
+    @apply text-control underline decoration-control/30 underline-offset-2 hover:decoration-control;
+  }
+  /* Visible keyboard focus everywhere. */
+  :focus-visible {
+    outline: 2px solid #0072b2;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-prose {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-h {
+    @apply font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-ink;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-muted;
+  }
+  .card {
+    @apply rounded-xl border border-rule bg-white shadow-sm;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full border border-rule bg-paper px-2.5 py-0.5 text-xs font-medium text-muted;
+  }
+  .kbd {
+    @apply rounded border border-rule bg-white px-1.5 py-0.5 font-mono text-[11px] text-ink;
+  }
+  /* Tabular numerals everywhere stats appear. */
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* KaTeX size tweak */
+.katex { font-size: 1.05em; }
