@@ -87,4 +87,7 @@ app_buttons:
   - label: "NASH-CBC"
     sublabel: "NASH × CBC companion dashboard"
     url: "https://nash-cbc-dashboard.netlify.app/"
+  - label: "Municipales 2026"
+    sublabel: "French municipal elections"
+    url: "https://municipales-france-2026.netlify.app/"
 ---
