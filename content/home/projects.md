@@ -27,6 +27,8 @@ content:
   filter_button:
   - name: All
     tag: '*'
+  - name: Directional Symptom Dependencies in MS & PD (Al-Sharman et al., 2026)
+    tag: mspd-bayesian
   - name: NASH × CBC — Companion Dashboard (Al-Khinji et al., 2026)
     tag: nashcbc
   - name: Modeling chronic pain interconnections using Bayesian networks. 
