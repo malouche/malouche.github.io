@@ -38,28 +38,31 @@ stats:
     label: "Years in academia"
   - number: "60+"
     label: "Peer-reviewed publications"
-  - number: "13"
+  - number: "15"
     label: "Interactive dashboards & apps"
 
-# Highlighted publication CTA. When `url` is set the partial uses it
-# directly (and skips the auto-resolution of the most recent publication
-# under content/publication/). Currently pinned to the KILAW 2026 paper
-# co-authored with Chaker Mzoughi, which has just received very positive
-# reviews from the proceedings committee.
+# Highlighted publication CTA. Leave `url` unset so the partial resolves the
+# most recently published item under content/publication/ automatically,
+# skipping entries with `link_disabled: true` (accepted-but-not-yet-in-
+# production papers, which have no article page worth sending a visitor to).
+# Set `url` / `title` / `sublabel` here only to pin a specific paper.
 latest_paper_button:
   label: "Featured paper"
-  # Direct link to the pinned publication page.
-  url: "/publication/kilaw2026/"
-  # Hover/title text used by the partial when the link is explicit.
-  title: "Legislating the Future: Statistical Foresight as a Foundation for Anticipatory Law (KILAW 2026, with Chaker Mzoughi)"
-  # Shown as the secondary line of the button.
-  sublabel: "Forthcoming · KILAW 2026"
 
-# Direct shortcuts to the Stat* teaching apps — rendered as a button row
+# Direct shortcuts to the teaching apps and dashboards — rendered as a button
 # under the stats grid in the hero. Each `url` is the deployed Netlify app
 # itself, so the button takes the visitor straight to the working tool.
-app_buttons_title: "Try the Stat* teaching apps"
+app_buttons_title: "Try the teaching apps & dashboards"
 app_buttons:
+  - label: "CellCalc"
+    sublabel: "Bench calculators, worked step by step"
+    url: "https://cellcalc.netlify.app/"
+  - label: "STAT 481 Revision"
+    sublabel: "Multivariate analysis — offline revision"
+    url: "https://stat481-revision.netlify.app/"
+  - label: "STAT 312 Revision"
+    sublabel: "Stochastic processes — offline revision"
+    url: "https://stat312-revision.netlify.app/"
   - label: "StatTables"
     sublabel: "Distribution tables"
     url: "https://melodious-seahorse-9e2173.netlify.app/"

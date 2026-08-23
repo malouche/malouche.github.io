@@ -35,6 +35,7 @@
 {{ $latest_paper_url := "" }}
 {{ $latest_paper_title := "" }}
 {{ $latest_paper_status := "" }}
+{{ $latest_paper_venue := "" }}
 {{ $pinned_url := "" }}
 {{ $pinned_title := "" }}
 {{ with $latest_paper_button }}
@@ -45,14 +46,16 @@
   {{ $latest_paper_url = $pinned_url }}
   {{ $latest_paper_title = $pinned_title }}
 {{ else }}
-  {{ $pubs := where (where site.RegularPages "Section" "publication") "Params.publishdate" "le" now }}
+  {{/* `.PublishDate` is always defined (Hugo falls back to `date`), so this
+       also sorts entries whose front matter omits an explicit publishDate. */}}
+  {{ $pubs := where (where site.RegularPages "Section" "publication") "PublishDate" "le" now }}
   {{ $pubs = where $pubs "Params.link_disabled" "!=" true }}
-  {{ $pubs = $pubs.ByParam "publishDate" }}
-  {{ $pubs = $pubs.Reverse }}
+  {{ $pubs = $pubs.ByPublishDate.Reverse }}
   {{ with index $pubs 0 }}
     {{ $latest_paper_url = .RelPermalink }}
     {{ $latest_paper_title = .Title }}
     {{ $latest_paper_status = .Params.status | default "" }}
+    {{ $latest_paper_venue = cond (ne (.Params.publication_short | default "") "") (printf "%s · %d" .Params.publication_short .PublishDate.Year) "" }}
   {{ end }}
 {{ end }}
 
@@ -103,7 +106,7 @@
       {{ end }}
       {{ with $latest_paper_button }}
         {{ $href := $latest_paper_url | default "/#publications" }}
-        {{ $sublabel := $latest_paper_status | default .sublabel | default "Open most recent paper" }}
+        {{ $sublabel := $latest_paper_status | default $latest_paper_venue | default .sublabel | default "Open most recent paper" }}
         <a class="dm-hero__stat dm-hero__stat--cta" href="{{ $href }}"
            {{ with $latest_paper_title }}title="{{ . }}"{{ end }}>
           <div class="dm-hero__stat-num dm-hero__stat-num--cta">
