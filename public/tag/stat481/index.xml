@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stat481 | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/stat481/</link>
+      <atom:link href="https://dhafermalouche.net/tag/stat481/index.xml" rel="self" type="application/rss+xml" />
+    <description>stat481</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>stat481</title>
+      <link>https://dhafermalouche.net/tag/stat481/</link>
+    </image>
+    
+    <item>
+      <title>STAT 481 Revision — Multivariate Analysis</title>
+      <link>https://dhafermalouche.net/apps/stat481revision/</link>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/stat481revision/</guid>
+      <description>&lt;p&gt;An offline-first revision web app (PWA) for &lt;strong&gt;STAT 481 — Multivariate Analysis&lt;/strong&gt;, Qatar University, Fall 2026. It is the multivariate companion to the &lt;a href=&#34;https://stat312-revision.netlify.app/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STAT 312 revision app&lt;/a&gt;, built on the same principle: a student should be able to revise the whole course from a phone, on a plane, with no account and no network.&lt;/p&gt;
+&lt;h2 id=&#34;content-is-extracted-not-rewritten&#34;&gt;Content is extracted, not rewritten&lt;/h2&gt;
+&lt;p&gt;The distinguishing feature of this app is that &lt;strong&gt;no content is authored inside it&lt;/strong&gt;. A build-time extractor walks the course&amp;rsquo;s own LaTeX sources and pulls out every definition, theorem, fact, formula, R chunk and exam question. Each item carries the file, the environment and the line it came from, and prints a short stable reference such as &lt;code&gt;L11-fact-01&lt;/code&gt; that resolves straight back to that line in the notes. R output is copied verbatim from the session that produced the notes; a chunk that printed nothing ships without output rather than with invented output.&lt;/p&gt;
+&lt;p&gt;An editorial override layer sits on top of the extractor for the cases where the notes need a gloss, and a content-fingerprint identity map keeps item ids stable across re-extraction, so a student&amp;rsquo;s progress survives a rebuild of the bank. A validation gate refuses to deploy on any failure — a broken KaTeX macro fails at build time, with a file and a line, instead of reaching a phone as raw &lt;code&gt;\bSigma&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Revise by stage.&lt;/strong&gt; The course is divided into seven stages, each with a hand-drawn plate, grouping the lectures into coherent study blocks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flashcards with spaced repetition.&lt;/strong&gt; A Leitner scheduler drives the review queue, weighted by how near the next assessment is.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formula index.&lt;/strong&gt; Every formula in the course, searchable, rendered with KaTeX at build time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;R lab.&lt;/strong&gt; The R snippets of the course with their verbatim output, so the code a student revises is the code that produced the figures in the notes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Timed practice exams.&lt;/strong&gt; Past quizzes and the midterm, gated by date: a paper becomes available the day after it is administered, enforced independently at both the curation and the validation step.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Figures.&lt;/strong&gt; The 56 figures of the course, converted from the LaTeX PDFs to whichever of SVG or WebP is smaller over the wire.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Progress.&lt;/strong&gt; Per-item and per-stage progress, stored in IndexedDB on the device.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;privacy-and-technical-notes&#34;&gt;Privacy and technical notes&lt;/h2&gt;
+&lt;p&gt;Nothing leaves the device: no account, no server, no analytics, no third-party request of any kind. Type and mathematics are self-hosted, so the app renders identically offline.&lt;/p&gt;
+&lt;p&gt;The build is &lt;strong&gt;Vite + TypeScript&lt;/strong&gt; with &lt;strong&gt;no UI framework at run time&lt;/strong&gt; — a hand-rolled hash router, a small signal store, and template-literal rendering, giving an app shell of about 12 KB gzipped. A hand-written service worker caches the shell and the generated content bank, which is committed and deployed alongside the app because the build host has no access to the course LaTeX repository. Deployed on Netlify.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

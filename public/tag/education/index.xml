@@ -5,12 +5,103 @@
     <link>https://dhafermalouche.net/tag/education/</link>
       <atom:link href="https://dhafermalouche.net/tag/education/index.xml" rel="self" type="application/rss+xml" />
     <description>education</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>education</title>
       <link>https://dhafermalouche.net/tag/education/</link>
     </image>
+    
+    <item>
+      <title>CellCalc — Learn the Calculation, Not Just the Answer</title>
+      <link>https://dhafermalouche.net/apps/cellcalc/</link>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/cellcalc/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;CellCalc&lt;/strong&gt; is a browser-based calculator for routine bench arithmetic in cell and molecular biology. It exists because the usual lab calculator hands back a number and hides the reasoning, which is precisely the part a student needs. Every calculator here shows the formula, substitutes the user&amp;rsquo;s own values into it, carries the units through every line of the arithmetic, and draws a diagram that redraws as the inputs change.&lt;/p&gt;
+&lt;h2 id=&#34;the-six-calculators&#34;&gt;The six calculators&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Calculator&lt;/th&gt;
+&lt;th&gt;Question it answers&lt;/th&gt;
+&lt;th&gt;Relation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Solution mass&lt;/td&gt;
+&lt;td&gt;How much powder do I weigh out?&lt;/td&gt;
+&lt;td&gt;$m = C \times V \times M_w$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Solution volume&lt;/td&gt;
+&lt;td&gt;What volume gives my target concentration?&lt;/td&gt;
+&lt;td&gt;$V = m / (M_w \times C)$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dilution&lt;/td&gt;
+&lt;td&gt;How much stock reaches a lower concentration?&lt;/td&gt;
+&lt;td&gt;$C_1 V_1 = C_2 V_2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Serial dilution&lt;/td&gt;
+&lt;td&gt;A ladder of dilutions, step by step&lt;/td&gt;
+&lt;td&gt;repeated $C_1 V_1 = C_2 V_2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell counting&lt;/td&gt;
+&lt;td&gt;How many cells are in my stock?&lt;/td&gt;
+&lt;td&gt;haemocytometer mean $\times$ dilution $\times 10^4$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell seeding&lt;/td&gt;
+&lt;td&gt;How much cell stock and medium per plate?&lt;/td&gt;
+&lt;td&gt;$V_{\text{stock}} = (\text{cells per well} \times \text{wells}) / \text{density}$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;what-makes-it-a-teaching-tool&#34;&gt;What makes it a teaching tool&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Live visualisation.&lt;/strong&gt; A flask with the solute dropping in and the fill line marked; dot-density beakers in which the stock fraction equals $C_2/C_1 = V_1/V_2$, so a fold dilution is legible at a glance; a well-plate grid with a stock-versus-medium mixing bar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Worked solution.&lt;/strong&gt; Numbered steps rendered with KaTeX, with units propagated explicitly rather than dropped and reinstated at the end.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Solve for any variable.&lt;/strong&gt; In the dilution calculator, choose which of $C_1$, $V_1$, $C_2$, $V_2$ is unknown; the other three stay editable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automatic unit conversion.&lt;/strong&gt; Concentrations in M / mM / µM / nM and volumes in L / mL / µL can be mixed freely; each field is converted to base SI internally and the result reported back in the unit the user chose.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Diagnostics.&lt;/strong&gt; Plain warnings when $C_2 &amp;gt; C_1$ (a likely unit mix-up), when the required stock volume exceeds the final volume, or when a result comes out negative or inconsistent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Load example&amp;rdquo; and &amp;ldquo;Why this works&amp;rdquo;.&lt;/strong&gt; One click fills a realistic problem, and a short plain-language panel explains the concept behind each formula.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reproducible export.&lt;/strong&gt; The same calculation as &lt;strong&gt;R&lt;/strong&gt; code, &lt;strong&gt;Python&lt;/strong&gt; code, or a plain-text protocol block, copied with one button — so what was done at the bench can be pasted into a lab notebook or a script.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;A plain static site — vanilla HTML/CSS/JS, no framework and no build step — with light and dark themes and a responsive layout. Mathematics is rendered with &lt;a href=&#34;https://katex.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KaTeX&lt;/a&gt;. All computation runs client-side; nothing is transmitted. Deployed on Netlify.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A teaching tool. Critical calculations should always be double-checked against the protocol in use.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>STAT 481 Revision — Multivariate Analysis</title>
+      <link>https://dhafermalouche.net/apps/stat481revision/</link>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/stat481revision/</guid>
+      <description>&lt;p&gt;An offline-first revision web app (PWA) for &lt;strong&gt;STAT 481 — Multivariate Analysis&lt;/strong&gt;, Qatar University, Fall 2026. It is the multivariate companion to the &lt;a href=&#34;https://stat312-revision.netlify.app/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STAT 312 revision app&lt;/a&gt;, built on the same principle: a student should be able to revise the whole course from a phone, on a plane, with no account and no network.&lt;/p&gt;
+&lt;h2 id=&#34;content-is-extracted-not-rewritten&#34;&gt;Content is extracted, not rewritten&lt;/h2&gt;
+&lt;p&gt;The distinguishing feature of this app is that &lt;strong&gt;no content is authored inside it&lt;/strong&gt;. A build-time extractor walks the course&amp;rsquo;s own LaTeX sources and pulls out every definition, theorem, fact, formula, R chunk and exam question. Each item carries the file, the environment and the line it came from, and prints a short stable reference such as &lt;code&gt;L11-fact-01&lt;/code&gt; that resolves straight back to that line in the notes. R output is copied verbatim from the session that produced the notes; a chunk that printed nothing ships without output rather than with invented output.&lt;/p&gt;
+&lt;p&gt;An editorial override layer sits on top of the extractor for the cases where the notes need a gloss, and a content-fingerprint identity map keeps item ids stable across re-extraction, so a student&amp;rsquo;s progress survives a rebuild of the bank. A validation gate refuses to deploy on any failure — a broken KaTeX macro fails at build time, with a file and a line, instead of reaching a phone as raw &lt;code&gt;\bSigma&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Revise by stage.&lt;/strong&gt; The course is divided into seven stages, each with a hand-drawn plate, grouping the lectures into coherent study blocks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flashcards with spaced repetition.&lt;/strong&gt; A Leitner scheduler drives the review queue, weighted by how near the next assessment is.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formula index.&lt;/strong&gt; Every formula in the course, searchable, rendered with KaTeX at build time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;R lab.&lt;/strong&gt; The R snippets of the course with their verbatim output, so the code a student revises is the code that produced the figures in the notes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Timed practice exams.&lt;/strong&gt; Past quizzes and the midterm, gated by date: a paper becomes available the day after it is administered, enforced independently at both the curation and the validation step.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Figures.&lt;/strong&gt; The 56 figures of the course, converted from the LaTeX PDFs to whichever of SVG or WebP is smaller over the wire.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Progress.&lt;/strong&gt; Per-item and per-stage progress, stored in IndexedDB on the device.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;privacy-and-technical-notes&#34;&gt;Privacy and technical notes&lt;/h2&gt;
+&lt;p&gt;Nothing leaves the device: no account, no server, no analytics, no third-party request of any kind. Type and mathematics are self-hosted, so the app renders identically offline.&lt;/p&gt;
+&lt;p&gt;The build is &lt;strong&gt;Vite + TypeScript&lt;/strong&gt; with &lt;strong&gt;no UI framework at run time&lt;/strong&gt; — a hand-rolled hash router, a small signal store, and template-literal rendering, giving an app shell of about 12 KB gzipped. A hand-written service worker caches the shell and the generated content bank, which is committed and deployed alongside the app because the build host has no access to the course LaTeX repository. Deployed on Netlify.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>STAT 312 Revision — Stochastic Processes</title>
