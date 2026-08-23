@@ -5,12 +5,63 @@
     <link>https://dhafermalouche.net/project/</link>
       <atom:link href="https://dhafermalouche.net/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Mon, 11 May 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
       <link>https://dhafermalouche.net/project/</link>
     </image>
+    
+    <item>
+      <title>Directional Symptom Dependencies in MS &amp; Parkinson&#39;s Disease Dashboard</title>
+      <link>https://dhafermalouche.net/project/ms-pd-bayesian/</link>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/project/ms-pd-bayesian/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ORIGINAL RESEARCH article&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;J. Multidiscip. Healthc., 23 June 2026&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Volume 2026:19, pp. 1–19 | &lt;a href=&#34;https://doi.org/10.2147/JMDH.S607760&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.2147/JMDH.S607760&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;directional-symptom-dependencies-in-multiple-sclerosis-and-parkinsons-disease-a-comparative-bayesian-network-analysis&#34;&gt;Directional Symptom Dependencies in Multiple Sclerosis and Parkinson&amp;rsquo;s Disease: A Comparative Bayesian Network Analysis&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Alham Al-Sharman, Hanan Khalil, Dhafer Malouche, Saddam Kanaan, Meeyoung Kim, Nabil Saad, Marah Abdelrazeq&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div style=&#34;margin: 2rem 0; text-align: center;&#34;&gt;
+  &lt;a href=&#34;https://ms-pd-bayesian-dashboard.netlify.app/&#34;
+     target=&#34;_blank&#34;
+     rel=&#34;noopener noreferrer&#34;
+     style=&#34;display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15);&#34;&gt;
+    📊 Explore Interactive Dashboard
+    &lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; style=&#34;margin-left: 4px;&#34;&gt;
+      &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;/&gt;
+      &lt;polyline points=&#34;15 3 21 3 21 9&#34;/&gt;
+      &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;Multiple sclerosis (MS) and Parkinson&amp;rsquo;s disease (PD) are progressive neurological disorders with complex interactions among motor symptoms, psychological disturbances, sleep problems, fatigue, and pain. Because correlation-based approaches cannot establish effect direction, this study used &lt;strong&gt;Bayesian Network (BN) analysis&lt;/strong&gt; (Hill-Climbing algorithm, Gaussian BIC, 500 bootstrap resamples) to identify and compare directional dependency pathways in MS (n=104) and PD (n=54).&lt;/p&gt;
+&lt;h3 id=&#34;key-findings&#34;&gt;Key Findings&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;MS network&lt;/strong&gt; — 18 nodes, 27 directed edges; 21/27 edges (77.8%) bootstrap-stable. Anxiety is the central hub:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Anxiety → Sleep quality&lt;/strong&gt;: β = 0.51 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anxiety → Physical activity&lt;/strong&gt;: β = 0.37 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anxiety → Pain severity&lt;/strong&gt;: β = 0.30 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anxiety → Physical fatigue&lt;/strong&gt;: β = 0.24 (p = 0.016)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pain interference → Physical fatigue&lt;/strong&gt;: β = 0.40 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pain interference → Cognitive fatigue&lt;/strong&gt;: β = 0.23 (p = 0.005)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;PD network&lt;/strong&gt; — 14 nodes, 15 directed edges; 14/15 edges (93.3%) bootstrap-stable. Anxiety is again the central hub:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Depression → Anxiety&lt;/strong&gt;: β = 0.78 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anxiety → Pain interference&lt;/strong&gt;: β = 0.59 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Age → Physical activity&lt;/strong&gt;: β = −0.50 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anxiety → Balance&lt;/strong&gt;: β = −0.48 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Age → Balance&lt;/strong&gt;: β = −0.40 (p &amp;lt; 0.001)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anxiety is a shared central hub in both diseases, but the downstream pathways differ. &lt;em&gt;Findings are cross-sectional directional dependency structures (hypothesis-generating), not confirmed causal pathways.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;citation&#34;&gt;Citation&lt;/h3&gt;
+&lt;p&gt;Al-Sharman A, Khalil H, Malouche D, Kanaan S, Kim M, Saad N, Abdelrazeq M. Directional Symptom Dependencies in Multiple Sclerosis and Parkinson&amp;rsquo;s Disease: A Comparative Bayesian Network Analysis. &lt;em&gt;J Multidiscip Healthc.&lt;/em&gt; 2026;19:1–19. doi: 10.2147/JMDH.S607760&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>NASH × CBC — Interactive Companion Dashboard (Al-Khinji et al., 2026)</title>

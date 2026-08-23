@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parkinson Disease | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/parkinson-disease/</link>
+      <atom:link href="https://dhafermalouche.net/tag/parkinson-disease/index.xml" rel="self" type="application/rss+xml" />
+    <description>Parkinson Disease</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Parkinson Disease</title>
+      <link>https://dhafermalouche.net/tag/parkinson-disease/</link>
+    </image>
+    
+    <item>
+      <title>Directional Symptom Dependencies in Multiple Sclerosis and Parkinson’s Disease: A Comparative Bayesian Network Analysis</title>
+      <link>https://dhafermalouche.net/publication/alsharman2026/</link>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/alsharman2026/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

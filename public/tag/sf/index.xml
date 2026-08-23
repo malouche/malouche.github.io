@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sf | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/sf/</link>
+      <atom:link href="https://dhafermalouche.net/tag/sf/index.xml" rel="self" type="application/rss+xml" />
+    <description>sf</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>sf</title>
+      <link>https://dhafermalouche.net/tag/sf/</link>
+    </image>
+    
+    <item>
+      <title>Municipales 2026 — French Municipal Elections Dashboard</title>
+      <link>https://dhafermalouche.net/apps/municipales2026/</link>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/municipales2026/</guid>
+      <description>&lt;p&gt;An interactive dashboard that visualises the official results of the &lt;strong&gt;2026 French municipal elections&lt;/strong&gt; (first round on 15 March and second round on 22 March 2026) across the 96 departments of metropolitan France. It belongs to the same family of browser-based teaching and outreach tools as the Stat* apps, but turns the focus to applied electoral statistics and geographic data.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-dashboard-shows&#34;&gt;What the dashboard shows&lt;/h2&gt;
+&lt;p&gt;The data come from the &lt;strong&gt;Ministry of the Interior&lt;/strong&gt;, published on &lt;a href=&#34;https://www.data.gouv.fr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;data.gouv.fr&lt;/a&gt; at the polling-station level and aggregated up to the department. For each round the app lets the visitor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;read a &lt;strong&gt;choropleth map&lt;/strong&gt; of France, coloured by the leading political bloc or by a selected party&amp;rsquo;s vote share;&lt;/li&gt;
+&lt;li&gt;switch between &lt;strong&gt;political blocs&lt;/strong&gt; (left, centre, right, far-right) and individual &lt;strong&gt;parties&lt;/strong&gt;, with national summaries updating in step;&lt;/li&gt;
+&lt;li&gt;inspect national indicators — registered voters (&lt;em&gt;inscrits&lt;/em&gt;), turnout (&lt;em&gt;participation&lt;/em&gt;), valid votes (&lt;em&gt;exprimés&lt;/em&gt;), and each party&amp;rsquo;s share of the valid vote;&lt;/li&gt;
+&lt;li&gt;click any &lt;strong&gt;department&lt;/strong&gt; to open its detailed breakdown, including vote counts, vote share, the number of territories led, and the median rank of each bloc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A small glossary panel defines the core electoral quantities — &lt;em&gt;inscrits&lt;/em&gt;, &lt;em&gt;votants&lt;/em&gt;, &lt;em&gt;exprimés&lt;/em&gt;, participation, and share of the valid vote — so the dashboard doubles as a teaching aid on how electoral indicators are constructed.&lt;/p&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The data pipeline is written in &lt;strong&gt;R&lt;/strong&gt; with &lt;strong&gt;tidyverse&lt;/strong&gt; and &lt;strong&gt;sf&lt;/strong&gt; for cleaning, aggregation, and the geometry of the departmental boundaries. The front end is a static &lt;strong&gt;HTML / CSS / JavaScript&lt;/strong&gt; application using &lt;strong&gt;Leaflet.js&lt;/strong&gt; for the interactive cartography; it is deployed continuously on &lt;strong&gt;Netlify&lt;/strong&gt; and runs entirely client-side once the data layer has loaded.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

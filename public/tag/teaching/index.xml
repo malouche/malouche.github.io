@@ -5,12 +5,32 @@
     <link>https://dhafermalouche.net/tag/teaching/</link>
       <atom:link href="https://dhafermalouche.net/tag/teaching/index.xml" rel="self" type="application/rss+xml" />
     <description>teaching</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>teaching</title>
       <link>https://dhafermalouche.net/tag/teaching/</link>
     </image>
+    
+    <item>
+      <title>STAT 312 Revision — Stochastic Processes</title>
+      <link>https://dhafermalouche.net/apps/stat312revision/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/apps/stat312revision/</guid>
+      <description>&lt;p&gt;An offline-first revision web app (PWA) for &lt;strong&gt;STAT 312 — Stochastic Processes&lt;/strong&gt;, Qatar University, Fall 2026. It gathers everything a student needs to revise the course into a single installable app that works with no network connection after first load.&lt;/p&gt;
+&lt;h2 id=&#34;what-the-app-does&#34;&gt;What the app does&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Semester timeline.&lt;/strong&gt; A live countdown to each quiz and to the midterm, and a 14-week timeline of the syllabus with the assignment and quiz milestones marked on each week.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Revise by stage.&lt;/strong&gt; Per-stage revision hubs that group the material of the course into focused study units, each linking out to the relevant flashcards, worked examples, and formulas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flashcards.&lt;/strong&gt; A spaced-repetition flashcard deck for the definitions, theorems, and key results of the course.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Practice quizzes.&lt;/strong&gt; An interactive quiz engine built from the Fall 2026 sample quizzes and practice material, with instant feedback and worked solutions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formula sheet.&lt;/strong&gt; A searchable, KaTeX-rendered formula sheet covering the whole course.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Worked examples &amp;amp; FAQ.&lt;/strong&gt; Step-by-step solved problems and answers to the questions students ask most often.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
+&lt;p&gt;The app is a fully static, backend-free Progressive Web App built with vanilla HTML/CSS/JS (ES modules) — no framework and no build step. Mathematics is rendered with &lt;strong&gt;KaTeX&lt;/strong&gt;, self-hosted so it renders offline. A service worker caches the app shell and all content, so the whole app (about 1 MB) installs on a student&amp;rsquo;s phone and works completely offline. It follows the Qatar University maroon (&lt;code&gt;#8A1538&lt;/code&gt;) visual identity, is mobile-first with light and dark modes, and stores all student progress locally in the browser — no accounts and no data leaving the device. The static bundle is deployed on Netlify.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>StatANOVA — One-way ANOVA &amp; Tukey HSD Workbench</title>
