@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Najlaa Al-Marri | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/najlaa-al-marri/</link>
+      <atom:link href="https://dhafermalouche.net/author/najlaa-al-marri/index.xml" rel="self" type="application/rss+xml" />
+    <description>Najlaa Al-Marri</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Najlaa Al-Marri</title>
+      <link>https://dhafermalouche.net/author/najlaa-al-marri/</link>
+    </image>
+    
+    <item>
+      <title>Allele-stratified activity of RAS inhibitors in pancreatic ductal adenocarcinoma: a systematic review with model-validation-stratified synthesis of preclinical evidence and exploratory meta-analysis of early-phase trials</title>
+      <link>https://dhafermalouche.net/publication/rasinhibitorspdac/</link>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/rasinhibitorspdac/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
