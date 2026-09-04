@@ -33,6 +33,22 @@
     </item>
     
     <item>
+      <title>Multi-Modal Virtual Reality in Engineering Education: A Design Case Study of Fostering Situational Interest Through Project-Based Learning</title>
+      <link>https://dhafermalouche.net/publication/mizza2/</link>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/mizza2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global Phthalate Occurrence and Risk Assessment in Drinking Water: A Comprehensive Bayesian and Probabilistic Approach</title>
+      <link>https://dhafermalouche.net/publication/phthalatestoten/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/phthalatestoten/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Allele-stratified activity of RAS inhibitors in pancreatic ductal adenocarcinoma: a systematic review with model-validation-stratified synthesis of preclinical evidence and exploratory meta-analysis of early-phase trials</title>
       <link>https://dhafermalouche.net/publication/rasinhibitorspdac/</link>
       <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
@@ -558,14 +574,6 @@
 &lt;h2 id=&#34;technical-notes&#34;&gt;Technical notes&lt;/h2&gt;
 &lt;p&gt;The app is a single-page client-side application built with &lt;strong&gt;React&lt;/strong&gt;: all computation runs in the student&amp;rsquo;s browser, with no server round-trip. Distributional computations rely on the &lt;a href=&#34;https://github.com/jstat/jstat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jStat&lt;/a&gt; numerical library (MIT-licensed). The static bundle is deployed on Netlify, which means it works offline after first load and has no external dependencies at run time.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Multi-Modal Virtual Reality in Engineering Education: A Design Case Study of Fostering Situational Interest Through Project-Based Learning</title>
-      <link>https://dhafermalouche.net/publication/mizza2/</link>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/mizza2/</guid>
-      <description></description>
     </item>
     
     <item>

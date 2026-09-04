@@ -26,10 +26,10 @@ tags:
 - Mental health
 - Qatar Biobank
 - Biostatistics
-# Display status — accepted at Journal of Translational Medicine
-# (manuscript JTRM-D-25-22361R2). Awaiting production / DOI assignment.
+# Display status — under review at Journal of Translational Medicine
+# (manuscript JTRM-D-25-22361R2). Preprint on Research Square (rs-8361889).
 # Listing should NOT link to the article page until the paper is officially
 # released and the DOI is added below.
-status: "Accepted"
+status: "Under review"
 link_disabled: true
 ---

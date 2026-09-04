@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azza Naija | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/azza-naija/</link>
+      <atom:link href="https://dhafermalouche.net/author/azza-naija/index.xml" rel="self" type="application/rss+xml" />
+    <description>Azza Naija</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Azza Naija</title>
+      <link>https://dhafermalouche.net/author/azza-naija/</link>
+    </image>
+    
+    <item>
+      <title>Global Phthalate Occurrence and Risk Assessment in Drinking Water: A Comprehensive Bayesian and Probabilistic Approach</title>
+      <link>https://dhafermalouche.net/publication/phthalatestoten/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/phthalatestoten/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
