@@ -30,6 +30,9 @@ tags:
 # Awaiting proofs / DOI assignment. Do NOT enable the link until the DOI
 # is added below. NOTE: the recorded 14-Feb-2026 date is ambiguous
 # (submission vs acceptance) and needs confirmation.
-status: "Accepted"
+# Removed from the site on 04-Sep-2026: manuscript is under review at Scientific Reports
+# (new title "Maternal age, not parity, and pregnancy loss ..."), not accepted.
+draft: true
+status: "Under review"
 link_disabled: true
 ---
