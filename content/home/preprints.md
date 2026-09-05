@@ -18,11 +18,11 @@ design:
 
 **Authors:** Aisha Al Khinji, Dhafer Malouche
 
-**Status:** Under Review — *Journal of Translational Medicine*
+**Status:** Published in *Journal of Translational Medicine* 24, 899 (2026).
 
 **Abstract:** Chronic pain frequently co-occurs with depressive and anxiety symptoms and doubles or triples the risk of suicidal ideation. Yet the joint pathways linking these conditions remain under-explored in Middle-Eastern settings. We analyzed questionnaire data from 2,363 Qatari adults enrolled in the Qatar Biobank using a data-driven Bayesian Network to map probabilistic interdependencies between chronic pain, mental-health symptoms and demographic factors, with a focus on sequences culminating in suicidal thoughts. The final BN identified self-regret and psychomotor change as the strongest direct predictors of suicidal thoughts, with an early-symptom cascade (sleep problems → anhedonia → depression) amplifying suicide risk. Fatigue linked chronic pain to self-regret, illustrating a physical–psychological bridge.
 
-{{< icon name="file-pdf" pack="fas" >}} [Preprint on Research Square](https://www.researchsquare.com/article/rs-8361889/v1)
+{{< icon name="file-pdf" pack="fas" >}} [Preprint on Research Square](https://www.researchsquare.com/article/rs-8361889/v1) — [Published version (DOI)](https://doi.org/10.1186/s12967-026-08286-9)
 
 ------------------------------------------------------------------------
 
