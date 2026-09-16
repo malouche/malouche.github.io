@@ -42,9 +42,9 @@ stats:
     label: "Interactive dashboards & apps"
 
 # Highlighted publication CTA. Leave `url` unset so the partial resolves the
-# most recently published item under content/publication/ automatically,
-# skipping entries with `link_disabled: true` (accepted-but-not-yet-in-
-# production papers, which have no article page worth sending a visitor to).
+# most recent item under content/publication/ automatically (by date), including
+# accepted-but-not-yet-published papers (`link_disabled: true`); the card then
+# links to the entry page and shows "Accepted · venue · year".
 # Set `url` / `title` / `sublabel` here only to pin a specific paper.
 latest_paper_button:
   label: "Featured paper"
