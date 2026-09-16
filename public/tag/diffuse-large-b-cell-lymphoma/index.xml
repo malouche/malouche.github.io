@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diffuse large B-cell lymphoma | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/diffuse-large-b-cell-lymphoma/</link>
+      <atom:link href="https://dhafermalouche.net/tag/diffuse-large-b-cell-lymphoma/index.xml" rel="self" type="application/rss+xml" />
+    <description>Diffuse large B-cell lymphoma</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Diffuse large B-cell lymphoma</title>
+      <link>https://dhafermalouche.net/tag/diffuse-large-b-cell-lymphoma/</link>
+    </image>
+    
+    <item>
+      <title>Bayesian and frequentist meta-analysis of GCB-classification heterogeneity in TP53-reporting DLBCL cohorts at small k: an applied case study with reporting guidance</title>
+      <link>https://dhafermalouche.net/publication/tp53dlbclmetabmcmrm/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/tp53dlbclmetabmcmrm/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

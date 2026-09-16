@@ -5,12 +5,20 @@
     <link>https://dhafermalouche.net/publication/</link>
       <atom:link href="https://dhafermalouche.net/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://dhafermalouche.net/publication/</link>
     </image>
+    
+    <item>
+      <title>Bayesian and frequentist meta-analysis of GCB-classification heterogeneity in TP53-reporting DLBCL cohorts at small k: an applied case study with reporting guidance</title>
+      <link>https://dhafermalouche.net/publication/tp53dlbclmetabmcmrm/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/tp53dlbclmetabmcmrm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Multi-Modal Virtual Reality in Engineering Education: A Design Case Study of Fostering Situational Interest Through Project-Based Learning</title>

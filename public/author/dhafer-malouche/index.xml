@@ -5,12 +5,20 @@
     <link>https://dhafermalouche.net/author/dhafer-malouche/</link>
       <atom:link href="https://dhafermalouche.net/author/dhafer-malouche/index.xml" rel="self" type="application/rss+xml" />
     <description>Dhafer Malouche</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/author/dhafer-malouche/avatar_hu02aa61ae1d9de35cbe238d2676170cb9_329978_270x270_fill_q75_lanczos_center.jpg</url>
       <title>Dhafer Malouche</title>
       <link>https://dhafermalouche.net/author/dhafer-malouche/</link>
     </image>
+    
+    <item>
+      <title>Bayesian and frequentist meta-analysis of GCB-classification heterogeneity in TP53-reporting DLBCL cohorts at small k: an applied case study with reporting guidance</title>
+      <link>https://dhafermalouche.net/publication/tp53dlbclmetabmcmrm/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/tp53dlbclmetabmcmrm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Multi-Modal Virtual Reality in Engineering Education: A Design Case Study of Fostering Situational Interest Through Project-Based Learning</title>
