@@ -17,7 +17,7 @@ authors:
 - Taghreed Abunada
 - admin
 date: "2026-09-15T00:00:00Z"
-publication: "*BMC Medical Research Methodology* (Springer Nature)"
+publication: "*BMC Medical Research Methodology* (Springer Nature), published online 21 September 2026"
 publication_short: "BMC Med. Res. Methodol."
 publication_types:
 - "2"
@@ -31,12 +31,6 @@ tags:
 - Diffuse large B-cell lymphoma
 - Cell of origin
 - Reporting guidance
-# Display status — accepted at BMC Medical Research Methodology on 15-Sep-2026
-# (submission ID d5408e42-bb7f-415e-af3b-ca0b9d14f8cf; submitted 29-May-2026,
-# R1 24-Jul-2026, R2 02-Sep-2026). Awaiting proofs / DOI; do NOT enable the
-# link until the DOI is added below. Title, author order and abstract are taken
-# verbatim from the accepted v6 manuscript (TP53_Lymphoma_BMC_MRM_v6_CLEAN.docx).
-# Corresponding author: Aisha Al-Khinji.
-status: "Accepted"
-link_disabled: true
+doi: "10.1186/s12874-026-03015-8"
+# Accepted 15-Sep-2026; published online 21-Sep-2026. Corresponding author: Aisha Al-Khinji.
 ---

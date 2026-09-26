@@ -19,11 +19,11 @@ authors:
 - Ahmad Haj Bakri
 - Mohamed Ghaith Al-Kuwari
 date: "2026-09-21T00:00:00Z"
-publication: "*American Heart Journal Plus: Cardiology Research and Practice* (Elsevier)"
+publication: "*American Heart Journal Plus: Cardiology Research and Practice*, 71, 100907"
 publication_short: "Am. Heart J. Plus"
 publication_types:
 - "2"
-title: "Cardiovascular risk prediction in autoimmune diseases: disease-specific heterogeneity and calibrated logistic models in Middle Eastern primary care"
+title: "Autoimmune disorders and cardiovascular disease: a matched cross-sectional analysis of disease-specific associations in Qatari primary care"
 tags:
 - Cardiovascular risk
 - Autoimmune disease
@@ -34,11 +34,7 @@ tags:
 - Primary care
 - Qatar
 - Biostatistics
-# Display status — accepted at American Heart Journal Plus on 21-Sep-2026
-# (AHJO-D-26-00032R2; Elsevier production ref. AHJO 100907). Awaiting proofs / DOI;
-# do NOT enable the link until the DOI is added below. Title as recorded by Elsevier
-# production; author order and abstract from the accepted R2 manuscript (manuscript_V6_clean.docx).
+doi: "10.1016/j.ahjo.2026.100907"
+# Accepted 21-Sep-2026 (AHJO-D-26-00032R2); published in vol. 71, article 100907 (Nov 2026).
 # Corresponding author: Aisha Al-Khinji.
-status: "Accepted"
-link_disabled: true
 ---

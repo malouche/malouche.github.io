@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>N. Bouafif | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/n.-bouafif/</link>
+      <atom:link href="https://dhafermalouche.net/author/n.-bouafif/index.xml" rel="self" type="application/rss+xml" />
+    <description>N. Bouafif</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>N. Bouafif</title>
+      <link>https://dhafermalouche.net/author/n.-bouafif/</link>
+    </image>
+    
+    <item>
+      <title>La mortalité parmi les enfants âgés de moins de 15 ans en Tunisie peut être liée à la température</title>
+      <link>https://dhafermalouche.net/publication/karaoud2014-mortalite-parmi/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/karaoud2014-mortalite-parmi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Méthodologie de l&#39;analyse de la relation température–mortalité en Tunisie</title>
+      <link>https://dhafermalouche.net/publication/karaoud2014-methodologie-analyse/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/karaoud2014-methodologie-analyse/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

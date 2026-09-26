@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Samira Blousa-Chabchoub | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/samira-blousa-chabchoub/</link>
+      <atom:link href="https://dhafermalouche.net/author/samira-blousa-chabchoub/index.xml" rel="self" type="application/rss+xml" />
+    <description>Samira Blousa-Chabchoub</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 01 Jan 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Samira Blousa-Chabchoub</title>
+      <link>https://dhafermalouche.net/author/samira-blousa-chabchoub/</link>
+    </image>
+    
+    <item>
+      <title>Lack of association between the angiotensin-converting enzyme gene (I/D) polymorphism and diabetic nephropathy in Tunisian type 2 diabetic patients</title>
+      <link>https://dhafermalouche.net/publication/arfa2008-lack-association/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/arfa2008-lack-association/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Familial aggregation and excess maternal transmission of type 2 diabetes in Tunisia</title>
+      <link>https://dhafermalouche.net/publication/arfa2007-familial-aggregation/</link>
+      <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/arfa2007-familial-aggregation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

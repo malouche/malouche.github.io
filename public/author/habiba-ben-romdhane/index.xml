@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Habiba Ben Romdhane | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/habiba-ben-romdhane/</link>
+      <atom:link href="https://dhafermalouche.net/author/habiba-ben-romdhane/index.xml" rel="self" type="application/rss+xml" />
+    <description>Habiba Ben Romdhane</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Habiba Ben Romdhane</title>
+      <link>https://dhafermalouche.net/author/habiba-ben-romdhane/</link>
+    </image>
+    
+    <item>
+      <title>Comparing strategies to prevent stroke and ischemic heart disease in the Tunisian population: Markov modeling approach using a comprehensive sensitivity analysis algorithm</title>
+      <link>https://dhafermalouche.net/publication/saidi2019-comparing-strategies/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/saidi2019-comparing-strategies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explaining income-related inequalities in cardiovascular risk factors in Tunisian adults during the last decade: comparison of sensitivity analysis of logistic regression and Wagstaff decomposition analysis</title>
+      <link>https://dhafermalouche.net/publication/saidi2019-explaining-income/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/saidi2019-explaining-income/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Premature mortality attributable to smoking among Tunisian men in 2009</title>
+      <link>https://dhafermalouche.net/publication/saidi2019-premature-mortality/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/saidi2019-premature-mortality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tunisian population quality of life: a general analysis using SF-36</title>
+      <link>https://dhafermalouche.net/publication/salem2019-tunisian-population/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/salem2019-tunisian-population/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forecasting Tunisian type 2 diabetes prevalence to 2027: validation of a simple model</title>
+      <link>https://dhafermalouche.net/publication/saidi2015-forecasting-tunisian/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/saidi2015-forecasting-tunisian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Familial aggregation and excess maternal transmission of type 2 diabetes in Tunisia</title>
+      <link>https://dhafermalouche.net/publication/arfa2007-familial-aggregation/</link>
+      <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/arfa2007-familial-aggregation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

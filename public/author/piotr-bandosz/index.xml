@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Piotr Bandosz | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/piotr-bandosz/</link>
+      <atom:link href="https://dhafermalouche.net/author/piotr-bandosz/index.xml" rel="self" type="application/rss+xml" />
+    <description>Piotr Bandosz</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Piotr Bandosz</title>
+      <link>https://dhafermalouche.net/author/piotr-bandosz/</link>
+    </image>
+    
+    <item>
+      <title>Comparing strategies to prevent stroke and ischemic heart disease in the Tunisian population: Markov modeling approach using a comprehensive sensitivity analysis algorithm</title>
+      <link>https://dhafermalouche.net/publication/saidi2019-comparing-strategies/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/saidi2019-comparing-strategies/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

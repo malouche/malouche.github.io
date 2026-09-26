@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gustavo Naranjo | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/gustavo-naranjo/</link>
+      <atom:link href="https://dhafermalouche.net/author/gustavo-naranjo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gustavo Naranjo</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Gustavo Naranjo</title>
+      <link>https://dhafermalouche.net/author/gustavo-naranjo/</link>
+    </image>
+    
+    <item>
+      <title>Influence of drying temperature and harvesting season on phenolic content and antioxidant and antiproliferative activities of olive (Olea europaea) leaf extracts</title>
+      <link>https://dhafermalouche.net/publication/losadaecheberria2023-influence-drying/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/losadaecheberria2023-influence-drying/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

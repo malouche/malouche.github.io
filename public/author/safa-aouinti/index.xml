@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Safa Aouinti | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/author/safa-aouinti/</link>
+      <atom:link href="https://dhafermalouche.net/author/safa-aouinti/index.xml" rel="self" type="application/rss+xml" />
+    <description>Safa Aouinti</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Safa Aouinti</title>
+      <link>https://dhafermalouche.net/author/safa-aouinti/</link>
+    </image>
+    
+    <item>
+      <title>Correction: IMGT/HighV-QUEST statistical significance of IMGT clonotype (AA) diversity per gene for standardized comparisons of next generation sequencing immunoprofiles of immunoglobulins and T cell receptors</title>
+      <link>https://dhafermalouche.net/publication/aouinti2016-correction-imgt/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/aouinti2016-correction-imgt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IMGT/StatClonotype for pairwise evaluation and visualization of NGS IG and TR IMGT clonotype (AA) diversity or expression from IMGT/HighV-QUEST</title>
+      <link>https://dhafermalouche.net/publication/aouinti2016-imgt-statclonotype/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/aouinti2016-imgt-statclonotype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IMGT/HighV-QUEST statistical significance of IMGT clonotype (AA) diversity per gene for standardized comparisons of next generation sequencing immunoprofiles of immunoglobulins and T cell receptors</title>
+      <link>https://dhafermalouche.net/publication/aouinti2015-imgt-highv/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/aouinti2015-imgt-highv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

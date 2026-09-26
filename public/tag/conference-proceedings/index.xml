@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conference proceedings | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/conference-proceedings/</link>
+      <atom:link href="https://dhafermalouche.net/tag/conference-proceedings/index.xml" rel="self" type="application/rss+xml" />
+    <description>Conference proceedings</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Conference proceedings</title>
+      <link>https://dhafermalouche.net/tag/conference-proceedings/</link>
+    </image>
+    
+    <item>
+      <title>Decision making about products development through consumer preferences modeling based on descriptive characteristics of products</title>
+      <link>https://dhafermalouche.net/publication/rebhi2017-decision-making/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/rebhi2017-decision-making/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The volume radius function: a new descriptor for the segmentation of volumetric medical images</title>
+      <link>https://dhafermalouche.net/publication/selmi2015-volume-radius/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/selmi2015-volume-radius/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A survey on multi-agent management approaches in the context of intelligent energy systems</title>
+      <link>https://dhafermalouche.net/publication/ghribi2014-survey-multi/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/ghribi2014-survey-multi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphical interaction models to extract predictive risk factors of the cost of managing stroke in Tunisia</title>
+      <link>https://dhafermalouche.net/publication/aouinti2013-graphical-interaction/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/aouinti2013-graphical-interaction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimating high dimensional faithful Gaussian graphical models by low-order conditioning</title>
+      <link>https://dhafermalouche.net/publication/malouche2008-estimating-high/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/malouche2008-estimating-high/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
