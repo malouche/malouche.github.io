@@ -10,7 +10,7 @@ authors:
 - "Vicente Micol"
 date: "2023-01-01T00:00:00Z"
 doi: "10.3390/ijms24010054"
-publication: "*Olea europaea*, ) leaf extracts. International Journal of Molecular Sciences, 24(1), 54"
+publication: "*International Journal of Molecular Sciences*, 24(1), 54"
 publication_short: ""
 publication_types:
 - "2"
