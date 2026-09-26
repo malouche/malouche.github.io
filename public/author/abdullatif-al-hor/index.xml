@@ -5,12 +5,20 @@
     <link>https://dhafermalouche.net/author/abdullatif-al-hor/</link>
       <atom:link href="https://dhafermalouche.net/author/abdullatif-al-hor/index.xml" rel="self" type="application/rss+xml" />
     <description>Abdullatif Al-Hor</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>Abdullatif Al-Hor</title>
       <link>https://dhafermalouche.net/author/abdullatif-al-hor/</link>
     </image>
+    
+    <item>
+      <title>Cardiovascular risk prediction in autoimmune diseases: disease-specific heterogeneity and calibrated logistic models in Middle Eastern primary care</title>
+      <link>https://dhafermalouche.net/publication/cardioriskautoimmuneahjplus/</link>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/cardioriskautoimmuneahjplus/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bayesian and frequentist meta-analysis of GCB-classification heterogeneity in TP53-reporting DLBCL cohorts at small k: an applied case study with reporting guidance</title>
@@ -23,8 +31,32 @@
     <item>
       <title>Differential laboratory monitoring in autoimmune disease: a matched case-control study from Qatar primary care</title>
       <link>https://dhafermalouche.net/publication/differentiallabmonitoring/</link>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/publication/differentiallabmonitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparative cardiovascular risk burden across autoimmune diseases: evidence from a primary care cohort</title>
+      <link>https://dhafermalouche.net/publication/jcts2026cardioburden/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/jcts2026cardioburden/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Translating vaccine durability data into personalized protection for autoimmune disease populations</title>
+      <link>https://dhafermalouche.net/publication/jcts2026vaccinedurability/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/jcts2026vaccinedurability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why TP53 expression varies in lymphoma: insights from a Bayesian meta-analysis</title>
+      <link>https://dhafermalouche.net/publication/jcts2026tp53/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/jcts2026tp53/</guid>
       <description></description>
     </item>
     

@@ -13,7 +13,7 @@ authors:
 - Abdullatif Al-Hor
 - Ahmad Haj Bakri
 - Mohamed Ghaith Al-Kuwari
-date: "2026-08-22T00:00:00Z"
+date: "2026-07-15T00:00:00Z"
 publication: "*Journal of Translational Medicine*"
 publication_short: "J. Transl. Med."
 publication_types:
@@ -28,11 +28,7 @@ tags:
 - Primary care
 - Qatar
 - Biostatistics
-# Display status — accepted at Journal of Translational Medicine
-# (manuscript JTRM-D-26-01894). Awaiting proofs / DOI assignment; do NOT
-# enable the link until the DOI is added below. Author order and abstract are
-# taken verbatim from the corrected R3 proof (manuscript_R3_PROOF_CORRECTED.docx).
+doi: 10.1186/s12967-026-08576-2
+# Accepted at J Transl Med (JTRM-D-26-01894); published online 15 July 2026.
 # Corresponding author: Aisha Al-Khinji.
-status: "Accepted"
-link_disabled: true
 ---

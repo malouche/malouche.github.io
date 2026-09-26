@@ -7,7 +7,7 @@ education:
   - course: Ph.D. in Statistics and Probability
     institution: Paul Sabatier University, Toulouse, France 
     year: October 1997
-  - course: Master in Applied Mathematics  
+  - course: Master's Degree (D.E.A.) in Applied Mathematics and Statistics
     institution: Paul Sabatier University, Toulouse, France  
     year: 1993 - 1994
   - course: Bachelor (Maîtrise) in Mathematics
@@ -22,6 +22,7 @@ interests:
 - Chronic Pain & Neurological Disorders
 - Actuarial & Stochastic Processes
 - Survey Methodology & Data Quality
+- Electoral Data & Voting Behaviour
 - AI Regulation, Anticipatory Law & Finance
 - Sensory & Consumer Data Analysis
 - Engineering Education & Educational Technology
@@ -40,7 +41,10 @@ social:
     header: true
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.com/citations?user=rLJsvjUAAAAJ&hl=en
+  link: https://scholar.google.com/citations?user=LcucwHsAAAAJ&hl=en
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0002-0494-7141
 - icon: github
   icon_pack: fab
   link: https://github.com/malouche

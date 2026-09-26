@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Congress abstract | Dhafer Malouche</title>
+    <link>https://dhafermalouche.net/tag/congress-abstract/</link>
+      <atom:link href="https://dhafermalouche.net/tag/congress-abstract/index.xml" rel="self" type="application/rss+xml" />
+    <description>Congress abstract</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
+      <title>Congress abstract</title>
+      <link>https://dhafermalouche.net/tag/congress-abstract/</link>
+    </image>
+    
+    <item>
+      <title>Comparative cardiovascular risk burden across autoimmune diseases: evidence from a primary care cohort</title>
+      <link>https://dhafermalouche.net/publication/jcts2026cardioburden/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/jcts2026cardioburden/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Translating vaccine durability data into personalized protection for autoimmune disease populations</title>
+      <link>https://dhafermalouche.net/publication/jcts2026vaccinedurability/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/jcts2026vaccinedurability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why TP53 expression varies in lymphoma: insights from a Bayesian meta-analysis</title>
+      <link>https://dhafermalouche.net/publication/jcts2026tp53/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/jcts2026tp53/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

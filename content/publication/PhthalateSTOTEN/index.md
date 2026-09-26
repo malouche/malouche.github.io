@@ -15,7 +15,7 @@ authors:
 - admin
 - Sumaya Abiib
 date: "2026-09-03T00:00:00Z"
-publication: "*Science of the Total Environment* (Elsevier)"
+publication: "*Science of the Total Environment*, 1051, 182291"
 publication_short: "Sci. Total Environ."
 publication_types:
 - "2"
@@ -28,11 +28,7 @@ tags:
 - Bayesian hierarchical models
 - Monte Carlo simulation
 - Endocrine disruptors
-# Display status — accepted at Science of the Total Environment on 03-Sep-2026
-# (manuscript STOTEN-D-26-00544R2, Elsevier ref. STOTEN_182291), open access.
-# In production; do NOT enable the link until the DOI is added below.
-# Author order and abstract taken from the accepted manuscript (manuscript.docx).
+doi: 10.1016/j.scitotenv.2026.182291
+# Accepted 03-Sep-2026 (STOTEN-D-26-00544R2); published in vol. 1051, article 182291 (Oct 2026), open access.
 # Corresponding author: Azza Naija.
-status: "Accepted"
-link_disabled: true
 ---

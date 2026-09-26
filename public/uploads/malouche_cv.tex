@@ -1,188 +1,385 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
-% ModernCV themes
-\moderncvstyle{classic}
-\moderncvcolor{blue}
-% Character encoding
+% =====================================================================
+%  Dhafer Malouche -- Curriculum Vitae (general version, website)
+%  Source for static/uploads/malouche_cv.pdf and resume.pdf
+%  Compile: tinytex::latexmk("malouche_cv.tex", engine = "pdflatex")
+%  Conventions: only published and accepted work is listed; manuscripts
+%  under review or submitted are not listed on the website CV.
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+% ---- Fonts and encoding ---------------------------------------------
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-% Adjust page margins
-\usepackage[scale=0.85]{geometry}
-\setlength{\hintscolumnwidth}{3.5cm}
-% Personal data
-\name{Dhafer}{Malouche, Ph.D.}
-\title{Professor of Statistics}
-\address{Qatar University}{}{}
-\email{dhafer.malouche@qu.edu.qa}
-\homepage{dhafermalouche.net}
-\social[github]{malouche}
-\extrainfo{\href{https://scholar.google.com/citations?user=YOUR_ID}{Google Scholar Profile}}
+\usepackage{mathptmx}          % Times text and maths
+\usepackage{textcomp}
+\usepackage{microtype}
+
+% ---- Layout ---------------------------------------------------------
+\usepackage[a4paper,margin=2.2cm,top=2cm,bottom=2.2cm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{16,64,140}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,
+            pdftitle={Dhafer Malouche -- CV},pdfauthor={Dhafer Malouche}]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array,longtable,booktabs}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Section style: small caps with a full-width rule
+\titleformat{\section}{\Large\scshape\bfseries}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\setlength{\LTpre}{2pt}\setlength{\LTpost}{2pt}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+\newcommand{\pubgroup}[1]{\item[]\hskip-\leftmargin\textit{#1}}
+
+% Dated entries: right-aligned bold date column + description
+\newenvironment{cvdated}{%
+  \begin{longtable}{@{}>{\raggedleft\arraybackslash\bfseries}p{3.35cm}@{\hspace{0.35cm}}p{\dimexpr\textwidth-3.7cm\relax}@{}}}%
+  {\end{longtable}\vspace{-10pt}}
+\newcommand{\cvrow}[2]{#1 & #2 \\[3pt]}
+
+\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=2pt,label=\textbullet}
+\setlist[enumerate]{leftmargin=2.2em,itemsep=1.5pt,topsep=2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\small Dhafer Malouche -- Curriculum Vitae -- page \thepage\ of \pageref*{LastPage}}
+
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+\newcommand{\Qu}[1]{[Q#1]}
+
 \begin{document}
-\makecvtitle
+
+% ---- Header ---------------------------------------------------------
+\begin{center}
+{\LARGE\bfseries Dhafer Malouche, Ph.D.}\\[3pt]
+{\large Professor of Statistics}\\[2pt]
+Department of Mathematics, Statistics, and Physics, College of Arts and Sciences\\
+Qatar University, Doha, Qatar\\[3pt]
+\href{mailto:dhafer.malouche@qu.edu.qa}{dhafer.malouche@qu.edu.qa} \,$\cdot$\,
+\href{https://dhafermalouche.net}{dhafermalouche.net} \,$\cdot$\,
+GitHub: \href{https://github.com/malouche}{malouche} \,$\cdot$\,
+\href{https://scholar.google.com/citations?user=LcucwHsAAAAJ&hl=en}{Google Scholar} \,$\cdot$\,
+ORCID \href{https://orcid.org/0000-0002-0494-7141}{0000-0002-0494-7141}\\[2pt]
+{\small Last updated: September 2026}
+\end{center}
+
+% ---- Research interests --------------------------------------------
+\section{Research Interests}
+Bayesian networks and graphical models, Biostatistics and health outcomes research, Qatar Biobank data analysis,
+Path analysis and causal inference, Meta-analysis and systematic reviews (Bayesian and frequentist evidence synthesis),
+Chronic pain and mental health modeling, Survey methodology, Quantitative analysis of regulatory frameworks,
+Electoral data, Educational statistics, Statistical computing and data visualization,
+Consumer preferences and sensory data analysis.
+
+\textbf{Citation metrics} (Google Scholar, September 2026): 997 citations, $h$-index 16, i10-index 27
+(since 2021: 463 citations, $h$-index 13, i10-index 17).
+
+% ---- Employment ------------------------------------------------------
 \section{Employment History}
-\cventry{August 2022 -- Present}{Professor of Statistics}{Qatar University}{Doha, Qatar}{}{
-Department of Mathematics, Statistics, and Physics, College of Arts and Sciences.\\
-\textbf{Teaching (2022-2025):} Introduction to Statistics, Multivariate Analysis, Stochastic Processes, Actuarial Statistics I\&II, Statistical Computation and Simulation, Advanced Biostatistics (For Ph.D. Candidates), Bayesian Statistical, Experimental Design, Critical Thinking (Honors Program), Expertise, Experience and Exchange: tips for research methods (Honors Program).
-}
-\cventry{July 2021 -- July 2022}{Professor of Statistics}{The American University in Cairo}{Cairo, Egypt}{}{
-Department of Mathematics and Actuarial Science, School of Sciences and Engineering.\\
-\textbf{Teaching:} Statistical Inference, Introduction to Statistics, Data Science with Python
-}
-\cventry{2003 -- 2021}{Professor / Associate Professor / Assistant Professor}{University of Carthage}{Tunis, Tunisia}{}{
-Ecole Supérieure de la Statistique et de l'Analyse de l'Information\\
-\textbf{Positions:} Professor (from 2018), Associate Professor (2011-2018), Assistant Professor (2003-2011).\\
-\textbf{Teaching:} Data Analysis: Principal Component Analysis, Correspondence Analysis, and Multiple Correspondence Analysis, Theory and Practice with R, Mathematical Statistics: Statistical Inference, Hypothesis Testing, Regression Analysis, Theory and Practice with R, Data Mining and Practice with R, Bayesian Statistics with OpenBugs/Winbugs/RStan/Jags, Time Series: ARMA and SARIMA Processes, Theory and Practice with R/Python, Big Data: Large Data with R/Python, SQL, Spark, H2O, Advanced R/Python: Data Management, Data Visualization, Dashboards, Shiny Apps, Heroku Apps, Bokeh.\\
-\textbf{Research:} Supervising 5 Ph.D.: Detection and classification of swallowing sound, Sensory Analysis, Genetics, Zoonotic cutaneous leishmaniasis incidence, Cardiovascular risk factor. Supervising Master and Engineering Thesis on several topics related to applied statistics and data science.\\
-\textbf{Administration:} Director of the Department of Statistics (2004-2007)
-}
-\cventry{2014 and 2019}{Visiting Associate Professor / Associate Research Scholar}{Yale University}{New Haven, USA}{}{
-Whitney and Betty MacMillan Center for International and Area Studies and the Department of Statistics and Data Science.\\
-\textbf{Positions:} Visiting Associate Professor (2014), Consulting on several projects with Yale Scholars (2015-2018), Associate Research Scholar (2019).\\
-\textbf{Missions:} Democratic Transition in Tunisia, Governance and Local Development: Implementing two face-to-face surveys in Tunisia, G-econ team on building local GDP data, Teaching Time Series with R/Python Course.
-}
-\cventry{2016 -- 2017}{Visiting Fulbright Scholar}{University of Michigan}{Ann Arbor, USA}{}{
-Center for Political Studies of the Institute for Social Research.\\
-\textbf{Role:} Research: Working on Data Quality, Survey Methodology, Interviewer Effect. Teaching: 4 Lectures on Applied graphical Models, 1 Lecture on Data visualization with R, 1 Lecture on Sensory Analysis.
-}
-\cventry{2011}{Visiting Fulbright Scholar}{Stanford University}{Palo Alto, USA}{}{
-Department of Statistics.\\
-\textbf{Role:} Research on Graphical Models, Faithfulness assumption, and Covariance graphs.
-}
-\cventry{2002 -- 2003}{Visiting Assistant Professor}{York University}{Toronto, Canada}{}{
-Department of Statistics.\\
-\textbf{Teaching:} Applied Regression Models with SAS, Introduction to the theory of probability, Introduction to Statistics with Minitab.\\
-\textbf{Research:} Monte Carlo Methods and Bayesian Estimation of the Graphical Models.
-}
-\cventry{1998 -- 2002}{Assistant Professor}{University of Sousse}{Sousse, Tunisia}{}{
-Institut Préparatoire aux Ecoles d'Ingénieurs.\\
-\textbf{Teaching:} Analysis, Calculus, Algebra.\\
-\textbf{Research:} Natural Exponential Families, Pick functions, Markov Chains.\\
-\textbf{Administration:} Director of the Department of Mathematics
-}
+\begin{cvdated}
+\cvrow{Aug.\ 2022 -- present}{\textbf{Professor of Statistics}, Qatar University, Doha, Qatar.\newline
+Department of Mathematics, Statistics, and Physics, College of Arts and Sciences.\newline
+Teaching (2022--present): Statistics II, Linear Algebra, Multivariate Analysis, Stochastic Processes, Actuarial
+Statistics I\&II, Bayesian Statistics, Statistical Computation and Simulation, Bayesian Statistical Inference,
+Advanced Biostatistics (for Ph.D.\ candidates), Experimental Design and Statistical Analysis, Senior Project,
+Critical Thinking (Honors Program), Expertise, Experience and Exchange: tips for research methods (Honors Program).
+See also \emph{Teaching} below.}
+\cvrow{Jul.\ 2021 -- Jul.\ 2022}{\textbf{Professor of Statistics}, The American University in Cairo, Cairo, Egypt.\newline
+Department of Mathematics and Actuarial Science, School of Sciences and Engineering.\newline
+Teaching: Statistical Inference, Introduction to Statistics, Data Science with Python.}
+\cvrow{2003 -- 2021}{\textbf{Professor / Associate Professor / Assistant Professor}, University of Carthage, Tunis, Tunisia.\newline
+\'Ecole Sup\'erieure de la Statistique et de l'Analyse de l'Information (ESSAI).\newline
+Positions: Professor (from 2018), Associate Professor (2011--2018), Assistant Professor (2003--2011).\newline
+Teaching: Data Analysis (PCA, CA, MCA) with R; Mathematical Statistics with R; Data Mining with R; Bayesian
+Statistics with OpenBUGS/WinBUGS/RStan/JAGS; Time Series (ARMA, SARIMA) with R/Python; Big Data with R/Python,
+SQL, Spark, H2O; Advanced R/Python: data management, data visualization, dashboards, Shiny apps, Heroku apps, Bokeh.\newline
+Research: supervised 5 Ph.D.\ theses (swallowing-sound detection and classification, sensory analysis, genetics,
+zoonotic cutaneous leishmaniasis incidence, cardiovascular risk factors) and many Master and Engineering theses.\newline
+Administration: Director of the Department of Statistics (2004--2007).}
+\cvrow{2014 and 2019}{\textbf{Visiting Associate Professor / Associate Research Scholar}, Yale University, New Haven, USA.\newline
+Whitney and Betty MacMillan Center for International and Area Studies and Department of Statistics and Data Science.\newline
+Positions: Visiting Associate Professor (2014), consulting on several projects with Yale scholars (2015--2018),
+Associate Research Scholar (2019).\newline
+Missions: Democratic Transition in Tunisia, Governance and Local Development (Program on Governance and Local
+Development, GLD, now at the University of Gothenburg): two face-to-face surveys in Tunisia; G-econ team on
+building local GDP data; teaching Time Series with R/Python.}
+\cvrow{2016 -- 2017}{\textbf{Visiting Fulbright Scholar}, University of Michigan, Ann Arbor, USA.\newline
+Center for Political Studies, Institute for Social Research. Research on data quality, survey methodology and
+interviewer effects. Teaching: 4 lectures on applied graphical models, 1 on data visualization with R, 1 on
+sensory analysis.}
+\cvrow{2011}{\textbf{Visiting Fulbright Scholar}, Stanford University, Palo Alto, USA.\newline
+Department of Statistics. Research on graphical models, the faithfulness assumption, and covariance graphs.}
+\cvrow{2002 -- 2003}{\textbf{Visiting Assistant Professor}, York University, Toronto, Canada.\newline
+Department of Statistics. Teaching: Applied Regression Models with SAS, Introduction to the Theory of Probability,
+Introduction to Statistics with Minitab. Research: Monte Carlo methods and Bayesian estimation of graphical models.}
+\cvrow{1998 -- 2002}{\textbf{Assistant Professor}, University of Sousse, Sousse, Tunisia.\newline
+Institut Pr\'eparatoire aux \'Ecoles d'Ing\'enieurs. Teaching: Analysis, Calculus, Algebra. Research: natural
+exponential families, Pick functions, Markov chains. Administration: Director of the Department of Mathematics.}
+\end{cvdated}
+
+% ---- Consulting ------------------------------------------------------
+\subsection{Consulting and other appointments}
+\begin{itemize}
+\item WHO Tunisia, senior data analyst consultant (05/2020--05/2021): impact of COVID-19 on psychiatric needs, hotline data.
+\item WARC Africa, Sierra Leone, data analyst consultant (05/2020--01/2021): online daily monitoring platform for a survey.
+\item Covidradar24.org / Rosettahub.com, data analyst master contributor (10/2020--12/2022).
+\item Fellow, Pan-African Scientific Research Council (08/2020--08/2022).
+\item World Bank / Program on Governance and Local Development: co-developer of the
+      \href{https://documents1.worldbank.org/curated/en/196591468197374514/pdf/106241-WP-P151968-date-May-17-2016-PUBLIC-local-Governance-Performance-Index.pdf}{Local Governance Performance Index (LGPI)};
+      pilot survey in Tunisia, February 2015 (World Bank document 106241, May 2016).
+\end{itemize}
+
+% ---- Education -------------------------------------------------------
 \section{Education}
-\cventry{September 2009}{Habilitation (Tenure), Statistics}{Université de Tunis El Manar}{Tunisia}{}{
-Ecole National d'Ingénieurs de Tunis.\\
-Thesis title: \textit{Problèmes autour de la probabilité et de la statistique: Méthodes et Applications}.\\
-Dissertation: \url{https://malouche.github.io/myCV/reports.html}
-}
-\cventry{October 1997}{Doctorate (Ph.D.), Statistics}{Paul Sabatier University}{Toulouse, France}{}{
-Thesis title: \textit{Classification des familles exponentielles associées à des fonctions Pick}.\\
-Dissertation: \url{https://malouche.github.io/myCV/reports.html}
-}
-\cventry{1993 -- 1994}{Master's Degree (D.E.A)}{Paul Sabatier University}{Toulouse, France}{}{
-Applied Mathematics, Statistics
-}
-\cventry{1989 -- 1993}{Bachelor (Maîtrise)}{Ecole Normale Supérieure de Bizerte}{Tunisia}{}{}
-\section{Supervised Ph.D.}
-\cventry{2019-06-28}{Safa AOUINTI}{}{}{}{
-Statistical treatment of NGS results from IMGT/HighV-QUEST of antigen receptors (immunoglobulins and T receptors): methodology and visualization
-}
-\cventry{2019-06-22}{Khouloud TALMOUDI JABBARI}{}{}{}{
-Spatio-Temporal Modeling of Zoonotic Cutaneous Leishmaniasis (ZCL) in Central Tunisia
-}
-\cventry{2019-05-21}{Hajer KHLAIFI}{}{}{}{
-Preliminary study on the detection and classification of swallowing sounds
-}
-\cventry{2019-02-14}{Olfa SAIDI}{}{}{}{
-Modeling the Tunisian Burden of Cardiovascular Diseases and Diabetes
-}
-\cventry{2018-07-02}{Ibtihel REBHI}{}{}{}{
-Statistical methods for sensory and consumer data mapping
-}
-\section{Skills}
-\cvitem{Languages}{Strong reading, writing and speaking competencies for English, French, and Arabic.}
-\cvitem{Coding}{Python, R, tableau, spark, h2o, Shiny, \LaTeX, \ldots}
-\cvitem{Misc.}{Quantitative research, Project management, Qualitative research, Data Mining, Machine Learning, Big Data, Academic research, Teaching, training, consultation, \LaTeX{} typesetting and publishing.}
+\begin{cvdated}
+\cvrow{Sep.\ 2009}{\textbf{Habilitation (Tenure), Statistics}, Universit\'e de Tunis El Manar, Tunisia. \'Ecole
+Nationale d'Ing\'enieurs de Tunis.\newline
+Thesis: \emph{Probl\`emes autour de la probabilit\'e et de la statistique : m\'ethodes et applications}.
+Dissertation: \href{https://malouche.github.io/myCV/reports.html}{malouche.github.io/myCV/reports.html}}
+\cvrow{Oct.\ 1997}{\textbf{Doctorate (Ph.D.), Statistics}, Paul Sabatier University, Toulouse, France.\newline
+Thesis: \emph{Classification des familles exponentielles associ\'ees \`a des fonctions Pick}.
+Dissertation: \href{https://malouche.github.io/myCV/reports.html}{malouche.github.io/myCV/reports.html}}
+\cvrow{1993 -- 1994}{\textbf{Master's Degree (D.E.A.)}, Paul Sabatier University, Toulouse, France. Applied Mathematics, Statistics.}
+\cvrow{1989 -- 1993}{\textbf{Bachelor (Ma\^itrise)}, \'Ecole Normale Sup\'erieure de Bizerte, Tunisia.}
+\end{cvdated}
+
+% ---- Teaching --------------------------------------------------------
+\section{Teaching}
+\textit{All statistics courses are taught with R. The last column gives the programming and data-analysis content of each course.}
+
+\subsection{Qatar University (2022 -- present)}
+{\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{1.45cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{\dimexpr\textwidth-10.55cm-8\tabcolsep\relax}@{}}
+\toprule
+\textbf{Code} & \textbf{Title} & \textbf{Level} & \textbf{Terms} & \textbf{Programming / data analysis}\\
+\midrule\endhead
+\bottomrule\endfoot
+STAT 102 & Statistics II & Undergraduate & Fall 2022; Fall 2023 (lecture and lab sections) & R (introduced to students in this course)\\
+STAT 312 & Stochastic Processes & Undergraduate & Fall 2022; Fall 2023; Fall 2024; Fall 2025 (2 sections); Fall 2026 &
+ R and RStudio throughout; R labs on Markov chains (\texttt{markov\-chain}), $n$-step transitions, simulation and
+ visualisation, classification and absorption; since 2025, GitHub for code and submissions and GitHub Copilot in
+ RStudio under written guidelines on responsible AI use\\
+STAT 341 & Actuarial Statistics I & Undergraduate & Fall 2023; Fall 2024; Fall 2025 (2 sections) & R; computing methods for aggregate claims distributions\\
+STAT 442 & Actuarial Statistics II & Undergraduate & Spring 2023; Spring 2025 & R for data analysis\\
+STAT 481 & Multivariate Analysis & Undergraduate & Fall 2026 & All computational work in R with RStudio; five R labs
+ (matrix algebra, normality assessment, Hotelling's $T^2$, MANOVA, PCA, factor analysis); lab reports and course
+ project submitted as reproducible Quarto documents\\
+STAT 482 & Bayesian Statistics & Undergraduate & Spring 2026 & Weekly R labs (Beta--Binomial updating, grid
+ approximation, posterior sampling, Bayesian regression); R, Stan and WinBUGS\\
+STAT 499 & Senior Project & Undergraduate & Spring 2025; Spring 2026 & Supervised projects; Spring 2026 projects built in R on NHANES data\\
+STAT 617 & Statistical Computation and Simulation & Master & Fall 2023 & Advanced R programming; Monte Carlo methods,
+ random variate generation, bootstrap, MCMC and optimisation in R; term project\\
+STAT 626 & Bayesian Statistical Inference & Master & Spring 2023; Spring 2025 & RStudio\\
+STAT 690 & Thesis & Master & Fall 2025 & Supervised thesis\\
+BIOL 601 & Advanced Biostatistics & Doctorate (Ph.D.) & Fall 2024; Fall 2025 & R for advanced statistical analysis;
+ in 2025, GitHub submissions and GitHub Copilot in RStudio under written guidelines\\
+BIOL 503 & Experimental Design and Statistical Analysis & Master & Spring 2025 & R (co-taught course); GitHub submissions and GitHub Copilot in RStudio under written guidelines\\
+MATH 231 & Linear Algebra & Undergraduate & Spring 2024 & ---\\
+HONS 301 & Expertise, Experience and Exchange: tips for research methods (Honors Program) & Undergraduate & Fall 2024; Spring 2025; Fall 2025 & R\\
+HONS 203 & Mastering Critical Thinking (Honors Program) & Undergraduate & Fall 2023 (2 sections) & ---\\
+\end{longtable}}
+
+\subsection{Earlier institutions}
+\begin{itemize}
+\item \textbf{The American University in Cairo (2021--2022):} Data Science with Python; Statistical Inference; Introduction to Statistics.
+\item \textbf{University of Carthage, ESSAI (2003--2021):} Data Analysis (PCA, CA, MCA) with R; Mathematical Statistics
+      with R; Data Mining with R; Bayesian Statistics with OpenBUGS/WinBUGS/RStan/JAGS; Time Series with R/Python;
+      Big Data with R/Python, SQL, Spark, H2O; Advanced R/Python: data management, data visualization, dashboards,
+      Shiny apps, Heroku apps, Bokeh.
+\item \textbf{Yale University (2014--2019 period):} Time Series with R/Python.
+\item \textbf{University of Michigan (2016--2017):} 4 lectures on applied graphical models; 1 lecture on data visualization with R; 1 lecture on sensory analysis.
+\item \textbf{York University (2002--2003):} Applied Regression Models with SAS; Introduction to Statistics with Minitab; Introduction to the Theory of Probability.
+\end{itemize}
+
+% ---- Supervision -----------------------------------------------------
+\section{Supervision}
+\subsection{Ph.D.\ theses (University of Carthage; all completed)}
+\begin{cvdated}
+\cvrow{2019-06-28}{Safa \textsc{Aouinti}. Statistical treatment of NGS results from IMGT/HighV-QUEST of antigen receptors (immunoglobulins and T receptors): methodology and visualization.}
+\cvrow{2019-06-22}{Khouloud \textsc{Talmoudi Jabbari}. Spatio-temporal modeling of zoonotic cutaneous leishmaniasis (ZCL) in central Tunisia.}
+\cvrow{2019-05-21}{Hajer \textsc{Khlaifi}. Preliminary study on the detection and classification of swallowing sounds.}
+\cvrow{2019-02-14}{Olfa \textsc{Saidi}. Modeling the Tunisian burden of cardiovascular diseases and diabetes.}
+\cvrow{2018-07-02}{Ibtihel \textsc{Rebhi}. Statistical methods for sensory and consumer data mapping.}
+\end{cvdated}
+
+\subsection{M.Sc.\ theses (Qatar University)}
+\begin{cvdated}
+\cvrow{2026 -- 2027}{Hadeel \textsc{Alashwal}, M.Sc.\ Applied Statistics (thesis option). Control-spectrum shift,
+statistical calibration, and performance portability in routine biomarker prediction of liver steatosis and fibrosis
+(NHANES and Qatar primary-care data). Supervisor (co-supervisor: A.~Al-Khinji). In progress.}
+\cvrow{2025 -- 2027}{Muna Abdalla \textsc{Rayashi}, M.Sc.\ Statistics (thesis option). Comprehensive health phenotyping
+and predictive risk stratification: an integrated machine learning approach to gender disparities in the Qatari
+population (Qatar Biobank). Supervisor. In progress.}
+\end{cvdated}
+
+\subsection{Undergraduate capstone and senior projects (Qatar University)}
+\begin{cvdated}
+\cvrow{Spring 2026}{Temporal machine learning classification of anemia status using iron biomarkers: a 20-year NHANES analysis (2001--2020). Supervisor.}
+\cvrow{Spring 2026}{Unsupervised learning and autoencoders for iron deficiency phenotyping across the lifespan: temporal patterns in NHANES (2001--2020). Supervisor.}
+\cvrow{Spring 2026}{Deep learning regression for predicting serum ferritin from demographic and dietary factors using NHANES data (2017--2018 cycle). Supervisor (STAT 499 Senior Project).}
+\cvrow{Fall 2025}{Bibliometric study of CAR T-cell therapy in lymphoma (three students). Supervisor, with A.~Al-Khinji. Presented 17 December 2025.}
+\cvrow{Spring 2025}{From regional to global: Qatar University's research trajectory, 2010--2020 --- a bibliometric study of ten MENA and global universities (STAT 499 Senior Project). Presented May 2025.}
+\cvrow{Fall 2024}{Predicting autoimmune status through diet and other factors using machine learning: a comparative analysis of logistic regression, support vector machines and random forests, on Qatar Biobank data (two students). Presented December 2024.}
+\end{cvdated}
+
+\subsection{Other supervision}
+\begin{itemize}
+\item University of Carthage: Master and Engineering theses on applied statistics and data science.
+\item Qatar University: supervisor of the two QU student research grants listed under Grants.
+\end{itemize}
+
+% ---- Grants ----------------------------------------------------------
 \section{Grants}
-\cventry{2024-2025}{Autoimmune disorders profile pre and post-COVID era}{QF-QBB-RES-ACC-00277}{}{}{
-Research on the prevalence and management of autoimmune diseases in Qatar using advanced data analysis techniques to develop prognostic models and inform public health policies, based on Qatar Biobank data from 2015-2023.
-}
-\cventry{2024-2025}{Investigating Gender Disparities in Quality of Life Across the Qatari Population}{QF-QBB-RES-ACC-00281}{}{}{
-Research project analyzing health-related quality of life (HRQOL) disparities in Qatar, focusing on gender differences using data from the Qatar Bio Bank. The project utilizes advanced machine learning to inform public health policies and reduce health inequalities.
-}
-\cventry{Fall 2025}{Proteomic Signatures of Fatigue and Mental-Health Symptoms in the Qatar Biobank Cohort}{QF-QBB-RES-ACC-00178}{}{}{
-Research project investigating molecular mechanisms underlying chronic fatigue in Qatar Biobank participants. Using proteomic profiling to identify inflammatory and metabolic signatures that differentiate fatigued from non-fatigued individuals, with integration into Bayesian networks to test pain-fatigue-mental health pathways and explore sex-specific profiles for targeted interventions.
-}
-\cventry{Fall 2024}{Detecting the Undetectable: A Study on AI Tool Efficacy in Academic Writing}{Student Grant 2024 Cycle 2, 130}{}{}{
-Research project evaluating the efficacy of AI detection tools in identifying AI-generated text in academic settings, aiming to enhance academic integrity policies at Qatar University.
-}
-\cventry{Spring 2025}{Comparative Analysis of Research Publication Trends}{Student Grant 2025 Cycle 1, 293}{}{}{
-A Decade-Long Study of Leading MENA and Global Universities (2010–2020). This study aims to analyze research output trends, citation impact, and collaboration networks among major universities in the MENA region and globally.
-}
-\section{Papers}
-\subsection{Research Interests}
-Bayesian networks and graphical models, Biostatistics and health outcomes research, Qatar Biobank data analysis, Path analysis and causal inference, Meta-analysis and systematic reviews, Chronic pain and mental health modeling, Educational statistics, Statistical computing and data visualization, Consumer preferences and sensory data analysis.
-\subsection{Research Papers}
+\begin{cvdated}
+\cvrow{2024 -- 2025}{\textbf{Autoimmune disorders profile pre and post-COVID era}, QF-QBB-RES-ACC-00277.\newline
+Prevalence and management of autoimmune diseases in Qatar; prognostic models to inform public health policy, based on Qatar Biobank data from 2015--2023.}
+\cvrow{2024 -- 2025}{\textbf{Investigating Gender Disparities in Quality of Life Across the Qatari Population}, QF-QBB-RES-ACC-00281.\newline
+Health-related quality of life (HRQOL) disparities in Qatar, focusing on gender differences, using Qatar Biobank data and machine learning.}
+\cvrow{Fall 2025}{\textbf{Proteomic Signatures of Fatigue and Mental-Health Symptoms in the Qatar Biobank Cohort}, QF-QBB-RES-ACC-00178.\newline
+Proteomic profiling to identify inflammatory and metabolic signatures of chronic fatigue, integrated into Bayesian
+networks to test pain--fatigue--mental health pathways and sex-specific profiles.}
+\cvrow{Fall 2024}{\textbf{Detecting the Undetectable: A Study on AI Tool Efficacy in Academic Writing}, QU Student Grant 2024 Cycle 2, no.~130.\newline
+Efficacy of AI-detection tools in identifying AI-generated text in academic settings.}
+\cvrow{Spring 2025}{\textbf{Comparative Analysis of Research Publication Trends}, QU Student Grant 2025 Cycle 1, no.~293.\newline
+Research output, citation impact and collaboration networks of leading MENA and global universities (2010--2020).}
+\end{cvdated}
+
+% ---- Skills ----------------------------------------------------------
+\section{Skills}
+\textbf{Languages}\enspace English, French, and Arabic (strong reading, writing and speaking).\par
+\textbf{Coding}\enspace R (RStudio, Quarto, Shiny, Stan), Python, SQL, Spark, H2O, Tableau, Git/GitHub, \LaTeX.\par
+\textbf{Misc.}\enspace Quantitative and qualitative research, survey design, project management, data mining,
+machine learning, big data, teaching, training, consultation, \LaTeX{} typesetting and publishing.
+
+% ---- Public writing --------------------------------------------------
+\section{Commentary and Public Writing}
+\begin{itemize}
+\item Benstead, L., Lust, E., Malouche, D., \& Wichmann, J. (2014, 27 Oct).
+      \href{https://www.washingtonpost.com/news/monkey-cage/wp/2014/10/27/tunisian-elections-bring-hope-in-uncertain-times/}{Tunisian elections bring hope in uncertain times}. \emph{Washington Post}, Monkey Cage.
+\item Benstead, L., Lust, E., Malouche, D., Soltan, G., \& Wichmann, J. (2013, 14 Feb).
+      \href{https://www.foreignaffairs.com/tunisia/islamists-arent-obstacle}{Islamists aren't the obstacle}. \emph{Foreign Affairs}.
+\item Benstead, L. J., Lust, E. M., Malouche, D., Soltan, G., \& Wichmann, J. (2013).
+      \href{https://archive-yaleglobal.yale.edu/content/winners-and-losers-after-arab-spring}{Winners and losers after Arab Spring}. \emph{YaleGlobal Online}.
+\item Benstead, L. J., Lust, E., \& Malouche, D. (2012, 19 Dec).
+      \href{https://archive-yaleglobal.yale.edu/content/tunisian-revolution-work-progress}{Tunisian revolution is work in progress}. \emph{YaleGlobal Online}.
+\item Malouche, D. (2019). \href{https://archive-yaleglobal.yale.edu/content/arab-spring-success-story-tunisians-vote}{Arab Spring success story: Tunisians vote}. \emph{YaleGlobal Online}.
+\item Malouche, D. (2020, Oct). \href{https://leaders.com.tn/article/30775-dhafer-malouche-quel-impact-de-la-covid-19-sur-l-esperance-de-vie-en-tunisie}{Quel impact de la Covid-19 sur l'esp\'erance de vie en Tunisie ?} \emph{Leaders} (Tunisia).
+\item Malouche, D. (2021, Jul). Un travail d'analyse statistique exige la disponibilit\'e des donn\'ees du minist\`ere de la sant\'e. \emph{Espace Manager} (Tunisia).
+\end{itemize}
+
+% ---- Publications ----------------------------------------------------
+\section{Publications}
+\textit{Journal articles are grouped by theme and listed newest first; conference proceedings and accepted papers
+follow as their own groups. Quartile tags are given as published. Preprints are listed on
+\href{https://dhafermalouche.net}{dhafermalouche.net}.}
+
+\subsection{Published}
 \begin{enumerate}
-\item Al-Khinji, A., Alashwal, H., Al-Hor, A., Al-Kuwari, H., Bismi, F., Maki, N. A., Abunada, T., \& Malouche, D. (2026). Bayesian and frequentist meta-analysis of GCB-classification heterogeneity in TP53-reporting DLBCL cohorts at small k: an applied case study with reporting guidance. \textit{BMC Medical Research Methodology}. [Accepted 15 September 2026, in press; submission ID d5408e42-bb7f-415e-af3b-ca0b9d14f8cf].
-\item Naija, A., Mohamed, O., Malouche, D., \& Abiib, S. (2026). Global phthalate occurrence and risk assessment in drinking water: a comprehensive Bayesian and probabilistic approach. \textit{Science of the Total Environment}. [Accepted 3 September 2026, in press; manuscript ID STOTEN-D-26-00544R2].
-\item Muhammad, M. I., Al-Khinji, A., Al-Ansari, M., Al-Marri, N., Alshaheen, S., \& Malouche, D. (2026). Allele-stratified activity of RAS inhibitors in pancreatic ductal adenocarcinoma: a systematic review with model-validation-stratified synthesis of preclinical evidence and exploratory meta-analysis of early-phase trials. \textit{Cancers}. [Accepted, in press; manuscript ID cancers-4500792].
-\item Al-Khinji, A., Malouche, D., Al-Hor, A., Haj Bakri, A., \& Al-Kuwari, M. G. (2026). Differential laboratory monitoring in autoimmune disease: a matched case--control study from Qatar primary care. \textit{Journal of Translational Medicine}. [Accepted, in press; manuscript ID JTRM-D-26-01894].
-\item Mzoughi, C., \& Malouche, D. (2026). Legislating the future: statistical foresight as a foundation for anticipatory law. \textit{Proceedings of the 12th Annual International Academic Conference, Kuwait International Law School (KILAW)}. [Accepted, in press].
-\item Mizza, D., ElKhodary, K., Malouche, D., \& Al-Mousa, M. (2026). Multi-modal virtual reality in engineering education: a design case study of fostering situational interest through project-based learning. \textit{International Journal of Engineering Pedagogy (iJEP)}, 16(5), 4--27. \href{https://doi.org/10.3991/ijep.v16i5.61389}{doi:10.3991/ijep.v16i5.61389}
-\item Al-Sharman, A., Khalil, H., Malouche, D., Kanaan, S., Kim, M., Saad, N., \& Abdelrazeq, M. (2026). Directional symptom dependencies in multiple sclerosis and Parkinson's disease: A comparative Bayesian network analysis. \textit{Journal of Multidisciplinary Healthcare}. \href{https://doi.org/10.2147/JMDH.S607760}{doi:10.2147/JMDH.S607760}
-\item Al-Khinji, A., \& Malouche, D. (2026). Probabilistic pathways from chronic pain to suicidal ideation in Qatar: a Bayesian-Network study. \textit{Journal of Translational Medicine}, 24, 899. [Q1]. \href{https://doi.org/10.1186/s12967-026-08286-9}{doi:10.1186/s12967-026-08286-9}
-\item Al-Khinji, A., Malouche, D., Al-Thani, N., Mustafa, A., Abdulmajeed, J., \& Al-Kuwari, M. G. (2026). Hematological abnormalities in clinically diagnosed non-alcoholic steatohepatitis: prevalence, clinical correlates, and fibrosis risk in a case--control study from Qatar. \textit{Frontiers in Medicine}, 13, 1773499. [Q1]. \href{https://doi.org/10.3389/fmed.2026.1773499}{doi:10.3389/fmed.2026.1773499}
-\item Mizza, D., Reese, M., \& Malouche, D. (2025). Flipped classroom evaluation and blended learning potential: a case study of engagement and inclusion in quantitative education. \textit{Smart Learning Environments}, 12, 56. [Q1]. \href{https://doi.org/10.1186/s40561-025-00412-2}{doi:10.1186/s40561-025-00412-2}
-\item Al Kuwari, H., Al Khinji, A., Al-Hamed, D., Al Hor, A., Malouche, D., \& Iqbal, J. (2025). NOTCH1 mutation status as a prognostic biomarker in T-cell acute lymphoblastic leukemia: a systematic review and meta-analysis. \textit{BMC Cancer}, 25(1), 1820. [Q2]. \href{https://doi.org/10.1186/s12885-025-15233-2}{doi:10.1186/s12885-025-15233-2}
-\item Al-Khinji, A., Al-Korbi, N., Al-Kuwari, S., Al-Hor, A., \& Malouche, D. (2025b). Immune checkpoint inhibitors in pancreatic adenocarcinoma: A systematic review and meta analysis of clinical outcomes. \textit{Frontiers in Oncology}, 15, 1569884. [Q2]. \href{https://doi.org/10.3389/fonc.2025.1569884}{doi:10.3389/fonc.2025.1569884}
-\item Al-Khinji, A. A. M. A., \& Malouche, D. (2025c). Modeling chronic pain interconnections using bayesian networks: Insights from the qatar biobank study. \textit{Frontiers in Pain Research}, 6. [Q1]. \href{https://doi.org/10.3389/fpain.2025.1573465}{doi:10.3389/fpain.2025.1573465}
-\item Gad, A., Malouche, D., Chhabra, M., Hoang, D., Suk, D., Ron, N., \ldots Elmakaty, I. (2024). Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns: A prospective cohort analysis. \textit{Journal of Perinatal Medicine}. [Q2]. \href{https://doi.org/10.1515/jpm-2023-0384}{doi:10.1515/jpm-2023-0384}
-\item Khalil, H., Malouche, D., Al Marri, D., Shoukry, M., Shehabi, M., Yahia, R., \ldots El-Salim, K. (2024). 10. the comparative ability of five mobility and balance outcome measures in predicting the risk of falls in people with multiple sclerosis. \textit{Multiple Sclerosis and Related Disorders}, 92, 105971. [Q2]. \href{https://doi.org/10.1016/j.msard.2024.105971}{doi:10.1016/j.msard.2024.105971}
-\item Khalil, H., Malouche, D., Kanaan, S., Al-Sharman, A., \& El-Salim, K. (2024). 138. factors affecting the quality of sleep and physical activity participation of multiple sclerosis (ms) patients: A path analysis. \textit{Multiple Sclerosis and Related Disorders}, 92, 106099. [Q2]. \href{https://doi.org/10.1016/j.msard.2024.106099}{doi:10.1016/j.msard.2024.106099}
-\item Losada-Echeberría, M., Naranjo, G., Malouche, D., Taamalli, A., Barrajón-Catalán, E., \& Micol, V. (2023). Influence of drying temperature and harvesting season on phenolic content and antioxidant and antiproliferative activities of olive (olea europaea) leaf extracts. \textit{International Journal of Molecular Sciences}, 24(1). [Q1]. \href{https://doi.org/10.3390/ijms24010054}{doi:10.3390/ijms24010054}
-\item Malouche, D. (2023). Describing conditional independence statements using undirected graphs. \textit{Axioms}, 12(12). [Q2]. \href{https://www.mdpi.com/2075-1680/12/12/1109}{URL}
-\item Rebhi, I., \& Malouche, D. (2023). Sensmap r package and sensmapgui shiny web application for sensory and consumer data mapping: Variations on external preference mapping and stability assessment. \textit{Journal of Sensory Studies}. [Q3]. \href{http://doi.org/10.1111/joss.12809}{doi:10.1111/joss.12809}
-\item Ben-Hassine, K., Taamalli, A., Rezig, L., Yangui, I., Benincasa, C., Malouche, D., \ldots Mnif, W. (2022). Effect of processing technology on chemical, sensory, and consumers' hedonic rating of seven olive oil varieties. \textit{Food Science \& Nutrition}. [Q1]. \href{https://doi.org/10.1002/fsn3.2717}{doi:10.1002/fsn3.2717}
-\item Ben-Hassine, K., Yangui, I., Mnif, W., Taamalli, A., Benincasa, C., Kamoun, N., \& Malouche, D. (2022). Chemometric analysis and physicochemical composition of foreign and tunisian olive oil: Consumer preferences. \textit{Journal of Food Quality}, vol. 2022, Article ID 3981028, 10 pages. [Q2]. \href{https://doi.org/10.1155/2022/3981028}{doi:10.1155/2022/3981028}
-\item Malouche, D. (2022). Implication of faithfulness assumption. \textit{Sankhya B: The Indian Journal of Statistics}. [Q4]. \href{https://doi.org/10.1007/s13571-021-00271-0}{doi:10.1007/s13571-021-00271-0}
-\item Saidi, O., Malouche, D., Saksena, P., Arfaoui, L., Talmoudi, K., Hchaichi, A., \ldots Ben Alaya, N. (2020). Impact of contact tracing, respect of isolation and lockdown in reducing the number of cases infected with covid-19: Case study: Tunisia's response from march 22 to 04 may 2020. \textit{International Journal of Infectious Diseases}. [Q1]. \href{https://doi.org/10.1016/j.ijid.2021.02.010}{doi:10.1016/j.ijid.2021.02.010}
-\item Kongbonga, G. Y. M., Hassine, K. B., Ghalila, H., Malouche, D. et al. (2019). Front-face fluorescence using uv-led coupled to usb spectrometer to discriminate between virgin olive oil from two cultivars. \textit{Food and Nutrition Sciences}, 10(02), 119. [Q2]. \href{http://www.scirp.org/journal/PaperInformation.aspx?PaperID=90405&#abstract}{URL}
-\item Mekki, I., Malouche, D., Smeti, S., Hajji, H., Mahouachi, M., M, E., \& Atti, N. (2019). Study of the breeding systems of sheeps in the montagnous area of north-western tunisia. \textit{Livestock Research for Rural Development}, 31(108). [Q3]. \href{http://www.lrrd.org/lrrd31/7/ilyes31108.html}{URL}
-\item Saidi, O., Hajjem, S., Zoghlami, N., Aounallah-Skhiri, H., Mansour, N. B., Hsairi, M., \ldots O'Flaherty, M. et al. (2019). Premature mortality attributable to smoking among tunisian men in 2009. \textit{Tobacco induced diseases}, 17. [Q1]. \href{https://dx.doi.org/10.18332%2Ftid%2F112666}{doi:10.18332/tid/112666}
-\item Saidi, O., O'Flaherty, M., Zoghlami, N., Malouche, D., Capewell, S., Critchley, J. A., \ldots Guzman Castillo, M. (2019). Comparing strategies to prevent stroke and ischemic heart disease in the tunisian population: Markov modeling approach using a comprehensive sensitivity analysis algorithm. \textit{Computational and mathematical methods in medicine}, 2019. [Q2]. \href{https://doi.org/10.1155/2019/2123079}{doi:10.1155/2019/2123079}
-\item Saidi, O., Zoghlami, N., Bennett, K. E., Mosquera, P. A., Malouche, D., Capewell, S., \ldots O'Flaherty, M. (2019). Explaining income-related inequalities in cardiovascular risk factors in tunisian adults during the last decade: Comparison of sensitivity analysis of logistic regression and wagstaff decomposition analysis. \textit{International journal for equity in health}, 18(1), 177. [Q1]. \href{https://equityhealthj.biomedcentral.com/articles/10.1186/s12939-019-1047-6}{URL}
-\item Salem, S., Malouche, D., \& Romdhane, H. B. (2019). Tunisian population quality of life: A general analysis using sf-36. \textit{Eastern Mediterranean Health Journal}, 25(9). [Q3]. \href{https://apps.who.int/iris/bitstream/handle/10665/333459/10203397192509-eng.pdf#page=23}{URL}
-\item Khlaifi, H., Istrate, D., Demongeot, J., \& Malouche, D. (2018). Swallowing sound recognition at home using gmm. \textit{IRBM}, 39(6), 407–412. [Q4]. \href{https://doi.org/10.1016/j.irbm.2018.10.009}{doi:10.1016/j.irbm.2018.10.009}
-\item Benstead, L. J., Kao, K., Landry, P. F., Lust, E. M., \& Malouche, D. (2017). Using tablet computers to implement surveys in challenging environments. \textit{Survey Practice}, 10(2), 1–9. [Q1]. \href{https://doi.org/10.29115/SP-2017-0009}{doi:10.29115/SP-2017-0009}
-\item Rebhi, I., \& Malouche, D. (2017a). An approach for external preference mapping improvement by denoising consumer rating data. \textit{International Journal of Advanced Computer science and Applications}, 8(12), 500–508. [Q3]. \href{https://doi.org/10.14569/IJACSA.2017.081266}{doi:10.14569/IJACSA.2017.081266}
-\item Rebhi, I., \& Malouche, D. (2017b). Decision making about products development through consumer preferences modeling based on descriptive characteristics of products. \textit{IEEE/ACS 14th International Conference on Computer Systems and Applications (AICCSA)}, 423–430. \href{https://doi.org/10.1109/AICCSA.2017.202}{doi:10.1109/AICCSA.2017.202}
-\item Talmoudi, K., Bellali, H., Ben-Alaya, N., Saez, M., Malouche, D., \& Chahed, M. K. (2017a). Comparative performance analysis for generalized additive and generalized linear modeling in epidemiology. \textit{International Journal of Advanced Computer Science and Applications}, 8(12). [Q3]. \href{https://doi.org/10.14569/IJACSA.2017.081255}{doi:10.14569/IJACSA.2017.081255}
-\item Talmoudi, K., Bellali, H., Ben-Alaya, N., Saez, M., Malouche, D., \& Chahed, M. K. (2017b). Modeling zoonotic cutaneous leishmaniasis incidence in central tunisia from 2009-2015: Forecasting models using climate variables as predictors. \textit{PLoS neglected tropical diseases}, 11(8), e0005844. [Q1]. \href{https://doi.org/10.1371/journal.pntd.0005844}{doi:10.1371/journal.pntd.0005844}
-\item Triki, H. Z., Laabir, M., Lafabrie, C., Malouche, D., Bancon-Montigny, C., Gonzalez, C., \ldots Daly-Yahia, O. K. (2017). Do the levels of industrial pollutants influence the distribution and abundance of dinoflagellate cysts in the recently-deposited sediment of a mediterranean coastal ecosystem? \textit{Science of the Total Environment}, 595, 380–392. [Q1]. \href{https://doi.org/10.1016/j.scitotenv.2017.03.183}{doi:10.1016/j.scitotenv.2017.03.183}
-\item Aouinti, S., Giudicelli, V., Duroux, P., Malouche, D., Kossida, S., \& Lefranc, M.-P. (2016). Imgt/statclonotype for pairwise evaluation and visualization of ngs ig and tr imgt clonotype (aa) diversity or expression from imgt/highv-quest. \textit{Frontiers in immunology}, 7, 339. [Q1]. \href{https://doi.org/10.3389/fimmu.2016.00339}{doi:10.3389/fimmu.2016.00339}
-\item Aouinti, S., Malouche, D., Giudicelli, V., Kossida, S., \& Lefranc, M.-P. (2016). Correction: Imgt/highv-quest statistical significance of imgt clonotype (aa) diversity per gene for standardized comparisons of next generation sequencing immunoprofiles of immunoglobulins and t cell receptors. \textit{PloS one}, 11(1), e0146702. \href{https://doi.org/10.1371/journal.pone.0146702}{doi:10.1371/journal.pone.0146702}
-\item Kerfai, N., Bejar Ghadhab, B., \& Malouche, D. (2016). Performance measurement and quality costing in tunisian manufacturing companies. \textit{The TQM Journal}, 28(4), 588–596. [Q1]. \href{https://www.emerald.com/insight/content/doi/10.1108/TQM-10-2013-0119/full/html}{URL}
-\item Saidi, O., Malouche, D., O'Flaherty, M., Mansour, N. B., Skhiri, H., Romdhane, H. B., \& Bezdah, L. (2016). Assessment of cardiovascular risk in tunisia: Applying the framingham risk score to national survey data. \textit{BMJ open}, 6(11), e009195. [Q1]. \href{https://doi.org/10.1136/bmjopen-2015-009195}{doi:10.1136/bmjopen-2015-009195}
-\item Selmi, G., Azouz, Z. B., \& Malouche, D. (2015). The volume radius function: A new descriptor for the segmentation of volumetric medical images. \textit{2015 International Conference on Image and Vision Computing New Zealand (IVCNZ)}, 1–6. \href{https://doi.org/10.1109/IVCNZ.2015.7761572}{doi:10.1109/IVCNZ.2015.7761572}
-\item Aouinti, S., Malouche, D., Giudicelli, V., Kossida, S., \& Lefranc, M.-P. (2015). Imgt/highv-quest statistical significance of imgt clonotype (aa) diversity per gene for standardized comparisons of next generation sequencing immunoprofiles of immunoglobulins and t cell receptors. \textit{PLoS One}, 10(11), e0142353. [Q1]. \href{https://pubmed.ncbi.nlm.nih.gov/26540440/}{URL}
-\item Hassine, K. B., Taamalli, A., Slama, M. B., Khouloud, T., Kiristakis, A., Benincasa, C., \ldots Bornaz, S. et al. (2015). Characterization and preference mapping of autochthonous and introduced olive oil cultivars in tunisia. \textit{European Journal of Lipid Science and Technology}, 117(1), 112–121. [Q2]. \href{https://doi.org/10.1002/ejlt.201400049}{doi:10.1002/ejlt.201400049}
-\item Saidi, O., O'Flaherty, M., Mansour, N. B., Aissi, W., Lassoued, O., Capewell, S., \ldots Romdhane, H. B. (2015). Forecasting tunisian type 2 diabetes prevalence to 2027: Validation of a simple model. \textit{BMC public health}, 15(1), 104. [Q1]. \href{https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-015-1416-z}{URL}
-\item Ghribi, K., Sevestre, S., Guessoum, Z., Gil-Quĳano, J., Malouche, D., \& Youssef, A. (2014). A survey on multi-agent management approaches in the context of intelligent energy systems. \textit{2014 International Conference on Electrical Sciences and Technologies in Maghreb (CISTEM)}, 1–8. \href{https://doi.org/10.1109/CISTEM.2014.7077030}{doi:10.1109/CISTEM.2014.7077030}
-\item Hassine, K. B., El Riachy, M., Taamalli, A., Malouche, D., Ayadi, M., Talmoudi, K., \ldots Romano, E. et al. (2014). Consumer discrimination of chemlali and arbequina olive oil cultivars according to their cultivar, geographical origin, and processing system. \textit{European journal of lipid science and technology}, 116(7), 812–824. [Q2]. \href{https://doi.org/10.1002/ejlt.201300254}{doi:10.1002/ejlt.201300254}
-\item Karaoud, M., Bouafif, N., Malouche, D., Kouni, C., \& Achour, N. (2014). La mortalité parmi les enfants âgés de moins de 15 ans en tunisie peut être liée à la température. \textit{Revue d'Épidémiologie et de Santé Publique}, 62, S122. [Q3]. \href{https://www.em-consulte.com/article/911510/article/la-mortalite-parmi-les-enfants-ages-de-moins-de15}{URL}
-\item Karaoud, M., Malouche, D. et al. (2014). Les effets de la température sur la mortalité chez les personnes âgées en tunisie. \textit{Revue d'Épidémiologie et de Santé Publique}, 62, S219–S220. [Q3]. \href{https://www.em-consulte.com/article/915656/les-effets-de-la-temperature-sur-la-mortalite-chez}{URL}
-\item Karaoud, M., Malouche, D., \& Alaya, N. B. (2014). Mortalité et température journalière en tunisie: Une étude multi-région. \textit{Revue d'Épidémiologie et de Santé Publique}, 62, S218. [Q3]. \href{https://www.em-consulte.com/article/915651/article/mortalite-et-temperature-journaliere-en-tunisie\%C2\%A0-u}{URL}
-\item Karaoud, M., Malouche, D., \& Bouafif, N. (2014). Méthodologie de l'analyse de la relation température–mortalité en tunisie. \textit{Revue d'Épidémiologie et de Santé Publique}, 62, S141–S142. [Q3]. \href{https://www.em-consulte.com/article/911552/article/methodologie-de-l-analyse-de-la-relation-temperatu}{URL}
-\item Triki, H. Z., Daly-Yahia, O. K., Malouche, D., Komiha, Y., Deidun, A., Brahim, M. et al. (2014). Distribution of resting cysts of the potentially toxic dinoflagellate alexandrium pseudogonyaulax in recently-deposited sediment within bizerte lagoon (mediterranean coast, tunisia). \textit{Marine pollution bulletin}, 84(1-2), 172–181. [Q1]. \href{https://doi.org/10.1016/j.marpolbul.2014.05.014}{doi:10.1016/j.marpolbul.2014.05.014}
-\item Aouinti, S., Mallek, H., Malouche, D., Saidi, O., Lassouedi, O., Hentati, F., \& Romdhane, H. B. (2013). Graphical interaction models to extract predictive risk factors of the cost of managing stroke in tunisia. \textit{2013 International Conference on Computer Medical Applications (ICCMA)}, 1–6. \href{https://ieeexplore.ieee.org/document/6506162}{URL}
-\item Ben-Hassine, K., Taamalli, A., Ferchichi, S., Mlaouah, A., Benincasa, C., Romano, E., \ldots Hammami, M. (2013). Physicochemical and sensory characteristics of virgin olive oils in relation to cultivar, extraction system and storage conditions. \textit{Food research international}, 54(2), 1915–1925. [Q1]. \href{https://scholar.cnki.net/Detail/doi/GARJ2013/SJES14010600411056}{URL}
-\item Fehri, R., Rifi, H., Alboueiri, A., Malouche, D., Ayadi, M., Rais, H., \& Mezlini, A. (2013). Carcinoma of unknown primary: Retrospective study of 437 patients treated at salah azaiez institute. \textit{La Tunisie medicale}, 91(3), 205–208. [Q4]. \href{https://www.latunisiemedicale.com/article-medicale-tunisie_2165_en}{URL}
-\item Hassine, K. B., Taamalli, A., Malouche, D., Kammoun, N., Lazzez, A., Benincasa, C., \ldots Bouaziz, M. (2012). Influence of variety, geographical site and extraction system on virgin olive oil (voo) linoleic acid composition and its impact on consumer preference. \textit{Linoleic Acids}, 97. [Q2]. \href{https://www.researchgate.net/publication/288652330_Influence_of_variety_geographical_site_and_extraction_system_on_virgin_olive_oil_VOO_linoleic_acid_composition_and_its_impact_on_consumer_preference}{URL}
-\item Malouche, D., \& Rajaratnam, B. (2011). Gaussian covariance faithful markov trees. \textit{Journal of Probability and Statistics}, 2011. [Q3]. \href{https://doi.org/10.1155/2011/152942}{doi:10.1155/2011/152942}
-\item Ranjanomennahary, P., Ghalila, S. S., Malouche, D., Marchadier, A., Rachidi, M., Benhamou, C., \& Chappard, C. (2011). Comparison of radiograph-based texture analysis and bone mineral density with three-dimensional microarchitecture of trabecular bone. \textit{Medical Physics}, 38(1), 420–428. [Q1]. \href{https://doi.org/10.1118/1.3528125}{doi:10.1118/1.3528125}
-\item Arfa, I., Nouira, S., Abid, A., Alaya, N. B.-B., Zorgati, M., Malouche, D., \ldots Romdhane, H. B. et al. (2010). Absence d'association entre les polymorphismes du système rénine angiotensine (sra) et l'hypertension artérielle chez les diabétiques de type 2 tunisiens. \textit{la tunisie médicale}, 88(01), 37–40. [Q4].
-\item Arfa, I., Nouira, S., Abid, A., Bouafif-Ben, N. A., Zorgati, M. M., Malouche, D., \ldots Ben, H. R. et al. (2010). Lack of association between renin-angiotensin system (ras) polymorphisms and hypertension in tunisian type 2 diabetics. \textit{La tunisie Medicale}, 88(1), 38–41. [Q4].
-\item Ghouila, A., Jmel, H., Yahia, S., Malouche, D., \& Abdelhak, S. (2009). Multi-som: A novel clustering approach for gene expression analysis. \textit{Infection, Genetics, and Evolution: Journal of Molecular Epidemiology and Evolutionary Genetics in Infectious Diseases}, 9(3), 374–374. [Q1]. \href{https://europepmc.org/article/med/18992849}{URL}
-\item Ghouila, A., Yahia, S. B., Malouche, D., Jmel, H., Laouini, D., Guerfali, F. Z., \& Abdelhak, S. (2009). Application of multi-som clustering approach to macrophage gene expression analysis. \textit{Infection, Genetics and Evolution}, 9(3), 328–336. [Q1]. \href{https://doi.org/10.1016/j.meegid.2008.09.009}{doi:10.1016/j.meegid.2008.09.009}
-\item Malouche, D. (2009a). Determining full conditional independence by low-order conditioning. \textit{Bernoulli}, 15(4), 1179–1189. [Q1]. \href{https://projecteuclid.org/journals/bernoulli/volume-15/issue-4/Determining-full-conditional-independence-by-low-order-conditioning/10.3150/09-BEJ193.full}{URL}
-\item Malouche, D. (2009b). Mixed graphical model selection using holm's procedure. \textit{Communications in Statistics-Theory and Methods}, 38(9), 1453–1464. [Q3]. \href{https://doi.org/10.1080/03610920802455019}{doi:10.1080/03610920802455019}
-\item Arfa, I., Abid, A., Nouira, S., Elloumi-Zghal, H., Malouche, D., Mannai, I., \ldots Zouari, B. et al. (2008). Lack of association between the angiotensin-converting enzyme gene (i/d) polymorphism and diabetic nephropathy in tunisian type 2 diabetic patients. \textit{Journal of the Renin-Angiotensin-Aldosterone System}, 9(1), 32–36. [Q2]. \href{https://doi.org/10.3317/jraas.2008.002}{doi:10.3317/jraas.2008.002}
-\item Kokonendji, C. C., \& Malouche, D. (2008). A property of count distributions in the hinde–demétrio family. \textit{Communications in Statistics—Theory and Methods}, 37(12), 1823–1834. [Q3]. \href{https://doi.org/10.1080/03610920701809266}{doi:10.1080/03610920701809266}
-\item Malouche, D., \& Sevestre-Ghalila, S. (2008). Estimating high dimensional faithful gaussian graphical models by low-order conditioning. \textit{Proceeding, of 26th IASTED International Multi-Conference on Applied Informatics, Artificial Intelligence and Applications}, 595–025. \href{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.246.9608}{URL}
-\item Arfa, I., Abid, A., Malouche, D., Alaya, N. B., Azegue, T. R., Mannai, I., \ldots Blousa-Chabchoub, S. et al. (2007). Familial aggregation and excess maternal transmission of type 2 diabetes in tunisia. \textit{Postgraduate medical journal}, 83(979), 348–351. [Q1].
-\item Letac, G., Malouche, D., \& Maurer, S. (2002). The real powers of the convolution of a negative binomial distribution and a bernoulli distribution. \textit{Proceedings of the American Mathematical Society}, 130(7), 2107–2114. [Q1]. \href{https://www.ams.org/journals/proc/2002-130-07/S0002-9939-02-05352-2/}{URL}
-\item Letac, G., \& Malouche, D. (2000). The markov chain associated to a pick function. \textit{Probability theory and related fields}, 118(4), 439–454. [Q1]. \href{https://link.springer.com/article/10.1007/PL00008750}{doi:10.1007/PL00008750}
-\item Malouche, D. (1998). Natural exponential families associated to pick functions. \textit{Test}, 7(2), 391–412. [Q2]. \href{https://doi.org/10.1007/PL00008750}{doi:10.1007/PL00008750}
-\item Malouche, D. (1997). L'action quadratique du groupe des homographies sur les familles exponentielles réelles. \textit{Comptes Rendus de l'Académie des Sciences-Series I-Mathematics}, 325(9), 1029–1032. [Q3].
+\pubgroup{Statistical methodology: graphical models, conditional independence, exponential families}
+\item Malouche, D. (2023). \href{https://www.mdpi.com/2075-1680/12/12/1109}{Describing conditional independence statements using undirected graphs}. \emph{Axioms}, 12(12), 1109. \Qu2
+\item Malouche, D. (2022). \href{https://doi.org/10.1007/s13571-021-00271-0}{Implications of faithfulness in graphical models}. \emph{Sankhya B: The Indian Journal of Statistics}, 84(2), 495--515. \Qu4 \doi{10.1007/s13571-021-00271-0}
+\item Malouche, D., \& Rajaratnam, B. (2011). \href{https://doi.org/10.1155/2011/152942}{Gaussian covariance faithful Markov trees}. \emph{Journal of Probability and Statistics}, 2011. \Qu3 \doi{10.1155/2011/152942}
+\item Malouche, D. (2009a). \href{https://projecteuclid.org/journals/bernoulli/volume-15/issue-4/Determining-full-conditional-independence-by-low-order-conditioning/10.3150/09-BEJ193.full}{Determining full conditional independence by low-order conditioning}. \emph{Bernoulli}, 15(4), 1179--1189. \Qu1
+\item Malouche, D. (2009b). \href{https://doi.org/10.1080/03610920802455019}{Mixed graphical model selection using Holm's procedure}. \emph{Communications in Statistics -- Theory and Methods}, 38(9), 1453--1464. \Qu3 \doi{10.1080/03610920802455019}
+\item Kokonendji, C. C., \& Malouche, D. (2008). \href{https://doi.org/10.1080/03610920701809266}{A property of count distributions in the Hinde--Dem\'etrio family}. \emph{Communications in Statistics -- Theory and Methods}, 37(12), 1823--1834. \Qu3 \doi{10.1080/03610920701809266}
+\item Letac, G., Malouche, D., \& Maurer, S. (2002). \href{https://www.ams.org/journals/proc/2002-130-07/S0002-9939-02-05352-2/}{The real powers of the convolution of a negative binomial distribution and a Bernoulli distribution}. \emph{Proceedings of the American Mathematical Society}, 130(7), 2107--2114. \Qu1
+\item Letac, G., \& Malouche, D. (2000). \href{https://doi.org/10.1007/PL00008750}{The Markov chain associated to a Pick function}. \emph{Probability Theory and Related Fields}, 118(4), 439--454. \Qu1 \doi{10.1007/PL00008750}
+\item Malouche, D. (1998). \href{https://doi.org/10.1007/BF02565120}{Natural exponential families associated to Pick functions}. \emph{Test}, 7(2), 391--412. \Qu2 \doi{10.1007/BF02565120}
+\item Malouche, D. (1997). \href{https://www.sciencedirect.com/science/article/abs/pii/S0764444297890994}{L'action quadratique du groupe des homographies sur les familles exponentielles r\'eelles}. \emph{Comptes Rendus de l'Acad\'emie des Sciences -- Series I -- Mathematics}, 325(9), 1029--1032. \Qu3
+
+\pubgroup{Bayesian networks, path analysis and health outcomes (Qatar Biobank, Qatar primary care, clinical cohorts)}
+\item Al-Sharman, A., Khalil, H., Malouche, D., Kanaan, S., Kim, M., Saad, N., \& Abdelrazeq, M. (2026). \href{https://doi.org/10.2147/JMDH.S607760}{Directional symptom dependencies in multiple sclerosis and Parkinson's disease: a comparative Bayesian network analysis}. \emph{Journal of Multidisciplinary Healthcare}. \doi{10.2147/JMDH.S607760}
+\item Al-Khinji, A., Malouche, D., Al-Hor, A., Haj Bakri, A., \& Al-Kuwari, M. G. (2026). \href{https://doi.org/10.1186/s12967-026-08576-2}{Differential laboratory monitoring in autoimmune disease: a matched case--control study from Qatar primary care}. \emph{Journal of Translational Medicine}, published online 15 July 2026. \Qu1 \doi{10.1186/s12967-026-08576-2}
+\item Al-Khinji, A., \& Malouche, D. (2026). \href{https://doi.org/10.1186/s12967-026-08286-9}{Probabilistic pathways from chronic pain to suicidal ideation in Qatar: a Bayesian-network study}. \emph{Journal of Translational Medicine}, 24, 899. \Qu1 \doi{10.1186/s12967-026-08286-9}
+\item Al-Khinji, A., Malouche, D., Al-Thani, N., Mustafa, A., Abdulmajeed, J., \& Al-Kuwari, M. G. (2026). \href{https://doi.org/10.3389/fmed.2026.1773499}{Hematological abnormalities in clinically diagnosed non-alcoholic steatohepatitis: prevalence, clinical correlates, and fibrosis risk in a case--control study from Qatar}. \emph{Frontiers in Medicine}, 13, 1773499. \Qu1 \doi{10.3389/fmed.2026.1773499}
+\item Al-Khinji, A., Yusuf, M., Al Ashwal, H., Al Hor, A., Habib, A., Malouche, D., Al-Kuwari, M. G., \& Haj Bakri, A. (2026). \href{https://doi.org/10.1017/cts.2026.10272}{Translating vaccine durability data into personalized protection for autoimmune disease populations}. \emph{Journal of Clinical and Translational Science}, 10(s1), 12--13 (congress abstract). \doi{10.1017/cts.2026.10272}
+\item Al-Hor, A., Al-Khinji, A., Malouche, D., \& Al-Kuwari, M. (2026). \href{https://doi.org/10.1017/cts.2026.10636}{Comparative cardiovascular risk burden across autoimmune diseases: evidence from a primary care cohort}. \emph{Journal of Clinical and Translational Science}, 10(s1), 160 (congress abstract). \doi{10.1017/cts.2026.10636}
+\item Al-Khinji, A., Malouche, D. (2025c). \href{https://doi.org/10.3389/fpain.2025.1573465}{Modeling chronic pain interconnections using Bayesian networks: insights from the Qatar Biobank study}. \emph{Frontiers in Pain Research}, 6, 1573465. \Qu1 \doi{10.3389/fpain.2025.1573465}
+\item Gad, A., Malouche, D., Chhabra, M., Hoang, D., Suk, D., Ron, N., \ldots\ Elmakaty, I. (2024). \href{https://doi.org/10.1515/jpm-2023-0384}{Impact of birth weight to placental weight ratio and other perinatal risk factors on left ventricular dimensions in newborns: a prospective cohort analysis}. \emph{Journal of Perinatal Medicine}, 52(4), 433--444. \Qu2 \doi{10.1515/jpm-2023-0384}
+\item Khalil, H., Malouche, D., Al Marri, D., Shoukry, M., Shehabi, M., Yahia, R., \ldots\ El-Salim, K. (2024). \href{https://doi.org/10.1016/j.msard.2024.105971}{The comparative ability of five mobility and balance outcome measures in predicting the risk of falls in people with multiple sclerosis}. \emph{Multiple Sclerosis and Related Disorders}, 92, 105971 (congress abstract). \Qu2 \doi{10.1016/j.msard.2024.105971}
+\item Khalil, H., Malouche, D., Kanaan, S., Al-Sharman, A., \& El-Salim, K. (2024). \href{https://doi.org/10.1016/j.msard.2024.106099}{Factors affecting the quality of sleep and physical activity participation of multiple sclerosis (MS) patients: a path analysis}. \emph{Multiple Sclerosis and Related Disorders}, 92, 106099 (congress abstract). \Qu2 \doi{10.1016/j.msard.2024.106099}
+
+\pubgroup{Meta-analysis and systematic reviews}
+\item Al-Khinji, A., Yusuf, M., Al-Thani, N., Al Ashwal, H., Al Hor, A., Al-Kuwari, H., Habib, A., \& Malouche, D. (2026). \href{https://doi.org/10.1017/cts.2026.10297}{Why TP53 expression varies in lymphoma: insights from a Bayesian meta-analysis}. \emph{Journal of Clinical and Translational Science}, 10(s1), 23 (congress abstract). \doi{10.1017/cts.2026.10297}
+\item Al Kuwari, H., Al Khinji, A., Al-Hamed, D., Al Hor, A., Malouche, D., \& Iqbal, J. (2025). \href{https://doi.org/10.1186/s12885-025-15233-2}{NOTCH1 mutation status as a prognostic biomarker in T-cell acute lymphoblastic leukemia: a systematic review and meta-analysis}. \emph{BMC Cancer}, 25(1), 1820. \Qu2 \doi{10.1186/s12885-025-15233-2}
+\item Al-Khinji, A., Al-Korbi, N., Al-Kuwari, S., Al-Hor, A., \& Malouche, D. (2025b). \href{https://doi.org/10.3389/fonc.2025.1569884}{Immune checkpoint inhibitors in pancreatic adenocarcinoma: a systematic review and meta analysis of clinical outcomes}. \emph{Frontiers in Oncology}, 15, 1569884. \Qu2 \doi{10.3389/fonc.2025.1569884}
+
+\pubgroup{Education and learning technologies}
+\item Mizza, D., ElKhodary, K., Malouche, D., \& Al-Mousa, M. (2026). \href{https://doi.org/10.3991/ijep.v16i5.61389}{Multi-modal virtual reality in engineering education: a design case study of fostering situational interest through project-based learning}. \emph{International Journal of Engineering Pedagogy (iJEP)}, 16(5), 4--27. \doi{10.3991/ijep.v16i5.61389}
+\item Mizza, D., Reese, M., \& Malouche, D. (2025). \href{https://doi.org/10.1186/s40561-025-00412-2}{Flipped classroom evaluation and blended learning potential: a case study of engagement and inclusion in quantitative education}. \emph{Smart Learning Environments}, 12, 56. \Qu1 \doi{10.1186/s40561-025-00412-2}
+
+\pubgroup{Survey research and governance}
+\item Benstead, L. J., Kao, K., Landry, P. F., Lust, E. M., \& Malouche, D. (2017). \href{https://doi.org/10.29115/SP-2017-0009}{Using tablet computers to implement surveys in challenging environments}. \emph{Survey Practice}, 10(2), 1--9. \doi{10.29115/SP-2017-0009}
+
+\pubgroup{Population health, epidemiology and health policy (Tunisia)}
+\item Saidi, O., Malouche, D., Saksena, P., Arfaoui, L., Talmoudi, K., Hchaichi, A., \ldots\ Ben Alaya, N. (2021). \href{https://doi.org/10.1016/j.ijid.2021.02.010}{Impact of contact tracing, respect of isolation and lockdown in reducing the number of cases infected with COVID-19: case study: Tunisia's response from March 22 to 04 May 2020}. \emph{International Journal of Infectious Diseases}, 113, 26--33. \Qu1 \doi{10.1016/j.ijid.2021.02.010}
+\item Saidi, O., Hajjem, S., Zoghlami, N., Aounallah-Skhiri, H., Mansour, N. B., Hsairi, M., \ldots\ O'Flaherty, M. et al. (2019). \href{https://doi.org/10.18332/tid/112666}{Premature mortality attributable to smoking among Tunisian men in 2009}. \emph{Tobacco Induced Diseases}, 17. \Qu1 \doi{10.18332/tid/112666}
+\item Saidi, O., O'Flaherty, M., Zoghlami, N., Malouche, D., Capewell, S., Critchley, J. A., \ldots\ Guzman Castillo, M. (2019). \href{https://doi.org/10.1155/2019/2123079}{Comparing strategies to prevent stroke and ischemic heart disease in the Tunisian population: Markov modeling approach using a comprehensive sensitivity analysis algorithm}. \emph{Computational and Mathematical Methods in Medicine}, 2019, 2123079. \Qu2 \doi{10.1155/2019/2123079}
+\item Saidi, O., Zoghlami, N., Bennett, K. E., Mosquera, P. A., Malouche, D., Capewell, S., \ldots\ O'Flaherty, M. (2019). \href{https://equityhealthj.biomedcentral.com/articles/10.1186/s12939-019-1047-6}{Explaining income-related inequalities in cardiovascular risk factors in Tunisian adults during the last decade: comparison of sensitivity analysis of logistic regression and Wagstaff decomposition analysis}. \emph{International Journal for Equity in Health}, 18(1), 177. \Qu1
+\item Salem, S., Malouche, D., \& Romdhane, H. B. (2019). \href{https://apps.who.int/iris/bitstream/handle/10665/333459/10203397192509-eng.pdf\#page=23}{Tunisian population quality of life: a general analysis using SF-36}. \emph{Eastern Mediterranean Health Journal}, 25(9), 613--621. \Qu3
+\item Talmoudi, K., Bellali, H., Ben-Alaya, N., Saez, M., Malouche, D., \& Chahed, M. K. (2017a). \href{https://doi.org/10.14569/IJACSA.2017.081255}{Comparative performance analysis for generalized additive and generalized linear modeling in epidemiology}. \emph{International Journal of Advanced Computer Science and Applications}, 8(12). \Qu3 \doi{10.14569/IJACSA.2017.081255}
+\item Talmoudi, K., Bellali, H., Ben-Alaya, N., Saez, M., Malouche, D., \& Chahed, M. K. (2017b). \href{https://doi.org/10.1371/journal.pntd.0005844}{Modeling zoonotic cutaneous leishmaniasis incidence in central Tunisia from 2009--2015: forecasting models using climate variables as predictors}. \emph{PLoS Neglected Tropical Diseases}, 11(8), e0005844. \Qu1 \doi{10.1371/journal.pntd.0005844}
+\item Kerfai, N., Bejar Ghadhab, B., \& Malouche, D. (2016). \href{https://www.emerald.com/insight/content/doi/10.1108/TQM-10-2013-0119/full/html}{Performance measurement and quality costing in Tunisian manufacturing companies}. \emph{The TQM Journal}, 28(4), 588--596. \Qu1
+\item Saidi, O., Malouche, D., O'Flaherty, M., Mansour, N. B., Skhiri, H., Romdhane, H. B., \& Bezdah, L. (2016). \href{https://doi.org/10.1136/bmjopen-2015-009195}{Assessment of cardiovascular risk in Tunisia: applying the Framingham risk score to national survey data}. \emph{BMJ Open}, 6(11), e009195. \Qu1 \doi{10.1136/bmjopen-2015-009195}
+\item Saidi, O., O'Flaherty, M., Mansour, N. B., Aissi, W., Lassoued, O., Capewell, S., \ldots\ Romdhane, H. B. (2015). \href{https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-015-1416-z}{Forecasting Tunisian type 2 diabetes prevalence to 2027: validation of a simple model}. \emph{BMC Public Health}, 15(1), 104. \Qu1
+\item Karaoud, M., Bouafif, N., Malouche, D., Kouni, C., \& Achour, N. (2014). \href{https://www.em-consulte.com/article/911510/article/la-mortalite-parmi-les-enfants-ages-de-moins-de15}{La mortalit\'e parmi les enfants \^ag\'es de moins de 15 ans en Tunisie peut \^etre li\'ee \`a la temp\'erature}. \emph{Revue d'\'Epid\'emiologie et de Sant\'e Publique}, 62, S122 (congress abstract). \Qu3
+\item Karaoud, M., Malouche, D. et al. (2014). \href{https://www.em-consulte.com/article/915656/les-effets-de-la-temperature-sur-la-mortalite-chez}{Les effets de la temp\'erature sur la mortalit\'e chez les personnes \^ag\'ees en Tunisie}. \emph{Revue d'\'Epid\'emiologie et de Sant\'e Publique}, 62, S219--S220 (congress abstract). \Qu3
+\item Karaoud, M., Malouche, D., \& Alaya, N. B. (2014). \href{https://www.em-consulte.com/article/915651/article/mortalite-et-temperature-journaliere-en-tunisie\%C2\%A0-u}{Mortalit\'e et temp\'erature journali\`ere en Tunisie : une \'etude multi-r\'egion}. \emph{Revue d'\'Epid\'emiologie et de Sant\'e Publique}, 62, S218 (congress abstract). \Qu3
+\item Karaoud, M., Malouche, D., \& Bouafif, N. (2014). \href{https://www.em-consulte.com/article/911552/article/methodologie-de-l-analyse-de-la-relation-temperatu}{M\'ethodologie de l'analyse de la relation temp\'erature--mortalit\'e en Tunisie}. \emph{Revue d'\'Epid\'emiologie et de Sant\'e Publique}, 62, S141--S142 (congress abstract). \Qu3
+\item Fehri, R., Rifi, H., Alboueiri, A., Malouche, D., Ayadi, M., Rais, H., \& Mezlini, A. (2013). \href{https://pubmed.ncbi.nlm.nih.gov/23588636/}{Carcinoma of unknown primary: retrospective study of 437 patients treated at Salah Azaiez Institute}. \emph{La Tunisie M\'edicale}, 91(3), 205--208. \Qu4
+\item Arfa, I., Nouira, S., Abid, A., Alaya, N. B.-B., Zorgati, M., Malouche, D., \ldots\ Romdhane, H. B. et al. (2010). Absence d'association entre les polymorphismes du syst\`eme r\'enine angiotensine (SRA) et l'hypertension art\'erielle chez les diab\'etiques de type 2 tunisiens. \emph{La Tunisie M\'edicale}, 88(01), 37--40. \Qu4
+\item Arfa, I., Nouira, S., Abid, A., Bouafif-Ben, N. A., Zorgati, M. M., Malouche, D., \ldots\ Ben, H. R. et al. (2010). \href{https://pubmed.ncbi.nlm.nih.gov/20415212/}{Lack of association between renin-angiotensin system (RAS) polymorphisms and hypertension in Tunisian type 2 diabetics}. \emph{La Tunisie M\'edicale}, 88(1), 38--41. \Qu4
+\item Arfa, I., Abid, A., Nouira, S., Elloumi-Zghal, H., Malouche, D., Mannai, I., \ldots\ Zouari, B. et al. (2008). \href{https://doi.org/10.3317/jraas.2008.002}{Lack of association between the angiotensin-converting enzyme gene (I/D) polymorphism and diabetic nephropathy in Tunisian type 2 diabetic patients}. \emph{Journal of the Renin-Angiotensin-Aldosterone System}, 9(1), 32--36. \Qu2 \doi{10.3317/jraas.2008.002}
+\item Arfa, I., Abid, A., Malouche, D., Alaya, N. B., Azegue, T. R., Mannai, I., \ldots\ Blousa-Chabchoub, S. et al. (2007). \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC2600082/}{Familial aggregation and excess maternal transmission of type 2 diabetes in Tunisia}. \emph{Postgraduate Medical Journal}, 83(979), 348--351. \Qu1
+
+\pubgroup{Immunogenetics and bioinformatics}
+\item Aouinti, S., Giudicelli, V., Duroux, P., Malouche, D., Kossida, S., \& Lefranc, M.-P. (2016). \href{https://doi.org/10.3389/fimmu.2016.00339}{IMGT/StatClonotype for pairwise evaluation and visualization of NGS IG and TR IMGT clonotype (AA) diversity or expression from IMGT/HighV-QUEST}. \emph{Frontiers in Immunology}, 7, 339. \Qu1 \doi{10.3389/fimmu.2016.00339}
+\item Aouinti, S., Malouche, D., Giudicelli, V., Kossida, S., \& Lefranc, M.-P. (2016). \href{https://doi.org/10.1371/journal.pone.0146702}{Correction: IMGT/HighV-QUEST statistical significance of IMGT clonotype (AA) diversity per gene for standardized comparisons of next generation sequencing immunoprofiles of immunoglobulins and T cell receptors}. \emph{PLoS ONE}, 11(1), e0146702. \doi{10.1371/journal.pone.0146702}
+\item Aouinti, S., Malouche, D., Giudicelli, V., Kossida, S., \& Lefranc, M.-P. (2015). \href{https://pubmed.ncbi.nlm.nih.gov/26540440/}{IMGT/HighV-QUEST statistical significance of IMGT clonotype (AA) diversity per gene for standardized comparisons of next generation sequencing immunoprofiles of immunoglobulins and T cell receptors}. \emph{PLoS ONE}, 10(11), e0142353. \Qu1
+\item Ghouila, A., Jmel, H., Yahia, S., Malouche, D., \& Abdelhak, S. (2009). Multi-SOM: a novel clustering approach for gene expression analysis. \emph{Infection, Genetics and Evolution}, 9(3), 374 (congress abstract). \Qu1
+\item Ghouila, A., Yahia, S. B., Malouche, D., Jmel, H., Laouini, D., Guerfali, F. Z., \& Abdelhak, S. (2009). \href{https://doi.org/10.1016/j.meegid.2008.09.009}{Application of Multi-SOM clustering approach to macrophage gene expression analysis}. \emph{Infection, Genetics and Evolution}, 9(3), 328--336. \Qu1 \doi{10.1016/j.meegid.2008.09.009}
+
+\pubgroup{Sensory and consumer science; statistical software}
+\item Rebhi, I., \& Malouche, D. (2023). \href{https://doi.org/10.1111/joss.12809}{SensMap R package and SensMapGUI Shiny web application for sensory and consumer data mapping: variations on external preference mapping and stability assessment}. \emph{Journal of Sensory Studies}, 38(2), e12809. \Qu3 \doi{10.1111/joss.12809}
+\item Ben-Hassine, K., Taamalli, A., Rezig, L., Yangui, I., Benincasa, C., Malouche, D., \ldots\ Mnif, W. (2022). \href{https://doi.org/10.1002/fsn3.2717}{Effect of processing technology on chemical, sensory, and consumers' hedonic rating of seven olive oil varieties}. \emph{Food Science \& Nutrition}, 10(3), 863--878. \Qu1 \doi{10.1002/fsn3.2717}
+\item Ben-Hassine, K., Yangui, I., Mnif, W., Taamalli, A., Benincasa, C., Kamoun, N., \& Malouche, D. (2022). \href{https://doi.org/10.1155/2022/3981028}{Chemometric analysis and physicochemical composition of foreign and Tunisian olive oil: consumer preferences}. \emph{Journal of Food Quality}, 2022, 3981028. \Qu2 \doi{10.1155/2022/3981028}
+\item Kongbonga, G. Y. M., Hassine, K. B., Ghalila, H., Malouche, D. et al. (2019). \href{https://doi.org/10.4236/fns.2019.102010}{Front-face fluorescence using UV-LED coupled to USB spectrometer to discriminate between virgin olive oil from two cultivars}. \emph{Food and Nutrition Sciences}, 10(2), 119--127. \Qu2 \doi{10.4236/fns.2019.102010}
+\item Rebhi, I., \& Malouche, D. (2017a). \href{https://doi.org/10.14569/IJACSA.2017.081266}{An approach for external preference mapping improvement by denoising consumer rating data}. \emph{International Journal of Advanced Computer Science and Applications}, 8(12), 500--508. \Qu3 \doi{10.14569/IJACSA.2017.081266}
+\item Hassine, K. B., Taamalli, A., Slama, M. B., Khouloud, T., Kiristakis, A., Benincasa, C., \ldots\ Bornaz, S. et al. (2015). \href{https://doi.org/10.1002/ejlt.201400049}{Characterization and preference mapping of autochthonous and introduced olive oil cultivars in Tunisia}. \emph{European Journal of Lipid Science and Technology}, 117(1), 112--121. \Qu2 \doi{10.1002/ejlt.201400049}
+\item Hassine, K. B., El Riachy, M., Taamalli, A., Malouche, D., Ayadi, M., Talmoudi, K., \ldots\ Romano, E. et al. (2014). \href{https://doi.org/10.1002/ejlt.201300254}{Consumer discrimination of Chemlali and Arbequina olive oil cultivars according to their cultivar, geographical origin, and processing system}. \emph{European Journal of Lipid Science and Technology}, 116(7), 812--824. \Qu2 \doi{10.1002/ejlt.201300254}
+\item Ben-Hassine, K., Taamalli, A., Ferchichi, S., Mlaouah, A., Benincasa, C., Romano, E., \ldots\ Hammami, M. (2013). \href{https://doi.org/10.1016/j.foodres.2013.09.007}{Physicochemical and sensory characteristics of virgin olive oils in relation to cultivar, extraction system and storage conditions}. \emph{Food Research International}, 54(2), 1915--1925. \Qu1 \doi{10.1016/j.foodres.2013.09.007}
+\item Hassine, K. B., Taamalli, A., Malouche, D., Kammoun, N., Lazzez, A., Benincasa, C., \ldots\ Bouaziz, M. (2012). \href{https://www.researchgate.net/publication/288652330_Influence_of_variety_geographical_site_and_extraction_system_on_virgin_olive_oil_VOO_linoleic_acid_composition_and_its_impact_on_consumer_preference}{Influence of variety, geographical site and extraction system on virgin olive oil (VOO) linoleic acid composition and its impact on consumer preference}. \emph{Linoleic Acids}, 97. \Qu2
+
+\pubgroup{Environmental science, natural products, agriculture and medical imaging}
+\item Na\"ija, A., Mohamed, O., Malouche, D., \& Abiib, S. (2026). \href{https://doi.org/10.1016/j.scitotenv.2026.182291}{Global phthalate occurrence and risk assessment in drinking water: a comprehensive Bayesian and probabilistic approach}. \emph{Science of the Total Environment}, 1051, 182291. \Qu1 \doi{10.1016/j.scitotenv.2026.182291}
+\item Losada-Echeberr\'ia, M., Naranjo, G., Malouche, D., Taamalli, A., Barraj\'on-Catal\'an, E., \& Micol, V. (2023). \href{https://doi.org/10.3390/ijms24010054}{Influence of drying temperature and harvesting season on phenolic content and antioxidant and antiproliferative activities of olive (\emph{Olea europaea}) leaf extracts}. \emph{International Journal of Molecular Sciences}, 24(1), 54. \Qu1 \doi{10.3390/ijms24010054}
+\item Mekki, I., Malouche, D., Smeti, S., Hajji, H., Mahouachi, M., Elloumi, M., \& Atti, N. (2019). \href{http://www.lrrd.org/lrrd31/7/ilyes31108.html}{Study of the breeding systems of sheeps in the montagnous area of north-western Tunisia}. \emph{Livestock Research for Rural Development}, 31(108). \Qu3
+\item Khlaifi, H., Istrate, D., Demongeot, J., \& Malouche, D. (2018). \href{https://doi.org/10.1016/j.irbm.2018.10.009}{Swallowing sound recognition at home using GMM}. \emph{IRBM}, 39(6), 407--412. \Qu4 \doi{10.1016/j.irbm.2018.10.009}
+\item Triki, H. Z., Laabir, M., Lafabrie, C., Malouche, D., Bancon-Montigny, C., Gonzalez, C., \ldots\ Daly-Yahia, O. K. (2017). \href{https://doi.org/10.1016/j.scitotenv.2017.03.183}{Do the levels of industrial pollutants influence the distribution and abundance of dinoflagellate cysts in the recently-deposited sediment of a Mediterranean coastal ecosystem?} \emph{Science of the Total Environment}, 595, 380--392. \Qu1 \doi{10.1016/j.scitotenv.2017.03.183}
+\item Triki, H. Z., Daly-Yahia, O. K., Malouche, D., Komiha, Y., Deidun, A., Brahim, M. et al. (2014). \href{https://doi.org/10.1016/j.marpolbul.2014.05.014}{Distribution of resting cysts of the potentially toxic dinoflagellate \emph{Alexandrium pseudogonyaulax} in recently-deposited sediment within Bizerte Lagoon (Mediterranean coast, Tunisia)}. \emph{Marine Pollution Bulletin}, 84(1--2), 172--181. \Qu1 \doi{10.1016/j.marpolbul.2014.05.014}
+\item Ranjanomennahary, P., Ghalila, S. S., Malouche, D., Marchadier, A., Rachidi, M., Benhamou, C., \& Chappard, C. (2011). \href{https://doi.org/10.1118/1.3528125}{Comparison of radiograph-based texture analysis and bone mineral density with three-dimensional microarchitecture of trabecular bone}. \emph{Medical Physics}, 38(1), 420--428. \Qu1 \doi{10.1118/1.3528125}
+
+\pubgroup{Conference proceedings}
+\item Rebhi, I., \& Malouche, D. (2017b). \href{https://doi.org/10.1109/AICCSA.2017.202}{Decision making about products development through consumer preferences modeling based on descriptive characteristics of products}. \emph{IEEE/ACS 14th International Conference on Computer Systems and Applications (AICCSA)}, 423--430. \doi{10.1109/AICCSA.2017.202}
+\item Selmi, G., Azouz, Z. B., \& Malouche, D. (2015). \href{https://doi.org/10.1109/IVCNZ.2015.7761572}{The volume radius function: a new descriptor for the segmentation of volumetric medical images}. \emph{2015 International Conference on Image and Vision Computing New Zealand (IVCNZ)}, 1--6. \doi{10.1109/IVCNZ.2015.7761572}
+\item Ghribi, K., Sevestre, S., Guessoum, Z., Gil-Quijano, J., Malouche, D., \& Youssef, A. (2014). \href{https://doi.org/10.1109/CISTEM.2014.7077030}{A survey on multi-agent management approaches in the context of intelligent energy systems}. \emph{2014 International Conference on Electrical Sciences and Technologies in Maghreb (CISTEM)}, 1--8. \doi{10.1109/CISTEM.2014.7077030}
+\item Aouinti, S., Mallek, H., Malouche, D., Saidi, O., Lassouedi, O., Hentati, F., \& Romdhane, H. B. (2013). \href{https://ieeexplore.ieee.org/document/6506162}{Graphical interaction models to extract predictive risk factors of the cost of managing stroke in Tunisia}. \emph{2013 International Conference on Computer Medical Applications (ICCMA)}, 1--6.
+\item Malouche, D., \& Sevestre-Ghalila, S. (2008). \href{https://www.semanticscholar.org/paper/eea68b8d19f86d33a02065f69a07ccdb7ddbedd4}{Estimating high dimensional faithful Gaussian graphical models by low-order conditioning}. \emph{Proceedings of the 26th IASTED International Multi-Conference on Applied Informatics, Artificial Intelligence and Applications}, 595--025.
 \end{enumerate}
+
+\subsection{Accepted (in press)}
+\begin{enumerate}[resume*]
+\item Al-Khinji, A., Malouche, D., Al-Hor, A., Al Tamimi, G., Al-Korbi, N., Al-Kuwari, H., Al Rewaily, D., Al-Matwi, M., Haj Bakri, A., \& Al-Kuwari, M. G. (2026). Cardiovascular risk prediction in autoimmune diseases: disease-specific heterogeneity and calibrated logistic models in Middle Eastern primary care. \emph{American Heart Journal Plus}. [Accepted 21 September 2026, in press]
+\item Al-Khinji, A., Alashwal, H., Al-Hor, A., Al-Kuwari, H., Bismi, F., Maki, N. A., Abunada, T., \& Malouche, D. (2026). Bayesian and frequentist meta-analysis of GCB-classification heterogeneity in TP53-reporting DLBCL cohorts at small $k$: an applied case study with reporting guidance. \emph{BMC Medical Research Methodology}. [Accepted 15 September 2026, in press]
+\item Muhammad, M. I., Al-Khinji, A., Al-Ansari, M., Al-Marri, N., Alshaheen, S., \& Malouche, D. (2026). Allele-stratified activity of RAS inhibitors in pancreatic ductal adenocarcinoma: a systematic review with model-validation-stratified synthesis of preclinical evidence and exploratory meta-analysis of early-phase trials. \emph{Cancers}. [Accepted, in press]
+\item Mzoughi, C., \& Malouche, D. (2026). Legislating the future: statistical foresight as a foundation for anticipatory law. Conference paper, \href{https://kilaw.edu.kw/annualConference/en/conference-12-call-for-papers/}{12th Annual International Academic Conference}, Kuwait International Law School (Kuwait, 6--7 May 2026); to appear in the conference supplement of the \emph{Kuwait International Law School Journal} (peer-reviewed). [Full paper accepted 9 July 2026]
+\end{enumerate}
+
 \end{document}

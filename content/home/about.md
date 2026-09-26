@@ -27,17 +27,17 @@ cta_primary:
   url: "#publications"
 cta_secondary:
   label: "Google Scholar ↗"
-  url: "https://scholar.google.com/citations?user=rLJsvjUAAAAJ&hl=en"
+  url: "https://scholar.google.com/citations?user=LcucwHsAAAAJ&hl=en"
 cta_tertiary:
   label: "ORCID ↗"
   url: "https://orcid.org/0000-0002-0494-7141"
 
-# TODO: adjust these numbers to match your real counts.
+# Counts as of September 2026 (CV / Google Scholar).
 stats:
   - number: "25+"
     label: "Years in academia"
-  - number: "60+"
-    label: "Peer-reviewed publications"
+  - number: "70+"
+    label: "Publications"
   - number: "15"
     label: "Interactive dashboards & apps"
 
