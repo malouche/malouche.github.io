@@ -5,12 +5,20 @@
     <link>https://dhafermalouche.net/publication/</link>
       <atom:link href="https://dhafermalouche.net/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Dhafer Malouche © 2026</copyright><lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dhafermalouche.net/media/icon_hu294da7f24af66942b94b8e240e33fe59_2153342_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://dhafermalouche.net/publication/</link>
     </image>
+    
+    <item>
+      <title>Allele-stratified activity of RAS inhibitors in pancreatic ductal adenocarcinoma: a systematic review and exploratory meta-analysis</title>
+      <link>https://dhafermalouche.net/publication/rasinhibitorspdac/</link>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/rasinhibitorspdac/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Autoimmune disorders and cardiovascular disease: a matched cross-sectional analysis of disease-specific associations in Qatari primary care</title>
@@ -41,14 +49,6 @@
       <link>https://dhafermalouche.net/publication/phthalatestoten/</link>
       <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/publication/phthalatestoten/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Allele-stratified activity of RAS inhibitors in pancreatic ductal adenocarcinoma: a systematic review with model-validation-stratified synthesis of preclinical evidence and exploratory meta-analysis of early-phase trials</title>
-      <link>https://dhafermalouche.net/publication/rasinhibitorspdac/</link>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/rasinhibitorspdac/</guid>
       <description></description>
     </item>
     
@@ -437,18 +437,18 @@
     </item>
     
     <item>
-      <title>Méthodologie de l&#39;analyse de la relation température–mortalité en Tunisie</title>
-      <link>https://dhafermalouche.net/publication/karaoud2014-methodologie-analyse/</link>
-      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://dhafermalouche.net/publication/karaoud2014-methodologie-analyse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Mortalité et température journalière en Tunisie : une étude multi-région</title>
       <link>https://dhafermalouche.net/publication/karaoud2014-mortalite-temperature/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       <guid>https://dhafermalouche.net/publication/karaoud2014-mortalite-temperature/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Méthodologie de l&#39;analyse de la relation température–mortalité en Tunisie</title>
+      <link>https://dhafermalouche.net/publication/karaoud2014-methodologie-analyse/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://dhafermalouche.net/publication/karaoud2014-methodologie-analyse/</guid>
       <description></description>
     </item>
     
