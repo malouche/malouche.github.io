@@ -7,6 +7,7 @@ image:
   preview_only: false
 summary: "An interactive dashboard of the 2026 French municipal elections (rounds of 15 and 22 March 2026). Official Ministry of the Interior results, aggregated from the polling-station level to the 96 metropolitan departments, are mapped with Leaflet and explored by political bloc and party. Built in R (tidyverse, sf) with a static HTML/JS front end deployed on Netlify."
 tags:
+- research-dashboards
 - elections
 - France
 - municipal-elections

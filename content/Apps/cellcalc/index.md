@@ -7,6 +7,7 @@ image:
   preview_only: false
 summary: "A pedagogical calculator for the wet lab: solution mass, solution volume, dilution, serial dilution, cell counting and cell seeding. Rather than returning only a number, every calculator states the formula, substitutes the user's own values with units carried through each line, walks the arithmetic step by step, and draws a live diagram — a filling flask, dot-density beakers, or a well-plate mixing bar. Automatic unit conversion across M / mM / µM / nM and L / mL / µL, a one-click worked example, and reproducible R, Python and plain-text protocol export."
 tags:
+- laboratory-tools
 - laboratory
 - teaching
 - education

@@ -7,6 +7,7 @@ image:
   preview_only: false
 summary: "An interactive companion dashboard for **Al-Khinji et al. (2026)**, *Frontiers in Medicine* — a Qatar Biobank study of hematological abnormalities in non-alcoholic steatohepatitis (NASH). The app lets the reader explore the cohort, recompute sex-stratified **CBC reference limits**, and reproduce the group-comparison results of the paper directly from the browser."
 tags:
+- research-dashboards
 - NASH
 - non-alcoholic-steatohepatitis
 - hepatology

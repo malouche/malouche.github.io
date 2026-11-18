@@ -32,13 +32,14 @@ cta_tertiary:
   label: "ORCID ↗"
   url: "https://orcid.org/0000-0002-0494-7141"
 
-# Counts as of September 2026 (CV / Google Scholar).
+# Counts as of September 2026 (CV / Google Scholar). The apps count is the
+# number of entries tagged `current` under content/Apps (20 on 17 November 2026).
 stats:
   - number: "25+"
     label: "Years in academia"
   - number: "70+"
     label: "Publications"
-  - number: "15"
+  - number: "20"
     label: "Interactive dashboards & apps"
 
 # Highlighted publication CTA. Leave `url` unset so the partial resolves the
@@ -93,4 +94,19 @@ app_buttons:
   - label: "Municipales 2026"
     sublabel: "French municipal elections"
     url: "https://municipales-france-2026.netlify.app/"
+  - label: "Electoral Climate 2027"
+    sublabel: "Polls, attention and social tension"
+    url: "https://fr2027-electoral-climate.netlify.app/"
+  - label: "MS & PD Networks"
+    sublabel: "Directional symptom dependencies"
+    url: "https://ms-pd-bayesian-dashboard.netlify.app/"
+  - label: "BlotLab"
+    sublabel: "Western blot guide with calculators"
+    url: "https://blotlab.netlify.app/"
+  - label: "MizanLab"
+    sublabel: "Lab calculators, working shown"
+    url: "https://mizanlab.netlify.app/"
+  - label: "HemoVision Pro"
+    sublabel: "Virtual haemocytometer"
+    url: "https://hemovision-pro.netlify.app/"
 ---

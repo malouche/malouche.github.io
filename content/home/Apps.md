@@ -10,7 +10,7 @@ active: true
 weight: 40
 
 title: Apps
-subtitle: ''
+subtitle: "Teaching and research applications, built as worked examples of how data and statistics are used in academic work."
 
 content:
   # Page type to display. E.g. project.
@@ -26,6 +26,10 @@ content:
   filter_button:
   - name: All
     tag: current
+  - name: Research dashboards
+    tag: research-dashboards
+  - name: Laboratory tools
+    tag: laboratory-tools
   - name: Archive Apps
     tag: archive
 
